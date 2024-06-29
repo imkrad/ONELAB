@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('customers', function (Blueprint $table) {
+            $table->engine = 'InnoDB'; 
+            $table->bigIncrements('id');
+            $table->string('code')->unique();
+            $table->string('name');
+            $table->boolean('is_main')->default(1);
+            $table->boolean('is_active')->default(1);
+            // $table->boolean('is_synced')->default(0);
+<<<<<<< HEAD
+            // $table->tinyInteger('bussiness_id')->unsigned()->nullable();
+            // $table->foreign('bussiness_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+=======
+            $table->tinyInteger('bussiness_id')->unsigned()->nullable();
+            $table->foreign('bussiness_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+>>>>>>> f175fc268731be76882ecde9c1be8f7e951af682
+            $table->tinyInteger('industry_id')->unsigned()->index();
+            $table->foreign('industry_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->tinyInteger('classification_id')->unsigned()->index();
+            $table->foreign('classification_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->bigInteger('name_id')->unsigned()->index();
+            $table->foreign('name_id')->references('id')->on('customer_names')->onDelete('cascade');
+            $table->integer('laboratory_id')->unsigned()->index();
+            $table->foreign('laboratory_id')->references('id')->on('laboratories')->onDelete('cascade');
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('customers');
+    }
+};
