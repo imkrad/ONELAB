@@ -10,7 +10,7 @@ use Spatie\Activitylog\LogOptions;
 
 class Customer extends Model
 {
-    use HasFactory, LogsActivity;
+    use HasFactory,LogsActivity;
 
     protected $fillable = [
         'code',
@@ -22,8 +22,6 @@ class Customer extends Model
         'is_active',
         'is_main'
     ];
-    
-    protected $encryptable = ['contact_no','email'];
 
     public function user()
     {

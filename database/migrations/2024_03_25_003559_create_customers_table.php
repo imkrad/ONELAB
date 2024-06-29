@@ -19,13 +19,8 @@ return new class extends Migration
             $table->boolean('is_main')->default(1);
             $table->boolean('is_active')->default(1);
             // $table->boolean('is_synced')->default(0);
-<<<<<<< HEAD
             // $table->tinyInteger('bussiness_id')->unsigned()->nullable();
             // $table->foreign('bussiness_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
-=======
-            $table->tinyInteger('bussiness_id')->unsigned()->nullable();
-            $table->foreign('bussiness_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
->>>>>>> f175fc268731be76882ecde9c1be8f7e951af682
             $table->tinyInteger('industry_id')->unsigned()->index();
             $table->foreign('industry_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->tinyInteger('classification_id')->unsigned()->index();

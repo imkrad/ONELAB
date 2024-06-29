@@ -42,7 +42,8 @@ class RequestController extends Controller
                     'discounts' => $this->dropdown->discounts(),
                     'statuses' => $this->dropdown->statuses('Request'),
                     'services' => $this->dropdown->services()
-                ]
+                ],
+                'counts' => $this->view->counts($this->dropdown->statuses('Request'))
             ]);
         }
     }

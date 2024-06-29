@@ -64,18 +64,18 @@ class TsrPayment extends Model
         $this->attributes['total'] = trim(str_replace(',','',$value),'₱');
     }
 
+    public function getTotalAttribute($value)
+    {
+        return '₱'.number_format($value,2,'.',',');
+    }
+
     public function getDiscountAttribute($value)
     {
-        return '₱'.$value;
+        return '₱'.number_format($value,2,'.',',');
     }
 
     public function setDiscountAttribute($value)
     {
         $this->attributes['discount'] = trim(str_replace(',','',$value),'₱');
-    }
-
-    public function getTotalAttribute($value)
-    {
-        return '₱'.number_format($value,2,'.',',');
     }
 }

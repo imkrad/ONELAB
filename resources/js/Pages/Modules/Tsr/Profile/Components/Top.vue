@@ -28,15 +28,16 @@
                         </b-col>
                         <b-col md="auto">
                             <div class="hstack gap-1 flex-wrap mt-2">
-                                <b-button @click="openSave(selected.id)" variant="soft-primary" v-b-tooltip.hover title="Save">
-                                    <i class="ri-delete-bin-2-fill align-bottom"></i> Save
+                                <b-button v-if="selected.status.name === 'Pending'" :disabled="(analyses == 0) ? true : false" @click="openSave(selected.id)" variant="primary" v-b-tooltip.hover title="Save">
+                                    <i class="ri-save-fill align-bottom"></i> Save
+                                </b-button>
+                                <b-button v-if="selected.status.name !== 'Pending'" @click="openPrint(selected.qr)" variant="primary" v-b-tooltip.hover title="Print">
+                                    <i class="ri-printer-fill"></i>
                                 </b-button>
                                 <Link href="/requests">
-                                    <button type="button" class="btn py-0 text-body" style="cursor:pointer; font-size: 25px;">
-                                        <i class="ri-close-circle-fill"></i>
-                                    </button>
-                                    <!-- <i @click="showModal=false" class="ri-close-circle-fill" style="cursor:pointer; font-size: 30px;"></i>
-                                    <button class="btn btn-sm btn-soft-info me-1" type="button" data-original-title="View"><i class="ri-eye-fill align-bottom"></i></button>  -->
+                                    <b-button @click="openSave(selected.id)" variant="soft-danger">
+                                        <i class="ri-close-circle-fill align-bottom"></i> 
+                                    </b-button>
                                 </Link>
                             </div>
                         </b-col>
@@ -52,10 +53,13 @@
 import Save from '../Modals/Save.vue';
 export default {
     components: { Save }, 
-    props:['selected'],
+    props:['selected','analyses'],
     methods: {
         openSave(id){
             this.$refs.save.show(id);
+        },
+        openPrint(id){
+            window.open('/requests?option=print&id='+id);
         },
     }
 }

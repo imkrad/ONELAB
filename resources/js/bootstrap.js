@@ -17,8 +17,4 @@ import 'leaflet/dist/leaflet.css';
  * allow your team to quickly build robust real-time web applications.
  */
 
-<<<<<<< HEAD
 // import './echo';
-=======
-import './echo';
->>>>>>> f175fc268731be76882ecde9c1be8f7e951af682

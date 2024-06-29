@@ -15,7 +15,10 @@
                             </div>
                             <div class="flex-grow-1 overflow-hidden">
                                 <p class="mb-1 fs-12 text-muted">Code :</p> 
-                                <h6 class="text-truncate mb-0 fs-12">{{(selected.code) ? selected.code : 'R9-062026-CHE-0001'}}</h6>
+                                <h6 class="text-truncate mb-0 fs-12">
+                                    <span class="fw-semibold" v-if="selected.code">{{selected.code}}</span>
+                                    <span class="text-muted" v-else>Not yet Available</span>
+                                </h6>
                             </div>
                         </div>
                     </div>

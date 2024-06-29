@@ -21,6 +21,19 @@
             </div>
         </b-col>
     </b-row>
+    <ul class="nav nav-tabs nav-tabs-custom nav-success border border-dashed border-end-0 border-start-0 fs-12" role="tablist">
+        <li class="nav-item">
+            <BLink @click="viewStatus(10,null)" class="nav-link py-3 active text-primary" data-bs-toggle="tab" role="tab" aria-selected="true">
+            <i class="ri-apps-2-line me-1 align-bottom"></i> All Requests
+            </BLink>
+        </li>
+        <li class="nav-item" v-for="(list,index) in dropdowns.statuses" v-bind:key="index">
+            <BLink @click="viewStatus(index,list.value)" class="nav-link py-3" :class="(this.index == index) ? list.others+' active' : ''" data-bs-toggle="tab" role="tab" aria-selected="false">
+                <i :class="icons[index]" class="me-1 align-bottom"></i>
+                {{ list.name }} <BBadge v-if="counts[index] > 0" :class="list.color" class="align-middle ms-1">{{counts[index]}}</BBadge>
+            </BLink>
+        </li>
+    </ul>
     <div class="table-responsive">
         <table class="table table-nowrap align-middle mb-0">
             <thead class="table-light">
@@ -63,12 +76,12 @@
                         <!-- <b-button @click="openView(list,index)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                             <i class="ri-eye-fill align-bottom"></i>
                         </b-button> -->
-                          <Link :href="`/requests/${list.qr}`">
+                        <Link :href="`/requests/${list.qr}`">
                             <b-button variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                 <i class="ri-eye-fill align-bottom"></i>
                             </b-button>
                         </Link>
-                        <b-button v-if="list.status.name !== 'Pending'" @click="openEdit(list,index)" variant="soft-success" v-b-tooltip.hover title="Print" size="sm">
+                        <b-button v-if="list.status.name !== 'Pending'" @click="openPrint(list.qr)" variant="soft-success" v-b-tooltip.hover title="Print" size="sm">
                             <i class="ri-printer-fill align-bottom"></i>
                         </b-button>
                         <b-button v-if="list.status.name === 'Pending'" @click="openCancel(list,index)" variant="soft-danger" v-b-tooltip.hover title="Cancel" size="sm">
@@ -81,14 +94,16 @@
         <Pagination class="ms-2 me-2" v-if="meta" @fetch="fetch" :lists="lists.length" :links="links" :pagination="meta" />
     </div>
     <Create :dropdowns="dropdowns" @success="fetch()" ref="create"/>
+    <Cancel @success="fetch()" ref="cancel"/>
 </template>
 <script>
 import _ from 'lodash';
 import Create from '../Modals/Create.vue';
+import Cancel from '../Modals/Cancel.vue';
 import Pagination from "@/Shared/Components/Pagination.vue";
 export default {
-    components: { Pagination, Create },
-    props: ['dropdowns'],
+    components: { Pagination, Create, Cancel },
+    props: ['dropdowns','counts'],
     data(){
         return {
             currentUrl: window.location.origin,
@@ -96,6 +111,7 @@ export default {
             meta: {},
             links: {},
             index: null,
+            icons: ['ri-information-line','ri-wallet-3-line','ri-indeterminate-circle-line','ri-checkbox-circle-line','ri-close-circle-line'],
             filter: {
                 keyword: null,
                 status: null,
@@ -137,6 +153,17 @@ export default {
         },
         openCreate(){
             this.$refs.create.show();
+        },
+        openPrint(id){
+            window.open('/requests?option=print&id='+id);
+        },
+        openCancel(data){
+            this.$refs.cancel.show(data);
+        },
+        viewStatus(index,status){
+            this.index = index;
+            this.filter.status = status;
+            this.fetch();
         }
     }
 }

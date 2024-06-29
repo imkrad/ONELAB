@@ -21,6 +21,13 @@ class ViewService
         $this->configuration = Configuration::with('laboratory.address')->where('laboratory_id',$this->laboratory)->first();
     }
 
+    public function counts($statuses){
+        foreach($statuses as $status){
+            $counts[] = Tsr::where('status_id',$status['value'])->count();
+        }
+        return $counts;
+    }
+
     public function lists($request){
         $data = TsrResource::collection(
             Tsr::query()
@@ -91,6 +98,8 @@ class ViewService
 
     public function print($request){
         $id = $request->id;
+        $hashids = new Hashids('krad',10);
+        $id = $hashids->decode($id);
         $tsr = Tsr::query()->where('id',$id)
         ->with('received:id','received.profile:id,firstname,lastname,user_id')
         ->with('laboratory:id,name','purpose:id,name','status:id,name,color,others')

@@ -2,6 +2,7 @@
 
 namespace App\Services\Requests;
 
+use Hashids\Hashids;
 use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\Laboratory;
@@ -40,7 +41,9 @@ class SaveService
     }
 
     public function cancel($request){
-        $data = Tsr::find($request->id);
+        $hashids = new Hashids('krad',10);
+        $id = $hashids->decode($request->id);
+        $data = Tsr::find($id[0]);
         $data->update($request->except(['option']));
         
         return [

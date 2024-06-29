@@ -89,7 +89,7 @@
                             </td>
                             <td>
                                 <h5 class="fs-13 mb-0 text-dark">{{list.testname}}</h5>
-                                <p class="fs-12 text-muted mb-0">{{list.code }}</p>
+                                <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'No sample code yet'}}</p>
                             </td>
                             <td class="text-center">
                                 <h5 class="fs-12 mb-0">{{list.method}}</h5>

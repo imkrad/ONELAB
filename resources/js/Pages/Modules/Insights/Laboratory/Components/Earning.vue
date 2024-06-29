@@ -51,20 +51,13 @@ export default {
         }
     },
     mounted() {
-<<<<<<< HEAD
         this.setupEchoListener();
-=======
-        window.addEventListener('DOMContentLoaded', this.setupEchoListener);
->>>>>>> f175fc268731be76882ecde9c1be8f7e951af682
     },
     methods: {
         setupEchoListener() {
             window.Echo.channel('system-maintenance')
                 .listen('SystemMaintenanceEvent', (event) => {
-<<<<<<< HEAD
                     alert(event.time);
-=======
->>>>>>> f175fc268731be76882ecde9c1be8f7e951af682
                     console.log(event);
                 });
         },

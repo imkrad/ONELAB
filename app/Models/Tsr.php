@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
 
 class Tsr extends Model
 {
-    use HasFactory;
+    use HasFactory,LogsActivity;
 
     protected $fillable = [
         'code',
@@ -96,5 +98,25 @@ class Tsr extends Model
     public function getReleasedAtAttribute($value)
     {
         return ($value) ? date('M d, Y g:i a', strtotime($value)) : null;
+    }
+
+    public function updateIfDirty(array $attributes){
+        $this->fill($attributes);
+        $dirtyAttributes = $this->getDirty();
+        if(!empty($dirtyAttributes)) {
+            $originalAttributes = array_intersect_key($this->getOriginal(), $dirtyAttributes);
+            $updated = $this->update($dirtyAttributes);
+            return $updated;
+        }
+        return false;
+    }
+
+    public function getActivitylogOptions(): LogOptions {
+        return LogOptions::defaults()
+        ->logOnly(['customer_id','conforme_id','purpose_id','laboratory_type','received_by','status_id'])
+        ->setDescriptionForEvent(fn(string $eventName) => "{$eventName}")
+        ->useLogName('Customer')
+        ->logOnlyDirty()
+        ->dontSubmitEmptyLogs();
     }
 }
