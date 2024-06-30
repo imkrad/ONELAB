@@ -39,6 +39,11 @@ class Tsr extends Model
         return $this->hasOne('App\Models\TsrService', 'tsr_id');
     }
 
+    public function report()
+    {
+        return $this->hasOne('App\Models\TsrReport', 'tsr_id');
+    }
+
     public function laboratory()
     {
         return $this->belongsTo('App\Models\Laboratory', 'laboratory_id', 'id');

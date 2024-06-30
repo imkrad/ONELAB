@@ -61,7 +61,7 @@ class RequestController extends Controller
         ]);
     }
 
-    public function update(Request $request){
+    public function update(TsrRequest $request){
         $result = $this->handleTransaction(function () use ($request) {
             switch($request->option){
                 case 'Confirm':

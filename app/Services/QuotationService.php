@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Hashids\Hashids;
 use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\Laboratory;
@@ -22,6 +23,13 @@ class QuotationService
     public function __construct()
     {
         $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
+    }
+
+    public function counts($statuses){
+        foreach($statuses as $status){
+            $counts[] = Quotation::where('status_id',$status['value'])->count();
+        }
+        return $counts;
     }
 
     public function lists($request){
@@ -48,6 +56,22 @@ class QuotationService
             })
             ->orderBy('created_at','DESC')
             ->paginate($request->count)
+        );
+        return $data;
+    }
+
+    public function view($id){
+        $hashids = new Hashids('krad',10);
+        $id = $hashids->decode($id);
+
+        $data = new QuotationResource(
+            Quotation::query()
+            ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
+            ->with('laboratory:id,name','type:id,name','purpose:id,name','status:id,name,color,others','discounted:id,name,value')
+            ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+            ->with('customer.contact:id,email,contact_no,customer_id')
+            ->with('conforme:id,name,contact_no')
+            ->where('id',$id)->first()
         );
         return $data;
     }

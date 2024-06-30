@@ -93,29 +93,31 @@
         </div>
         <hr class="text-muted"/>
         <div class="table-responsive">
+            {{ analyses }}
             <simplebar data-simplebar style="max-height: 300px;">
                 <table class="table table-centered table-bordered table-nowrap mb-0">
                     <thead class="table-light thead-fixed">
                         <tr class="text-muted fs-10">
-                            <th style="width: 20%;" class="text-center">Sample</th>
-                            <th style="width: 30%;" class="text-center">Testname</th>
-                            <th style="width: 30%;" class="text-center">Method</th>
-                            <th style="width: 20%;" class="text-center">Fee</th>
+                            <th style="width: 20%;">Sample</th>
+                            <th style="width: 55%;" class="text-center">Method</th>
+                            <th style="width: 15%;" class="text-center">Fee</th>
                         </tr>
                     </thead>
                     <tbody class="fs-11 ">
                         <tr v-for="(list,index) in analyses" v-bind:key="index">
-                            <td class="text-center">{{list.samplename}}</td>
-                            <td class="text-center">{{list.testname}} </td>
-                            <td class="text-center">{{(list.short) ? list.short : list.name}}</td>
-                            <td class="text-center">{{list.fee}} <span>x {{list.count}}</span></td>
+                            <td >
+                                <h5 class="fs-12 mb-0 text-dark">{{list.sample}}</h5>
+                                <p class="fs-11 text-muted mb-0">{{list.testname}}</p>
+                            </td>
+                            <td class="text-center">{{list.method}}</td>
+                            <td class="text-center">{{list.fee}}</td>
                         </tr>
                     </tbody>
                     <tfoot class="table-light fs-10 tfoot-fixed">
                         <tr>
-                            <th style="width: 50%;" colspan="2"></th>
-                            <th style="width: 25%;" class="text-center text-muted ">Total</th>
-                            <th style="width: 25%;" class="text-center fw-semibold">{{selected.total}}</th>
+                            <th></th>
+                            <th class="text-center text-muted ">Total</th>
+                            <th class="text-center fw-semibold">{{selected.total}}</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -131,18 +133,13 @@
             <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Submit</b-button>
         </template>
     </b-modal>
-    <!-- <Add @selected="set" ref="conforme"/> -->
 </template>
 <script>
 import _ from 'lodash';
 import { useForm } from '@inertiajs/vue3';
 import simplebar from 'simplebar-vue';
-import Multiselect from "@vueform/multiselect";
-import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
-import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
-    components: { Multiselect, InputLabel, TextInput, simplebar },
-    props: ['samples'],
+    components: { simplebar },
     data(){
         return {
             currentUrl: window.location.origin,
@@ -179,7 +176,8 @@ export default {
         }
     },
     methods: { 
-        show(data){
+        show(data,analyses){
+            this.analyses = analyses;
             this.selected = data;
             this.form.id = data.id;
             this.form.laboratory_id = data.laboratory.id;
@@ -192,40 +190,15 @@ export default {
             this.form.total = data.total;
             this.form.discount= data.discount;
             this.form.subtotal = data.subtotal;
-            this.form.mode = JSON.parse(data.mode);
-            this.fetch();
             this.showModal = true;
         },
         submit(){
             this.form.post('/quotations',{
                 preserveScroll: true,
                 onSuccess: (response) => {
-                    this.$emit('message',true);
                     this.hide();
                 },
             });
-        },
-        fetch(){
-            axios.get(this.currentUrl+'/quotations',{
-                params : {
-                    id: this.selected.id,
-                    option: 'analyses'
-                }
-            })
-            .then(response => {
-                this.analyses = response.data;
-            })
-            .catch(err => console.log(err));
-        },
-        openAdd(){
-            this.$refs.conforme.show(this.form.customer);
-        },
-        set(data){
-            this.form.customer.conformes.push(data);
-            this.form.conforme_id = data.value;
-        },
-        handleInput(field) {
-            this.form.errors[field] = false;
         },
         hide(){
             this.form.reset();

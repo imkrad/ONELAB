@@ -49,7 +49,7 @@ class AnalysisService
             'service_id' => $request->service['value'],
             'fee' => $request->service['fee']
         ]);
-        $total =  $this->updateTotal($request->id,$request->service['fee']);
+        $total = $this->updateTotal($request->id,$request->service['fee']);
         return [
             'data' => $total,
             'message' => 'Service added was successful!', 

@@ -1,25 +1,15 @@
 <template>
-    <b-modal v-model="showModal" style="--vz-modal-width: 1100px;" header-class="p-3 bg-light" :title="(!editable) ? 'Create Package' : 'Edit Package'" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
-            
+    <b-modal v-model="showModal" style="--vz-modal-width: 1000px;" header-class="p-3 bg-light" title="Add Analysis" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <form class="customform">
-            <BRow>
-                <BCol lg="12" class="mt-2">
-                    <InputLabel for="name" value="Package name" :message="form.errors.name" />
-                    <TextInput id="name" v-model="form.name" type="text" class="form-control" placeholder="Please enter package name" :light="true"/>
-                </BCol>  
-                <BCol lg="4" class="mt-1">
-                    <InputLabel for="classification_id" value="Laboratory Type" :message="form.errors.laboratory_type"/>
-                    <Multiselect :options="dropdowns.types" :searchable="true" v-model="form.laboratory_type" ref="multiselectL" placeholder="Select Laboratory type"/>
-                </BCol>
-                <BCol lg="4" class="mt-1">
-                    <InputLabel for="sampletype" value="Sample type" :message="form.errors.sampletype_id"/>
+            <BRow class="g-3">
+                <BCol lg="6" class="mt-1">
+                    <InputLabel for="sampletype" value="Sample type"/>
                     <Multiselect @search-change="checkSearchSample" 
                     :options="sampletypes" label="name" :searchable="true" 
-                    :clearOnSearch="true" v-model="form.sampletype_id"
+                    :clearOnSearch="true" v-model="sampletype"
                     placeholder="Select Sample type" ref="multiselectS"/>
                 </BCol>
-                
-                <BCol lg="4" class="mt-1">
+                <BCol lg="6" class="mt-1">
                     <InputLabel for="name" value="Fee" :message="form.errors.fee"/>
                     <Amount @amount="amount" ref="testing" :readonly="true"/>
                 </BCol>
@@ -29,7 +19,7 @@
             <BCol lg="12" class="mt-1">
                 <hr class="text-muted"/>
             </BCol>
-            <BCol lg="12" class="mt-0" v-if="form.sampletype_id">
+            <BCol lg="12" class="mt-0" v-if="sampletype">
                 <b-col lg>
                     <div class="input-group mb-1">
                         <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
@@ -71,7 +61,8 @@
         </BRow>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
-            <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Submit</b-button>
+            <b-button v-if="!has_many" @click="submit('ok')" variant="primary" block>Submit</b-button>
+            <b-button v-else @click="submitMany('ok')" variant="primary" block>Submit</b-button>
         </template>
     </b-modal>
 </template>
@@ -80,23 +71,19 @@ import _ from 'lodash';
 import { useForm } from '@inertiajs/vue3';
 import simplebar from 'simplebar-vue';
 import Amount from '@/Shared/Components/Forms/Amount.vue';
-import Multiselect from '@/Shared/Components/Forms/Multiselect.vue';
+import Multiselect from "@vueform/multiselect";
 import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
-import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
-    components: { simplebar, InputLabel, TextInput, Multiselect, Amount },
-    props: ['dropdowns'],
+    components: { InputLabel, Multiselect, simplebar, Amount },
     data(){
         return {
             currentUrl: window.location.origin,
+            selected: {},
             form: useForm({
-                id: null,
-                name: null,
                 fee: null,
-                laboratory_type: null,
-                sampletype_id: null,
                 lists: [],
-                option: 'create'
+                samples: [],
+                option: 'analyses'
             }),
             filter: {
                 keyword: null,
@@ -105,26 +92,22 @@ export default {
             searchTerm: null,
             matchedRowIndex: null,
             sampletypes: [],
+            sampletype: null,
             testservices: [],
+            selected: {},
             type: null,
-            showModal: false,
-            editable: false,
+            showModal: false
         }
     },
     watch: {
-        'form.laboratory_type'(){
-            this.sampletypes = [];
-            this.$refs.multiselectS.clear();
-            this.form.sampletype_id = null;
-        },
-        'form.sampletype_id'(){
+        sampletype(){
+            this.testservices = [];
             this.fetchTest();
         },
         totalFee(newTotalFee) {
             this.form.fee = newTotalFee;
             this.$refs.testing.emitValue(this.form.fee);
         }
-        
     },
     computed: {
         totalFee() {
@@ -137,19 +120,26 @@ export default {
             return this.testservices.filter(item => item.is_checked).length;
         },
         checkedItems() {
-            const test = this.testservices.filter(item => item.is_checked);
-            return test.map(item => item.value);
-        },
+            return this.testservices.filter(item => item.is_checked);
+        }
     },
     methods: { 
-        show(){
+        show(data,laboratory){
+            this.testservices = [];
+            this.form.samples = data
+            this.selected = data;
+            this.form.laboratory_type = laboratory;
             this.showModal = true;
         }, 
+        checkSearchSample: _.debounce(function(string) {
+            (string) ? this.fetchSample(string) : '';
+        }, 300),
         submit(){
             this.form.lists = this.checkedItems;
-            this.form.post('/services/packages',{
+            this.form.post('/quotations',{
                 preserveScroll: true,
                 onSuccess: (response) => {
+                    this.$emit('success',true);
                     this.hide();
                 },
             });
@@ -177,11 +167,11 @@ export default {
             .catch(err => console.log(err));
         },
         fetchTest(code){
-            axios.get('/services/packages',{
+            axios.get('/services/testservices',{
                 params: {
                     option: 'testservices',
                     laboratory_type: this.form.laboratory_type,
-                    sampletype_id: this.form.sampletype_id,
+                    sampletype_id: this.sampletype,
                     keyword: code
                 }
             })
@@ -213,7 +203,8 @@ export default {
             this.form.errors[field] = false;
         },
         hide(){
-            this.$refs.multiselectL.clear();
+            this.form.fee = null;
+            this.$refs.multiselectS.clear();
             this.form.reset();
             this.form.clearErrors();
             this.editable = false;

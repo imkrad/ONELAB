@@ -79,8 +79,6 @@ label {
             $tsr = json_encode($tsr); 
             $tsr = json_decode($tsr, true);   
 
-            $samples = json_encode($samples); 
-            $samples = json_decode($samples, true);   
             
         ?>
 
@@ -101,7 +99,7 @@ label {
                     <td width="25%">TSR Number : </td>
                     <td width="25%"><span style="font-weight: bold;">{{$tsr['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$tsr['created_at']}}</span></td>
+                    <td width="25%"><span>{{$tsr['date']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -114,7 +112,7 @@ label {
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
@@ -138,7 +136,7 @@ label {
                 </tr>
             </thead>
             <tbody>
-            @foreach($samples as $index=>$sample)
+            @foreach($tsr['samples'] as $index=>$sample)
                 <tr style="text-align: center; font-size: 9px;">
                     <td>{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
@@ -174,7 +172,7 @@ label {
                 <tr>
                     <td>
                         <ul style="margin-left: -30px; list-style: none; color:#636363;">
-                            @foreach($descs as $desc)
+                            @foreach($tsr['descriptions'] as $desc)
                                 <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
                             @endforeach
                         </ul>
@@ -201,7 +199,7 @@ label {
                     <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['conforme']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
+                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['customer']['conforme']['name']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
                     <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$user}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer Relation Officer </br> <span style="font-size:9px; color: #606060;">(Received by)</span></td>
                     <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Technical Manager </br> <span style="font-size:9px; color: #606060;">(Approved by)</span></td>
                 </tr>
@@ -281,7 +279,7 @@ label {
                     <td width="25%">TSR Number : </td>
                     <td width="25%"><span style="font-weight: bold;">{{$tsr['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$tsr['created_at']}}</span></td>
+                    <td width="25%"><span>{{$tsr['date']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -294,7 +292,7 @@ label {
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
@@ -318,7 +316,7 @@ label {
                 </tr>
             </thead>
             <tbody>
-            @foreach($samples as $index=>$sample)
+            @foreach($tsr['samples'] as $index=>$sample)
                 <tr style="text-align: center; font-size: 9px;">
                     <td>{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
@@ -354,7 +352,7 @@ label {
                 <tr>
                     <td>
                         <ul style="margin-left: -30px; list-style: none; color:#636363;">
-                            @foreach($descs as $desc)
+                            @foreach($tsr['descriptions'] as $desc)
                                 <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
                             @endforeach
                         </ul>
@@ -381,7 +379,7 @@ label {
                     <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['conforme']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
+                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['customer']['conforme']['name']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
                     <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$user}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer Relation Officer </br> <span style="font-size:9px; color: #606060;">(Received by)</span></td>
                     <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Technical Manager </br> <span style="font-size:9px; color: #606060;">(Approved by)</span></td>
                 </tr>
@@ -461,7 +459,7 @@ label {
                     <td width="25%">TSR Number : </td>
                     <td width="25%"><span style="font-weight: bold;">{{$tsr['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$tsr['created_at']}}</span></td>
+                    <td width="25%"><span>{{$tsr['date']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -474,7 +472,7 @@ label {
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
@@ -498,7 +496,7 @@ label {
                 </tr>
             </thead>
             <tbody>
-            @foreach($samples as $index=>$sample)
+            @foreach($tsr['samples'] as $index=>$sample)
                 <tr style="text-align: center; font-size: 9px;">
                     <td>{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
@@ -534,7 +532,7 @@ label {
                 <tr>
                     <td>
                         <ul style="margin-left: -30px; list-style: none; color:#636363;">
-                            @foreach($descs as $desc)
+                            @foreach($tsr['descriptions'] as $desc)
                                 <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
                             @endforeach
                         </ul>
@@ -561,7 +559,7 @@ label {
                     <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
                 </tr>
                 <tr>
-                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['conforme']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
+                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['customer']['conforme']['name']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
                     <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$user}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer Relation Officer </br> <span style="font-size:9px; color: #606060;">(Received by)</span></td>
                     <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Technical Manager </br> <span style="font-size:9px; color: #606060;">(Approved by)</span></td>
                 </tr>
