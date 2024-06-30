@@ -43,7 +43,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Laboratory :</p>
-                            <h5 class="fs-13 mb-0">{{selected.type.name}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.type.name}}</h5>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Discount :</p>
-                            <h5 class="fs-13 mb-0">{{selected.discounted.name}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.discounted.name}}</h5>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Purpose:</p>
-                            <h5 class="fs-13 mb-0">{{selected.purpose.name}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.purpose.name}}</h5>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Total:</p>
-                            <h5 class="fs-13 mb-0">{{selected.total}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.total}}</h5>
                         </div>
                     </div>
                 </div>
@@ -93,30 +93,32 @@
         </div>
         <hr class="text-muted"/>
         <div class="table-responsive">
-            {{ analyses }}
             <simplebar data-simplebar style="max-height: 300px;">
                 <table class="table table-centered table-bordered table-nowrap mb-0">
                     <thead class="table-light thead-fixed">
                         <tr class="text-muted fs-10">
-                            <th style="width: 20%;">Sample</th>
+                            <th style="width: 22%;">Sample</th>
                             <th style="width: 55%;" class="text-center">Method</th>
-                            <th style="width: 15%;" class="text-center">Fee</th>
+                            <th style="width: 13%;" class="text-center">Fee</th>
                         </tr>
                     </thead>
                     <tbody class="fs-11 ">
                         <tr v-for="(list,index) in analyses" v-bind:key="index">
                             <td >
-                                <h5 class="fs-12 mb-0 text-dark">{{list.sample}}</h5>
+                                <h5 class="fs-12 mb-0">{{list.sample}}</h5>
                                 <p class="fs-11 text-muted mb-0">{{list.testname}}</p>
                             </td>
-                            <td class="text-center">{{list.method}}</td>
+                            <td class="text-center">
+                                <h5 class="fs-11 mb-0">{{list.method}}</h5>
+                                <p class="fs-11 text-muted mb-0">{{list.reference}}</p>
+                            </td>
                             <td class="text-center">{{list.fee}}</td>
                         </tr>
                     </tbody>
                     <tfoot class="table-light fs-10 tfoot-fixed">
                         <tr>
                             <th></th>
-                            <th class="text-center text-muted ">Total</th>
+                            <th class="text-end text-muted ">Total</th>
                             <th class="text-center fw-semibold">{{selected.total}}</th>
                         </tr>
                     </tfoot>
