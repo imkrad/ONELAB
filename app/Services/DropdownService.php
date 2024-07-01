@@ -28,7 +28,7 @@ class DropdownService
     public function __construct()
     {
         $this->laboratory = (\Auth::check()) ? (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null : '';
-        $this->ids =(\Auth::check()) ? (\Auth::user()->role == 'Administator') ? [] : json_decode(Configuration::where('laboratory_id',$this->laboratory)->value('laboratories')) : '';
+        $this->ids =(\Auth::check()) ? (\Auth::user()->role == 'Administrator') ? [] : json_decode(Configuration::where('laboratory_id',$this->laboratory)->value('laboratories')) : '';
     }
 
     public function regions(){
@@ -102,7 +102,7 @@ class DropdownService
     }
 
     public function laboratory_types(){
-        $lab_id = array_column($this->ids, 'value');
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
         $query = ListDropdown::query()->where('classification','Laboratory');
         ($lab_id) ? $query->whereIn('id',$lab_id) : '';
         $data = $query->get()->map(function ($item) {
