@@ -48,6 +48,9 @@
                                 <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
                                     <i class="ri-delete-bin-fill align-bottom"></i>
                                 </b-button>
+                                <b-button v-if="selected.status.name == 'Completed'" @click="openCertificate(list.id)" variant="soft-primary" v-b-tooltip.hover title="Certificate" size="sm">
+                                    <i class="ri-file-paper-2-fill align-bottom"></i>
+                                </b-button>
                             </td>
                         </tr>
                     </tbody>
@@ -135,6 +138,7 @@ export default {
     props:['selected','services','analyses'],
     data(){
         return {
+            currentUrl: window.location.origin,
             samples : [],
             mark: false,
         }
@@ -168,6 +172,9 @@ export default {
         },
         openAnalysis(){
             (this.samples.length > 0) ? this.$refs.analysis.show(this.samples,this.selected.laboratory_type) : '';
+        },
+        openCertificate(id){
+            window.open(this.currentUrl + '/samples?option=print&id='+id);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');

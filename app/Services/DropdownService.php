@@ -102,8 +102,9 @@ class DropdownService
     }
 
     public function laboratory_types(){
+        $lab_id = array_column($this->ids, 'value');
         $query = ListDropdown::query()->where('classification','Laboratory');
-        ($this->ids) ? $query->whereIn('id',$this->ids) : '';
+        ($lab_id) ? $query->whereIn('id',$lab_id) : '';
         $data = $query->get()->map(function ($item) {
             return [
                 'value' => $item->id,

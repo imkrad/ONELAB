@@ -95,17 +95,31 @@ class SaveService
     }
 
     private function generateCode($data){
+        $labs = json_decode($this->configuration->laboratories,true);
+        $specificValue = $data->laboratory_type;
+        $lab = array_values(array_filter($labs, function ($object) use ($specificValue) {
+            return $object['value'] === $specificValue;
+        }));
+        $tsr_count = $lab[0]['tsr_count'];
+
         $laboratory_type = $data->laboratory_type;
         $lab = Laboratory::where('id',$this->laboratory)->first();
         $year = date('Y'); 
         $lab_type = ListDropdown::select('others')->where('id',$laboratory_type)->first();
         $c = Tsr::where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type)
         ->whereYear('created_at',$year)->where('code','!=',NULL)->count();
-        $code = $lab->code.'-'.date('m').date('Y').'-'.$lab_type->others.'-'.str_pad(($c+1), 4, '0', STR_PAD_LEFT);  
+        $code = $lab->code.'-'.date('m').date('Y').'-'.$lab_type->others.'-'.str_pad(($tsr_count+$c+1), 4, '0', STR_PAD_LEFT);  
         return $code;
     }
 
     private function generateSampleCode($data){
+        $labs = json_decode($this->configuration->laboratories,true);
+        $specificValue = $data->laboratory_type;
+        $lab = array_values(array_filter($labs, function ($object) use ($specificValue) {
+            return $object['value'] === $specificValue;
+        }));
+        $sample_count = $lab[0]['sample_count'];
+
         $laboratory_type = $data->laboratory_type;
         $year = ($this->configuration->samplecode_year) ? '-'.date('Y') : '';
         $lab = Laboratory::where('id',$this->laboratory)->first();
@@ -114,7 +128,7 @@ class SaveService
         $c = TsrSample::whereHas('tsr',function ($query) use ($laboratory_type) {
             $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type);
         })->whereYear('created_at',$year)->where('code','!=','NULL')->count();
-        return $lab_type->others.'-'.str_pad(($c+1), 4, '0', STR_PAD_LEFT); 
+        return $lab_type->others.'-'.str_pad(($sample_count+$c+1), 5, '0', STR_PAD_LEFT); 
     }
 
     private function report($id){

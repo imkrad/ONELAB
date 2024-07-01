@@ -57,19 +57,21 @@
                         mode="multiple"
                         placeholder="Select Laboratory"/>
                 </div>
-                <div class="col-md-6">
-                    <b-list-group>
-                        <b-list-group-item v-for="(list,index) in leftColumn" v-bind:key="index" class="d-flex justify-content-between align-items-center">
-                        {{list.name}} <i @click="remove(list.value)" class="ri-delete-bin-5-line align-middle me-2" style="cursor: pointer;"></i>
-                        </b-list-group-item>
-                    </b-list-group>
-                </div>
-                <div class="col-md-6">
-                     <b-list-group>
-                        <b-list-group-item v-for="(list,index) in rightColumn" v-bind:key="index" class="d-flex justify-content-between align-items-center">
-                        {{list.name}} <i @click="remove(list.value)" class="ri-delete-bin-5-line align-middle me-2" style="cursor: pointer;"></i>
-                        </b-list-group-item>
-                    </b-list-group>
+                <div class="col-md-12">
+                    <div class="row g-2" v-for="(list,index) in form.laboratories" v-bind:key="index">
+                        <div class="col-md-5">
+                            <TextInput type="text" :value="list.name" placeholder="Enter last TSR count" class="form-control" readonly/>
+                        </div>
+                        <div class="col-md-3">
+                            <TextInput type="text" v-model="list.tsr_count" placeholder="Enter last TSR count" class="form-control"/>
+                        </div>
+                        <div class="col-md-3">
+                            <TextInput type="text" v-model="list.sample_count" placeholder="Enter last sample count" class="form-control"/>
+                        </div>
+                        <div class="col-md-1">
+                            <button @click="remove(list.value)" class="btn btn-md btn-soft-danger float-end" type="button"><i class="ri-close-circle-fill align-bottom"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
              <center>
@@ -107,7 +109,12 @@ export default {
     },
     watch: {
         'laboratory'(){
-            this.form.laboratories = this.laboratory.map(item => item.value);
+            this.form.laboratories = this.laboratory.map(item => ({
+                value: item.value,
+                name: item.name,
+                tsr_count: null,
+                sample_count: null
+            }));
         },
     },
     computed: {

@@ -167,7 +167,7 @@ class ListMenusTableSeeder extends Seeder
                 'name' => 'TS Requests',
                 'icon' => 'ri-hand-coin-fill',
                 'route' => '/requests',
-                'path' => 'Modules/Requests',
+                'path' => 'Modules/Tsr',
                 'group' => 'Menu',
                 'order' => 5,
                 'has_child' => 0,

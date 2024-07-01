@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tsr_reports', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->json('information');
+            $table->longText('information');
             $table->bigInteger('tsr_id')->unsigned()->index();
             $table->foreign('tsr_id')->references('id')->on('tsrs')->onDelete('cascade');
             $table->timestamps();

@@ -91,8 +91,8 @@ class SampleService
         ->with('tsr:id,code,created_at,customer_id','tsr.customer:id,name_id,name,is_main','tsr.customer.customer_name:id,name,has_branches','tsr.customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','tsr.customer.address.region:code,name,region','tsr.customer.address.province:code,name','tsr.customer.address.municipality:code,name','tsr.customer.address.barangay:code,name')
         ->where('id',$id)->first();
         // return $sample;
-        $qrCodeBase64 = $this->generateQrCodeBase64($id);
-        dd($qrCodeBase64);
+        // $qrCodeBase64 = $this->generateQrCodeBase64($id);
+        // dd($qrCodeBase64);
 
         $array = [
             'configuration' => $this->configuration,
