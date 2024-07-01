@@ -24,7 +24,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="menu-title">
+                <!-- <li class="menu-title">
                     <i class="ri-more-fill"></i>
                     <span data-key="krad-lists"> Service </span>
                 </li>
@@ -44,7 +44,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 <template v-if="$page.props.user.data.role === 'Administrator'">
                 <li class="menu-title">
                     <i class="ri-more-fill"></i>

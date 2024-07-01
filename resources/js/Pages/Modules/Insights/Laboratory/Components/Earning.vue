@@ -55,11 +55,11 @@ export default {
     },
     methods: {
         setupEchoListener() {
-            window.Echo.channel('system-maintenance')
-                .listen('SystemMaintenanceEvent', (event) => {
-                    alert(event.time);
-                    console.log(event);
-                });
+            // window.Echo.channel('system-maintenance')
+            // .listen('SystemMaintenanceEvent', (event) => {
+            //     alert(event.time);
+            //     console.log(event);
+            // });
         },
         percentage(data){
             return (_.divide(data, this.total)*100).toFixed(2)+'%';

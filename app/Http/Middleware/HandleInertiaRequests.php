@@ -92,7 +92,7 @@ class HandleInertiaRequests extends Middleware
             'configuration' => Configuration::where('id',1)->first(),
             'menus' => [
                 'menus' => $menus,
-                'services' => $services,
+                // 'services' => $services,
                 'lists' => $listahan
             ]
         ];

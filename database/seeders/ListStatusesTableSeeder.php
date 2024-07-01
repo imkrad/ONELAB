@@ -32,7 +32,7 @@ class ListStatusesTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'name' => 'Waiting',
+                'name' => 'For Payment',
                 'type' => 'Request',
                 'color' => 'bg-dark',
                 'others' => 'text-dark',

@@ -192,6 +192,18 @@
     "file": "assets/remixicon-B83Wci9r.woff2",
     "src": "public/fonts/remixicon.woff2"
   },
+  "public/images/apps/chatbox.png": {
+    "file": "assets/chatbox-DnuZYIu7.png",
+    "src": "public/images/apps/chatbox.png"
+  },
+  "public/images/apps/inventory.png": {
+    "file": "assets/inventory-DCAGjWxa.png",
+    "src": "public/images/apps/inventory.png"
+  },
+  "public/images/apps/testservices.png": {
+    "file": "assets/testservices-BL0ePEow.png",
+    "src": "public/images/apps/testservices.png"
+  },
   "public/images/cover-pattern.png": {
     "file": "assets/cover-pattern-CzcjCYXt.png",
     "src": "public/images/cover-pattern.png"
@@ -225,7 +237,7 @@
     "src": "public/images/sidebar/img-4.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-Dig8s0Yz.js",
+    "file": "assets/app-C6cBsdtd.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -242,12 +254,15 @@
       "node_modules/leaflet/dist/leaflet-src.esm.js"
     ],
     "css": [
-      "assets/app-D8ky5sf5.css"
+      "assets/app-Df27hdRf.css"
     ],
     "assets": [
       "assets/logo-sm-BMbbSDmV.png",
       "assets/logo-dark-DGKr6nTV.png",
       "assets/logo-light-CqfqkvTN.png",
+      "assets/testservices-BL0ePEow.png",
+      "assets/inventory-DCAGjWxa.png",
+      "assets/chatbox-DnuZYIu7.png",
       "assets/img-1-C6VsSbnm.jpg",
       "assets/img-2-B0ULeiCa.jpg",
       "assets/img-3-h1U1KdmN.jpg",

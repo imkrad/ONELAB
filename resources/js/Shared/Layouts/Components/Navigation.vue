@@ -206,7 +206,7 @@ export default {
               <img :src="entry.flag" alt="user-image" class="me-2 rounded" height="18">
               <span class="align-middle">{{ entry.title }}</span>
             </BLink>
-          </BDropdown>
+          </BDropdown> -->
 
           <BDropdown class="dropdown" variant="ghost-secondary" dropstart
             :offset="{ alignmentAxis: 57, crossAxis: 0, mainAxis: -42 }"
@@ -222,7 +222,7 @@ export default {
                 </BCol>
                 <BCol cols="auto">
                   <BLink href="#!" class="btn btn-sm btn-soft-info">
-                    View All Apps
+                    View 
                     <i class="ri-arrow-right-s-line align-middle"></i>
                   </BLink>
                 </BCol>
@@ -233,46 +233,25 @@ export default {
               <BRow class="g-0">
                 <BCol>
                   <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/brands/github.png" alt="Github" />
-                    <span>GitHub</span>
+                    <img src="@assets/images/apps/testservices.png" alt="Github" />
+                    <span>Testservices</span>
                   </BLink>
                 </BCol>
                 <BCol>
                   <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/brands/bitbucket.png" alt="bitbucket" />
-                    <span>Bitbucket</span>
+                    <img src="@assets/images/apps/inventory.png" alt="bitbucket" />
+                    <span>Inventory</span>
                   </BLink>
                 </BCol>
                 <BCol>
                   <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/brands/dribbble.png" alt="dribbble" />
-                    <span>Dribbble</span>
-                  </BLink>
-                </BCol>
-              </BRow>
-
-              <BRow class="g-0">
-                <BCol>
-                  <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/brands/dropbox.png" alt="dropbox" />
-                    <span>Dropbox</span>
-                  </BLink>
-                </BCol>
-                <BCol>
-                  <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/brands/mail_chimp.png" alt="mail_chimp" />
-                    <span>Mail Chimp</span>
-                  </BLink>
-                </BCol>
-                <BCol>
-                  <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/brands/slack.png" alt="slack" />
-                    <span>Slack</span>
+                    <img src="@assets/images/apps/chatbox.png" alt="dribbble" />
+                    <span>Chatbox</span>
                   </BLink>
                 </BCol>
               </BRow>
             </div>
-          </BDropdown> -->
+          </BDropdown> 
 
        
 
@@ -290,7 +269,7 @@ export default {
             </BButton>
           </div>
 
-          <!-- <BDropdown variant="ghost-dark" dropstart class="ms-1 dropdown"
+          <BDropdown variant="ghost-dark" dropstart class="ms-1 dropdown"
             :offset="{ alignmentAxis: 57, crossAxis: 0, mainAxis: -42 }"
             toggle-class="btn-icon btn-topbar rounded-circle arrow-none" id="page-header-notifications-dropdown"
             menu-class="dropdown-menu-lg dropdown-menu-end p-0" auto-close="outside">
@@ -319,7 +298,7 @@ export default {
             <BTabs nav-class="dropdown-tabs nav-tab-custom bg-primary px-2 pt-2">
               <BTab title=" All (4) " class="tab-pane fade py-2 ps-2 show" id="all-noti-tab" role="tabpanel">
                 <simplebar data-simplebar style="max-height: 300px" class="pe-2">
-                  <div class="text-reset notification-item d-block dropdown-item position-relative">
+                  <!-- <div class="text-reset notification-item d-block dropdown-item position-relative">
                     <div class="d-flex">
                       <div class="avatar-xs me-3 flex-shrink-0">
                         <span class="avatar-title bg-info-subtle text-info rounded-circle fs-16">
@@ -344,30 +323,7 @@ export default {
                     </div>
                   </div>
 
-                  <div class="text-reset notification-item d-block dropdown-item position-relative">
-                    <div class="d-flex">
-                      <img src="@assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs flex-shrink-0"
-                        alt="user-pic" />
-                      <div class="flex-grow-1">
-                        <BLink href="#!" class="stretched-link">
-                          <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                            Angela Bernier
-                          </h6>
-                        </BLink>
-                        <div class="fs-13 text-muted">
-                          <p class="mb-1">
-                            Answered to your comment on the cash flow forecast's graph 🔔.
-                          </p>
-                        </div>
-                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                          <span><i class="mdi mdi-clock-outline"></i> 48 min ago</span>
-                        </p>
-                      </div>
-                      <div class="px-2 fs-15">
-                        <input class="form-check-input" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
+                  
 
                   <div class="text-reset notification-item d-block dropdown-item position-relative">
                     <div class="d-flex">
@@ -391,33 +347,7 @@ export default {
                         <input class="form-check-input" type="checkbox" />
                       </div>
                     </div>
-                  </div>
-
-                  <div class="text-reset notification-item d-block dropdown-item position-relative">
-                    <div class="d-flex">
-                      <img src="@assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs flex-shrink-0"
-                        alt="user-pic" />
-                      <div class="flex-grow-1">
-                        <BLink href="#!" class="stretched-link">
-                          <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                            Maureen Gibson
-                          </h6>
-                        </BLink>
-                        <div class="fs-13 text-muted">
-                          <p class="mb-1">
-                            We talked about a project on linkedin.
-                          </p>
-                        </div>
-                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                          <span><i class="mdi mdi-clock-outline"></i> 4 hrs
-                            ago</span>
-                        </p>
-                      </div>
-                      <div class="px-2 fs-15">
-                        <input class="form-check-input" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
+                  </div> -->
 
                   <div class="my-3 text-center">
                     <BButton type="button" variant="soft-success">
@@ -428,136 +358,33 @@ export default {
                 </simplebar>
               </BTab>
 
-              <BTab title="Messages" class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
+              <BTab title="Requests" class="tab-pane fade py-2 ps-2" id="messages-tab" role="tabpanel"
                 aria-labelledby="messages-tab">
                 <simplebar data-simplebar style="max-height: 300px" class="pe-2">
-                  <div class="text-reset notification-item d-block dropdown-item">
-                    <div class="d-flex">
-                      <img src="@assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs"
-                        alt="user-pic" />
-                      <div class="flex-grow-1">
-                        <BLink href="#!" class="stretched-link">
-                          <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                            James Lemire
-                          </h6>
-                        </BLink>
-                        <div class="fs-13 text-muted">
-                          <p class="mb-1">
-                            We talked about a project on linkedin.
-                          </p>
-                        </div>
-                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                          <span><i class="mdi mdi-clock-outline"></i> 30 min ago</span>
-                        </p>
-                      </div>
-                      <div class="px-2 fs-15">
-                        <input class="form-check-input" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="text-reset notification-item d-block dropdown-item">
-                    <div class="d-flex">
-                      <img src="@assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs"
-                        alt="user-pic" />
-                      <div class="flex-grow-1">
-                        <BLink href="#!" class="stretched-link">
-                          <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                            Angela Bernier
-                          </h6>
-                        </BLink>
-                        <div class="fs-13 text-muted">
-                          <p class="mb-1">
-                            Answered to your comment on the cash flow
-                            forecast's graph 🔔.
-                          </p>
-                        </div>
-                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                          <span><i class="mdi mdi-clock-outline"></i> 2 hrs
-                            ago</span>
-                        </p>
-                      </div>
-                      <div class="px-2 fs-15">
-                        <input class="form-check-input" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="text-reset notification-item d-block dropdown-item">
-                    <div class="d-flex">
-                      <img src="@assets/images/users/avatar-6.jpg" class="me-3 rounded-circle avatar-xs"
-                        alt="user-pic" />
-                      <div class="flex-grow-1">
-                        <BLink href="#!" class="stretched-link">
-                          <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                            Kenneth Brown
-                          </h6>
-                        </BLink>
-                        <div class="fs-13 text-muted">
-                          <p class="mb-1">
-                            Mentionned you in his comment on 📃 invoice
-                            #12501.
-                          </p>
-                        </div>
-                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                          <span><i class="mdi mdi-clock-outline"></i> 10 hrs
-                            ago</span>
-                        </p>
-                      </div>
-                      <div class="px-2 fs-15">
-                        <input class="form-check-input" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="text-reset notification-item d-block dropdown-item">
-                    <div class="d-flex">
-                      <img src="@assets/images/users/avatar-8.jpg" class="me-3 rounded-circle avatar-xs"
-                        alt="user-pic" />
-                      <div class="flex-grow-1">
-                        <BLink href="#!" class="stretched-link">
-                          <h6 class="mt-0 mb-1 fs-13 fw-semibold">
-                            Maureen Gibson
-                          </h6>
-                        </BLink>
-                        <div class="fs-13 text-muted">
-                          <p class="mb-1">
-                            We talked about a project on linkedin.
-                          </p>
-                        </div>
-                        <p class="mb-0 fs-11 fw-medium text-uppercase text-muted">
-                          <span><i class="mdi mdi-clock-outline"></i> 3 days
-                            ago</span>
-                        </p>
-                      </div>
-                      <div class="px-2 fs-15">
-                        <input class="form-check-input" type="checkbox" />
-                      </div>
-                    </div>
-                  </div>
+                  
 
                   <div class="my-3 text-center">
                     <BButton type="button" variant="soft-success">
-                      View All Messages
+                      View All Requests
                       <i class="ri-arrow-right-line align-middle"></i>
                     </BButton>
                   </div>
                 </simplebar>
               </BTab>
 
-              <BTab title="Alerts" class="p-4">
+              <BTab title="Referrals" class="p-4">
                 <simplebar data-simplebar style="max-height: 300px" class="pe-2">
                   <div class="w-25 w-sm-50 pt-3 mx-auto">
                   </div>
                   <div class="text-center pb-5 mt-2">
-                    <h6 class="fs-18 fw-semibold lh-base">
-                      Hey! You have no any notifications
+                    <h6 class="fs-14 fw-semibold lh-base">
+                      Hey! You have no any referrals
                     </h6>
                   </div>
                 </simplebar>
               </BTab>
             </BTabs>
-          </BDropdown> -->
+          </BDropdown>
 
           <BDropdown variant="link" class="ms-sm-3 header-item topbar-user" toggle-class="rounded-circle arrow-none" menu-class="dropdown-menu-end" :offset="{ alignmentAxis: -14, crossAxis: 0, mainAxis: 0 }">
             <template #button-content>
