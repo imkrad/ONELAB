@@ -7,10 +7,10 @@
         html * {
             font-family:Arial, Helvetica, sans-serif;
         }
-        table,
-        td,
-        th {
-        
+        .results table,
+        .results td,
+        .results th {
+            border: .5px solid black;
         }
 
         table {
@@ -23,7 +23,7 @@
             vertical-align: top;
         }
 
-        td {
+        .results td {
             padding: 3px;
             /* vertical-align: top; */
             /* text-align: center; */
@@ -89,11 +89,11 @@ label {
             
             <center style="font-size: 13px; color:#000; font-weight: bold; padding: 2px; margin-top: -10px;">TEST REPORT</center>
             
-            <table style="border: none; font-size: 10px; margin-top: 0px;">
+            <table style="border: none; font-size: 11px; margin-top: 0px;">
                 <tbody>
                     <tr style="border: none;">
-                        <td width="30%">TSR Number</td>
-                        <td width="1%">:</td>
+                        <td width="25%">TSR Number</td>
+                        <td width="2%">:</td>
                         <td>{{$sample->tsr->code}}</td>
                     </tr>
                     <tr style="border: none;">
@@ -109,17 +109,17 @@ label {
                     <tr>
                         <td>Sample Submitted</td>
                         <td>:</td>
-                        <td></td>
+                        <td>{{$sample->name}}</td>
                     </tr>
                     <tr>
                         <td>Sample Descriptions</td>
                         <td>:</td>
-                        <td></td>
+                        <td><em>{{$sample->description}}</em>, {{$sample->customer_description}}</td>
                     </tr>
                     <tr>
                         <td>Submitted by</td>
                         <td>:</td>
-                        <td>{{$sample->tsr->customer->customer_name}}</td>
+                        <td style="text-transform: uppercase; font-weight: bold;"><em>{{($sample->tsr->customer->is_main) ? $sample->tsr->customer->customer_name->name : $sample->tsr->customer->customer_name->name.' - '.$sample->tsr->customer->name}}</em></td>
                     </tr>
                     <tr>
                         <td>Address</td>
@@ -128,32 +128,8 @@ label {
                     </tr>
                 </tbody>
             </table>
-            <!-- <table style="border: hidden; font-size: 10px; margin-top: 0px;">
-                <tbody>
-                    <tr>
-                        <td style="border-right-style: hidden; border-bottom-style: hidden;" width="30%">TSR Number</td>
-                        <td style="border-bottom-style: hidden;">:</td>
-                    </tr>
-                    <tr>
-                        <td style="border-right-style: hidden; border-bottom-style: hidden;">Date Submitted</td>
-                        <td style="border-bottom-style: hidden;">:</td>
-                    </tr>
-                    <tr>
-                        <td style="border-right-style: hidden; border-bottom-style: hidden;">Date Analyzed</td>
-                        <td style="border-bottom-style: hidden;">:</td>
-                    </tr>
-                    <tr>
-                        <td style="border-right-style: hidden; border-bottom-style: hidden;">Sample Submitted</td>
-                        <td style="border-bottom-style: hidden;">:</td>
-                    </tr>
-                    <tr>
-                        <td style="border-right-style: hidden; border-bottom-style: hidden;">Sample Descriptions</td>
-                        <td style="border-bottom-style: hidden;">:</td>
-                    </tr>
-                </tbody>
-            </table> -->
             <h6 style="font-size: 11px; margin-top: 12px;">CHEMICAL / MECHANICAL TEST RESULT(S):</h6>
-            <table style="border: 1px solid black; margin-top: -22px;">
+            <table style="border: 1px solid black; margin-top: -22px;" class="results">
                 <thead style="background-color:#edf1f5; padding: 5px; font-size: 11px;">
                     <tr>    
                         <th width="30%">PARAMETER</th>
@@ -162,6 +138,13 @@ label {
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($sample['analyses'] as $index=>$analysis)
+                    <tr style="font-size: 11px; text-align:center;">
+                        <td>{{$analysis['testservice']['testname']['name']}}</td>
+                        <td></td>
+                        <td>{{$analysis['testservice']['method']['method']['name']}}</td>
+                    </tr>
+                    @endforeach
                     <tr>
                         <td style="font-size: 9px;" colspan="3"><center>***** NOTHING FOLLOWS *****</center></td>
                     </tr>

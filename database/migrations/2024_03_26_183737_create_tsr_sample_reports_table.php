@@ -15,6 +15,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('code')->unique();
+            $table->longText('information');
             $table->bigInteger('sample_id')->unsigned()->index();
             $table->foreign('sample_id')->references('id')->on('tsr_samples')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->nullable();

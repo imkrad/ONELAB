@@ -17,7 +17,7 @@
         </BCard>
     
         <simplebar data-simplebar style="height: calc(100vh - 395px);">
-            <BRow>
+            <BRow v-if="pendings.length > 0">
                 <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of pendings" :key="index">
                     <div class="card" style="cursor: pointer;" @click="openShow(item,'Pending')">
                         <div class="card-header">
@@ -55,6 +55,7 @@
                     </div>
                 </BCol>
             </BRow>
+            <div v-else class="alert alert-light mb-0 text-center" role="alert"><span class="fs-12 text-muted">No test available</span></div>
         </simplebar>
     </div>
     <div class="col-md-4 mt-3">

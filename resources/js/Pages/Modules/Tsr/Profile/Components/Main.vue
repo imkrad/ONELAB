@@ -48,7 +48,7 @@
                                 <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
                                     <i class="ri-delete-bin-fill align-bottom"></i>
                                 </b-button>
-                                <b-button v-if="selected.status.name == 'Completed'" @click="openCertificate(list.id)" variant="soft-primary" v-b-tooltip.hover title="Certificate" size="sm">
+                                <b-button v-if="selected.status.name == 'Completed'" @click="openCertificate(list)" variant="soft-primary" v-b-tooltip.hover title="Certificate" size="sm">
                                     <i class="ri-file-paper-2-fill align-bottom"></i>
                                 </b-button>
                             </td>
@@ -106,7 +106,7 @@
                                 <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                     <i class="ri-eye-fill align-bottom"></i>
                                 </b-button>
-                                <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteAnalysis(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
+                                <b-button v-if="selected.status.name == 'Pending' || selected.status.name == 'For Payment' && analyses.length > 1" @click="openDeleteAnalysis(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
                                     <i class="ri-delete-bin-fill align-bottom"></i>
                                 </b-button>
                             </td>
@@ -126,6 +126,7 @@
     <Sample ref="sample"/>
     <Analysis @success="mark = false" ref="analysis"/>
     <Service :services="services" ref="service"/>
+    <Certificate ref="certificate"/>
 </template>
 <script>
 import simplebar from "simplebar-vue";
@@ -133,8 +134,9 @@ import Delete from '../Modals/Delete.vue';
 import Sample from '../Modals/Sample.vue';
 import Service from '../Modals/Service.vue';
 import Analysis from '../Modals/Analysis.vue';
+import Certificate from '../Modals/Certificate.vue';
 export default {
-    components: { simplebar, Delete, Sample, Service, Analysis },
+    components: { simplebar, Delete, Sample, Service, Analysis, Certificate },
     props:['selected','services','analyses'],
     data(){
         return {
@@ -173,8 +175,9 @@ export default {
         openAnalysis(){
             (this.samples.length > 0) ? this.$refs.analysis.show(this.samples,this.selected.laboratory_type) : '';
         },
-        openCertificate(id){
-            window.open(this.currentUrl + '/samples?option=print&id='+id);
+        openCertificate(data){
+            // window.open(this.currentUrl + '/samples?option=print&id='+id);
+            this.$refs.certificate.show(data,this.selected.id);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');
