@@ -12,7 +12,7 @@ Route::middleware(['2fa','auth','verified'])->group(function () {
 });
 
 Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function () {
-    Route::get('/', [App\Http\Controllers\WelcomeController::class, 'landing']);
+    Route::get('/', [App\Http\Controllers\DashboardController::class, 'index']);
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 
     Route::resource('/customers', App\Http\Controllers\CustomerController::class);
