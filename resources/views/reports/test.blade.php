@@ -10,7 +10,7 @@
         table,
         td,
         th {
-            border: .5px solid black;
+        
         }
 
         table {
@@ -91,12 +91,12 @@ label {
             
             <table style="border: none; font-size: 10px; margin-top: 0px;">
                 <tbody>
-                    <tr>
+                    <tr style="border: none;">
                         <td width="30%">TSR Number</td>
                         <td width="1%">:</td>
                         <td>{{$sample->tsr->code}}</td>
                     </tr>
-                    <tr>
+                    <tr style="border: none;">
                         <td>Date Submitted</td>
                         <td>:</td>
                         <td>{{$sample->tsr->created_at}}</td>
