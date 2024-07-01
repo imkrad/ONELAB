@@ -60,13 +60,16 @@
                 <div class="col-md-12">
                     <div class="row g-2" v-for="(list,index) in form.laboratories" v-bind:key="index">
                         <div class="col-md-5">
-                            <TextInput type="text" :value="list.name" placeholder="Enter last TSR count" class="form-control" readonly/>
+                            <TextInput type="text" :value="list.name" class="form-control" readonly/>
                         </div>
-                        <div class="col-md-3">
-                            <TextInput type="text" v-model="list.tsr_count" placeholder="Enter last TSR count" class="form-control"/>
+                        <div class="col-md-2">
+                            <TextInput type="text" v-model="list.tsr_count" placeholder="TSR count" class="form-control"/>
                         </div>
-                        <div class="col-md-3">
-                            <TextInput type="text" v-model="list.sample_count" placeholder="Enter last sample count" class="form-control"/>
+                        <div class="col-md-2">
+                            <TextInput type="text" v-model="list.sample_count" placeholder="Sample count" class="form-control"/>
+                        </div>
+                        <div class="col-md-2">
+                            <TextInput type="text" v-model="list.report_count" placeholder="Report count" class="form-control"/>
                         </div>
                         <div class="col-md-1">
                             <button @click="remove(list.value)" class="btn btn-md btn-soft-danger float-end" type="button"><i class="ri-close-circle-fill align-bottom"></i></button>
@@ -113,7 +116,8 @@ export default {
                 value: item.value,
                 name: item.name,
                 tsr_count: null,
-                sample_count: null
+                sample_count: null,
+                report_count: null
             }));
         },
     },

@@ -26,6 +26,16 @@ class Wallet extends Model
         return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
     }
 
+    public function setAvailableAttribute($value)
+    {
+        $this->attributes['total'] = trim(str_replace(',','',$value),'₱');
+    }
+
+    public function getAvailableAttribute($value)
+    {
+        return '₱'.number_format($value,2,'.',',');
+    }
+
     public function getUpdatedAtAttribute($value)
     {
         return date('M d, Y g:i a', strtotime($value));

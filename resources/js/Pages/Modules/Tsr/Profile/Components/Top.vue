@@ -19,8 +19,10 @@
                                             </div>
                                             <div class="vr"></div>
                                             <div><i class="ri-account-circle-fill align-bottom me-1"></i>{{selected.conforme}}</div>
-                                                <div class="vr"></div>
+                                            <div class="vr"></div>
                                             <div><i class="ri-phone-fill align-bottom me-1"></i>{{selected.conforme_no}}</div>
+                                            <div class="vr" v-if="selected.status.name === 'Pending' || selected.status.name === 'For Payment'"></div>
+                                            <div v-if="selected.status.name === 'Pending' || selected.status.name === 'For Payment'"><i class="ri-wallet-3-fill align-bottom me-1"></i>{{selected.customer.wallet.available}}</div>
                                         </div>
                                     </div>
                                 </b-col>

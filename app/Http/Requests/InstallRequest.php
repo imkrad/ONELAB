@@ -23,6 +23,7 @@ class InstallRequest extends FormRequest
             'laboratories.*.value' => 'required|integer',
             'laboratories.*.tsr_count' => 'required|integer',
             'laboratories.*.sample_count' => 'required|integer',
+            'laboratories.*.report_count' => 'required|integer',
         ];
     }
 }

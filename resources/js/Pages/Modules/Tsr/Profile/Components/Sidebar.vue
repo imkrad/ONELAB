@@ -127,6 +127,10 @@
                     <div class="table-responsive">
                         <table class="table table-bordered mb-0">
                             <tbody class="fs-12">
+                                <!-- <tr v-if="selected.customer.wallet">
+                                    <td>Wallet :</td>
+                                    <td class="text-end" id="cart-subtotal">{{selected.customer.wallet.available}}</td>
+                                </tr> -->
                                 <tr>
                                     <td>Sub Total :</td>
                                     <td class="text-end" id="cart-subtotal">{{selected.payment.subtotal}}</td>
