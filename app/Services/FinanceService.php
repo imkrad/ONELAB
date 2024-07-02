@@ -171,7 +171,7 @@ class FinanceService
                                 $amount = trim(str_replace(',','',$request->cheque_amount),'₱');
                                 $total = trim(str_replace(',','',$request->total),'₱');
                                 
-                                if($amount >= $total){
+                                if($amount > $total){
                                     $total = $amount - $total;
                                     $customer_id = $request->selected['customer']['id'];
 
@@ -211,6 +211,8 @@ class FinanceService
                                             \DB::rollback();
                                         }
                                     }
+                                }else{
+                                    \DB::commit();  
                                 }
                             }else{
                                 $data = 'error';
