@@ -4,7 +4,7 @@
             <b-row class="g-2">
                 <b-col lg>
                     <div class="input-group mb-2">
-                        <span class="input-group-text fw-semibold fs-12" style="width: 100px;">Samples</span>
+                        <span class="input-group-text fw-semibold fs-12" style="width: 100px;">{{selected.samples.length}} Samples</span>
                         <input type="text"  placeholder="Search Request" class="form-control" style="width: 55%;">
                         <span v-if="selected.laboratory_type === 11" @click="openService(id)" class="input-group-text" v-b-tooltip.hover title="Add Service" style="cursor: pointer;"> 
                             <i class="ri-add-circle-fill text-primary search-icon"></i>
@@ -52,7 +52,7 @@
                                     <i class="ri-file-paper-2-fill align-bottom"></i>
                                 </b-button>
                                 
-                                <b-button v-if="selected.status.name == 'Pending'" @click="openCopy(list)" variant="soft-danger" class="ms-1" v-b-tooltip.hover title="Copy" size="sm">
+                                <b-button v-if="selected.status.name == 'Pending'" @click="openCopy(list)" variant="soft-success" class="ms-1" v-b-tooltip.hover title="Copy" size="sm">
                                     <i class="ri-file-copy-2-line align-bottom"></i>
                                 </b-button>
                             </td>
