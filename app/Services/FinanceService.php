@@ -168,9 +168,10 @@ class FinanceService
                             $cheque->date_at = $request->cheque_cheque_at;
                             $cheque->receipt_id = $data->id;
                             if($cheque->save()){
-                                dd($cheque);
                                 $amount = trim(str_replace(',','',$request->cheque_amount),'₱');
                                 $total = trim(str_replace(',','',$request->total),'₱');
+                                
+                                dd($amount);
                                 if($amount > $total){
                                     $total = $amount - $total;
                                     $customer_id = $request->selected['customer']['id'];
