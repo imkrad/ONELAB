@@ -21,7 +21,8 @@ class TsrPayment extends Model
         'status_id',
         'paid_at',
         'is_paid',
-        'is_free'
+        'is_free',
+        'has_deduction'
     ];
 
     public function tsr()
@@ -47,6 +48,11 @@ class TsrPayment extends Model
     public function discounted()
     {
         return $this->belongsTo('App\Models\ListDiscount', 'discount_id', 'id');
+    }
+
+    public function deduction()
+    {
+        return $this->hasOne('App\Models\TsrPaymentDeduction', 'payment_id');
     }
 
     public function setSubtotalAttribute($value)

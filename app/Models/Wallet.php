@@ -28,7 +28,7 @@ class Wallet extends Model
 
     public function setAvailableAttribute($value)
     {
-        $this->attributes['total'] = trim(str_replace(',','',$value),'₱');
+        $this->attributes['available'] = trim(str_replace(',','',$value),'₱');
     }
 
     public function getAvailableAttribute($value)

@@ -263,8 +263,8 @@ export default {
             this.form.errors[field] = false;
         },
         hide(){
-            // this.form.reset();
-            // this.form.clearErrors();
+            this.form.reset();
+            this.form.clearErrors();
             // this.form.member_id = null;
             // this.form.region_code = null;
             // this.form.province_code = null;

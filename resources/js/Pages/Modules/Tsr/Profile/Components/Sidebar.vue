@@ -119,7 +119,10 @@
             </td>
         </tr>
         <tr>
-            <td style="border-right: none; border-left: none;"><span class="fw-semibold fs-12 ms-2">Payment Details</span></td>
+            <td style="border-right: none; border-left: none;">
+                <span class="fw-semibold fs-12 ms-2">Payment Details</span>
+                <i class="ri-information-fill fs-20 mb-n2 mt-n1 text-primary float-end" style="cursor: pointer;"></i>
+            </td>
         </tr>
         <tr style="border-bottom: none; border-left: none;">
             <td style="border-right: none; border-bottom: none; border-left: none;">
@@ -127,17 +130,17 @@
                     <div class="table-responsive">
                         <table class="table table-bordered mb-0">
                             <tbody class="fs-12">
-                                <!-- <tr v-if="selected.customer.wallet">
-                                    <td>Wallet :</td>
-                                    <td class="text-end" id="cart-subtotal">{{selected.customer.wallet.available}}</td>
-                                </tr> -->
                                 <tr>
-                                    <td>Sub Total :</td>
-                                    <td class="text-end" id="cart-subtotal">{{selected.payment.subtotal}}</td>
+                                    <td width="50%">Sub Total :</td>
+                                    <td width="50%" class="text-end" id="cart-subtotal">{{selected.payment.subtotal}}</td>
                                 </tr>
                                 <tr>
                                     <td><span v-if="selected.payment.discounted.value != 0">({{selected.payment.discounted.value}}%)</span>  Discount : </td>
                                     <td class="text-end" id="cart-discount">{{selected.payment.discount}}</td>
+                                </tr>
+                                <tr v-if="selected.payment.has_deduction">
+                                    <td>Wallet Deduction:</td>
+                                    <td class="text-end" id="cart-subtotal">{{selected.payment.deduction.amount}}</td>
                                 </tr>
                                 <tr class="table-active">
                                     <th>Total :</th>

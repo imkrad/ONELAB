@@ -7,6 +7,7 @@
                 <li class="menu-title">
                     <span data-key="t-menu"> Menu </span>
                 </li>
+                <template v-if="$page.props.user.data.assigned_lab === 1">
                 <li class="nav-item" v-for="(menu,index) in $page.props.menus.menus" v-bind:key="index">
                     <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="($page.component.startsWith(menu.main.path)) ? 'active' : 'collapsed'" :aria-expanded="($page.component.startsWith(menu.main.route)) ? true : false">
                         <i :class="menu.main.icon"></i>
@@ -24,6 +25,7 @@
                         </ul>
                     </div>
                 </li>
+                </template>
                 <!-- <li class="menu-title">
                     <i class="ri-more-fill"></i>
                     <span data-key="krad-lists"> Service </span>

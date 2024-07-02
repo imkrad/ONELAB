@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\Tsr;
 use App\Models\Wallet;
 use App\Models\WalletTransaction;
+use App\Models\TsrPaymentDeduction;
 use App\Models\UserRole;
 use App\Models\FinanceOp;
 use App\Models\TsrPayment;
@@ -62,32 +63,50 @@ class FinanceService
         $total = trim(str_replace(',','',$request->total),'₱');
         $wallet = Wallet::where('id',$wallet_id)->first();
         if($wallet){
-            $wallet->available = $wallet->available - $total;
+            $available = trim(str_replace(',','',$wallet->available),'₱');
+            $avail = ($available >= $total) ? $available - $total : 0;
+            $wallet->available = $avail;
             if($wallet->save()){
                 $code = date('Ymdgis');
                 $data = Tsr::where('id',$tsr_id)->first();
                 $data->transaction()->create([
                     'code' => $code,
                     'amount' => $total,
-                    'balance' => $wallet->available,
+                    'balance' => trim(str_replace(',','',$wallet->available),'₱'),
                     'is_credit' => 0,
                     'wallet_id' => $wallet->id
                 ]);
 
                 if($data){
-                    $payment = TsrPayment::where('id',$id)->update([
-                        'is_paid' => 1,
-                        'payment_id' => 129,
-                        'status_id' => 7,
-                        'collection_id' => 107,
-                        'or_number' => $code,
-                        'paid_at' => now()
-                    ]);
+                    if($available > $total){
+                        $payment = TsrPayment::where('id',$id)->update([
+                            'is_paid' => 1,
+                            'payment_id' => 129,
+                            'status_id' => 7,
+                            'collection_id' => 107,
+                            'or_number' => $code,
+                            'paid_at' => now()
+                        ]);
 
-                    if($payment){
-                        $tsr = Tsr::where('id',$tsr_id)->first();
-                        $tsr->status_id = 3;
-                        $tsr->save();
+                        if($payment){
+                            $tsr = Tsr::where('id',$tsr_id)->first();
+                            $tsr->status_id = 3;
+                            $tsr->save();
+                        }
+                    }else{
+                        $deduction = TsrPaymentDeduction::create([
+                            'code' => $code,
+                            'amount' => $available,
+                            'payment_id' => $id,
+                            'wallet_id' => $wallet_id,
+                            'user_id' => \Auth::user()->id
+                        ]);
+                        if($deduction){
+                            $p = TsrPayment::where('id',$id)->first();
+                            $p->has_deduction = 1;
+                            $p->total = trim(str_replace(',','',$p->total),'₱') - $available;
+                            $p->save();
+                        }
                     }
                 }
             }

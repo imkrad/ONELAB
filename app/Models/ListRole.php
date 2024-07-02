@@ -13,6 +13,9 @@ class ListRole extends Model
 
     protected $fillable = [
         'name',
-        'description'
+        'description',
+        'has_lab',
+        'is_lab',
+        'is_active'
     ];
 }
