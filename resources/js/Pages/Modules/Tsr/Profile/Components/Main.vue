@@ -52,7 +52,7 @@
                                     <i class="ri-file-paper-2-fill align-bottom"></i>
                                 </b-button>
                                 
-                                <b-button v-if="selected.status.name == 'Pending'" @click="openCopy(list)" variant="soft-danger" class="me-1" v-b-tooltip.hover title="Copy" size="sm">
+                                <b-button v-if="selected.status.name == 'Pending'" @click="openCopy(list)" variant="soft-danger" class="ms-1" v-b-tooltip.hover title="Copy" size="sm">
                                     <i class="ri-file-copy-2-line align-bottom"></i>
                                 </b-button>
                             </td>
