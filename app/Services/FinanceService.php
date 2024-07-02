@@ -163,7 +163,7 @@ class FinanceService
                         if($request->type === 'Cheque'){
                             $cheque = new FinanceReceiptDetail;
                             $cheque->number = $request->cheque_number;
-                            $cheque->amount = $request->cheque_amount;
+                            $cheque->amount = trim(str_replace(',','',$request->cheque_amount),'₱');
                             $cheque->bank = $request->cheque_bank;
                             $cheque->date_at = $request->cheque_cheque_at;
                             $cheque->receipt_id = $data->id;
