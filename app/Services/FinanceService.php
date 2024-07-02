@@ -161,6 +161,7 @@ class FinanceService
 
                     if($or->save()){
                         if($request->type === 'Cheque'){
+                            dd('wew');
                             $cheque = new FinanceReceiptDetail;
                             $cheque->number = $request->cheque_number;
                             $cheque->amount = $request->cheque_amount;
