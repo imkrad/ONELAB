@@ -40,6 +40,6 @@ class TsrSample extends Model
 
     public function setNameAttribute($value)
     {
-        $this->attributes['name'] = ucwords(strtolower($value));
+        $this->attributes['name'] = $value;
     }
 }
