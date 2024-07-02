@@ -104,6 +104,7 @@ class ViewService
         $data = new TsrViewResource(
             Tsr::query()
             ->with('samples')
+            ->with('service.service')
             ->with('received:id','received.profile:id,firstname,lastname,user_id')
             ->with('laboratory','laboratory_type:id,name','purpose:id,name','status:id,name,color,others')
             ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.wallet')
