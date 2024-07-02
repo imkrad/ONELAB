@@ -6,7 +6,7 @@
                     <div class="input-group mb-2">
                         <span class="input-group-text fw-semibold fs-12" style="width: 100px;">{{selected.samples.length}} Samples</span>
                         <input type="text"  placeholder="Search Request" class="form-control" style="width: 55%;">
-                        <span v-if="selected.laboratory_type === 11" @click="openService()" class="input-group-text" v-b-tooltip.hover title="Add Service" style="cursor: pointer;"> 
+                        <span v-if="selected.laboratory_type === 11 && selected.service == null" @click="openService()" class="input-group-text" v-b-tooltip.hover title="Add Service" style="cursor: pointer;"> 
                             <i class="ri-add-circle-fill text-primary search-icon"></i>
                         </span>
                         <span v-if="selected.status.name == 'Pending'" @click="openAnalysis()" class="input-group-text" v-b-tooltip.hover title="Add Analysis" style="cursor: pointer;"> 
