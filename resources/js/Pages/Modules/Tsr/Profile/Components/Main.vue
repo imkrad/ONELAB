@@ -26,6 +26,7 @@
                             <th width="5%" class="text-center">
                                 <input class="form-check-input fs-16" v-model="mark" type="checkbox" value="option" />
                             </th>
+                            <th>#</th>
                             <th width="20%">Sample Name</th>
                             <th width="65%">Description</th>
                             <th width="10%"></th>
@@ -36,6 +37,7 @@
                             <td width="5%" class="text-center">
                                 <input type="checkbox" v-model="list.selected" class="form-check-input" />
                             </td>
+                            <td>{{index+1}}</td>
                             <td width="20%">
                                 <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
                                 <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'Not yet available'}}</p>
