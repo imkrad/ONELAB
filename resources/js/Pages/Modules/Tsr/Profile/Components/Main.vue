@@ -109,6 +109,9 @@
                                 <b-button v-if="selected.status.name == 'Pending' || selected.status.name == 'For Payment' && analyses.length > 1" @click="openDeleteAnalysis(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
                                     <i class="ri-delete-bin-fill align-bottom"></i>
                                 </b-button>
+                                <b-button v-if="status.name == 'Pending'" @click="openCopy(list)" variant="soft-danger" class="me-1" v-b-tooltip.hover title="Copy" size="sm">
+                                    <i class="ri-file-copy-2-line align-bottom"></i>
+                                </b-button>
                             </td>
                         </tr>
                     </tbody>
@@ -178,6 +181,9 @@ export default {
         openCertificate(data){
             // window.open(this.currentUrl + '/samples?option=print&id='+id);
             this.$refs.certificate.show(data,this.selected.id);
+        },
+        openCopy(sample){
+            this.$refs.sample.copy(this.selected.id,this.selected.laboratory_type,sample);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');
