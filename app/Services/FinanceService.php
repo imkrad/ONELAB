@@ -177,12 +177,12 @@ class FinanceService
                                     $wallet = Wallet::where('customer_id',$customer_id)->first();
                                     if($wallet){
                                         $wallet->total = $wallet->total + $total;
-                                        $wallet->available = $wallet->available + $total;
+                                        $wallet->available = trim(str_replace(',','',$wallet->available),'₱') + $total;
                                         if($wallet->save()){
                                             $data->transaction()->create([
                                                 'code' => date('Ymdgia'),
                                                 'amount' => $total,
-                                                'balance' => $wallet->available,
+                                                'balance' => trim(str_replace(',','',$wallet->available),'₱'),
                                                 'is_credit' => 1,
                                                 'wallet_id' => $wallet->id
                                             ]);
