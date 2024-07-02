@@ -161,7 +161,6 @@ class FinanceService
 
                     if($or->save()){
                         if($request->type === 'Cheque'){
-                            dd('wew');
                             $cheque = new FinanceReceiptDetail;
                             $cheque->number = $request->cheque_number;
                             $cheque->amount = $request->cheque_amount;
@@ -169,6 +168,7 @@ class FinanceService
                             $cheque->date_at = $request->cheque_cheque_at;
                             $cheque->receipt_id = $data->id;
                             if($cheque->save()){
+                                dd($cheque);
                                 $amount = trim(str_replace(',','',$request->cheque_amount),'₱');
                                 $total = trim(str_replace(',','',$request->total),'₱');
                                 if($amount > $total){
