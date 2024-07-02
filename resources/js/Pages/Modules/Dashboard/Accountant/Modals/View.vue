@@ -5,7 +5,7 @@
                 <div class="row align-items-center g-3">
                     <div class="col-md">
                         <div >
-                            <h5 class="fs-15 fw-semibold text-primary mb-1">{{selected.customer.customer_name.name}} - {{selected.customer.name}}</h5>
+                            <h5 class="fs-15 fw-semibold text-primary mb-1">{{(selected.customer.customer_name.has_branches) ? selected.customer.customer_name.name+' '+selected.customer.name : selected.customer.customer_name.name}}</h5>
                             <div class="hstack gap-3 flex-wrap">
                                 <div class="text-muted">
                                     {{selected.customer.address.barangay.name}},

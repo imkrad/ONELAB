@@ -212,7 +212,11 @@ export default {
             this.form.errors[field] = false;
         },
         hide(){
-            this.form.reset();
+            this.form.customer_id = null;
+            this.form.collection_id = null;
+            this.form.payment_id = null;
+            this.form.selected = [];
+            this.form.total = null;
             this.showModal = false;
         }
     }

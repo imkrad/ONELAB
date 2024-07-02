@@ -38,7 +38,7 @@
                     <td>
                         <h5 class="fs-13 mb-0 text-dark" v-if="list.or">OR# : {{list.or.number}}</h5>
                         <h5 class="fs-13 mb-0 text-dark" v-else>{{list.code}}</h5>
-                        <p class="fs-12 text-muted mb-0">{{list.customer.customer_name.name}} {{list.customer.name}}</p>
+                        <p class="fs-12 text-muted mb-0">{{(list.customer.customer_name.has_branches) ? list.customer.customer_name.name+' '+list.customer.name : list.customer.customer_name.name}}</p>
                     </td>
                     <td class="text-center fs-12">{{list.collection.name}}</td>
                     <td class="text-center fs-12">{{list.payment.name}}</td>
