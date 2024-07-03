@@ -52,8 +52,8 @@
                                 </td>
                                 <td width="3%">{{index+1}}</td>
                                 <td width="20%">
-                                    <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
-                                    <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'Not yet available'}}</p>
+                                    <h5 class="fs-13 mb-0 fw-semibold text-primary">{{(list.code) ? list.code : 'Not yet available'}}</h5>
+                                    <p class="fs-12 fw-semibold text-muted mb-0">{{list.name}}</p>
                                 </td>
                                 <td width="65%"><i>{{list.customer_description}}</i>, {{list.description}}</td>
                                 <td width="10%" class="text-end">
