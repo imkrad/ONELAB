@@ -53,7 +53,7 @@
                                 <td width="3%">{{index+1}}</td>
                                 <td width="20%">
                                     <h5 class="fs-13 mb-0 fw-semibold text-primary">{{(list.code) ? list.code : 'Not yet available'}}</h5>
-                                    <p class="fs-12 fw-semibold text-muted mb-0">{{list.name}}</p>
+                                    <p class="fs-13 text-muted mb-0">{{list.name}}</p>
                                 </td>
                                 <td width="65%"><i>{{list.customer_description}}</i>, {{list.description}}</td>
                                 <td width="10%" class="text-end">
@@ -76,7 +76,7 @@
                                 <td colspan="5">
                                     <table class="table table-nowrap border align-middle mb-0">
                                         <thead class="table-light thead-fixed">
-                                            <tr class="fs-11">
+                                            <tr class="fs-10">
                                                 <th class="text-center" width="5%">#</th>
                                                 <th width="20%">Test Name</th>
                                                 <th class="text-center" width="50%">Method Reference</th>
@@ -91,8 +91,7 @@
                                                     {{index + 1}}
                                                 </td>
                                                 <td>
-                                                    <h5 class="fs-13 mb-0 text-dark">{{list.testname}}</h5>
-                                                    <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'No sample code yet'}}</p>
+                                                    <h5 class="fs-13 mb-0">{{list.testname}}</h5>
                                                 </td>
                                                 <td class="text-center">
                                                     <h5 class="fs-12 mb-0">{{list.method}}</h5>
