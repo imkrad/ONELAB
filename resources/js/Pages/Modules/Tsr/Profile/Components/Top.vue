@@ -8,8 +8,13 @@
                             <b-row class="align-items-center g-3">
                                 <b-col md>
                                     <div>
-                                        <h4 class="fw-semibold text-primary">{{selected.customer.name}}</h4>
+                                        <h4 class="fw-semibold text-primary">{{selected.code}}</h4>
                                         <div class="hstack gap-3 flex-wrap">
+                                            <div>
+                                                <i class="ri-user-fill align-bottom me-1"></i>
+                                                {{selected.customer.name}}
+                                            </div>
+                                             <div class="vr"></div>
                                             <div>
                                                 <i class="ri-map-pin-2-fill align-bottom me-1"></i>
                                                 {{selected.customer.address.barangay.name}},

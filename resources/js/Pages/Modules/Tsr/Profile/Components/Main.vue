@@ -4,7 +4,7 @@
           
             <div class="alert alert-light border-1" role="alert">
                 <div class="align-items-center d-flex">
-                    <h5 class="card-title text-dark mb-0 flex-grow-1">Samples Received</h5>
+                    <h5 class="card-title text-dark mb-0 fs-13 fw-semibold flex-grow-1">Samples Received</h5>
                     <div class="flex-shrink-0">
                         <div class="form-check form-switch form-switch-right form-switch-md">
                             <label for="navbarscrollspy-showcode" class="form-label text-muted">Show Analyses</label>
