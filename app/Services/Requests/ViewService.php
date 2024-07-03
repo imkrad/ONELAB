@@ -162,7 +162,7 @@ class ViewService
         ];
 
         $pdf = \PDF::loadView('reports.tsr',$array)->setPaper('a4', 'portrait');
-        return $pdf->download($lab->code.'.pdf');
+        return $pdf->stream($lab->code.'.pdf');
     }
 
 }
