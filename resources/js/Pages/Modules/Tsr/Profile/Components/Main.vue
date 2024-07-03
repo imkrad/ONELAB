@@ -93,7 +93,7 @@
                                                     {{index + 1}}
                                                 </td>
                                                 <td>
-                                                    <h5 class="fs-13 mb-0">{{list.testname}}</h5>
+                                                    <h5 class="fs-12 mb-0">{{list.testname}}</h5>
                                                 </td>
                                                 <td class="text-center">
                                                     <h5 class="fs-12 mb-0">{{list.method}}</h5>
