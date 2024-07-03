@@ -40,11 +40,12 @@
                 <tr class="fs-11">
                     <th></th>
                     <th style="width: 30%;">Customer</th>
-                    <th style="width: 15%;" class="text-center">Request At</th>
+                    <th style="width: 7%;" class="text-center">Progress</th>
                     <th style="width: 10%;" class="text-center">Total</th>
-                    <th style="width: 10%;" class="text-center">Payment</th>
-                    <th style="width: 15%;" class="text-center">Due At</th>
-                    <th style="width: 10%;" class="text-center">Status</th>
+                    <th style="width: 7%;" class="text-center">Payment</th>
+                    <th style="width: 13%;" class="text-center">Due At</th>
+                    <th style="width: 15%;" class="text-center">Request At</th>
+                    <th style="width: 8%;" class="text-center">Status</th>
                     <th style="width: 7%;" ></th>
                 </tr>
             </thead>
@@ -58,7 +59,9 @@
                         <h5 v-else class="fs-13 mb-0 text-muted">Not yet available</h5>
                         <p class="fs-12 text-muted mb-0">{{list.customer.name}}</p>
                     </td>
-                    <td class="text-center fs-12">{{list.created_at}}</td>
+                    <td>
+                        <apexchart v-b-tooltip.hover title="test" class="apex-charts" height="30" dir="ltr" :series="[0]" :options="{ ...chartOptions }"></apexchart>
+                    </td>
                     <td class="text-center">{{list.payment.total}}</td>
                     <td class="text-center">
                         <i v-if="list.payment.is_paid" class="ri-checkbox-circle-fill text-success fs-18" v-b-tooltip.hover :title="list.payment.status.name"></i>
@@ -69,6 +72,7 @@
                         <span v-if="list.due_at">{{list.due_at}}</span>
                         <span class="text-muted" v-else>Not yet set</span>
                     </td>
+                    <td class="text-center fs-12">{{list.created_at}}</td>
                     <td class="text-center">
                         <span :class="'badge '+list.status.color">{{list.status.name}}</span>
                     </td>
@@ -116,7 +120,33 @@ export default {
                 keyword: null,
                 status: null,
                 laboratory: null
-            }
+            },
+            chartOptions: {
+                chart: {
+                type: "radialBar",
+                sparkline: {
+                    enabled: true,
+                },
+                },
+                dataLabels: {
+                enabled: false,
+                },
+                plotOptions: {
+                    radialBar: {
+                        hollow: {
+                            margin: 0,
+                            size: "30%",
+                        },
+                        track: {
+                            margin: 1,
+                        },
+                        dataLabels: {
+                            show: false,
+                        },
+                    },
+                },
+                colors: ["#405189"],
+            },
         }
     },
     watch: {

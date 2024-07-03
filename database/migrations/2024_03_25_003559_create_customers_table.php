@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('code')->unique();
             $table->string('name');
             $table->boolean('is_main')->default(1);
+            $table->boolean('is_internal')->default(0);
             $table->boolean('is_active')->default(1);
             // $table->boolean('is_synced')->default(0);
             // $table->tinyInteger('bussiness_id')->unsigned()->nullable();

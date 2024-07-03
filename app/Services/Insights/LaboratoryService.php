@@ -68,6 +68,7 @@ class LaboratoryService
 
     public function tsrs($request){
         $ids = Configuration::where('laboratory_id',$this->laboratory)->value('laboratories');
+        dd($ids);
         $sort = ($request->sort) ? $request->sort : 'desc';
         $year = $request->year;
         $month = $request->month;

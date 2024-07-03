@@ -51,7 +51,11 @@ export default {
     },
     methods: {
         percentage(data){
-            return (_.divide(data, this.total)*100).toFixed(2)+'%';
+            if(data != 0){
+                return (_.divide(data, this.total)*100).toFixed(2)+'%';
+            }else{ 
+                return '0%';
+            }
         },
         openView(){
             this.$refs.tsr.show();

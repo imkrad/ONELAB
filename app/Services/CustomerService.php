@@ -34,6 +34,7 @@ class CustomerService
                 $query->where('name', 'LIKE', "%{$keyword}%");
             })
             ->where('laboratory_id',$this->laboratory)
+            ->orderBy('created_at','desc')
             ->paginate($request->count)
         );
         return $data;

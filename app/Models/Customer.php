@@ -20,7 +20,9 @@ class Customer extends Model
         'classification_id',
         'laboratory_id',
         'is_active',
-        'is_main'
+        'is_internal',
+        'is_main',
+        'user_id'
     ];
 
     public function user()

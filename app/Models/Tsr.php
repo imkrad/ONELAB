@@ -97,7 +97,7 @@ class Tsr extends Model
     public function getDueAtAttribute($value)
     {
 
-        return ($value) ? date('M d, Y', strtotime($value)) : null;
+        return ($value) ? date('F d, Y', strtotime($value)) : null;
     }
 
     public function getReleasedAtAttribute($value)
