@@ -138,7 +138,7 @@ export default {
                     keyword: this.filter.keyword,
                     status: this.filter.status,
                     laboratory: this.filter.laboratory,
-                    count: ((window.innerHeight-370)/58),
+                    count: ((window.innerHeight-390)/58),
                     option: 'lists'
                 }
             })
