@@ -8,7 +8,7 @@
                             <b-row class="align-items-center g-3">
                                 <b-col md>
                                     <div>
-                                        <h4 class="fw-semibold text-primary">{{selected.code}}</h4>
+                                        <h4 class="fw-semibold text-primary">{{(selected.code) ? selected.code : 'No Code Generate'}}</h4>
                                         <div class="hstack gap-3 flex-wrap">
                                             <div>
                                                 <i class="ri-user-fill align-bottom me-1"></i>
