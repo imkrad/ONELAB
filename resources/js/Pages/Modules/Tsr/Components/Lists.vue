@@ -12,7 +12,7 @@
                     <option :value="null" selected>Select Laboratory</option>
                     <option :value="list.value" v-for="list in dropdowns.laboratories" v-bind:key="list.id">{{list.name}}</option>
                 </select>
-                <span @click="refresh" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
+                <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
                     <i class="bx bx-refresh search-icon"></i>
                 </span>
                 <b-button type="button" variant="primary" @click="openCreate">
@@ -193,6 +193,12 @@ export default {
         viewStatus(index,status){
             this.index = index;
             this.filter.status = status;
+            this.fetch();
+        },
+        refresh(){
+            this.filter.keyword = null;
+            this.filter.status = null;
+            this.filter.laboratory = null;
             this.fetch();
         }
     }
