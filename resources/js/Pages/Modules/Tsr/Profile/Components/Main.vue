@@ -40,8 +40,8 @@
                             </th>
                             <th width="3%">#</th>
                             <th width="20%">Sample Name</th>
-                            <th width="60%">Description</th>
-                            <th width="10%"></th>
+                            <th width="65%">Description</th>
+                            <th width="5%"></th>
                         </tr>
                     </thead>
                     <tbody v-if="selected.samples.length > 0">
@@ -55,7 +55,7 @@
                                     <h5 class="fs-13 mb-0 fw-semibold text-primary">{{(list.code) ? list.code : 'Not yet available'}}</h5>
                                     <p class="fs-13 text-muted mb-0">{{list.name}}</p>
                                 </td>
-                                <td width="65%"><i>{{list.customer_description}}</i>, {{list.description}}</td>
+                                <td width="65%" style=" white-space: normal;overflow: hidden; text-overflow: ellipsis; max-width: 150px;"><i>{{list.customer_description}}</i>, {{list.description}}</td>
                                 <td width="10%" class="text-end">
                                     <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                         <i class="ri-eye-fill align-bottom"></i>
