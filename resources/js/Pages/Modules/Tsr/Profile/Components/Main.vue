@@ -1,6 +1,18 @@
 <template>
     <div class="row mt-n2">
-        <div class="col-md-12" style="height: calc((100vh - 140px)/2); overflow: auto;">
+        <div class="col-md-12" v-if="!view">
+          
+            <div class="alert alert-light border-1" role="alert">
+                <div class="align-items-center d-flex">
+                    <h5 class="card-title text-dark mb-0 flex-grow-1">Samples Received</h5>
+                    <div class="flex-shrink-0">
+                        <div class="form-check form-switch form-switch-right form-switch-md">
+                            <label for="navbarscrollspy-showcode" class="form-label text-muted">Show Analyses</label>
+                            <input class="form-check-input code-switcher" v-model="showAnalyses" type="checkbox" id="navbarscrollspy-showcode">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <b-row class="g-2">
                 <b-col lg>
                     <div class="input-group mb-2">
@@ -19,46 +31,96 @@
                 </b-col>
             </b-row>
             <div class="table-responsive">
-                <simplebar data-simplebar style="height: 290px;">
+                <simplebar data-simplebar style="height: calc(100vh - 240px)">
                 <table class="table table-nowrap align-middle mb-0">
                     <thead class="table-light thead-fixed">
                         <tr class="fs-11">
-                            <th width="5%" class="text-center">
+                            <th width="4%" class="text-center">
                                 <input class="form-check-input fs-16" v-model="mark" type="checkbox" value="option" />
                             </th>
-                            <th>#</th>
+                            <th width="3%">#</th>
                             <th width="20%">Sample Name</th>
-                            <th width="65%">Description</th>
+                            <th width="60%">Description</th>
                             <th width="10%"></th>
                         </tr>
                     </thead>
                     <tbody v-if="selected.samples.length > 0">
-                        <tr v-for="(list,index) in selected.samples" v-bind:key="index">
-                            <td width="5%" class="text-center">
-                                <input type="checkbox" v-model="list.selected" class="form-check-input" />
-                            </td>
-                            <td>{{index+1}}</td>
-                            <td width="20%">
-                                <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
-                                <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'Not yet available'}}</p>
-                            </td>
-                            <td width="65%"><i>{{list.customer_description}}</i>, {{list.description}}</td>
-                            <td width="10%" class="text-end">
-                                <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
-                                    <i class="ri-eye-fill align-bottom"></i>
-                                </b-button>
-                                <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
-                                    <i class="ri-delete-bin-fill align-bottom"></i>
-                                </b-button>
-                                <b-button v-if="selected.status.name == 'Completed'" @click="openCertificate(list)" variant="soft-primary" v-b-tooltip.hover title="Certificate" size="sm">
-                                    <i class="ri-file-paper-2-fill align-bottom"></i>
-                                </b-button>
-                                
-                                <b-button v-if="selected.status.name == 'Pending'" @click="openCopy(list)" variant="soft-success" class="ms-1" v-b-tooltip.hover title="Copy" size="sm">
-                                    <i class="ri-file-copy-2-line align-bottom"></i>
-                                </b-button>
-                            </td>
-                        </tr>
+                        <template v-for="(list,index) in selected.samples" v-bind:key="index">
+                            <tr :class="(list.analyses.length > 0) ? '' : ''">
+                                <td width="4%" class="text-center">
+                                    <input type="checkbox" v-model="list.selected" class="form-check-input" />
+                                </td>
+                                <td width="3%">{{index+1}}</td>
+                                <td width="20%">
+                                    <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
+                                    <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'Not yet available'}}</p>
+                                </td>
+                                <td width="65%"><i>{{list.customer_description}}</i>, {{list.description}}</td>
+                                <td width="10%" class="text-end">
+                                    <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                        <i class="ri-eye-fill align-bottom"></i>
+                                    </b-button>
+                                    <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
+                                        <i class="ri-delete-bin-fill align-bottom"></i>
+                                    </b-button>
+                                    <b-button v-if="selected.status.name == 'Completed'" @click="openCertificate(list)" variant="soft-primary" v-b-tooltip.hover title="Certificate" size="sm">
+                                        <i class="ri-file-paper-2-fill align-bottom"></i>
+                                    </b-button>
+                                    
+                                    <b-button v-if="selected.status.name == 'Pending'" @click="openCopy(list)" variant="soft-success" class="ms-1" v-b-tooltip.hover title="Copy" size="sm">
+                                        <i class="ri-file-copy-2-line align-bottom"></i>
+                                    </b-button>
+                                </td>
+                            </tr>
+                            <tr v-if="list.analyses.length > 0 && showAnalyses" class="bg-info-subtle">
+                                <td colspan="5">
+                                    <table class="table table-nowrap border align-middle mb-0">
+                                        <thead class="table-light thead-fixed">
+                                            <tr class="fs-11">
+                                                <th class="text-center" width="5%">#</th>
+                                                <th width="20%">Test Name</th>
+                                                <th class="text-center" width="50%">Method Reference</th>
+                                                <th class="text-center" width="12%">Fee</th>
+                                                <th class="text-center" width="13%">Status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody v-if="list.analyses.length > 0">
+                                            <tr v-for="(list,index) in list.analyses" v-bind:key="index" class="bg-light-subtle">
+                                                <td class="text-center"> 
+                                                    {{index + 1}}
+                                                </td>
+                                                <td>
+                                                    <h5 class="fs-13 mb-0 text-dark">{{list.testname}}</h5>
+                                                    <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'No sample code yet'}}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <h5 class="fs-12 mb-0">{{list.method}}</h5>
+                                                    <p class="fs-11 text-muted mb-0">{{list.reference}}</p>
+                                                </td>
+                                                <td class="text-center">{{list.fee}}</td>
+                                                <td class="text-center">
+                                                    <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
+                                                </td>
+                                                <td>
+                                                    <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                                        <i class="ri-eye-fill align-bottom"></i>
+                                                    </b-button>
+                                                    <b-button v-if="selected.status.name == 'Pending' || selected.status.name == 'For Payment' && analyses.length > 1" @click="openDeleteAnalysis(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
+                                                        <i class="ri-delete-bin-fill align-bottom"></i>
+                                                    </b-button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody v-else>
+                                            <tr>
+                                                <td colspan="5" class="text-center">No analysis found</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </template>
                     </tbody>
                     <tbody v-else>
                         <tr>
@@ -69,7 +131,75 @@
                 </simplebar>
             </div>
         </div>
-        <div class="col-md-12" style="height: calc((100vh - 120px)/2); overflow: auto;">
+        <div v-else class="col-md-12">
+            <div class="border p-3">
+                <div class="d-flex mb-n3">
+                    <div class="flex-grow-1">
+                        <div>
+                            <h5 class="font-size-16 mb-1"> {{sample.name}} <span class="text-muted fs-14">({{(sample.code) ? sample.code : 'Not yet specified'}}) </span></h5>
+                            <p>{{sample.customer_description}}, {{sample.description}}</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div>
+                            <button @click="view = false" class="btn btn-light" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit">
+                                <i class="ri-close-circle-fill align-bottom"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive mt-2">
+                <simplebar data-simplebar style="height: 290px;">
+                <table class="table table-nowrap align-middle mb-0">
+                    <thead class="table-light thead-fixed">
+                        <tr class="fs-11">
+                            <th class="text-center" width="5%">#</th>
+                            <th width="20%">Test Name</th>
+                            <th class="text-center" width="50%">Method Reference</th>
+                            <th class="text-center" width="12%">Fee</th>
+                            <th class="text-center" width="13%">Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody  v-if="analyses.length > 0">
+                        <tr v-for="(list,index) in sample.analyses" v-bind:key="index">
+                            <td class="text-center"> 
+                                {{index + 1}}
+                            </td>
+                            <td>
+                                <h5 class="fs-13 mb-0 text-dark">{{list.testname}}</h5>
+                                <p class="fs-12 text-muted mb-0">{{(list.code) ? list.code : 'No sample code yet'}}</p>
+                            </td>
+                            <td class="text-center">
+                                <h5 class="fs-12 mb-0">{{list.method}}</h5>
+                                <p class="fs-11 text-muted mb-0">{{list.reference}}</p>
+                            </td>
+                            <td class="text-center">{{list.fee}}</td>
+                            <td class="text-center">
+                                <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
+                            </td>
+                            <td>
+                                <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                    <i class="ri-eye-fill align-bottom"></i>
+                                </b-button>
+                                <b-button v-if="selected.status.name == 'Pending' || selected.status.name == 'For Payment' && analyses.length > 1" @click="openDeleteAnalysis(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
+                                    <i class="ri-delete-bin-fill align-bottom"></i>
+                                </b-button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody v-else>
+                        <tr>
+                            <td colspan="5" class="text-center">No analysis found</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </simplebar>
+            </div>
+        </div>
+        <!-- <div class="col-md-12" style="height: calc((100vh - 120px)/2); overflow: auto;">
             <b-row class="g-2 mt-2 mb-2">
                 <b-col lg>
                     <div class="input-group mb-1">
@@ -126,7 +256,7 @@
                 </table>
                 </simplebar>
             </div>
-        </div>
+        </div> -->
     </div>
     <Delete ref="delete"/>
     <Sample ref="sample"/>
@@ -148,6 +278,9 @@ export default {
         return {
             currentUrl: window.location.origin,
             samples : [],
+            sample: {},
+            showAnalyses: false,
+            view: false,
             mark: false,
         }
     },
@@ -181,8 +314,11 @@ export default {
         openAnalysis(){
             (this.samples.length > 0) ? this.$refs.analysis.show(this.samples,this.selected.laboratory_type) : '';
         },
+        openView(list){
+            this.view = true;
+            this.sample = list;
+        },
         openCertificate(data){
-            // window.open(this.currentUrl + '/samples?option=print&id='+id);
             this.$refs.certificate.show(data,this.selected.id);
         },
         openCopy(sample){
