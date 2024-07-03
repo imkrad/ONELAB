@@ -46,7 +46,7 @@
                     </thead>
                     <tbody v-if="selected.samples.length > 0">
                         <template v-for="(list,index) in selected.samples" v-bind:key="index">
-                            <tr :class="(list.analyses.length > 0) ? '' : ''">
+                            <tr :class="(showAnalyses) ? 'bg-info-subtle' : ''">
                                 <td width="4%" class="text-center">
                                     <input type="checkbox" v-model="list.selected" class="form-check-input" />
                                 </td>
@@ -103,7 +103,7 @@
                                                     <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                                                 </td>
                                                 <td>
-                                                    <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                                    <b-button @click="openViewAnalysis(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                                         <i class="ri-eye-fill align-bottom"></i>
                                                     </b-button>
                                                     <b-button v-if="selected.status.name == 'Pending' || selected.status.name == 'For Payment' && analyses.length > 1" @click="openDeleteAnalysis(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
@@ -317,6 +317,9 @@ export default {
         openView(list){
             this.view = true;
             this.sample = list;
+        },
+        openViewAnalysis(data){
+
         },
         openCertificate(data){
             this.$refs.certificate.show(data,this.selected.id);
