@@ -54,6 +54,12 @@ class Tsr extends Model
         return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
     }
 
+    public function lab_type()
+    {
+        return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
+    }
+
+
     public function purpose()
     {
         return $this->belongsTo('App\Models\ListDropdown', 'purpose_id', 'id');

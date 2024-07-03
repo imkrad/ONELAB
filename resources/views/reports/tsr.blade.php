@@ -95,9 +95,9 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">TSR Number : </td>
-                    <td width="25%"><span style="font-weight: bold;">{{$tsr['code']}}</span></td>
+                    <td width="25%"><span style="font-weight: bold; color: #072388;">{{$tsr['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$tsr['date']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['date']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -106,17 +106,17 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">Customer : </td>
-                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase;">{{$tsr['customer']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase; color: #072388;">{{$tsr['customer']['name']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">{{$tsr['customer']['address']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
-                    <td width="25%"><span>{{$tsr['customer']['contact_no']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['customer']['contact_no']}}</span></td>
                     <td width="25%">Email : </td>
-                    <td width="25%"><span>{{$tsr['customer']['email']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['customer']['email']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -135,7 +135,7 @@ label {
             </thead>
             <tbody>
             @foreach($tsr['samples'] as $index=>$sample)
-                <tr style="text-align: center; font-size: 9px;">
+                <tr style="text-align: center; font-size: 9px; color: #072388;">
                     <td>{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
                     <td>{{$sample['testname']}}</td>
@@ -169,7 +169,7 @@ label {
             <tbody>
                 <tr>
                     <td>
-                        <ul style="margin-left: -30px; list-style: none; color:#636363;">
+                        <ul style="margin-left: -30px; list-style: none; color: #072388; ">
                             @foreach($tsr['descriptions'] as $desc)
                                 <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
                             @endforeach
@@ -207,13 +207,13 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">Report due date : </td>
-                    <td colspan="3" width="75%">
-                        {{$tsr['due_at']}}  /  <span style="color: #606060;">4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
+                    <td colspan="3" width="75%" style="color: #072388;">
+                        {{$tsr['due_at']}}  /  <span>4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
                     </td>
                 </tr>
                 <tr>
                     <td width="25%">Report number : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">n/a</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">n/a</span></td>
                 </tr>
             </tbody>
         </table>
@@ -258,6 +258,18 @@ label {
                     <td width="33.3%" style="text-align: center;"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span></td>
                 </tr> -->
             </tbody>
+        </table>
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden; font-size: 9px; font-family:Arial, Helvetica, sans-serif; width: 100%; left: 0; bottom: 30; position:absolute; margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 40%; font-family:Arial, Helvetica, sans-serif; text-align: left; font-style: bold; border-left: none; border-right: none; padding: 5px; color: <?php echo $color; ?>;"><hr/></td>
+            </tr>
+        </table>
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden; font-size: 9px; font-family:Arial, Helvetica, sans-serif; width: 100%; left: 0; bottom: 20; position:absolute; margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 50%; font-family:Arial, Helvetica, sans-serif; text-align: left; border-left: none; border-right: none; padding: 5px;">Page _ of _ </br> <span style="font-style: bold; color: #072388;">{{$tsr['code']}}</span></td>
+                <td style="width: 20%; font-family:Arial, Helvetica, sans-serif; text-align: left; border-left: none; border-right: none; padding: 5px;"></td>
+                <td style="width: 30%; font-family:Arial, Helvetica, sans-serif; text-align: right; border-left: none; border-right: none; padding: 5px;">OP-007-F1 (front page) <br/>Rev 12 l Apr 15, 2024</td>
+            </tr>
         </table>
         <div class="page-break"></div>
         <div style="font-family:Arial;">
@@ -275,9 +287,9 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">TSR Number : </td>
-                    <td width="25%"><span style="font-weight: bold;">{{$tsr['code']}}</span></td>
+                    <td width="25%"><span style="font-weight: bold; color: #072388;">{{$tsr['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$tsr['date']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['date']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -286,17 +298,17 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">Customer : </td>
-                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase;">{{$tsr['customer']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase; color: #072388;">{{$tsr['customer']['name']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">{{$tsr['customer']['address']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
-                    <td width="25%"><span>{{$tsr['customer']['contact_no']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['customer']['contact_no']}}</span></td>
                     <td width="25%">Email : </td>
-                    <td width="25%"><span>{{$tsr['customer']['email']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['customer']['email']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -315,7 +327,7 @@ label {
             </thead>
             <tbody>
             @foreach($tsr['samples'] as $index=>$sample)
-                <tr style="text-align: center; font-size: 9px;">
+                <tr style="text-align: center; font-size: 9px; color: #072388;">
                     <td>{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
                     <td>{{$sample['testname']}}</td>
@@ -349,7 +361,7 @@ label {
             <tbody>
                 <tr>
                     <td>
-                        <ul style="margin-left: -30px; list-style: none; color:#636363;">
+                        <ul style="margin-left: -30px; list-style: none; color: #072388;">
                             @foreach($tsr['descriptions'] as $desc)
                                 <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
                             @endforeach
@@ -387,13 +399,13 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">Report due date : </td>
-                    <td colspan="3" width="75%">
-                        {{$tsr['due_at']}}  /  <span style="color: #606060;">4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
+                    <td colspan="3" width="75%" style="color: #072388;">
+                        {{$tsr['due_at']}}  /  <span>4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
                     </td>
                 </tr>
                 <tr>
                     <td width="25%">Report number : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">n/a</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">n/a</span></td>
                 </tr>
             </tbody>
         </table>
@@ -438,6 +450,18 @@ label {
                     <td width="33.3%" style="text-align: center;"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span></td>
                 </tr> -->
             </tbody>
+        </table>
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden; font-size: 9px; font-family:Arial, Helvetica, sans-serif; width: 100%; left: 0; bottom: 30; position:absolute; margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 40%; font-family:Arial, Helvetica, sans-serif; text-align: left; font-style: bold; border-left: none; border-right: none; padding: 5px; color: <?php echo $color; ?>;"><hr/></td>
+            </tr>
+        </table>
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden; font-size: 9px; font-family:Arial, Helvetica, sans-serif; width: 100%; left: 0; bottom: 20; position:absolute; margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 50%; font-family:Arial, Helvetica, sans-serif; text-align: left; border-left: none; border-right: none; padding: 5px;">Page _ of _ </br> <span style="font-style: bold; color: #072388;">{{$tsr['code']}}</span></td>
+                <td style="width: 20%; font-family:Arial, Helvetica, sans-serif; text-align: left; border-left: none; border-right: none; padding: 5px;"></td>
+                <td style="width: 30%; font-family:Arial, Helvetica, sans-serif; text-align: right; border-left: none; border-right: none; padding: 5px;">OP-007-F1 (front page) <br/>Rev 12 l Apr 15, 2024</td>
+            </tr>
         </table>
         <div class="page-break"></div>
         <div style="font-family:Arial;">
@@ -455,9 +479,9 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">TSR Number : </td>
-                    <td width="25%"><span style="font-weight: bold;">{{$tsr['code']}}</span></td>
+                    <td width="25%"><span style="font-weight: bold; color: #072388;">{{$tsr['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$tsr['date']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['date']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -466,17 +490,17 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">Customer : </td>
-                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase;">{{$tsr['customer']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase; color: #072388;">{{$tsr['customer']['name']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$tsr['customer']['address']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">{{$tsr['customer']['address']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
-                    <td width="25%"><span>{{$tsr['customer']['contact_no']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['customer']['contact_no']}}</span></td>
                     <td width="25%">Email : </td>
-                    <td width="25%"><span>{{$tsr['customer']['email']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$tsr['customer']['email']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -495,7 +519,7 @@ label {
             </thead>
             <tbody>
             @foreach($tsr['samples'] as $index=>$sample)
-                <tr style="text-align: center; font-size: 9px;">
+                <tr style="text-align: center; font-size: 9px; color: #072388;">
                     <td>{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
                     <td>{{$sample['testname']}}</td>
@@ -529,7 +553,7 @@ label {
             <tbody>
                 <tr>
                     <td>
-                        <ul style="margin-left: -30px; list-style: none; color:#636363;">
+                        <ul style="margin-left: -30px; list-style: none; color: #072388;">
                             @foreach($tsr['descriptions'] as $desc)
                                 <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
                             @endforeach
@@ -567,13 +591,13 @@ label {
             <tbody>
                 <tr>
                     <td width="25%">Report due date : </td>
-                    <td colspan="3" width="75%">
-                        {{$tsr['due_at']}}  /  <span style="color: #606060;">4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
+                    <td colspan="3" width="75%" style="color: #072388;">
+                        {{$tsr['due_at']}}  /  <span>4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
                     </td>
                 </tr>
                 <tr>
                     <td width="25%">Report number : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">n/a</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">n/a</span></td>
                 </tr>
             </tbody>
         </table>
@@ -618,6 +642,18 @@ label {
                     <td width="33.3%" style="text-align: center;"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span></td>
                 </tr> -->
             </tbody>
+        </table>
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden; font-size: 9px; font-family:Arial, Helvetica, sans-serif; width: 100%; left: 0; bottom: 30; position:absolute; margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 40%; font-family:Arial, Helvetica, sans-serif; text-align: left; font-style: bold; border-left: none; border-right: none; padding: 5px; color: <?php echo $color; ?>;"><hr/></td>
+            </tr>
+        </table>
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden; font-size: 9px; font-family:Arial, Helvetica, sans-serif; width: 100%; left: 0; bottom: 20; position:absolute; margin-left: auto; margin-right: auto;">
+            <tr>
+                <td style="width: 50%; font-family:Arial, Helvetica, sans-serif; text-align: left; border-left: none; border-right: none; padding: 5px;">Page _ of _ </br> <span style="font-style: bold; color: #072388;">{{$tsr['code']}}</span></td>
+                <td style="width: 20%; font-family:Arial, Helvetica, sans-serif; text-align: left; border-left: none; border-right: none; padding: 5px;"></td>
+                <td style="width: 30%; font-family:Arial, Helvetica, sans-serif; text-align: right; border-left: none; border-right: none; padding: 5px;">OP-007-F1 (front page) <br/>Rev 12 l Apr 15, 2024</td>
+            </tr>
         </table>
     </body>
 </html>

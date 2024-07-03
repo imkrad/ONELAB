@@ -138,6 +138,7 @@ class ViewService
         $hashids = new Hashids('krad',10);
         $id = $hashids->decode($request->id);
 
+        $labcolor = Tsr::where('id',$id)->with('lab_type')->first();
         $tsr = TsrReport::where('tsr_id',$id)->value('information');
         $lab = json_decode($tsr);
 
@@ -156,7 +157,8 @@ class ViewService
             'tsr' => json_decode($tsr),
             'cashier' => $cashier->user->profile->firstname.' '.$cashier->user->profile->middlename[0].'. '.$cashier->user->profile->lastname,
             'manager' => $head->user->profile->firstname.' '.$head->user->profile->middlename[0].'. '.$head->user->profile->lastname,
-            'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname
+            'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname,
+            'color' => ($labcolor->lab_type) ? $labcolor->lab_type->color : 'black'
         ];
 
         $pdf = \PDF::loadView('reports.tsr',$array)->setPaper('a4', 'portrait');
