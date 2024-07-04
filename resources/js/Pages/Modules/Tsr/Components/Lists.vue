@@ -3,12 +3,8 @@
         <b-col lg>
             <div class="input-group mb-1">
                 <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                <input type="text" v-model="filter.keyword" placeholder="Search Request" class="form-control" style="width: 55%;">
-                <select v-model="filter.status" @change="fetch()" class="form-select" id="inputGroupSelect01">
-                    <option :value="null" selected>Select Status</option>
-                    <option :value="list.value" v-for="list in dropdowns.statuses" v-bind:key="list.id">{{list.name}}</option>
-                </select>
-                <select v-model="filter.laboratory" @change="fetch()" class="form-select" id="inputGroupSelect01" style="width: 140px;">
+                <input type="text" v-model="filter.keyword" placeholder="Search Request" class="form-control" style="width: 60%;">
+                <select v-model="filter.laboratory" @change="fetch()" class="form-select" id="inputGroupSelect01" style="width: 100px;">
                     <option :value="null" selected>Select Laboratory</option>
                     <option :value="list.value" v-for="list in dropdowns.laboratories" v-bind:key="list.id">{{list.name}}</option>
                 </select>
@@ -21,19 +17,39 @@
             </div>
         </b-col>
     </b-row>
-    <ul class="nav nav-tabs nav-tabs-custom nav-success border border-dashed border-end-0 border-start-0 fs-12" role="tablist">
-        <li class="nav-item">
-            <BLink @click="viewStatus(10,null)" class="nav-link py-3 active text-primary" data-bs-toggle="tab" role="tab" aria-selected="true">
-            <i class="ri-apps-2-line me-1 align-bottom"></i> All Requests
-            </BLink>
-        </li>
-        <li class="nav-item" v-for="(list,index) in dropdowns.statuses" v-bind:key="index">
-            <BLink @click="viewStatus(index,list.value)" class="nav-link py-3" :class="(this.index == index) ? list.others+' active' : ''" data-bs-toggle="tab" role="tab" aria-selected="false">
-                <i :class="icons[index]" class="me-1 align-bottom"></i>
-                {{ list.name }} <BBadge v-if="counts[index] > 0" :class="list.color" class="align-middle ms-1">{{counts[index]}}</BBadge>
-            </BLink>
-        </li>
-    </ul>
+    
+    <div class="d-flex">
+        <div class="flex-grow-1">
+            <ul class="nav nav-tabs nav-tabs-custom nav-success border border-dashed border-end-0 border-start-0 fs-12" role="tablist">
+                <li class="nav-item">
+                    <BLink @click="viewStatus(10,null)" class="nav-link py-3 active text-primary" data-bs-toggle="tab" role="tab" aria-selected="true">
+                    <i class="ri-apps-2-line me-1 align-bottom"></i> All Requests
+                    </BLink>
+                </li>
+                <li class="nav-item" v-for="(list,index) in dropdowns.statuses" v-bind:key="index">
+                    <BLink @click="viewStatus(index,list.value)" class="nav-link py-3" :class="(this.index == index) ? list.others+' active' : ''" data-bs-toggle="tab" role="tab" aria-selected="false">
+                        <i :class="icons[index]" class="me-1 align-bottom"></i>
+                        {{ list.name }} <BBadge v-if="counts[index] > 0" :class="list.color" class="align-middle ms-1">{{counts[index]}}</BBadge>
+                    </BLink>
+                </li>
+            </ul>
+        </div>
+        <div class="flex-shrink-0">
+            <div class="dropdown card-header-dropdown mt-3">
+                <a class="text-reset dropdown-btn" href="#" target="_self" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="text-uppercase fw-semibold fs-11">Sort by : </span>
+                    <span class="text-muted">{{filter.sortby}} ({{filter.sort}})<i class="mdi mdi-chevron-down ms-1"></i></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end" style="">
+                    <a class="dropdown-item" href="#" @click="viewSort('Due At','asc')" target="_self">Due At (asc)</a>
+                    <a class="dropdown-item" href="#" @click="viewSort('Due At','desc')" target="_self">Due At (desc)</a>
+                    <a class="dropdown-item" href="#" @click="viewSort('Requested At','asc')" target="_self">Requested At (asc)</a>
+                    <a class="dropdown-item" href="#" @click="viewSort('Requested At','desc')" target="_self">Requested At (desc)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-nowrap align-middle mb-0">
             <thead class="table-light">
@@ -119,7 +135,9 @@ export default {
             filter: {
                 keyword: null,
                 status: null,
-                laboratory: null
+                laboratory: null,
+                sortby: 'Requested At',
+                sort: 'desc'
             },
             chartOptions: {
                 chart: {
@@ -145,7 +163,7 @@ export default {
                         },
                     },
                 },
-                colors: ["#405189"],
+                colors: ["#099885"],
             },
         }
     },
@@ -167,6 +185,8 @@ export default {
                 params : {
                     keyword: this.filter.keyword,
                     status: this.filter.status,
+                    sortby: this.filter.sortby,
+                    sort: this.filter.sort,
                     laboratory: this.filter.laboratory,
                     count: ((window.innerHeight-390)/58),
                     option: 'lists'
@@ -195,7 +215,14 @@ export default {
             this.filter.status = status;
             this.fetch();
         },
+        viewSort(sortby,sort){
+            this.filter.sortby = sortby;
+            this.filter.sort = sort;
+            this.fetch();
+        },
         refresh(){
+            this.filter.sortby = 'Request At';
+            this.filter.sort = 'desc';
             this.filter.keyword = null;
             this.filter.status = null;
             this.filter.laboratory = null;

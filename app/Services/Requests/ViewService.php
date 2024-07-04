@@ -66,7 +66,13 @@ class ViewService
             ->when($request->laboratory, function ($query, $laboratory) {
                 $query->where('laboratory_type',$laboratory);
             })
-            ->orderBy('created_at','DESC')
+            ->when($request->sort, function ($query, $sort) use ($request) {
+                if($request->sortby == 'Requested At'){
+                    $query->orderBy('created_at',$request->sort);
+                }else{
+                    $query->orderBy('due_at',$request->sort);
+                }
+            })
             ->paginate($request->count)
         );
         return $data;
