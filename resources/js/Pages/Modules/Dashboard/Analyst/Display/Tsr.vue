@@ -32,7 +32,7 @@
                                         </div>
                                         <div class="flex-shrink-0">
                                             <div>
-                                                <i class="ri-list-check align-bottom me-1 text-muted"></i>{{item.ongoing}}/{{item.analyses}}
+                                                <i class="ri-list-check align-bottom me-1 text-muted"></i>{{(item.ongoing)}}/{{(item.analyses-item.completed)}}
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="flex-shrink-0">
                                         <div>
-                                            <i class="ri-list-check align-bottom me-1 text-muted"></i>{{item.completed}}/{{item.ongoing}}
+                                            <i class="ri-list-check align-bottom me-1 text-muted"></i>0/{{item.ongoing}}
                                         </div>
                                     </div>
                                 </div>
@@ -187,10 +187,10 @@ export default {
             return this.samples.filter(item => item.pending > 0);
         },
         ongoings(){
-            return this.samples.filter(item => item.ongoing > 0 && item.ongoing !== item.completed);
+            return this.samples.filter(item => item.ongoing > 0);
         },
         completeds(){
-            return this.samples.filter(item => item.completed  === item.analyses );
+            return this.samples.filter(item => item.completed > 0 );
         }
     },
     methods: {
