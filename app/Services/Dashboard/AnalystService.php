@@ -10,7 +10,7 @@ class AnalystService
 {
     public function samples(){
         $laboratory = \Auth::user()->userrole->laboratory_type;
-        $data = Tsr::with('status')->whereIn('status_id',[3,4])->where('released_at',null)
+        $data = Tsr::with('status')->where('laboratory_type',$laboratory)->whereIn('status_id',[3,4])->where('released_at',null)
         ->with(['samples' => function ($query) {
             $query->withCount([
                 'analyses as analyses_count',
