@@ -180,7 +180,7 @@ class ViewService
             $setNumber = ceil($pageNumber / 3); 
             $totalSets = ceil($pageCount / 3); 
             
-            $text = "Page $adjustedPageNumber of $totalSets"; 
+            $text = "PAGE $adjustedPageNumber OF $totalSets"; 
             $font = $fontMetrics->get_font("Helvetica", "normal");
             $size = 7;
             $width = $fontMetrics->get_text_width($text, $font, $size);
