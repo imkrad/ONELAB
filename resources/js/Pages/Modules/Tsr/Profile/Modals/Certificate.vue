@@ -1,6 +1,18 @@
 <template>
-    <b-modal v-model="showModal" header-class="p-3 bg-light" title="Generate Certificate" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
-        <form class="customform">
+    <b-modal v-if="sample" v-model="showModal"  style="--vz-modal-width: 700px;" header-class="p-3 bg-light" title="Generate Certificate" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
+        
+        <BRow>
+            <BCol lg="12">
+                <div class="input-group">
+                    <button class="btn btn-primary" type="button">Generate Report Number</button>
+                    <input v-if="sample.report" type="text" class="form-control" :value="sample.report.code" style="text-align: right;">
+                    <input v-else type="text" class="form-control" placeholder="Click to generate report number" style="text-align: right;" readonly>
+                </div>
+            </BCol>
+            <BCol lg="12"><hr class="text-muted"/></BCol>
+        </BRow> 
+
+        <!-- <form class="customform">
             <BRow class="g-3 mt-1">
                 <BCol lg="12" class="mt-0">
                     <InputLabel for="name" value="Parameter"/>
@@ -15,10 +27,10 @@
                     <Textarea id="name" v-model="form.method" class="form-control" rows="1" :light="true"/>
                 </BCol>
             </BRow>
-        </form>
+        </form> -->
         <template v-slot:footer>
-            <b-button @click="hide()" variant="light" block>Cancel</b-button>
-            <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Submit</b-button>
+            <!-- <b-button @click="hide()" variant="light" block>Cancel</b-button> -->
+            <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Preview</b-button>
         </template>
     </b-modal>
 </template>

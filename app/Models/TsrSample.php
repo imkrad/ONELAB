@@ -23,6 +23,11 @@ class TsrSample extends Model
         return $this->belongsTo('App\Models\Tsr', 'tsr_id', 'id');
     }
 
+    public function report()
+    {
+        return $this->hasOne('App\Models\TsrSampleReport', 'sample_id');
+    }
+
     public function analyses()
     {
         return $this->hasMany('App\Models\TsrAnalysis', 'sample_id');

@@ -2,16 +2,15 @@
 
 namespace App\Services;
 
+use Hashids\Hashids;
 use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\TsrPayment;
 use App\Models\Configuration;
 use App\Models\ListDropdown;
 use App\Http\Resources\SampleResource;
-use BaconQrCode\Renderer\ImageRenderer;
-use BaconQrCode\Renderer\RendererStyle\RendererStyle;
-use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
-use BaconQrCode\Writer;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
 
 class SampleService
 {
@@ -91,22 +90,34 @@ class SampleService
         ->with('tsr:id,code,created_at,customer_id','tsr.customer:id,name_id,name,is_main','tsr.customer.customer_name:id,name,has_branches','tsr.customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','tsr.customer.address.region:code,name,region','tsr.customer.address.province:code,name','tsr.customer.address.municipality:code,name','tsr.customer.address.barangay:code,name')
         ->where('id',$id)->first();
 
+        $hashids = new Hashids('krad',10);
+        $code = $hashids->encode($request->id);
+        $url = $_SERVER['HTTP_HOST'].'/verification/sample/'.$code;
+        $qrCode = new QrCode($url);
+        $qrCode->setSize(300);
+        $pngWriter = new PngWriter();
+        $qrCodeImageString = $pngWriter->write($qrCode)->getString();
+        $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
+
         $array = [
+            'qrCodeImage' => $base64Image,
             'configuration' => $this->configuration,
-            'sample' => $sample
+            'sample' => $sample,
+            'code' => 'TESTCODE123'
         ];
 
         $pdf = \PDF::loadView('reports.test',$array)->setPaper('a4', 'portrait');
+        $pdf->output();
+        $dompdf = $pdf->getDomPDF();
+        $canvas = $dompdf->getCanvas();
+        $canvas->page_script(function ($pageNumber, $pageCount, $canvas, $fontMetrics) {
+            
+            $text = "PAGE $pageNumber OF $pageCount"; 
+            $font = $fontMetrics->get_font("Helvetica", "normal");
+            $size = 7;
+            $width = $fontMetrics->get_text_width($text, $font, $size);
+            $canvas->text(106 - $width, 796, $text, $font, $size);
+        });
         return $pdf->stream('TestReport.pdf');
-    }
-
-    public function generateQrCodeBase64($data) {
-        $renderer = new ImageRenderer(
-            new RendererStyle(200),
-            new ImagickImageBackEnd()
-        );
-        $writer = new Writer($renderer);
-        $qrCodeImage = $writer->writeString($data);
-        return base64_encode($qrCodeImage);
     }
 }

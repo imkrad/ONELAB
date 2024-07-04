@@ -120,7 +120,7 @@ class ViewService
 
         $data = new TsrViewResource(
             Tsr::query()
-            ->with('samples.analyses','samples.analyses.testservice.testname','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference')
+            ->with('samples.report','samples.analyses','samples.analyses.testservice.testname','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference')
             ->with('service.service')
             ->with('received:id','received.profile:id,firstname,lastname,user_id')
             ->with('laboratory','laboratory_type:id,name','purpose:id,name','status:id,name,color,others')

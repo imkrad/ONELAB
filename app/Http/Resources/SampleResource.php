@@ -22,6 +22,7 @@ class SampleResource extends JsonResource
             'description' => $this->description,
             'is_disposed' => $this->is_disposed,
             'analyses' => AnalysisResource::collection($this->analyses),
+            'report' => $this->report,
             'selected' => false
         ];
     }
