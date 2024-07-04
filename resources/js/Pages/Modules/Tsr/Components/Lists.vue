@@ -60,7 +60,7 @@
                         <p class="fs-12 text-muted mb-0">{{list.customer.name}}</p>
                     </td>
                     <td>
-                        <apexchart v-b-tooltip.hover title="test" class="apex-charts" height="30" dir="ltr" :series="[0]" :options="{ ...chartOptions }"></apexchart>
+                        <apexchart v-b-tooltip.hover :title="list.analyses+'%'" class="apex-charts" height="30" dir="ltr" :series="[list.analyses]" :options="{ ...chartOptions }"></apexchart>
                     </td>
                     <td class="text-center">{{list.payment.total}}</td>
                     <td class="text-center">
@@ -124,12 +124,12 @@ export default {
             chartOptions: {
                 chart: {
                 type: "radialBar",
-                sparkline: {
-                    enabled: true,
-                },
+                    sparkline: {
+                        enabled: true,
+                    },
                 },
                 dataLabels: {
-                enabled: false,
+                    enabled: false,
                 },
                 plotOptions: {
                     radialBar: {

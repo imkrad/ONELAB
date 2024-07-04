@@ -14,20 +14,30 @@ class TsrResource extends JsonResource
         $hashids = new Hashids('krad',10);
         $code = $hashids->encode($this->id);
 
+        $total = 0; $completed = 0; $ongoing = 0;
+
+        foreach ($this->samples as $result) {
+            $total = $total + $result->analyses_count;
+            $completed = $completed + $result->completed_analyses_count;
+            $ongoing = $ongoing + $result->ongoing_analyses_count;
+        }
+
+        $completedPercentage = ($completed / $total) * 100;
+        $ongoingPercentage = ($ongoing / $total) * 100;
+        $ongoingPercentage = $ongoingPercentage/2;
+
+        $analyses = [$completedPercentage+$ongoingPercentage];
+
         return [
             'id' => $this->id,
             'qr' => $code,
             'code' => $this->code,
-            'laboratory' => $this->laboratory,
             'laboratory_type' => $this->laboratory_type,
-            'purpose' => $this->purpose->name,
             'status' => $this->status,
             'customer' => new CustomerViewResource($this->customer),
-            'conforme' => $this->conforme->name, 
-            'conforme_no' => $this->conforme->contact_no, 
-            'received' => $this->received->profile->firstname.' '.$this->received->profile->lastname,
             'payment' => $this->payment,
             'due_at' => $this->due_at,
+            'analyses' => $analyses,
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,
         ];
