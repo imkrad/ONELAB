@@ -13,6 +13,8 @@ use App\Http\Resources\TsrResource;
 use App\Http\Resources\TsrViewResource;
 use App\Http\Resources\AnalysisResource;
 use App\Http\Resources\Tsr\ListResource;
+use Endroid\QrCode\QrCode;
+use Endroid\QrCode\Writer\PngWriter;
 
 class ViewService
 {
@@ -151,8 +153,16 @@ class ViewService
         ->where('laboratory_id',$lab->laboratory_id)->whereHas('role',function ($query){
             $query->where('name','Cashier');
         })->first();
+        
+        $url = $_SERVER['HTTP_HOST'].'/verification/'.$request->id;
+        $qrCode = new QrCode($url);
+        $qrCode->setSize(300);
+        $pngWriter = new PngWriter();
+        $qrCodeImageString = $pngWriter->write($qrCode)->getString();
+        $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
 
         $array = [
+            'qrCodeImage' => $base64Image,
             'configuration' => Configuration::first(),
             'tsr' => json_decode($tsr),
             'cashier' => $cashier->user->profile->firstname.' '.$cashier->user->profile->middlename[0].'. '.$cashier->user->profile->lastname,
@@ -162,6 +172,22 @@ class ViewService
         ];
 
         $pdf = \PDF::loadView('reports.tsr',$array)->setPaper('a4', 'portrait');
+        $pdf->output();
+        $dompdf = $pdf->getDomPDF();
+        $canvas = $dompdf->getCanvas();
+        $canvas->page_script(function ($pageNumber, $pageCount, $canvas, $fontMetrics) {
+            $adjustedPageNumber = ($pageNumber - 1) % 3 + 1;
+            $setNumber = ceil($pageNumber / 3); 
+            $totalSets = ceil($pageCount / 3); 
+            
+            $text = "Page $adjustedPageNumber of $totalSets"; 
+            $font = $fontMetrics->get_font("Helvetica", "normal");
+            $size = 7;
+            $width = $fontMetrics->get_text_width($text, $font, $size);
+            $canvas->text(106 - $width, 796, $text, $font, $size);
+            // $canvas->image($base64Image, 400, 750, 100, 100);
+        });
+
         return $pdf->stream($lab->code.'.pdf');
     }
 

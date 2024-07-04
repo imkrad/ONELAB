@@ -9,6 +9,7 @@
         "bacon/bacon-qr-code": "^2.0",
         "barryvdh/laravel-dompdf": "^2.1",
         "cheesegrits/iseed": "4.0.5",
+        "endroid/qr-code": "^5.0",
         "hashids/hashids": "^5.0",
         "inertiajs/inertia-laravel": "^1.0",
         "jenssegers/agent": "^2.6",

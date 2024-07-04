@@ -145,6 +145,17 @@ export default {
             this.form.errors[field] = false;
         },
         hide(){
+            this.or.id = null;
+            this.or.deposit_id = null;
+            this.or.orseries = null;
+            this.or.selected = {payment:{}};
+            this.or.total = null;
+            this.or.type = null;
+            this.cheque.type = null;
+            this.cheque.number = null;
+            this.cheque.bank = null;
+            this.cheque.cheque_at = null;
+            this.cheque.amount = null;
             this.showModal = false;
         }
     }

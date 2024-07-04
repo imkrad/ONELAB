@@ -7,8 +7,9 @@
     <style>
         /* Styles for the footer */
         @page {
-            
+           
         }
+
         html * {
             font-family:Arial, Helvetica, sans-serif;
         }
@@ -18,7 +19,7 @@
         }
 
         .content {
-            margin-bottom: 100px; /* Space for the footer */
+            margin-bottom:55px; /* Space for the footer */
         }
 
         table,
@@ -75,26 +76,57 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        .footer table {
-            width: 100%;
-            font-size: 9px;
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            border: none;
+        .page-break {
+            page-break-after: always;
         }
-
     </style>
 </head>
 <?php 
+
     $lists = json_encode($configuration); 
     $lists = json_decode($configuration, true);   
 
     $tsr = json_encode($tsr); 
     $tsr = json_decode($tsr, true);   
+
+    $pages = [
+        [
+            'name' => 'ACCOUNTING COPY',
+            'color' => '#CE2F14'
+        ],
+        [
+            'name' => 'CUSTOMER COPY',
+            'color' => '#f3b700'
+        ],
+        [
+            'name' => 'LABORATORY COPY',
+            'color' => '#762EAF'
+        ],
+    ];
+
+    $loopcount = 0;
 ?>
 <body>
+    
+    <div class="footer">
+        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden;">
+            <tr>
+                <td style="width: 40%; text-align: left; font-weight: bold; color: <?php echo $color; ?>;"><hr/></td>
+            </tr>
+        </table>
+        <table style="margin-top: -5px; border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden;">
+            <tr>
+                <td style="border-right-style: hidden; width: 3%; text-align: right;"> <img src="<?php echo $qrCodeImage; ?>"  width="30" height="30" alt="QR Code"></td>
+                <td style="border-right-style: hidden;" style="width: 50%; text-align: left; font-size: 10px;"><br/> <span style="font-weight: bold; color: #072388;">{{$tsr['code']}}</span></td>
+                <td style="border-left-style: hidden; width: 50%; text-align: right; font-size: 10px;">OP-007-F1 (front page) <br/>Rev 12 l Apr 15, 2024</td>
+                
+            </tr>
+        </table>
+    </div>
+
+
     <div class="content">
+        @foreach($pages as $page)
         <div style="font-family:Arial;">
             <img src="{{ public_path('images/logo-sm.png') }}" alt="tag" style="position: absolute; top: -4; left: 90; width: 50px; height: 50px;">
             <center style="font-size: 10px; margin-bottom: 0px; text-transform: uppercase;">{{$configuration['name']}}</center>
@@ -102,7 +134,7 @@
             <center style="font-size: 11px;">Pettit Baracks, Zamboanga City | (062) 991-1024</center>
             <br/>
             <center style="margin-top: 8px; font-size: 10px; background-color: #000; color:#fff; font-weight: bold; padding: 2px;">TECHNICAL SERVICES REQUEST</center>
-            <center style="font-size: 10px; background-color: #CE2F14; color:#fff; font-weight: bold; padding: 2px;">ACCOUNTING COPY</center>
+            <center style="font-size: 10px; background-color: <?php echo $page['color']; ?>; color:#fff; font-weight: bold; padding: 2px;">{{$page['name']}}</center>
         </div>
 
         <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
@@ -202,7 +234,7 @@
             </tbody>
         </table>
         <h6 style="font-size: 10px; margin-top: 12px;">4. DISCUSSED WITH CUSTOMER INCLUDING THE TERMS AND CONDITIONS AT THE BACK</h6>
-        <table style="text-align: center; border: 1px solid black; font-size: 10px; margin-top: -22px;">
+        <table style="text-align: center; border: 1px solid black; font-size: 10px; margin-top: -22px; page-break-inside: avoid;">
             <tbody>
                 <tr>
                     <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
@@ -216,7 +248,7 @@
                 </tr>
             </tbody>
         </table>
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 10px;">
+        <table style="border: 1px solid black; font-size: 10px; margin-top: 10px; page-break-inside: avoid;">
             <tbody>
                 <tr>
                     <td width="25%">Report due date : </td>
@@ -230,63 +262,52 @@
                 </tr>
             </tbody>
         </table>
-        <center style="margin-top: 15px; font-size: 8px; background-color: #000; color:#fff; font-weight: bold; padding: 2px;">FOR CASHIERING UNIT ONLY</center>
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 0px;">
-            <tbody>
-                <tr>
-                    <td style="border-right-style: hidden;" width="20%">Date Paid</td>
-                    <td></td>
-                    <td style="border-bottom-style: hidden;"></td>
-                </tr>
-                <tr>
-                    <td style="border-right-style: hidden;">Amount Paid</td>
-                    <td></td>
-                    <td style="border-bottom-style: hidden;"></td>
-                </tr>
-                <tr>
-                    <td style="border-right-style: hidden;">OR Number</td>
-                    <td></td>
-                    <td style="border-bottom-style: hidden;"></td>
-                </tr>
-                <tr>
-                    <td style="border-bottom-style: hidden; border-right-style: hidden;">Mode of Payment</td>
-                    <td style="border-bottom-style: hidden;">
-                        <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Cash</label>
-                        <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Cheque</label>
-                        <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Bank Deposit/Transfer</label>
-                    </td>
-                    <td width="33.3%" style="text-align: center;" rowspan="2">
-                        <span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$cashier}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="border-right-style: hidden;">Excess payment </br><span style="font-size: 9px;">(to debit on customer's wallet)</span></td>
-                    <td>
-                        <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">No</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Yes</label>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount: ________________
-                    </td>
-                </tr>
-                <!-- <tr>
-                    <td width="33.3%" style="text-align: center;"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span></td>
-                </tr> -->
-            </tbody>
-        </table>
-
-    </div>
-
-    <div class="footer">
-        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden;">
-            <tr>
-                <td style="width: 40%; text-align: left; font-weight: bold; color: <?php echo $color; ?>;"><hr/></td>
-            </tr>
-        </table>
-        <table style="border-bottom-style: hidden; border-right-style: hidden; border-top-style: hidden; border-left-style: hidden;">
-            <tr>
-                <td style="border-right-style: hidden;" style="width: 50%; text-align: left;">Page _ of _ <br/> <span style="font-weight: bold; color: #072388;">{{$tsr['code']}}</span></td>
-                <td style="border-left-style: hidden; width: 50%; text-align: right;">OP-007-F1 (front page) <br/>Rev 12 l Apr 15, 2024</td>
-            </tr>
-        </table>
+        <div style="page-break-inside: avoid;">
+            <center style="margin-top: 15px; font-size: 8px; background-color: #000; color:#fff; font-weight: bold; padding: 2px;">FOR CASHIERING UNIT ONLY</center>
+            <table style="border: 1px solid black; font-size: 10px; margin-top: 0px;">
+                <tbody>
+                    <tr>
+                        <td style="border-right-style: hidden;" width="20%">Date Paid</td>
+                        <td></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border-right-style: hidden;">Amount Paid</td>
+                        <td></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border-right-style: hidden;">OR Number</td>
+                        <td></td>
+                        <td style="border-bottom-style: hidden;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border-bottom-style: hidden; border-right-style: hidden;">Mode of Payment</td>
+                        <td style="border-bottom-style: hidden;">
+                            <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Cash</label>
+                            <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Cheque</label>
+                            <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Bank Deposit/Transfer</label>
+                        </td>
+                        <td width="33.3%" style="text-align: center;" rowspan="2">
+                            <span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$cashier}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-right-style: hidden;">Excess payment </br><span style="font-size: 9px;">(to debit on customer's wallet)</span></td>
+                        <td>
+                            <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">No</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Yes</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount: ________________
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @if($loopcount < 2)
+        <div class="page-break"></div>
+        @endif
+        @php $loopcount++; @endphp
+        @endforeach
     </div>
 </body>
 </html>
