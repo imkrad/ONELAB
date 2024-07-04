@@ -1,18 +1,18 @@
 <template>
-    <b-modal v-model="showModal" style="--vz-modal-width: 800px;" header-class="p-3 bg-light" title="Generate Certificate" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
+    <b-modal v-model="showModal" header-class="p-3 bg-light" title="Generate Certificate" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <form class="customform">
-            <BRow class="g-3 mt-3">
-                <BCol lg="12" class="mt-n2 mb-n3">
-                    <InputLabel for="name" value="Sample Name"/>
-                    <TextInput id="name" v-model="form.name" type="text" class="form-control" autofocus placeholder="Please enter name" autocomplete="name" required :class="{ 'is-invalid': form.errors.name }" :light="true"/>
+            <BRow class="g-3 mt-1">
+                <BCol lg="12" class="mt-0">
+                    <InputLabel for="name" value="Parameter"/>
+                    <Textarea id="name" v-model="form.parameter" class="form-control" rows="1" :light="true"/>
                 </BCol>
-                <BCol lg="6" class="mb-1">
-                    <InputLabel for="name" value="Description provided by customer"/>
-                    <Textarea id="name" v-model="form.customer_description" class="form-control" rows="2" :light="true"/>
+                <BCol lg="12" class="mt-0">
+                    <InputLabel for="name" value="Result"/>
+                    <Textarea id="name" v-model="form.result" class="form-control" rows="1" :light="true"/>
                 </BCol>
-                <BCol lg="6" class="mb-1">
-                    <InputLabel for="name" value="Description based on the sample submitted"/>
-                    <Textarea id="name" v-model="form.description" class="form-control" rows="2" :light="true"/>
+                <BCol lg="12" class="mt-0">
+                    <InputLabel for="name" value="Method"/>
+                    <Textarea id="name" v-model="form.method" class="form-control" rows="1" :light="true"/>
                 </BCol>
             </BRow>
         </form>
@@ -35,37 +35,23 @@ export default {
             currentUrl: window.location.origin,
             form: useForm({
                 tsr_id: null,
-                name: null,
-                code: null,
-                description: null,
-                customer_description: null,
-                laboratory_id: null,
+                parameter: null,
+                result: null,
+                method: null,
             }),
-            sampletypes: [],
+            sample: null,
             showModal: false,
             editable: false
         }
     },
     methods: { 
         show(data,id){
+            this.sample = data;
             this.form.tsr_id = id;
-            this.showModal = true;
-        },
-        copy(id,laboratory,sample){
-            this.form.tsr_id = id;
-            this.form.name = sample.name;
-            this.form.description = sample.description;
-            this.form.customer_description = sample.customer_description;
-            this.form.laboratory_id = laboratory;
             this.showModal = true;
         },
         submit(){
-            this.form.post('/samples',{
-                preserveScroll: true,
-                onSuccess: (response) => {
-                    this.hide();
-                },
-            });
+           window.open(this.currentUrl + '/samples?option=print&id='+this.sample.id);
         },
         hide(){
             this.form.reset();

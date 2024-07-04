@@ -17,6 +17,7 @@ use App\Services\DropdownService;
 use App\Http\Requests\UserRequest;
 use App\Traits\HandlesTransaction;
 use App\Http\Requests\InstallRequest;
+use App\Http\Resources\VerificationResource;
 
 class WelcomeController extends Controller
 {
@@ -138,7 +139,7 @@ class WelcomeController extends Controller
         $analyses = array_values($groupedData);
 
         return inertia('Modules/Public/Verification',[
-            'tsr' => new TsrResource($tsr),
+            'tsr' => new VerificationResource($tsr),
             'samples' => SampleResource::collection($samples),
             'analyses' => $analyses
         ]);

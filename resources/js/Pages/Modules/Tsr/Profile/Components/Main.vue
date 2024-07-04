@@ -59,7 +59,7 @@
                                     <i>{{list.customer_description}}</i>, {{list.description}}
                                 </td>
                                 <td width="10%" class="text-end">
-                                    <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                    <b-button @click="openView(list)" variant="soft-primary" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                         <i class="ri-eye-fill align-bottom"></i>
                                     </b-button>
                                     <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">

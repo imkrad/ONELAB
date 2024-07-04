@@ -114,11 +114,6 @@ class AnalysisService
             'analyst_id' => \Auth::user()->id,
             'start_at' => $request->start_at
         ]);
-
-        // $data = TsrAnalysis::find($request->id);
-        // $data->status_id = $request->status_id;
-        // $data->analyst_id = \Auth::user()->id;
-        // $data->start_at = $request->start_at;
         
         if($data){
             if(TsrAnalysis::whereHas('sample',function ($query) use ($tsr_id){
@@ -145,7 +140,15 @@ class AnalysisService
             'status_id' => $request->status_id,
             'end_at' => $request->end_at
         ]);
-        
+        if($data){
+            if(TsrAnalysis::whereHas('sample',function ($query) use ($tsr_id){
+                $query->whereHas('tsr',function ($query) use ($tsr_id){
+                    $query->where('id',$tsr_id);
+                });
+            })->whereIn('status_id',[10,11])->count() === 0){
+                $tsr = Tsr::where('id',$tsr_id)->update(['status_id' => 4]);
+            }
+        }
         return [
             'data' => $data,
             'message' => 'TSR cancellation was successful!', 
