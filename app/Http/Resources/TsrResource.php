@@ -22,9 +22,9 @@ class TsrResource extends JsonResource
                 $ongoing = $ongoing + $result->ongoing_analyses_count;
             }
 
-            $completedPercentage = ($completed / $total) * 100;
-            $ongoingPercentage = ($ongoing / $total) * 100;
-            $ongoingPercentage = $ongoingPercentage/2;
+            $completedPercentage = ($completed != 0) ? ($completed / $total) * 100 : 0;
+            $ongoingPercentage = ($ongoing != 0) ? ($ongoing / $total) * 100 : 0;
+            $ongoingPercentage = ($ongoingPercentage != 0) ? $ongoingPercentage/2 : 0;
 
             $analyses = [$completedPercentage+$ongoingPercentage];
         }else{
