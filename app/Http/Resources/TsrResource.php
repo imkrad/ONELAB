@@ -15,7 +15,7 @@ class TsrResource extends JsonResource
         $code = $hashids->encode($this->id);
 
         $total = 0; $completed = 0; $ongoing = 0;
-        if($this->samples){
+        if(count($this->samples) > 0){
             foreach ($this->samples as $result) {
                 $total = $total + $result->analyses_count;
                 $completed = $completed + $result->completed_analyses_count;
