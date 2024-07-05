@@ -101,7 +101,7 @@ export default {
                 params : {
                     keyword: this.filter.keyword,
                     status: this.filter.status,
-                    count: ((window.innerHeight-550)/58),
+                    count: ((window.innerHeight-490)/58),
                     option: 'lists'
                 }
             })
