@@ -51,9 +51,6 @@
                     <option :value="null" selected>Select All</option>
                     <option :value="list" v-for="list in uniqueCodes" v-bind:key="list.id">{{list}}</option>
                 </select>
-                <b-button type="button" variant="primary" @click="openCreate">
-                    <i class="ri-add-circle-fill align-bottom me-1"></i> Create
-                </b-button>
             </div>
         </b-col>
             <div class="col-sm-12">

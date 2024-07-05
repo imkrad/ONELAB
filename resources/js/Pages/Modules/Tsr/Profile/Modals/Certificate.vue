@@ -4,7 +4,7 @@
         <BRow>
             <BCol lg="12">
                 <div class="input-group">
-                    <button class="btn btn-primary" type="button">Generate Report Number</button>
+                    <button @click="generate(sample.id)" class="btn btn-primary" type="button">Generate Report Number</button>
                     <input v-if="sample.report" type="text" class="form-control" :value="sample.report.code" style="text-align: right;">
                     <input v-else type="text" class="form-control" placeholder="Click to generate report number" style="text-align: right;" readonly>
                 </div>
@@ -64,6 +64,9 @@ export default {
         },
         submit(){
            window.open(this.currentUrl + '/samples?option=print&id='+this.sample.id);
+        },
+        generate(id){
+            alert(id);
         },
         hide(){
             this.form.reset();

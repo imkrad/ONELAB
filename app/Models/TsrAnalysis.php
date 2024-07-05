@@ -58,4 +58,9 @@ class TsrAnalysis extends Model
         return date('M d, Y g:i a', strtotime($value));
     }
 
+    public function getCreatedAtAttribute($value)
+    {
+        return date('M d, Y g:i a', strtotime($value));
+    }
+
 }
