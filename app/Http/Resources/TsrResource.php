@@ -28,7 +28,7 @@ class TsrResource extends JsonResource
 
             $analyses = [$completedPercentage+$ongoingPercentage];
         }else{
-            $analyses = 0;
+            $analyses = [0];
         }
 
         return [
