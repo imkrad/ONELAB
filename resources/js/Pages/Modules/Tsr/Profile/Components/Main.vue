@@ -156,7 +156,7 @@
             </div>
             
             <div class="table-responsive mt-2">
-                <simplebar data-simplebar style="height: 290px;">
+                <simplebar data-simplebar style="height: calc(100vh - 240px)">
                 <table class="table table-nowrap align-middle mb-0">
                     <thead class="table-light thead-fixed">
                         <tr class="fs-11">
@@ -271,7 +271,7 @@ export default {
             this.$refs.analyst.show(data);
         },
         openCertificate(data){
-            this.$refs.certificate.show(data,this.selected.id);
+            this.$refs.certificate.show(data,this.selected.id,this.selected.laboratory_type);
         },
         openCopy(sample){
             this.$refs.sample.copy(this.selected.id,this.selected.laboratory_type,sample);

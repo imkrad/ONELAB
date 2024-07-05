@@ -142,9 +142,9 @@
             <tbody>
                 @foreach($sample['analyses'] as $index=>$analysis)
                 <tr style="font-size: 11px; text-align:center;">
-                    <td>{{$analysis['testservice']['testname']['name']}}</td>
-                    <td></td>
-                    <td>{{$analysis['testservice']['method']['method']['name']}}</td>
+                    <td>{{$edited[$index]->name}}</td>
+                    <td><b>{{$edited[$index]->result}}</b></td>
+                    <td>{{$analysis['testservice']['method']['method']['name']}} @if($analysis['testservice']['method']['method']['short']) <br/> {{$analysis['testservice']['method']['method']['short']}} @endif</td>
                 </tr>
                 @endforeach
                 <tr>

@@ -35,7 +35,7 @@ class AnalystService
             return [
                 'id' => $tsr->id,
                 'tsr' => $tsr,
-                'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','result','testservice.testname','testservice.method.reference','testservice.method.method')
+                'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','testservice.testname','testservice.method.reference','testservice.method.method')
                 ->whereHas('sample',function ($query) use ($tsr_id) {
                     $query->whereHas('tsr',function ($query) use ($tsr_id){
                         $query->where('id',$tsr_id);

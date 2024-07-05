@@ -3,10 +3,10 @@
         
       
         <div class="ms-2 mt-n2">
-            <h5 class="modal-title ms-n2 fs-17">{{analysis.code}} - <span class="text-muted">{{analysis.sample}}</span></h5>
+            <h5 class="modal-title ms-n2 fs-16">{{analysis.code}} - <span class="text-muted">{{analysis.sample}}</span></h5>
             <div class="hstack gap-3 flex-wrap mt-0 ms-n2 mb-n2">
-                <div class="text-primary"><i class="ri-account-circle-fill align-bottom me-1"></i>
-                    <span class="text-body text-muted fs-12">{{(analysis.analyst == '-') ? 'Not yet started' : analysis.analyst}}</span>
+                <div class="text-primary">Lab Analyst :
+                    <span class="text-body fw-semibold text-muted fs-13">{{(analysis.analyst == '-') ? 'Not yet started' : analysis.analyst}}</span>
                 </div>
             </div>
         </div>

@@ -4,30 +4,28 @@
         <BRow>
             <BCol lg="12">
                 <div class="input-group">
-                    <button @click="generate(sample.id)" class="btn btn-primary" type="button">Generate Report Number</button>
-                    <input v-if="sample.report" type="text" class="form-control" :value="sample.report.code" style="text-align: right;">
+                    <button v-if="!sample.report" @click="generate()"  class="btn btn-primary" type="button">Generate Report Number</button>
+                    <span v-else class="input-group-text fw-semibold fs-12">Report Number</span>
+                    <input v-if="sample.report" type="text" class="form-control" :value="sample.report.code" style="text-align: right;" readonly>
                     <input v-else type="text" class="form-control" placeholder="Click to generate report number" style="text-align: right;" readonly>
                 </div>
             </BCol>
             <BCol lg="12"><hr class="text-muted"/></BCol>
         </BRow> 
 
-        <!-- <form class="customform">
-            <BRow class="g-3 mt-1">
-                <BCol lg="12" class="mt-0">
+        <form class="customform">
+            
+            <BRow class="g-3 mt-1" v-for="(list,index) in sample.analyses" v-bind:key="index">
+                <BCol lg="6" class="mt-0">
                     <InputLabel for="name" value="Parameter"/>
-                    <Textarea id="name" v-model="form.parameter" class="form-control" rows="1" :light="true"/>
+                    <Textarea id="name" v-model="parameters[index].name" class="form-control" rows="1" :light="true"/>
                 </BCol>
-                <BCol lg="12" class="mt-0">
+                <BCol lg="6" class="mt-0">
                     <InputLabel for="name" value="Result"/>
-                    <Textarea id="name" v-model="form.result" class="form-control" rows="1" :light="true"/>
-                </BCol>
-                <BCol lg="12" class="mt-0">
-                    <InputLabel for="name" value="Method"/>
-                    <Textarea id="name" v-model="form.method" class="form-control" rows="1" :light="true"/>
+                    <Textarea id="name" v-model="parameters[index].result" class="form-control" rows="1" :light="true"/>
                 </BCol>
             </BRow>
-        </form> -->
+        </form>
         <template v-slot:footer>
             <!-- <b-button @click="hide()" variant="light" block>Cancel</b-button> -->
             <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Preview</b-button>
@@ -46,31 +44,43 @@ export default {
         return {
             currentUrl: window.location.origin,
             form: useForm({
+                sample_id: null,
                 tsr_id: null,
-                parameter: null,
-                result: null,
-                method: null,
+                laboratory_type: null,
+                option: 'report',
             }),
+            parameters: [
+                {name: null, result: null}
+            ],
             sample: null,
             showModal: false,
             editable: false
         }
     },
     methods: { 
-        show(data,id){
+        show(data,id,type){
             this.sample = data;
             this.form.tsr_id = id;
+            this.form.sample_id = data.id;
+            this.form.laboratory_type = type;
             this.showModal = true;
+            
+            this.parameters = this.sample.analyses.map(analysis => {
+                return { name: analysis.testname, result: null };
+            });
         },
         submit(){
-           window.open(this.currentUrl + '/samples?option=print&id='+this.sample.id);
+           window.open(this.currentUrl + '/samples?option=print&id='+this.sample.id+'&data='+JSON.stringify(this.parameters));
         },
-        generate(id){
-            alert(id);
+        generate(){
+            this.form.post('/samples',{
+                preserveScroll: true,
+                onSuccess: (response) => {
+                   this.sample.report = response.props.flash.data;
+                },
+            });
         },
         hide(){
-            this.form.reset();
-            this.editable = false;
             this.showModal = false;
         }
     }

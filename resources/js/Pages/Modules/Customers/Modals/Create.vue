@@ -266,11 +266,32 @@ export default {
             this.form.reset();
             this.form.clearErrors();
             // this.form.member_id = null;
+            // this.form.member_id = null;
             // this.form.region_code = null;
             // this.form.province_code = null;
             // this.form.municipality_code = null;
             // this.form.barangay_code = null;
             // this.form.type_id = null;
+            //  form: useForm({
+            //     id: null,
+            //     name: null,
+            //     email: null,
+            //     is_main: false,
+            //     contact_no: null,
+            //     classification_id: null,
+            //     industry_id: null,
+            //     has_branches: null,
+            //     address: null,
+            //     region_code: this.region,
+            //     province_code: null,
+            //     municipality_code: null,
+            //     barangay_code: null,
+            //     latitude: null,
+            //     longitude: null,
+            //     customer: null,
+            //     name_id: null,
+            //     type: 'customer'
+            // }),
             this.editable = false;
             this.showModal = false;
         }

@@ -32,6 +32,9 @@ class SampleController extends Controller
                 case 'remove':
                     return $this->sample->remove($request);
                 break;
+                case 'report':
+                    return $this->sample->report($request);
+                break;
                 default:
                 return $this->sample->save($request);
             }
