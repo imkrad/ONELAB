@@ -15,18 +15,21 @@ class TsrResource extends JsonResource
         $code = $hashids->encode($this->id);
 
         $total = 0; $completed = 0; $ongoing = 0;
+        if($this->samples){
+            foreach ($this->samples as $result) {
+                $total = $total + $result->analyses_count;
+                $completed = $completed + $result->completed_analyses_count;
+                $ongoing = $ongoing + $result->ongoing_analyses_count;
+            }
 
-        foreach ($this->samples as $result) {
-            $total = $total + $result->analyses_count;
-            $completed = $completed + $result->completed_analyses_count;
-            $ongoing = $ongoing + $result->ongoing_analyses_count;
+            $completedPercentage = ($completed / $total) * 100;
+            $ongoingPercentage = ($ongoing / $total) * 100;
+            $ongoingPercentage = $ongoingPercentage/2;
+
+            $analyses = [$completedPercentage+$ongoingPercentage];
+        }else{
+            $analyses = 0;
         }
-
-        $completedPercentage = ($completed / $total) * 100;
-        $ongoingPercentage = ($ongoing / $total) * 100;
-        $ongoingPercentage = $ongoingPercentage/2;
-
-        $analyses = [$completedPercentage+$ongoingPercentage];
 
         return [
             'id' => $this->id,
