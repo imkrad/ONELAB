@@ -37,7 +37,7 @@ class WelcomeController extends Controller
                 ]
             ]);
         }else{
-            return inertia('Modules/Dashboard/Index',[
+            return inertia('Modules/Laboratory/Dashboard/Index',[
                 'laboratories' => $this->dropdown->laboratory_types(),
             ]);
         }
@@ -45,7 +45,7 @@ class WelcomeController extends Controller
 
     public function index(){
         if(\Auth::check()){
-            return inertia('Modules/Dashboard/Index',[
+            return inertia('Modules/Laboratory/Dashboard/Index',[
                 'laboratories' => $this->dropdown->laboratory_types(),
             ]);
         }else{
@@ -138,7 +138,7 @@ class WelcomeController extends Controller
         }
         $analyses = array_values($groupedData);
 
-        return inertia('Modules/Public/Verification',[
+        return inertia('Modules/Laboratory/Public/Verification',[
             'tsr' => new VerificationResource($tsr),
             'samples' => SampleResource::collection($samples),
             'analyses' => $analyses

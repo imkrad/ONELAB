@@ -84,4 +84,9 @@ class TsrPayment extends Model
     {
         $this->attributes['discount'] = trim(str_replace(',','',$value),'₱');
     }
+
+    public function getPaidAtAttribute($value)
+    {
+        return date('M d, Y g:i a', strtotime($value));
+    }
 }

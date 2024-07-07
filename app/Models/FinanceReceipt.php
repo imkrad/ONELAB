@@ -28,6 +28,11 @@ class FinanceReceipt extends Model
         return $this->hasOne('App\Models\FinanceReceipt', 'receipt_id');
     }
 
+    public function detail()
+    {
+        return $this->hasOne('App\Models\FinanceReceiptDetail', 'receipt_id');
+    }
+    
     public function op()
     {
         return $this->belongsTo('App\Models\FinanceOp', 'op_id', 'id');

@@ -23,4 +23,9 @@ class ListDropdown extends Model
     {
         return $this->hasMany('App\Models\Tsr', 'laboratory_type');
     }
+
+    public function messages()
+    {
+        return $this->morphMany('App\Models\ChatConversation', 'receivable');
+    }
 }

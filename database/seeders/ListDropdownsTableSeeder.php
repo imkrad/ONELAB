@@ -1311,7 +1311,7 @@ class ListDropdownsTableSeeder extends Seeder
             129 => 
             array (
                 'id' => 131,
-                'name' => 'Calibration/Analysis Fee',
+                'name' => 'Analysis/Calibration Fee',
                 'classification' => 'Collection Type',
                 'type' => 'n/a',
                 'color' => 'n/a',

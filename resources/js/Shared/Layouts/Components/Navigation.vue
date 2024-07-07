@@ -119,6 +119,9 @@ export default {
       this.cartItems = this.cartItems.filter(item => item.id !== cartItem.id)
       this.$emit("cart-item-price", this.cartItems.length);
     },
+    openInNewTab(url) {
+      window.open(url, '_blank');
+    }
   },
 
   mounted() {
@@ -238,13 +241,13 @@ export default {
                   </BLink>
                 </BCol>
                 <BCol>
-                  <BLink class="dropdown-icon-item" href="#!">
+                  <BLink class="dropdown-icon-item" @click="openInNewTab('/inventory')">
                     <img src="@assets/images/apps/inventory.png" alt="bitbucket" />
                     <span>Inventory</span>
                   </BLink>
                 </BCol>
                 <BCol>
-                  <BLink class="dropdown-icon-item" href="#!">
+                  <BLink class="dropdown-icon-item" @click="openInNewTab('/chatbox')">
                     <img src="@assets/images/apps/chatbox.png" alt="dribbble" />
                     <span>Chatbox</span>
                   </BLink>
