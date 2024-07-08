@@ -19,6 +19,36 @@
                     <i class="ri-search-2-line search-icon"></i>
                 </div>
             </div>
+
+            <div class="d-flex align-items-center px-4 mb-2">
+                <div class="flex-grow-1">
+                    <h4 class="mb-0 fs-11 text-muted text-uppercase">
+                        Nationwide
+                    </h4>
+                </div>
+            </div>
+            <div class="chat-message-list">
+                <ul class="list-unstyled chat-list chat-user-list">
+                    <li class="mb-3">
+                        <BLink href="javascript: void(0);">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                <div class="avatar-xxs">
+                                    <div class="avatar-title rounded-circle bg-primary userprofile">#</div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <p class="text-truncate mb-1">Referral System</p>
+                            </div>
+
+                            <div class="flex-shrink-0">
+                            <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
+                            </div>
+                        </div>
+                        </BLink>
+                    </li>
+                </ul>
+            </div>
             <div class="d-flex align-items-center px-4 mb-2">
                 <div class="flex-grow-1">
                     <h4 class="mb-0 fs-11 text-muted text-uppercase">
@@ -63,10 +93,10 @@
                     <h4 class="mb-0 fs-11 text-muted text-uppercase">({{dropdowns.personnels.length}})</h4>
                 </div>
             </div>
-            <simplebar class="chat-room-list" style="max-height: calc(100vh - 470px);" data-simplebar>
+            <simplebar class="chat-room-list" style="max-height: calc(100vh - 530px);" data-simplebar>
                 <div class="chat-message-list">
                     <SimpleBar class="list-unstyled chat-list chat-user-list">
-                        <li class v-for="(list,index) in dropdowns.personnels" v-bind:key="index" @click="chatLaboratory(list,'personnel')" :class="{ active: active == list.id+'personnel'}">
+                        <li class v-for="(list,index) in dropdowns.personnels" v-bind:key="index" @click="chatPersonnel(list)" :class="{ active: active == list.id+'personnel'}">
                             <BLink href="javascript: void(0);">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
@@ -107,7 +137,7 @@
                                     </div>
                                     <div class="flex-grow-1 overflow-hidden">
                                         <h5 class="text-truncate mb-0 fs-16">
-                                            <BLink class="text-reset username">{{selected.name }} {{ selected.id }}</BLink>
+                                            <BLink class="text-reset username">{{selected.name }}</BLink>
                                         </h5>
                                         <p class="text-truncate text-muted fs-14 mb-0 userStatus">
                                         <small>Online</small>
@@ -168,7 +198,6 @@
                                     </div>
                                 </BCol>
                                 <BCol>
-                                    {{ $page.props.user.data.id }}
                                     <div class="chat-input-feedback">
                                         Please Enter a Message
                                     </div>
@@ -202,12 +231,13 @@
             </div>
         </div>
     </div>
+    <Confirm ref="confirm"/>
 </template>
 <script>
-import { useForm } from '@inertiajs/vue3';
+import Confirm from './Modals/Confirm.vue'
 import simplebar from 'simplebar-vue';
 export default {
-    components: { simplebar },
+    components: { simplebar, Confirm },
     props: ['dropdowns'],
     data(){
         return {
@@ -236,10 +266,25 @@ export default {
             this.type = type;
             this.selected = data;
             this.fetch();
-            this.channel = 'chat-room-'+data.id;
-            this.setupEchoListener();
+            (this.channel) ? window.Echo.leave(this.channel) : '';
+            this.setupEchoListener('chat-room-'+data.id);
         },
-        setupEchoListener() {
+        chatPersonnel(data){
+            this.messages = [];
+            this.active = data.user_id+'personnel';
+            this.type = 'personnel';
+            this.selected = data;
+            if(data.has_convo){
+                this.fetch();
+                (this.channel) ? window.Echo.leave(this.channel) : '';
+                this.setupEchoListener('chat-room-'+data.id);
+            }else{
+                this.channel = null;
+                this.$refs.confirm.show(data);
+            }
+        },
+        setupEchoListener(channel) {
+            this.channel = channel;
             window.Echo.private(this.channel)
             .listen('ConversationEvent', (event) => {
                 console.log(event);

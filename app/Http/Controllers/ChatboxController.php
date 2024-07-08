@@ -6,6 +6,7 @@ use Hashids\Hashids;
 use App\Models\User;
 use App\Models\ListDropdown;
 use App\Models\ChatConversation;
+use App\Models\ChatMessage;
 use Illuminate\Http\Request;
 use App\Services\Chatbox\ListClass;
 use App\Http\Resources\ChatboxResource;
@@ -36,9 +37,9 @@ class ChatboxController extends Controller
         $hashids = new Hashids('krad',10);
         $id = $hashids->decode($request->id);
         $id = $id[0];
-        $data = ChatConversation::with('sender.profile')->where('receivable_id',$id)
+        $data = ChatMessage::with('sender.profile')->where('receivable_id',$id)
         ->orderBy('created_at','DESC')
-        ->take(10)->get();
+        ->take(10)->get()->reverse();
         return ChatboxResource::collection($data);
     }
 
@@ -49,7 +50,7 @@ class ChatboxController extends Controller
         if($request->type === 'laboratory'){
             $data = ListDropdown::find($id);
         }else{
-            $data = User::find($id);
+            $data = ChatConversation::find($id);
         }
         $channel = 'chat-room-'.$request->id;
         $message = $data->messages()->create([
@@ -66,6 +67,22 @@ class ChatboxController extends Controller
         // ];
          broadcast(new ConversationEvent(new ChatboxResource($message), $channel));
         
+    }
+
+    public function update(Request $request){
+        $hashids = new Hashids('krad',10);
+        $id = $hashids->decode($request->id);
+        $data = new ChatConversation;
+        $data->first_id = \Auth::user()->id;
+        $data->second_id = $id[0];
+        $data->save();
+
+        return back()->with([
+            'data' => $data,
+            'message' => 'You can now have a chat',
+            'info' => "You've successfully created a conversation.",
+            'status' => true,
+        ]);
     }
 
 }

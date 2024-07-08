@@ -5,28 +5,26 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ChatConversation extends Model
+class ChatMessage extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'first_id',
-        'second_id',
+        'message',
+        'sender_id',
+        'is_reply',
+        'is_group',
+        'is_read'
     ];
 
-    public function first()
+    public function receivable()
     {
-        return $this->belongsTo('App\Models\User', 'first_id', 'id');
+        return $this->morphTo();
     }
 
-    public function second()
+    public function sender()
     {
         return $this->belongsTo('App\Models\User', 'sender_id', 'id');
-    }
-
-    public function messages()
-    {
-        return $this->morphMany('App\Models\ChatMessage', 'receivable');
     }
 
     public function getCreatedAtAttribute($value)

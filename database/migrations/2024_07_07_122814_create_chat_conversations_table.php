@@ -13,14 +13,11 @@ return new class extends Migration
     {
         Schema::create('chat_conversations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');
-            $table->text('message');
-            $table->unsignedInteger('receivable_id');
-            $table->string('receivable_type');
-            $table->integer('sender_id')->unsigned()->index();
-            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
-            $table->boolean('is_group');
-            $table->boolean('is_reply');
+            $table->increments('id');
+            $table->integer('first_id')->unsigned()->index();
+            $table->foreign('first_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('second_id')->unsigned()->index();
+            $table->foreign('second_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('chat_messages', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->bigIncrements('id');
+            $table->text('message');
+            $table->unsignedInteger('receivable_id');
+            $table->string('receivable_type');
+            $table->integer('sender_id')->unsigned()->index();
+            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
+            $table->boolean('is_group');
+            $table->boolean('is_reply');
+            $table->boolean('is_read')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('chat_messages');
+    }
+};
