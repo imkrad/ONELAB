@@ -93,7 +93,7 @@
                     <h4 class="mb-0 fs-11 text-muted text-uppercase">({{dropdowns.personnels.length}})</h4>
                 </div>
             </div>
-            <simplebar class="chat-room-list" style="max-height: calc(100vh - 530px);" data-simplebar>
+            <simplebar class="chat-room-list mb-3" style="max-height: calc(100vh - 595px);" data-simplebar>
                 <div class="chat-message-list">
                     <SimpleBar class="list-unstyled chat-list chat-user-list">
                         <li class v-for="(list,index) in dropdowns.personnels" v-bind:key="index" @click="chatPersonnel(list)" :class="{ active: active == list.id+'personnel'}">
@@ -116,6 +116,35 @@
                     </SimpleBar>
                 </div>
             </simplebar>
+            <div class="d-flex align-items-center px-4 mb-2">
+                <div class="flex-grow-1">
+                    <h4 class="mb-0 fs-11 text-muted text-uppercase">
+                        Support
+                    </h4>
+                </div>
+            </div>
+            <div class="chat-message-list">
+                <ul class="list-unstyled chat-list chat-user-list">
+                    <li class="mb-3">
+                        <BLink href="javascript: void(0);">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                <div class="avatar-xxs">
+                                    <div class="avatar-title rounded-circle bg-warning userprofile">#</div>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <p class="text-truncate mb-1">Helpdesk</p>
+                            </div>
+
+                            <div class="flex-shrink-0">
+                            <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
+                            </div>
+                        </div>
+                        </BLink>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <div class="user-chat w-100 overflow-hidden">
@@ -346,10 +375,3 @@ export default {
     }
 }
 </script>
-<style>
-.chat-container {
-  height: 300px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-}
-</style>

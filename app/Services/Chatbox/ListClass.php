@@ -34,7 +34,7 @@ class ListClass
     }
 
     public function personnels(){
-        $data = UserRole::with('user.profile','role')->where('laboratory_id',$this->laboratory)->get()->map(function ($item) {
+        $data = UserRole::with('user.profile','role')->where('user_id','!=',\Auth::user()->id)->where('laboratory_id',$this->laboratory)->get()->map(function ($item) {
             $hashids = new Hashids('krad',10);
             $id = $hashids->encode($item->user_id);
             $conversation = ChatConversation::where(function($query) use ($item) {
