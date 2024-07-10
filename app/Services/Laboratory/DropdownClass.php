@@ -245,4 +245,16 @@ class DropdownClass
         });
         return $data;
     }
+
+    public function events(){
+        $data = ListDropdown::where('classification','Events')->get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name,
+                'color' => $item->color,
+                'others' => $item->others
+            ];
+        });
+        return $data;
+    }
 }
