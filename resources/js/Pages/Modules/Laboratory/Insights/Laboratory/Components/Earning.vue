@@ -1,7 +1,7 @@
 <template>
    <BCard no-body class="card-height-100" style="height: 350px;">
         <BCardHeader class="align-items-center d-flex">
-            <BCardTitle class="mb-0 flex-grow-1">Top Earnings</BCardTitle>
+            <BCardTitle class="mb-0 flex-grow-1">Earnings</BCardTitle>
             <div class="flex-shrink-0">
                 <BButton @click="openView()" type="button" variant="soft-primary" size="sm">
                     View All
@@ -50,9 +50,9 @@ export default {
             sort: null,
         }
     },
-    mounted() {
-        this.setupEchoListener();
-    },
+    // mounted() {
+    //     this.setupEchoListener();
+    // },
     methods: {
         setupEchoListener() {
             // window.Echo.channel('system-maintenance')

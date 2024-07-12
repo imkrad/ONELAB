@@ -1,7 +1,7 @@
 <template>
    <BCard no-body class="card-height-100" style="height: 350px;">
         <BCardHeader class="align-items-center d-flex">
-            <BCardTitle class="mb-0 flex-grow-1">Count Request</BCardTitle>
+            <BCardTitle class="mb-0 flex-grow-1">Sample Received</BCardTitle>
             <div class="flex-shrink-0">
                 <BButton @click="openView()" type="button" variant="soft-primary" size="sm">
                     View All
@@ -22,15 +22,15 @@
                             </th>
                             <th scope="col">Name</th>
                             <th class="text-center" scope="col">#</th>
-                            <th class="text-center" scope="col">%</th>
+                            <!-- <th class="text-center" scope="col">%</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                       <tr v-for="(list,index) in tsr.data" v-bind:key="index">
+                       <tr v-for="(list,index) in samples" v-bind:key="index">
                             <td>{{index + 1}}</td>
                             <td>{{list.name}}</td>
-                            <td class="text-center">{{list.tsrs_count}} </td>
-                            <td class="text-center">{{percentage(list.tsrs_count)}}</td>
+                            <td class="text-center">{{list.count}} </td>
+                            <!-- <td class="text-center">{{percentage(list.tsrs_count)}}</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -38,23 +38,35 @@
             </div>
         </BCardBody>
     </BCard>
-    <Tsr ref="tsr"/>
 </template>
 <script>
 import _ from 'lodash';
-import Tsr from '../Modals/Tsr.vue';
 import simplebar from "simplebar-vue";
 export default {
-    components: { simplebar, Tsr },
-    props: ['total','tsr'],
+    components: { simplebar },
+    props: ['total','samples'],
     data(){
         return {
             sort: null,
         }
     },
+    // mounted() {
+    //     this.setupEchoListener();
+    // },
     methods: {
+        setupEchoListener() {
+            // window.Echo.channel('system-maintenance')
+            // .listen('SystemMaintenanceEvent', (event) => {
+            //     alert(event.time);
+            //     console.log(event);
+            // });
+        },
         percentage(data){
             return (_.divide(data, this.total)*100).toFixed(2)+'%';
+        },
+        formatMoney(value) {
+            let val = (value/1).toFixed(2).replace(',', '.')
+            return '₱'+val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         },
         openView(){
             this.$refs.tsr.show();

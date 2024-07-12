@@ -252,7 +252,8 @@ class DropdownClass
                 'value' => $item->id,
                 'name' => $item->name,
                 'color' => $item->color,
-                'others' => $item->others
+                'others' => $item->others,
+                'type' => $item->type
             ];
         });
         return $data;

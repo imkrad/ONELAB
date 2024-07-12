@@ -5,6 +5,7 @@ namespace App\Services\Laboratory\Quotation;
 use Hashids\Hashids;
 use App\Models\UserRole;
 use App\Models\Quotation;
+use App\Models\Configuration;
 use App\Models\QuotationSample;
 use App\Models\QuotationAnalysis;
 use App\Http\Resources\Laboratory\QuotationResource;

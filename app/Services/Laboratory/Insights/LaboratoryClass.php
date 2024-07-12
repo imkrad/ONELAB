@@ -3,6 +3,8 @@
 namespace App\Services\Laboratory\Insights;
 
 use App\Models\Tsr;
+use App\Models\User;
+use App\Models\TsrSample;
 use App\Models\TsrPayment;
 use App\Models\ListDropdown;
 use App\Models\Configuration;
@@ -13,7 +15,8 @@ class LaboratoryClass
     public function __construct()
     {   
         $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
-     }
+        $this->ids =(\Auth::check()) ? (\Auth::user()->role == 'Administrator') ? [] : json_decode(Configuration::where('laboratory_id',$this->laboratory)->value('laboratories')) : '';
+    }
 
     public function total_request(){
         return Tsr::where('laboratory_id',$this->laboratory)->where('status_id',4)->count();
@@ -28,27 +31,20 @@ class LaboratoryClass
     public function info($request){
         $year = $request->year;
         $total = [
-            ['name' => 'Total Requests', 'value' => Tsr::where('laboratory_id',$this->laboratory)->whereYear('created_at',$year)->where('status_id',4)->count()],
-            ['name' => 'Total Earnings', 'value' => TsrPayment::whereHas('tsr', function ($query) {
+            ['name' => 'Active Laboratories', 'value' => count($this->ids)],
+            ['name' => 'No. of Personnels', 'value' => User::whereHas('userrole', function ($query) {
                 $query->where('laboratory_id',$this->laboratory);
-            })->whereYear('created_at',$year)->where('status_id',7)->where('is_paid',1)->sum('total')],
+            })->count()],
             ['name' => 'Pending Collection', 'value' => 0],
         ];
 
         $months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
-        foreach($total as $list){
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
+        $laboratories = ListDropdown::whereIn('id',$lab_id)->get();
+        foreach($laboratories as $list){
             $data = [];
             for($month = 1; $month <= 12; $month++){
-                if($list['name'] == 'Total Requests'){
-                    $count = Tsr::where('laboratory_id',$this->laboratory)->whereYear('created_at',$year)->whereMonth('created_at',$month)->count();
-                }else if($list['name'] == 'Total Earnings'){
-                    $count = TsrPayment::whereHas('tsr', function ($query) {
-                        $query->where('laboratory_id',$this->laboratory);
-                    })->whereYear('created_at',$year)->whereMonth('created_at',$month)->where('status_id',7)->where('is_paid',1)->sum('total');
-                }else{
-                    $count = 0;
-                }
+                $count = Tsr::where('laboratory_type',$list['id'])->where('laboratory_id',$this->laboratory)->whereYear('created_at',$year)->whereMonth('created_at',$month)->count();
                 $data[] = $count;
             }
             $arr[] = [
@@ -65,14 +61,16 @@ class LaboratoryClass
     }
 
     public function tsrs($request){
-        $ids = Configuration::where('laboratory_id',$this->laboratory)->value('laboratories');
-        dd($ids);
+        // $ids = Configuration::where('laboratory_id',$this->laboratory)->value('laboratories');
+        // dd($ids);
+        // dd($this->ids);
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
         $sort = ($request->sort) ? $request->sort : 'desc';
         $year = $request->year;
         $month = $request->month;
   
         $query = ListDropdown::query()->select('id','name');
-        $query->whereIn('id',json_decode($ids));
+        $query->whereIn('id',$lab_id);
         $query->withCount(['tsrs' => function ($query) use ($year,$month){
             $query->where('status_id', 4)->where('laboratory_id', $this->laboratory);
             ($year) ? $query->whereYear('created_at',$year) : '';
@@ -84,12 +82,12 @@ class LaboratoryClass
     }
 
     public function earnings($request){
-        $ids = Configuration::where('laboratory_id',$this->laboratory)->value('laboratories');
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
         $sort = ($request->sort) ? $request->sort : 'desc';
         $year = $request->year;
         $month = $request->month;
 
-        $query = ListDropdown::query()->whereIn('list_dropdowns.id',json_decode($ids));
+        $query = ListDropdown::query()->whereIn('list_dropdowns.id',$lab_id);
         $query->select('list_dropdowns.id','list_dropdowns.name',\DB::raw('SUM(tsr_payments.total) as total'))
         ->join('tsrs', 'list_dropdowns.id', '=', 'tsrs.laboratory_type')
         ->join('tsr_payments', 'tsrs.id', '=', 'tsr_payments.tsr_id')
@@ -101,5 +99,28 @@ class LaboratoryClass
         ($month) ? $query->whereMonth('tsr_payments.paid_at', $month) : '';
         $data = $query->get();
         return DefaultResource::collection($data);
+    }
+
+    public function samples($request){
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
+        $sort = ($request->sort) ? $request->sort : 'desc';
+        $year = $request->year;
+        $month = $request->month;
+
+        foreach($lab_id as $id){
+            $lab = ListDropdown::where('id',$id)->first();
+            $count = TsrSample::whereHas('tsr',function ($query) use ($year,$month,$id) {
+                $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$id)->whereIn('status_id',[3,4]);
+            })->count();
+            $data[] = [
+                'name' => $lab['name'],
+                'count' => $count
+            ];
+        }
+        usort($data, function($a, $b) {
+            return $b['count'] <=> $a['count'];
+        });
+        
+        return $data;
     }
 }

@@ -53,11 +53,17 @@ class InsightController extends Controller
 
     public function laboratories_view(Request $request){
         switch($request->option){
+            case 'info':
+                return $this->laboratory->info($request);
+            break;
             case 'tsr':
                 return $this->laboratory->tsrs($request);
             break;
             case 'earnings':
                 return $this->laboratory->earnings($request);
+            break;
+            case 'samples':
+                return $this->laboratory->samples($request);
             break;
             default:
                 return inertia('Modules/Laboratory/Insights/Laboratory/Index',[
@@ -65,7 +71,8 @@ class InsightController extends Controller
                         'total_request' => $this->laboratory->total_request(),
                         'total_earnings' => $this->laboratory->total_earnings(),
                         'tsrs' => $this->laboratory->tsrs($request),
-                        'earnings' => $this->laboratory->earnings($request)
+                        'earnings' => $this->laboratory->earnings($request),
+                        'samples' => $this->laboratory->samples($request)
                     ]
                 ]);
         }
