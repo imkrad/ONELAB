@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
 
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable, LogsActivity;
@@ -75,6 +76,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function second()
     {
         return $this->hasMany('App\Models\ChatConverstion', 'second_id');
+    }
+
+    public function authentications()
+    {
+        return $this->haMany('App\Models\AuthenticationLog', 'user_id');
     }
 
     public function getActivitylogOptions(): LogOptions {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\AuthenticationLog;
 use Jenssegers\Agent\Agent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProfileRequest;
 use Spatie\Activitylog\Models\Activity;
 use App\Http\Resources\ActivityResource;
+use App\Http\Resources\AuthenticationResource;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Storage;
 
@@ -52,7 +54,8 @@ class ProfileController extends Controller
     }
 
     public function authenticationLogs($request){
-        return [];
+        $data = AuthenticationLog::with('user.profile')->where('user_id',\Auth::user()->id)->paginate($request->count);
+        return AuthenticationResource::collection($data);
     }
 
     public function activityLogs($request){

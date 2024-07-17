@@ -21,7 +21,7 @@ class ChatConversation extends Model
 
     public function second()
     {
-        return $this->belongsTo('App\Models\User', 'sender_id', 'id');
+        return $this->belongsTo('App\Models\User', 'second_id', 'id');
     }
 
     public function messages()

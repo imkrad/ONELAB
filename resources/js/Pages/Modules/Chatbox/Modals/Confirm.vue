@@ -37,7 +37,8 @@ export default {
             this.form.put('/chatbox/update',{
                 preserveScroll: true,
                 onSuccess: (response) => {
-                    // this.$emit('success',true);
+                    console.log(this.$page.props.flash.data);
+                    this.$emit('response',true);
                     this.hide();
                 },
             });

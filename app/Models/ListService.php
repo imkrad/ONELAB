@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ListService extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'has_lab',
+        'is_lab',
+        'is_active'
+    ];
 }

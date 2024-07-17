@@ -14,9 +14,9 @@
                                 <th></th>
                                 <th style="width: 25%;">Browser</th>
                                 <th style="width: 17%;" class="text-center">IP Address</th>
-                                <th style="width: 20%;" class="text-center">Login Date</th>
-                                <th style="width: 20%;" class="text-center">Logout Date</th>
-                                <th style="width: 15%;" class="text-center">Type</th>
+                                <th style="width: 20%;" class="text-center">Location</th>
+                                <th style="width: 20%;" class="text-center">Date</th>
+                                <th style="width: 15%;" class="text-center">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,14 +34,14 @@
                                     <p v-else class="fs-12 text-muted mb-0">Not Available</p>
                                 </td>
                                 <td class="text-center">{{list.ip}} </td>
-                                <td class="text-center text-muted fs-11">{{(list.login_at) ? list.login_at : 'n/a'}}</td>
-                                <td class="text-center text-muted fs-11">{{(list.logout_at) ? list.logout_at : 'n/a'}}</td>
+                                <td class="text-center text-muted fs-11">{{list.created_at}}</td>
+                                <td class="text-center text-muted fs-11">{{list.created_at}}</td>
                                 <td class="text-center">
-                                    <span v-if="list.logout_at == 'n/a'" :class="(list.is_attempt) ? 'badge bg-success' : 'badge bg-danger'">
-                                        <span v-if="list.is_attempt">Login Successful</span>
-                                        <span v-else>Login Failed</span>
+                                    <span :class="(!list.is_failed) ? 'badge bg-success' : 'badge bg-danger'">
+                                        <span v-if="list.is_suspicious">Suspicious</span>
+                                        <span v-if="!list.is_failed">Successful</span>
+                                        <span v-else>Failed</span>
                                     </span>
-                                    <span v-else class="badge bg-warning">Logout</span>
                                 </td>
                             </tr>
                         </tbody>

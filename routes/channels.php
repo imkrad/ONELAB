@@ -28,3 +28,15 @@ Broadcast::channel('chat-room-{id}', function ($user, $id) {
     // return false;
     return true;
 });
+
+Broadcast::channel('user-room-{id}', function ($user, $id) {
+    // return (int) $user->id === (int) $id;
+    return true;
+});
+
+Broadcast::channel('online', function ($user) {
+    $hashids = new Hashids('krad',10);
+    $id = $hashids->encode($user->id);
+    $user = User::with('profile:id,user_id,firstname,lastname')->where('id',$user->id)->first();
+    return ['id' => $id, 'name' => $user->profile->firstname.' '.$user->profile->lastname];
+});

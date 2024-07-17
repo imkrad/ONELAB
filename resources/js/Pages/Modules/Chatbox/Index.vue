@@ -1,16 +1,14 @@
 <template>
     <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
         <div class="chat-leftsidebar">
-            <div class="px-4 pt-3 mb-4">
+            <div class="px-4 pt-3 mb-2">
                 <div class="d-flex align-items-start">
                     <div class="flex-grow-1">
-                        <h5 class="mb-2">Chats</h5>
+                        <h5 class="mb-2">Chats </h5>
                     </div>
                     <div class="flex-shrink-0">
                         <!-- <div v-b-tooltip.hover title="Add Contact">
-                            <BButton type="button" variant="soft-success" size="sm">
-                            <i class="ri-add-line align-bottom"></i>
-                            </BButton>
+                           <span class="text-muted fs-12">({{online.length}} online)</span>
                         </div> -->
                     </div>
                 </div>
@@ -20,131 +18,196 @@
                 </div>
             </div>
 
-            <div class="d-flex align-items-center px-4 mb-2">
-                <div class="flex-grow-1">
-                    <h4 class="mb-0 fs-11 text-muted text-uppercase">
-                        Nationwide
-                    </h4>
-                </div>
-            </div>
-            <div class="chat-message-list">
-                <ul class="list-unstyled chat-list chat-user-list">
-                    <li class="mb-3">
-                        <BLink href="javascript: void(0);">
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
-                                <div class="avatar-xxs">
-                                    <div class="avatar-title rounded-circle bg-primary userprofile">#</div>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1 overflow-hidden">
-                                <p class="text-truncate mb-1">Referral System</p>
-                            </div>
+            <ul class="nav nav-tabs nav-tabs-custom nav-success nav-justified" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active fs-12" data-bs-toggle="tab" href="#chats" role="tab">
+                        Chats
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-12" data-bs-toggle="tab" href="#contacts" role="tab">
+                        Contacts
+                    </a>
+                </li>
+            </ul>
 
-                            <div class="flex-shrink-0">
-                            <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
-                            </div>
+            <div class="tab-content text-muted">
+                <div class="tab-pane active" id="chats" role="tabpanel">
+                    <div class="d-flex align-items-center px-4 mt-0 pt-3 mb-2">
+                        <div class="flex-grow-1">
+                            <h4 class="mb-0 fs-11 text-muted text-uppercase">
+                                Nationwide
+                            </h4>
                         </div>
-                        </BLink>
-                    </li>
-                </ul>
-            </div>
-            <div class="d-flex align-items-center px-4 mb-2">
-                <div class="flex-grow-1">
-                    <h4 class="mb-0 fs-11 text-muted text-uppercase">
-                        Laboratories
-                    </h4>
-                </div>
-                <div class="flex-shrink-0">
-                    <h4 class="mb-0 fs-11 text-muted text-uppercase">({{dropdowns.laboratories.length}})</h4>
-                </div>
-            </div>
-            <simplebar class="chat-room-list" style="max-height: 120px;" data-simplebar>
-                <div class="chat-message-list">
-                    <SimpleBar class="list-unstyled chat-list chat-user-list">
-                        <li class v-for="(list,index) in dropdowns.laboratories" v-bind:key="index" @click="chatLaboratory(list,'laboratory')" :class="{ active: active == list.id+'laboratory' }">
-                            <BLink href="javascript: void(0);">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
-                                    <div class="avatar-xxs">
-                                        <div class="avatar-title rounded-circle bg-info userprofile">
-                                        {{ list.name.charAt(0) }}
+                    </div>
+                    <div class="chat-message-list">
+                        <ul class="list-unstyled chat-list chat-user-list">
+                            <li class="">
+                                <BLink href="javascript: void(0);">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                        <div class="avatar-xxs">
+                                            <div class="avatar-title rounded-circle bg-primary userprofile">#</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="flex-grow-1 overflow-hidden">
-                                    <p class="text-truncate mb-1">{{ list.name }}</p>
-                                </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <p class="text-truncate mb-1">Referral System</p>
+                                    </div>
 
-                                <div class="flex-shrink-0">
-                                <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
-                                </div>
-                            </div>
-                            </BLink>
-                        </li>
-                    </SimpleBar>
-                </div>
-            </simplebar>
-            <div class="d-flex align-items-center px-4 mt-2 pt-3 mb-2">
-                <div class="flex-grow-1">
-                    <h4 class="mb-0 fs-11 text-muted text-uppercase">Personnels</h4>
-                </div>
-                <div class="flex-shrink-0">
-                    <h4 class="mb-0 fs-11 text-muted text-uppercase">({{dropdowns.personnels.length}})</h4>
-                </div>
-            </div>
-            <simplebar class="chat-room-list mb-3" style="max-height: calc(100vh - 595px);" data-simplebar>
-                <div class="chat-message-list">
-                    <SimpleBar class="list-unstyled chat-list chat-user-list">
-                        <li class v-for="(list,index) in dropdowns.personnels" v-bind:key="index" @click="chatPersonnel(list)" :class="{ active: active == list.id+'personnel'}">
-                            <BLink href="javascript: void(0);">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
-                                    <div class="avatar-xxs">
-                                        <div class="avatar-title rounded-circle bg-danger userprofile">{{ list.name.charAt(0) }}</div>
+                                    <div class="flex-shrink-0">
+                                    <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
                                     </div>
                                 </div>
-                                <div class="flex-grow-1 overflow-hidden">
-                                    <p class="text-truncate mb-1"> {{ list.name }} </p>
-                                </div>
-                                <div class="flex-shrink-0">
-                                <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
-                                </div>
-                            </div>
-                            </BLink>
-                        </li>
-                    </SimpleBar>
-                </div>
-            </simplebar>
-            <div class="d-flex align-items-center px-4 mb-2">
-                <div class="flex-grow-1">
-                    <h4 class="mb-0 fs-11 text-muted text-uppercase">
-                        Support
-                    </h4>
-                </div>
-            </div>
-            <div class="chat-message-list">
-                <ul class="list-unstyled chat-list chat-user-list">
-                    <li class="mb-3">
-                        <BLink href="javascript: void(0);">
-                        <div class="d-flex align-items-center">
-                            <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
-                                <div class="avatar-xxs">
-                                    <div class="avatar-title rounded-circle bg-warning userprofile">#</div>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1 overflow-hidden">
-                                <p class="text-truncate mb-1">Helpdesk</p>
-                            </div>
+                                </BLink>
+                            </li>
+                            <li class="mb-3">
+                                <BLink href="javascript: void(0);">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                        <div class="avatar-xxs">
+                                            <div class="avatar-title rounded-circle bg-warning userprofile">#</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <p class="text-truncate mb-1">Helpdesk Support</p>
+                                    </div>
 
-                            <div class="flex-shrink-0">
-                            <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
-                            </div>
+                                    <div class="flex-shrink-0">
+                                    <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
+                                    </div>
+                                </div>
+                                </BLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex align-items-center px-4 mb-2">
+                        <div class="flex-grow-1">
+                            <h4 class="mb-0 fs-11 text-muted text-uppercase">
+                                Laboratories
+                            </h4>
                         </div>
-                        </BLink>
-                    </li>
-                </ul>
-            </div>
+                        <div class="flex-shrink-0">
+                            <h4 class="mb-0 fs-11 text-muted text-uppercase">({{dropdowns.laboratories.length}})</h4>
+                        </div>
+                    </div>
+                    <simplebar class="chat-room-list" style="max-height: 120px;" data-simplebar>
+                        <div class="chat-message-list">
+                            <SimpleBar class="list-unstyled chat-list chat-user-list">
+                                <li class v-for="(list,index) in dropdowns.laboratories" v-bind:key="index" @click="chatLaboratory(list,'laboratory')" :class="{ active: active == list.id+'laboratory' }">
+                                    <BLink href="javascript: void(0);">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                            <div class="avatar-xxs">
+                                                <div class="avatar-title rounded-circle bg-info userprofile">
+                                                {{ list.name.charAt(0) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-truncate mb-1">{{ list.name }}</p>
+                                        </div>
+
+                                        <div class="flex-shrink-0">
+                                        <!-- <BBadge variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">2</BBadge> -->
+                                        </div>
+                                    </div>
+                                    </BLink>
+                                </li>
+                            </SimpleBar>
+                        </div>
+                    </simplebar>
+                    <div class="d-flex align-items-center px-4 mb-2 mt-3">
+                        <div class="flex-grow-1">
+                            <h4 class="mb-0 fs-11 text-muted text-uppercase">
+                                Conversations
+                            </h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <h4 class="mb-0 fs-11 text-muted text-uppercase">({{dropdowns.conversations.data.length}})</h4>
+                        </div>
+                    </div>
+                    <simplebar class="chat-room-list mb-3" style="max-height: calc(100vh - 590px);" data-simplebar>
+                        <div class="chat-message-list">
+                            <SimpleBar class="list-unstyled chat-list chat-user-list">
+                                <li class v-for="(list,index) in conversations" v-bind:key="index" @click="chatPersonnel(list,index)" :class="{ active: active == list.user_id+'personnel'}">
+                                    <BLink href="javascript: void(0);">
+                                    <div class="d-flex align-items-center">
+                                        <!-- <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                            <div class="avatar-xxs">
+                                                <div class="avatar-title rounded-circle bg-danger userprofile">{{ list.name.charAt(0) }}</div>
+                                            </div>
+                                        </div> -->
+                                        <div class="flex-shrink-0 chat-user-img user-own-img align-self-center me-3 ms-0" :class="(isUserOnline(list.user_id) ? 'online' : '')">
+                                            <img v-if="list.avatar" :src="'/storage/'+list.avatar" @error="setAlternateImage" class="rounded-circle avatar-xs" alt=""/>
+                                            <div v-else class="avatar-xs">
+                                                <div class="avatar-title rounded-circle bg-primary userprofile">
+                                                {{ list.name.charAt(0) }}
+                                                </div>
+                                            </div>
+                                            <span class="user-status"></span>
+                                        </div>
+                                        <!-- <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-truncate mt-1" :class="(list.count > 0) ? 'fw-bold' : ''"> {{ list.name }} </p>
+                                            <span class="mt-0 text-muted">testing</span>
+                                        </div> -->
+                                        <div class="flex-grow-1 ms-n2 overflow-hidden">
+                                            <h5 class="list-title fs-base fw-semibold fs-12 mb-0">{{list.name}}</h5>
+                                            <p class="text-truncate mb-0 width-100 fs-11" :class="(list.is_read) ? 'text-muted' : ''">{{list.message}}</p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                        <BBadge v-if="list.count > 0" variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">{{list.count}}</BBadge>
+                                        </div>
+                                    </div>
+                                    </BLink>
+                                </li>
+                            </SimpleBar>
+                        </div>
+                    </simplebar>
+                </div>
+
+                <div class="tab-pane" id="contacts" role="tabpanel">
+                    <div class="d-flex align-items-center px-4 mt-2 pt-3 mb-2">
+                        <div class="flex-grow-1">
+                            <h4 class="mb-0 fs-11 text-muted text-uppercase">Personnels</h4>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <h4 class="mb-0 fs-11 text-muted">({{online.length}} online)</h4>
+                        </div>
+                    </div>
+                    <simplebar class="chat-room-list mb-3" style="max-height: calc(100vh - 340px);" data-simplebar>
+                        <div class="chat-message-list">
+                            <SimpleBar class="list-unstyled chat-list chat-user-list">
+                                <li class v-for="(list,index) in sortedUsers" v-bind:key="index" @click="chatPersonnel(list,index)" :class="{ active: active == list.id+'personnel'}">
+                                    <BLink href="javascript: void(0);">
+                                    <div class="d-flex align-items-center">
+                                        <!-- <div class="flex-shrink-0 chat-user-img online align-self-center me-2 ms-0">
+                                            <div class="avatar-xxs">
+                                                <div class="avatar-title rounded-circle bg-danger userprofile">{{ list.name.charAt(0) }}</div>
+                                            </div>
+                                        </div> -->
+                                        <div class="flex-shrink-0 chat-user-img user-own-img align-self-center me-3 ms-0" :class="(isUserOnline(list.user_id) ? 'online' : '')">
+                                            <img v-if="list.avatar" :src="'/storage/'+list.avatar" @error="setAlternateImage" class="rounded-circle avatar-xxs" alt=""/>
+                                            <div v-else class="avatar-xxs">
+                                                <div class="avatar-title rounded-circle bg-primary userprofile">
+                                                {{ list.name.charAt(0) }}
+                                                </div>
+                                            </div>
+                                            <span class="user-status"></span>
+                                        </div>
+                                        <div class="flex-grow-1 overflow-hidden">
+                                            <p class="text-truncate mb-1 mt-1" :class="(list.count > 0) ? 'fw-bold' : ''"> {{ list.name }} </p>
+                                        </div>
+                                        <div class="flex-shrink-0">
+                                        <BBadge v-if="list.count > 0" variant="dark-subtle" class="bg-dark-subtle text-body rounded p-1">{{list.count}}</BBadge>
+                                        </div>
+                                    </div>
+                                    </BLink>
+                                </li>
+                            </SimpleBar>
+                        </div>
+                    </simplebar>
+                </div>
+            </div>  
         </div>
 
         <div class="user-chat w-100 overflow-hidden">
@@ -260,7 +323,7 @@
             </div>
         </div>
     </div>
-    <Confirm ref="confirm"/>
+    <Confirm @response="updateId()" ref="confirm"/>
 </template>
 <script>
 import Confirm from './Modals/Confirm.vue'
@@ -277,50 +340,32 @@ export default {
             },
             channel: null,
             messages: [],
+            online: [],
             active: null,
             selected: null,
-            type: null
+            type: null,
+            index: null,
+            conversations: []
         }
     },
     created(){
+        this.onlineChannel();
+        this.myChannel();
         if(this.$page.props.user.data.assigned_type != 'n/a'){
             const d = this.dropdowns.laboratories.find(obj => obj.name == this.$page.props.user.data.assigned_type);
             this.chatLaboratory(d,'laboratory');
         }
+        this.sortConversation();
+    },
+    beforeDestroy() {
+        window.removeEventListener('beforeunload', this.isUserLeaving);
+    },
+    computed: {
+        sortedUsers() {
+            return this.dropdowns.personnels.slice().sort((a, b) => a.name.localeCompare(b.name));
+        },
     },
     methods: {
-        chatLaboratory(data,type){
-            this.messages = [];
-            this.active = data.id+type;
-            this.type = type;
-            this.selected = data;
-            this.fetch();
-            (this.channel) ? window.Echo.leave(this.channel) : '';
-            this.setupEchoListener('chat-room-'+data.id);
-        },
-        chatPersonnel(data){
-            this.messages = [];
-            this.active = data.user_id+'personnel';
-            this.type = 'personnel';
-            this.selected = data;
-            if(data.has_convo){
-                this.fetch();
-                (this.channel) ? window.Echo.leave(this.channel) : '';
-                this.setupEchoListener('chat-room-'+data.id);
-            }else{
-                this.channel = null;
-                this.$refs.confirm.show(data);
-            }
-        },
-        setupEchoListener(channel) {
-            this.channel = channel;
-            window.Echo.private(this.channel)
-            .listen('ConversationEvent', (event) => {
-                console.log(event);
-                this.messages.push(event.message);
-                this.scrollToBottom('users-chat');
-            });
-        },
         fetch(page_url){
             page_url = page_url || '/chatbox';
             axios.get(page_url,{
@@ -333,10 +378,70 @@ export default {
             .then(response => {
                 if(response){
                     this.messages = response.data.data; 
+                    this.updateRead(this.selected.id);
                     this.scrollToBottom('users-chat');
                 }
             })
             .catch(err => console.log(err));
+        },
+        sortConversation(){
+            this.conversations = this.dropdowns.conversations.data.slice().sort((a, b) => {
+                return new Date(b.created) - new Date(a.created);
+            });
+        },
+        chatLaboratory(data,type){
+            this.messages = [];
+            this.active = data.id+type;
+            this.type = type;
+            this.selected = data;
+            this.fetch();
+            (this.channel) ? window.Echo.leave(this.channel) : '';
+            this.conversationChannel('chat-room-'+data.id);
+        },
+        chatPersonnel(data,index){
+            this.messages = [];
+            this.active = data.user_id+'personnel';
+            this.type = 'personnel';
+            this.selected = data;
+            if(data.has_convo){
+                this.fetch();
+                (this.channel) ? window.Echo.leave(this.channel) : '';
+                this.conversationChannel('chat-room-'+data.id);
+            }else{
+                this.channel = null;
+                this.index = index;
+                this.$refs.confirm.show(data);
+            }
+        },
+        onlineChannel(){
+            window.Echo.join('online')
+            .here((users) => {
+                this.online = users;
+            })
+            .joining((user) => {
+                if (!this.online.some(onlineUser => onlineUser.id === user.id)) {
+                    this.online.push(user);
+                }
+            })
+            .leaving((user) => {
+                this.online = this.online.filter(onlineUser => onlineUser.id !== user.id);
+            });
+        },
+        conversationChannel(channel) {
+            this.channel = channel;
+            window.Echo.private(this.channel)
+            .listen('ConversationEvent', (event) => {
+                this.messages.push(event.message);
+                this.scrollToBottom('users-chat');
+            });
+        },
+        myChannel() {
+            window.Echo.private('user-room-'+this.$page.props.user.data.id)
+            .listen('UpdateMessageEvent', (event) => {
+                const index = this.dropdowns.conversations.data.findIndex(convo => convo.id === event.message.id);
+                this.dropdowns.conversations.data[index] = event.message;
+                this.sortConversation();
+            });
         },
         submit(){
             this.form.type = this.type;
@@ -344,9 +449,34 @@ export default {
             axios.post('/chatbox', this.form)
             .then((response) => {
                 this.form.message = null;   
-                // this.messages.push(response.data);
                 var currentChatId = "users-chat";
                 this.scrollToBottom(currentChatId);  
+            }).catch(error => {
+                if (error.response.status === 422) {
+                    console.log(error);
+                }
+            });
+        },
+        isUserOnline(userId) {
+            return this.online.some(user => user.id === userId);
+        },
+        isUserLeaving(event) {
+            window.Echo.leave('online');
+        },
+        updateId(){
+            this.sortedUsers[this.index].id = this.$page.props.flash.data;
+            this.sortedUsers[this.index].has_convo = true;
+            this.chatPersonnel(this.sortedUsers[this.index],this.index);
+        },
+        updateRead(id){
+            const basicForm = {
+                id: this.selected.id,
+                is_read: 1,
+                option: 'read'
+            };
+            axios.post('/chatbox', basicForm)
+            .then((response) => {
+                console.log(response);
             }).catch(error => {
                 if (error.response.status === 422) {
                     console.log(error);

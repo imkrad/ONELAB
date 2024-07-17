@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Listeners\LoginFailed;
+use App\Listeners\LoginSuccessful;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,5 +23,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         \Schema::defaultStringLength(191);
+
+        Event::listen(
+            LoginSuccessful::class,
+            LoginFailed::class
+        );
     }
 }
