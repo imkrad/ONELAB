@@ -120,7 +120,7 @@ class ViewClass
 
         $data = new TsrViewResource(
             Tsr::query()
-            ->with('samples.report','samples.analyses','samples.analyses.testservice.testname','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference')
+            ->with('samples.report','samples.analyses','samples.analyses.addfee.service','samples.analyses.testservice.testname','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference')
             ->with('service.service')
             ->with('received:id','received.profile:id,firstname,lastname,user_id')
             ->with('laboratory','laboratory_type:id,name','purpose:id,name','status:id,name,color,others')
@@ -139,8 +139,8 @@ class ViewClass
 
         $data = AnalysisResource::collection(
             TsrAnalysis::query()
-            ->with('sample','status','analyst')
-            ->with('testservice.testname','testservice.method.method','testservice.method.reference')
+            ->with('sample','status','analyst','addfee.service')
+            ->with('testservice.testname','testservice.method.method','testservice.method.reference','testservice.fee')
             ->whereHas('sample',function ($query) use ($id){
                 $query->whereHas('tsr',function ($query) use ($id){
                     $query->where('id',$id);

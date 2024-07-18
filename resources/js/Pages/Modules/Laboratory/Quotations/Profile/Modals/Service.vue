@@ -2,7 +2,7 @@
     <b-modal v-model="showModal" style="--vz-modal-width: 600px;" header-class="p-3 bg-light" title="Add Service" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <form class="customform">
             <BRow>
-                 <BCol lg="12" class="mt-1">
+                <BCol lg="12" class="mt-1">
                     <InputLabel for="region" value="Service"/>
                     <Multiselect 
                     label="label"

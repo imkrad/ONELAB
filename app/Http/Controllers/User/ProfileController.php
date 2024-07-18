@@ -103,19 +103,19 @@ class ProfileController extends Controller
                 'name' => 'Successful Login',
                 'icon' => 'ri-checkbox-circle-fill',
                 'color' => 'text-success',
-                'total' => 0
+                'total' => AuthenticationLog::where('user_id',\Auth::user()->id)->where('is_failed',0)->count()
             ],
             [
                 'name' => 'Suspicious Login',
                 'icon' => 'ri-error-warning-fill',
                 'color' => 'text-warning',
-                'total' => 0
+                'total' =>  AuthenticationLog::where('user_id',\Auth::user()->id)->where('is_suspicious',1)->count()
             ],
             [
                 'name' => 'Login Attempts',
                 'icon' => 'ri-close-circle-fill',
                 'color' => 'text-danger',
-                'total' => 0
+                'total' =>  AuthenticationLog::where('user_id',\Auth::user()->id)->where('is_failed',1)->count()
             ]
         ];
     }

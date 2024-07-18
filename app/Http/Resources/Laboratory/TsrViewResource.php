@@ -28,6 +28,7 @@ class TsrViewResource extends JsonResource
             'received' => $this->received->profile->firstname.' '.$this->received->profile->lastname,
             'payment' => $this->payment,
             'due_at' => $this->due_at,
+            'addfee' => $this->addfee,
             'service' => $this->service,
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,

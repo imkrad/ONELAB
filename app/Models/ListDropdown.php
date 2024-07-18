@@ -28,4 +28,9 @@ class ListDropdown extends Model
     {
         return $this->morphMany('App\Models\ChatMessage', 'receivable');
     }
+
+    public function services()
+    {
+        return $this->morphMany('App\Models\ListService', 'typeable');
+    }
 }

@@ -103,11 +103,17 @@
                                                     <h5 class="fs-12 mb-0">{{list.method}}</h5>
                                                     <p class="fs-11 text-muted mb-0">{{list.reference}}</p>
                                                 </td>
-                                                <td class="text-center">{{list.fee}}</td>
+                                                <td class="text-center">
+                                                    <h5 class="fs-12 mb-0">{{list.fee}}</h5>
+                                                    <span v-if="list.addfee" class="text-muted fs-11">(+ {{list.addfee.total}} fee)</span>
+                                                </td>
                                                 <td class="text-center">
                                                     <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                                                 </td>
                                                 <td>
+                                                    <b-button @click="openAdditional(list.additional,list.id)" v-if="list.additional != null && list.addfee == null" variant="soft-success" class="me-1" v-b-tooltip.hover title="Add" size="sm">
+                                                        <i class="ri-add-circle-fill align-bottom"></i>
+                                                    </b-button>
                                                     <b-button @click="openViewAnalysis(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                                         <i class="ri-eye-fill align-bottom"></i>
                                                     </b-button>
@@ -211,6 +217,7 @@
     <Service :services="services" ref="service"/>
     <Certificate ref="certificate"/>
     <Analyst ref="analyst"/>
+    <Additional ref="additional"/>
 </template>
 <script>
 import simplebar from "simplebar-vue";
@@ -220,8 +227,9 @@ import Service from '../Modals/Service.vue';
 import Analysis from '../Modals/Analysis.vue';
 import Analyst from '../Modals/Analyst.vue';
 import Certificate from '../Modals/Certificate.vue';
+import Additional from '../Modals/Additional.vue';
 export default {
-    components: { simplebar, Delete, Sample, Service, Analysis, Certificate, Analyst },
+    components: { simplebar, Delete, Sample, Service, Analysis, Certificate, Analyst, Additional },
     props:['selected','services','analyses'],
     data(){
         return {
@@ -266,6 +274,9 @@ export default {
         openView(list){
             this.view = true;
             this.sample = list;
+        },
+        openAdditional(data,id){
+            this.$refs.additional.show(data,id,this.selected.id);
         },
         openViewAnalysis(data){
             this.$refs.analyst.show(data);

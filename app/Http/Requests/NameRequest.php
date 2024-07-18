@@ -39,6 +39,11 @@ class NameRequest extends FormRequest
                 'reference_id' => 'sometimes|required',
                 'fee' => ['required', new NotZeroPeso],
             ];
+        }else if($this->option == 'fee'){
+            return [
+                'name' => 'sometimes|required',
+                'fee' => ['required', new NotZeroPeso]
+            ];
         }else{
             return [];
         }

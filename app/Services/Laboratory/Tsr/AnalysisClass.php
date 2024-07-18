@@ -56,6 +56,23 @@ class AnalysisClass
         ];
     }
 
+    public function fee($request){
+        $data = TsrAnalysis::findOrFail($request->id);
+        $data->addfee()->create([
+            'service_id' => $request->service['id'],
+            'fee' => $request->service['fee'],
+            'total' => $request->total,
+            'quantity' => $request->quantity,
+            'is_additional' => 1
+        ]);
+        $total = $this->updateTotal($request->tsr_id,$request->total);
+        return [
+            'data' => $total,
+            'message' => 'Service added was successful!', 
+            'info' => "You've successfully added a service."
+        ];
+    }
+
     public function remove($request){
         $id = $request->id;
         $tsr_id = $request->tsr_id;

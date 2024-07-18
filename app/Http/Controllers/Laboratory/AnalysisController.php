@@ -33,6 +33,9 @@ class AnalysisController extends Controller
                 case 'service':
                     return $this->analysis->service($request);
                 break;
+                case 'fee':
+                    return $this->analysis->fee($request);
+                break;
                 case 'remove':
                     return $this->analysis->remove($request);
                 break;

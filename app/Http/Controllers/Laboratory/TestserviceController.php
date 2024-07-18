@@ -63,6 +63,17 @@ class TestserviceController extends Controller
                     'status' => $result['status'],
                 ]);
             break;
+            case 'fee':
+                $result = $this->handleTransaction(function () use ($request) {
+                    return $this->save->fee($request);
+                });
+                return back()->with([
+                    'data' => $result['data'],
+                    'message' => $result['message'],
+                    'info' => $result['info'],
+                    'status' => $result['status'],
+                ]);
+            break;
             case 'method':
                 return $this->save->method($request);
             break;

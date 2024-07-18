@@ -204,7 +204,7 @@ class DropdownClass
     }
 
     public function services(){
-        $data = ListService::get()->map(function ($item) {
+        $data = ListService::where('is_additional',0)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'label' => $item->name.' ('.$item->description.')',

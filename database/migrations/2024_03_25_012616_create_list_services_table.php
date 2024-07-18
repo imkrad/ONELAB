@@ -17,10 +17,13 @@ return new class extends Migration
             $table->decimal('fee',12,2);
             $table->string('name');
             $table->string('description');
-            $table->tinyInteger('laboratory_type')->unsigned()->index();
-            $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            // $table->tinyInteger('laboratory_type')->unsigned()->index();
+            // $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->unsignedInteger('typeable_id');
+            $table->string('typeable_type');
             $table->integer('laboratory_id')->unsigned()->index();
             $table->foreign('laboratory_id')->references('id')->on('laboratories')->onDelete('cascade');
+            $table->boolean('is_additional')->default(0);
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });

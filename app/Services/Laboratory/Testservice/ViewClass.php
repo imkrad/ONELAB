@@ -26,6 +26,7 @@ class ViewClass
             ->when($request->laboratory, function ($query, $laboratory) {
                 $query->where('laboratory_type',$laboratory);
             })
+            ->with('fee')
             ->with('sampletype','testname','laboratory.member','laboratory.address.region','type')
             ->with('method.method','method.reference')
             ->orderBy('created_at','DESC')

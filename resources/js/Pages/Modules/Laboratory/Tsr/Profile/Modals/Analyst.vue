@@ -1,5 +1,5 @@
 <template>
-    <b-modal v-if="analysis" v-model="showModal"  style="--vz-modal-width: 600px;" header-class="p-3 bg-light" title="View Analysis" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
+    <b-modal v-if="analysis" v-model="showModal" style="--vz-modal-width: 600px;" header-class="p-3 bg-light" title="View Analysis" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         
       
         <div class="ms-2 mt-n2">

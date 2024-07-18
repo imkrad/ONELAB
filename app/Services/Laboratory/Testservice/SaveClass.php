@@ -37,4 +37,14 @@ class SaveClass
         $data = ListMethod::with('method')->where('id',$method->id)->first();
         return $data;
     }
+
+    public function fee($request){
+        $data = ListTestservice::findOrFail($request->id);
+        $data->fee()->create(array_merge($request->all(),['laboratory_id' => $this->laboratory]));
+        return [
+            'data' => $data,
+            'message' => 'Additional fee added was successful!', 
+            'info' => "You've successfully added additional fee."
+        ];
+    }
 }

@@ -15,10 +15,15 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->decimal('fee',12,2);
+            $table->decimal('total',12,2);
+            $table->integer('quantity')->default(1);
             $table->integer('service_id')->unsigned()->index();
             $table->foreign('service_id')->references('id')->on('list_services')->onDelete('cascade');
-            $table->bigInteger('tsr_id')->unsigned()->index();
-            $table->foreign('tsr_id')->references('id')->on('tsrs')->onDelete('cascade');
+            // $table->bigInteger('tsr_id')->unsigned()->index();
+            // $table->foreign('tsr_id')->references('id')->on('tsrs')->onDelete('cascade');
+            $table->unsignedInteger('typeable_id');
+            $table->string('typeable_type');
+            $table->boolean('is_additional')->default(0);
             $table->timestamps();
         });
     }

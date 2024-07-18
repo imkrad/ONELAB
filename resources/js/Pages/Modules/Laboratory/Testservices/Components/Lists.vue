@@ -49,13 +49,16 @@
                         <span v-else class="badge bg-danger">Inactive</span>
                     </td>
                     <td class="text-end">
-                         <Link :href="`/customers/${list.code}`">
+                         <!-- <Link :href="`/customers/${list.code}`">
                             <b-button variant="soft-info" class="me-1" v-b-tooltip.hover title="Edit" size="sm">
                                 <i class="ri-eye-fill align-bottom"></i>
                             </b-button>
-                        </Link>
-                        <b-button @click="openEdit(list,index)" variant="soft-warning" v-b-tooltip.hover title="Edit" size="sm">
-                            <i class="ri-pencil-fill align-bottom"></i>
+                        </Link> -->
+                        <b-button @click="openFee(list.id,list.fee)" variant="soft-warning" class="me-1" v-b-tooltip.hover title="Add Fee" size="sm">
+                            <i class="ri-add-circle-fill align-bottom"></i>
+                        </b-button>
+                        <b-button @click="openProfile(list,index)" variant="soft-info" v-b-tooltip.hover title="View" size="sm">
+                            <i class="ri-eye-fill align-bottom"></i>
                         </b-button>
                     </td>
                 </tr>
@@ -64,13 +67,17 @@
         <Pagination class="ms-2 me-2" v-if="meta" @fetch="fetch" :lists="lists.length" :links="links" :pagination="meta" />
     </div>
     <Create @message="checkSearchStr" :dropdowns="dropdowns" ref="create"/>
+    <Fee ref="fee"/>
+    <Profile ref="profile"/>
 </template>
 <script>
 import _ from 'lodash';
+import Fee from '../Modals/Fee.vue';
+import Profile from '../Modals/Profile.vue';
 import Create from '../Modals/Create.vue';
 import Pagination from "@/Shared/Components/Pagination.vue";
 export default {
-    components: { Pagination, Create },
+    components: { Pagination, Create, Fee, Profile },
     props: ['dropdowns'],
     data(){
         return {
@@ -119,9 +126,11 @@ export default {
         openCreate(){
             this.$refs.create.show();
         },
-        openEdit(data,index){
-            this.index = index;
-            this.$refs.create.edit(data);
+        openFee(id,fee){
+            this.$refs.fee.show(id,fee);
+        },
+        openProfile(data){
+            this.$refs.profile.show(data);
         }
     }
 }

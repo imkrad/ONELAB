@@ -34,11 +34,6 @@ class Tsr extends Model
         return $this->hasMany('App\Models\TsrSample', 'tsr_id');
     }
 
-    public function service()
-    {
-        return $this->hasOne('App\Models\TsrService', 'tsr_id');
-    }
-
     public function report()
     {
         return $this->hasOne('App\Models\TsrReport', 'tsr_id');
@@ -58,7 +53,6 @@ class Tsr extends Model
     {
         return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
     }
-
 
     public function purpose()
     {
@@ -88,6 +82,11 @@ class Tsr extends Model
     public function transaction()
     {
         return $this->morphOne('App\Models\WalletTransaction', 'transacable');
+    }
+
+    public function service()
+    {
+        return $this->morphOne('App\Models\TsrService', 'typeable');
     }
 
     public function getUpdatedAtAttribute($value)

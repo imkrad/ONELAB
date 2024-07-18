@@ -33,6 +33,11 @@ class TsrAnalysis extends Model
         return $this->belongsTo('App\Models\ListTestservice', 'testservice_id', 'id');
     }
 
+    public function addfee()
+    {
+        return $this->morphOne('App\Models\TsrService', 'typeable');
+    }   
+
     public function analyst()
     {
         return $this->belongsTo('App\Models\User', 'analyst_id', 'id');
