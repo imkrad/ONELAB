@@ -8,14 +8,14 @@
                     </b-col>
                     <b-col md>
                         <div class="ms-2 mt-n2">
-                            <h5 class="modal-title fs-16">{{selected.name}}</h5>
+                            <h5 class="modal-title fs-16">{{name}}</h5>
                             <div class="hstack gap-3 flex-wrap mt-0 mb-n2">
                                 <div class="text-primary">
                                     <span class="text-body text-muted fs-12">Code :</span> <span class="text-body fs-12">{{selected.code}}</span>
                                 </div>
                                 <div class="vr"></div>
                                 <div class="text-primary">
-                                    <span class="text-body text-muted fs-12">Category :</span> <span class="text-body fs-12">{{selected.category}}</span>
+                                    <span class="text-body text-muted fs-12">Old code :</span> <span class="text-body fs-12">{{selected.old_code}}</span>
                                 </div>
                                 <div class="vr"></div>
                                 <div class="text-primary">
@@ -48,7 +48,7 @@
                             <div class="avatar-title rounded bg-transparent text-primary fs-24"><i class="ri ri-qr-scan-2-fill"></i></div>
                         </div>
                         <div class="flex-grow-1">
-                            <p class="text-muted fs-11 mb-0">Serial no. / Batch no. :</p>
+                            <p class="text-muted fs-11 mb-0">PO Number:</p>
                             <h5 class="fs-13 text-success mb-0">{{selected.number}}</h5>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Bought at:</p>
-                            <h5 class="fs-13 mb-0">{{selected.bought}}</h5>
+                            <h5 class="fs-13 mb-0">{{selected.bought_at}}</h5>
                         </div>
                     </div>
                 </div>
@@ -82,12 +82,14 @@ export default {
             currentUrl: window.location.origin,
             showModal: false,
             selected: null,
+            name: null,
             form: {}
         }
     },
     methods: { 
-        show(data){
+        show(data,name){
             this.selected = data;
+            this.name = name;
             this.showModal = true;
         },
         submit(){

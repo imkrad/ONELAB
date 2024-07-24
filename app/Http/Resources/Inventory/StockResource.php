@@ -33,10 +33,12 @@ class StockResource extends JsonResource
             'quantity' => $this->quantity,
             'onhand' => $this->onhand,
             'number' => $this->number,
+            'unit' => $this->unit,
+            'type' => $this->unittype->name,
             'price' => $this->price,
             'supplier' => $this->supplier,
             'supplier_id' => $this->supplier_id,
-            'bought_at' => $this->bougth_at,
+            'bought_at' => $this->bought_at,
             'expired_at' => $this->expired_at,
             'withdrawals' => $this->withdrawals
             // 'name' => $name,

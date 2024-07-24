@@ -49,7 +49,7 @@ export default {
             })
             .then(response => {
                 if(response){ 
-                    this.lists = response.data; 
+                    this.lists = response.data.data; 
                 }
             })
             .catch(err => console.log(err));

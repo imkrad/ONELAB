@@ -45,7 +45,60 @@
             
             <Search @set="setData"/>
             <!-- <hr class="text-muted mt-0"/> -->
-            <ul class="list-unstyled mb-0 vstack gap-3" v-if="selected">
+            <div v-if="selected" class=" mt-0 p-1 border border-dashed rounded bg-info-subtle">
+                <div class="d-flex align-items-center">
+                    <div class="avatar-sm me-0">
+                        <div class="avatar-title rounded bg-transparent text-primary fs-24">
+                            <i class="ri-qr-code-fill"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="fs-14 text-primary fw-semibold mb-0">{{selected.name}}</h5>
+                        <p class="text-muted fs-12 mb-0">{{selected.code}} <span class="text-muted">({{selected.old_code}})</span></p>
+                    </div>
+                </div>
+            </div>
+            <div v-if="selected" class="table-responsive mt-2 mb-0">
+                <table class="table table-nowrap align-middle mb-0">
+                    <thead class="table-light">
+                        <tr class="fs-11">
+                            <th class="text-center" width="5%">#</th>
+                            <th width="30%">Supplier</th>
+                            <th class="text-center" width="15%">PO Number</th>
+                            <th class="text-center" width="15%">Quantity</th>
+                            <th class="text-center" width="15%">Content</th>
+                            <th class="text-center" width="15%">Price</th>
+                            <th class="text-center" width="15%"></th>
+                        </tr>
+                    </thead>
+                </table>
+                <simplebar data-simplebar style="max-height: calc(100vh - 500px);">
+                    <table class="table table-nowrap align-middle mb-0">
+                        <tbody>
+                            <tr v-for="(list,index) in selected.stocks" v-bind:key="index" class="fs-12" :class="(list.selected) ? 'table-info' : ''">
+                                <td  width="5%" class="text-center fs-12"> 
+                                    {{index+1}}
+                                </td>
+                                <td  width="30%">
+                                    <h5 class="fs-13 mb-0">{{list.supplier}}</h5>
+                                    <p class="text-muted mb-0">{{list.code}}</p>
+                                </td>
+                                <td  width="15%" class="text-center">{{list.number}}</td>
+                                <td  width="15%" class="text-center">{{list.onhand}}</td>
+                                <td  width="15%" class="text-center">{{list.unit}} {{list.type}}</td>
+                                <td  width="15%" class="text-center">{{list.price}}</td>
+                                <td  width="15%" class="text-center">
+                                      <b-button @click="openView(list,selected.name)" variant="primary" v-b-tooltip.hover title="Add to cart" size="sm" :disabled="(list.outofstock || list.expired) ? true : false">
+                                    <i class="ri-logout-circle-r-fill align-bottom"></i>
+                                </b-button>
+                                </td>
+                                <!-- <td></td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </simplebar>
+             </div>
+            <!-- <ul class="list-unstyled mb-0 vstack gap-3" v-if="selected">
                 <li>
                     <hr class="mt-0" />
                     <div class="d-flex align-items-center">
@@ -55,7 +108,7 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
         </div>
         <div class="file-manager-sidebar" style="max-width: 500px; min-width: 500px;">  
             <div class="p-3 d-flex flex-column h-100">
@@ -108,10 +161,11 @@ import Add from '../Items/Modals/Add.vue';
 import View from './Modals/View.vue';
 import Search from './Components/Search.vue';
 import Withdraw from './Modals/Withdraw.vue';
+import simplebar from "simplebar-vue";
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
     props: ['dropdowns'],
-    components: { PageHeader, Add, Withdraw, View, Search },
+    components: { PageHeader, Add, Withdraw, View, Search, simplebar },
     data(){
         return {
             currentUrl: window.location.origin,
@@ -123,7 +177,7 @@ export default {
                 keyword: null,
                 type: null,
             },
-            selected: {}
+            selected: null
         }
     },
     watch: {
@@ -182,8 +236,8 @@ export default {
         openWithdraw(){
             this.$refs.withdraw.show(this.carts);
         },
-        openView(data){
-            this.$refs.view.show(data);
+        openView(data,name){
+            this.$refs.view.show(data,name);
         },
         clear(){
             this.fetch();

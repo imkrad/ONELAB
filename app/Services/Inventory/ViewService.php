@@ -104,10 +104,10 @@ class ViewService
 
     public function search($request){
         $keyword = $request->keyword;
-        $data = InventoryItem::with('category','unittype','stocks.withdrawals')
+        $data = InventoryItem::with('category','unittype','stocks.withdrawals','stocks.unittype')
             ->where('laboratory_id',$this->laboratory)
             ->where('name', 'LIKE', "%{$keyword}%")->limit(5)->get();
-        return $data;
+        return ItemResource::collection($data);
     }
 
     public function lists($request){
