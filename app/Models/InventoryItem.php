@@ -11,26 +11,37 @@ class InventoryItem extends Model
 
     protected $fillable = [
         'code',
+        'old_code',
         'name',
         'img',
         'reorder',
-        'unit',
         'unit_id',
         'category_id',
         'laboratory_id',
-        'laboratory_type',
+        // 'laboratory_type',
+        'user_id',
         'is_equipment'
     ];
+
+    public function stocks()
+    {
+        return $this->hasMany('App\Models\InventoryStock', 'item_id');
+    }
+
+    public function onhand()
+    {
+        return $this->hasMany('App\Models\InventoryStock', 'item_id')->sum('onhand');
+    }
 
     public function laboratory()
     {
         return $this->belongsTo('App\Models\Laboratory', 'laboratory_id', 'id');
     }
 
-    public function laboratory_type()
-    {
-        return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
-    }
+    // public function laboratory_type()
+    // {
+    //     return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
+    // }
 
     public function category()
     {
@@ -40,5 +51,10 @@ class InventoryItem extends Model
     public function unittype()
     {
         return $this->belongsTo('App\Models\ListDropdown', 'unit_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 }

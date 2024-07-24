@@ -8,6 +8,7 @@ use App\Models\InventoryItem;
 use App\Models\InventoryStock;
 use App\Models\InventorySupplier;
 use App\Models\InventoryWithdrawal;
+use App\Models\InventoryEquipment;
 use App\Http\Resources\DefaultResource;
 use App\Http\Resources\Inventory\ItemResource;
 use App\Http\Resources\Inventory\SupplierResource;
@@ -33,7 +34,6 @@ class SaveService
     public function item($request){
         $data = InventoryItem::create(array_merge($request->all(),[
             'code' => $this->generateCode($request),
-            'reorder' => 1,
             'img' => 'avatar.jpg'
         ]));
         return [
@@ -51,6 +51,20 @@ class SaveService
             'data' => new DefaultResource($data),
             'message' => 'Stock was added successful!', 
             'info' => "You've successfully added the new stock."
+        ];
+    }
+
+    public function equipment($request){
+        $data = InventoryEquipment::create(array_merge($request->all(),[
+            'code' => date('Ymdhis'),
+            'laboratory_id' => $this->laboratory, 
+            'laboratory_type' => 9,
+            'user_id' => \Auth::user()->id
+        ]));
+        return [
+            'data' => new DefaultResource($data),
+            'message' => 'Equipment was added successful!', 
+            'info' => "You've successfully added the new equipment."
         ];
     }
 

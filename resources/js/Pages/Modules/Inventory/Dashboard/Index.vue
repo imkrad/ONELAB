@@ -29,7 +29,7 @@
                     </b-card>
                 </b-col>
             </b-row>
-            <div class="input-group mb-1">
+            <!-- <div class="input-group mb-1">
                 <span class="input-group-text"><i class="ri-search-line search-icon"></i></span>
                 <input type="text" v-model="filter.keyword"  placeholder="Search Item" class="form-control" style="width: 30%;" id="search-options">
                 <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown" style="top: 38px; width: 100%;">
@@ -41,45 +41,21 @@
                 <button @click="add" class="btn btn-primary btn-md" type="button">
                     <div class="btn-content"><i class="ri-add-circle-fill align-bottom me-1"></i> Add Stock </div>
                 </button>
-            </div>
-            <div class="table-responsive mt-2">
-                <table class="table table-nowrap align-middle mb-0">
-                    <thead class="table-light">
-                        <tr class="fs-11">
-                            <th></th>
-                            <th style="width: 25%;">Name</th>
-                            <th style="width: 20%;" class="text-center">Number</th>
-                            <th style="width: 20%;" class="text-center">Supplier</th>
-                            <th style="width: 15%;" class="text-center">Quantity</th>
-                            <th style="width: 10%;" class="text-center">Price</th>
-                            <th style="width: 7%;" ></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="(list,index) in lists" v-bind:key="index" :class="[(list.expired) ? 'table-danger' : (list.outofstock) ? 'table-warning' : '']">
-                            <td class="text-center"> 
-                                <div class="avatar-xs chat-user-img">
-                                    <img :src="list.img" alt="" class="avatar-xs rounded-circle" />
-                                  </div>
-                                 
-                            </td>
-                            <td>
-                                <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
-                                <p class="fs-12 text-muted mb-0">{{list.brand}}</p>
-                            </td>
-                            <td class="text-center fs-12">{{list.number}}</td>
-                            <td class="text-center fs-12">{{list.supplier}}</td>
-                            <td class="text-center fs-12">{{list.quantity}}</td>
-                            <td class="text-center fs-12">{{list.price}}</td>
-                            <td class="text-end">
-                                <b-button @click="openView(list)" variant="primary" v-b-tooltip.hover title="Add to cart" size="sm" :disabled="(list.outofstock || list.expired) ? true : false">
-                                    <i class="ri-logout-circle-r-fill align-bottom"></i>
-                                </b-button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            </div> -->
+            
+            <Search @set="setData"/>
+            <!-- <hr class="text-muted mt-0"/> -->
+            <ul class="list-unstyled mb-0 vstack gap-3" v-if="selected">
+                <li>
+                    <hr class="mt-0" />
+                    <div class="d-flex align-items-center">
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fs-14 mb-0 text-primary">{{selected.name}}</h6>
+                            <span class="text-muted">{{selected.code}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
         <div class="file-manager-sidebar" style="max-width: 500px; min-width: 500px;">  
             <div class="p-3 d-flex flex-column h-100">
@@ -123,18 +99,19 @@
         </div>
     </div>
     <View @add="addNow" ref="view"/>
-    <Add :suppliers="dropdowns.suppliers" ref="add"/>
+    <Add :suppliers="dropdowns.suppliers" :units="dropdowns.units" ref="add"/>
     <Withdraw @message="clear()" ref="withdraw"/>
 </template>
 <script>
 import _ from 'lodash';
-import Add from './Items/Modals/Add.vue';
+import Add from '../Items/Modals/Add.vue';
 import View from './Modals/View.vue';
+import Search from './Components/Search.vue';
 import Withdraw from './Modals/Withdraw.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
     props: ['dropdowns'],
-    components: { PageHeader, Add, Withdraw, View },
+    components: { PageHeader, Add, Withdraw, View, Search },
     data(){
         return {
             currentUrl: window.location.origin,
@@ -145,7 +122,8 @@ export default {
             filter: {
                 keyword: null,
                 type: null,
-            }
+            },
+            selected: {}
         }
     },
     watch: {
@@ -157,6 +135,9 @@ export default {
         this.fetch();
     },
     methods: {
+        setData(data) {
+            this.selected = data;
+        },
         checkSearchStr: _.debounce(function(string) {
             this.fetch();
         }, 300),

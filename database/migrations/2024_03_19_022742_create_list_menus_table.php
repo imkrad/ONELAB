@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('route',150)->nullable();   
             $table->string('path',150)->nullable();   
             $table->string('group',100)->nullable();
+            $table->string('module',100)->nullable();
             $table->integer('order');
             $table->boolean('has_child')->default(0);
             $table->boolean('is_mother');

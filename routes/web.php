@@ -7,6 +7,8 @@ Route::get('/csf/survey', [App\Http\Controllers\Laboratory\CsfController::class,
 Route::post('register', [App\Http\Controllers\WelcomeController::class, 'register']);
 Route::get('new', [App\Http\Controllers\WelcomeController::class, 'new'])->name('new');
 
+Route::get('items', [App\Http\Controllers\WelcomeController::class, 'items']);
+
 Route::middleware(['2fa','auth','verified'])->group(function () {
     Route::resource('/profile', App\Http\Controllers\User\ProfileController::class);
 });

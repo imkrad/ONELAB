@@ -53,7 +53,10 @@ class DatabaseSeeder extends Seeder
         $this->call(UserProfilesTableSeeder::class);
         $this->call(UserRolesTableSeeder::class);
 
-        // $this->call(InventorySuppliersTableSeeder::class);
+        $this->call(InventorySuppliersTableSeeder::class);
         // $this->call(ListServicesTableSeeder::class);
+        $this->call(InventoryItemsTableSeeder::class);
+        $this->call(InventoryStocksTableSeeder::class);
+        $this->call(InventoryWithdrawalsTableSeeder::class);
     }
 }

@@ -10,6 +10,7 @@ use App\Models\ListDropdown;
 use App\Models\Laboratory;
 use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
+use App\Models\EulimsProduct;
 use Illuminate\Http\Request;
 use App\Http\Resources\TsrResource;
 use App\Http\Resources\SampleResource;
@@ -18,6 +19,9 @@ use App\Http\Requests\UserRequest;
 use App\Traits\HandlesTransaction;
 use App\Http\Requests\InstallRequest;
 use App\Http\Resources\VerificationResource;
+use App\Http\Resources\ItemsResource;
+use App\Models\InventoryItem;
+use App\Models\InventoryStock;
 
 class WelcomeController extends Controller
 {
@@ -25,6 +29,56 @@ class WelcomeController extends Controller
 
     public function __construct(DropdownService $dropdown){
         $this->dropdown = $dropdown;
+    }
+
+    public function items(){
+        $data = EulimsProduct::with('entries.withdrawals.detail','entries.supplier')->where('discontinued',0)->where('producttype_id',1)->get();
+        $items = ItemsResource::collection($data);
+        foreach($items as $itemm){
+            $itemArray = $itemm->toArray(request());
+            $item = InventoryItem::create([
+                'code' => 'R9-INV-'.str_pad((InventoryItem::count()+1), 5, '0', STR_PAD_LEFT),
+                'old_code' => $itemArray['code'],
+                'name' => ucwords(strtolower($itemArray['name'])),
+                'unit_id' => $itemArray['unit_id'],
+                'img' => 'avatar.jpg',
+                'laboratory_id' => 14,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            if($item){
+                foreach($itemArray['entries']->toArray(request()) as $entry){
+                    $entries = $item->stocks()->create([
+                        'code' => date('Ymdhis')+InventoryStock::count()+1,
+                        'quantity' => $entry['quantity'],
+                        'number' => ($entry['number']) ? ($entry['number'] == '') ? null : $entry['number'] : null,
+                        'onhand' => $entry['onhand'],
+                        'price' => $entry['price'],
+                        'unit' => $entry['unit'],
+                        'unit_id' => $itemArray['unit_id'],
+                        'supplier' => $entry['supplier'],
+                        'expired_at' => ($entry['expired_at']) ? $entry['expired_at'] : null,
+                        'bought_at' => ($entry['created_at']) ? $entry['created_at'] : null,
+                        'user_id' => 1
+                    ]);
+
+                    if($entries){
+                        if(count($entry['withdrawals']->toArray(request())) > 0){
+                            foreach($entry['withdrawals']->toArray(request()) as $withdrawal){
+                                $with = $entries->withdrawals()->create([
+                                    'quantity' => $withdrawal['quantity'],
+                                    'created_at' => $withdrawal['created_at'], 
+                                    'user_id' => 1
+                                ]);
+                            }
+                        }else{
+                            $item->is_active = 0;
+                            $item->save();
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public function landing(){

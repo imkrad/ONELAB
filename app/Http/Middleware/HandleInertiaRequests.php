@@ -21,13 +21,12 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
         $currentRole = (\Auth::check()) ? \Auth::user()->role : null;
-        $overall = []; $menus = []; $listahan = [];
+        $laboratory = []; $inventory = [];
+        
         $lists = ListMenu::when($currentRole != 'Administrator', function ($query) {
             $query->where('is_active',1);
-        })
-        ->where('is_mother',1)->where('group','Menu')->orderBy('order','ASC')->get();
+        })->where('is_mother',1)->where('module','Laboratory')->orderBy('order','ASC')->get();
         foreach($lists as $list){
-            
             $submenus = [];
             if($list['has_child']){
                 $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
@@ -35,18 +34,16 @@ class HandleInertiaRequests extends Middleware
                     $submenus[] = $menu;
                 }
             }
-            $menus[] = [
+            $laboratory[] = [
                 'main' => $list,
                 'submenus' => $submenus
             ];
         }
 
-        $lists = ListMenu::when($currentRole !== 'Administrator', function ($query) {
+        $lists = ListMenu::when($currentRole != 'Administrator', function ($query) {
             $query->where('is_active',1);
-        })
-        ->where('is_mother',1)->where('group','Service')->get();
+        })->where('is_mother',1)->where('module','Inventory')->orderBy('order','ASC')->get();
         foreach($lists as $list){
-            
             $submenus = [];
             if($list['has_child']){
                 $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
@@ -54,31 +51,11 @@ class HandleInertiaRequests extends Middleware
                     $submenus[] = $menu;
                 }
             }
-            $services[] = [
+            $inventory[] = [
                 'main' => $list,
                 'submenus' => $submenus
             ];
         }
-
-        $lists = ListMenu::when($currentRole !== 'Administrator', function ($query) {
-            $query->where('is_active',1);
-        })
-        ->where('is_mother',1)->where('group','Lists')->get();
-        foreach($lists as $list){
-            
-            $submenus = [];
-            if($list['has_child']){
-                $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
-                foreach($subs as $menu){
-                    $submenus[] = $menu;
-                }
-            }
-            $listahan[] = [
-                'main' => $list,
-                'submenus' => $submenus
-            ];
-        }
-        
         return [
             ...parent::share($request),
             'user' => (\Auth::check()) ? new UserResource(User::with('profile','userrole.role','userrole.laboratory')->where('id',\Auth::user()->id)->first()) : '',
@@ -91,10 +68,69 @@ class HandleInertiaRequests extends Middleware
             ],
             'configuration' => Configuration::where('id',1)->first(),
             'menus' => [
-                'menus' => $menus,
+                'laboratory' => $laboratory,
+                'inventory' => $inventory
                 // 'services' => $services,
-                'lists' => $listahan
+                // 'lists' => $listahan
             ]
         ];
     }
 }
+
+
+// $lists = ListMenu::when($currentRole != 'Administrator', function ($query) {
+        //     $query->where('is_active',1);
+        // })
+        // ->where('is_mother',1)->where('group','Menu')->orderBy('order','ASC')->get();
+        // foreach($lists as $list){
+            
+        //     $submenus = [];
+        //     if($list['has_child']){
+        //         $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
+        //         foreach($subs as $menu){
+        //             $submenus[] = $menu;
+        //         }
+        //     }
+        //     $menus[] = [
+        //         'main' => $list,
+        //         'submenus' => $submenus
+        //     ];
+        // }
+
+        // $lists = ListMenu::when($currentRole !== 'Administrator', function ($query) {
+        //     $query->where('is_active',1);
+        // })
+        // ->where('is_mother',1)->where('group','Service')->get();
+        // foreach($lists as $list){
+            
+        //     $submenus = [];
+        //     if($list['has_child']){
+        //         $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
+        //         foreach($subs as $menu){
+        //             $submenus[] = $menu;
+        //         }
+        //     }
+        //     $services[] = [
+        //         'main' => $list,
+        //         'submenus' => $submenus
+        //     ];
+        // }
+
+        // $lists = ListMenu::when($currentRole !== 'Administrator', function ($query) {
+        //     $query->where('is_active',1);
+        // })
+        // ->where('is_mother',1)->where('group','Lists')->get();
+        // foreach($lists as $list){
+            
+        //     $submenus = [];
+        //     if($list['has_child']){
+        //         $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
+        //         foreach($subs as $menu){
+        //             $submenus[] = $menu;
+        //         }
+        //     }
+        //     $listahan[] = [
+        //         'main' => $list,
+        //         'submenus' => $submenus
+        //     ];
+        // }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\InventorySupplier;
 use Illuminate\Http\Request;
-use App\Services\DropdownService;
+use App\Services\Inventory\DropdownClass;
 use App\Traits\HandlesTransaction;
 use App\Services\Inventory\ViewService;
 use App\Services\Inventory\SaveService;
@@ -15,7 +15,7 @@ class InventoryController extends Controller
 {
     use HandlesTransaction;
 
-    public function __construct(SaveService $save, ViewService $view, UpdateService $update, DropdownService $dropdown){
+    public function __construct(SaveService $save, ViewService $view, UpdateService $update, DropdownClass $dropdown){
         $this->dropdown = $dropdown;
         $this->save = $save;
         $this->view = $view;
@@ -30,6 +30,9 @@ class InventoryController extends Controller
             case 'items':
                 return $this->view->items($request);
             break;
+            case 'equipments':
+                return $this->view->equipments($request);
+            break;
             case 'lists':
                 return $this->view->lists($request);
             break;
@@ -37,10 +40,11 @@ class InventoryController extends Controller
                 return $this->view->search($request);
             break;
             default:
-                return inertia('Modules/Inventory/Index',[
+                return inertia('Modules/Inventory/Dashboard/Index',[
                     'dropdowns' => [
                         'statistics' => $this->view->statistics(),
-                        'suppliers' => $this->view->supplier_lists()
+                        'suppliers' => $this->view->supplier_lists(),
+                        'units' => $this->dropdown->units(),
                     ]
                 ]); 
         }   
@@ -54,10 +58,18 @@ class InventoryController extends Controller
             case 'withdrawals':
                 return inertia('Modules/Inventory/Withdrawals/Index');
             break;
+            case 'equipments':
+                return inertia('Modules/Inventory/Equipments/Index',[
+                    'dropdowns' => [
+                        'types' => $this->dropdown->types(),
+                        'suppliers' => $this->view->supplier_lists()
+                    ]
+                ]);
+            break;
             case 'items':
                 return inertia('Modules/Inventory/Items/Index',[
                     'dropdowns' => [
-                        'categories' => $this->dropdown->inventory(),
+                        'categories' => $this->dropdown->categories(),
                         'units' => $this->dropdown->units(),
                         'suppliers' => $this->view->supplier_lists()
                     ]
@@ -84,6 +96,9 @@ class InventoryController extends Controller
                 break;
                 case 'stock':
                     return $this->save->stock($request);
+                break;
+                case 'equipment':
+                    return $this->save->equipment($request);
                 break;
                 case 'withdraw':
                     return $this->save->withdraw($request);

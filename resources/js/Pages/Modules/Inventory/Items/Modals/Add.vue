@@ -6,6 +6,16 @@
                     <InputLabel for="item_id" value="Item" :message="form.errors.item_id"/>
                     <Multiselect :options="items" label="name" @search-change="fetchItem" :searchable="true" v-model="form.item_id" placeholder="Select Item"/>
                 </BCol>
+                <BCol lg="12" class="mt-1 mb-n2">
+                    <InputLabel for="category_id" value="Unit" :message="form.errors.unit_id"/>
+                    <div class="input-group mb-1">
+                        <input type="text" v-model="form.unit" placeholder="Size" class="form-control" style="height: 39px; width: 50%; background-color: #f5f6f7;">
+                        <select v-model="form.unit_id" class="form-select" id="inputGroupSelect02" style="height: 39px; width: 50%; background-color: #f5f6f7;">
+                            <option :value="null" selected>Select</option>
+                            <option :value="list.value" v-for="list in units" v-bind:key="list.value">{{list.name}}</option>
+                        </select>
+                    </div>
+                </BCol>
                 <BCol lg="12"><hr class="text-muted mt-0 mb-0"/></BCol>
                 <BCol lg="6" class="mt-2 mb-n1">
                     <InputLabel for="name" value="Brand" :message="form.errors.brand"/>
@@ -24,7 +34,7 @@
                     <Amount @amount="amount" ref="testing" :readonly="false"/>
                 </BCol>
                 <BCol lg="6" class="mt-1 mb-n1">
-                    <InputLabel for="name" value="Expiration / Warranty" :message="form.errors.date"/>
+                    <InputLabel for="name" value="Expiration" :message="form.errors.date"/>
                     <TextInput id="name" v-model="form.date" type="date" class="form-control" autofocus placeholder="Please enter date" autocomplete="name" required @input="handleInput('date')" :light="true"/>
                 </BCol>
                 <BCol lg="6" class="mt-1 mb-n1">
@@ -53,12 +63,14 @@ import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
     components: { InputLabel, TextInput, Multiselect, Amount },
-    props: ['suppliers'],
+    props: ['suppliers','units'],
     data(){
         return {
             currentUrl: window.location.origin,
             form: useForm({
                 id: null,
+                unit: null,
+                unit_id: null,
                 supplier_id: null,
                 item_id: null,
                 bought_at: null,
@@ -75,27 +87,12 @@ export default {
             status: false,
         }
     },
-    watch: {
-        'form.is_equipment'(){
-            if(this.form.is_equipment){
-                this.form.category_id = this.dropdowns.categories[0].value;
-                this.form.quantity_id = this.dropdowns.quantitys[0].value;
-                this.form.quantity = 1;
-            }else{
-                this.form.category_id = null;
-                this.form.quantity_id = null;
-            }
-        }
-    },
     methods: { 
         show(status){
             this.status = status;
             this.showModal = true;
         },
         edit(data){
-            this.form.name = data.name;
-            this.form.email = data.email;
-            this.form.contact_no = data.contact_no;
             this.editable = true;
             this.showModal = true;
         },

@@ -235,15 +235,35 @@ export default {
             <div class="p-2">
               <BRow class="g-0">
                 <BCol>
+                  <BLink class="dropdown-icon-item" @click="openInNewTab('/dashboard')">
+                    <img src="@assets/images/apps/laboratory.png" alt="lab"/>
+                    <span>Laboratory</span>
+                  </BLink>
+                </BCol>
+                <BCol>
+                  <BLink class="dropdown-icon-item" @click="openInNewTab('/inventory')">
+                    <img src="@assets/images/apps/inventory.png" alt="invent" />
+                    <span>Inventory</span>
+                  </BLink>
+                </BCol>
+                <BCol>
+                  <BLink class="dropdown-icon-item" @click="openInNewTab('/calendar')">
+                    <img src="@assets/images/apps/calendar.png" alt="chatbox" />
+                    <span>Calendar</span>
+                  </BLink>
+                </BCol>
+              </BRow>
+              <BRow class="g-0">
+                <BCol>
                   <BLink class="dropdown-icon-item" href="#!">
-                    <img src="@assets/images/apps/testservices.png" alt="Github" />
+                    <img src="@assets/images/apps/testservices.png" alt="test" />
                     <span>Testservices</span>
                   </BLink>
                 </BCol>
                 <BCol>
                   <BLink class="dropdown-icon-item" @click="openInNewTab('/inventory')">
-                    <img src="@assets/images/apps/inventory.png" alt="bitbucket" />
-                    <span>Inventory</span>
+                    <img src="@assets/images/apps/referral.png" alt="bitbucket" />
+                    <span>Referral</span>
                   </BLink>
                 </BCol>
                 <BCol>

@@ -5,14 +5,14 @@ namespace App\Services\Inventory;
 use App\Models\InventoryItem;
 use App\Models\InventoryStock;
 use App\Models\InventorySupplier;
+use App\Models\InventoryEquipment;
 use App\Http\Resources\Inventory\ItemResource;
 use App\Http\Resources\Inventory\StockResource;
+use App\Http\Resources\Inventory\EquipmentResource;
 use App\Http\Resources\Inventory\SupplierResource;
 
 class ViewService
 {
-    public $laboratory;
-
     public function __construct()
     {   
         $this->role = (\Auth::check()) ? \Auth::user()->role : null;
@@ -41,15 +41,21 @@ class ViewService
     public function items($request){
         $data = ItemResource::collection(
             InventoryItem::query()
-            ->with('laboratory_type','laboratory','category','unittype')
-            // ->where('laboratory_id',$this->laboratory)
-            // ->when($this->role != 'Administrator', function ($query) {
-            //     $query->where('laboratory_id',$this->laboratory);
-            // })
-            // ->when($this->laboratory, function ($query, $laboratory) {
-            //     $query->where('laboratory_id', $laboratory);
-            // })
-            // ->where('laboratory_type',$this->type)
+            ->with('category','unittype','stocks.withdrawals')
+            ->where('laboratory_id',$this->laboratory)
+            ->when($request->keyword, function ($query, $keyword) {
+                $query->where('name', 'LIKE', "%{$keyword}%");
+            })
+            ->paginate($request->count)
+        );
+        return $data;
+    }
+
+    public function equipments($request){
+        $data = EquipmentResource::collection(
+            InventoryEquipment::query()
+            ->with('type','supplier','user')
+            ->where('laboratory_id',$this->laboratory)
             ->when($request->keyword, function ($query, $keyword) {
                 $query->where('name', 'LIKE', "%{$keyword}%");
             })
@@ -90,7 +96,7 @@ class ViewService
                 'name' => 'Expired',
                 'color' => 'text-danger',
                 'icon' => 'ri-alarm-warning-fill',
-                'total' => InventoryStock::where('date', '<=', now())->count(),
+                'total' => InventoryStock::where('expired_at', '<=', now())->count(),
                 'select' => 'expired'
             ],
         ];
@@ -98,12 +104,9 @@ class ViewService
 
     public function search($request){
         $keyword = $request->keyword;
-        $data = InventoryItem::where('name', 'LIKE', "%{$keyword}%")->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->name
-            ];
-        });
+        $data = InventoryItem::with('category','unittype','stocks.withdrawals')
+            ->where('laboratory_id',$this->laboratory)
+            ->where('name', 'LIKE', "%{$keyword}%")->limit(5)->get();
         return $data;
     }
 

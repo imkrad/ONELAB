@@ -12,14 +12,24 @@ class InventoryStock extends Model
     protected $fillable = [
         'code',
         'brand',
+        'onhand',
         'quantity',
         'number',
-        'date', //warranty or expiration
         'price',
+        'unit',
+        'unit_id',
+        'supplier',
         'supplier_id',
         'item_id',
-        'bought_at'
+        'user_id',
+        'bought_at',
+        'expired_at'
     ];
+
+    public function withdrawals()
+    {
+        return $this->hasMany('App\Models\InventoryWithdrawal', 'stock_id');
+    }
 
     public function item()
     {
@@ -29,6 +39,11 @@ class InventoryStock extends Model
     public function supplier()
     {
         return $this->belongsTo('App\Models\InventorySupplier', 'supplier_id', 'id');
+    }
+
+    public function unittype()
+    {
+        return $this->belongsTo('App\Models\ListDropdown', 'unit_id', 'id');
     }
 
     public function setPriceAttribute($value)

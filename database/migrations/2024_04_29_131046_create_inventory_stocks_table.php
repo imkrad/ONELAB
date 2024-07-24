@@ -15,16 +15,23 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('code')->unique();
-            $table->string('brand');
+            $table->string('brand')->nullable();
             $table->integer('quantity');
+            $table->integer('onhand');
             $table->string('number')->nullable();
-            $table->date('date')->nullable();
             $table->decimal('price',12,2)->default(0.00);
-            $table->integer('supplier_id')->unsigned()->index();
+            $table->integer('unit');
+            $table->string('supplier')->nullable();
+            $table->tinyInteger('unit_id')->unsigned()->index();
+            $table->foreign('unit_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->integer('supplier_id')->unsigned()->nullable();
             $table->foreign('supplier_id')->references('id')->on('inventory_suppliers')->onDelete('cascade');
             $table->integer('item_id')->unsigned()->index();
             $table->foreign('item_id')->references('id')->on('inventory_items')->onDelete('cascade');
-            $table->date('bought_at');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->date('bought_at')->nullable();
+            $table->date('expired_at')->nullable();
             $table->timestamps(); 
         });
     }

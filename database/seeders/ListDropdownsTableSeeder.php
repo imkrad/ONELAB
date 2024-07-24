@@ -1091,10 +1091,10 @@ class ListDropdownsTableSeeder extends Seeder
             107 => 
             array (
                 'id' => 109,
-                'name' => 'Equipment',
+                'name' => 'Chemical',
                 'classification' => 'Inventory',
                 'type' => 'Category',
-                'color' => 'n/a',
+                'color' => 'success',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
@@ -1104,17 +1104,17 @@ class ListDropdownsTableSeeder extends Seeder
                 'name' => 'Media',
                 'classification' => 'Inventory',
                 'type' => 'Category',
-                'color' => 'n/a',
+                'color' => 'primary',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
             109 => 
             array (
                 'id' => 111,
-                'name' => 'Indicator',
+                'name' => 'Supplies',
                 'classification' => 'Inventory',
                 'type' => 'Category',
-                'color' => 'n/a',
+                'color' => 'warning',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
@@ -1126,7 +1126,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             111 => 
             array (
@@ -1136,7 +1136,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             112 => 
             array (
@@ -1146,7 +1146,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             113 => 
             array (
@@ -1156,7 +1156,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             114 => 
             array (
@@ -1166,7 +1166,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             115 => 
             array (
@@ -1176,7 +1176,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             116 => 
             array (
@@ -1186,7 +1186,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             117 => 
             array (
@@ -1196,7 +1196,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             118 => 
             array (
@@ -1206,7 +1206,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             119 => 
             array (
@@ -1216,7 +1216,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'Category',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             120 => 
             array (
@@ -1316,6 +1316,96 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            130 => 
+            array (
+                'id' => 132,
+                'name' => 'Calibration',
+                'classification' => 'Inventory Type',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            131 => 
+            array (
+                'id' => 133,
+                'name' => 'Intermediate Check',
+                'classification' => 'Inventory Type',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            132 => 
+            array (
+                'id' => 134,
+                'name' => 'Characterization',
+                'classification' => 'Inventory Type',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            133 => 
+            array (
+                'id' => 135,
+                'name' => 'Official Travel',
+                'classification' => 'Events',
+                'type' => 'n/a',
+                'color' => 'text-success',
+                'others' => 'bg-success-subtle',
+                'is_active' => 1,
+            ),
+            134 => 
+            array (
+                'id' => 136,
+                'name' => 'Meeting',
+                'classification' => 'Events',
+                'type' => 'n/a',
+                'color' => 'text-info',
+                'others' => 'bg-info-subtle',
+                'is_active' => 1,
+            ),
+            135 => 
+            array (
+                'id' => 137,
+                'name' => 'Audit',
+                'classification' => 'Events',
+                'type' => 'n/a',
+                'color' => 'text-warning',
+                'others' => 'bg-warning-subtle',
+                'is_active' => 1,
+            ),
+            136 => 
+            array (
+                'id' => 138,
+                'name' => 'Performance Review',
+                'classification' => 'Events',
+                'type' => 'n/a',
+                'color' => 'text-primary',
+                'others' => 'bg-primary-subtle',
+                'is_active' => 1,
+            ),
+            137 => 
+            array (
+                'id' => 139,
+                'name' => 'Leave',
+                'classification' => 'Events',
+                'type' => 'n/a',
+                'color' => 'text-danger',
+                'others' => 'bg-danger-subtle',
+                'is_active' => 1,
+            ),
+            138 => 
+            array (
+                'id' => 140,
+                'name' => 'Holiday',
+                'classification' => 'Events',
+                'type' => 'n/a',
+                'color' => 'text-dark',
+                'others' => 'bg-dark-subtle',
                 'is_active' => 1,
             ),
         ));

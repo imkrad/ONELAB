@@ -19,11 +19,10 @@
                 <tr class="fs-11">
                     <th></th>
                     <th style="width: 25%;">Name</th>
-                    <th style="width: 15%;" class="text-center">Variant</th>
-                    <th style="width: 15%;" class="text-center">Type</th>
-                    <th style="width: 15%;" class="text-center">Category</th>
+                    <th style="width: 20%;" class="text-center">Old Code</th>
+                    <th style="width: 20%;" class="text-center">Category</th>
                     <th style="width: 10%;" class="text-center">Quantity</th>
-                    <th style="width: 10%;" class="text-center">Status</th>
+                    <th style="width: 15%;" class="text-center">Status</th>
                     <th style="width: 7%;" ></th>
                 </tr>
             </thead>
@@ -36,10 +35,9 @@
                         <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
                         <p class="fs-12 text-muted mb-0">{{list.code}}</p>
                     </td>
-                    <td class="text-center fs-12">{{list.unit}}{{list.unittype.others}}</td>
-                    <td class="text-center fs-12">{{list.laboratory_type.name}}</td>
-                    <td class="text-center fs-12">{{list.category.name}}</td>
-                    <td class="text-center fs-12">0</td>
+                    <td class="text-center fs-12">{{list.old_code}}</td>
+                    <td class="text-center fs-12">{{list.category}}</td>
+                    <td class="text-center fs-12">{{list.onhand}}</td>
                     <td class="text-center">
                         <span v-if="list.is_active" class="badge bg-success">Active</span>
                         <span v-else class="badge bg-danger">Inactive</span>
@@ -55,7 +53,7 @@
         <Pagination class="ms-2 me-2" v-if="meta" @fetch="fetch" :lists="lists.length" :links="links" :pagination="meta" />
     </div>
     <Create @message="fetch()" :dropdowns="dropdowns" ref="create"/>
-    <Add :suppliers="dropdowns.suppliers" ref="add"/>
+    <Add :suppliers="dropdowns.suppliers" :units="dropdowns.units" ref="add"/>
 </template>
 <script>
 import _ from 'lodash';
