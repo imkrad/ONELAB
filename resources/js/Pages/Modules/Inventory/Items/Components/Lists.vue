@@ -18,10 +18,11 @@
             <thead class="table-light">
                 <tr class="fs-11">
                     <th></th>
-                    <th style="width: 25%;">Name</th>
-                    <th style="width: 20%;" class="text-center">Old Code</th>
-                    <th style="width: 20%;" class="text-center">Category</th>
+                    <th style="width: 30%;">Name</th>
                     <th style="width: 10%;" class="text-center">Quantity</th>
+                    <th style="width: 10%;" class="text-center">Stock</th>
+                    <th style="width: 10%;" class="text-center">Reorder</th>
+                    <th style="width: 15%;" class="text-center">Category</th>
                     <th style="width: 15%;" class="text-center">Status</th>
                     <th style="width: 7%;" ></th>
                 </tr>
@@ -33,18 +34,22 @@
                     </td>
                     <td>
                         <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
-                        <p class="fs-12 text-muted mb-0">{{list.code}}</p>
+                        <p class="fs-12 text-muted mb-0">{{list.code}} <span v-if="list.old_code">({{list.old_code}})</span></p>
                     </td>
-                    <td class="text-center fs-12">{{list.old_code}}</td>
-                    <td class="text-center fs-12">{{list.category}}</td>
                     <td class="text-center fs-12">{{list.onhand}}</td>
+                    <td class="text-center fs-12">Out of stock</td>
+                    <td class="text-center fs-12">{{list.reorder}} {{list.unit}}</td>
+                    <td class="text-center fs-12">{{list.category}}</td>
                     <td class="text-center">
                         <span v-if="list.is_active" class="badge bg-success">Active</span>
                         <span v-else class="badge bg-danger">Inactive</span>
                     </td>
                     <td class="text-end">
-                        <b-button @click="openEdit(list,index)" variant="soft-warning" v-b-tooltip.hover title="Edit" size="sm">
+                        <b-button @click="openEdit(list,index)" variant="soft-warning" class="me-1" v-b-tooltip.hover title="Edit" size="sm">
                             <i class="ri-pencil-fill align-bottom"></i>
+                        </b-button>
+                        <b-button @click="openEdit(list,index)" variant="soft-info" v-b-tooltip.hover title="View" size="sm">
+                            <i class="ri-eye-fill align-bottom"></i>
                         </b-button>
                     </td>
                 </tr>

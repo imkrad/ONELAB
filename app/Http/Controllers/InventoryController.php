@@ -8,6 +8,7 @@ use App\Services\Inventory\DropdownClass;
 use App\Traits\HandlesTransaction;
 use App\Services\Inventory\ViewService;
 use App\Services\Inventory\SaveService;
+use App\Services\Inventory\ItemClass;
 use App\Services\Inventory\UpdateService;
 use App\Http\Requests\InventoryRequest;
 
@@ -15,10 +16,11 @@ class InventoryController extends Controller
 {
     use HandlesTransaction;
 
-    public function __construct(SaveService $save, ViewService $view, UpdateService $update, DropdownClass $dropdown){
+    public function __construct(SaveService $save, ViewService $view, UpdateService $update, DropdownClass $dropdown, ItemClass $item){
         $this->dropdown = $dropdown;
         $this->save = $save;
         $this->view = $view;
+        $this->item = $item;
         $this->update = $update;
     }
 
@@ -72,6 +74,10 @@ class InventoryController extends Controller
                         'categories' => $this->dropdown->categories(),
                         'units' => $this->dropdown->units(),
                         'suppliers' => $this->view->supplier_lists()
+                    ],
+                    'analytics' => [
+                        'categories' => $this->item->categories(),
+                        'statuses' => $this->item->statuses(),
                     ]
                 ]);
             break;

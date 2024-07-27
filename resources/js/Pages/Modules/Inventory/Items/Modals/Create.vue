@@ -47,8 +47,6 @@ export default {
                 reorder: null,
                 category_id: null,
                 unit_id: null,
-                laboratory_id: 14,
-                laboratory_type: 9,
                 option: 'item'
             }),
             provinces: [],

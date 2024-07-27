@@ -29,9 +29,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             1 => 
             array (
@@ -44,9 +44,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             2 => 
             array (
@@ -59,9 +59,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             3 => 
             array (
@@ -74,9 +74,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             4 => 
             array (
@@ -89,9 +89,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             5 => 
             array (
@@ -104,9 +104,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             6 => 
             array (
@@ -120,8 +120,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             7 => 
             array (
@@ -134,9 +134,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             8 => 
             array (
@@ -149,9 +149,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             9 => 
             array (
@@ -165,8 +165,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             10 => 
             array (
@@ -179,9 +179,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             11 => 
             array (
@@ -194,9 +194,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             12 => 
             array (
@@ -209,9 +209,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             13 => 
             array (
@@ -224,9 +224,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             14 => 
             array (
@@ -239,9 +239,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             15 => 
             array (
@@ -254,9 +254,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             16 => 
             array (
@@ -269,9 +269,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             17 => 
             array (
@@ -284,9 +284,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             18 => 
             array (
@@ -300,8 +300,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             19 => 
             array (
@@ -314,9 +314,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             20 => 
             array (
@@ -329,9 +329,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             21 => 
             array (
@@ -344,9 +344,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             22 => 
             array (
@@ -359,9 +359,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             23 => 
             array (
@@ -374,9 +374,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             24 => 
             array (
@@ -390,8 +390,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             25 => 
             array (
@@ -404,9 +404,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             26 => 
             array (
@@ -419,9 +419,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             27 => 
             array (
@@ -434,9 +434,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             28 => 
             array (
@@ -449,9 +449,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             29 => 
             array (
@@ -464,9 +464,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             30 => 
             array (
@@ -479,9 +479,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             31 => 
             array (
@@ -494,9 +494,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             32 => 
             array (
@@ -509,9 +509,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             33 => 
             array (
@@ -524,9 +524,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             34 => 
             array (
@@ -539,9 +539,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             35 => 
             array (
@@ -554,9 +554,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             36 => 
             array (
@@ -569,9 +569,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             37 => 
             array (
@@ -584,9 +584,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             38 => 
             array (
@@ -599,9 +599,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             39 => 
             array (
@@ -614,9 +614,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             40 => 
             array (
@@ -629,9 +629,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             41 => 
             array (
@@ -645,8 +645,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             42 => 
             array (
@@ -659,9 +659,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             43 => 
             array (
@@ -674,9 +674,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             44 => 
             array (
@@ -689,9 +689,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             45 => 
             array (
@@ -704,9 +704,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             46 => 
             array (
@@ -719,9 +719,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             47 => 
             array (
@@ -734,9 +734,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             48 => 
             array (
@@ -749,9 +749,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             49 => 
             array (
@@ -764,9 +764,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             50 => 
             array (
@@ -779,9 +779,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             51 => 
             array (
@@ -794,9 +794,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             52 => 
             array (
@@ -809,9 +809,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             53 => 
             array (
@@ -824,9 +824,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             54 => 
             array (
@@ -839,9 +839,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             55 => 
             array (
@@ -854,9 +854,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             56 => 
             array (
@@ -869,9 +869,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             57 => 
             array (
@@ -884,9 +884,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             58 => 
             array (
@@ -899,9 +899,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             59 => 
             array (
@@ -914,9 +914,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             60 => 
             array (
@@ -929,9 +929,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             61 => 
             array (
@@ -944,9 +944,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             62 => 
             array (
@@ -959,9 +959,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             63 => 
             array (
@@ -974,9 +974,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             64 => 
             array (
@@ -989,9 +989,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             65 => 
             array (
@@ -1004,9 +1004,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             66 => 
             array (
@@ -1020,8 +1020,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             67 => 
             array (
@@ -1035,8 +1035,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             68 => 
             array (
@@ -1049,9 +1049,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             69 => 
             array (
@@ -1064,9 +1064,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             70 => 
             array (
@@ -1079,9 +1079,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             71 => 
             array (
@@ -1094,9 +1094,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             72 => 
             array (
@@ -1109,9 +1109,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             73 => 
             array (
@@ -1124,9 +1124,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             74 => 
             array (
@@ -1139,9 +1139,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             75 => 
             array (
@@ -1154,9 +1154,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             76 => 
             array (
@@ -1169,9 +1169,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             77 => 
             array (
@@ -1184,9 +1184,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             78 => 
             array (
@@ -1199,9 +1199,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             79 => 
             array (
@@ -1214,9 +1214,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             80 => 
             array (
@@ -1229,9 +1229,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             81 => 
             array (
@@ -1244,9 +1244,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             82 => 
             array (
@@ -1259,9 +1259,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             83 => 
             array (
@@ -1274,9 +1274,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             84 => 
             array (
@@ -1289,9 +1289,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             85 => 
             array (
@@ -1304,9 +1304,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             86 => 
             array (
@@ -1319,9 +1319,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             87 => 
             array (
@@ -1334,9 +1334,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             88 => 
             array (
@@ -1349,9 +1349,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             89 => 
             array (
@@ -1364,9 +1364,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             90 => 
             array (
@@ -1379,9 +1379,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             91 => 
             array (
@@ -1394,9 +1394,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             92 => 
             array (
@@ -1409,9 +1409,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             93 => 
             array (
@@ -1424,9 +1424,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             94 => 
             array (
@@ -1439,9 +1439,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             95 => 
             array (
@@ -1454,9 +1454,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             96 => 
             array (
@@ -1469,9 +1469,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             97 => 
             array (
@@ -1484,9 +1484,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             98 => 
             array (
@@ -1499,9 +1499,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             99 => 
             array (
@@ -1514,9 +1514,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             100 => 
             array (
@@ -1529,9 +1529,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             101 => 
             array (
@@ -1544,9 +1544,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             102 => 
             array (
@@ -1559,9 +1559,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             103 => 
             array (
@@ -1574,9 +1574,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             104 => 
             array (
@@ -1589,9 +1589,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             105 => 
             array (
@@ -1604,9 +1604,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             106 => 
             array (
@@ -1619,9 +1619,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             107 => 
             array (
@@ -1634,9 +1634,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             108 => 
             array (
@@ -1649,9 +1649,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             109 => 
             array (
@@ -1664,9 +1664,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             110 => 
             array (
@@ -1679,9 +1679,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             111 => 
             array (
@@ -1694,9 +1694,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             112 => 
             array (
@@ -1709,9 +1709,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             113 => 
             array (
@@ -1725,8 +1725,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             114 => 
             array (
@@ -1739,9 +1739,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             115 => 
             array (
@@ -1754,9 +1754,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             116 => 
             array (
@@ -1769,9 +1769,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             117 => 
             array (
@@ -1784,9 +1784,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             118 => 
             array (
@@ -1800,8 +1800,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             119 => 
             array (
@@ -1814,9 +1814,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             120 => 
             array (
@@ -1829,9 +1829,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             121 => 
             array (
@@ -1844,9 +1844,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             122 => 
             array (
@@ -1859,9 +1859,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             123 => 
             array (
@@ -1874,9 +1874,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             124 => 
             array (
@@ -1889,9 +1889,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             125 => 
             array (
@@ -1904,9 +1904,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             126 => 
             array (
@@ -1919,9 +1919,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             127 => 
             array (
@@ -1934,9 +1934,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             128 => 
             array (
@@ -1949,9 +1949,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             129 => 
             array (
@@ -1964,9 +1964,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             130 => 
             array (
@@ -1979,9 +1979,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             131 => 
             array (
@@ -1994,9 +1994,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             132 => 
             array (
@@ -2009,9 +2009,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             133 => 
             array (
@@ -2024,9 +2024,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             134 => 
             array (
@@ -2039,9 +2039,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             135 => 
             array (
@@ -2054,9 +2054,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             136 => 
             array (
@@ -2070,8 +2070,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             137 => 
             array (
@@ -2084,9 +2084,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             138 => 
             array (
@@ -2099,9 +2099,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             139 => 
             array (
@@ -2114,9 +2114,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             140 => 
             array (
@@ -2129,9 +2129,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 125,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             141 => 
             array (
@@ -2144,9 +2144,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             142 => 
             array (
@@ -2159,9 +2159,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             143 => 
             array (
@@ -2175,8 +2175,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             144 => 
             array (
@@ -2189,9 +2189,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             145 => 
             array (
@@ -2204,9 +2204,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             146 => 
             array (
@@ -2220,8 +2220,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             147 => 
             array (
@@ -2234,9 +2234,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             148 => 
             array (
@@ -2249,9 +2249,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             149 => 
             array (
@@ -2265,8 +2265,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             150 => 
             array (
@@ -2279,9 +2279,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             151 => 
             array (
@@ -2294,9 +2294,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             152 => 
             array (
@@ -2309,9 +2309,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             153 => 
             array (
@@ -2324,9 +2324,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             154 => 
             array (
@@ -2339,9 +2339,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             155 => 
             array (
@@ -2354,9 +2354,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             156 => 
             array (
@@ -2369,9 +2369,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             157 => 
             array (
@@ -2384,9 +2384,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             158 => 
             array (
@@ -2399,9 +2399,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             159 => 
             array (
@@ -2414,9 +2414,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             160 => 
             array (
@@ -2429,9 +2429,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             161 => 
             array (
@@ -2444,9 +2444,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             162 => 
             array (
@@ -2459,9 +2459,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             163 => 
             array (
@@ -2474,9 +2474,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             164 => 
             array (
@@ -2489,9 +2489,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             165 => 
             array (
@@ -2505,8 +2505,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             166 => 
             array (
@@ -2519,9 +2519,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             167 => 
             array (
@@ -2534,9 +2534,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             168 => 
             array (
@@ -2549,9 +2549,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             169 => 
             array (
@@ -2564,9 +2564,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             170 => 
             array (
@@ -2579,9 +2579,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             171 => 
             array (
@@ -2595,8 +2595,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             172 => 
             array (
@@ -2609,9 +2609,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             173 => 
             array (
@@ -2624,9 +2624,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             174 => 
             array (
@@ -2639,9 +2639,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             175 => 
             array (
@@ -2654,9 +2654,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             176 => 
             array (
@@ -2670,8 +2670,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             177 => 
             array (
@@ -2685,8 +2685,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             178 => 
             array (
@@ -2700,8 +2700,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             179 => 
             array (
@@ -2715,8 +2715,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             180 => 
             array (
@@ -2729,9 +2729,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             181 => 
             array (
@@ -2744,9 +2744,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             182 => 
             array (
@@ -2759,9 +2759,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             183 => 
             array (
@@ -2774,9 +2774,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             184 => 
             array (
@@ -2789,9 +2789,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             185 => 
             array (
@@ -2804,9 +2804,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             186 => 
             array (
@@ -2819,9 +2819,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             187 => 
             array (
@@ -2834,9 +2834,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             188 => 
             array (
@@ -2849,9 +2849,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             189 => 
             array (
@@ -2864,9 +2864,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             190 => 
             array (
@@ -2879,9 +2879,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             191 => 
             array (
@@ -2894,9 +2894,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             192 => 
             array (
@@ -2909,9 +2909,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             193 => 
             array (
@@ -2924,9 +2924,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             194 => 
             array (
@@ -2939,9 +2939,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             195 => 
             array (
@@ -2954,9 +2954,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             196 => 
             array (
@@ -2969,9 +2969,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             197 => 
             array (
@@ -2984,9 +2984,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             198 => 
             array (
@@ -2999,9 +2999,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             199 => 
             array (
@@ -3014,9 +3014,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             200 => 
             array (
@@ -3029,9 +3029,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             201 => 
             array (
@@ -3044,9 +3044,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             202 => 
             array (
@@ -3059,9 +3059,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             203 => 
             array (
@@ -3074,9 +3074,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             204 => 
             array (
@@ -3089,9 +3089,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             205 => 
             array (
@@ -3104,9 +3104,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             206 => 
             array (
@@ -3119,9 +3119,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             207 => 
             array (
@@ -3134,9 +3134,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             208 => 
             array (
@@ -3149,9 +3149,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             209 => 
             array (
@@ -3164,9 +3164,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             210 => 
             array (
@@ -3179,9 +3179,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             211 => 
             array (
@@ -3194,9 +3194,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             212 => 
             array (
@@ -3209,9 +3209,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             213 => 
             array (
@@ -3224,9 +3224,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             214 => 
             array (
@@ -3239,9 +3239,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             215 => 
             array (
@@ -3254,9 +3254,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             216 => 
             array (
@@ -3269,9 +3269,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             217 => 
             array (
@@ -3284,9 +3284,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             218 => 
             array (
@@ -3299,9 +3299,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             219 => 
             array (
@@ -3314,9 +3314,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             220 => 
             array (
@@ -3329,9 +3329,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             221 => 
             array (
@@ -3344,9 +3344,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             222 => 
             array (
@@ -3359,9 +3359,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             223 => 
             array (
@@ -3374,9 +3374,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             224 => 
             array (
@@ -3389,9 +3389,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             225 => 
             array (
@@ -3404,9 +3404,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             226 => 
             array (
@@ -3419,9 +3419,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             227 => 
             array (
@@ -3434,9 +3434,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             228 => 
             array (
@@ -3449,9 +3449,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             229 => 
             array (
@@ -3464,9 +3464,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             230 => 
             array (
@@ -3479,9 +3479,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             231 => 
             array (
@@ -3494,9 +3494,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             232 => 
             array (
@@ -3509,9 +3509,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             233 => 
             array (
@@ -3524,9 +3524,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             234 => 
             array (
@@ -3539,9 +3539,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             235 => 
             array (
@@ -3555,8 +3555,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             236 => 
             array (
@@ -3569,9 +3569,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             237 => 
             array (
@@ -3585,8 +3585,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             238 => 
             array (
@@ -3600,8 +3600,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             239 => 
             array (
@@ -3615,8 +3615,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             240 => 
             array (
@@ -3629,9 +3629,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             241 => 
             array (
@@ -3644,9 +3644,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             242 => 
             array (
@@ -3659,9 +3659,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 123,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             243 => 
             array (
@@ -3674,9 +3674,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             244 => 
             array (
@@ -3689,9 +3689,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             245 => 
             array (
@@ -3705,8 +3705,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             246 => 
             array (
@@ -3719,9 +3719,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             247 => 
             array (
@@ -3734,9 +3734,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             248 => 
             array (
@@ -3749,9 +3749,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             249 => 
             array (
@@ -3764,9 +3764,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             250 => 
             array (
@@ -3779,9 +3779,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             251 => 
             array (
@@ -3794,9 +3794,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             252 => 
             array (
@@ -3809,9 +3809,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             253 => 
             array (
@@ -3824,9 +3824,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             254 => 
             array (
@@ -3839,9 +3839,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             255 => 
             array (
@@ -3854,9 +3854,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             256 => 
             array (
@@ -3869,9 +3869,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             257 => 
             array (
@@ -3884,9 +3884,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             258 => 
             array (
@@ -3899,9 +3899,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             259 => 
             array (
@@ -3914,9 +3914,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 124,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             260 => 
             array (
@@ -3929,9 +3929,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             261 => 
             array (
@@ -3944,9 +3944,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             262 => 
             array (
@@ -3959,9 +3959,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             263 => 
             array (
@@ -3974,9 +3974,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             264 => 
             array (
@@ -3990,8 +3990,8 @@ class InventoryItemsTableSeeder extends Seeder
                 'category_id' => NULL,
                 'laboratory_id' => 14,
                 'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             265 => 
             array (
@@ -4004,9 +4004,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 122,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 1,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 0,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             266 => 
             array (
@@ -4019,9 +4019,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:02',
             ),
             267 => 
             array (
@@ -4034,9 +4034,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:02',
+                'updated_at' => '2024-07-26 08:26:02',
             ),
             268 => 
             array (
@@ -4049,9 +4049,9 @@ class InventoryItemsTableSeeder extends Seeder
                 'unit_id' => 126,
                 'category_id' => NULL,
                 'laboratory_id' => 14,
-                'is_active' => 0,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'is_active' => 1,
+                'created_at' => '2024-07-26 08:26:02',
+                'updated_at' => '2024-07-26 08:26:02',
             ),
         ));
 

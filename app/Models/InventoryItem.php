@@ -18,7 +18,6 @@ class InventoryItem extends Model
         'unit_id',
         'category_id',
         'laboratory_id',
-        // 'laboratory_type',
         'user_id',
         'is_equipment'
     ];
@@ -37,11 +36,6 @@ class InventoryItem extends Model
     {
         return $this->belongsTo('App\Models\Laboratory', 'laboratory_id', 'id');
     }
-
-    // public function laboratory_type()
-    // {
-    //     return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
-    // }
 
     public function category()
     {

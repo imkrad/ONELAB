@@ -24,8 +24,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 1,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             1 => 
             array (
@@ -33,8 +33,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 1,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             2 => 
             array (
@@ -42,8 +42,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 1,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             3 => 
             array (
@@ -51,8 +51,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 2,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             4 => 
             array (
@@ -60,8 +60,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 2,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             5 => 
             array (
@@ -69,8 +69,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 3,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             6 => 
             array (
@@ -78,8 +78,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 4,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:57',
+                'updated_at' => '2024-07-26 08:25:57',
             ),
             7 => 
             array (
@@ -87,8 +87,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 5,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             8 => 
             array (
@@ -96,8 +96,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 5,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             9 => 
             array (
@@ -105,8 +105,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 5,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             10 => 
             array (
@@ -114,8 +114,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 5,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             11 => 
             array (
@@ -123,8 +123,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 6,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             12 => 
             array (
@@ -132,8 +132,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 7,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             13 => 
             array (
@@ -141,8 +141,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 10,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             14 => 
             array (
@@ -150,8 +150,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 10,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             15 => 
             array (
@@ -159,8 +159,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 10,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             16 => 
             array (
@@ -168,8 +168,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 10,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             17 => 
             array (
@@ -177,8 +177,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 11,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             18 => 
             array (
@@ -186,8 +186,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 11,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             19 => 
             array (
@@ -195,8 +195,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 11,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             20 => 
             array (
@@ -204,8 +204,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 11,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             21 => 
             array (
@@ -213,8 +213,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 12,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             22 => 
             array (
@@ -222,8 +222,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 13,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             23 => 
             array (
@@ -231,8 +231,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 15,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             24 => 
             array (
@@ -240,8 +240,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 17,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             25 => 
             array (
@@ -249,8 +249,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 17,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             26 => 
             array (
@@ -258,8 +258,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 17,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             27 => 
             array (
@@ -267,8 +267,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 17,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             28 => 
             array (
@@ -276,8 +276,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 17,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             29 => 
             array (
@@ -285,8 +285,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 17,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             30 => 
             array (
@@ -294,8 +294,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 18,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             31 => 
             array (
@@ -303,8 +303,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 18,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             32 => 
             array (
@@ -312,8 +312,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 18,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             33 => 
             array (
@@ -321,8 +321,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 18,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             34 => 
             array (
@@ -330,8 +330,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 18,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             35 => 
             array (
@@ -339,8 +339,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             36 => 
             array (
@@ -348,8 +348,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             37 => 
             array (
@@ -357,8 +357,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             38 => 
             array (
@@ -366,8 +366,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             39 => 
             array (
@@ -375,8 +375,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             40 => 
             array (
@@ -384,8 +384,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             41 => 
             array (
@@ -393,8 +393,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             42 => 
             array (
@@ -402,8 +402,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             43 => 
             array (
@@ -411,8 +411,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             44 => 
             array (
@@ -420,8 +420,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 19,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             45 => 
             array (
@@ -429,8 +429,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 20,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             46 => 
             array (
@@ -438,8 +438,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 20,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             47 => 
             array (
@@ -447,8 +447,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 21,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:15',
-                'updated_at' => '2024-07-24 11:27:15',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             48 => 
             array (
@@ -456,8 +456,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 22,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             49 => 
             array (
@@ -465,8 +465,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 23,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             50 => 
             array (
@@ -474,8 +474,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 23,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             51 => 
             array (
@@ -483,8 +483,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 23,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             52 => 
             array (
@@ -492,8 +492,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 24,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             53 => 
             array (
@@ -501,8 +501,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 7,
                 'stock_id' => 30,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             54 => 
             array (
@@ -510,8 +510,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 30,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             55 => 
             array (
@@ -519,8 +519,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 31,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             56 => 
             array (
@@ -528,8 +528,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 31,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             57 => 
             array (
@@ -537,8 +537,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 31,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             58 => 
             array (
@@ -546,8 +546,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 31,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             59 => 
             array (
@@ -555,8 +555,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 32,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             60 => 
             array (
@@ -564,8 +564,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 32,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             61 => 
             array (
@@ -573,8 +573,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 33,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             62 => 
             array (
@@ -582,8 +582,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 33,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             63 => 
             array (
@@ -591,8 +591,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 33,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             64 => 
             array (
@@ -600,8 +600,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 33,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             65 => 
             array (
@@ -609,8 +609,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 34,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             66 => 
             array (
@@ -618,8 +618,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 34,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             67 => 
             array (
@@ -627,8 +627,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 35,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             68 => 
             array (
@@ -636,8 +636,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 35,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             69 => 
             array (
@@ -645,8 +645,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 37,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             70 => 
             array (
@@ -654,8 +654,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 37,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             71 => 
             array (
@@ -663,8 +663,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 37,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             72 => 
             array (
@@ -672,8 +672,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 38,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             73 => 
             array (
@@ -681,8 +681,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 38,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             74 => 
             array (
@@ -690,8 +690,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 41,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             75 => 
             array (
@@ -699,8 +699,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 41,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             76 => 
             array (
@@ -708,8 +708,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 41,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             77 => 
             array (
@@ -717,8 +717,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 41,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             78 => 
             array (
@@ -726,8 +726,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 41,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             79 => 
             array (
@@ -735,8 +735,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 42,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             80 => 
             array (
@@ -744,8 +744,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 42,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             81 => 
             array (
@@ -753,8 +753,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 43,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             82 => 
             array (
@@ -762,8 +762,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 43,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             83 => 
             array (
@@ -771,8 +771,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 43,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             84 => 
             array (
@@ -780,8 +780,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 43,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             85 => 
             array (
@@ -789,8 +789,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 44,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             86 => 
             array (
@@ -798,8 +798,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 45,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             87 => 
             array (
@@ -807,8 +807,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 45,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             88 => 
             array (
@@ -816,8 +816,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 47,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             89 => 
             array (
@@ -825,8 +825,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 47,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             90 => 
             array (
@@ -834,8 +834,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 47,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             91 => 
             array (
@@ -843,8 +843,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 47,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             92 => 
             array (
@@ -852,8 +852,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 48,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             93 => 
             array (
@@ -861,8 +861,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 48,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             94 => 
             array (
@@ -870,8 +870,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 48,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             95 => 
             array (
@@ -879,8 +879,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 49,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             96 => 
             array (
@@ -888,8 +888,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 49,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             97 => 
             array (
@@ -897,8 +897,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 49,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             98 => 
             array (
@@ -906,8 +906,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 50,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             99 => 
             array (
@@ -915,8 +915,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 50,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             100 => 
             array (
@@ -924,8 +924,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 50,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             101 => 
             array (
@@ -933,8 +933,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 51,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             102 => 
             array (
@@ -942,8 +942,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 51,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             103 => 
             array (
@@ -951,8 +951,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 52,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             104 => 
             array (
@@ -960,8 +960,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 53,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             105 => 
             array (
@@ -969,8 +969,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 54,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             106 => 
             array (
@@ -978,8 +978,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 54,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             107 => 
             array (
@@ -987,8 +987,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 54,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             108 => 
             array (
@@ -996,8 +996,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 55,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             109 => 
             array (
@@ -1005,8 +1005,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 55,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             110 => 
             array (
@@ -1014,8 +1014,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 56,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             111 => 
             array (
@@ -1023,8 +1023,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 57,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             112 => 
             array (
@@ -1032,8 +1032,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 57,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:16',
-                'updated_at' => '2024-07-24 11:27:16',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             113 => 
             array (
@@ -1041,8 +1041,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 58,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             114 => 
             array (
@@ -1050,8 +1050,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 58,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             115 => 
             array (
@@ -1059,8 +1059,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 58,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             116 => 
             array (
@@ -1068,8 +1068,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 64,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             117 => 
             array (
@@ -1077,8 +1077,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 65,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             118 => 
             array (
@@ -1086,8 +1086,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 72,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             119 => 
             array (
@@ -1095,8 +1095,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 72,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             120 => 
             array (
@@ -1104,8 +1104,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 76,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             121 => 
             array (
@@ -1113,8 +1113,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 78,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:58',
+                'updated_at' => '2024-07-26 08:25:58',
             ),
             122 => 
             array (
@@ -1122,8 +1122,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 79,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             123 => 
             array (
@@ -1131,8 +1131,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 80,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             124 => 
             array (
@@ -1140,8 +1140,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 88,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             125 => 
             array (
@@ -1149,8 +1149,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 89,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             126 => 
             array (
@@ -1158,8 +1158,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 6,
                 'stock_id' => 90,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             127 => 
             array (
@@ -1167,8 +1167,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 90,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             128 => 
             array (
@@ -1176,8 +1176,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 90,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             129 => 
             array (
@@ -1185,8 +1185,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 90,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             130 => 
             array (
@@ -1194,8 +1194,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 91,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             131 => 
             array (
@@ -1203,8 +1203,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 91,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             132 => 
             array (
@@ -1212,8 +1212,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 91,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             133 => 
             array (
@@ -1221,8 +1221,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 91,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             134 => 
             array (
@@ -1230,8 +1230,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 91,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             135 => 
             array (
@@ -1239,8 +1239,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 92,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             136 => 
             array (
@@ -1248,8 +1248,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 92,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             137 => 
             array (
@@ -1257,8 +1257,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 92,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             138 => 
             array (
@@ -1266,8 +1266,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 93,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             139 => 
             array (
@@ -1275,8 +1275,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 9,
                 'stock_id' => 93,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             140 => 
             array (
@@ -1284,8 +1284,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 8,
                 'stock_id' => 97,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             141 => 
             array (
@@ -1293,8 +1293,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 98,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             142 => 
             array (
@@ -1302,8 +1302,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 99,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             143 => 
             array (
@@ -1311,8 +1311,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 99,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             144 => 
             array (
@@ -1320,8 +1320,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 99,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             145 => 
             array (
@@ -1329,8 +1329,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 6,
                 'stock_id' => 99,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             146 => 
             array (
@@ -1338,8 +1338,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 99,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             147 => 
             array (
@@ -1347,8 +1347,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 100,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:17',
-                'updated_at' => '2024-07-24 11:27:17',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             148 => 
             array (
@@ -1356,8 +1356,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 106,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             149 => 
             array (
@@ -1365,8 +1365,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 106,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             150 => 
             array (
@@ -1374,8 +1374,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 107,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             151 => 
             array (
@@ -1383,8 +1383,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 107,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             152 => 
             array (
@@ -1392,8 +1392,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 108,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             153 => 
             array (
@@ -1401,8 +1401,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 111,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             154 => 
             array (
@@ -1410,8 +1410,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 114,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             155 => 
             array (
@@ -1419,8 +1419,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 119,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             156 => 
             array (
@@ -1428,8 +1428,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 120,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             157 => 
             array (
@@ -1437,8 +1437,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 120,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             158 => 
             array (
@@ -1446,8 +1446,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 121,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             159 => 
             array (
@@ -1455,8 +1455,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 121,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             160 => 
             array (
@@ -1464,8 +1464,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 123,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             161 => 
             array (
@@ -1473,8 +1473,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 125,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             162 => 
             array (
@@ -1482,8 +1482,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 125,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             163 => 
             array (
@@ -1491,8 +1491,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 125,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             164 => 
             array (
@@ -1500,8 +1500,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 126,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             165 => 
             array (
@@ -1509,8 +1509,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 126,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             166 => 
             array (
@@ -1518,8 +1518,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 126,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             167 => 
             array (
@@ -1527,8 +1527,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 127,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             168 => 
             array (
@@ -1536,8 +1536,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 128,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             169 => 
             array (
@@ -1545,8 +1545,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 130,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             170 => 
             array (
@@ -1554,8 +1554,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 130,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             171 => 
             array (
@@ -1563,8 +1563,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 130,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             172 => 
             array (
@@ -1572,8 +1572,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 131,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             173 => 
             array (
@@ -1581,8 +1581,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 133,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             174 => 
             array (
@@ -1590,8 +1590,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 134,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             175 => 
             array (
@@ -1599,8 +1599,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 134,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             176 => 
             array (
@@ -1608,8 +1608,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 135,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             177 => 
             array (
@@ -1617,8 +1617,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 7,
                 'stock_id' => 136,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             178 => 
             array (
@@ -1626,8 +1626,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 7,
                 'stock_id' => 137,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             179 => 
             array (
@@ -1635,8 +1635,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 140,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             180 => 
             array (
@@ -1644,8 +1644,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 141,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             181 => 
             array (
@@ -1653,8 +1653,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 141,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             182 => 
             array (
@@ -1662,8 +1662,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 141,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             183 => 
             array (
@@ -1671,8 +1671,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 142,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:18',
-                'updated_at' => '2024-07-24 11:27:18',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             184 => 
             array (
@@ -1680,8 +1680,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 145,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:25:59',
+                'updated_at' => '2024-07-26 08:25:59',
             ),
             185 => 
             array (
@@ -1689,8 +1689,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 146,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             186 => 
             array (
@@ -1698,8 +1698,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 146,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             187 => 
             array (
@@ -1707,8 +1707,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 146,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             188 => 
             array (
@@ -1716,8 +1716,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 146,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             189 => 
             array (
@@ -1725,8 +1725,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 146,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             190 => 
             array (
@@ -1734,8 +1734,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 146,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             191 => 
             array (
@@ -1743,8 +1743,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 147,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             192 => 
             array (
@@ -1752,8 +1752,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 147,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             193 => 
             array (
@@ -1761,8 +1761,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 147,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             194 => 
             array (
@@ -1770,8 +1770,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 148,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             195 => 
             array (
@@ -1779,8 +1779,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 149,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             196 => 
             array (
@@ -1788,8 +1788,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 6,
                 'stock_id' => 149,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             197 => 
             array (
@@ -1797,8 +1797,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 6,
                 'stock_id' => 150,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             198 => 
             array (
@@ -1806,8 +1806,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 152,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             199 => 
             array (
@@ -1815,8 +1815,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 152,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             200 => 
             array (
@@ -1824,8 +1824,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 152,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             201 => 
             array (
@@ -1833,8 +1833,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 152,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             202 => 
             array (
@@ -1842,8 +1842,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 152,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             203 => 
             array (
@@ -1851,8 +1851,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 153,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             204 => 
             array (
@@ -1860,8 +1860,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 155,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             205 => 
             array (
@@ -1869,8 +1869,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 157,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             206 => 
             array (
@@ -1878,8 +1878,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 160,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             207 => 
             array (
@@ -1887,8 +1887,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 162,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             208 => 
             array (
@@ -1896,8 +1896,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 163,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             209 => 
             array (
@@ -1905,8 +1905,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 164,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             210 => 
             array (
@@ -1914,8 +1914,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 165,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             211 => 
             array (
@@ -1923,8 +1923,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 166,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             212 => 
             array (
@@ -1932,8 +1932,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 168,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             213 => 
             array (
@@ -1941,8 +1941,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 169,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             214 => 
             array (
@@ -1950,8 +1950,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 170,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             215 => 
             array (
@@ -1959,8 +1959,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 173,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             216 => 
             array (
@@ -1968,8 +1968,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 174,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             217 => 
             array (
@@ -1977,8 +1977,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 176,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             218 => 
             array (
@@ -1986,8 +1986,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 176,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             219 => 
             array (
@@ -1995,8 +1995,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 177,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             220 => 
             array (
@@ -2004,8 +2004,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 179,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             221 => 
             array (
@@ -2013,8 +2013,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 182,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             222 => 
             array (
@@ -2022,8 +2022,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 183,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             223 => 
             array (
@@ -2031,8 +2031,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 185,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             224 => 
             array (
@@ -2040,8 +2040,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 185,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             225 => 
             array (
@@ -2049,8 +2049,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 189,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             226 => 
             array (
@@ -2058,8 +2058,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 190,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             227 => 
             array (
@@ -2067,8 +2067,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 191,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:19',
-                'updated_at' => '2024-07-24 11:27:19',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             228 => 
             array (
@@ -2076,8 +2076,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 192,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             229 => 
             array (
@@ -2085,8 +2085,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 193,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             230 => 
             array (
@@ -2094,8 +2094,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 195,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             231 => 
             array (
@@ -2103,8 +2103,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 195,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             232 => 
             array (
@@ -2112,8 +2112,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 195,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             233 => 
             array (
@@ -2121,8 +2121,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 196,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             234 => 
             array (
@@ -2130,8 +2130,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 196,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             235 => 
             array (
@@ -2139,8 +2139,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 197,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             236 => 
             array (
@@ -2148,8 +2148,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 200,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             237 => 
             array (
@@ -2157,8 +2157,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 200,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             238 => 
             array (
@@ -2166,8 +2166,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 201,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             239 => 
             array (
@@ -2175,8 +2175,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 202,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             240 => 
             array (
@@ -2184,8 +2184,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 202,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             241 => 
             array (
@@ -2193,8 +2193,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 203,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             242 => 
             array (
@@ -2202,8 +2202,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 203,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             243 => 
             array (
@@ -2211,8 +2211,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 206,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             244 => 
             array (
@@ -2220,8 +2220,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 206,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             245 => 
             array (
@@ -2229,8 +2229,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 207,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             246 => 
             array (
@@ -2238,8 +2238,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 213,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             247 => 
             array (
@@ -2247,8 +2247,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 213,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             248 => 
             array (
@@ -2256,8 +2256,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 213,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             249 => 
             array (
@@ -2265,8 +2265,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 213,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             250 => 
             array (
@@ -2274,8 +2274,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 214,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             251 => 
             array (
@@ -2283,8 +2283,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 214,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             252 => 
             array (
@@ -2292,8 +2292,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 214,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             253 => 
             array (
@@ -2301,8 +2301,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 214,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             254 => 
             array (
@@ -2310,8 +2310,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 215,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             255 => 
             array (
@@ -2319,8 +2319,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 215,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             256 => 
             array (
@@ -2328,8 +2328,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 215,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             257 => 
             array (
@@ -2337,8 +2337,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 216,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             258 => 
             array (
@@ -2346,8 +2346,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 216,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             259 => 
             array (
@@ -2355,8 +2355,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 217,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             260 => 
             array (
@@ -2364,8 +2364,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 217,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             261 => 
             array (
@@ -2373,8 +2373,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 218,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             262 => 
             array (
@@ -2382,8 +2382,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 218,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             263 => 
             array (
@@ -2391,8 +2391,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 220,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             264 => 
             array (
@@ -2400,8 +2400,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 221,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             265 => 
             array (
@@ -2409,8 +2409,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 221,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:00',
+                'updated_at' => '2024-07-26 08:26:00',
             ),
             266 => 
             array (
@@ -2418,8 +2418,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 228,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             267 => 
             array (
@@ -2427,8 +2427,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 229,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             268 => 
             array (
@@ -2436,8 +2436,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 230,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             269 => 
             array (
@@ -2445,8 +2445,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 231,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             270 => 
             array (
@@ -2454,8 +2454,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 232,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             271 => 
             array (
@@ -2463,8 +2463,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 235,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             272 => 
             array (
@@ -2472,8 +2472,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 236,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             273 => 
             array (
@@ -2481,8 +2481,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 237,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             274 => 
             array (
@@ -2490,8 +2490,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 238,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             275 => 
             array (
@@ -2499,8 +2499,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 239,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             276 => 
             array (
@@ -2508,8 +2508,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 246,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             277 => 
             array (
@@ -2517,8 +2517,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 246,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             278 => 
             array (
@@ -2526,8 +2526,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 246,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             279 => 
             array (
@@ -2535,8 +2535,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 247,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             280 => 
             array (
@@ -2544,8 +2544,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 247,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             281 => 
             array (
@@ -2553,8 +2553,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 6,
                 'stock_id' => 248,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             282 => 
             array (
@@ -2562,8 +2562,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 249,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             283 => 
             array (
@@ -2571,8 +2571,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 249,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:20',
-                'updated_at' => '2024-07-24 11:27:20',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             284 => 
             array (
@@ -2580,8 +2580,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 261,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             285 => 
             array (
@@ -2589,8 +2589,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 267,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             286 => 
             array (
@@ -2598,8 +2598,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 267,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             287 => 
             array (
@@ -2607,8 +2607,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 268,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             288 => 
             array (
@@ -2616,8 +2616,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 271,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             289 => 
             array (
@@ -2625,8 +2625,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 271,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             290 => 
             array (
@@ -2634,8 +2634,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 271,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             291 => 
             array (
@@ -2643,8 +2643,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 3,
                 'stock_id' => 272,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             292 => 
             array (
@@ -2652,8 +2652,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 272,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             293 => 
             array (
@@ -2661,8 +2661,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 273,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             294 => 
             array (
@@ -2670,8 +2670,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 4,
                 'stock_id' => 276,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             295 => 
             array (
@@ -2679,8 +2679,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 277,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             296 => 
             array (
@@ -2688,8 +2688,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 2,
                 'stock_id' => 278,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             297 => 
             array (
@@ -2697,8 +2697,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 279,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             298 => 
             array (
@@ -2706,8 +2706,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 279,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             299 => 
             array (
@@ -2715,8 +2715,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 280,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             300 => 
             array (
@@ -2724,8 +2724,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 5,
                 'stock_id' => 280,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             301 => 
             array (
@@ -2733,8 +2733,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 294,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             302 => 
             array (
@@ -2742,8 +2742,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 295,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             303 => 
             array (
@@ -2751,8 +2751,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 297,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             304 => 
             array (
@@ -2760,8 +2760,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 298,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             305 => 
             array (
@@ -2769,8 +2769,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 299,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             306 => 
             array (
@@ -2778,8 +2778,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 305,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:21',
-                'updated_at' => '2024-07-24 11:27:21',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             307 => 
             array (
@@ -2787,8 +2787,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 324,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             308 => 
             array (
@@ -2796,8 +2796,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 325,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
             309 => 
             array (
@@ -2805,8 +2805,8 @@ class InventoryWithdrawalsTableSeeder extends Seeder
                 'quantity' => 1,
                 'stock_id' => 325,
                 'user_id' => 1,
-                'created_at' => '2024-07-24 11:27:22',
-                'updated_at' => '2024-07-24 11:27:22',
+                'created_at' => '2024-07-26 08:26:01',
+                'updated_at' => '2024-07-26 08:26:01',
             ),
         ));
 

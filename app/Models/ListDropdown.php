@@ -33,4 +33,9 @@ class ListDropdown extends Model
     {
         return $this->morphMany('App\Models\ListService', 'typeable');
     }
+
+    public function inventory_category()
+    {
+        return $this->hasMany('App\Models\InventoryItem', 'category_id');
+    } 
 }

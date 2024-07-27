@@ -34,6 +34,7 @@ class SaveService
     public function item($request){
         $data = InventoryItem::create(array_merge($request->all(),[
             'code' => $this->generateCode($request),
+            'laboratory_id' => $this->laboratory,
             'img' => 'avatar.jpg'
         ]));
         return [
@@ -90,11 +91,9 @@ class SaveService
     }
 
     public function generateCode($request){
-        $laboratory_type = 9;
         $lab = Laboratory::where('id',$this->laboratory)->first();
-        $lab_type = ListDropdown::select('others')->where('id',$laboratory_type)->first();
-        $c = InventoryItem::where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type)->count();
-        $code = $lab->code.'-INV-'.$lab_type['others'].'-'.str_pad(($c+1), 5, '0', STR_PAD_LEFT);  
+        $c = InventoryItem::where('laboratory_id',$this->laboratory)->count();
+        $code = $lab->code.'-INV-'.str_pad(($c+1), 5, '0', STR_PAD_LEFT);  
         return $code;
     }
 }

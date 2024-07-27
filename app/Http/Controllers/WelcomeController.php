@@ -34,6 +34,7 @@ class WelcomeController extends Controller
     public function items(){
         $data = EulimsProduct::with('entries.withdrawals.detail','entries.supplier')->where('discontinued',0)->where('producttype_id',1)->get();
         $items = ItemsResource::collection($data);
+        return $items;
         foreach($items as $itemm){
             $itemArray = $itemm->toArray(request());
             $item = InventoryItem::create([
@@ -62,6 +63,11 @@ class WelcomeController extends Controller
                         'user_id' => 1
                     ]);
 
+                    if($entry['onhand'] > 0){
+                        $item->is_active = 1;
+                        $item->save();
+                    }
+
                     if($entries){
                         if(count($entry['withdrawals']->toArray(request())) > 0){
                             foreach($entry['withdrawals']->toArray(request()) as $withdrawal){
@@ -71,9 +77,6 @@ class WelcomeController extends Controller
                                     'user_id' => 1
                                 ]);
                             }
-                        }else{
-                            $item->is_active = 0;
-                            $item->save();
                         }
                     }
                 }
