@@ -192,6 +192,10 @@
     "file": "assets/remixicon-B83Wci9r.woff2",
     "src": "public/fonts/remixicon.woff2"
   },
+  "public/images/apps/calendar.png": {
+    "file": "assets/calendar-yfM8ZpJt.png",
+    "src": "public/images/apps/calendar.png"
+  },
   "public/images/apps/chatbox.png": {
     "file": "assets/chatbox-DnuZYIu7.png",
     "src": "public/images/apps/chatbox.png"
@@ -199,6 +203,14 @@
   "public/images/apps/inventory.png": {
     "file": "assets/inventory-DCAGjWxa.png",
     "src": "public/images/apps/inventory.png"
+  },
+  "public/images/apps/laboratory.png": {
+    "file": "assets/laboratory-DGebyxyk.png",
+    "src": "public/images/apps/laboratory.png"
+  },
+  "public/images/apps/referral.png": {
+    "file": "assets/referral-eRDadRH6.png",
+    "src": "public/images/apps/referral.png"
   },
   "public/images/apps/testservices.png": {
     "file": "assets/testservices-BL0ePEow.png",
@@ -237,7 +249,7 @@
     "src": "public/images/sidebar/img-4.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BbID31PF.js",
+    "file": "assets/app-DZJhjLGM.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -254,14 +266,17 @@
       "node_modules/leaflet/dist/leaflet-src.esm.js"
     ],
     "css": [
-      "assets/app-C1KSTlIa.css"
+      "assets/app-D9W0YOSL.css"
     ],
     "assets": [
       "assets/logo-sm-BMbbSDmV.png",
       "assets/logo-dark-DGKr6nTV.png",
       "assets/logo-light-CqfqkvTN.png",
-      "assets/testservices-BL0ePEow.png",
+      "assets/laboratory-DGebyxyk.png",
       "assets/inventory-DCAGjWxa.png",
+      "assets/calendar-yfM8ZpJt.png",
+      "assets/testservices-BL0ePEow.png",
+      "assets/referral-eRDadRH6.png",
       "assets/chatbox-DnuZYIu7.png",
       "assets/img-1-C6VsSbnm.jpg",
       "assets/img-2-B0ULeiCa.jpg",
