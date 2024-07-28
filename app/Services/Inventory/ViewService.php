@@ -38,19 +38,6 @@ class ViewService
         return $data;
     }
 
-    public function items($request){
-        $data = ItemResource::collection(
-            InventoryItem::query()
-            ->with('category','unittype','stocks.withdrawals')
-            ->where('laboratory_id',$this->laboratory)
-            ->when($request->keyword, function ($query, $keyword) {
-                $query->where('name', 'LIKE', "%{$keyword}%");
-            })
-            ->paginate($request->count)
-        );
-        return $data;
-    }
-
     public function equipments($request){
         $data = EquipmentResource::collection(
             InventoryEquipment::query()

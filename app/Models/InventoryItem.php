@@ -27,11 +27,6 @@ class InventoryItem extends Model
         return $this->hasMany('App\Models\InventoryStock', 'item_id');
     }
 
-    public function onhand()
-    {
-        return $this->hasMany('App\Models\InventoryStock', 'item_id')->sum('onhand');
-    }
-
     public function laboratory()
     {
         return $this->belongsTo('App\Models\Laboratory', 'laboratory_id', 'id');
@@ -50,5 +45,11 @@ class InventoryItem extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
+
+    public function isBelowReorderLevel()
+    {
+        $totalStock = $this->stocks()->sum('onhand');
+        return $totalStock <= $this->reorder && $totalStock != 0;
     }
 }

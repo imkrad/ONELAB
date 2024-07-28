@@ -30,7 +30,7 @@ class InventoryController extends Controller
                 return $this->view->suppliers($request);
             break;
             case 'items':
-                return $this->view->items($request);
+                return $this->item->lists($request);
             break;
             case 'equipments':
                 return $this->view->equipments($request);
@@ -78,6 +78,7 @@ class InventoryController extends Controller
                     'analytics' => [
                         'categories' => $this->item->categories(),
                         'statuses' => $this->item->statuses(),
+                        'reminders' => $this->item->reminders(),
                     ]
                 ]);
             break;
@@ -98,7 +99,7 @@ class InventoryController extends Controller
                     return $this->save->supplier($request);
                 break;
                 case 'item':
-                    return $this->save->item($request);
+                    return $this->item->save($request);
                 break;
                 case 'stock':
                     return $this->save->stock($request);

@@ -28,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(list,index) in lists" v-bind:key="index">
+                <tr v-for="(list,index) in lists" v-bind:key="index" :class="(list.onhand == 0) ? 'bg-danger-subtle' : ''">
                     <td class="text-center"> 
                         {{ index + 1 }}.
                     </td>
@@ -36,8 +36,8 @@
                         <h5 class="fs-13 mb-0 text-dark">{{list.name}}</h5>
                         <p class="fs-12 text-muted mb-0">{{list.code}} <span v-if="list.old_code">({{list.old_code}})</span></p>
                     </td>
-                    <td class="text-center fs-12">{{list.onhand}}</td>
-                    <td class="text-center fs-12">Out of stock</td>
+                    <td class="text-center fs-12">{{list.onhand}} </td>
+                    <td class="text-center fs-12">{{ list.stock }} {{list.unit}} <span class="fs-11 text-muted">({{ list.onhand }})</span></td>
                     <td class="text-center fs-12">{{list.reorder}} {{list.unit}}</td>
                     <td class="text-center fs-12">{{list.category}}</td>
                     <td class="text-center">

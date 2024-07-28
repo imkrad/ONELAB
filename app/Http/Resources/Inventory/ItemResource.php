@@ -21,7 +21,8 @@ class ItemResource extends JsonResource
             'reorder' => $this->reorder,
             'unit' => $this->unittype->name,
             'is_active' => $this->is_active,
-            'onhand' => $this->onhand(),
+            'onhand' => ($this->onhand ) ? $this->onhand : 0,
+            'stock' => ($this->stock ) ? $this->stock : 0,
             'category' => ($this->category) ? $this->category->name : 'Not Specified',
             'stocks' => StockResource::collection($this->stocks)
         ];
