@@ -28,13 +28,32 @@ class ItemClass
                     $query->select(\DB::raw('SUM(onhand)'));
                 }, 
                 'stocks as stock' => function (Builder $query) {
-                    $query->select(\DB::raw('SUM(unit * onhand)'))
+                    $query->select(\DB::raw('SUM(
+                    CASE
+                        WHEN inventory_stocks.unit_id = inventory_items.unit_id THEN inventory_stocks.unit * inventory_stocks.onhand
+                        WHEN inventory_stocks.unit_id = 123 AND inventory_items.unit_id = 124 THEN inventory_stocks.unit * inventory_stocks.onhand * 1000
+                        WHEN inventory_stocks.unit_id = 124 AND inventory_items.unit_id = 123 THEN inventory_stocks.unit * inventory_stocks.onhand * 0.001
+                        WHEN inventory_stocks.unit_id = 125 AND inventory_items.unit_id = 126 THEN inventory_stocks.unit * inventory_stocks.onhand * 0.001
+                        WHEN inventory_stocks.unit_id = 126 AND inventory_items.unit_id = 125 THEN inventory_stocks.unit * inventory_stocks.onhand * 1000
+                        ELSE inventory_stocks.unit * inventory_stocks.onhand
+                    END)'))
                         ->where('onhand', '!=', 0);
                 }
             ])
             ->paginate($request->count)
         );
         return $data;
+    }
+
+    public function search($request){
+        $keyword = $request->keyword;
+        $data = InventoryItem::with('category','unittype')
+            ->withWhereHas('stocks', function ($query) use ($keyword){
+                $query->with('withdrawals','unittype')->where('onhand', '!=', 0);
+            })
+            ->where('laboratory_id',$this->laboratory)
+            ->where('name', 'LIKE', "%{$keyword}%")->limit(5)->get();
+        return ItemResource::collection($data);
     }
 
     public function save($request){

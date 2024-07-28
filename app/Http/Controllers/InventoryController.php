@@ -39,7 +39,7 @@ class InventoryController extends Controller
                 return $this->view->lists($request);
             break;
             case 'search':
-                return $this->view->search($request);
+                return $this->item->search($request);
             break;
             default:
                 return inertia('Modules/Inventory/Dashboard/Index',[

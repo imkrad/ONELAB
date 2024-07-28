@@ -37,7 +37,8 @@
                         <p class="fs-12 text-muted mb-0">{{list.code}} <span v-if="list.old_code">({{list.old_code}})</span></p>
                     </td>
                     <td class="text-center fs-12">{{list.onhand}} </td>
-                    <td class="text-center fs-12">{{ list.stock }} {{list.unit}} <span class="fs-11 text-muted">({{ list.onhand }})</span></td>
+                    <!-- <span class="fs-11 text-muted">({{ list.onhand }})</span> -->
+                    <td class="text-center fs-12">{{ list.stock }} {{list.unit}}</td>
                     <td class="text-center fs-12">{{list.reorder}} {{list.unit}}</td>
                     <td class="text-center fs-12">{{list.category}}</td>
                     <td class="text-center">

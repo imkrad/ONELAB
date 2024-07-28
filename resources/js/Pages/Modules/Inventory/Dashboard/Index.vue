@@ -128,7 +128,7 @@
                                 </td>
                                 <td class="text-end">
                                     <div class="input-step">
-                                        <input type="number" class="product-quantity" v-model="list.qnty" value="1" min="0" :max="list.quantity"/>
+                                        <input type="number" class="product-quantity" v-model="list.onhand" value="1" min="0" :max="list.onhand"/>
                                     </div>
                                     <b-button @click="removeCart(index)" variant="light" v-b-tooltip.hover title="Remove" class="remove-list ms-1 me-n2">
                                         <i class="ri-delete-bin-fill align-bottom"></i>

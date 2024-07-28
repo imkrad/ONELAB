@@ -29,7 +29,8 @@ class StockResource extends JsonResource
         return [
             'id' => $this->id,
             'code' => $this->code,
-            'brand' => $this->brand,
+            'old_code' => $this->old_code,
+            'brand' => ($this->brand) ? $this->brand : "Not specified",
             'quantity' => $this->quantity,
             'onhand' => $this->onhand,
             'number' => $this->number,

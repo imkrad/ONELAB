@@ -90,6 +90,7 @@ export default {
         show(data,name){
             this.selected = data;
             this.name = name;
+            this.selected.name = name;
             this.showModal = true;
         },
         submit(){
