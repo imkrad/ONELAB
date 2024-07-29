@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('list_industies', function (Blueprint $table) {
+        Schema::create('list_industries', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->tinyIncrements('id');
             $table->string('name',100);
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('list_industies');
+        Schema::dropIfExists('list_industries');
     }
 };

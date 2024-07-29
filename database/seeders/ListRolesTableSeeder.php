@@ -41,7 +41,7 @@ class ListRolesTableSeeder extends Seeder
                 'id' => 3,
                 'name' => 'Customer Relation Officer',
                 'description' => 'This user role is responsible in receiving samples and managing transactions in the Laboratory Module from receiving to releasing of reports.',
-                'has_lab' => 1,
+                'has_lab' => 0,
                 'is_lab' => 1,
                 'is_active' => 1,
             ),

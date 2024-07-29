@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ListMethod extends Model
+class TestserviceMethod extends Model
 {
     use HasFactory;
 
@@ -15,17 +15,17 @@ class ListMethod extends Model
 
     public function method()
     {
-        return $this->belongsTo('App\Models\ListName', 'method_id', 'id');
+        return $this->belongsTo('App\Models\TestserviceName', 'method_id', 'id');
     }
 
     public function reference()
     {
-        return $this->belongsTo('App\Models\ListName', 'reference_id', 'id');
+        return $this->belongsTo('App\Models\TestserviceName', 'reference_id', 'id');
     }
 
     public function type()
     {
-        return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
+        return $this->belongsTo('App\Models\ListLaboratory', 'laboratory_type', 'id');
     }
 
     public function setFeeAttribute($value)

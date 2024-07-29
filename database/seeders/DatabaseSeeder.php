@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'kradjumli@gmail.com',
             'password' => bcrypt('123456789'),
             'role' => 'Administrator',
-            'is_active' => 0,
+            'is_active' => 1,
+            'email_verified_at' => '2024-05-15 08:46:33',
             'created_at' => now(),
             'updated_at' => now()
         ]);

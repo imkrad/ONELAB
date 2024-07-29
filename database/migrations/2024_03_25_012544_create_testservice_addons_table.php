@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('list_services', function (Blueprint $table) {
+        Schema::create('testservice_addons', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->decimal('fee',12,2);
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('list_services');
+        Schema::dropIfExists('testservice_addons');
     }
 };

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ListTestservice extends Model
+class Testservice extends Model
 {
     use HasFactory;
 
@@ -15,17 +15,17 @@ class ListTestservice extends Model
 
     public function sampletype()
     {
-        return $this->belongsTo('App\Models\ListName', 'sampletype_id', 'id');
+        return $this->belongsTo('App\Models\TestserviceName', 'sampletype_id', 'id');
     }
 
     public function testname()
     {
-        return $this->belongsTo('App\Models\ListName', 'testname_id', 'id');
+        return $this->belongsTo('App\Models\TestserviceName', 'testname_id', 'id');
     }
 
     public function method()
     {
-        return $this->belongsTo('App\Models\ListMethod', 'method_id', 'id');
+        return $this->belongsTo('App\Models\TestserviceMethod', 'method_id', 'id');
     }
     
     public function laboratory()
@@ -35,7 +35,7 @@ class ListTestservice extends Model
 
     public function type()
     {
-        return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
+        return $this->belongsTo('App\Models\ListLaboratory', 'laboratory_type', 'id');
     }
     
     public function getUpdatedAtAttribute($value)
@@ -50,6 +50,6 @@ class ListTestservice extends Model
 
     public function fee()
     {
-        return $this->morphOne('App\Models\ListService', 'typeable');
+        return $this->morphOne('App\Models\TestserviceAddon', 'typeable');
     }
 }

@@ -3,19 +3,21 @@
 namespace App\Services\Laboratory;
 
 use App\Models\{
+    Configuration,
+    Laboratory,
     LocationRegion,
     LocationProvince,
     LocationMunicipality,
     LocationBarangay,
     ListDropdown,
     ListStatus,
-    Laboratory,
     ListDiscount,
-    ListName,
-    ListTestservice,
     ListRole,
-    Configuration,
-    ListService
+    ListLaboratory,
+    ListIndustry,
+    TestserviceAddon,
+    Testservice,
+    TestserviceName
 };
 
 class DropdownClass
@@ -66,18 +68,45 @@ class DropdownClass
         return $data;
     }
 
-    public function bussiness_nature(){
-        $data = ListDropdown::where('classification','Bussiness Nature')->get()->map(function ($item) {
+    public function laboratories(){
+        $data = Laboratory::with('member')->where('is_active',1)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
-                'name' => $item->name
+                'name' => $item->member->name.' ('.$item->name.')',
+                'short' => $item->name
             ];
         });
         return $data;
     }
 
+    public function laboratory_types(){
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
+        $query = ListLaboratory::query();
+        ($lab_id) ? $query->whereIn('id',$lab_id) : '';
+        $data = $query->get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name,
+                'short' => $item->short
+            ];
+        });
+        return $data;
+    }
+
+    public function laboratory_all(){
+        $data = ListLaboratory::get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name,
+                'short' => $item->short
+            ];
+        });
+        return $data;
+    }
+
+    //CUSTOMER
     public function industry_type(){
-        $data = ListDropdown::where('classification','Industry Type')->get()->map(function ($item) {
+        $data = ListIndustry::where('is_active',1)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'name' => $item->name
@@ -96,63 +125,7 @@ class DropdownClass
         return $data;
     }
 
-    public function laboratory_types(){
-        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
-        $query = ListDropdown::query()->where('classification','Laboratory');
-        ($lab_id) ? $query->whereIn('id',$lab_id) : '';
-        $data = $query->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->name,
-                'others' => $item->others
-            ];
-        });
-        return $data;
-    }
-
-    public function laboratory_all(){
-        $data = ListDropdown::where('classification','Laboratory')->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->name,
-                'others' => $item->others
-            ];
-        });
-        return $data;
-    }
-
-    public function purposes(){
-        $data = ListDropdown::where('classification','Purpose')->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->name
-            ];
-        });
-        return $data;
-    }
-
-    public function modes(){
-        $data = ListDropdown::where('classification','Mode of Release')->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->name
-            ];
-        });
-        return $data;
-    }
-
-
-    public function laboratories(){
-        $data = Laboratory::with('member')->where('is_active',1)->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->member->name.' ('.$item->name.')',
-                'short' => $item->name
-            ];
-        });
-        return $data;
-    }
-
+    //TSREQUEST
     public function discounts(){
         $data = ListDiscount::with('based','type','subtype')->where('is_active',1)->get()->map(function ($item) {
             $total = ($item->subtype->name == 'Percentage') ? $item->value.'%' : '₱'.$item->value;
@@ -182,8 +155,30 @@ class DropdownClass
         return $data;
     }
 
+    public function modes(){
+        $data = ListDropdown::where('classification','Mode of Release')->get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name
+            ];
+        });
+        return $data;
+    }
+
+    public function roles(){
+        $data = ListRole::where('is_active',1)->get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name,
+                'has_lab' => $item->has_lab
+            ];
+        });
+        return $data;
+    }
+    
+    //ADDONS
     public function services(){
-        $data = ListService::where('is_additional',0)->get()->map(function ($item) {
+        $data = TestserviceAddon::where('is_additional',0)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'label' => $item->name.' ('.$item->description.')',
@@ -195,6 +190,21 @@ class DropdownClass
         return $data;
     }
 
+    //CALENDAR
+    public function events(){
+        $data = ListDropdown::where('classification','Events')->get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name,
+                'color' => $item->color,
+                'others' => $item->others,
+                'type' => $item->type
+            ];
+        });
+        return $data;
+    }
+
+    //FINANCE
     public function collections(){
         $data = ListDropdown::where('classification','Collection Type')->get()->map(function ($item) {
             return [
@@ -220,19 +230,6 @@ class DropdownClass
             return [
                 'value' => $item->id,
                 'name' => $item->name
-            ];
-        });
-        return $data;
-    }
-
-    public function events(){
-        $data = ListDropdown::where('classification','Events')->get()->map(function ($item) {
-            return [
-                'value' => $item->id,
-                'name' => $item->name,
-                'color' => $item->color,
-                'others' => $item->others,
-                'type' => $item->type
             ];
         });
         return $data;

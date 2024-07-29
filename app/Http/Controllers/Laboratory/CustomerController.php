@@ -36,7 +36,6 @@ class CustomerController extends Controller
             default :
             return inertia('Modules/Laboratory/Customers/Index',[
                 'dropdowns' => [
-                    'bussinesses' => $this->dropdown->bussiness_nature(),
                     'industries' => $this->dropdown->industry_type(),
                     'classes' => $this->dropdown->classes(),
                     'regions' => $this->dropdown->regions()

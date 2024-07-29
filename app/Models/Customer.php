@@ -67,7 +67,7 @@ class Customer extends Model
 
     public function industry()
     {
-        return $this->belongsTo('App\Models\ListDropdown', 'industry_id', 'id');
+        return $this->belongsTo('App\Models\ListIndustry', 'industry_id', 'id');
     }
 
     public function address()

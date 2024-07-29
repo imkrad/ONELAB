@@ -14,7 +14,7 @@ use App\Models\EulimsProduct;
 use Illuminate\Http\Request;
 use App\Http\Resources\TsrResource;
 use App\Http\Resources\SampleResource;
-use App\Services\DropdownService;
+use App\Services\Laboratory\DropdownClass;
 use App\Http\Requests\UserRequest;
 use App\Traits\HandlesTransaction;
 use App\Http\Requests\InstallRequest;
@@ -27,7 +27,7 @@ class WelcomeController extends Controller
 {
     use HandlesTransaction;
 
-    public function __construct(DropdownService $dropdown){
+    public function __construct(DropdownClass $dropdown){
         $this->dropdown = $dropdown;
     }
 
@@ -113,7 +113,6 @@ class WelcomeController extends Controller
     public function installation(){
         $laboratory_id = \Auth::user()->userrole->laboratory_id;
         $member = Laboratory::with('member')->where('id',$laboratory_id)->first();
-        $laboratories = ListDropdown::where('classification','Laboratory')->get();
         if(\Auth::user()->is_active){
             return inertia('Auth/Installation',[
                 'member' => $member,

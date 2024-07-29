@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('list_methods', function (Blueprint $table) {
+        Schema::create('testservice_names', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
-            $table->decimal('fee',12,2);
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('short')->nullable();
+            $table->tinyInteger('type_id')->unsigned()->index();
+            $table->foreign('type_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->tinyInteger('laboratory_type')->unsigned()->index();
             $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
-            $table->bigInteger('method_id')->unsigned()->index();
-            $table->foreign('method_id')->references('id')->on('list_names')->onDelete('cascade');
-            $table->bigInteger('reference_id')->unsigned()->index();
-            $table->foreign('reference_id')->references('id')->on('list_names')->onDelete('cascade');
             $table->boolean('is_active')->default(1);
-            $table->boolean('is_synced')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('list_methods');
+        Schema::dropIfExists('testservice_names');
     }
 };

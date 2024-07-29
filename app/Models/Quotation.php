@@ -37,7 +37,7 @@ class Quotation extends Model
 
     public function type()
     {
-        return $this->belongsTo('App\Models\ListDropdown', 'laboratory_type', 'id');
+        return $this->belongsTo('App\Models\ListLaboratory', 'laboratory_type', 'id');
     }
 
     public function status()

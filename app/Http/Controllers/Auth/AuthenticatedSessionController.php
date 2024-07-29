@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
-use App\Services\DropdownService;
+use App\Services\Laboratory\DropdownClass;
 
 class AuthenticatedSessionController extends Controller
 {
-    public function __construct(DropdownService $dropdown){
+    public function __construct(DropdownClass $dropdown){
         $this->dropdown = $dropdown;
     }
     /**

@@ -2,10 +2,10 @@
 
 namespace App\Services\Laboratory\Testservice;
 
-use App\Models\ListName;
+use App\Models\TestserviceName;
 use App\Models\Laboratory;
-use App\Models\ListMethod;
-use App\Models\ListTestservice;
+use App\Models\TestserviceMethod;
+use App\Models\Testservice;
 use App\Http\Resources\DefaultResource;
 use App\Http\Resources\Laboratory\TestserviceResource;
 
@@ -19,7 +19,7 @@ class ViewClass
 
     public function lists($request){
         $data = DefaultResource::collection(
-            ListTestservice::query()
+            Testservice::query()
             ->when($this->role != 'Administrator', function ($query) {
                 $query->where('laboratory_id',$this->laboratory);
             })
@@ -40,7 +40,7 @@ class ViewClass
         $type = $request->type;
         $laboratory = $request->laboratory_type;
 
-        $data = ListName::where('name', 'LIKE', "%{$keyword}%")->where('type_id',$type)->where('laboratory_type',$laboratory)->get()->map(function ($item) {
+        $data = TestserviceName::where('name', 'LIKE', "%{$keyword}%")->where('type_id',$type)->where('laboratory_type',$laboratory)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'name' => $item->name,
@@ -54,7 +54,7 @@ class ViewClass
         $keyword = $request->keyword;
       
         $data = DefaultResource::collection(
-            ListMethod::query()
+            TestserviceMethod::query()
             ->withWhereHas('method', function ($query) use ($keyword){
                 $query->select('id','name','short');
                 $query->when($keyword, function ($query, $keyword) {
@@ -75,7 +75,7 @@ class ViewClass
 
     public function testservices($request){
         $data = TestserviceResource::collection(
-            ListTestservice::query()
+            Testservice::query()
             ->when($this->role != 'Administrator', function ($query) {
                 $query->where('laboratory_id',$this->laboratory);
             })
