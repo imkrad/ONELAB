@@ -8,19 +8,20 @@
                     </b-col>
                     <b-col md>
                         <div class="ms-2 mt-n2">
-                            <h5 class="modal-title fs-16">{{name}}</h5>
+                            <h5 class="modal-title text-primary fs-16">{{name}}</h5>
                             <div class="hstack gap-3 flex-wrap mt-0 mb-n2">
                                 <div class="text-primary">
                                     <span class="text-body text-muted fs-12">Code :</span> <span class="text-body fs-12">{{selected.code}}</span>
+                                </div>   
+                                <div class="vr"></div>
+                                <div class="text-primary">
+                                    <span class="text-body text-muted fs-12">Brand:</span> <span class="text-body fs-12">{{selected.brand}}</span>
                                 </div>
                                 <div class="vr"></div>
                                 <div class="text-primary">
-                                    <span class="text-body text-muted fs-12">Old code :</span> <span class="text-body fs-12">{{selected.old_code}}</span>
+                                    <span class="text-body text-muted fs-12">Content :</span> <span class="text-body fs-12">{{selected.unit}} {{selected.type}}</span>
                                 </div>
-                                <div class="vr"></div>
-                                <div class="text-primary">
-                                    <span class="text-body text-muted fs-12">Brand :</span> <span class="text-body fs-12">{{selected.brand}}</span>
-                                </div>
+                             
                             </div>
                         </div>
                     </b-col>
@@ -28,20 +29,20 @@
             </b-col>
         </b-row>
         <div class="row mb-2 g-1 border-bottom" v-if="selected">
-            <div class="col-sm-4 mb-3">
+              <div class="col-sm-12 mb-1">
                 <div class="p-1 border border-dashed rounded">
                     <div class="d-flex align-items-center">
                         <div class="avatar-sm me-0">
-                            <div class="avatar-title rounded bg-transparent text-primary fs-24"><i class="ri-price-tag-2-line"></i></div>
+                            <div class="avatar-title rounded bg-transparent text-primary fs-24"><i class="ri-user-5-fill"></i></div>
                         </div>
                         <div class="flex-grow-1">
-                            <p class="text-muted fs-11 mb-0">Price :</p>
-                            <h5 class="fs-13 mb-0">{{selected.price}}</h5>
+                            <p class="text-muted fs-11 mb-0">Supplier:</p>
+                            <h5 class="fs-13 mb-0">{{selected.supplier}}</h5>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-3">
                 <div class="p-1 border border-dashed rounded">
                     <div class="d-flex align-items-center">
                         <div class="avatar-sm me-0">
@@ -49,7 +50,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">PO Number:</p>
-                            <h5 class="fs-13 text-success mb-0">{{selected.number}}</h5>
+                            <h5 class="fs-13 mb-0">{{selected.number}}</h5>
                         </div>
                     </div>
                 </div>
@@ -64,6 +65,19 @@
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Bought at:</p>
                             <h5 class="fs-13 mb-0">{{selected.bought_at}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="col-sm-4">
+                <div class="p-1 border border-dashed rounded">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-sm me-0">
+                            <div class="avatar-title rounded bg-transparent text-primary fs-24"><i class="ri-price-tag-2-line"></i></div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <p class="text-muted fs-11 mb-0">Price :</p>
+                            <h5 class="fs-13 mb-0">{{selected.price}}</h5>
                         </div>
                     </div>
                 </div>

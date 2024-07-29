@@ -16,7 +16,6 @@ return new class extends Migration
             $table->increments('id');
             $table->year('year')->unique();
             $table->json('data');
-            $table->boolean('is_lab')->default(0);
             $table->tinyInteger('laboratory_id')->unsigned()->nullable();
             $table->foreign('laboratory_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->timestamps();

@@ -6,7 +6,7 @@
             <span @click="clear()" class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
         </div>
         <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
-            <simplebar data-simplebar style="height: 200px;">
+            <simplebar data-simplebar style="max-height: 200px;">
                 <div class="notification-list">
                     <b-link @click="chooseItem(list)" v-for="(list, index) of lists" :key="index" class="d-flex dropdown-item notify-item py-2">
                         <!-- <img :src="currentUrl+'/images/avatars/'+list.profile.avatar" class="me-3 rounded-circle avatar-xs" alt="user-pic" /> -->

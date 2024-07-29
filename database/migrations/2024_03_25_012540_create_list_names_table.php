@@ -19,7 +19,7 @@ return new class extends Migration
             $table->tinyInteger('type_id')->unsigned()->index();
             $table->foreign('type_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->tinyInteger('laboratory_type')->unsigned()->index();
-            $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });

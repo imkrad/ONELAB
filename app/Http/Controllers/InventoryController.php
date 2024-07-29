@@ -11,6 +11,7 @@ use App\Services\Inventory\SaveService;
 use App\Services\Inventory\ItemClass;
 use App\Services\Inventory\UpdateService;
 use App\Http\Requests\InventoryRequest;
+use App\Http\Requests\InventoryUpdateRequest;
 
 class InventoryController extends Controller
 {
@@ -102,13 +103,13 @@ class InventoryController extends Controller
                     return $this->item->save($request);
                 break;
                 case 'stock':
-                    return $this->save->stock($request);
+                    return $this->item->stock($request);
                 break;
                 case 'equipment':
                     return $this->save->equipment($request);
                 break;
                 case 'withdraw':
-                    return $this->save->withdraw($request);
+                    return $this->item->withdraw($request);
                 break;
             }
         });
@@ -120,11 +121,14 @@ class InventoryController extends Controller
         ]);
     }
 
-    public function update(Request $request){
+    public function update(InventoryUpdateRequest $request){
         $result = $this->handleTransaction(function () use ($request) {
             switch($request->option){
                 case 'supplier':
                     return $this->update->supplier($request);
+                break;
+                case 'item':
+                    return $this->item->update($request);
                 break;
             }
         });

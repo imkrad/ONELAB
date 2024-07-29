@@ -16,7 +16,7 @@ return new class extends Migration
             $table->increments('id');
             $table->decimal('fee',12,2);
             $table->tinyInteger('laboratory_type')->unsigned()->index();
-            $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->bigInteger('method_id')->unsigned()->index();
             $table->foreign('method_id')->references('id')->on('list_names')->onDelete('cascade');
             $table->bigInteger('reference_id')->unsigned()->index();

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('supplier_id')->unsigned()->index();
             $table->foreign('supplier_id')->references('id')->on('inventory_suppliers')->onDelete('cascade');
             $table->tinyInteger('laboratory_type')->unsigned()->index();
-            $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->integer('laboratory_id')->unsigned()->index();
             $table->foreign('laboratory_id')->references('id')->on('laboratories')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->index();

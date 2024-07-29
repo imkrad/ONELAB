@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('laboratory_id')->unsigned()->index();
             $table->foreign('laboratory_id')->references('id')->on('laboratories')->onDelete('cascade');
             $table->tinyInteger('laboratory_type')->unsigned()->nullable();
-            $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->tinyInteger('role_id')->unsigned()->index();

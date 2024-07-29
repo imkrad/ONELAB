@@ -11,9 +11,9 @@
                 <tbody>
                     <tr v-for="(list,index) in form.carts" v-bind:key="index" :class="[(list.is_active == 0) ? 'table-warnings' : '']">
                         <td class="fs-12">
-                            {{list.name}}  
+                            {{list.name}} <span class="text-muted">({{list.number}})</span>  
                         </td>
-                        <td class="text-center fs-12">{{list.qnty}}</td>
+                        <td class="text-center fs-12">{{list.quantity}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -47,50 +47,18 @@ export default {
             this.form.carts = carts;
             this.showModal = true;
         },
-        edit(data){
-            this.form.name = data.name;
-            this.form.email = data.email;
-            this.form.contact_no = data.contact_no;
-            this.editable = true;
-            this.showModal = true;
-        },
-        fetchItem(code){
-            axios.get('/inventory',{
-                params: {
-                    option: 'search',
-                    keyword: code
-                }
-            })
-            .then(response => {
-                this.items = response.data;
-            })
-            .catch(err => console.log(err));
-        },
         submit(){
-            if(this.editable){
-                this.form.put('/inventory/update',{
-                    preserveScroll: true,
-                    onSuccess: (response) => {
-                        this.form.reset();
-                        this.hide();
-                    }
-                });
-            }else{
-                this.form.post('/inventory',{
-                    preserveScroll: true,
-                    onSuccess: (response) => {
-                        this.$emit('message',true);
-                        this.form.reset();
-                        this.hide();
-                    },
-                });
-            }
+            this.form.post('/inventory',{
+                preserveScroll: true,
+                onSuccess: (response) => {
+                    this.$emit('message',true);
+                    this.form.reset();
+                    this.hide();
+                },
+            });
         },
         amount(val){
             this.form.price = val;
-        },
-        handleInput(field) {
-            this.form.errors[field] = false;
         },
         hide(){
             this.showModal = false;

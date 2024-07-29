@@ -15,7 +15,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->tinyInteger('laboratory_type')->unsigned()->index();
-            $table->foreign('laboratory_type')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->bigInteger('sampletype_id')->unsigned()->index();
             $table->foreign('sampletype_id')->references('id')->on('list_names')->onDelete('cascade');
             $table->bigInteger('testname_id')->unsigned()->index();

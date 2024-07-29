@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customer_names', function (Blueprint $table) {
-            $table->engine = 'InnoDB'; 
-            $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->boolean('has_branches')->default(0);
+        Schema::create('list_industies', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->tinyIncrements('id');
+            $table->string('name',100);
+            $table->string('is_main');   
+            $table->unsignedInteger('industry_id');
+            $table->string('industry_type');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customer_names');
+        Schema::dropIfExists('list_industies');
     }
 };
