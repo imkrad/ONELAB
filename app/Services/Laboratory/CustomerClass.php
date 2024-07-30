@@ -63,7 +63,7 @@ class CustomerClass
         $array = [
             ['counts' => $tsrs, 'name' => 'Total Request', 'icon' => 'ri-list-check-2', 'color' => 'success'],
             ['counts' => '₱'.number_format($total,2,'.',','),'name' => 'Total Spending', 'icon' => 'ri-hand-coin-fill', 'color' => 'info'],
-            ['counts' => $wallet,'name' => 'My Wallet', 'icon' => 'ri-wallet-3-fill', 'color' => 'primary'],
+            ['counts' => ($wallet) ? $wallet : '₱0.00','name' => 'My Wallet', 'icon' => 'ri-wallet-3-fill', 'color' => 'primary'],
         ];
         return $array;
     }

@@ -120,7 +120,7 @@ class CustomerNamesTableSeeder extends Seeder
             11 => 
             array (
                 'id' => 15,
-                'name' => 'LGU',
+                'name' => 'Local Government Unit',
                 'has_branches' => 1,
                 'is_active' => 1,
                 'created_at' => '2024-07-30 14:58:27',
@@ -566,6 +566,177 @@ class CustomerNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-07-30 17:01:11',
                 'updated_at' => '2024-07-30 17:01:11',
+            ),
+            61 => 
+            array (
+                'id' => 65,
+                'name' => 'Bureau of Jail Management and Penology Region IX',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:24:31',
+                'updated_at' => '2024-07-30 18:24:31',
+            ),
+            62 => 
+            array (
+                'id' => 66,
+                'name' => 'YL Fishing Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:28:33',
+                'updated_at' => '2024-07-30 18:28:33',
+            ),
+            63 => 
+            array (
+                'id' => 67,
+                'name' => 'Seaoil Bulk Terminal',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:31:00',
+                'updated_at' => '2024-07-30 18:31:00',
+            ),
+            64 => 
+            array (
+                'id' => 68,
+                'name' => 'Sibuco Municipal Hospital',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:33:34',
+                'updated_at' => '2024-07-30 18:33:34',
+            ),
+            65 => 
+            array (
+                'id' => 69,
+                'name' => 'E-Cure Enterprises',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:41:59',
+                'updated_at' => '2024-07-30 18:41:59',
+            ),
+            66 => 
+            array (
+                'id' => 70,
+                'name' => 'Joan\'s Pharmacy and Convenience Store',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:43:52',
+                'updated_at' => '2024-07-30 18:43:52',
+            ),
+            67 => 
+            array (
+                'id' => 71,
+                'name' => 'G Power Fuel Station',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:45:15',
+                'updated_at' => '2024-07-30 18:45:15',
+            ),
+            68 => 
+            array (
+                'id' => 72,
+                'name' => 'Chan C Mining Incorporated',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:55:17',
+                'updated_at' => '2024-07-30 18:55:17',
+            ),
+            69 => 
+            array (
+                'id' => 73,
+                'name' => 'Dr. Jose Ma. Torres Memorial Foundation Hospital, Inc.',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:57:43',
+                'updated_at' => '2024-07-30 18:57:43',
+            ),
+            70 => 
+            array (
+                'id' => 74,
+                'name' => 'Joan\'s Pharmacy',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 18:59:21',
+                'updated_at' => '2024-07-30 18:59:21',
+            ),
+            71 => 
+            array (
+                'id' => 75,
+                'name' => 'Victor John Dajay Soriano',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:02:24',
+                'updated_at' => '2024-07-30 19:02:24',
+            ),
+            72 => 
+            array (
+                'id' => 76,
+                'name' => 'Bangko Sentral ng Pilipinas',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:03:58',
+                'updated_at' => '2024-07-30 19:03:58',
+            ),
+            73 => 
+            array (
+                'id' => 77,
+                'name' => 'Malangas Emergency Infirmary',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:06:29',
+                'updated_at' => '2024-07-30 19:06:29',
+            ),
+            74 => 
+            array (
+                'id' => 78,
+                'name' => 'Mega Seafoods Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:07:24',
+                'updated_at' => '2024-07-30 19:07:24',
+            ),
+            75 => 
+            array (
+                'id' => 79,
+                'name' => 'Johnnie\'s Food Products Manufacturing',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:08:16',
+                'updated_at' => '2024-07-30 19:08:16',
+            ),
+            76 => 
+            array (
+                'id' => 80,
+                'name' => 'Mercedez Shell Mini-Mart and Drug Store',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:09:11',
+                'updated_at' => '2024-07-30 19:09:11',
+            ),
+            77 => 
+            array (
+                'id' => 81,
+                'name' => 'Wilmar Edible Oils Phils. Inc.',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:11:41',
+                'updated_at' => '2024-07-30 19:11:41',
+            ),
+            78 => 
+            array (
+                'id' => 82,
+                'name' => 'Primetech Construction and Trading',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:14:41',
+                'updated_at' => '2024-07-30 19:14:41',
+            ),
+            79 => 
+            array (
+                'id' => 83,
+                'name' => 'Ocho Amigos Ventures Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-07-30 19:16:01',
+                'updated_at' => '2024-07-30 19:16:01',
             ),
         ));
 

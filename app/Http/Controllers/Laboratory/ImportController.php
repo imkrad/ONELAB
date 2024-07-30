@@ -91,7 +91,7 @@ class ImportController extends Controller
 
                 $laboratory_type = ListLaboratory::where('name',$laboratory)->value('id');
                 
-                $q_sampletype = TestserviceName::where('name',$sampletype)->where('type_id',96)->where('laboratory_type',$laboratory_type)->first();
+                $q_sampletype = TestserviceName::where('name',$sampletype)->where('type_id',30)->where('laboratory_type',$laboratory_type)->first();
                 if($q_sampletype){
                     $sampletype_id = $q_sampletype->id;
                 }else{
@@ -103,7 +103,7 @@ class ImportController extends Controller
                     $sampletype_id = $q_sampletype->id;
                 }
 
-                $q_testname = TestserviceName::where('name',$testname)->where('type_id',97)->where('laboratory_type',$laboratory_type)->first();
+                $q_testname = TestserviceName::where('name',$testname)->where('type_id',31)->where('laboratory_type',$laboratory_type)->first();
                 if($q_testname){
                     $testname_id = $q_testname->id;
                 }else{
@@ -116,7 +116,7 @@ class ImportController extends Controller
                 }
 
                 if($long){
-                    $q_method = TestserviceName::where('name',$long)->where('short',$short)->where('type_id',94)->where('laboratory_type',$laboratory_type)->first();
+                    $q_method = TestserviceName::where('name',$long)->where('short',$short)->where('type_id',28)->where('laboratory_type',$laboratory_type)->first();
                     if($q_method){
                         $method_id = $q_method->id;
                     }else{
@@ -133,7 +133,7 @@ class ImportController extends Controller
                 }
 
                 if($reference){
-                    $q_reference = TestserviceName::where('name',$reference)->where('type_id',95)->where('laboratory_type',$laboratory_type)->first();
+                    $q_reference = TestserviceName::where('name',$reference)->where('type_id',29)->where('laboratory_type',$laboratory_type)->first();
                     if($q_reference){
                         $reference_id = $q_reference->id;
                     }else{

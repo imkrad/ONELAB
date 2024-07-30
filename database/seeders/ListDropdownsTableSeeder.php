@@ -30,7 +30,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 3,
+                'id' => 2,
                 'name' => 'Regional Standards and Testing Laboratories',
                 'classification' => 'Agency Type',
                 'type' => 'n/a',
@@ -40,7 +40,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             2 => 
             array (
-                'id' => 4,
+                'id' => 3,
                 'name' => 'Research and Development Institutes',
                 'classification' => 'Agency Type',
                 'type' => 'n/a',
@@ -50,7 +50,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 5,
+                'id' => 4,
                 'name' => 'Regional Metrology Lab',
                 'classification' => 'Agency Type',
                 'type' => 'n/a',
@@ -60,7 +60,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             4 => 
             array (
-                'id' => 6,
+                'id' => 5,
                 'name' => 'Regional Volumetric Calibration Laboratory',
                 'classification' => 'Agency Type',
                 'type' => 'n/a',
@@ -70,7 +70,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 7,
+                'id' => 6,
                 'name' => 'Cavite Water & Wastewater Testing Laboratory',
                 'classification' => 'Agency Type',
                 'type' => 'n/a',
@@ -80,7 +80,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 8,
+                'id' => 7,
                 'name' => 'Private Sector',
                 'classification' => 'Agency Type',
                 'type' => 'n/a',
@@ -90,657 +90,7 @@ class ListDropdownsTableSeeder extends Seeder
             ),
             7 => 
             array (
-                'id' => 9,
-                'name' => 'Chemical Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'CHE',
-                'is_active' => 1,
-            ),
-            8 => 
-            array (
-                'id' => 10,
-                'name' => 'Microbiological Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'MIC',
-                'is_active' => 1,
-            ),
-            9 => 
-            array (
-                'id' => 11,
-                'name' => 'Metrology Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'MET',
-                'is_active' => 1,
-            ),
-            10 => 
-            array (
-                'id' => 12,
-                'name' => 'Physical Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PHY',
-                'is_active' => 0,
-            ),
-            11 => 
-            array (
-                'id' => 13,
-                'name' => 'Formula of Conversion',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'FOC',
-                'is_active' => 0,
-            ),
-            12 => 
-            array (
-                'id' => 14,
-                'name' => 'Shelf Life Testing',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'SHL',
-                'is_active' => 0,
-            ),
-            13 => 
-            array (
-                'id' => 15,
-                'name' => 'Biological Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'BIO',
-                'is_active' => 0,
-            ),
-            14 => 
-            array (
-                'id' => 16,
-                'name' => 'Gamma or Electron Beam Irradiation Facilities',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'GEB',
-                'is_active' => 0,
-            ),
-            15 => 
-            array (
-                'id' => 17,
-                'name' => 'Pulp and Paper Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PPTL',
-                'is_active' => 0,
-            ),
-            16 => 
-            array (
-                'id' => 18,
-                'name' => 'Plywood Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PLY',
-                'is_active' => 0,
-            ),
-            17 => 
-            array (
-                'id' => 19,
-                'name' => 'Physical and Performance Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PPT',
-                'is_active' => 0,
-            ),
-            18 => 
-            array (
-                'id' => 20,
-                'name' => 'Furniture Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'FTC',
-                'is_active' => 0,
-            ),
-            19 => 
-            array (
-                'id' => 21,
-                'name' => 'Mechanical Metallurgy Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'MML',
-                'is_active' => 0,
-            ),
-            20 => 
-            array (
-                'id' => 22,
-                'name' => 'Physico-Chemical Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PCL',
-                'is_active' => 0,
-            ),
-            21 => 
-            array (
-                'id' => 23,
-                'name' => 'Corrosion Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'COR',
-                'is_active' => 0,
-            ),
-            22 => 
-            array (
-                'id' => 24,
-                'name' => 'Halal Verification Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'HAL',
-                'is_active' => 0,
-            ),
-            23 => 
-            array (
-                'id' => 25,
-            'name' => 'Organic Chemistry Laboratory (ITDI)',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'OCS',
-                'is_active' => 0,
-            ),
-            24 => 
-            array (
-                'id' => 26,
-            'name' => 'Inorganic Chemistry Laboratory (ITDI)',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'ICS',
-                'is_active' => 0,
-            ),
-            25 => 
-            array (
-                'id' => 27,
-                'name' => 'Pharmacology and Toxicology Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PTS',
-                'is_active' => 0,
-            ),
-            26 => 
-            array (
-                'id' => 28,
-                'name' => 'Radiation Protection Services',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'RPS',
-                'is_active' => 0,
-            ),
-            27 => 
-            array (
-                'id' => 29,
-                'name' => 'Advance Device and Materials Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'ADMATEL',
-                'is_active' => 0,
-            ),
-            28 => 
-            array (
-                'id' => 30,
-                'name' => 'National Metrology Lab',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'NML',
-                'is_active' => 0,
-            ),
-            29 => 
-            array (
-                'id' => 31,
-                'name' => 'Packaging Testing Division',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'PTD',
-                'is_active' => 0,
-            ),
-            30 => 
-            array (
-                'id' => 32,
-                'name' => 'Nuclear Analytical Techniques Application Section',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'NATA',
-                'is_active' => 0,
-            ),
-            31 => 
-            array (
-                'id' => 33,
-                'name' => 'Biochemical Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'BIOCHE',
-                'is_active' => 0,
-            ),
-            32 => 
-            array (
-                'id' => 34,
-                'name' => 'Rubber Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'RTL',
-                'is_active' => 0,
-            ),
-            33 => 
-            array (
-                'id' => 35,
-                'name' => 'Auto-Parts Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'ATL',
-                'is_active' => 0,
-            ),
-            34 => 
-            array (
-                'id' => 36,
-                'name' => 'Instrumentation Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'INS',
-                'is_active' => 0,
-            ),
-            35 => 
-            array (
-                'id' => 37,
-                'name' => 'Non-Destructive Testing Laboratory',
-                'classification' => 'Laboratory',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'NDT',
-                'is_active' => 0,
-            ),
-            36 => 
-            array (
-                'id' => 38,
-                'name' => 'Raw and Processed Food',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            37 => 
-            array (
-                'id' => 39,
-                'name' => 'Marine Products',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            38 => 
-            array (
-                'id' => 40,
-                'name' => 'Canned / Bottled Fish',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            39 => 
-            array (
-                'id' => 41,
-                'name' => 'Fishmeal',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            40 => 
-            array (
-                'id' => 42,
-                'name' => 'Seaweeds',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            41 => 
-            array (
-                'id' => 43,
-                'name' => 'Petroleum Products / Haulers',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            42 => 
-            array (
-                'id' => 44,
-                'name' => 'Mining',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            43 => 
-            array (
-                'id' => 45,
-                'name' => 'Hospitals',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            44 => 
-            array (
-                'id' => 46,
-                'name' => 'Academe / Students',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            45 => 
-            array (
-                'id' => 47,
-                'name' => 'Beverage and Juices',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            46 => 
-            array (
-                'id' => 48,
-                'name' => 'Government / LGUs',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            47 => 
-            array (
-                'id' => 49,
-                'name' => 'Construction',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            48 => 
-            array (
-                'id' => 50,
-                'name' => 'Water Refilling / Bottled Water',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            49 => 
-            array (
-                'id' => 51,
-                'name' => 'Students',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            50 => 
-            array (
-                'id' => 52,
-                'name' => 'Private Individual',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            51 => 
-            array (
-                'id' => 53,
-                'name' => 'Others',
-                'classification' => 'Bussiness Nature',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            52 => 
-            array (
-                'id' => 54,
-                'name' => 'Agriculture, Forestry and Fishing',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            53 => 
-            array (
-                'id' => 55,
-                'name' => 'Mining and Quarrying',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            54 => 
-            array (
-                'id' => 56,
-                'name' => 'Manufacturing',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            55 => 
-            array (
-                'id' => 57,
-                'name' => 'Electricity, Gas, Steam and Air Conditioning supply',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            56 => 
-            array (
-                'id' => 58,
-                'name' => 'Water Supply, Sewerage, Waste Management and Remediation Activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            57 => 
-            array (
-                'id' => 59,
-                'name' => 'Construction',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            58 => 
-            array (
-                'id' => 60,
-                'name' => 'Wholesale and RetailtTrade; Repair of motor Vehicles and Motorcycles',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            59 => 
-            array (
-                'id' => 61,
-                'name' => 'Transportation and Storage',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            60 => 
-            array (
-                'id' => 62,
-                'name' => 'Accommodation and Food service activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            61 => 
-            array (
-                'id' => 63,
-                'name' => 'Information and Communication',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            62 => 
-            array (
-                'id' => 64,
-                'name' => 'Financial and Insurance Activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            63 => 
-            array (
-                'id' => 65,
-                'name' => 'Real Estate Activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            64 => 
-            array (
-                'id' => 66,
-                'name' => 'Professional, Scientific and Technical Services',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            65 => 
-            array (
-                'id' => 67,
-                'name' => 'Administrative and Support Service Activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            66 => 
-            array (
-                'id' => 68,
-                'name' => 'Public Administrative and Defense; Compulsory Social Security',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            67 => 
-            array (
-                'id' => 69,
-                'name' => 'Education',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            68 => 
-            array (
-                'id' => 70,
-                'name' => 'Human Health and Social Work Activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            69 => 
-            array (
-                'id' => 71,
-                'name' => 'Arts, Entertainment and Recreation',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            70 => 
-            array (
-                'id' => 72,
-                'name' => 'Other Service Activities',
-                'classification' => 'Industry Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            71 => 
-            array (
-                'id' => 73,
-                'name' => 'Individual',
-                'classification' => 'Class',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            72 => 
-            array (
-                'id' => 74,
+                'id' => 8,
                 'name' => 'Firm',
                 'classification' => 'Class',
                 'type' => 'n/a',
@@ -748,169 +98,19 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            73 => 
+            8 => 
             array (
-                'id' => 75,
-                'name' => 'Setup Core',
-                'classification' => 'Customer Type',
+                'id' => 9,
+                'name' => 'Individual',
+                'classification' => 'Class',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            74 => 
+            9 => 
             array (
-                'id' => 76,
-                'name' => 'Setup Non-core',
-                'classification' => 'Customer Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            75 => 
-            array (
-                'id' => 77,
-                'name' => 'Non Setup',
-                'classification' => 'Customer Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            76 => 
-            array (
-                'id' => 78,
-                'name' => 'Academic',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            77 => 
-            array (
-                'id' => 79,
-                'name' => 'Research and Development',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            78 => 
-            array (
-                'id' => 80,
-                'name' => 'Tariff / Registration',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            79 => 
-            array (
-                'id' => 81,
-                'name' => 'Nutrition Labeling',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            80 => 
-            array (
-                'id' => 82,
-                'name' => 'Bidding',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            81 => 
-            array (
-                'id' => 83,
-                'name' => 'Quality Evaluation',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            82 => 
-            array (
-                'id' => 84,
-                'name' => 'RA 9242 Certification',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            83 => 
-            array (
-                'id' => 85,
-                'name' => 'Regulatory',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            84 => 
-            array (
-                'id' => 86,
-                'name' => 'Export',
-                'classification' => 'Purpose',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            85 => 
-            array (
-                'id' => 87,
-                'name' => 'Pick up',
-                'classification' => 'Mode of Release',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            86 => 
-            array (
-                'id' => 88,
-                'name' => 'Delivery',
-                'classification' => 'Mode of Release',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            87 => 
-            array (
-                'id' => 89,
-                'name' => 'Mail',
-                'classification' => 'Mode of Release',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            88 => 
-            array (
-                'id' => 90,
-                'name' => 'Fax',
-                'classification' => 'Mode of Release',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            89 => 
-            array (
-                'id' => 91,
+                'id' => 10,
                 'name' => 'Percentage',
                 'classification' => 'Discount',
                 'type' => 'Subtype',
@@ -918,9 +118,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            90 => 
+            10 => 
             array (
-                'id' => 92,
+                'id' => 11,
                 'name' => 'Amount',
                 'classification' => 'Discount',
                 'type' => 'Subtype',
@@ -928,59 +128,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            91 => 
+            11 => 
             array (
-                'id' => 93,
-                'name' => 'Government Sector',
-                'classification' => 'Agency Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'GS',
-                'is_active' => 1,
-            ),
-            92 => 
-            array (
-                'id' => 94,
-                'name' => 'Method',
-                'classification' => 'Service Name',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            93 => 
-            array (
-                'id' => 95,
-                'name' => 'Reference',
-                'classification' => 'Service Name',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            94 => 
-            array (
-                'id' => 96,
-                'name' => 'Sample Type',
-                'classification' => 'Service Name',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            95 => 
-            array (
-                'id' => 97,
-                'name' => 'Test Name',
-                'classification' => 'Service Name',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            96 => 
-            array (
-                'id' => 98,
+                'id' => 12,
                 'name' => 'Unlimited',
                 'classification' => 'Discount',
                 'type' => 'Type',
@@ -988,9 +138,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            97 => 
+            12 => 
             array (
-                'id' => 99,
+                'id' => 13,
                 'name' => 'Limited',
                 'classification' => 'Discount',
                 'type' => 'Type',
@@ -998,9 +148,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            98 => 
+            13 => 
             array (
-                'id' => 100,
+                'id' => 14,
                 'name' => 'Total Based',
                 'classification' => 'Discount',
                 'type' => 'Based',
@@ -1008,9 +158,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            99 => 
+            14 => 
             array (
-                'id' => 101,
+                'id' => 15,
                 'name' => 'Item Based',
                 'classification' => 'Discount',
                 'type' => 'Based',
@@ -1018,59 +168,79 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            100 => 
+            15 => 
             array (
-                'id' => 102,
-                'name' => 'Occassional Based',
+                'id' => 16,
+                'name' => 'Occasional Based',
                 'classification' => 'Discount',
                 'type' => 'Based',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            101 => 
+            16 => 
             array (
-                'id' => 103,
+                'id' => 17,
                 'name' => 'Cash',
-                'classification' => 'Payment Mode',
+                'classification' => 'Payment Method',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            102 => 
+            17 => 
             array (
-                'id' => 104,
+                'id' => 18,
                 'name' => 'Cheque',
-                'classification' => 'Payment Mode',
+                'classification' => 'Payment Method',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            103 => 
+            18 => 
             array (
-                'id' => 105,
+                'id' => 19,
                 'name' => 'Money Order',
-                'classification' => 'Payment Mode',
+                'classification' => 'Payment Method',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            104 => 
+            19 => 
             array (
-                'id' => 106,
+                'id' => 20,
                 'name' => 'Bank Deposit',
-                'classification' => 'Payment Mode',
+                'classification' => 'Payment Method',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            105 => 
+            20 => 
             array (
-                'id' => 107,
+                'id' => 21,
+                'name' => 'Wallet',
+                'classification' => 'Payment Method',
+                'type' => 'wallet',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'name' => 'Online Transfer',
+                'classification' => 'Payment Method',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            22 => 
+            array (
+                'id' => 23,
                 'name' => 'Analysis Fee',
                 'classification' => 'Collection Type',
                 'type' => 'n/a',
@@ -1078,9 +248,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            106 => 
+            23 => 
             array (
-                'id' => 108,
+                'id' => 24,
                 'name' => 'Calibration Fee',
                 'classification' => 'Collection Type',
                 'type' => 'n/a',
@@ -1088,229 +258,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            107 => 
+            24 => 
             array (
-                'id' => 109,
-                'name' => 'Chemical',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'success',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            108 => 
-            array (
-                'id' => 110,
-                'name' => 'Media',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'primary',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            109 => 
-            array (
-                'id' => 111,
-                'name' => 'Supplies',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'warning',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            110 => 
-            array (
-                'id' => 112,
-                'name' => 'Buffer Solution',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            111 => 
-            array (
-                'id' => 113,
-                'name' => 'Acid',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            112 => 
-            array (
-                'id' => 114,
-                'name' => 'Caustic',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            113 => 
-            array (
-                'id' => 115,
-                'name' => 'Liquid Reagents',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            114 => 
-            array (
-                'id' => 116,
-                'name' => 'Solid Reagents',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            115 => 
-            array (
-                'id' => 117,
-                'name' => 'Glassware',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            116 => 
-            array (
-                'id' => 118,
-                'name' => 'Standard',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            117 => 
-            array (
-                'id' => 119,
-                'name' => 'Certified Reference Materials',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            118 => 
-            array (
-                'id' => 120,
-                'name' => 'Micro Reagent',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            119 => 
-            array (
-                'id' => 121,
-                'name' => 'Rapid Test Kit',
-                'classification' => 'Inventory',
-                'type' => 'Category',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 0,
-            ),
-            120 => 
-            array (
-                'id' => 122,
-                'name' => 'Piece',
-                'classification' => 'Inventory',
-                'type' => 'Unit',
-                'color' => 'piece',
-                'others' => 'pc',
-                'is_active' => 1,
-            ),
-            121 => 
-            array (
-                'id' => 123,
-                'name' => 'Liter',
-                'classification' => 'Inventory',
-                'type' => 'Unit',
-                'color' => 'volume',
-                'others' => 'L',
-                'is_active' => 1,
-            ),
-            122 => 
-            array (
-                'id' => 124,
-                'name' => 'Milliliter',
-                'classification' => 'Inventory',
-                'type' => 'Unit',
-                'color' => 'volume',
-                'others' => 'ml',
-                'is_active' => 1,
-            ),
-            123 => 
-            array (
-                'id' => 125,
-                'name' => 'Kilogram',
-                'classification' => 'Inventory',
-                'type' => 'Unit',
-                'color' => 'mass',
-                'others' => 'kg',
-                'is_active' => 1,
-            ),
-            124 => 
-            array (
-                'id' => 126,
-                'name' => 'Gram',
-                'classification' => 'Inventory',
-                'type' => 'Unit',
-                'color' => 'mass',
-                'others' => 'g',
-                'is_active' => 1,
-            ),
-            125 => 
-            array (
-                'id' => 127,
-                'name' => 'Bureau of Treasury',
-                'classification' => 'Deposit Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            126 => 
-            array (
-                'id' => 128,
-                'name' => 'Project',
-                'classification' => 'Deposit Type',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            127 => 
-            array (
-                'id' => 129,
-                'name' => 'Wallet',
-                'classification' => 'Payment Mode',
-                'type' => 'wallet',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            128 => 
-            array (
-                'id' => 130,
-                'name' => 'Online Transfer',
-                'classification' => 'Payment Mode',
-                'type' => 'n/a',
-                'color' => 'n/a',
-                'others' => 'n/a',
-                'is_active' => 1,
-            ),
-            129 => 
-            array (
-                'id' => 131,
+                'id' => 25,
                 'name' => 'Analysis/Calibration Fee',
                 'classification' => 'Collection Type',
                 'type' => 'n/a',
@@ -1318,39 +268,179 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            130 => 
+            25 => 
             array (
-                'id' => 132,
+                'id' => 26,
+                'name' => 'Bureau of Treasury',
+                'classification' => 'Deposit Type',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'name' => 'Project',
+                'classification' => 'Deposit Type',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            27 => 
+            array (
+                'id' => 28,
+                'name' => 'Method',
+                'classification' => 'Service Name',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            28 => 
+            array (
+                'id' => 29,
+                'name' => 'Reference',
+                'classification' => 'Service Name',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            29 => 
+            array (
+                'id' => 30,
+                'name' => 'Sample Type',
+                'classification' => 'Service Name',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            30 => 
+            array (
+                'id' => 31,
+                'name' => 'Test Name',
+                'classification' => 'Service Name',
+                'type' => 'n/a',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            31 => 
+            array (
+                'id' => 32,
+                'name' => 'Chemical',
+                'classification' => 'Inventory',
+                'type' => 'Category',
+                'color' => 'success',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            32 => 
+            array (
+                'id' => 33,
+                'name' => 'Media',
+                'classification' => 'Inventory',
+                'type' => 'Category',
+                'color' => 'primary',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            33 => 
+            array (
+                'id' => 34,
+                'name' => 'Supplies',
+                'classification' => 'Inventory',
+                'type' => 'Category',
+                'color' => 'warning',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            34 => 
+            array (
+                'id' => 35,
+                'name' => 'Piece',
+                'classification' => 'Inventory',
+                'type' => 'Unit',
+                'color' => 'piece',
+                'others' => 'pc',
+                'is_active' => 1,
+            ),
+            35 => 
+            array (
+                'id' => 36,
+                'name' => 'Liter',
+                'classification' => 'Inventory',
+                'type' => 'Unit',
+                'color' => 'volume',
+                'others' => 'L',
+                'is_active' => 1,
+            ),
+            36 => 
+            array (
+                'id' => 37,
+                'name' => 'Milliliter',
+                'classification' => 'Inventory',
+                'type' => 'Unit',
+                'color' => 'volume',
+                'others' => 'ml',
+                'is_active' => 1,
+            ),
+            37 => 
+            array (
+                'id' => 38,
+                'name' => 'Kilogram',
+                'classification' => 'Inventory',
+                'type' => 'Unit',
+                'color' => 'mass',
+                'others' => 'kg',
+                'is_active' => 1,
+            ),
+            38 => 
+            array (
+                'id' => 39,
+                'name' => 'Gram',
+                'classification' => 'Inventory',
+                'type' => 'Unit',
+                'color' => 'mass',
+                'others' => 'g',
+                'is_active' => 1,
+            ),
+            39 => 
+            array (
+                'id' => 40,
                 'name' => 'Calibration',
-                'classification' => 'Inventory Type',
-                'type' => 'n/a',
+                'classification' => 'Inventory',
+                'type' => 'Equipment',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            131 => 
+            40 => 
             array (
-                'id' => 133,
+                'id' => 41,
                 'name' => 'Intermediate Check',
-                'classification' => 'Inventory Type',
-                'type' => 'n/a',
+                'classification' => 'Inventory',
+                'type' => 'Equipment',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            132 => 
+            41 => 
             array (
-                'id' => 134,
+                'id' => 42,
                 'name' => 'Characterization',
-                'classification' => 'Inventory Type',
-                'type' => 'n/a',
+                'classification' => 'Inventory',
+                'type' => 'Equipment',
                 'color' => 'n/a',
                 'others' => 'n/a',
                 'is_active' => 1,
             ),
-            133 => 
+            42 => 
             array (
-                'id' => 135,
+                'id' => 43,
                 'name' => 'Official Travel',
                 'classification' => 'Events',
                 'type' => 'n/a',
@@ -1358,9 +448,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'bg-success-subtle',
                 'is_active' => 1,
             ),
-            134 => 
+            43 => 
             array (
-                'id' => 136,
+                'id' => 44,
                 'name' => 'Meeting',
                 'classification' => 'Events',
                 'type' => 'n/a',
@@ -1368,9 +458,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'bg-info-subtle',
                 'is_active' => 1,
             ),
-            135 => 
+            44 => 
             array (
-                'id' => 137,
+                'id' => 45,
                 'name' => 'Audit',
                 'classification' => 'Events',
                 'type' => 'n/a',
@@ -1378,9 +468,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'bg-warning-subtle',
                 'is_active' => 1,
             ),
-            136 => 
+            45 => 
             array (
-                'id' => 138,
+                'id' => 46,
                 'name' => 'Performance Review',
                 'classification' => 'Events',
                 'type' => 'n/a',
@@ -1388,9 +478,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'bg-primary-subtle',
                 'is_active' => 1,
             ),
-            137 => 
+            46 => 
             array (
-                'id' => 139,
+                'id' => 47,
                 'name' => 'Leave',
                 'classification' => 'Events',
                 'type' => 'n/a',
@@ -1398,9 +488,9 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'bg-danger-subtle',
                 'is_active' => 1,
             ),
-            138 => 
+            47 => 
             array (
-                'id' => 140,
+                'id' => 48,
                 'name' => 'Holiday',
                 'classification' => 'Events',
                 'type' => 'n/a',
