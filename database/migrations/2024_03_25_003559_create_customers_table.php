@@ -20,7 +20,7 @@ return new class extends Migration
             $table->boolean('is_internal')->default(0);
             $table->boolean('is_active')->default(1);
             $table->tinyInteger('industry_id')->unsigned()->index();
-            $table->foreign('industry_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            $table->foreign('industry_id')->references('id')->on('list_industries')->onDelete('cascade');
             $table->tinyInteger('classification_id')->unsigned()->index();
             $table->foreign('classification_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->bigInteger('name_id')->unsigned()->index();

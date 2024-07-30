@@ -76,7 +76,7 @@ export default {
                     },
                 });
             }else{
-                this.form.put('/executive',{
+                this.form.put('/executive/update',{
                     preserveScroll: true,
                     onSuccess: (response) => {
                         this.hide();

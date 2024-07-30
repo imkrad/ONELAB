@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('total',12,2);
             $table->integer('quantity')->default(1);
             $table->integer('service_id')->unsigned()->index();
-            $table->foreign('service_id')->references('id')->on('list_services')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('testservice_addons')->onDelete('cascade');
             $table->unsignedInteger('typeable_id');
             $table->string('typeable_type');
             $table->boolean('is_additional')->default(0);

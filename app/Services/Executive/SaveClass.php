@@ -2,8 +2,10 @@
 
 namespace App\Services\Executive;
 
+use Artisan;
 use App\Models\User;
 use App\Models\ListRole;
+use App\Models\ListMenu;
 use App\Http\Resources\UserResource;
 use App\Http\Resources\DefaultResource;
 
@@ -28,6 +30,26 @@ class SaveClass
             'data' => new DefaultResource($data),
             'message' => 'Role creation was successful!', 
             'info' => "You've successfully created a role."
+        ];
+    }
+
+    public function menu($request){
+        $data = ListMenu::create($request->all());
+           
+        return [
+            'data' => new DefaultResource($data),
+            'message' => 'Menu creation was successful!', 
+            'info' => "You've successfully created a menu."
+        ];
+    }
+
+    public function backup($request){
+        $data = Artisan::call('backup:run --only-db');
+   
+        return [
+            'data' => ($data) ? true : false,
+            'message' => 'Backup creation was successful!', 
+            'info' => "You've successfully created a backup."
         ];
     }
 }

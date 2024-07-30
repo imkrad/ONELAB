@@ -31,7 +31,6 @@ class QuotationController extends Controller
             return inertia('Modules/Laboratory/Quotations/Index',[
                 'dropdowns' => [
                     'laboratories' => $this->dropdown->laboratory_types(),
-                    'purposes' => $this->dropdown->purposes(),
                     'modes' => $this->dropdown->modes(),
                     'discounts' => $this->dropdown->discounts(),
                     'statuses' => $this->dropdown->statuses('Quotation'),

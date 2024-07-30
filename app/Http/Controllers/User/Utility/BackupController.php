@@ -24,7 +24,7 @@ class BackupController extends Controller
     }
 
     public function lists(){
-        $files = Storage::files('ONELAB-LOCAL');
+        $files = Storage::files('ONELAB');
         $fileDetails = collect($files)->map(function ($file) {
             return [
                 'name' => basename($file),

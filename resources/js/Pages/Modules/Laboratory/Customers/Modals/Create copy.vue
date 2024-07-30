@@ -10,7 +10,6 @@
                     v-model="form.customer" 
                     object
                     :searchable="true" 
-                    label="name"
                     :message="form.errors.name" 
                     placeholder="Select Customer"/>
                     <div v-if="form.customer" class="mb-n2">
@@ -48,7 +47,7 @@
                                 </BRow>
                             </BCol>
                             <BCol lg="7">
-                                <BRow class="g-3 mt-n2">
+                                <BRow class="g-3">
                                     <BCol lg="12" v-if="form.has_branches" class="mt-1 mb-n1">
                                         <InputLabel for="name" value="Branch" :message="form.errors.name"/>
                                         <TextInput id="name" v-model="form.name" type="text" class="form-control" placeholder="Please enter name" @input="handleInput('name')" :light="true"/>
@@ -57,43 +56,43 @@
                                         <InputLabel for="email" value="Email" :message="form.errors.email"/>
                                         <TextInput id="email" v-model="form.email" type="email" class="form-control" placeholder="Please enter email" @input="handleInput('email')" :light="true"/>
                                     </BCol>
+                                    <BCol lg="6" class="mt-1 mb-1">
+                                        <InputLabel for="classification_id" value="Classification" :message="form.errors.classification_id"/>
+                                        <Multiselect :options="dropdowns.classes" :searchable="true" v-model="form.classification_id" placeholder="Select Classification" @input="handleInput('classification_id')"/>
+                                    </BCol>
                                     <BCol lg="6" class="mt-1 mb-n1">
                                         <InputLabel for="contact_no" value="Mobile no." :message="form.errors.contact_no"/>
                                         <TextInput id="contact_no" v-model="form.contact_no" type="text" class="form-control" placeholder="Please enter contact" @input="handleInput('contact_no')" :light="true"/>
                                     </BCol>
-                                    <BCol lg="6" class="mt-1 mb-1">
-                                        <InputLabel for="classification_id" value="Classification" :message="form.errors.classification_id"/>
-                                        <Multiselect :options="dropdowns.classes" label="name" :searchable="true" v-model="form.classification_id" placeholder="Select Classification" @input="handleInput('classification_id')"/>
+                                    <BCol lg="6" class="mt-1 mb-n1">
+                                        <InputLabel for="contact_no" value="Phone no." :message="form.errors.contact_no"/>
+                                        <TextInput id="contact_no" v-model="form.contact_no" type="text" class="form-control" placeholder="Please enter contact" @input="handleInput('contact_no')" :light="true"/>
                                     </BCol>
                                     <!-- <BCol :lg="(form.has_branches) ? 6 : 12" class="mt-1 mb-1">
                                         <InputLabel for="industry_id" value="Industry Type" />
                                         <Multiselect :options="dropdowns.industries" :searchable="true" v-model="form.industry_id" :message="form.errors.industry_id" placeholder="Select Industry"/>
                                         <InputError :message="form.errors.industry_id" />
                                     </BCol> -->
-                                    <BCol lg="6" class="mt-1 mb-1">
+                                    <BCol lg="12" class="mt-1 mb-1">
                                         <InputLabel for="industry_id" value="Industry Type" :message="form.errors.industry_id"/>
-                                        <Multiselect :options="industries" :searchable="true" label="name" object v-model="industry" placeholder="Select Industry" @input="handleInput('industry')" />
+                                        <Multiselect :options="industries" :searchable="true" v-model="form.industry_id" placeholder="Select Industry" @input="handleInput('industry_id')" />
                                     </BCol>
-                                    <BCol lg="12" class="mt-1 mb-1" v-if="subs.length > 0">
-                                        <InputLabel for="industry_id" value="Industry Subtype" :message="form.errors.industry_id"/>
-                                        <Multiselect :options="subs" :searchable="true" label="name" v-model="form.industry_id" placeholder="Select Industry" @input="handleInput('industry_id')" />
-                                    </BCol>
-                                    <BCol lg="12"><hr class="text-muted mt-0 mb-1"/></BCol>
+                                    <BCol lg="12"><hr class="text-muted mt-1 mb-2"/></BCol>
                                     <BCol lg="6" class="mt-1">
                                         <InputLabel for="region" value="Region" :message="form.errors.region_code"/>
-                                        <Multiselect :options="dropdowns.regions" label="name" v-model="form.region_code" :message="form.errors.region_code" placeholder="Select Region" @input="handleInput('region_code')"/>
+                                        <Multiselect :options="dropdowns.regions" v-model="form.region_code" :message="form.errors.region_code" placeholder="Select Region" @input="handleInput('region_code')"/>
                                     </BCol>
                                     <BCol lg="6" class="mt-1">
                                         <InputLabel for="province" value="Province" :message="form.errors.province_code"/>
-                                        <Multiselect :options="provinces" :searchable="true" label="name" v-model="form.province_code" placeholder="Select Province" @input="handleInput('province_code')"/>
+                                        <Multiselect :options="provinces" :searchable="true" v-model="form.province_code" placeholder="Select Province" @input="handleInput('province_code')"/>
                                     </BCol>
                                     <BCol lg="6" class="mt-1">
                                         <InputLabel for="municipality" value="Municipality" :message="form.errors.municipality_code"/>
-                                        <Multiselect :options="municipalities" :searchable="true" label="name" v-model="form.municipality_code" placeholder="Select Municipality" @input="handleInput('municipality_code')"/>
+                                        <Multiselect :options="municipalities" :searchable="true" v-model="form.municipality_code" placeholder="Select Municipality" @input="handleInput('municipality_code')"/>
                                     </BCol>
                                     <BCol lg="6" class="mt-1">
                                         <InputLabel for="barangay" value="Barangay" :message="form.errors.barangay_code"/>
-                                        <Multiselect :options="barangays" :searchable="true" label="name" v-model="form.barangay_code" placeholder="Select Barangay" @input="handleInput('barangay_code')"/>
+                                        <Multiselect :options="barangays" :searchable="true" v-model="form.barangay_code" placeholder="Select Barangay" @input="handleInput('barangay_code')"/>
                                     </BCol>
                                     <BCol lg="12" class="mt-1">
                                         <InputLabel for="address" value="Address" :message="form.errors.address"/>
@@ -102,7 +101,7 @@
                                 </BRow>
                             </BCol>
                             <BCol lg="5">
-                                <div class="mt-2">
+                                <div>
                                     <Map @set="handleCoordinates" ref="map" class="leaflet-map"/>
                                 </div>
                             </BCol>
@@ -111,6 +110,7 @@
                     </div>    
                 </BCol>
                 <BCol lg="12">
+                    {{main_industries}}
                      <hr class="text-muted mt-3 mb-n2"/>
                 </BCol>
             </BRow>
@@ -125,7 +125,7 @@ import _ from 'lodash';
 import { useForm } from '@inertiajs/vue3';
 import Map from '../Components/Map.vue';
 import Search from '../Components/Search.vue';
-import Multiselect from "@vueform/multiselect";
+import Multiselect from '@/Shared/Components/Forms/Multiselect.vue';
 import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
@@ -156,14 +156,12 @@ export default {
             }),
             has_branch: false,
             names: [],
-            industry: null,
             provinces: [],
             municipalities: [],
             barangays: [],
             showModal: false,
             editable: false,
-            coordinates: {},
-            subs: []
+            coordinates: {}
         }
     },
     watch: {
@@ -195,18 +193,6 @@ export default {
             }else{
                 this.form.name = null;
                 this.form.is_main = false;
-            }
-        },
-        'industry'(){
-            if(this.industry){
-                if(this.industry.is_alone == 1){
-                    this.form.industry_id = this.industry.value;
-                    this.subs = [];
-                }else{
-                    this.subs = this.dropdowns.industries.filter(industry => industry.industry_id == this.industry.value);
-                }
-            }else{
-                this.subs = [];
             }
         }
     },
@@ -287,7 +273,6 @@ export default {
             this.form.errors[field] = false;
         },
         hide(){
-            this.industry = null;
             this.form.reset();
             this.form.clearErrors();
             // this.form.member_id = null;

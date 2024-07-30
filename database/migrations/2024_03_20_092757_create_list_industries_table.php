@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('list_industries', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->tinyIncrements('id');
-            $table->string('name',100);
+            $table->string('name',255);
+            $table->unsignedInteger('industry_id')->nullable();
+            $table->string('industry_type')->nullable();
             $table->string('is_main');   
-            $table->unsignedInteger('industry_id');
-            $table->string('industry_type');
+            $table->string('is_alone');   
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });

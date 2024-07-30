@@ -42,7 +42,7 @@ class UserProfile extends Model
         $this->attributes['middlename'] = ucwords(strtolower($value));
     }
 
-    // protected static $recordEvents = ['updated'];
+    protected static $recordEvents = ['updated'];
     public function getActivitylogOptions(): LogOptions {
         return LogOptions::defaults()
         ->logOnly(['firstname','lastname','middlename'])

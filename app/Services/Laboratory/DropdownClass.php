@@ -109,6 +109,9 @@ class DropdownClass
         $data = ListIndustry::where('is_active',1)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
+                'is_main' => $item->is_main,
+                'is_alone' => $item->is_alone,
+                'industry_id' => $item->industry_id,
                 'name' => $item->name
             ];
         });

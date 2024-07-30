@@ -38,7 +38,6 @@ class TsrController extends Controller
             return inertia('Modules/Laboratory/Tsr/Index',[
                 'dropdowns' => [
                     'laboratories' => $this->dropdown->laboratory_types(),
-                    'purposes' => $this->dropdown->purposes(),
                     'modes' => $this->dropdown->modes(),
                     'discounts' => $this->dropdown->discounts(),
                     'statuses' => $this->dropdown->statuses('Request'),

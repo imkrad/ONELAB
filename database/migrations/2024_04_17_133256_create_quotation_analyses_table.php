@@ -16,7 +16,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->decimal('fee',12,2);
             $table->integer('testservice_id')->unsigned()->index();
-            $table->foreign('testservice_id')->references('id')->on('list_testservices')->onDelete('cascade');
+            $table->foreign('testservice_id')->references('id')->on('testservices')->onDelete('cascade');
             $table->bigInteger('sample_id')->unsigned()->index();
             $table->foreign('sample_id')->references('id')->on('quotation_samples')->onDelete('cascade');
             $table->timestamps();
