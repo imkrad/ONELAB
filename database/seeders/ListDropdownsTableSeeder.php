@@ -182,7 +182,7 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 17,
                 'name' => 'Cash',
-                'classification' => 'Payment Method',
+                'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
@@ -192,7 +192,7 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 18,
                 'name' => 'Cheque',
-                'classification' => 'Payment Method',
+                'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
@@ -202,7 +202,7 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 19,
                 'name' => 'Money Order',
-                'classification' => 'Payment Method',
+                'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
@@ -212,7 +212,7 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 20,
                 'name' => 'Bank Deposit',
-                'classification' => 'Payment Method',
+                'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
@@ -222,7 +222,7 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 21,
                 'name' => 'Wallet',
-                'classification' => 'Payment Method',
+                'classification' => 'Payment Mode',
                 'type' => 'wallet',
                 'color' => 'n/a',
                 'others' => 'n/a',
@@ -232,7 +232,7 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 22,
                 'name' => 'Online Transfer',
-                'classification' => 'Payment Method',
+                'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',

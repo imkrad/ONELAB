@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ListLaboratory extends Model
 {
     use HasFactory;
+
+    public function services()
+    {
+        return $this->morphMany('App\Models\TestserviceAddon', 'typeable');
+    }
 }

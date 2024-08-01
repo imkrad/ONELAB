@@ -15,12 +15,12 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->decimal('fee',12,2);
-            $table->tinyInteger('laboratory_type')->unsigned()->index();
-            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->bigInteger('method_id')->unsigned()->index();
             $table->foreign('method_id')->references('id')->on('testservice_names')->onDelete('cascade');
             $table->bigInteger('reference_id')->unsigned()->index();
             $table->foreign('reference_id')->references('id')->on('testservice_names')->onDelete('cascade');
+            $table->tinyInteger('laboratory_type')->unsigned()->index();
+            $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
             $table->boolean('is_active')->default(1);
             $table->timestamps();
         });

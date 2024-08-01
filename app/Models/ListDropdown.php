@@ -9,6 +9,13 @@ class ListDropdown extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    protected $fillable = [
+        'name',
+        'classification',
+        'type',
+    ];
+
     public function payment()
     {
         return $this->hasMany('App\Models\TsrPayment', 'payment_id');
@@ -27,11 +34,6 @@ class ListDropdown extends Model
     public function messages()
     {
         return $this->morphMany('App\Models\ChatMessage', 'receivable');
-    }
-
-    public function services()
-    {
-        return $this->morphMany('App\Models\ListService', 'typeable');
     }
 
     public function inventory_category()

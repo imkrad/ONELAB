@@ -81,9 +81,9 @@ class FinanceService
                     if($available > $total){
                         $payment = TsrPayment::where('id',$id)->update([
                             'is_paid' => 1,
-                            'payment_id' => 129,
+                            'payment_id' => 21, //wallet payment mode
                             'status_id' => 7,
-                            'collection_id' => 107,
+                            'collection_id' => 25, //analysis/calibration collection fee
                             'or_number' => $code,
                             'paid_at' => now()
                         ]);

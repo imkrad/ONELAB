@@ -20,8 +20,8 @@ return new class extends Migration
             $table->foreign('laboratory_id')->references('id')->on('laboratories')->onDelete('cascade');
             $table->tinyInteger('laboratory_type')->unsigned()->index();
             $table->foreign('laboratory_type')->references('id')->on('list_laboratories')->onDelete('cascade');
-            $table->tinyInteger('purpose_id')->unsigned()->index();
-            $table->foreign('purpose_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
+            // $table->tinyInteger('purpose_id')->unsigned()->index();
+            // $table->foreign('purpose_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->tinyInteger('status_id')->unsigned()->index();
             $table->foreign('status_id')->references('id')->on('list_statuses')->onDelete('cascade');
             $table->bigInteger('customer_id')->unsigned()->index();

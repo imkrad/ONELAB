@@ -8,7 +8,7 @@ use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
 use App\Models\TsrReport;
 use App\Models\Laboratory;
-use App\Models\ListDropdown;
+use App\Models\ListLaboratory;
 use App\Models\Configuration;
 use App\Http\Resources\Laboratory\TsrResource;
 
@@ -79,7 +79,7 @@ class SaveClass
         }
 
         $final =  Tsr::query()
-        ->with('laboratory','purpose','status','received.profile')
+        ->with('laboratory','status','received.profile')
         ->with('customer.customer_name','conforme','customer.address.region','customer.address.province','customer.address.municipality','customer.address.barangay')
         ->with('payment.status','payment.collection','payment.type','payment.discounted')
         ->where('id',$request->id)
@@ -102,10 +102,10 @@ class SaveClass
         $laboratory_type = $data->laboratory_type;
         $lab = Laboratory::where('id',$this->laboratory)->first();
         $year = date('Y'); 
-        $lab_type = ListDropdown::select('others')->where('id',$laboratory_type)->first();
+        $lab_type = ListLaboratory::select('short')->where('id',$laboratory_type)->first();
         $c = Tsr::where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type)
         ->whereYear('created_at',$year)->where('code','!=',NULL)->count();
-        $code = $lab->code.'-'.date('m').date('Y').'-'.$lab_type->others.'-'.str_pad(($tsr_count+$c+1), 4, '0', STR_PAD_LEFT);  
+        $code = $lab->code.'-'.date('m').date('Y').'-'.$lab_type->short.'-'.str_pad(($tsr_count+$c+1), 4, '0', STR_PAD_LEFT);  
         return $code;
     }
 
@@ -121,17 +121,17 @@ class SaveClass
         $year = ($this->configuration->samplecode_year) ? '-'.date('Y') : '';
         $lab = Laboratory::where('id',$this->laboratory)->first();
         $year = date('Y'); 
-        $lab_type = ListDropdown::select('others')->where('id',$laboratory_type)->first();
+        $lab_type = ListLaboratory::select('short')->where('id',$laboratory_type)->first();
         $c = TsrSample::whereHas('tsr',function ($query) use ($laboratory_type) {
             $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type);
         })->whereYear('created_at',$year)->where('code','!=','NULL')->count();
-        return $lab_type->others.'-'.str_pad(($sample_count+$c+1), 5, '0', STR_PAD_LEFT); 
+        return $lab_type->short.'-'.str_pad(($sample_count+$c+1), 5, '0', STR_PAD_LEFT); 
     }
 
     private function report($id){
         $tsr = Tsr::where('id',$id)
         ->with('received:id','received.profile:id,firstname,lastname,user_id')
-        ->with('laboratory','laboratory_type:id,name','purpose:id,name','status:id,name,color,others')
+        ->with('laboratory','laboratory_type:id,name','status:id,name,color,others')
         ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.wallet')
         ->with('customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
         ->with('conforme:id,name,contact_no','customer.contact:id,email,contact_no,customer_id')

@@ -18,7 +18,7 @@ class TsrRequest extends FormRequest
             'conforme' => 'sometimes|required',
             'laboratory_id' => 'sometimes|required|integer',
             'laboratory_type' => 'sometimes|required',
-            'purpose_id' => 'sometimes|required|integer',
+            // 'purpose_id' => 'sometimes|required|integer',
             'discount_id' => 'sometimes|required|integer',
             'due_at' => 'sometimes|required',
             // 'mode' => 'required|array|min:1',

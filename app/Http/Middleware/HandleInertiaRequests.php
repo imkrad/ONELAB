@@ -72,6 +72,21 @@ class HandleInertiaRequests extends Middleware
             ];
         }
 
+        $lists = ListMenu::where('is_mother',1)->where('module','Finance')->orderBy('order','ASC')->get();
+        foreach($lists as $list){
+            $submenus = [];
+            if($list['has_child']){
+                $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
+                foreach($subs as $menu){
+                    $submenus[] = $menu;
+                }
+            }
+            $finance[] = [
+                'main' => $list,
+                'submenus' => $submenus
+            ];
+        }
+
         return [
             ...parent::share($request),
             'user' => (\Auth::check()) ? new UserResource(User::with('profile','userrole.role','userrole.laboratory')->where('id',\Auth::user()->id)->first()) : '',
@@ -86,7 +101,8 @@ class HandleInertiaRequests extends Middleware
             'menus' => [
                 'laboratory' => $laboratory,
                 'inventory' => $inventory,
-                'executive' => $executive
+                'executive' => $executive,
+                'finance' => $finance
                 // 'services' => $services,
                 // 'lists' => $listahan
             ]

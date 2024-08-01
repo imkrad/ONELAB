@@ -4,7 +4,7 @@
 
         <template v-if="layoutType === 'vertical' || layoutType === 'semibox'">
             <ul class="navbar-nav h-100" id="navbar-nav">
-              <template v-if="$page.props.user.data.role != 'Administrator'">
+              <template v-if="$page.props.user.data.role != 'Administrator' && $page.props.user.data.assigned_role != 'Cashier' && $page.props.user.data.assigned_role != 'Accountant'">
                 <template v-if="checkUrl() == 'inventory'">
                 <li class="menu-title">
                     <span data-key="t-menu">Inventory</span>
@@ -50,11 +50,8 @@
                 </li>
                 </template>
               </template>
-                <!-- <li class="menu-title">
-                    <i class="ri-more-fill"></i>
-                    <span data-key="krad-lists"> Service </span>
-                </li>
-                <li class="nav-item" v-for="(menu,index) in $page.props.menus.services" v-bind:key="index">
+              <template v-else-if="$page.props.user.data.assigned_role == 'Cashier' || $page.props.user.data.assigned_role == 'Accountant'">
+                <li class="nav-item" v-for="(menu,index) in $page.props.menus.finance" v-bind:key="index">
                     <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="{'active': $page.component.startsWith(menu.main.path) }">
                         <i :class="menu.main.icon"></i>
                         <span data-key="krad-dashboards">{{menu.main.name}}</span>
@@ -70,9 +67,9 @@
                             </li>
                         </ul>
                     </div>
-                </li> -->
-                
-                <template v-else>
+                </li>
+              </template> 
+              <template v-else>
                 <li class="nav-item" v-for="(menu,index) in $page.props.menus.executive" v-bind:key="index">
                     <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="{'active': $page.component.startsWith(menu.main.path) }">
                         <i :class="menu.main.icon"></i>

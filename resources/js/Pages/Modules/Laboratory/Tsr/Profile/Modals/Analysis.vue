@@ -157,7 +157,7 @@ export default {
                 params: {
                     option: 'search',
                     laboratory_type: this.form.laboratory_type,
-                    type: 96,
+                    type: 30,
                     keyword: code
                 }
             })

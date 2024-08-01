@@ -38,7 +38,7 @@
                 <BCol lg="12">
                     <hr class="text-muted mt-0 mb-3"/>
                 </BCol>
-                <BCol lg="12" class="mt-n2">
+                <BCol lg="6" class="mt-n2">
                     <InputLabel for="region" value="Laboratory" :message="form.errors.laboratory_type"/>
                     <Multiselect 
                     :options="dropdowns.laboratories" 
@@ -47,16 +47,7 @@
                     :searchable="true" label="name"
                     placeholder="Select Laboratory"/>
                 </BCol>
-                <BCol lg="6" class="mt-2">
-                    <InputLabel for="region" value="Purpose" :message="form.errors.purpose_id"/>
-                    <Multiselect 
-                    :options="dropdowns.purposes" 
-                    v-model="form.purpose_id" 
-                    @input="handleInput('purpose_id')"
-                    :searchable="true" label="name"
-                    placeholder="Select Purpose"/>
-                </BCol>
-                 <BCol lg="6" class="mt-2">
+                 <BCol lg="6" class="mt-n2">
                     <InputLabel for="region" value="Discount" :message="form.errors.discount_id"/>
                     <Multiselect 
                     :options="dropdowns.discounts" 

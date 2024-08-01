@@ -27,7 +27,7 @@
                                 <InputLabel for="path" value="File Path" :message="form.errors.path"/>
                                 <TextInput id="path" v-model="form.path" type="text" class="form-control" autofocus placeholder="Please enter path" autocomplete="path" required :class="{ 'is-invalid': form.errors.path }" @input="handleInput('path')" :light="true"/>
                             </BCol>
-                             <BCol :lg="(!form.has_child) ? '6' : '4'" class="mt-0">
+                            <BCol :lg="(!form.has_child) ? '6' : '4'" class="mt-0">
                                 <InputLabel for="path" value="Group" :message="form.errors.group"/>
                                 <Multiselect :options="['Menu','Lists']" v-model="form.group" :message="form.errors.group" placeholder="Select Group"/>
                             </BCol>

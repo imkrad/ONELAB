@@ -102,7 +102,7 @@ export default {
                     keyword: this.filter.keyword,
                     status: this.filter.status,
                     count: ((window.innerHeight-490)/58),
-                    option: 'lists'
+                    option: 'ops'
                 }
             })
             .then(response => {
