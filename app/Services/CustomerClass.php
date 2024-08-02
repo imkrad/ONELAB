@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Laboratory;
+namespace App\Services;
 
 use Hashids\Hashids;
 use App\Models\Wallet;
@@ -29,7 +29,9 @@ class CustomerClass
             ->with('customer_name:id,name','classification:id,name','industry:id,name')
             ->with('address.region:code,name,region','address.province:code,name','address.municipality:code,name','address.barangay:code,name')
             ->when($request->keyword, function ($query, $keyword) {
-                $query->where('name', 'LIKE', "%{$keyword}%");
+                $query->where('name', 'LIKE', "%{$keyword}%")->orWhereHas('customer_name',function ($query) use ($keyword) {
+                    $query->where('name', 'LIKE', "%{$keyword}%");
+                });
             })
             ->where('laboratory_id',$this->laboratory)
             ->orderBy('created_at','desc')

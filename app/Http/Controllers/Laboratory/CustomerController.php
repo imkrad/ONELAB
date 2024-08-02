@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Traits\HandlesTransaction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CustomerRequest;
+use App\Services\CustomerClass;
 use App\Services\Laboratory\DropdownClass;
-use App\Services\Laboratory\CustomerClass;
 
 
 class CustomerController extends Controller
