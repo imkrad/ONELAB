@@ -15,7 +15,7 @@ class ListMenusTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_menus')->delete();
+        \DB::table('list_menus')->truncate();
         
         \DB::table('list_menus')->insert(array (
             0 => 
@@ -308,6 +308,90 @@ class ListMenusTableSeeder extends Seeder
                 'group' => 'Menu',
                 'module' => 'Executive',
                 'order' => 7,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'name' => 'Dashboard',
+                'icon' => 'ri-apps-line',
+                'route' => '/',
+                'path' => 'Modules/Finance/Dashboard',
+                'group' => 'Menu',
+                'module' => 'Finance',
+                'order' => 1,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            22 => 
+            array (
+                'id' => 23,
+                'name' => 'Order of Payment',
+                'icon' => 'ri-hand-coin-fill',
+                'route' => '/finance/ops',
+                'path' => 'Modules/Finance/Orders',
+                'group' => 'Menu',
+                'module' => 'Finance',
+                'order' => 1,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            23 => 
+            array (
+                'id' => 24,
+                'name' => 'Deposits',
+                'icon' => 'ri-bank-card-fill',
+                'route' => '/finance/deposits',
+                'path' => 'Modules/Finance/Deposits',
+                'group' => 'Menu',
+                'module' => 'Finance',
+                'order' => 1,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            24 => 
+            array (
+                'id' => 25,
+                'name' => 'Collection Type',
+                'icon' => 'ri-list-check',
+                'route' => '/finance/collections',
+                'path' => 'Modules/Finance/Collections',
+                'group' => 'Menu',
+                'module' => 'Finance',
+                'order' => 1,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            25 => 
+            array (
+                'id' => 26,
+                'name' => 'OR Series',
+                'icon' => 'ri-coupon-line',
+                'route' => '/finance/orseries',
+                'path' => 'Modules/Finance/Orseries',
+                'group' => 'Menu',
+                'module' => 'Finance',
+                'order' => 1,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            26 => 
+            array (
+                'id' => 27,
+                'name' => 'Reports',
+                'icon' => 'ri-line-chart-fill',
+                'route' => '/finance/reports',
+                'path' => 'Modules/Finance/Reports',
+                'group' => 'Menu',
+                'module' => 'Finance',
+                'order' => 1,
                 'has_child' => 0,
                 'is_mother' => 1,
                 'is_active' => 1,
