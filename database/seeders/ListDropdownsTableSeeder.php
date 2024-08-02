@@ -498,6 +498,36 @@ class ListDropdownsTableSeeder extends Seeder
                 'others' => 'bg-dark-subtle',
                 'is_active' => 1,
             ),
+            48 => 
+            array (
+                'id' => 49,
+                'name' => 'Setup Project Payment',
+                'classification' => 'Collection Type',
+                'type' => 'Non-laboratory',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'name' => 'Scholarship Assistance',
+                'classification' => 'Collection Type',
+                'type' => 'Non-laboratory',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'name' => 'Refund of Travel',
+                'classification' => 'Collection Type',
+                'type' => 'Non-laboratory',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
         ));
 
         
