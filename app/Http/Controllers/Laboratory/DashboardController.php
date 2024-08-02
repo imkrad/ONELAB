@@ -49,7 +49,7 @@ class DashboardController extends Controller
                         ]);
                     break;
                     case 'Accountant':
-                        return inertia('Modules/Finance/Dashboard/Index',[
+                        return inertia('Modules/Finance/Dashboard/Accountant/Index',[
                             'dropdowns' => [
                                 'laboratories' => $this->dropdown->laboratory_types(),
                                 'collections' => $this->dropdown->collections(),

@@ -20,9 +20,14 @@ class FinanceOpItem extends Model
         return $this->belongsTo('App\Models\FinanceOp', 'op_id', 'id');
     }
 
-    public function tsr()
+    // public function tsr()
+    // {
+    //     return $this->belongsTo('App\Models\Tsr', 'tsr_id', 'id');
+    // }
+
+    public function itemable()
     {
-        return $this->belongsTo('App\Models\Tsr', 'tsr_id', 'id');
+        return $this->morphTo();
     }
 
     public function setAmountAttribute($value)

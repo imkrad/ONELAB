@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FinanceItem extends Model
+class FinanceName extends Model
 {
     use HasFactory;
 
-    public function itemable()
-    {
-        return $this->morphOne('App\Models\FinanceOpItem', 'itemable');
-    }
+    protected $fillable = [
+        'name',
+        'is_individual'
+    ];
+
 }

@@ -4,14 +4,10 @@
             <div class="input-group mb-1">
                 <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
                 <input type="text" v-model="filter.keyword" placeholder="Search Order of Payment" class="form-control" style="width: 55%;">
-                <select v-model="filter.status" @change="fetch()" class="form-select" id="inputGroupSelect01" style="width: 140px;">
-                    <option :value="null" selected>Select Status</option>
-                    <option :value="list.value" v-for="list in statuses" v-bind:key="list.id">{{list.name}}</option>
-                </select>
                 <span @click="refresh" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
                     <i class="bx bx-refresh search-icon"></i>
                 </span>
-                <b-button v-if="$page.props.user.data.assigned_role == 'Accountant'" type="button" variant="primary" @click="openCreate">
+                <b-button type="button" variant="primary" @click="openCreate">
                     <i class="ri-add-circle-fill align-bottom me-1"></i> Create
                 </b-button>
             </div>
@@ -38,15 +34,15 @@
                     <td>
                         <h5 class="fs-13 mb-0 text-dark" v-if="list.or">OR# : {{list.or.number}}</h5>
                         <h5 class="fs-13 mb-0 text-dark" v-else>{{list.code}}</h5>
-                        <p class="fs-12 text-muted mb-0">{{(list.customer.customer_name.has_branches) ? list.customer.customer_name.name+' '+list.customer.name : list.customer.customer_name.name}}</p>
+                        <p class="fs-12 text-muted mb-0">{{list.customer}}</p>
                     </td>
-                    <td class="text-center fs-12">{{list.collection.name}}</td>
+                    <td class="text-center fs-12">{{list.collection}}</td>
                     <td class="text-center fs-12">{{list.payment.name}}</td>
                     <td class="text-center">
                         <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                     </td>
                     <td class="text-center">{{list.total}}</td>
-                    <td class="text-end">
+                    <td v-if="$page.props.user.data.assigned_role == 'Accountant'" class="text-end">
                         <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                             <i class="ri-eye-fill align-bottom"></i>
                         </b-button>
@@ -54,13 +50,18 @@
                             <i class="ri-printer-fill align-bottom"></i>
                         </b-button>
                     </td>
+                    <td v-else class="text-end">
+                        <b-button type="button" variant="success" size="sm" @click="openView(list)">
+                            Mark as paid
+                        </b-button>
+                    </td>
                 </tr>
             </tbody>
         </table>
         <Pagination class="ms-2 me-2" v-if="meta" @fetch="fetch" :lists="lists.length" :links="links" :pagination="meta" />
     </div>
-    <Create :collections="collections" :payments="payments" @update="fetch()" ref="create"/>
     <View :deposits="deposits" :orseries="orseries" @update="fetch()" ref="view"/>
+    <Create :collections="collections" :payments="payments" :deposits="deposits" :orseries="orseries" @update="fetch()" ref="create"/>
 </template>
 <script>
 import _ from 'lodash';
@@ -69,7 +70,7 @@ import Create from '../Modals/Create.vue';
 import Pagination from "@/Shared/Components/Pagination.vue";
 export default {
     components: { Pagination, Create, View },
-    props: ['collections','payments','deposits','orseries','statuses'],
+    props: ['deposits','orseries','collections','payments'],
     data(){
         return {
             currentUrl: window.location.origin,
@@ -102,7 +103,7 @@ export default {
                     keyword: this.filter.keyword,
                     status: this.filter.status,
                     count: ((window.innerHeight-490)/58),
-                    option: 'ops'
+                    option: 'ops_pending'
                 }
             })
             .then(response => {

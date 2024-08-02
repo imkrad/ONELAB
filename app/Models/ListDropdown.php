@@ -31,11 +31,6 @@ class ListDropdown extends Model
         return $this->hasMany('App\Models\Tsr', 'laboratory_type');
     }
 
-    public function messages()
-    {
-        return $this->morphMany('App\Models\ChatMessage', 'receivable');
-    }
-
     public function inventory_category()
     {
         return $this->hasMany('App\Models\InventoryItem', 'category_id');

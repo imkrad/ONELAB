@@ -15,7 +15,7 @@ return new class extends Migration
             $table->engine = 'InnoDB';
             $table->tinyIncrements('id');
             $table->string('name',100);
-            $table->string('icon',20)->nullable();   
+            $table->string('icon',50)->nullable();   
             $table->string('route',150)->nullable();   
             $table->string('path',150)->nullable();   
             $table->string('group',100)->nullable();

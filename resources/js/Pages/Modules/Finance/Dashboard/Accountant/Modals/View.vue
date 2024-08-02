@@ -5,19 +5,11 @@
                 <div class="row align-items-center g-3">
                     <div class="col-md">
                         <div >
-                            <h5 class="fs-15 fw-semibold text-primary mb-1">{{(selected.customer.customer_name.has_branches) ? selected.customer.customer_name.name+' '+selected.customer.name : selected.customer.customer_name.name}}</h5>
+                            <h5 class="fs-15 fw-semibold text-primary mb-2">{{selected.customer}}</h5>
                             <div class="hstack gap-3 flex-wrap">
-                                <div class="text-muted">
-                                    {{selected.customer.address.barangay.name}},
-                                    {{selected.customer.address.municipality.name}},
-                                    {{selected.customer.address.province.name}},
-                                    {{selected.customer.address.region.region}}
-                                </div>
-                                <!-- <div class="vr"></div>
-                                <div class="text-muted">Created : <span class="text-body fw-medium">wea</span></div> -->
-                                <!-- 
+                                <div class="text-muted"><i class="ri-map-pin-fill me-1"></i>{{selected.address}}</div>
                                 <div class="vr"></div>
-                                <div class="text-muted">Contact : <span class="text-body fw-medium">09123654856</span></div> -->
+                                <div class="text-muted"><i class="ri-calendar-2-fill me-1"></i>{{selected.date}}</div>
                             </div>
                         </div>
                     </div>
@@ -37,11 +29,11 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Payment</p>
-                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.payment.name}}</span></h5>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.payment}}</span></h5>
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Collection</p>
-                     <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.collection.name}}</span></h5>
+                     <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.collection}}</span></h5>
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Status</p>
@@ -59,23 +51,18 @@
             </thead>
             <tbody>
                 <tr class="fs-12" v-for="(list,index) in selected.items" v-bind:key="index">
-                    <td class="text-center">{{list.tsr.code}}</td>
+                    <td class="text-center">{{list.itemable.code}}</td>
                     <td class="text-center">{{list.amount}}</td>
                 </tr>
             </tbody>
         </table>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Close</b-button>
-            <b-button v-if="$page.props.user.data.assigned_role == 'Cashier' && selected.status.name == 'Pending'" @click="openOr" variant="primary" :disabled="form.processing" block>Create Receipt</b-button>
         </template>
     </b-modal>
-    <Or :deposits="deposits" @update="update" :orseries="orseries" ref="or"/>
 </template>
 <script>
-import Or from './Or.vue';
 export default {
-    components: { Or },
-    props: ['deposits','orseries'],
     data(){
         return {
             currentUrl: window.location.origin,
@@ -107,9 +94,6 @@ export default {
         },
         hide(){
             this.showModal = false;
-        },
-        openOr(){
-            this.$refs.or.show(this.selected.customer.customer_name.name+' - '+this.selected.customer.name,this.selected);
         },
         update(){
             this.$emit('update',true);

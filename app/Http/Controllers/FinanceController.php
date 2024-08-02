@@ -27,6 +27,9 @@ class FinanceController extends Controller
             case 'collections':
                 return $this->view->collections($request);
             break;
+            case 'names':
+                return $this->view->names($request);
+            break;
             case 'orseries':
                 return $this->view->orseries($request);
             break;
@@ -39,6 +42,9 @@ class FinanceController extends Controller
             case 'print':
                 return $this->view->print($request);
             break;
+            case 'payor':
+                return $this->view->payor($request);
+            break;
             default:
                 return inertia('Modules/Finance/Dashboard/Index'); 
         }   
@@ -50,6 +56,9 @@ class FinanceController extends Controller
                 return inertia('Modules/Finance/Orders/Index',[
                     'statuses' => $this->dropdown->statuses('Payment'),
                 ]);
+            break;
+            case 'names':
+                return inertia('Modules/Finance/Names/Index');
             break;
             case 'orseries':
                 return inertia('Modules/Finance/Orseries/Index');
@@ -72,6 +81,9 @@ class FinanceController extends Controller
                 case 'collection':
                     return $this->save->collection($request);
                 break;
+                case 'name':
+                    return $this->save->name($request);
+                break;
                 case 'orseries':
                     return $this->save->orseries($request);
                 break;
@@ -83,6 +95,9 @@ class FinanceController extends Controller
                 break;
                 case 'receipt':
                     return $this->save->receipt($request);
+                break;
+                case 'receipt_nonlab':
+                    return $this->save->receipt_nonlab($request);
                 break;
             }
         });

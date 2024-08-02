@@ -3,6 +3,7 @@
 namespace App\Services\Finance;
 
 use App\Models\ListDropdown;
+use App\Models\FinanceName;
 use App\Models\FinanceOrseries;
 use App\Http\Resources\DefaultResource;
 
@@ -18,6 +19,18 @@ class UpdateClass
             'info' => "You've successfully updated the selected collection type."
         ];
     }
+
+    public function name($request){
+        $data = FinanceName::where('id',$request->id)->first();
+        $data->update($request->all());
+
+        return [
+            'data' => new DefaultResource($data),
+            'message' => 'Name update was successful!', 
+            'info' => "You've successfully updated the selected name."
+        ];
+    }
+
 
     public function orseries($request){
         $data = FinanceOrseries::where('id',$request->id)->first();

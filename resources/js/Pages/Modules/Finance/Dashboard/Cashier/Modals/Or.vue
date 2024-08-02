@@ -34,22 +34,48 @@
                 <BCol lg="12 mt-1 mb-n3">
                     <hr class="text-muted"/>
                 </BCol>
-                <BCol lg="6 mt-2" v-if="or.selected.payment.name == 'Cheque'">
-                    <InputLabel value="Cheque Number" :message="form.errors.cheque_number"/>
-                    <TextInput v-model="cheque.number" type="text" class="form-control" @input="handleInput('cheque_number')" :light="true"/>
-                </BCol>
-                <BCol lg="6 mt-2" v-if="or.selected.payment.name == 'Cheque'">
-                    <InputLabel value="Cheque Date" :message="form.errors.cheque_cheque_at"/>
-                    <TextInput v-model="cheque.cheque_at" type="date" class="form-control" @input="handleInput('cheque_cheque_at')" :light="true"/>
-                </BCol>
-                <BCol lg="6 mt-0" v-if="or.selected.payment.name == 'Cheque'">
-                    <InputLabel value="Amount" :message="form.errors.cheque_amount"/>
-                    <Amount @amount="amount" ref="testing" :readonly="false" @input="handleInput('cheque_amount')"/>
-                </BCol>
-                <BCol lg="6 mt-0" v-if="or.selected.payment.name == 'Cheque'">
-                    <InputLabel value="Bank Name" :message="form.errors.cheque_bank"/>
-                    <TextInput v-model="cheque.bank" type="text" class="form-control" @input="handleInput('cheque_bank')" :light="true"/>
-                </BCol>
+                <template v-if="or.selected">
+                    <template v-if="or.selected.payment.name == 'Cheque' || or.selected.payment.name == 'Online Transfer' || or.selected.payment.name == 'Bank Deposit'">
+                        <BCol lg="12" class="mb-n3" v-if="or.selected.payment.name == 'Bank Deposit'">
+                            <BRow class="g-3">
+                                <BCol lg="8"  style="margin-top: 13px; margin-bottom: -12px;" class="fs-12">Please choose type of deposit?</BCol>
+                                <BCol lg="4"  style="margin-top: 13px; margin-bottom: -12px;">
+                                <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="custom-control custom-radio mb-3">
+                                                <input type="radio" id="customRadio1" class="custom-control-input me-2" :value="false" v-model="details.is_cheque">
+                                                <label class="custom-control-label fw-normal fs-12" for="customRadio1">Cash</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="custom-control custom-radio mb-3">
+                                                <input type="radio" id="customRadio2" class="custom-control-input me-2" :value="true" v-model="details.is_cheque">
+                                                <label class="custom-control-label fw-normal fs-12" for="customRadio2">Cheque</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </BCol>
+                                <BCol lg="12"><hr class="text-muted mt-n2"/></BCol>
+                            </BRow>
+                        </BCol>
+                        <BCol lg="6 mt-2">
+                            <InputLabel :value="or.selected.payment.others" :message="form.errors.details_number"/>
+                            <TextInput v-model="details.number" type="text" class="form-control" @input="handleInput('details_number')" :light="true"/>
+                        </BCol>
+                        <BCol lg="6 mt-2">
+                            <InputLabel value="Date" :message="form.errors.details_date_at"/>
+                            <TextInput v-model="details.date_at" type="date" class="form-control" @input="handleInput('details_cheque_at')" :light="true"/>
+                        </BCol>
+                        <BCol lg="6 mt-0">
+                            <InputLabel value="Amount" :message="form.errors.details_amount"/>
+                            <Amount @amount="amount" ref="testing" :readonly="false" @input="handleInput('details_amount')"/>
+                        </BCol>
+                        <BCol lg="6 mt-0">
+                            <InputLabel value="Bank Name" :message="form.errors.details_bank"/>
+                            <TextInput v-model="details.bank" type="text" class="form-control" @input="handleInput('details_bank')" :light="true"/>
+                        </BCol>
+                    </template>
+                </template>
             </BRow>
         </form>
         <template v-slot:footer>
@@ -78,11 +104,12 @@ export default {
                 type: null,
                 option: 'receipt'
             },
-            cheque: {
+            details: {
                 type: null,
                 number: null,
                 bank: null,
-                cheque_at: null,
+                date_at: null,
+                is_cheque: false,
                 amount: null,
             },
             form : {
@@ -93,6 +120,15 @@ export default {
             showModal: false
         }
     },
+    // watch: {
+    //     "or.payment"(newVal){
+    //         if(newVal){
+    //             this.type = newVal.name;
+    //         }else{
+    //             this.type = null;
+    //         }
+    //     },
+    // },
     methods: { 
         show(customer,data){
             this.customer = customer;
@@ -104,15 +140,16 @@ export default {
         },
         submit(){
 
-            if(this.type === 'Cheque'){
+            if(this.type === 'Cheque' || this.type === 'Online Transfer' || this.type === 'Bank Deposit'){
                 this.form = this.$inertia.form({
                     'deposit_id': this.or.deposit_id,
                     'orseries': this.or.orseries,
                     'orseries_id': (this.or.orseries) ? this.or.orseries.value : null,
-                    'cheque_number': this.cheque.number,
-                    'cheque_cheque_at': this.cheque.cheque_at,
-                    'cheque_bank': this.cheque.bank,
-                    'cheque_amount': this.cheque.amount,
+                    'details_number': this.details.number,
+                    'details_date_at': this.details.date_at,
+                    'details_bank': this.details.bank,
+                    'details_is_cheque': this.details.is_cheque,
+                    'details_amount': this.details.amount,
                     'selected': this.or.selected,
                     'total': this.or.total,
                     'type': this.type,
@@ -139,7 +176,7 @@ export default {
             });
         },
         amount(val){
-            this.cheque.amount = val;
+            this.details.amount = val;
         },
         handleInput(field) {
             this.form.errors[field] = false;
@@ -151,11 +188,11 @@ export default {
             this.or.selected = {payment:{}};
             this.or.total = null;
             this.or.type = null;
-            this.cheque.type = null;
-            this.cheque.number = null;
-            this.cheque.bank = null;
-            this.cheque.cheque_at = null;
-            this.cheque.amount = null;
+            this.details.type = null;
+            this.details.number = null;
+            this.details.bank = null;
+            this.details.date_at = null;
+            this.details.amount = null;
             this.showModal = false;
         }
     }

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->decimal('amount',12,2); 
             $table->string('bank');
             $table->string('number')->nullable()->unique();
+            $table->boolean('is_cheque')->default(0);
             $table->bigInteger('receipt_id')->unsigned()->index();
             $table->foreign('receipt_id')->references('id')->on('finance_receipts')->onDelete('cascade');
             $table->date('date_at');

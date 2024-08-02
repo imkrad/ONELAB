@@ -195,7 +195,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
-                'others' => 'n/a',
+                'others' => 'Cheque Number',
                 'is_active' => 1,
             ),
             18 => 
@@ -206,7 +206,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'type' => 'n/a',
                 'color' => 'n/a',
                 'others' => 'n/a',
-                'is_active' => 1,
+                'is_active' => 0,
             ),
             19 => 
             array (
@@ -215,7 +215,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
-                'others' => 'n/a',
+                'others' => 'Number',
                 'is_active' => 1,
             ),
             20 => 
@@ -235,7 +235,7 @@ class ListDropdownsTableSeeder extends Seeder
                 'classification' => 'Payment Mode',
                 'type' => 'n/a',
                 'color' => 'n/a',
-                'others' => 'n/a',
+                'others' => 'Source Account',
                 'is_active' => 1,
             ),
             22 => 
@@ -522,6 +522,26 @@ class ListDropdownsTableSeeder extends Seeder
             array (
                 'id' => 51,
                 'name' => 'Refund of Travel',
+                'classification' => 'Collection Type',
+                'type' => 'Non-laboratory',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'name' => 'Bidding Paper',
+                'classification' => 'Collection Type',
+                'type' => 'Non-laboratory',
+                'color' => 'n/a',
+                'others' => 'n/a',
+                'is_active' => 1,
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'name' => 'Others',
                 'classification' => 'Collection Type',
                 'type' => 'Non-laboratory',
                 'color' => 'n/a',

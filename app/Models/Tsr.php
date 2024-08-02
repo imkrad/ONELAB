@@ -88,6 +88,11 @@ class Tsr extends Model
         return $this->morphOne('App\Models\TsrService', 'typeable');
     }
 
+    public function itemable()
+    {
+        return $this->morphOne('App\Models\FinanceOpItem', 'itemable');
+    }
+
     public function getUpdatedAtAttribute($value)
     {
         return date('M d, Y g:i a', strtotime($value));

@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Payment</p>
-                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.payment}}</span></h5>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.payment.name}}</span></h5>
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Collection</p>
@@ -51,14 +51,14 @@
             </thead>
             <tbody>
                 <tr class="fs-12" v-for="(list,index) in selected.items" v-bind:key="index">
-                    <td class="text-center">{{list.tsr.code}}</td>
+                    <td class="text-center">{{list.itemable.code}}</td>
                     <td class="text-center">{{list.amount}}</td>
                 </tr>
             </tbody>
         </table>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Close</b-button>
-            <b-button v-if="$page.props.user.data.assigned_role == 'Cashier' && selected.status.name == 'Pending'" @click="openOr" variant="primary" :disabled="form.processing" block>Create Receipt</b-button>
+            <b-button v-if="selected.status.name == 'Pending'" @click="openOr" variant="primary" :disabled="form.processing" block>Create Receipt</b-button>
         </template>
     </b-modal>
     <Or :deposits="deposits" @update="update" :orseries="orseries" ref="or"/>

@@ -13,4 +13,9 @@ class ListLaboratory extends Model
     {
         return $this->morphMany('App\Models\TestserviceAddon', 'typeable');
     }
+
+    public function messages()
+    {
+        return $this->morphMany('App\Models\ChatMessage', 'receivable');
+    }
 }

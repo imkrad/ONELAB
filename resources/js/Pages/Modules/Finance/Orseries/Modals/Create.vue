@@ -44,7 +44,7 @@ export default {
                 start: null,
                 end: null,
                 next: null,
-                option: 'series'
+                option: 'orseries'
             }),
             showModal: false
         }

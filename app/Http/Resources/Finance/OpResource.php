@@ -19,7 +19,7 @@ class OpResource extends JsonResource
             'customer_id' => $this->customer->id,
             'customer' => ($this->customer->customer_name->has_branches) ? $this->customer->customer_name->name.' '.$this->customer->name : $this->customer->customer_name->name,
             'address' => $this->customer->address->barangay->name.' '.$this->customer->address->municipality->name.' '.$this->customer->address->province->name.' '.$this->customer->address->region->region,
-            'payment' => $this->payment->name,
+            'payment' => $this->payment,
             'collection' => $this->collection->name,
             'status' => $this->status,
             'user' => $this->createdby->profile->firstname.' '.$this->createdby->profile->lastname,
