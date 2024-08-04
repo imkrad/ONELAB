@@ -47,7 +47,7 @@
                                 <p class="fs-12 text-muted mb-0">{{list.customer}}</p>
                             </td>
                             <td class="text-center fs-12">{{list.collection}}</td>
-                            <td class="text-center fs-12">{{list.payment}}</td>
+                            <td class="text-center fs-12">{{list.payment.name}}</td>
                             <td class="text-center fs-12">{{list.total}}</td>
                             <td class="text-center fs-12">{{list.user}}</td>
                             <td class="text-center fs-12">{{list.date}}</td>

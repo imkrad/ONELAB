@@ -101,9 +101,9 @@ export default {
             axios.get(page_url,{
                 params : {
                     keyword: this.filter.keyword,
-                    status: this.filter.status,
+                    status: 6,
                     count: ((window.innerHeight-490)/58),
-                    option: 'ops_pending'
+                    option: 'ops'
                 }
             })
             .then(response => {

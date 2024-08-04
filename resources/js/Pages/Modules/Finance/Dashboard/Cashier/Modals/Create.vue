@@ -125,6 +125,30 @@
                     @input="handleInput('customer')"
                     placeholder="Select Payor"/>
                 </BCol>
+                <BCol lg="12" v-if="payor_type" class="mt-2"><hr class="text-muted mt-0"/></BCol>
+                <BCol lg="12" v-if="payor_type" class="mt-n2">
+                    <BCardHeader class="align-items-center d-flex py-0 mb-2">
+                        <BCardTitle class="mb-n2 flex-grow-1 fs-13 mt-n3">Items</BCardTitle>
+                        <div class="flex-shrink-0">
+                            <b-button @click="addItem" variant="warning" class="waves-effect btn-sm waves-light mb-2">Add Item</b-button>
+                        </div>
+                    </BCardHeader>
+                    <BRow class="g-2 mt-n2 mb-1" v-for="(menu, index) in form.items" :key="index">
+                        <BCol lg="11">
+                            <BRow class="g-2">
+                                <BCol lg="8">
+                                    <TextInput id="icon" v-model="menu.name" type="text" autofocus placeholder="Please enter name" :class="{ 'is-invalid': form.errors['items.'+index+'.name'] }" @input="handleInput('name')" :light="true"/>
+                                </BCol>
+                                <BCol lg="4">
+                                    <input type="text" class="form-control" v-money="money" v-model="menu.amount" style="min-height: 38.4px !important; background-color: #f5f6f7;">
+                                </BCol>
+                            </BRow>
+                        </BCol>
+                        <BCol lg="1">
+                            <b-button @click="removeItem(index)" variant="danger" class="waves-effect waves-light"><i class="ri-delete-bin-fill"></i></b-button>
+                        </BCol>
+                    </BRow>
+                </BCol>
             </BRow>
         </form>
         <template v-slot:footer>
@@ -134,16 +158,24 @@
     </b-modal>
 </template>
 <script>
+import {VMoney} from 'v-money';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 import Multiselect from "@vueform/multiselect";
-import Amount from '@/Shared/Components/Forms/Amount.vue';
 export default {
-    components: { Multiselect, InputLabel, TextInput, Amount },
+    components: { Multiselect, InputLabel, TextInput },
     props: ['deposits','orseries','collections','payments'],
+    directives: {money: VMoney},
     data(){
         return {
             currentUrl: window.location.origin,
+            money: {
+                decimal: '.',
+                thousands: ',',
+                prefix: '₱',
+                precision: 2,
+                masked: false
+            },
             or: {
                 id: null,
                 collection_id: null,
@@ -164,6 +196,9 @@ export default {
             },
             form : {
                 customer: null,
+                items: [{
+                    name: null, amount: null
+                }],
                 errors: []
             },
             payor_type: null,
@@ -216,6 +251,7 @@ export default {
                     'selected': this.or.selected,
                     'total': this.or.total,
                     'type': this.type,
+                    'items': this.form.items,
                     'option': 'receipt_nonlab'
                 });
             }else{
@@ -229,6 +265,7 @@ export default {
                     'type': this.type,
                     'selected': this.or.selected,
                     'total': this.or.total,
+                    'items': this.form.items,
                     'option': 'receipt_nonlab'
                 });
             }
@@ -240,15 +277,15 @@ export default {
                     this.hide();
                 },
             });
-        },
-        amount(val){
-            this.details.amount = val;
-        },
-        total(val){
-            this.or.total = val;
-        },
+        }, 
         handleInput(field) {
             this.form.errors[field] = false;
+        },
+        addItem() {
+            this.form.items.push({name: '', amount: ''});
+        },
+        removeItem(index) {
+            this.form.items.splice(index, 1);
         },
         hide(){
             this.or.id = null;

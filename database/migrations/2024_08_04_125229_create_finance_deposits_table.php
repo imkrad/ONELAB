@@ -11,24 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('finance_receipts', function (Blueprint $table) {
+        Schema::create('finance_deposits', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->string('number')->unique();
-            $table->boolean('is_deposit')->default(0);
-            $table->bigInteger('op_id')->unsigned()->index();
-            $table->foreign('op_id')->references('id')->on('finance_ops')->onDelete('cascade');
-            $table->integer('orseries_id')->unsigned()->index();
-            $table->foreign('orseries_id')->references('id')->on('finance_orseries')->onDelete('cascade');
+            $table->string('start',20);
+            $table->string('end',20);
+            $table->decimal('total',12,2);
             $table->tinyInteger('deposit_id')->unsigned()->index();
             $table->foreign('deposit_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
-            $table->bigInteger('payor_id')->unsigned()->index();
-            $table->foreign('payor_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->integer('orseries_id')->unsigned()->index();
+            $table->foreign('orseries_id')->references('id')->on('finance_orseries')->onDelete('cascade');
             $table->integer('created_by')->unsigned()->index();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->integer('laboratory_id')->unsigned()->index();
             $table->foreign('laboratory_id')->references('id')->on('laboratories')->onDelete('cascade');
-            $table->timestamps(); 
+            $table->date('date');
+            $table->timestamps();
         });
     }
 
@@ -37,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('finance_receipts');
+        Schema::dropIfExists('finance_deposits');
     }
 };

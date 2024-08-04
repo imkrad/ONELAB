@@ -51,7 +51,7 @@
                 </template>
               </template>
               <template v-else-if="$page.props.user.data.assigned_role == 'Cashier' || $page.props.user.data.assigned_role == 'Accountant'">
-                <li class="nav-item" v-for="(menu,index) in $page.props.menus.finance" v-bind:key="index">
+                <li class="nav-item" v-for="(menu,index) in filteredFinance" v-bind:key="index">
                     <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="{'active': $page.component.startsWith(menu.main.path) }">
                         <i :class="menu.main.icon"></i>
                         <span data-key="krad-dashboards">{{menu.main.name}}</span>
@@ -116,6 +116,24 @@ export default {
         return this.$store ? this.$store.state.layout.layoutType : {} || {};
       },
     },
+    filteredFinance() {
+      const cashier = ['Dashboard', 'Receipts', 'Deposits', 'Collection Type', 'OR Series', 'Names', 'Reports'];
+      const accountant = ['Dashboard', 'Order of Payment','Collection Type','Reports'];
+
+      const role = this.$page.props.user.data.assigned_role;
+      const menus = this.$page.props.menus.finance;
+
+      const isMenuNameInArray = (menuName, nameArray) => 
+        nameArray.some(name => menuName.toLowerCase().includes(name.toLowerCase()));
+
+      if (role === 'Cashier') {
+        return menus.filter(menu => isMenuNameInArray(menu.main.name, cashier));
+      } else if (role === 'Accountant') {
+        return menus.filter(menu => isMenuNameInArray(menu.main.name, accountant));
+      }
+
+      return [];
+    }
   },
   mounted() {
     this.initActiveMenu();

@@ -4,6 +4,7 @@ namespace App\Services\Finance;
 
 use App\Models\ListStatus;
 use App\Models\ListDropdown;
+use App\Models\FinanceOrseries;
 
 class DropdownClass
 {
@@ -45,6 +46,19 @@ class DropdownClass
                 'type' => $item->type,
                 'color' => $item->color,
                 'others' => $item->others,
+            ];
+        });
+        return $data;
+    }
+
+    public function orseries(){
+        $data = FinanceOrseries::where('is_active',1)->where('user_id',\Auth::user()->id)->get()->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name,
+                'start' => $item->start,
+                'next' => $item->next,
+                'end' => $item->end
             ];
         });
         return $data;

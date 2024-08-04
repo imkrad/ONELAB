@@ -27,6 +27,9 @@ class FinanceController extends Controller
             case 'collections':
                 return $this->view->collections($request);
             break;
+            case 'receipts':
+                return $this->view->receipts($request);
+            break;
             case 'names':
                 return $this->view->names($request);
             break;
@@ -38,6 +41,9 @@ class FinanceController extends Controller
             break;
             case 'ops_pending':
                 return $this->view->ops_pending($request);
+            break;
+            case 'ornumbers':
+                return $this->view->ornumbers($request);
             break;
             case 'print':
                 return $this->view->print($request);
@@ -57,6 +63,9 @@ class FinanceController extends Controller
                     'statuses' => $this->dropdown->statuses('Payment'),
                 ]);
             break;
+            case 'receipts':
+                return inertia('Modules/Finance/Receipts/Index');
+            break;
             case 'names':
                 return inertia('Modules/Finance/Names/Index');
             break;
@@ -64,7 +73,10 @@ class FinanceController extends Controller
                 return inertia('Modules/Finance/Orseries/Index');
             break;
             case 'deposits':
-                return inertia('Modules/Finance/Deposits/Index');
+                return inertia('Modules/Finance/Deposits/Index',[
+                    'deposits' => $this->dropdown->deposits(),
+                    'orseries' => $this->dropdown->orseries(),
+                ]);
             break;
             case 'collections':
                 return inertia('Modules/Finance/Collections/Index');

@@ -8,6 +8,7 @@ use App\Models\TsrPaymentDeduction;
 use App\Models\Wallet;
 use App\Models\ListDropdown;
 use App\Models\FinanceOp;
+use App\Models\FinanceItem;
 use App\Models\FinanceName;
 use App\Models\FinanceOpitem;
 use App\Models\FinanceReceipt;
@@ -238,17 +239,36 @@ class SaveClass
             \DB::beginTransaction();
             $op = FinanceOp::create(array_merge($request->all(), [
                 'code' => $this->generateCode(),
-                'total' => $total,
+                'total' => 0,
                 'status_id' => 7,
                 'created_by' => \Auth::user()->id,
                 'laboratory_id' => \Auth::user()->userrole->laboratory_id
             ]));
             if($op){
+                $items = $request->items;
+                $total = 0;
+                foreach($items as $item){
+                    $i = FinanceItem::create([
+                        'name' => $item['name'],
+                        'amount' => $item['amount']
+                    ]);
+                    if($i){
+                        $i->itemable()->create([
+                            'amount' => $item['amount'],
+                            'op_id' => $op->id
+                        ]);
+                    }
+                    $total = $total +  trim(str_replace(',','',$item['amount']),'₱');
+                }
+                $op->total = $total;
+                $op->save();
+
                 $receipt = FinanceReceipt::create(array_merge($request->all(), [
                     'number' => $request->orseries['next'],
                     'orseries_id' => $request->orseries['value'],  
                     'op_id' => $op->id,
                     'payor_id' => $request->customer_id,
+                    'deposit_id' => $request->deposit_id,
                     'created_by' => \Auth::user()->id,
                     'laboratory_id' => \Auth::user()->userrole->laboratory_id
                 ]));
@@ -279,118 +299,9 @@ class SaveClass
                     $data = 'error';
                     \DB::rollback();
                 }
-            }else{
-                $data = 'error';
-                \DB::rollback();
+                
             }
-
-            // $data = FinanceReceipt::create(array_merge($request->all(), [
-            //     'number' => $request->orseries['next'],
-            //     'orseries_id' => $request->orseries['value'],  
-            //     'op_id' => $request->selected['id'],
-            //     'payor_id' => $request->selected['customer_id'],
-            //     'created_by' => \Auth::user()->id,
-            //     'laboratory_id' => \Auth::user()->userrole->laboratory_id
-            // ]));
-
-            // if($data){
-            //     $items = $request->selected['items'];
-            //     $op = FinanceOp::where('id',$request->selected['id'])->first();
-            //     $op->status_id = 7;
-            //     if($op->save()){
-            //         foreach($items as $item){
-            //             $id = $item['itemable_id'];
-            //             $payment = TsrPayment::where('tsr_id',$id)->first();
-            //             $payment->or_number = $request->orseries['next'];
-            //             $payment->is_paid = 1;
-            //             $payment->paid_at = now();
-            //             $payment->status_id = 7;
-            //             if($payment->save()){
-            //                 $tsr = Tsr::where('id',$id)->first();
-            //                 $tsr->status_id = 3;
-            //                 $tsr->save();
-            //             }
-            //         }
-
-            //         $or = FinanceOrseries::where('id',$request->orseries['value'])->first();
-            //         if($or->next == $or->end){
-            //             $or->is_active = 0;
-            //         }else{
-            //             $next = $or->next+1;
-            //             $or->next = $next;
-            //         }
-
-            //         if($or->save()){
-            //             if($request->type === 'Cheque' || $request->type === 'Online Transfer' || $request->type === 'Bank Deposit'){
-            //                 $cheque = new FinanceReceiptDetail;
-            //                 $cheque->number = $request->details_number;
-            //                 $cheque->amount = $request->details_amount;
-            //                 $cheque->bank = $request->details_bank;
-            //                 $cheque->date_at = $request->details_date_at;
-            //                 $cheque->is_cheque = ($request->type === 'Bank Deposit') ? $request->details_is_cheque : false;
-            //                 $cheque->receipt_id = $data->id;
-            //                 if($cheque->save()){
-            //                     $amount = trim(str_replace(',','',$request->cheque_amount),'₱');
-            //                     $total = trim(str_replace(',','',$request->total),'₱');
-                                
-            //                     if($amount > $total){
-            //                         $total = $amount - $total;
-            //                         $customer_id = $request->selected['customer_id'];
-
-            //                         $wallet = Wallet::where('customer_id',$customer_id)->first();
-            //                         if($wallet){
-            //                             $wallet->total = $wallet->total + $total;
-            //                             $wallet->available = trim(str_replace(',','',$wallet->available),'₱') + $total;
-            //                             if($wallet->save()){
-            //                                 $data->transaction()->create([
-            //                                     'code' => date('Ymdgia'),
-            //                                     'amount' => $total,
-            //                                     'balance' => trim(str_replace(',','',$wallet->available),'₱'),
-            //                                     'is_credit' => 1,
-            //                                     'wallet_id' => $wallet->id
-            //                                 ]);
-            //                                 \DB::commit();  
-            //                             }else{
-            //                                 $data = 'error';
-            //                                 \DB::rollback();
-            //                             }
-            //                         }else{
-            //                             $wallet = new Wallet;
-            //                             $wallet->total = $total;
-            //                             $wallet->available = $total;
-            //                             $wallet->customer_id = $customer_id;
-            //                             if($wallet->save()){
-            //                                 $data->transaction()->create([
-            //                                     'code' => date('Ymdgis'),
-            //                                     'amount' => $total,
-            //                                     'balance' => $total,
-            //                                     'is_credit' => 1,
-            //                                     'wallet_id' => $wallet->id
-            //                                 ]);
-            //                                 \DB::commit();  
-            //                             }else{
-            //                                 $data = 'error';
-            //                                 \DB::rollback();
-            //                             }
-            //                         }
-            //                     }else{
-            //                         \DB::commit();  
-            //                     }
-            //                 }else{
-            //                     $data = 'error';
-            //                     \DB::rollback();
-            //                 }
-            //             }else{
-            //                 \DB::commit();  
-            //             }
-            //         }
-            //     }else{
-            //         $data = 'error';
-            //         \DB::rollback();
-            //     }
-            // }
-
-            return ['data' => $data];
+            return ['data' => $op];
         });
 
         return [

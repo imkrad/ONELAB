@@ -37,7 +37,7 @@
                         <p class="fs-12 text-muted mb-0">{{list.customer}}</p>
                     </td>
                     <td class="text-center fs-12">{{list.collection}}</td>
-                    <td class="text-center fs-12">{{list.payment}}</td>
+                    <td class="text-center fs-12">{{list.payment.name}}</td>
                     <td class="text-center">
                         <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                     </td>
@@ -101,9 +101,9 @@ export default {
             axios.get(page_url,{
                 params : {
                     keyword: this.filter.keyword,
-                    status: this.filter.status,
+                    status: 6,
                     count: ((window.innerHeight-490)/58),
-                    option: 'ops_pending'
+                    option: 'ops'
                 }
             })
             .then(response => {

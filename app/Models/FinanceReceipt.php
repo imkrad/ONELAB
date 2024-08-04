@@ -13,6 +13,7 @@ class FinanceReceipt extends Model
         'number',
         'op_id',
         'orseries_id',
+        'deposit_id',
         'payor_id',
         'created_by',
         'laboratory_id'
@@ -23,16 +24,16 @@ class FinanceReceipt extends Model
         return $this->hasMany('App\Models\WalletTransaction', 'receipt_id');
     }
 
-    public function receipt()
-    {
-        return $this->hasOne('App\Models\FinanceReceipt', 'receipt_id');
-    }
-
     public function detail()
     {
         return $this->hasOne('App\Models\FinanceReceiptDetail', 'receipt_id');
     }
-    
+
+    public function deposit()
+    {
+        return $this->belongsTo('App\Models\ListDropdown', 'deposit_id', 'id');
+    }
+
     public function op()
     {
         return $this->belongsTo('App\Models\FinanceOp', 'op_id', 'id');
