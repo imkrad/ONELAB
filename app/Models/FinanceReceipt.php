@@ -16,7 +16,8 @@ class FinanceReceipt extends Model
         'deposit_id',
         'payor_id',
         'created_by',
-        'laboratory_id'
+        'laboratory_id',
+        'is_deposited'
     ];
 
     public function wallet()

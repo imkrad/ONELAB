@@ -20,7 +20,7 @@
                     placeholder="Select Deposit type"/>
                 </BCol>
                 <BCol lg="6 mt-0">
-                    <InputLabel for="orseries" value="O.R Series" :message="form.errors.orseries"/>
+                    <InputLabel for="orseries" value="O.R Series" :message="form.errors.orseries_id"/>
                     <Multiselect 
                     :options="orseries" 
                     v-model="or.orseries" 
@@ -115,14 +115,14 @@
                     </BRow>
                 </BCol>
                 <BCol lg="12" v-if="payor_type" class="mt-2">
-                    <!-- <InputLabel for="customer" value="Payor" :message="form.errors.customer"/> -->
+                    <InputLabel for="customer" value="Payor" :message="form.errors.customer_id"/>
                     <Multiselect 
                     :options="customers" 
                     @search-change="fetchCustomer" 
                     v-model="form.customer" 
                     object label="name"
                     :searchable="true" 
-                    @input="handleInput('customer')"
+                    @input="handleInput('customer_id')"
                     placeholder="Select Payor"/>
                 </BCol>
                 <BCol lg="12" v-if="payor_type" class="mt-2"><hr class="text-muted mt-0"/></BCol>
@@ -137,10 +137,10 @@
                         <BCol lg="11">
                             <BRow class="g-2">
                                 <BCol lg="8">
-                                    <TextInput id="icon" v-model="menu.name" type="text" autofocus placeholder="Please enter name" :class="{ 'is-invalid': form.errors['items.'+index+'.name'] }" @input="handleInput('name')" :light="true"/>
+                                    <TextInput id="icon" v-model="menu.name" type="text" autofocus placeholder="Please enter name" :class="{ 'is-invalid': form.errors['items.'+index+'.name'] }" @input="handleInput('items.'+index+'.name')" :light="true"/>
                                 </BCol>
                                 <BCol lg="4">
-                                    <input type="text" class="form-control" v-money="money" v-model="menu.amount" style="min-height: 38.4px !important; background-color: #f5f6f7;">
+                                    <input type="text" class="form-control" v-money="money" v-model="menu.amount" style="min-height: 38.4px !important; background-color: #f5f6f7;" :class="{ 'is-invalid': form.errors['items.'+index+'.amount'] }">
                                 </BCol>
                             </BRow>
                         </BCol>

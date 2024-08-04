@@ -20,34 +20,39 @@
                                 placeholder="Select Deposit type"/>
                             </BCol>
                             <BCol lg="6 mt-1">
-                                <InputLabel for="orseries" value="O.R Series" :message="form.errors.orseries"/>
+                                <InputLabel for="orseries" value="O.R Series" :message="form.errors.orseries_id"/>
                                 <Multiselect 
                                 :options="orseries" 
-                                v-model="form.orseries" 
-                                object
+                                v-model="form.orseries_id" 
                                 label="name"
-                                @input="handleInput('orseries')"
+                                @input="handleInput('orseries_id')"
                                 placeholder="Select OR"/>
                             </BCol>
                             <BCol lg="6 mt-1">
-                                <InputLabel for="orseries" value="Start O.R" :message="form.errors.orseries"/>
+                                <InputLabel for="orseries" value="Start O.R" :message="form.errors.start"/>
                                 <Multiselect 
                                 :options="ornumbers" 
                                 v-model="form.start" 
+                                :searchable="true"
+                                label="name"
+                                object
                                 @input="handleInput('start')"
                                 placeholder="Select Start"/>
                             </BCol>
                             <BCol lg="6 mt-1">
-                                <InputLabel for="orseries" value="End O.R" :message="form.errors.orseries"/>
+                                <InputLabel for="orseries" value="End O.R" :message="form.errors.end"/>
                                 <Multiselect 
                                 :options="ornumbers" 
                                 v-model="form.end" 
+                                :searchable="true"
+                                label="name"
+                                object
                                 @input="handleInput('end')"
                                 placeholder="Select End"/>
                             </BCol>
                             <BCol lg="6" class="mt-1">
                                 <InputLabel for="name" value="Total" :message="form.errors.total"/>
-                                <Amount @amount="amount" ref="testing" :readonly="false"/>
+                                <Amount @amount="amount" ref="testing" :readonly="true" @input="handleInput('total')"/>
                             </BCol>
                             <BCol lg="6" class="mt-1">
                                 <InputLabel for="name" value="Date" :message="form.errors.date"/>
@@ -79,12 +84,12 @@ export default {
             form: useForm({
                 id: null,
                 deposit_id: null,
-                orseries: null,
+                orseries_id: null,
                 start: null,
                 end: null,
                 total: null,
                 date: null,
-                option: 'deposits'
+                option: 'deposit'
             }),
             ornumbers: [],
             showModal: false,
@@ -92,8 +97,17 @@ export default {
         }
     },
     watch: {
-        "form.orseries"(newVal){
-            this.fetchNumbers(newVal.value);
+        "form.orseries_id"(newVal){
+            this.fetchNumbers(newVal);
+        },
+        "form.end"(newVal){
+            console.log(newVal);
+            if(newVal){
+                this.form.total = this.ornumbers
+                .filter(item => item.value >= this.form.start.value && item.value <= this.form.end.value)
+                .reduce((total, item) => total + parseInt(item.amount.replace('₱', '').replace(/,/g, '')), 0);
+                this.$refs.testing.value = this.form.total.toFixed(2);
+            }
         }
     },
     methods: { 
@@ -105,7 +119,7 @@ export default {
         fetchNumbers(data){
             axios.get('/finance',{
                 params : {
-                    orseries_id: data,
+                    orseries_id: this.form.orseries_id,
                     deposit_id: this.form.deposit_id,
                     option: 'ornumbers'
                 }

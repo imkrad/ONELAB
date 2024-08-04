@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Rules\NotZeroPeso;
+use App\Rules\RangeRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class FinanceRequest extends FormRequest
@@ -37,6 +38,26 @@ class FinanceRequest extends FormRequest
                 'start' => 'required|integer',
                 'next' => 'required|integer',
                 'end' => 'required|integer',
+            ];
+        }else if($this->option == 'deposit'){
+            return [
+                'deposit_id' => 'required|integer',
+                'orseries_id' => 'required|integer',
+                'start' => ['required',new RangeRule($this->input('end'))],
+                'end' => 'required',
+                'total' => ['required',new NotZeroPeso],
+                'date' => 'required'
+            ];
+        }else if($this->option == 'receipt_nonlab'){
+            return [
+                'deposit_id' => 'required|integer',
+                'collection_id' => 'required|integer',
+                'orseries_id' => 'required|integer',
+                'payment_id' => 'required|integer',
+                'customer_id' => 'required|integer',
+                'items' => 'required|array|min:1',
+                'items.*.name' => 'required',
+                'items.*.amount' => ['required',new NotZeroPeso],
             ];
         }else{
             return [];

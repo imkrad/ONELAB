@@ -17,4 +17,14 @@ class FinanceDeposit extends Model
     {
         return $this->belongsTo('App\Models\ListDropdown', 'deposit_id', 'id');
     }
+
+    public function setTotalAttribute($value)
+    {
+        $this->attributes['total'] = trim(str_replace(',','',$value),'₱');
+    }
+
+    public function getTotalAttribute($value)
+    {
+        return '₱'.number_format($value,2,'.',',');
+    }
 }

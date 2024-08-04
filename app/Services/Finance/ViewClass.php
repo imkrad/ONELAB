@@ -119,7 +119,13 @@ class ViewClass
     }
 
     public function ornumbers($request){
-        $receipt = FinanceReceipt::where('deposit_id',$request->deposit_id)->where('orseries_id',$request->orseries_id)->where('is_deposit',0)->pluck('number');
+        $receipt = FinanceReceipt::with('op')->where('deposit_id',$request->deposit_id)->where('orseries_id',$request->orseries_id)->where('is_deposited',0)->get()->map(function ($item) {
+            return [
+                'value' => $item->number,
+                'name' => $item->number,
+                'amount' => $item->op->total,
+            ];
+        });
         return $receipt;
     }
 }

@@ -87,7 +87,7 @@ class FinanceController extends Controller
         }
     }
 
-    public function store(Request $request){
+    public function store(FinanceRequest $request){
         $result = $this->handleTransaction(function () use ($request) {
             switch($request->option){
                 case 'collection':
@@ -110,6 +110,9 @@ class FinanceController extends Controller
                 break;
                 case 'receipt_nonlab':
                     return $this->save->receipt_nonlab($request);
+                break;
+                case 'deposit':
+                    return $this->save->deposit($request);
                 break;
             }
         });

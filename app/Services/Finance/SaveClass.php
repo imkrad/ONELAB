@@ -10,6 +10,7 @@ use App\Models\ListDropdown;
 use App\Models\FinanceOp;
 use App\Models\FinanceItem;
 use App\Models\FinanceName;
+use App\Models\FinanceDeposit;
 use App\Models\FinanceOpitem;
 use App\Models\FinanceReceipt;
 use App\Models\FinanceOrseries;
@@ -342,6 +343,24 @@ class SaveClass
             'data' => new DefaultResource($data),
             'message' => 'Orseries creation was successful!', 
             'info' => "You've successfully created a orseries."
+        ];
+    }
+
+    public function deposit($request){
+        $data = FinanceDeposit::create(array_merge($request->all(),[
+            'start' => $request->start['value'],
+            'end' => $request->end['value'],
+            'created_by' => \Auth::user()->id,
+            'laboratory_id' => \Auth::user()->userrole->laboratory_id
+        ]));
+        if($data){
+            $receipts = FinanceReceipt::whereBetween('number',[$request->start['value'],$request->end['value']])->update(['is_deposited' => 1]);
+        }
+           
+        return [
+            'data' => new DefaultResource($data),
+            'message' => 'Deposit creation was successful!', 
+            'info' => "You've successfully created a deposit."
         ];
     }
 
