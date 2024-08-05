@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\Dashboard\CroClass;
 use App\Services\Dashboard\FinanceClass;
 
 class DashboardController extends Controller
 {
-    public function __construct(FinanceClass $finance){
+    public function __construct(FinanceClass $finance, CroClass $cro){
         $this->finance = $finance;
+        $this->cro = $cro;
     }
 
     public function index(Request $request){
@@ -25,8 +27,17 @@ class DashboardController extends Controller
                 return inertia('Modules/Executive/Dashboard/Index');
             }else{
                 $role = (\Auth::user()->userrole) ? \Auth::user()->userrole->role->name : null;
-
                 switch($role){
+                    case 'Customer Relation Officer':
+                        return inertia('Modules/Laboratory/Dashboard/CRO/Index',[
+                            'dropdowns' => [
+                                'info' => $this->cro->info($request),
+                                'counts' => $this->cro->counts($request),
+                                'reminders' => $this->cro->reminders($request),
+                                'statuses' => $this->cro->statuses($request)
+                            ]
+                        ]);
+                    break;
                     case 'Cashier':
                         return inertia('Modules/Finance/Dashboard/Cashier/Index',[
                             'dropdowns' => [

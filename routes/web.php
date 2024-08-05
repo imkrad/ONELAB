@@ -24,6 +24,7 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
     Route::resource('/analyses', App\Http\Controllers\Laboratory\AnalysisController::class);
     Route::resource('/csf', App\Http\Controllers\Laboratory\CsfController::class);
     Route::resource('/calendar', App\Http\Controllers\Laboratory\CalendarController::class);
+    Route::resource('/targets', App\Http\Controllers\Laboratory\TargetController::class);
 
     Route::prefix('insights')->group(function(){
         Route::controller(App\Http\Controllers\Laboratory\InsightController::class)->group(function () {

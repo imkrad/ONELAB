@@ -29,7 +29,7 @@ class HandleInertiaRequests extends Middleware
         foreach($lists as $list){
             $submenus = [];
             if($list['has_child']){
-                $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->get();
+                $subs = ListMenu::where('is_active',1)->where('group',$list['name'])->orderBy('order','ASC')->get();
                 foreach($subs as $menu){
                     $submenus[] = $menu;
                 }
