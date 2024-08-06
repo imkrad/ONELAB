@@ -1,22 +1,28 @@
 <template>
-    <b-modal v-model="showModal" style="--vz-modal-width: 700px;" header-class="p-3 bg-light" title="Set Targets" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
-        <form class="customform">
-            <BRow class="g-3">
-                <BCol lg="12">
-                    <InputLabel value="Year" :message="form.errors.year"/>
-                    <TextInput v-model="form.year" :value="new Date().getFullYear()" v-maska data-maska="####" type="text" class="form-control" @input="handleInput('year')" :light="true"/>
-                </BCol>
-                <BCol lg="12" class="mt-n2"><hr class="text-muted"/></BCol>
-            </BRow>
-            <BRow class="g-1" v-for="(list,index) in form.items" v-bind:key="index">
-                <BCol lg="9">
-                    <TextInput v-model="list.name" type="text" class="form-control" :readonly="true" @input="handleInput('date')" :light="true"/>
-                </BCol>
-                <BCol lg="3">
-                    <TextInput v-model="list.target" type="text" v-maska data-maska="####" class="form-control" @input="handleInput('date')" :light="true"/>
-                </BCol>
-            </BRow>
-        </form>  
+    <b-modal v-model="showModal" style="--vz-modal-width: 500px;" header-class="p-3 bg-light" title="Set Targets" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
+        <div v-if="selected" >
+            <form class="customform" v-if="!selected.is_consolidated">
+                <BRow class="g-1" v-for="(list,index) in selected.breakdowns" v-bind:key="index">
+                    <BCol lg="8">
+                        <TextInput v-model="list.type.name" type="text" class="form-control" :readonly="true" @input="handleInput('date')" :light="true"/>
+                    </BCol>
+                    <BCol lg="4">
+                        <input v-if="list.is_amount == 1" type="text" class="form-control" v-money="money" v-model="list.count" style="min-height: 38.4px !important; background-color: #f5f6f7;" :class="{ 'is-invalid': form.errors['items.'+index+'.count'] }">
+                        <TextInput v-else v-model="list.count" type="text" v-maska data-maska="###########"  class="form-control" @input="handleInput('date')" :class="{ 'is-invalid': form.errors['items.'+index+'.count'] }" :light="true"/>
+                    </BCol>
+                </BRow>
+            </form>  
+            <form class="customform" v-else>
+                <BRow class="g-1" v-for="(list,index) in selected.breakdowns" v-bind:key="index">
+                    <BCol lg="8">
+                        <TextInput v-model="list.name" type="text" class="form-control" :readonly="true" @input="handleInput('date')" :light="true"/>
+                    </BCol>
+                    <BCol lg="4">
+                        <TextInput v-model="list.count" type="text" v-maska data-maska="#######"  class="form-control" :class="{ 'is-invalid': form.errors['items.'+index+'.count'] }" :light="true"/>
+                    </BCol>
+                </BRow>
+            </form>
+        </div>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
             <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Submit</b-button>
@@ -25,41 +31,42 @@
 </template>
 <script>
 import _ from 'lodash';
+import {VMoney} from 'v-money';
 import { vMaska } from "maska"
 import { useForm } from '@inertiajs/vue3';
 import Multiselect from "@vueform/multiselect";
 import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
-    directives: { maska: vMaska },
+    directives: { maska: vMaska, money: VMoney }, 
     components: { Multiselect, InputLabel, TextInput },
     data(){
         return {
             currentUrl: window.location.origin,
             form: useForm({
-                year: null,
-                items: [
-                    {name : 'Samples Received', target: 0, is_consolidated : 0},
-                    {name : 'Services Conducted', target: 0, is_consolidated : 0},
-                    {name : 'Customer Served', target: 0, is_consolidated : 0},
-                    {name : 'New Customer Served', target: 0, is_consolidated : 1},
-                    {name : 'Firms Served', target: 0, is_consolidated : 1},
-                    {name : 'Actual Fees Collected', target: 0, is_consolidated : 0},
-                    {name : 'Value of Assistance Rendered', target: 0, is_consolidated : 0},
-                    {name : 'New Services Offered', target: 0, is_consolidated : 0},
-                    {name : 'Weaned Out Services', target: 0, is_consolidated : 0}
-                ],
+                items: [],
                 option: 'target'
             }),
+            money: {
+                decimal: '.',
+                thousands: ',',
+                prefix: '₱',
+                precision: 2,
+                masked: false
+            },
+            selected: null,
             showModal: false,
         }
     },
     methods: { 
-        show(){
+        show(data){
+            this.form.clearErrors();
+            this.selected = data;
             this.showModal = true;
         },
         submit(){
-            this.form.post('/finance',{
+            this.form.items = this.selected.breakdowns;
+            this.form.post('/targets',{
                 preserveScroll: true,
                 onSuccess: (response) => {
                     this.$emit('update',true);

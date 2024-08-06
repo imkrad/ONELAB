@@ -11,6 +11,8 @@ class NotZeroPeso implements ValidationRule
     {
         if ($value === '₱0.00') {
             $fail("The {$attribute} must not be ₱0.00.");
+        }else if($value === '0' || $value === 0){
+            $fail("The {$attribute} must not be 0.");
         }
     }
 }

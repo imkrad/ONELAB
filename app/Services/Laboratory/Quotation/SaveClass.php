@@ -151,7 +151,8 @@ class SaveClass
                 'discount' => $request->discount,
                 'discount_id' => $request->discount_id,
                 'status_id' => 6,
-                'is_free' =>  (in_array($request->discount_id, [5, 6, 7])) ? 1 : 0
+                'is_free' =>  (in_array($request->discount_id, [5, 6, 7])) ? 1 : 0,
+                'paid_at' =>  (in_array($request->discount_id, [5, 6, 7])) ? now() : NULL,
             ]);
             $samples = QuotationSample::with('analyses')->where('quotation_id',$id)->get();
 

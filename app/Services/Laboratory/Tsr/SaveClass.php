@@ -29,7 +29,7 @@ class SaveClass
             'received_by' => \Auth::user()->id
         ]));
         
-        $payment = (in_array($request->discount_id, [5, 6, 7])) ? ['status_id' => 8,'is_free' => 1] : ['status_id' => 6];
+        $payment = (in_array($request->discount_id, [5, 6, 7])) ? ['status_id' => 8,'is_free' => 1,'paid_at' => now()] : ['status_id' => 6];
         $data->payment()->create(array_merge($request->all(),$payment));
 
         return [
