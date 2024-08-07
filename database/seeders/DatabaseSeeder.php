@@ -68,5 +68,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TestserviceMethodsTableSeeder::class);
         $this->call(TestservicesTableSeeder::class);
         $this->call(FinanceNamesTableSeeder::class);
+        $this->call(TargetsTableSeeder::class);
+        $this->call(TargetBreakdownsTableSeeder::class);
     }
 }

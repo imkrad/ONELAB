@@ -141,7 +141,7 @@ class CroClass
     }
 
     public function statuses(){
-        $data = ListStatus::whereIn('id',[1,2,3,4])
+        $data = ListStatus::whereIn('id',[1,2,3])
         ->withCount(['tsrs' => function ($query) {
             $query->where('laboratory_id',$this->laboratory);
         }])->get();

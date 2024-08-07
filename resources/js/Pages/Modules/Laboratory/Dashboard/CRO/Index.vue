@@ -3,10 +3,10 @@
     <PageHeader title="Dashboard" pageTitle="Menu" />
     <!-- style="height: calc(100vh - 200px); overflow: auto;" -->
     <b-row class="g-3">
-        <div class="col-12 mb-3">
+        <div class="col-12 mb-3 mt-2">
             <div class="d-flex flex-lg-row flex-column">
                 <div class="flex-grow-1">
-                    <h4 class="fs-16 mb-0">{{dropdowns.info.month}} Summary View</h4>
+                    <h4 class="fs-14 mb-0">{{dropdowns.info.month}} Summary View</h4>
                     <p class="text-muted mb-0">Here's what's happening with the laboratory for month of {{dropdowns.info.month}}.</p>
                 </div>
                 <div class="mt-3 mt-lg-0">
@@ -60,7 +60,7 @@
         </div>
         <div class="col-md-3 mt-n2">
             <div class="card">
-                <div class="card-body" style="height: calc(100vh - 375px); overflow: auto;">
+                <div class="card-body" style="height: calc(100vh - 365px); overflow: auto;">
                     <p class="text-muted text-uppercase fs-12 fw-medium mb-2">Reminders</p>
                     <b-list-group>
                         <BListGroupItem v-for="(list,index) in dropdowns.reminders" v-bind:key="index">
@@ -97,7 +97,7 @@
                       
                     </div>
                 </div> -->
-                <div class="card-body" style="height: calc(100vh - 375px); overflow: auto;">
+                <div class="card-body" style="height: calc(100vh - 365px); overflow: auto;">
                     
                    
                 </div>

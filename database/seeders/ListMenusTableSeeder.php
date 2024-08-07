@@ -15,7 +15,7 @@ class ListMenusTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_menus')->delete();
+        \DB::table('list_menus')->truncate();
         
         \DB::table('list_menus')->insert(array (
             0 => 
@@ -441,10 +441,10 @@ class ListMenusTableSeeder extends Seeder
             30 => 
             array (
                 'id' => 31,
-                'name' => 'Customers Served',
+                'name' => 'Dashboard',
                 'icon' => '',
-                'route' => '/targets/customers',
-                'path' => '/targets/customers',
+                'route' => '/targets',
+                'path' => '/targets',
                 'group' => 'Targets',
                 'module' => 'Laboratory',
                 'order' => 2,
@@ -455,10 +455,10 @@ class ListMenusTableSeeder extends Seeder
             31 => 
             array (
                 'id' => 32,
-                'name' => 'Samples Received',
+                'name' => 'Referral',
                 'icon' => '',
-                'route' => '/targets/samples',
-                'path' => '/targets/samples',
+                'route' => '/targets/referral',
+                'path' => '/targets/referral',
                 'group' => 'Targets',
                 'module' => 'Laboratory',
                 'order' => 3,
@@ -469,41 +469,13 @@ class ListMenusTableSeeder extends Seeder
             32 => 
             array (
                 'id' => 33,
-                'name' => 'Services Conducted',
+                'name' => 'PSTO',
                 'icon' => '',
-                'route' => '/targets/services',
-                'path' => '/targets/services',
+                'route' => '/targets/psto',
+                'path' => '/targets/psto',
                 'group' => 'Targets',
                 'module' => 'Laboratory',
                 'order' => 4,
-                'has_child' => 0,
-                'is_mother' => 0,
-                'is_active' => 1,
-            ),
-            33 => 
-            array (
-                'id' => 34,
-                'name' => 'Actual Fees Collected',
-                'icon' => '',
-                'route' => '/targets/fees',
-                'path' => '/targets/fees',
-                'group' => 'Targets',
-                'module' => 'Laboratory',
-                'order' => 5,
-                'has_child' => 0,
-                'is_mother' => 0,
-                'is_active' => 1,
-            ),
-            34 => 
-            array (
-                'id' => 35,
-                'name' => 'Dashboard',
-                'icon' => '',
-                'route' => '/targets',
-                'path' => '/targets',
-                'group' => 'Targets',
-                'module' => 'Laboratory',
-                'order' => 1,
                 'has_child' => 0,
                 'is_mother' => 0,
                 'is_active' => 1,

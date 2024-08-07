@@ -1,6 +1,6 @@
 <template>
     <PageHeader title="Targets" pageTitle="List" />
-    <b-row class="g-3">
+    <b-row class="g-3 mt-n4">
         <div class="col-md-12">
             <div class="row g-3">
                 <b-col lg="3" md="4" v-for="(item, index) of info.counts" :key="index">
@@ -21,7 +21,7 @@
                         </b-card-body>
                     </b-card>
                 </b-col>
-                <b-col lg="12" class="mt-0">
+                <b-col lg="12" class="mt-n2">
                     <BCard no-body>
                         <BCardHeader class="align-items-center d-flex">
                             <BCardTitle class="mb-0 flex-grow-1">{{new Date().getFullYear()}} Target vs Accomplishment</BCardTitle>
@@ -31,7 +31,7 @@
                                 </BButton>
                             </div>
                         </BCardHeader>
-                        <BCardBody style="height: calc(100vh - 385px); overflow: auto;">
+                        <BCardBody style="height: calc(100vh - 370px); overflow: auto;">
                             <!-- {{info.targets.kpis }} -->
                             <div class="table-responsive table-card">
                                 <table class="table align-middle table-bordered table-centered table-nowrap mb-3">
@@ -60,7 +60,7 @@
                                                 <BButton v-if="!list.breakdowns.every(item => item.is_set === 1)" @click="setTarget(list)" class="mt-n1 mb-n1" type="button" variant="primary" size="sm">
                                                     <i class="ri-add-circle-fill"></i>
                                                 </BButton>
-                                                <BButton v-else class="mt-n1 mb-n1" type="button" variant="light" size="sm">
+                                                <BButton v-else @click="openView(list)" class="mt-n1 mb-n1" type="button" variant="light" size="sm">
                                                     <i class="ri-eye-fill"></i>
                                                 </BButton>
                                             </td>
@@ -75,13 +75,15 @@
         </div>
     </b-row>
     <Target ref="target"/>
+    <View ref="view"/>
 </template>
 <script>
 import _ from 'lodash';
+import View from './Modals/View.vue';
 import Target from './Modals/Targets.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
-    components: { PageHeader, Target },
+    components: { PageHeader, Target, View },
     props: ['info'],
     data(){
         return {
@@ -112,6 +114,9 @@ export default {
         },
         percentage(data){
             return data.toFixed(2).replace(',', '.')+ '%';
+        },
+        openView(data){
+            this.$refs.view.show(data);
         }
     }
    

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Tsr;
+use App\Observers\TsrObserver;
 use App\Listeners\LoginFailed;
 use App\Listeners\LoginSuccessful;
 use Illuminate\Support\ServiceProvider;
@@ -28,5 +30,7 @@ class AppServiceProvider extends ServiceProvider
             LoginSuccessful::class,
             LoginFailed::class
         );
+
+        Tsr::observe(TsrObserver::class);
     }
 }

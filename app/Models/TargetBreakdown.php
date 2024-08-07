@@ -15,4 +15,9 @@ class TargetBreakdown extends Model
     {
         return $this->belongsTo('App\Models\ListLaboratory', 'laboratory_type', 'id');
     }
+
+    public function target()
+    {
+        return $this->belongsTo('App\Models\Target', 'target_id', 'id');
+    }
 }

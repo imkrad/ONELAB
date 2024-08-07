@@ -127,7 +127,6 @@ class SaveClass
                 'created_by' => \Auth::user()->id,
                 'laboratory_id' => \Auth::user()->userrole->laboratory_id
             ]));
-
             if($data){
                 $items = $request->selected['items'];
                 $op = FinanceOp::where('id',$request->selected['id'])->first();
@@ -218,6 +217,8 @@ class SaveClass
                         }else{
                             \DB::commit();  
                         }
+                    }else{
+                        \DB::rollback();
                     }
                 }else{
                     $data = 'error';

@@ -738,6 +738,96 @@ class CustomerNamesTableSeeder extends Seeder
                 'created_at' => '2024-07-30 19:16:01',
                 'updated_at' => '2024-07-30 19:16:01',
             ),
+            80 => 
+            array (
+                'id' => 84,
+                'name' => 'Pepsi-Cola Products Philippines, Inc.',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:12:24',
+                'updated_at' => '2024-08-07 08:12:24',
+            ),
+            81 => 
+            array (
+                'id' => 85,
+                'name' => 'Istasyong Pinoy Petroleum Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:15:37',
+                'updated_at' => '2024-08-07 08:15:37',
+            ),
+            82 => 
+            array (
+                'id' => 86,
+                'name' => 'Tropical Pure Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:17:35',
+                'updated_at' => '2024-08-07 08:17:35',
+            ),
+            83 => 
+            array (
+                'id' => 87,
+                'name' => 'Department of Trade and Industry',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:19:12',
+                'updated_at' => '2024-08-07 08:19:12',
+            ),
+            84 => 
+            array (
+                'id' => 88,
+                'name' => 'Cecile\'s Pharmacy',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:21:15',
+                'updated_at' => '2024-08-07 08:21:15',
+            ),
+            85 => 
+            array (
+                'id' => 89,
+                'name' => 'Infante Hospital Management Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:25:53',
+                'updated_at' => '2024-08-07 08:25:53',
+            ),
+            86 => 
+            array (
+                'id' => 90,
+                'name' => 'Minsu Oil Incorporated',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:30:38',
+                'updated_at' => '2024-08-07 08:30:38',
+            ),
+            87 => 
+            array (
+                'id' => 91,
+                'name' => 'Languyan Municipal Hospital',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:32:51',
+                'updated_at' => '2024-08-07 08:32:51',
+            ),
+            88 => 
+            array (
+                'id' => 92,
+                'name' => 'Pharmasa Drugstore',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:35:20',
+                'updated_at' => '2024-08-07 08:35:20',
+            ),
+            89 => 
+            array (
+                'id' => 93,
+                'name' => 'Jevelyn B. Rasay',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-07 08:37:53',
+                'updated_at' => '2024-08-07 08:37:53',
+            ),
         ));
 
         

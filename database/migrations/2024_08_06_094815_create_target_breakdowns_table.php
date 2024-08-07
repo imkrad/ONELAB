@@ -16,6 +16,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('count');
+            $table->integer('accom');
             $table->boolean('is_set')->default(0);
             $table->boolean('is_amount');
             $table->boolean('is_consolidated');

@@ -837,6 +837,105 @@ class CustomerContactsTableSeeder extends Seeder
                 'created_at' => '2024-07-30 19:16:01',
                 'updated_at' => '2024-07-30 19:16:01',
             ),
+            91 => 
+            array (
+                'id' => 92,
+                'email' => 'eyJpdiI6InJqTmpoQVNWeXBxRVZYRHpoUStVamc9PSIsInZhbHVlIjoia2lHei9iY0lMRG9ZUkpPSmp0ZncrN0NXVlpUanRyWDFHUXBBUlRUM2lmND0iLCJtYWMiOiJjNjJhOGY4MTQ1ODAxMWE0YzZhNWI5Y2I3MDE4ODI3MTA3NzYyZTc1MzY3N2ViNzBhN2FiZDU2NTNlNGI0MjcyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6ImpFRUgzYXE5R0VmZ3NTZFcyZkZGY0E9PSIsInZhbHVlIjoiNHVRcmFRaW5CcnpJOS9YNVBCUnRpQT09IiwibWFjIjoiMjExMjdkODIxMjZlZWI5ZWE5YjRkMTcwNWM0NTc2OTg1ODU1ZjRhNTA2YTcwZWRkODBmNGU0MjM4OWJlMWQ4YyIsInRhZyI6IiJ9',
+                'customer_id' => 93,
+                'created_at' => '2024-08-07 08:12:24',
+                'updated_at' => '2024-08-07 08:12:24',
+            ),
+            92 => 
+            array (
+                'id' => 93,
+                'email' => 'eyJpdiI6IjN0dlFhbzJlWG9rak1iK296SHFYWHc9PSIsInZhbHVlIjoiQ0hFcGs0MWtmblkwRnkrUGREdUc2ZWVic0Foem9BYVFuUVZSK1RPRFR3ST0iLCJtYWMiOiIzYzUwYjYzMWNlOTE5MTMyYjAwMmM5MWU5NjE5OTMyMTBkY2Q5YTU5NThiNDE4Y2EzMDYyYWUzNzI0NGFhYjM3IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6ImhLMmczekdFY2dHN2lxOHdaSFNNVUE9PSIsInZhbHVlIjoiWlRQeVpLWnBxTXE5Z3BLMGJNZUZyQT09IiwibWFjIjoiMjJmODRjMzA3ZjA1NWJkOGIwNTA2MWJkYmY4NDVlMTUzY2RlYjhjODk0NGZkOWYzY2M3ZGYwNjJmOGRkNDE1YyIsInRhZyI6IiJ9',
+                'customer_id' => 94,
+                'created_at' => '2024-08-07 08:15:37',
+                'updated_at' => '2024-08-07 08:15:37',
+            ),
+            93 => 
+            array (
+                'id' => 94,
+                'email' => 'eyJpdiI6Ik9KbEFvQThwK1V0WVJ5cVVUcGJRZXc9PSIsInZhbHVlIjoieWU5TFZIZ09CdUZ3L0JlOGFPaHpjRld1QlJkWWttbzZ6SnF6VytjVjNTZz0iLCJtYWMiOiI3Mzk4ZmEwZWRkMjc5YWIwNzBjNzdlYzQxNjg1N2M2MzczMTlhZjAxMjE5MmIzYTBlYTgxMWRlMjE4ZGFiNjkyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IkZpWVdnVGhXL2JmR0hZcHNFR3lLQkE9PSIsInZhbHVlIjoiOXdkcjRGa2RjaEtVNzlYTDNMbEY0UT09IiwibWFjIjoiOTcyZTg4YjYxZGYyNDc1ZDJhMjM5NTllNDhmNTMzMWNhNGM5NmI0YmMyYzQ0OTU2NGJmNTUwNjZhOWY0NzBmZiIsInRhZyI6IiJ9',
+                'customer_id' => 95,
+                'created_at' => '2024-08-07 08:17:35',
+                'updated_at' => '2024-08-07 08:17:35',
+            ),
+            94 => 
+            array (
+                'id' => 95,
+                'email' => 'eyJpdiI6IjJoYnhxQ1dlSGRZV1BLeWVscG5MR0E9PSIsInZhbHVlIjoieVB5Q3gyWXhWME9FZzB1OUJHU2xPWU9KTTdCQmVtdnlaYzEwendOeXdYVT0iLCJtYWMiOiIyYmZkZTIyZDc4MTgwMDY4MzAyNDI0Yjg3MjM4MTVmYTE3YWJkM2Y0MTI3NjYyMDAwOTU4YTZiNzRiYWJjZDY0IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6ImJBSGxyTWFBdE9VOFdJR2xjNU1FY3c9PSIsInZhbHVlIjoiRWUrck15cHpyemNLUHQ2NDVYU3JvQT09IiwibWFjIjoiZDYwNDgyNmM1YTM4ZTRhMDhjNWM4M2Q0MTNlYTI1NmUzMWQxZDlhMWFlZjI3OTlhOTAwYjg2ZjEwYTMzYzk0OCIsInRhZyI6IiJ9',
+                'customer_id' => 96,
+                'created_at' => '2024-08-07 08:19:12',
+                'updated_at' => '2024-08-07 08:19:12',
+            ),
+            95 => 
+            array (
+                'id' => 96,
+                'email' => 'eyJpdiI6ImF0bU1RcitXWU5qK3FycUtBRlAyQkE9PSIsInZhbHVlIjoicTRiVXFYYis2Y1hVSkVqczRTTlcyeGcvN1FDeTRGdUxOYVprV0F4b3J1ND0iLCJtYWMiOiI5ZThlMGJjYzVlZDA4ZGRmMGU2ZGZhMDIxOTBlMTU2NTFjNjM3YWYyODQ1NjMwM2IyNjMxYmVkNjRiNDk2M2EyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IjRGKzc3a1JhdUNBTU9zVUYzMWxPNmc9PSIsInZhbHVlIjoiRXdZNGhyS1h6WFAvTnNoWEh0TGliQT09IiwibWFjIjoiYjU0MmE4ZDgxMTMzNjI2NTc1OTMxNjkwZjdhODAzMTliMWViNTFkMWQ5YTQxNjFlZDkzNTZiNmFlZTkzYTZiOSIsInRhZyI6IiJ9',
+                'customer_id' => 97,
+                'created_at' => '2024-08-07 08:21:15',
+                'updated_at' => '2024-08-07 08:21:15',
+            ),
+            96 => 
+            array (
+                'id' => 97,
+                'email' => 'eyJpdiI6ImdoNVg4Uk5sVm1YV0dnZjZiZkZ5akE9PSIsInZhbHVlIjoiMlpWa09zd1M5dkFKL1h2RCtqNVZjVjJ6T3hNOFAxQUpzZlJFQ3RKd3drOD0iLCJtYWMiOiJjODA5ODNjY2M4NDZjZjA5NjNiYWViOWUzMWQ0MmRhYzQwOTIwODk4OTE0YWEyMDkwYTFiYzY3ZWZiNDAxMDcwIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IlYzY0ZOZllhYTZxN3FIaXBrYXcwY2c9PSIsInZhbHVlIjoiRUQ0R1k1bWdiQnd4STlyMUkwNjhyZz09IiwibWFjIjoiYTc3NzM3MTRiYzc1MjZjMGEwNWVjMzIyNmU2MzczYzA1ZmUwOTE0OGExZDBhNWQ1NjhkMmE0ZDYzYTUxYWViMiIsInRhZyI6IiJ9',
+                'customer_id' => 98,
+                'created_at' => '2024-08-07 08:22:37',
+                'updated_at' => '2024-08-07 08:22:37',
+            ),
+            97 => 
+            array (
+                'id' => 98,
+                'email' => 'eyJpdiI6IkplUlE1eU5nL3Z6aFo2TjMwdVhmb3c9PSIsInZhbHVlIjoiUjRncWFJU3F3a3RGT3FPNjd2dkFDaWJXZC9ZTms0R1lCaEpiVjBGZUV5bz0iLCJtYWMiOiJmM2JlNzEwNDcxMDZjODczNmY1ZGI0NzMxZmIxMjIzZGQwOGIwOTAwZDExNmZkZDBiNTcxMmYyYzVhOTkwNzgyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IlY1NDRrY0oxMm5ZaVBxMXRZKzJFbFE9PSIsInZhbHVlIjoidjlHbTQvV2xMbWU5ZjlaaHFzWXNhUT09IiwibWFjIjoiY2RkMWE0ZDBmOGY4ZDM3MzUxNGZkMTdjNTVjMjNiODlhNGUyZDZmNDQ4YmMyYWNhOTc3Y2Y2NDJjMGJlNDQ3MyIsInRhZyI6IiJ9',
+                'customer_id' => 99,
+                'created_at' => '2024-08-07 08:25:53',
+                'updated_at' => '2024-08-07 08:25:53',
+            ),
+            98 => 
+            array (
+                'id' => 99,
+                'email' => 'eyJpdiI6IlF3YWN6bUdaQ0JmbXZTbk8wV1k2Wmc9PSIsInZhbHVlIjoiTmJrbTJnMUxKWkZuejhaSUpTalJUUDdkMzhDLzEwanNtSXZ6TTF3VlpCND0iLCJtYWMiOiIxNDhlNDZlMGJhODBjMTM0NTU0YzE2MzVmN2U1NzZmNTAzMjg1ZDRkODY2ZDJlYWQwMjFlMWRmNTEwZWM2NWNkIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IkluWmQ4SksyazE1OGJ2NkQwSktWd3c9PSIsInZhbHVlIjoiUG9XVTZERWJPcHRQZlgyZDVuSUJldz09IiwibWFjIjoiOTM3Y2IwNTRmNjRjMDhlZjAyOWQ2YzQ0NWQ1MWI3ZmM4YWFkMzFiMjA3NmY1NzUwYjQxMzA5YzhkN2NiZmJkYyIsInRhZyI6IiJ9',
+                'customer_id' => 100,
+                'created_at' => '2024-08-07 08:30:38',
+                'updated_at' => '2024-08-07 08:30:38',
+            ),
+            99 => 
+            array (
+                'id' => 100,
+                'email' => 'eyJpdiI6IktJb3BQSzZFVE5URURsVFFuZFlCcVE9PSIsInZhbHVlIjoiUVhEbU5ST1FIbUxTbEJDdVhic3hyTFdUQ0E4T3V1aVBSZ2s1NU9BNjlNMD0iLCJtYWMiOiI2ODU4NmUxOTJlMTYwOGY1MzBlZjc0MjI2ODJlNDc4NjNjZDZlMzgwMTI0NTI3YTkzMWQ2NzA2NWUyMzYzOTY4IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6InlvTUlsQmdSUG10YTV5QVNzOFZPd1E9PSIsInZhbHVlIjoiQkUyU0RqRXZVckd0NFFZTXFIOWtEdz09IiwibWFjIjoiZmVjNGM0NWI4ODRlYmYyNGI0NDBlODIwYzk3NzI0OWMxZTFiOTg3YTQxMjk3ZWEwY2YzMzQ3YTcwNTM3OWFkMiIsInRhZyI6IiJ9',
+                'customer_id' => 101,
+                'created_at' => '2024-08-07 08:32:51',
+                'updated_at' => '2024-08-07 08:32:51',
+            ),
+            100 => 
+            array (
+                'id' => 101,
+                'email' => 'eyJpdiI6ImlaMmJnQ2wyZjYyVnZpWmV6MDdqM2c9PSIsInZhbHVlIjoiclp6bFhsdHZydGJFdzRLOEZjNmt1dlNIbzJaeTFOa2ZYS0lGaStLTTVVST0iLCJtYWMiOiIwZTJiZjFhNDg0ODI4YzEyYWJiZDZiYWIyNGJkYTNhNzc4ZWJkZjgzNjExNGM5YmU2NDhkYTc3YThjZjQzNzM1IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IlBKb2dJZDhGcWRmN25jTklyQzJkT2c9PSIsInZhbHVlIjoiTlZsdTM0b0VHMGlMdzV1Y3hzRTkvUT09IiwibWFjIjoiMjJlY2QwYzg0ZDAwZTA0OTJjMDYyYzdiYTY4ZTJhZTNmYjY4MmFkYTE2NzhkYzEwZWNhNWFiZjY4MTQ2Yzg5OSIsInRhZyI6IiJ9',
+                'customer_id' => 102,
+                'created_at' => '2024-08-07 08:35:20',
+                'updated_at' => '2024-08-07 08:35:20',
+            ),
+            101 => 
+            array (
+                'id' => 102,
+                'email' => 'eyJpdiI6ImovdDVzc21YQm1Wb04xN0dOaFFGcGc9PSIsInZhbHVlIjoiSjA3Q1d4VFY2TFBPbWRFQmRydnEzNmpwSS9QNnFjL2h0djZVQUdGbjk1UT0iLCJtYWMiOiI0MjJhZDdkZmJiZmEyNjkyOWUxYzQ5MmY2OTEwNjE4Nzc0YjAxZWYzYjQxNjI2Y2M1MDAzMGMxNGYzZGRkNzZhIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IkRQeUNzYnk0VXU4ZlVsNVVMNDJoalE9PSIsInZhbHVlIjoiLzBFU1F4ZVAvSU8rWlNxbCs1UnNiUT09IiwibWFjIjoiMWYzNWNjNTljNmRjMzY3MTlkN2E3MDBiM2M4NmNmODg3NWZjMzc5Nzg0NWMyOWM2YmNhOWRiOGQzZGRjMDljNyIsInRhZyI6IiJ9',
+                'customer_id' => 103,
+                'created_at' => '2024-08-07 08:37:53',
+                'updated_at' => '2024-08-07 08:37:53',
+            ),
         ));
 
         

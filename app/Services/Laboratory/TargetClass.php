@@ -24,7 +24,7 @@ class TargetClass
             ['name' => 'KPIs with below 50%','color' => 'bg-danger-subtle'],
             ['name' => 'KPIs with 50% to 99%','color' => 'bg-warning-subtle'],
             ['name' => 'KPIs with 100% and above','color' => 'bg-success-subtle'],
-            ['name' => 'Overall Accomplishment','color' => 'bg-primary-subtle']
+            ['name' => 'Overall Accomplishment','color' => 'bg-info-subtle']
         ];
     }
 
@@ -63,15 +63,6 @@ class TargetClass
                             'is_consolidated' => $kpi['is_consolidated'],
                             'is_amount' => $kpi['is_amount']
                         ]);
-                        if($breakdown){
-                            foreach($months as $month){
-                                $breakdown->months()->create([
-                                    'month' => $month,
-                                    'count' => 0,
-                                    'is_amount' => $kpi['is_amount']
-                                ]);
-                            }
-                        }
                     }
                 }else{
                     $breakdown = $data->breakdowns()->create([
@@ -160,6 +151,43 @@ class TargetClass
             } elseif ($percentage >= 100) {
                 $percentageCounts[2]++;
             }
+            $topNames = [];
+            foreach($items as $item){
+                $lab_id = $item['laboratory_type'];
+                $year = date('Y');
+        
+                switch($items->first()['name']){
+                    case 'Samples Received':
+                        $topNames[] = TsrSample::select('name', \DB::raw('COUNT(*) as count'))
+                        ->whereHas('tsr',function ($query) use ($lab_id) {
+                            $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$lab_id)->whereIn('status_id',[2,3,4]);
+                        })->whereYear('created_at',$year)->groupBy('name')->orderBy('count', 'desc')->limit(10)->get();
+                    break;
+                    case 'Services Conducted':
+                        $topNames[] = TsrAnalysis::with('testservice.testname')
+                        ->whereHas('sample',function ($query) use ($lab_id) {
+                            $query->whereHas('tsr',function ($query) use ($lab_id) {
+                                $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$lab_id)->whereIn('status_id',[2,3,4]);
+                            });
+                        })
+                        ->whereYear('created_at', $year)
+                        ->select('testservice_id')
+                        ->groupBy('testservice_id')
+                        ->orderByRaw('COUNT(*) DESC')
+                        ->limit(10)
+                        ->get()
+                        ->map(function ($item) {
+                            return [
+                                'name' => $item->testservice->testname->name, // Access the name via the relationship
+                                'count' => TsrAnalysis::where('testservice_id', $item->testservice_id)->count()
+                            ];
+                        });
+                    break;
+                    default:
+                     $topNames[]= null;
+                }
+                
+            }
 
             $result = [
                 'name' => $items->first()['name'],
@@ -170,6 +198,7 @@ class TargetClass
                 'is_amount' => $items->first()['is_amount'],
                 'breakdowns' => $items,
                 'months' => $monthly,
+                'tops' => $topNames
             ];
             $percentageCounts[3] =  number_format($percentageCounts[3] + $percentage,2);
             return $result;
