@@ -105,7 +105,7 @@ export default {
             this.fetch();
         }, 300),
         fetch(page_url){
-            page_url = page_url || '/services/testservices';
+            page_url = page_url || '/services';
             axios.get(page_url,{
                 params : {
                     keyword: this.filter.keyword,

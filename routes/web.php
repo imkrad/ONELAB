@@ -7,10 +7,6 @@ Route::get('/csf/survey', [App\Http\Controllers\Laboratory\CsfController::class,
 Route::post('register', [App\Http\Controllers\WelcomeController::class, 'register']);
 Route::get('new', [App\Http\Controllers\WelcomeController::class, 'new'])->name('new');
 
-Route::resource('/registration', App\Http\Controllers\RegistrationController::class);
-
-// Route::get('items', [App\Http\Controllers\WelcomeController::class, 'items']);
-
 Route::middleware(['2fa','auth','verified'])->group(function () {
     Route::resource('/profile', App\Http\Controllers\User\ProfileController::class);
 });
@@ -36,14 +32,11 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
         });
     });
 
-    Route::prefix('services')->group(function(){
-        Route::resource('/testservices', App\Http\Controllers\Laboratory\TestserviceController::class);
-        Route::resource('/import', App\Http\Controllers\Laboratory\ImportController::class);
-    }); 
+    Route::resource('/services', App\Http\Controllers\ServiceController::class);
+    Route::resource('/finance', App\Http\Controllers\FinanceController::class);
+    Route::resource('/inventory', App\Http\Controllers\InventoryController::class);
+    Route::resource('/chatbox', App\Http\Controllers\ChatboxController::class);
+    Route::resource('/executive', App\Http\Controllers\ExecutiveController::class);
 });
 
 require __DIR__.'/auth.php';
-require __DIR__.'/utility.php';
-require __DIR__.'/inventory.php';
-require __DIR__.'/finance.php';
-require __DIR__.'/executive.php';

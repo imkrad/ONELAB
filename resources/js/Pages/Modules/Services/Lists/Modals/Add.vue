@@ -50,7 +50,7 @@ export default {
             this.showModal = true;
         },
         submit(){
-            axios.post('/services/testservices', this.form)
+            axios.post('/services', this.form)
             .then((response) => {
                 this.$emit('selected',response.data);
                 this.hide();

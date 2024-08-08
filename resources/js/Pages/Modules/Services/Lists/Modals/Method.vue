@@ -12,7 +12,7 @@
                             placeholder="Select Method" ref="multiselectM"/>
                         </div>
                         <div class="flex-shrink-0">
-                            <b-button @click="openAdd(94,'Method')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
+                            <b-button @click="openAdd(28,'Method')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
                             <!-- :disabled="(methods.length === 0) ? false : true" -->
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             placeholder="Select Reference" ref="multiselectR"/>
                         </div>
                         <div class="flex-shrink-0">
-                            <b-button @click="openAdd(95,'Reference')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
+                            <b-button @click="openAdd(29,'Reference')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
                         </div>
                     </div>
                 </BCol>
@@ -86,15 +86,13 @@ export default {
             this.showModal = true;
         },
         submit(){
-            axios.post('/services/testservices', this.form)
+            axios.post('/services', this.form)
             .then((response) => {
-                console.log(response.data);
                 this.$emit('selected',response.data);
                 this.hide();
             }).catch(error => {
                 if (error.response.status === 422) {
                     this.errors = error.response.data.errors;
-                     console.log(this.errors);
                 }
             });
         },
@@ -103,7 +101,7 @@ export default {
         },
         openAdd(type,name){
             this.type = type;
-            const key = (type == 94) ? this.filter.method : this.filter.reference;
+            const key = (type == 28) ? this.filter.method : this.filter.reference;
             this.$refs.add.show(type,this.form.laboratory_type,name,key);
         },
         searchMethod: _.debounce(function(string) {
@@ -112,11 +110,11 @@ export default {
         }, 300),
         fetchMethod(code){
             this.sampletypes = [];
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'search',
                     laboratory_type: this.form.laboratory_type,
-                    type: 94,
+                    type: 28,
                     keyword: code
                 }
             })
@@ -131,11 +129,11 @@ export default {
         }, 300),
         fetchReference(code){
             this.sampletypes = [];
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'search',
                     laboratory_type: this.form.laboratory_type,
-                    type: 95,
+                    type: 29,
                     keyword: code
                 }
             })
@@ -145,7 +143,7 @@ export default {
             .catch(err => console.log(err));
         },
         set(data){
-            if(this.type == 94){
+            if(this.type == 28){
                 this.fetchMethod(data.name);
                 this.$refs.multiselectM.emitSelectedValues(data.value);
             }else{

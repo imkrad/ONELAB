@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Laboratory;
-
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\NameRequest;
-use App\Http\Controllers\Controller;
 use App\Traits\HandlesTransaction;
+use App\Http\Requests\NameRequest;
 use App\Services\Laboratory\DropdownClass;
 use App\Services\Laboratory\Testservice\SaveClass;
 use App\Services\Laboratory\Testservice\ViewClass;
 
-class TestserviceController extends Controller
+class ServiceController extends Controller
 {
     use HandlesTransaction;
 
@@ -22,8 +20,7 @@ class TestserviceController extends Controller
     }
 
     public function index(Request $request){
-        $option = $request->option;
-        switch($option){
+        switch($request->option){
             case 'lists':
                 return $this->view->lists($request);
             break;
@@ -36,13 +33,24 @@ class TestserviceController extends Controller
             case 'methods':
                 return $this->view->methods($request);
             break;
-            default : 
-            return inertia('Modules/Laboratory/Testservices/Index',[
-                'dropdowns' => [
-                    'laboratories' => $this->dropdown->laboratories(),
-                    'types' => $this->dropdown->laboratory_types()
-                ]
-            ]);
+            default:
+                return inertia('Modules/Services/Dashboard/Index'); 
+        }   
+    }
+
+    public function show($code){
+        switch($code){
+            case 'lists':
+                return inertia('Modules/Services/Lists/Index',[
+                    'dropdowns' => [
+                        'laboratories' => $this->dropdown->laboratories(),
+                        'types' => $this->dropdown->laboratory_types()
+                    ]
+                ]);
+            break;
+            case 'import':
+                return inertia('Modules/Services/Lists/Import');
+            break;
         }
     }
 
@@ -76,6 +84,12 @@ class TestserviceController extends Controller
             break;
             case 'method':
                 return $this->save->method($request);
+            break;
+            case 'preview':
+                return $this->save->preview($request);
+            break;
+            case 'upload':
+                return $this->save->upload($request);
             break;
         }
     }

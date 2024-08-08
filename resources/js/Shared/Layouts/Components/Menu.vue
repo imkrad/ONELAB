@@ -70,24 +70,48 @@
                 </li>
               </template> 
               <template v-else>
-                <li class="nav-item" v-for="(menu,index) in $page.props.menus.executive" v-bind:key="index">
-                    <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="{'active': $page.component.startsWith(menu.main.path) }">
+                <template v-if="checkUrl() == 'services'">
+                  <li class="menu-title">
+                    <span data-key="t-menu">Services</span>
+                </li>
+                <li class="nav-item" v-for="(menu,index) in $page.props.menus.services" v-bind:key="index">
+                    <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="($page.component.startsWith(menu.main.path)) ? 'active' : 'collapsed'" :aria-expanded="($page.component.startsWith(menu.main.route)) ? true : false">
                         <i :class="menu.main.icon"></i>
                         <span data-key="krad-dashboards">{{menu.main.name}}</span>
                     </Link>
-                    <Link v-else class="nav-link menu-link" :href="'#'+menu.main.name" :class="{'active': $page.component.startsWith(menu.main.path) }" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                    <Link v-else class="nav-link menu-link" :href="'#'+menu.main.name" :class="($page.component.startsWith(menu.main.path)) ? 'active' : ''" data-bs-toggle="collapse" role="button" :aria-expanded="($page.component.startsWith(menu.main.path)) ? true : false" aria-controls="sidebarAuth">
                         <i :class="menu.main.icon"></i>
                         <span data-key="krad-scholars">{{menu.main.name}}</span>
                     </Link>
-                    <div v-if="menu.main.has_child" class="collapse menu-dropdown" :id="menu.main.name">
+                    <div v-if="menu.main.has_child" :class="($page.component.startsWith(menu.main.path)) ? 'collapse show menu-dropdown' : 'collapse menu-dropdown'" :id="menu.main.name">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item" v-for="(sub,index) in menu.submenus" v-bind:key="index">
-                                <Link class="nav-link" :class="{'active': $page.url === sub.path }" :href="sub.route">{{sub.name}}</Link>
+                                <Link class="nav-link" :class="($page.url === sub.path) ? 'active' : '' " :href="sub.route">{{sub.name}}</Link>
                             </li>
                         </ul>
                     </div>
                 </li>
                 </template>
+                <template v-else>
+                  <li class="nav-item" v-for="(menu,index) in $page.props.menus.executive" v-bind:key="index">
+                      <Link v-if="!menu.main.has_child" class="nav-link menu-link" :href="menu.main.route" :class="{'active': $page.component.startsWith(menu.main.path) }">
+                          <i :class="menu.main.icon"></i>
+                          <span data-key="krad-dashboards">{{menu.main.name}}</span>
+                      </Link>
+                      <Link v-else class="nav-link menu-link" :href="'#'+menu.main.name" :class="{'active': $page.component.startsWith(menu.main.path) }" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+                          <i :class="menu.main.icon"></i>
+                          <span data-key="krad-scholars">{{menu.main.name}}</span>
+                      </Link>
+                      <div v-if="menu.main.has_child" class="collapse menu-dropdown" :id="menu.main.name">
+                          <ul class="nav nav-sm flex-column">
+                              <li class="nav-item" v-for="(sub,index) in menu.submenus" v-bind:key="index">
+                                  <Link class="nav-link" :class="{'active': $page.url === sub.path }" :href="sub.route">{{sub.name}}</Link>
+                              </li>
+                          </ul>
+                      </div>
+                  </li>
+                  </template>
+              </template>
             </ul>
         </template>
     </BContainer>

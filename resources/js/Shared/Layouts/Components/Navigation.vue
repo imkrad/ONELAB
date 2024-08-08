@@ -255,9 +255,9 @@ export default {
               </BRow>
               <BRow class="g-0">
                 <BCol>
-                  <BLink class="dropdown-icon-item" href="#!">
+                  <BLink class="dropdown-icon-item" @click="openInNewTab('/services')">
                     <img src="@assets/images/apps/testservices.png" alt="test" />
-                    <span>Testservices</span>
+                    <span>Services</span>
                   </BLink>
                 </BCol>
                 <BCol>

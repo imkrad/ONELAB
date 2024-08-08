@@ -14,12 +14,12 @@ use App\Models\{
     SchoolCampus,
     Laboratory,
     ListDiscount,
-    ListName,
-    ListTestservice,
+    TestserviceName,
+    Testservice,
     ListRole,
     InventorySupplier,
     Configuration,
-    ListService
+    TestserviceAddon
 };
 use App\Http\Resources\TestserviceResource;
 
@@ -211,17 +211,17 @@ class DropdownService
         $type = $request->type;
         $laboratory = $request->laboratory;
         $keyword = $request->keyword;
-        $data = ListName::where('name', 'LIKE', "%{$keyword}%")->where('type_id',$type)->where('laboratory_type',$laboratory)->where('is_active',1)->get()->map(function ($item) {
+        $data = TestserviceName::where('name', 'LIKE', "%{$keyword}%")->where('type_id',$type)->where('laboratory_type',$laboratory)->where('is_active',1)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'name' => $item->name,
-                'testnames' => ListTestservice::select('testname_id')->with('testname')->where('sampletype_id',$item->id)->distinct()->get()->map(function ($item) {
+                'testnames' => Testservice::select('testname_id')->with('testname')->where('sampletype_id',$item->id)->distinct()->get()->map(function ($item) {
                     return [ 
                         'value' => $item->testname->id,
                         'name' => $item->testname->name
                     ];
                 }),
-                'testservices' => TestserviceResource::collection(ListTestservice::with('sampletype','testname','method.reference','method.method')->where('sampletype_id',$item->id)->get())
+                'testservices' => TestserviceResource::collection(Testservice::with('sampletype','testname','method.reference','method.method')->where('sampletype_id',$item->id)->get())
             ];
         });
         return $data;
@@ -269,7 +269,7 @@ class DropdownService
     }
 
     public function services(){
-        $data = ListService::get()->map(function ($item) {
+        $data = TestserviceAddon::get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'label' => $item->name.' ('.$item->description.')',

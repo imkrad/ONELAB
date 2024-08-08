@@ -62,7 +62,7 @@ export default {
             data.append('import_file', this.entry[0]);
             data.append('option', 'preview');
 
-            axios.post(this.currentUrl + '/services/import', data)
+            axios.post(this.currentUrl + '/services', data)
             .then(response => {
                 this.users = response.data;
                 this.isLoading = false;
@@ -79,7 +79,7 @@ export default {
             this.isLoading = true;
             this.qualifiers = this.users;
 
-            axios.post(this.currentUrl + '/services/import', {
+            axios.post(this.currentUrl + '/services', {
                 lists: this.qualifiers,
                 option: 'upload'
             })

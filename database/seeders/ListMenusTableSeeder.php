@@ -15,7 +15,7 @@ class ListMenusTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_menus')->truncate();
+        \DB::table('list_menus')->delete();
         
         \DB::table('list_menus')->insert(array (
             0 => 
@@ -478,6 +478,48 @@ class ListMenusTableSeeder extends Seeder
                 'order' => 4,
                 'has_child' => 0,
                 'is_mother' => 0,
+                'is_active' => 1,
+            ),
+            33 => 
+            array (
+                'id' => 36,
+                'name' => 'Dashboard',
+                'icon' => 'ri-apps-line',
+                'route' => '/services',
+                'path' => 'Modules/Services/Dashboard',
+                'group' => 'Menu',
+                'module' => 'Services',
+                'order' => 1,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            34 => 
+            array (
+                'id' => 37,
+                'name' => 'Lists',
+                'icon' => 'ri-list-check',
+                'route' => '/services/lists',
+                'path' => 'Modules/Services/Lists',
+                'group' => 'Menu',
+                'module' => 'Services',
+                'order' => 2,
+                'has_child' => 0,
+                'is_mother' => 1,
+                'is_active' => 1,
+            ),
+            35 => 
+            array (
+                'id' => 38,
+                'name' => 'Import',
+                'icon' => 'ri-upload-cloud-fill',
+                'route' => '/services/import',
+                'path' => 'Modules/Services/Import',
+                'group' => 'Menu',
+                'module' => 'Services',
+                'order' => 3,
+                'has_child' => 0,
+                'is_mother' => 1,
                 'is_active' => 1,
             ),
         ));

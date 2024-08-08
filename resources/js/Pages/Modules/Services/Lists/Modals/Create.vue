@@ -3,7 +3,12 @@
             
         <form class="customform">
             <BRow>
-                <BCol lg="12" class="mt-1 mb-1">
+                <BCol lg="6" class="mt-1 mb-1">
+                    <InputLabel for="classification_id" value="Laboratory Type" :message="form.errors.laboratory_type"/>
+                    <Multiselect :options="dropdowns.laboratories" :searchable="true" v-model="form.laboratory_id" :message="form.errors.laboratory_tid" placeholder="Select Laboratory" ref="multiselect1"/>
+                    <InputError :message="form.errors.laboratory_id" />
+                </BCol>
+                <BCol lg="6" class="mt-1 mb-1">
                     <InputLabel for="classification_id" value="Laboratory Type" :message="form.errors.laboratory_type"/>
                     <Multiselect :options="dropdowns.types" :searchable="true" v-model="form.laboratory_type" :message="form.errors.laboratory_type" placeholder="Select Laboratory type" ref="multiselect1"/>
                     <InputError :message="form.errors.laboratory_type" />
@@ -18,7 +23,7 @@
                             placeholder="Select Sample type" ref="multiselectS"/>
                         </div>
                         <div class="flex-shrink-0">
-                            <b-button @click="openAdd(96,'Sample Type')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1" :disabled="(form.laboratory_type && sampletypes.length === 0) ? false : true"><i class="ri-add-circle-fill"></i></b-button>
+                            <b-button @click="openAdd(30,'Sample Type')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1" :disabled="(form.laboratory_type && sampletypes.length === 0) ? false : true"><i class="ri-add-circle-fill"></i></b-button>
                         </div>
                     </div>
                 </BCol>
@@ -32,7 +37,7 @@
                             placeholder="Select Test name" ref="multiselectT"/>
                         </div>
                         <div class="flex-shrink-0">
-                            <b-button @click="openAdd(97,'Test Name')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1" :disabled="(form.laboratory_type && testnames.length === 0) ? false : true"><i class="ri-add-circle-fill"></i></b-button>
+                            <b-button @click="openAdd(31,'Test Name')" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1" :disabled="(form.laboratory_type && testnames.length === 0) ? false : true"><i class="ri-add-circle-fill"></i></b-button>
                         </div>
                     </div>
                 </BCol>
@@ -104,6 +109,7 @@ export default {
             currentUrl: window.location.origin,
             form: useForm({
                 id: null,
+                laboratory_id: null,
                 laboratory_type: null,
                 sampletype_id: null,
                 testname_id: null,
@@ -141,7 +147,7 @@ export default {
             this.showModal = true;
         }, 
         submit(){
-            this.form.post('/services/testservices',{
+            this.form.post('/services',{
                 preserveScroll: true,
                 onSuccess: (response) => {
                     this.$emit('message',true);
@@ -155,11 +161,11 @@ export default {
         }, 300),
         fetchSample(code){
             this.sampletypes = [];
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'search',
                     laboratory_type: this.form.laboratory_type,
-                    type: 96,
+                    type: 30,
                     keyword: code
                 }
             })
@@ -173,11 +179,11 @@ export default {
             this.filter.testname = string;
         }, 300),
         fetchTest(code){
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'search',
                     laboratory_type: this.form.laboratory_type,
-                    type: 97,
+                    type: 31,
                     keyword: code
                 }
             })
@@ -190,7 +196,7 @@ export default {
             this.fetchMethod(string);
         }, 300),
         fetchMethod(code){
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'methods',
                     count: 5,
@@ -204,10 +210,10 @@ export default {
             .catch(err => console.log(err));
         },
         set(data){
-            if(this.type === 96){
+            if(this.type === 30){
                 this.fetchSample(data.name);
                 this.$refs.multiselectS.emitSelectedValues(data.value);
-            }else if(this.type === 97){
+            }else if(this.type === 31){
                 this.fetchTest(data.name);
                 this.$refs.multiselectT.emitSelectedValues(data.value);
             }
@@ -217,7 +223,7 @@ export default {
         },
         openAdd(type,name){
             this.type = type;
-            const key = (type == 96) ? this.filter.sampletype : this.filter.testname;
+            const key = (type == 30) ? this.filter.sampletype : this.filter.testname;
             this.$refs.add.show(type,this.form.laboratory_type,name,key);
         },
         openMethod(){

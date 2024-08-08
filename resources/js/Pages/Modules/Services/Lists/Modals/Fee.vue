@@ -65,7 +65,7 @@ export default {
             this.form.fee = val;
         },
         submit(){
-            this.form.post('/services/testservices',{
+            this.form.post('/services',{
                 preserveScroll: true,
                 onSuccess: (response) => {
                     this.hide();
