@@ -26,7 +26,18 @@ class ViewClass
             ->when($request->laboratory, function ($query, $laboratory) {
                 $query->where('laboratory_type',$laboratory);
             })
-            ->with('fee')
+            ->when($request->keyword, function ($query, $keyword) {
+                $query->whereHas('sampletype', function ($query) use ($keyword){
+                    $query->where('name', 'LIKE', "%{$keyword}%");
+                })->orWhereHas('testname', function ($query) use ($keyword){
+                    $query->where('name', 'LIKE', "%{$keyword}%");
+                })->orWhereHas('method', function ($query) use ($keyword){
+                    $query->whereHas('method', function ($query) use ($keyword){
+                        $query->where('name', 'LIKE', "%{$keyword}%");
+                    });
+                });
+            })
+            ->with('fees')
             ->with('sampletype','testname','laboratory.member','laboratory.address.region','type')
             ->with('method.method','method.reference')
             ->orderBy('created_at','DESC')

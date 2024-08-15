@@ -70,5 +70,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FinanceNamesTableSeeder::class);
         $this->call(TargetsTableSeeder::class);
         $this->call(TargetBreakdownsTableSeeder::class);
+        $this->call(TestserviceAddonsTableSeeder::class);
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Customer;
 use App\Models\Address;
 use App\Models\Wallet;
 use App\Models\ListDropdown;
+use App\Models\ListIndustry;
 use App\Models\LocationProvince;
 use App\Http\Resources\DefaultResource;
 
@@ -48,9 +49,8 @@ class CustomerClass
 
     public function industry($request){
         $sort = ($request->sort) ? $request->sort : 'desc';
-        $query = ListDropdown::query();
-        $query->where('classification','Bussiness Nature')
-        ->withCount(['customer_industry' => function ($query) {
+        $query = ListIndustry::query();
+        $query->withCount(['customer_industry' => function ($query) {
             $query->where('laboratory_id', $this->laboratory);
         }])
         ->orderBy('customer_industry_count', $sort);

@@ -780,7 +780,7 @@ class TestserviceNamesTableSeeder extends Seeder
             69 => 
             array (
                 'id' => 70,
-                'name' => 'Philippine National St&ard',
+                'name' => 'Philippine National Standard',
                 'short' => NULL,
                 'type_id' => 29,
                 'laboratory_type' => 1,
@@ -2397,7 +2397,7 @@ class TestserviceNamesTableSeeder extends Seeder
             216 => 
             array (
                 'id' => 217,
-                'name' => 'St&ard Methods for the Examination of Water & Wastewater',
+                'name' => 'Standard Methods for the Examination of Water & Wastewater',
                 'short' => NULL,
                 'type_id' => 29,
                 'laboratory_type' => 1,
@@ -2431,7 +2431,7 @@ class TestserviceNamesTableSeeder extends Seeder
             array (
                 'id' => 220,
                 'name' => 'Liquid-Liquid, Partition-Gravimetric Method',
-                'short' => 'St&ard Methd 5520 B',
+                'short' => 'Standard Methd 5520 B',
                 'type_id' => 28,
                 'laboratory_type' => 1,
                 'is_active' => 1,
@@ -3959,7 +3959,7 @@ class TestserviceNamesTableSeeder extends Seeder
             358 => 
             array (
                 'id' => 359,
-            'name' => 'Test Weight / Mass St&ard (Other than stainless steel)',
+            'name' => 'Test Weight / Mass Standard (Other than stainless steel)',
                 'short' => NULL,
                 'type_id' => 30,
                 'laboratory_type' => 3,
@@ -4014,7 +4014,7 @@ class TestserviceNamesTableSeeder extends Seeder
             363 => 
             array (
                 'id' => 364,
-            'name' => 'Test Weight / Mass St&ard (Stainless Steel)',
+            'name' => 'Test Weight / Mass Standard (Stainless Steel)',
                 'short' => NULL,
                 'type_id' => 30,
                 'laboratory_type' => 3,
@@ -4740,7 +4740,7 @@ class TestserviceNamesTableSeeder extends Seeder
             429 => 
             array (
                 'id' => 430,
-                'name' => 'St&ard Methods for the Examination of Water & Wastewater',
+                'name' => 'Standard Methods for the Examination of Water & Wastewater',
                 'short' => NULL,
                 'type_id' => 29,
                 'laboratory_type' => 2,

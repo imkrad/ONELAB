@@ -54,7 +54,7 @@
                                 <i class="ri-eye-fill align-bottom"></i>
                             </b-button>
                         </Link> -->
-                        <b-button @click="openFee(list.id,list.fee)" variant="soft-warning" class="me-1" v-b-tooltip.hover title="Add Fee" size="sm">
+                        <b-button @click="openFee(list.id,list.fees,list.laboratory_id)" variant="soft-warning" class="me-1" v-b-tooltip.hover title="Add Fee" size="sm">
                             <i class="ri-add-circle-fill align-bottom"></i>
                         </b-button>
                         <b-button @click="openProfile(list,index)" variant="soft-info" v-b-tooltip.hover title="View" size="sm">
@@ -126,8 +126,8 @@ export default {
         openCreate(){
             this.$refs.create.show();
         },
-        openFee(id,fee){
-            this.$refs.fee.show(id,fee);
+        openFee(id,fee,lab){
+            this.$refs.fee.show(id,fee,lab);
         },
         openProfile(data){
             this.$refs.profile.show(data);

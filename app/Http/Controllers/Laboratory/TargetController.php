@@ -29,20 +29,7 @@ class TargetController extends Controller
     }
 
     public function show($code){
-        switch($code){
-            case 'customers':
-                return inertia('Modules/Laboratory/Targets/Customers/Index');
-            break;
-            case 'samples':
-                return inertia('Modules/Laboratory/Targets/Samples/Index');
-            break;
-            case 'services':
-                return inertia('Modules/Laboratory/Targets/Services/Index');
-            break;
-            case 'fees':
-                return inertia('Modules/Laboratory/Targets/Fees/Index');
-            break;
-        }
+        return $this->target->view($code);
     }
 
     public function store(TargetRequest $request){

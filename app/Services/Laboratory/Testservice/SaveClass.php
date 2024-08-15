@@ -43,7 +43,7 @@ class SaveClass
 
     public function fee($request){
         $data = Testservice::findOrFail($request->id);
-        $data->fee()->create(array_merge($request->all(),['laboratory_id' => $this->laboratory]));
+        $data->fees()->create($request->all());
         return [
             'data' => $data,
             'message' => 'Additional fee added was successful!', 

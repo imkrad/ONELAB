@@ -151,6 +151,43 @@ class TargetClass
             } elseif ($percentage >= 100) {
                 $percentageCounts[2]++;
             }
+            $topNames = [];
+            foreach($items as $item){
+                $lab_id = $item['laboratory_type'];
+                $year = date('Y');
+        
+                switch($items->first()['name']){
+                    case 'Samples Received':
+                        $topNames[] = TsrSample::select('name', \DB::raw('COUNT(*) as count'))
+                        ->whereHas('tsr',function ($query) use ($lab_id) {
+                            $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$lab_id)->whereIn('status_id',[2,3,4]);
+                        })->whereYear('created_at',$year)->groupBy('name')->orderBy('count', 'desc')->limit(10)->get();
+                    break;
+                    case 'Services Conducted':
+                        $topNames[] = TsrAnalysis::with('testservice.testname')
+                        ->whereHas('sample',function ($query) use ($lab_id) {
+                            $query->whereHas('tsr',function ($query) use ($lab_id) {
+                                $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$lab_id)->whereIn('status_id',[2,3,4]);
+                            });
+                        })
+                        ->whereYear('created_at', $year)
+                        ->select('testservice_id')
+                        ->groupBy('testservice_id')
+                        ->orderByRaw('COUNT(*) DESC')
+                        ->limit(10)
+                        ->get()
+                        ->map(function ($item) {
+                            return [
+                                'name' => $item->testservice->testname->name, // Access the name via the relationship
+                                'count' => TsrAnalysis::where('testservice_id', $item->testservice_id)->count()
+                            ];
+                        });
+                    break;
+                    default:
+                     $topNames[]= null;
+                }
+                
+            }
 
             $result = [
                 'name' => $items->first()['name'],
@@ -161,6 +198,7 @@ class TargetClass
                 'is_amount' => $items->first()['is_amount'],
                 'breakdowns' => $items,
                 'months' => $monthly,
+                'tops' => $topNames
             ];
             $percentageCounts[3] =  number_format($percentageCounts[3] + $percentage,2);
             return $result;
@@ -203,69 +241,13 @@ class TargetClass
     }
 
     public function view($code){
+        dd('wew');
         $year = date('Y');
-        $code = ucwords($code);
-        $data = Target::withWhereHas('breakdowns', function ($query) use ($code){
-            $query->with('type')->where('name',$code);
+        $data = Target::with('breakdowns.type')->whereHas('breakdowns',function ($query) use ($code) {
+            $query->where('name',ucwords($code));
         })
         ->where('year',$year)->where('laboratory_id',$this->laboratory)->first();
-        $breakdowns = $data->breakdowns;
-
-        $grouped = $breakdowns->groupBy('name')->map(function ($items){
-            $target = $items->sum('count');
-            $total = $items->sum('accom');
-            $percentage = ($target > 0) ? ($total / $target) * 100 : 0;
-
-            $topNames = [];
-            foreach($items as $item){
-                $lab_id = $item['laboratory_type'];
-                $year = date('Y');
-        
-                switch($items->first()['name']){
-                    case 'Samples Received':
-                        $topNames[] = TsrSample::select('name', \DB::raw('COUNT(*) as count'))
-                        ->whereHas('tsr',function ($query) use ($lab_id) {
-                            $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$lab_id)->whereIn('status_id',[2,3,4]);
-                        })->whereYear('created_at',$year)->groupBy('name')->orderBy('count', 'desc')->limit(10)->get();
-                    break;
-                    case 'Services Conducted':
-                        $topNames[] = TsrAnalysis::with('testservice.testname')
-                        ->whereHas('sample',function ($query) use ($lab_id) {
-                            $query->whereHas('tsr',function ($query) use ($lab_id) {
-                                $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$lab_id)->whereIn('status_id',[2,3,4]);
-                            });
-                        })
-                        ->whereYear('created_at', $year)
-                        ->select('testservice_id')
-                        ->groupBy('testservice_id')
-                        ->orderByRaw('COUNT(*) DESC')
-                        ->limit(10)
-                        ->get()
-                        ->map(function ($item) {
-                            return [
-                                'name' => $item->testservice->testname->name, // Access the name via the relationship
-                                'count' => TsrAnalysis::where('testservice_id', $item->testservice_id)->count()
-                            ];
-                        });
-                    break;
-                    default:
-                     $topNames[]= null;
-                }
-            }
-
-            return [
-                'name' => $items->first()['name'],
-                'target' => $items->sum('count'),
-                'accom' => $items->sum('accom'),
-                'percentage' => $percentage,
-                'is_consolidated' => $items->first()['is_consolidated'],
-                'is_amount' => $items->first()['is_amount'],
-                'breakdowns' => $items,
-                'tops' => $topNames
-            ];
-        });
-        return inertia('Modules/Laboratory/Targets/View/Index',[
-            'selected' => $grouped[$code]
-        ]);
+       return $data;
+        return inertia('Modules/Laboratory/Targets/View/Index');
     }
 }

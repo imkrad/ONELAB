@@ -153,7 +153,7 @@ export default {
         }, 300),
         fetchSample(code){
             this.sampletypes = [];
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'search',
                     laboratory_type: this.form.laboratory_type,
@@ -167,7 +167,7 @@ export default {
             .catch(err => console.log(err));
         },
         fetchTest(code){
-            axios.get('/services/testservices',{
+            axios.get('/services',{
                 params: {
                     option: 'testservices',
                     laboratory_type: this.form.laboratory_type,

@@ -48,8 +48,8 @@ class Testservice extends Model
         return date('M d, Y g:i a', strtotime($value));
     }
 
-    public function fee()
+    public function fees()
     {
-        return $this->morphOne('App\Models\TestserviceAddon', 'typeable');
+        return $this->morphMany('App\Models\TestserviceAddon', 'typeable');
     }
 }

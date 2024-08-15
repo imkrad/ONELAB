@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\TsrSample;
 use App\Models\TsrPayment;
 use App\Models\ListDropdown;
+use App\Models\ListLaboratory;
 use App\Models\Configuration;
 use App\Http\Resources\DefaultResource;
 
@@ -19,7 +20,7 @@ class LaboratoryClass
     }
 
     public function total_request(){
-        return Tsr::where('laboratory_id',$this->laboratory)->where('status_id',4)->count();
+        return Tsr::where('laboratory_id',$this->laboratory)->whereIn('status_id',[3,4])->count();
     }
 
     public function total_earnings(){
@@ -69,10 +70,10 @@ class LaboratoryClass
         $year = $request->year;
         $month = $request->month;
   
-        $query = ListDropdown::query()->select('id','name');
+        $query = ListLaboratory::query()->select('id','name');
         $query->whereIn('id',$lab_id);
         $query->withCount(['tsrs' => function ($query) use ($year,$month){
-            $query->where('status_id', 4)->where('laboratory_id', $this->laboratory);
+            $query->whereIn('status_id', [3,4])->where('laboratory_id', $this->laboratory);
             ($year) ? $query->whereYear('created_at',$year) : '';
             ($month) ? $query->whereMonth('created_at',$month) : '';
         }])
@@ -87,13 +88,13 @@ class LaboratoryClass
         $year = $request->year;
         $month = $request->month;
 
-        $query = ListDropdown::query()->whereIn('list_dropdowns.id',$lab_id);
-        $query->select('list_dropdowns.id','list_dropdowns.name',\DB::raw('SUM(tsr_payments.total) as total'))
-        ->join('tsrs', 'list_dropdowns.id', '=', 'tsrs.laboratory_type')
+        $query = ListLaboratory::query()->whereIn('list_laboratories.id',$lab_id);
+        $query->select('list_laboratories.id','list_laboratories.name',\DB::raw('SUM(tsr_payments.total) as total'))
+        ->join('tsrs', 'list_laboratories.id', '=', 'tsrs.laboratory_type')
         ->join('tsr_payments', 'tsrs.id', '=', 'tsr_payments.tsr_id')
-        ->where('tsrs.status_id',4)
+        ->whereIn('tsrs.status_id',[3,4])
         ->where('tsrs.laboratory_id',$this->laboratory)
-        ->groupBy('list_dropdowns.id', 'list_dropdowns.name')
+        ->groupBy('list_laboratories.id', 'list_laboratories.name')
         ->orderBy('total',$sort);
         ($year) ? $query->whereYear('tsr_payments.paid_at', $year) : '';
         ($month) ? $query->whereMonth('tsr_payments.paid_at', $month) : '';
@@ -108,7 +109,7 @@ class LaboratoryClass
         $month = $request->month;
 
         foreach($lab_id as $id){
-            $lab = ListDropdown::where('id',$id)->first();
+            $lab = ListLaboratory::where('id',$id)->first();
             $count = TsrSample::whereHas('tsr',function ($query) use ($year,$month,$id) {
                 $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$id)->whereIn('status_id',[3,4]);
             })->count();

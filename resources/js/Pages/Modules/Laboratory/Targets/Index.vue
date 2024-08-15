@@ -60,9 +60,11 @@
                                                 <BButton v-if="!list.breakdowns.every(item => item.is_set === 1)" @click="setTarget(list)" class="mt-n1 mb-n1" type="button" variant="primary" size="sm">
                                                     <i class="ri-add-circle-fill"></i>
                                                 </BButton>
-                                                <BButton v-else @click="openView(list)" class="mt-n1 mb-n1" type="button" variant="light" size="sm">
-                                                    <i class="ri-eye-fill"></i>
-                                                </BButton>
+                                                <Link v-else :href="`/targets/${list.name.toLowerCase()}`">
+                                                    <BButton class="mt-n1 mb-n1" type="button" variant="light" size="sm">
+                                                        <i class="ri-eye-fill"></i>
+                                                    </BButton>
+                                                </Link>
                                             </td>
                                         </tr>
                                     </tbody>

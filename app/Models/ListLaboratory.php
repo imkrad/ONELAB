@@ -18,4 +18,9 @@ class ListLaboratory extends Model
     {
         return $this->morphMany('App\Models\ChatMessage', 'receivable');
     }
+
+    public function tsrs()
+    {
+        return $this->hasMany('App\Models\Tsr', 'laboratory_type');
+    }
 }

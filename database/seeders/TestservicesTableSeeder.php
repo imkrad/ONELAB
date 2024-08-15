@@ -21,10 +21,10 @@ class TestservicesTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'laboratory_type' => 1,
                 'sampletype_id' => 1,
                 'testname_id' => 2,
                 'method_id' => 1,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -33,10 +33,10 @@ class TestservicesTableSeeder extends Seeder
             1 => 
             array (
                 'id' => 2,
-                'laboratory_type' => 1,
                 'sampletype_id' => 1,
                 'testname_id' => 5,
                 'method_id' => 2,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -45,10 +45,10 @@ class TestservicesTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 8,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -57,10 +57,10 @@ class TestservicesTableSeeder extends Seeder
             3 => 
             array (
                 'id' => 4,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 10,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -69,10 +69,10 @@ class TestservicesTableSeeder extends Seeder
             4 => 
             array (
                 'id' => 5,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 2,
                 'method_id' => 4,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -81,10 +81,10 @@ class TestservicesTableSeeder extends Seeder
             5 => 
             array (
                 'id' => 6,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 12,
                 'method_id' => 5,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -93,10 +93,10 @@ class TestservicesTableSeeder extends Seeder
             6 => 
             array (
                 'id' => 7,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 14,
                 'method_id' => 6,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -105,10 +105,10 @@ class TestservicesTableSeeder extends Seeder
             7 => 
             array (
                 'id' => 8,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 16,
                 'method_id' => 7,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -117,10 +117,10 @@ class TestservicesTableSeeder extends Seeder
             8 => 
             array (
                 'id' => 9,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 18,
                 'method_id' => 8,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -129,10 +129,10 @@ class TestservicesTableSeeder extends Seeder
             9 => 
             array (
                 'id' => 10,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -141,10 +141,10 @@ class TestservicesTableSeeder extends Seeder
             10 => 
             array (
                 'id' => 11,
-                'laboratory_type' => 1,
                 'sampletype_id' => 7,
                 'testname_id' => 2,
                 'method_id' => 1,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -153,10 +153,10 @@ class TestservicesTableSeeder extends Seeder
             11 => 
             array (
                 'id' => 12,
-                'laboratory_type' => 1,
                 'sampletype_id' => 22,
                 'testname_id' => 16,
                 'method_id' => 10,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -165,10 +165,10 @@ class TestservicesTableSeeder extends Seeder
             12 => 
             array (
                 'id' => 13,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 25,
                 'method_id' => 11,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -177,10 +177,10 @@ class TestservicesTableSeeder extends Seeder
             13 => 
             array (
                 'id' => 14,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 18,
                 'method_id' => 8,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -189,10 +189,10 @@ class TestservicesTableSeeder extends Seeder
             14 => 
             array (
                 'id' => 15,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -201,10 +201,10 @@ class TestservicesTableSeeder extends Seeder
             15 => 
             array (
                 'id' => 16,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 27,
                 'method_id' => 12,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -213,10 +213,10 @@ class TestservicesTableSeeder extends Seeder
             16 => 
             array (
                 'id' => 17,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 29,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -225,10 +225,10 @@ class TestservicesTableSeeder extends Seeder
             17 => 
             array (
                 'id' => 18,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 31,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -237,10 +237,10 @@ class TestservicesTableSeeder extends Seeder
             18 => 
             array (
                 'id' => 19,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 32,
                 'method_id' => 14,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -249,10 +249,10 @@ class TestservicesTableSeeder extends Seeder
             19 => 
             array (
                 'id' => 20,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 34,
                 'method_id' => 15,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -261,10 +261,10 @@ class TestservicesTableSeeder extends Seeder
             20 => 
             array (
                 'id' => 21,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -273,10 +273,10 @@ class TestservicesTableSeeder extends Seeder
             21 => 
             array (
                 'id' => 22,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 38,
                 'method_id' => 17,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -285,10 +285,10 @@ class TestservicesTableSeeder extends Seeder
             22 => 
             array (
                 'id' => 23,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 40,
                 'method_id' => 18,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -297,10 +297,10 @@ class TestservicesTableSeeder extends Seeder
             23 => 
             array (
                 'id' => 24,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 42,
                 'method_id' => 19,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -309,10 +309,10 @@ class TestservicesTableSeeder extends Seeder
             24 => 
             array (
                 'id' => 25,
-                'laboratory_type' => 1,
                 'sampletype_id' => 24,
                 'testname_id' => 16,
                 'method_id' => 20,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -321,10 +321,10 @@ class TestservicesTableSeeder extends Seeder
             25 => 
             array (
                 'id' => 26,
-                'laboratory_type' => 1,
                 'sampletype_id' => 45,
                 'testname_id' => 42,
                 'method_id' => 21,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -333,10 +333,10 @@ class TestservicesTableSeeder extends Seeder
             26 => 
             array (
                 'id' => 27,
-                'laboratory_type' => 1,
                 'sampletype_id' => 45,
                 'testname_id' => 40,
                 'method_id' => 22,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -345,10 +345,10 @@ class TestservicesTableSeeder extends Seeder
             27 => 
             array (
                 'id' => 28,
-                'laboratory_type' => 1,
                 'sampletype_id' => 45,
                 'testname_id' => 16,
                 'method_id' => 23,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -357,10 +357,10 @@ class TestservicesTableSeeder extends Seeder
             28 => 
             array (
                 'id' => 29,
-                'laboratory_type' => 1,
                 'sampletype_id' => 50,
                 'testname_id' => 42,
                 'method_id' => 24,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -369,10 +369,10 @@ class TestservicesTableSeeder extends Seeder
             29 => 
             array (
                 'id' => 30,
-                'laboratory_type' => 1,
                 'sampletype_id' => 50,
                 'testname_id' => 40,
                 'method_id' => 25,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -381,10 +381,10 @@ class TestservicesTableSeeder extends Seeder
             30 => 
             array (
                 'id' => 31,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 31,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -393,10 +393,10 @@ class TestservicesTableSeeder extends Seeder
             31 => 
             array (
                 'id' => 32,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 29,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -405,10 +405,10 @@ class TestservicesTableSeeder extends Seeder
             32 => 
             array (
                 'id' => 33,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 25,
                 'method_id' => 11,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -417,10 +417,10 @@ class TestservicesTableSeeder extends Seeder
             33 => 
             array (
                 'id' => 34,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 54,
                 'method_id' => 26,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -429,10 +429,10 @@ class TestservicesTableSeeder extends Seeder
             34 => 
             array (
                 'id' => 35,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 27,
                 'method_id' => 27,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -441,10 +441,10 @@ class TestservicesTableSeeder extends Seeder
             35 => 
             array (
                 'id' => 36,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 18,
                 'method_id' => 8,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -453,10 +453,10 @@ class TestservicesTableSeeder extends Seeder
             36 => 
             array (
                 'id' => 37,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -465,10 +465,10 @@ class TestservicesTableSeeder extends Seeder
             37 => 
             array (
                 'id' => 38,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 29,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -477,10 +477,10 @@ class TestservicesTableSeeder extends Seeder
             38 => 
             array (
                 'id' => 39,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 31,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -489,10 +489,10 @@ class TestservicesTableSeeder extends Seeder
             39 => 
             array (
                 'id' => 40,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -501,10 +501,10 @@ class TestservicesTableSeeder extends Seeder
             40 => 
             array (
                 'id' => 41,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -513,10 +513,10 @@ class TestservicesTableSeeder extends Seeder
             41 => 
             array (
                 'id' => 42,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 32,
                 'method_id' => 14,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -525,10 +525,10 @@ class TestservicesTableSeeder extends Seeder
             42 => 
             array (
                 'id' => 43,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 34,
                 'method_id' => 15,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -537,10 +537,10 @@ class TestservicesTableSeeder extends Seeder
             43 => 
             array (
                 'id' => 44,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 40,
                 'method_id' => 29,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -549,10 +549,10 @@ class TestservicesTableSeeder extends Seeder
             44 => 
             array (
                 'id' => 45,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 16,
                 'method_id' => 20,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -561,10 +561,10 @@ class TestservicesTableSeeder extends Seeder
             45 => 
             array (
                 'id' => 46,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 42,
                 'method_id' => 30,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -573,10 +573,10 @@ class TestservicesTableSeeder extends Seeder
             46 => 
             array (
                 'id' => 47,
-                'laboratory_type' => 1,
                 'sampletype_id' => 53,
                 'testname_id' => 61,
                 'method_id' => 31,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -585,10 +585,10 @@ class TestservicesTableSeeder extends Seeder
             47 => 
             array (
                 'id' => 48,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 10,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -597,10 +597,10 @@ class TestservicesTableSeeder extends Seeder
             48 => 
             array (
                 'id' => 49,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 64,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -609,10 +609,10 @@ class TestservicesTableSeeder extends Seeder
             49 => 
             array (
                 'id' => 50,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 29,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -621,10 +621,10 @@ class TestservicesTableSeeder extends Seeder
             50 => 
             array (
                 'id' => 51,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 31,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -633,10 +633,10 @@ class TestservicesTableSeeder extends Seeder
             51 => 
             array (
                 'id' => 52,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 65,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -645,10 +645,10 @@ class TestservicesTableSeeder extends Seeder
             52 => 
             array (
                 'id' => 53,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 66,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -657,10 +657,10 @@ class TestservicesTableSeeder extends Seeder
             53 => 
             array (
                 'id' => 54,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 29,
                 'method_id' => 32,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -669,10 +669,10 @@ class TestservicesTableSeeder extends Seeder
             54 => 
             array (
                 'id' => 55,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 67,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -681,10 +681,10 @@ class TestservicesTableSeeder extends Seeder
             55 => 
             array (
                 'id' => 56,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 68,
                 'method_id' => 33,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -693,10 +693,10 @@ class TestservicesTableSeeder extends Seeder
             56 => 
             array (
                 'id' => 57,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 71,
                 'method_id' => 34,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -705,10 +705,10 @@ class TestservicesTableSeeder extends Seeder
             57 => 
             array (
                 'id' => 58,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 73,
                 'method_id' => 35,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -717,10 +717,10 @@ class TestservicesTableSeeder extends Seeder
             58 => 
             array (
                 'id' => 59,
-                'laboratory_type' => 1,
                 'sampletype_id' => 63,
                 'testname_id' => 75,
                 'method_id' => 36,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -729,10 +729,10 @@ class TestservicesTableSeeder extends Seeder
             59 => 
             array (
                 'id' => 60,
-                'laboratory_type' => 1,
                 'sampletype_id' => 77,
                 'testname_id' => 42,
                 'method_id' => 37,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -741,10 +741,10 @@ class TestservicesTableSeeder extends Seeder
             60 => 
             array (
                 'id' => 61,
-                'laboratory_type' => 1,
                 'sampletype_id' => 77,
                 'testname_id' => 42,
                 'method_id' => 38,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -753,10 +753,10 @@ class TestservicesTableSeeder extends Seeder
             61 => 
             array (
                 'id' => 62,
-                'laboratory_type' => 1,
                 'sampletype_id' => 81,
                 'testname_id' => 82,
                 'method_id' => 39,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -765,10 +765,10 @@ class TestservicesTableSeeder extends Seeder
             62 => 
             array (
                 'id' => 63,
-                'laboratory_type' => 1,
                 'sampletype_id' => 81,
                 'testname_id' => 42,
                 'method_id' => 40,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -777,10 +777,10 @@ class TestservicesTableSeeder extends Seeder
             63 => 
             array (
                 'id' => 64,
-                'laboratory_type' => 1,
                 'sampletype_id' => 81,
                 'testname_id' => 85,
                 'method_id' => 41,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -789,10 +789,10 @@ class TestservicesTableSeeder extends Seeder
             64 => 
             array (
                 'id' => 65,
-                'laboratory_type' => 1,
                 'sampletype_id' => 81,
                 'testname_id' => 87,
                 'method_id' => 42,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -801,10 +801,10 @@ class TestservicesTableSeeder extends Seeder
             65 => 
             array (
                 'id' => 66,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 90,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -813,10 +813,10 @@ class TestservicesTableSeeder extends Seeder
             66 => 
             array (
                 'id' => 67,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 57,
                 'method_id' => 43,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -825,10 +825,10 @@ class TestservicesTableSeeder extends Seeder
             67 => 
             array (
                 'id' => 68,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 92,
                 'method_id' => 44,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -837,10 +837,10 @@ class TestservicesTableSeeder extends Seeder
             68 => 
             array (
                 'id' => 69,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -849,10 +849,10 @@ class TestservicesTableSeeder extends Seeder
             69 => 
             array (
                 'id' => 70,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 34,
                 'method_id' => 45,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -861,10 +861,10 @@ class TestservicesTableSeeder extends Seeder
             70 => 
             array (
                 'id' => 71,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 40,
                 'method_id' => 46,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -873,10 +873,10 @@ class TestservicesTableSeeder extends Seeder
             71 => 
             array (
                 'id' => 72,
-                'laboratory_type' => 1,
                 'sampletype_id' => 89,
                 'testname_id' => 42,
                 'method_id' => 47,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -885,10 +885,10 @@ class TestservicesTableSeeder extends Seeder
             72 => 
             array (
                 'id' => 73,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 29,
                 'method_id' => 32,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -897,10 +897,10 @@ class TestservicesTableSeeder extends Seeder
             73 => 
             array (
                 'id' => 74,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 31,
                 'method_id' => 32,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -909,10 +909,10 @@ class TestservicesTableSeeder extends Seeder
             74 => 
             array (
                 'id' => 75,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 65,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -921,10 +921,10 @@ class TestservicesTableSeeder extends Seeder
             75 => 
             array (
                 'id' => 76,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 8,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -933,10 +933,10 @@ class TestservicesTableSeeder extends Seeder
             76 => 
             array (
                 'id' => 77,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 66,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -945,10 +945,10 @@ class TestservicesTableSeeder extends Seeder
             77 => 
             array (
                 'id' => 78,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 67,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -957,10 +957,10 @@ class TestservicesTableSeeder extends Seeder
             78 => 
             array (
                 'id' => 79,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 98,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -969,10 +969,10 @@ class TestservicesTableSeeder extends Seeder
             79 => 
             array (
                 'id' => 80,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 10,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -981,10 +981,10 @@ class TestservicesTableSeeder extends Seeder
             80 => 
             array (
                 'id' => 81,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 99,
                 'method_id' => 48,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -993,10 +993,10 @@ class TestservicesTableSeeder extends Seeder
             81 => 
             array (
                 'id' => 82,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 101,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1005,10 +1005,10 @@ class TestservicesTableSeeder extends Seeder
             82 => 
             array (
                 'id' => 83,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 42,
                 'method_id' => 49,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1017,10 +1017,10 @@ class TestservicesTableSeeder extends Seeder
             83 => 
             array (
                 'id' => 84,
-                'laboratory_type' => 1,
                 'sampletype_id' => 97,
                 'testname_id' => 16,
                 'method_id' => 50,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1029,10 +1029,10 @@ class TestservicesTableSeeder extends Seeder
             84 => 
             array (
                 'id' => 85,
-                'laboratory_type' => 1,
                 'sampletype_id' => 104,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1041,10 +1041,10 @@ class TestservicesTableSeeder extends Seeder
             85 => 
             array (
                 'id' => 86,
-                'laboratory_type' => 1,
                 'sampletype_id' => 104,
                 'testname_id' => 32,
                 'method_id' => 51,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1053,10 +1053,10 @@ class TestservicesTableSeeder extends Seeder
             86 => 
             array (
                 'id' => 87,
-                'laboratory_type' => 1,
                 'sampletype_id' => 104,
                 'testname_id' => 34,
                 'method_id' => 52,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1065,10 +1065,10 @@ class TestservicesTableSeeder extends Seeder
             87 => 
             array (
                 'id' => 88,
-                'laboratory_type' => 1,
                 'sampletype_id' => 104,
                 'testname_id' => 40,
                 'method_id' => 53,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1077,10 +1077,10 @@ class TestservicesTableSeeder extends Seeder
             88 => 
             array (
                 'id' => 89,
-                'laboratory_type' => 1,
                 'sampletype_id' => 104,
                 'testname_id' => 42,
                 'method_id' => 54,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1089,10 +1089,10 @@ class TestservicesTableSeeder extends Seeder
             89 => 
             array (
                 'id' => 90,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 98,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1101,10 +1101,10 @@ class TestservicesTableSeeder extends Seeder
             90 => 
             array (
                 'id' => 91,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1113,10 +1113,10 @@ class TestservicesTableSeeder extends Seeder
             91 => 
             array (
                 'id' => 92,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 90,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1125,10 +1125,10 @@ class TestservicesTableSeeder extends Seeder
             92 => 
             array (
                 'id' => 93,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 32,
                 'method_id' => 55,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1137,10 +1137,10 @@ class TestservicesTableSeeder extends Seeder
             93 => 
             array (
                 'id' => 94,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 34,
                 'method_id' => 56,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1149,10 +1149,10 @@ class TestservicesTableSeeder extends Seeder
             94 => 
             array (
                 'id' => 95,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 40,
                 'method_id' => 57,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1161,10 +1161,10 @@ class TestservicesTableSeeder extends Seeder
             95 => 
             array (
                 'id' => 96,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 42,
                 'method_id' => 58,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1173,10 +1173,10 @@ class TestservicesTableSeeder extends Seeder
             96 => 
             array (
                 'id' => 97,
-                'laboratory_type' => 1,
                 'sampletype_id' => 109,
                 'testname_id' => 16,
                 'method_id' => 59,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1185,10 +1185,10 @@ class TestservicesTableSeeder extends Seeder
             97 => 
             array (
                 'id' => 98,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 64,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1197,10 +1197,10 @@ class TestservicesTableSeeder extends Seeder
             98 => 
             array (
                 'id' => 99,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 25,
                 'method_id' => 11,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1209,10 +1209,10 @@ class TestservicesTableSeeder extends Seeder
             99 => 
             array (
                 'id' => 100,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 66,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1221,10 +1221,10 @@ class TestservicesTableSeeder extends Seeder
             100 => 
             array (
                 'id' => 101,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 67,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1233,10 +1233,10 @@ class TestservicesTableSeeder extends Seeder
             101 => 
             array (
                 'id' => 102,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 29,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1245,10 +1245,10 @@ class TestservicesTableSeeder extends Seeder
             102 => 
             array (
                 'id' => 103,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 31,
                 'method_id' => 13,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1257,10 +1257,10 @@ class TestservicesTableSeeder extends Seeder
             103 => 
             array (
                 'id' => 104,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 10,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1269,10 +1269,10 @@ class TestservicesTableSeeder extends Seeder
             104 => 
             array (
                 'id' => 105,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 98,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1281,10 +1281,10 @@ class TestservicesTableSeeder extends Seeder
             105 => 
             array (
                 'id' => 106,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 65,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1293,10 +1293,10 @@ class TestservicesTableSeeder extends Seeder
             106 => 
             array (
                 'id' => 107,
-                'laboratory_type' => 1,
                 'sampletype_id' => 115,
                 'testname_id' => 8,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1305,10 +1305,10 @@ class TestservicesTableSeeder extends Seeder
             107 => 
             array (
                 'id' => 108,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 117,
                 'method_id' => 60,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1317,10 +1317,10 @@ class TestservicesTableSeeder extends Seeder
             108 => 
             array (
                 'id' => 109,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 64,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1329,10 +1329,10 @@ class TestservicesTableSeeder extends Seeder
             109 => 
             array (
                 'id' => 110,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 119,
                 'method_id' => 61,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1341,10 +1341,10 @@ class TestservicesTableSeeder extends Seeder
             110 => 
             array (
                 'id' => 111,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 121,
                 'method_id' => 62,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1353,10 +1353,10 @@ class TestservicesTableSeeder extends Seeder
             111 => 
             array (
                 'id' => 112,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 12,
                 'method_id' => 63,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1365,10 +1365,10 @@ class TestservicesTableSeeder extends Seeder
             112 => 
             array (
                 'id' => 113,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 14,
                 'method_id' => 6,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1377,10 +1377,10 @@ class TestservicesTableSeeder extends Seeder
             113 => 
             array (
                 'id' => 114,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 124,
                 'method_id' => 64,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1389,10 +1389,10 @@ class TestservicesTableSeeder extends Seeder
             114 => 
             array (
                 'id' => 115,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 87,
                 'method_id' => 65,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1401,10 +1401,10 @@ class TestservicesTableSeeder extends Seeder
             115 => 
             array (
                 'id' => 116,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 126,
                 'method_id' => 66,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1413,10 +1413,10 @@ class TestservicesTableSeeder extends Seeder
             116 => 
             array (
                 'id' => 117,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 99,
                 'method_id' => 48,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1425,10 +1425,10 @@ class TestservicesTableSeeder extends Seeder
             117 => 
             array (
                 'id' => 118,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 128,
                 'method_id' => 67,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1437,10 +1437,10 @@ class TestservicesTableSeeder extends Seeder
             118 => 
             array (
                 'id' => 119,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 131,
                 'method_id' => 68,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1449,10 +1449,10 @@ class TestservicesTableSeeder extends Seeder
             119 => 
             array (
                 'id' => 120,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 133,
                 'method_id' => 69,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1461,10 +1461,10 @@ class TestservicesTableSeeder extends Seeder
             120 => 
             array (
                 'id' => 121,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 27,
                 'method_id' => 70,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1473,10 +1473,10 @@ class TestservicesTableSeeder extends Seeder
             121 => 
             array (
                 'id' => 122,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 18,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1485,10 +1485,10 @@ class TestservicesTableSeeder extends Seeder
             122 => 
             array (
                 'id' => 123,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1497,10 +1497,10 @@ class TestservicesTableSeeder extends Seeder
             123 => 
             array (
                 'id' => 124,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1509,10 +1509,10 @@ class TestservicesTableSeeder extends Seeder
             124 => 
             array (
                 'id' => 125,
-                'laboratory_type' => 1,
                 'sampletype_id' => 116,
                 'testname_id' => 92,
                 'method_id' => 44,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1521,10 +1521,10 @@ class TestservicesTableSeeder extends Seeder
             125 => 
             array (
                 'id' => 126,
-                'laboratory_type' => 1,
                 'sampletype_id' => 135,
                 'testname_id' => 16,
                 'method_id' => 71,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1533,10 +1533,10 @@ class TestservicesTableSeeder extends Seeder
             126 => 
             array (
                 'id' => 127,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 126,
                 'method_id' => 72,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1545,10 +1545,10 @@ class TestservicesTableSeeder extends Seeder
             127 => 
             array (
                 'id' => 128,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 139,
                 'method_id' => 73,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1557,10 +1557,10 @@ class TestservicesTableSeeder extends Seeder
             128 => 
             array (
                 'id' => 129,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 98,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1569,10 +1569,10 @@ class TestservicesTableSeeder extends Seeder
             129 => 
             array (
                 'id' => 130,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 10,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1581,10 +1581,10 @@ class TestservicesTableSeeder extends Seeder
             130 => 
             array (
                 'id' => 131,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 65,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1593,10 +1593,10 @@ class TestservicesTableSeeder extends Seeder
             131 => 
             array (
                 'id' => 132,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 8,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1605,10 +1605,10 @@ class TestservicesTableSeeder extends Seeder
             132 => 
             array (
                 'id' => 133,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 66,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1617,10 +1617,10 @@ class TestservicesTableSeeder extends Seeder
             133 => 
             array (
                 'id' => 134,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 67,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1629,10 +1629,10 @@ class TestservicesTableSeeder extends Seeder
             134 => 
             array (
                 'id' => 135,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 27,
                 'method_id' => 74,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1641,10 +1641,10 @@ class TestservicesTableSeeder extends Seeder
             135 => 
             array (
                 'id' => 136,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 18,
                 'method_id' => 8,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1653,10 +1653,10 @@ class TestservicesTableSeeder extends Seeder
             136 => 
             array (
                 'id' => 137,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1665,10 +1665,10 @@ class TestservicesTableSeeder extends Seeder
             137 => 
             array (
                 'id' => 138,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 2,
                 'method_id' => 1,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1677,10 +1677,10 @@ class TestservicesTableSeeder extends Seeder
             138 => 
             array (
                 'id' => 139,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1689,10 +1689,10 @@ class TestservicesTableSeeder extends Seeder
             139 => 
             array (
                 'id' => 140,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 141,
                 'method_id' => 75,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1701,10 +1701,10 @@ class TestservicesTableSeeder extends Seeder
             140 => 
             array (
                 'id' => 141,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 143,
                 'method_id' => 76,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1713,10 +1713,10 @@ class TestservicesTableSeeder extends Seeder
             141 => 
             array (
                 'id' => 142,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 40,
                 'method_id' => 77,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1725,10 +1725,10 @@ class TestservicesTableSeeder extends Seeder
             142 => 
             array (
                 'id' => 143,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1737,10 +1737,10 @@ class TestservicesTableSeeder extends Seeder
             143 => 
             array (
                 'id' => 144,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 146,
                 'method_id' => 78,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1749,10 +1749,10 @@ class TestservicesTableSeeder extends Seeder
             144 => 
             array (
                 'id' => 145,
-                'laboratory_type' => 1,
                 'sampletype_id' => 148,
                 'testname_id' => 42,
                 'method_id' => 79,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1761,10 +1761,10 @@ class TestservicesTableSeeder extends Seeder
             145 => 
             array (
                 'id' => 146,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 16,
                 'method_id' => 71,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1773,10 +1773,10 @@ class TestservicesTableSeeder extends Seeder
             146 => 
             array (
                 'id' => 147,
-                'laboratory_type' => 1,
                 'sampletype_id' => 150,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1785,10 +1785,10 @@ class TestservicesTableSeeder extends Seeder
             147 => 
             array (
                 'id' => 148,
-                'laboratory_type' => 1,
                 'sampletype_id' => 150,
                 'testname_id' => 32,
                 'method_id' => 80,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1797,10 +1797,10 @@ class TestservicesTableSeeder extends Seeder
             148 => 
             array (
                 'id' => 149,
-                'laboratory_type' => 1,
                 'sampletype_id' => 150,
                 'testname_id' => 40,
                 'method_id' => 81,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1809,10 +1809,10 @@ class TestservicesTableSeeder extends Seeder
             149 => 
             array (
                 'id' => 150,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 42,
                 'method_id' => 82,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1821,10 +1821,10 @@ class TestservicesTableSeeder extends Seeder
             150 => 
             array (
                 'id' => 151,
-                'laboratory_type' => 1,
                 'sampletype_id' => 137,
                 'testname_id' => 42,
                 'method_id' => 83,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1833,10 +1833,10 @@ class TestservicesTableSeeder extends Seeder
             151 => 
             array (
                 'id' => 152,
-                'laboratory_type' => 1,
                 'sampletype_id' => 150,
                 'testname_id' => 42,
                 'method_id' => 84,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1845,10 +1845,10 @@ class TestservicesTableSeeder extends Seeder
             152 => 
             array (
                 'id' => 153,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 90,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1857,10 +1857,10 @@ class TestservicesTableSeeder extends Seeder
             153 => 
             array (
                 'id' => 154,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 157,
                 'method_id' => 73,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1869,10 +1869,10 @@ class TestservicesTableSeeder extends Seeder
             154 => 
             array (
                 'id' => 155,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 158,
                 'method_id' => 85,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1881,10 +1881,10 @@ class TestservicesTableSeeder extends Seeder
             155 => 
             array (
                 'id' => 156,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1893,10 +1893,10 @@ class TestservicesTableSeeder extends Seeder
             156 => 
             array (
                 'id' => 157,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 32,
                 'method_id' => 51,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1905,10 +1905,10 @@ class TestservicesTableSeeder extends Seeder
             157 => 
             array (
                 'id' => 158,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 34,
                 'method_id' => 52,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1917,10 +1917,10 @@ class TestservicesTableSeeder extends Seeder
             158 => 
             array (
                 'id' => 159,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 40,
                 'method_id' => 86,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1929,10 +1929,10 @@ class TestservicesTableSeeder extends Seeder
             159 => 
             array (
                 'id' => 160,
-                'laboratory_type' => 1,
                 'sampletype_id' => 156,
                 'testname_id' => 42,
                 'method_id' => 87,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1941,10 +1941,10 @@ class TestservicesTableSeeder extends Seeder
             160 => 
             array (
                 'id' => 161,
-                'laboratory_type' => 1,
                 'sampletype_id' => 162,
                 'testname_id' => 146,
                 'method_id' => 88,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1953,10 +1953,10 @@ class TestservicesTableSeeder extends Seeder
             161 => 
             array (
                 'id' => 162,
-                'laboratory_type' => 1,
                 'sampletype_id' => 162,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1965,10 +1965,10 @@ class TestservicesTableSeeder extends Seeder
             162 => 
             array (
                 'id' => 163,
-                'laboratory_type' => 1,
                 'sampletype_id' => 162,
                 'testname_id' => 32,
                 'method_id' => 89,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1977,10 +1977,10 @@ class TestservicesTableSeeder extends Seeder
             163 => 
             array (
                 'id' => 164,
-                'laboratory_type' => 1,
                 'sampletype_id' => 162,
                 'testname_id' => 40,
                 'method_id' => 90,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -1989,10 +1989,10 @@ class TestservicesTableSeeder extends Seeder
             164 => 
             array (
                 'id' => 165,
-                'laboratory_type' => 1,
                 'sampletype_id' => 162,
                 'testname_id' => 42,
                 'method_id' => 91,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2001,10 +2001,10 @@ class TestservicesTableSeeder extends Seeder
             165 => 
             array (
                 'id' => 166,
-                'laboratory_type' => 1,
                 'sampletype_id' => 167,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2013,10 +2013,10 @@ class TestservicesTableSeeder extends Seeder
             166 => 
             array (
                 'id' => 167,
-                'laboratory_type' => 1,
                 'sampletype_id' => 167,
                 'testname_id' => 32,
                 'method_id' => 80,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2025,10 +2025,10 @@ class TestservicesTableSeeder extends Seeder
             167 => 
             array (
                 'id' => 168,
-                'laboratory_type' => 1,
                 'sampletype_id' => 167,
                 'testname_id' => 40,
                 'method_id' => 81,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2037,10 +2037,10 @@ class TestservicesTableSeeder extends Seeder
             168 => 
             array (
                 'id' => 169,
-                'laboratory_type' => 1,
                 'sampletype_id' => 167,
                 'testname_id' => 42,
                 'method_id' => 84,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2049,10 +2049,10 @@ class TestservicesTableSeeder extends Seeder
             169 => 
             array (
                 'id' => 170,
-                'laboratory_type' => 1,
                 'sampletype_id' => 168,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2061,10 +2061,10 @@ class TestservicesTableSeeder extends Seeder
             170 => 
             array (
                 'id' => 171,
-                'laboratory_type' => 1,
                 'sampletype_id' => 168,
                 'testname_id' => 32,
                 'method_id' => 55,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2073,10 +2073,10 @@ class TestservicesTableSeeder extends Seeder
             171 => 
             array (
                 'id' => 172,
-                'laboratory_type' => 1,
                 'sampletype_id' => 168,
                 'testname_id' => 34,
                 'method_id' => 92,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2085,10 +2085,10 @@ class TestservicesTableSeeder extends Seeder
             172 => 
             array (
                 'id' => 173,
-                'laboratory_type' => 1,
                 'sampletype_id' => 168,
                 'testname_id' => 40,
                 'method_id' => 46,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2097,10 +2097,10 @@ class TestservicesTableSeeder extends Seeder
             173 => 
             array (
                 'id' => 174,
-                'laboratory_type' => 1,
                 'sampletype_id' => 168,
                 'testname_id' => 42,
                 'method_id' => 93,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2109,10 +2109,10 @@ class TestservicesTableSeeder extends Seeder
             174 => 
             array (
                 'id' => 175,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 27,
                 'method_id' => 74,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2121,10 +2121,10 @@ class TestservicesTableSeeder extends Seeder
             175 => 
             array (
                 'id' => 176,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 18,
                 'method_id' => 8,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2133,10 +2133,10 @@ class TestservicesTableSeeder extends Seeder
             176 => 
             array (
                 'id' => 177,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2145,10 +2145,10 @@ class TestservicesTableSeeder extends Seeder
             177 => 
             array (
                 'id' => 178,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 157,
                 'method_id' => 73,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2157,10 +2157,10 @@ class TestservicesTableSeeder extends Seeder
             178 => 
             array (
                 'id' => 179,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 29,
                 'method_id' => 32,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2169,10 +2169,10 @@ class TestservicesTableSeeder extends Seeder
             179 => 
             array (
                 'id' => 180,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 31,
                 'method_id' => 32,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2181,10 +2181,10 @@ class TestservicesTableSeeder extends Seeder
             180 => 
             array (
                 'id' => 181,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 98,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2193,10 +2193,10 @@ class TestservicesTableSeeder extends Seeder
             181 => 
             array (
                 'id' => 182,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 10,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2205,10 +2205,10 @@ class TestservicesTableSeeder extends Seeder
             182 => 
             array (
                 'id' => 183,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 65,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2217,10 +2217,10 @@ class TestservicesTableSeeder extends Seeder
             183 => 
             array (
                 'id' => 184,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 8,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2229,10 +2229,10 @@ class TestservicesTableSeeder extends Seeder
             184 => 
             array (
                 'id' => 185,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 66,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2241,10 +2241,10 @@ class TestservicesTableSeeder extends Seeder
             185 => 
             array (
                 'id' => 186,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 67,
                 'method_id' => 3,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2253,10 +2253,10 @@ class TestservicesTableSeeder extends Seeder
             186 => 
             array (
                 'id' => 187,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2265,10 +2265,10 @@ class TestservicesTableSeeder extends Seeder
             187 => 
             array (
                 'id' => 188,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 34,
                 'method_id' => 94,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2277,10 +2277,10 @@ class TestservicesTableSeeder extends Seeder
             188 => 
             array (
                 'id' => 189,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 101,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2289,10 +2289,10 @@ class TestservicesTableSeeder extends Seeder
             189 => 
             array (
                 'id' => 190,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 40,
                 'method_id' => 95,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2301,10 +2301,10 @@ class TestservicesTableSeeder extends Seeder
             190 => 
             array (
                 'id' => 191,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 42,
                 'method_id' => 96,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2313,10 +2313,10 @@ class TestservicesTableSeeder extends Seeder
             191 => 
             array (
                 'id' => 192,
-                'laboratory_type' => 1,
                 'sampletype_id' => 171,
                 'testname_id' => 16,
                 'method_id' => 50,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2325,10 +2325,10 @@ class TestservicesTableSeeder extends Seeder
             192 => 
             array (
                 'id' => 193,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 40,
                 'method_id' => 97,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2337,10 +2337,10 @@ class TestservicesTableSeeder extends Seeder
             193 => 
             array (
                 'id' => 194,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 177,
                 'method_id' => 98,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2349,10 +2349,10 @@ class TestservicesTableSeeder extends Seeder
             194 => 
             array (
                 'id' => 195,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 179,
                 'method_id' => 99,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2361,10 +2361,10 @@ class TestservicesTableSeeder extends Seeder
             195 => 
             array (
                 'id' => 196,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 181,
                 'method_id' => 100,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2373,10 +2373,10 @@ class TestservicesTableSeeder extends Seeder
             196 => 
             array (
                 'id' => 197,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 38,
                 'method_id' => 101,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2385,10 +2385,10 @@ class TestservicesTableSeeder extends Seeder
             197 => 
             array (
                 'id' => 198,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 184,
                 'method_id' => 102,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2397,10 +2397,10 @@ class TestservicesTableSeeder extends Seeder
             198 => 
             array (
                 'id' => 199,
-                'laboratory_type' => 1,
                 'sampletype_id' => 175,
                 'testname_id' => 186,
                 'method_id' => 103,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2409,10 +2409,10 @@ class TestservicesTableSeeder extends Seeder
             199 => 
             array (
                 'id' => 200,
-                'laboratory_type' => 1,
                 'sampletype_id' => 188,
                 'testname_id' => 92,
                 'method_id' => 104,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2421,10 +2421,10 @@ class TestservicesTableSeeder extends Seeder
             200 => 
             array (
                 'id' => 201,
-                'laboratory_type' => 1,
                 'sampletype_id' => 188,
                 'testname_id' => 190,
                 'method_id' => 105,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2433,10 +2433,10 @@ class TestservicesTableSeeder extends Seeder
             201 => 
             array (
                 'id' => 202,
-                'laboratory_type' => 1,
                 'sampletype_id' => 188,
                 'testname_id' => 42,
                 'method_id' => 106,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2445,10 +2445,10 @@ class TestservicesTableSeeder extends Seeder
             202 => 
             array (
                 'id' => 203,
-                'laboratory_type' => 1,
                 'sampletype_id' => 193,
                 'testname_id' => 16,
                 'method_id' => 107,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2457,10 +2457,10 @@ class TestservicesTableSeeder extends Seeder
             203 => 
             array (
                 'id' => 204,
-                'laboratory_type' => 1,
                 'sampletype_id' => 195,
                 'testname_id' => 92,
                 'method_id' => 108,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2469,10 +2469,10 @@ class TestservicesTableSeeder extends Seeder
             204 => 
             array (
                 'id' => 205,
-                'laboratory_type' => 1,
                 'sampletype_id' => 195,
                 'testname_id' => 101,
                 'method_id' => 109,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2481,10 +2481,10 @@ class TestservicesTableSeeder extends Seeder
             205 => 
             array (
                 'id' => 206,
-                'laboratory_type' => 1,
                 'sampletype_id' => 197,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2493,10 +2493,10 @@ class TestservicesTableSeeder extends Seeder
             206 => 
             array (
                 'id' => 207,
-                'laboratory_type' => 1,
                 'sampletype_id' => 197,
                 'testname_id' => 32,
                 'method_id' => 55,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2505,10 +2505,10 @@ class TestservicesTableSeeder extends Seeder
             207 => 
             array (
                 'id' => 208,
-                'laboratory_type' => 1,
                 'sampletype_id' => 197,
                 'testname_id' => 34,
                 'method_id' => 92,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2517,10 +2517,10 @@ class TestservicesTableSeeder extends Seeder
             208 => 
             array (
                 'id' => 209,
-                'laboratory_type' => 1,
                 'sampletype_id' => 197,
                 'testname_id' => 40,
                 'method_id' => 46,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2529,10 +2529,10 @@ class TestservicesTableSeeder extends Seeder
             209 => 
             array (
                 'id' => 210,
-                'laboratory_type' => 1,
                 'sampletype_id' => 197,
                 'testname_id' => 42,
                 'method_id' => 58,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2541,10 +2541,10 @@ class TestservicesTableSeeder extends Seeder
             210 => 
             array (
                 'id' => 211,
-                'laboratory_type' => 1,
                 'sampletype_id' => 198,
                 'testname_id' => 42,
                 'method_id' => 110,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2553,10 +2553,10 @@ class TestservicesTableSeeder extends Seeder
             211 => 
             array (
                 'id' => 212,
-                'laboratory_type' => 1,
                 'sampletype_id' => 198,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2565,10 +2565,10 @@ class TestservicesTableSeeder extends Seeder
             212 => 
             array (
                 'id' => 213,
-                'laboratory_type' => 1,
                 'sampletype_id' => 198,
                 'testname_id' => 36,
                 'method_id' => 16,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2577,10 +2577,10 @@ class TestservicesTableSeeder extends Seeder
             213 => 
             array (
                 'id' => 214,
-                'laboratory_type' => 1,
                 'sampletype_id' => 198,
                 'testname_id' => 38,
                 'method_id' => 109,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2589,10 +2589,10 @@ class TestservicesTableSeeder extends Seeder
             214 => 
             array (
                 'id' => 215,
-                'laboratory_type' => 1,
                 'sampletype_id' => 198,
                 'testname_id' => 40,
                 'method_id' => 111,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2601,10 +2601,10 @@ class TestservicesTableSeeder extends Seeder
             215 => 
             array (
                 'id' => 216,
-                'laboratory_type' => 1,
                 'sampletype_id' => 201,
                 'testname_id' => 16,
                 'method_id' => 112,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2613,10 +2613,10 @@ class TestservicesTableSeeder extends Seeder
             216 => 
             array (
                 'id' => 217,
-                'laboratory_type' => 1,
                 'sampletype_id' => 201,
                 'testname_id' => 27,
                 'method_id' => 113,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2625,10 +2625,10 @@ class TestservicesTableSeeder extends Seeder
             217 => 
             array (
                 'id' => 218,
-                'laboratory_type' => 1,
                 'sampletype_id' => 201,
                 'testname_id' => 18,
                 'method_id' => 8,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2637,10 +2637,10 @@ class TestservicesTableSeeder extends Seeder
             218 => 
             array (
                 'id' => 219,
-                'laboratory_type' => 1,
                 'sampletype_id' => 201,
                 'testname_id' => 20,
                 'method_id' => 9,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2649,10 +2649,10 @@ class TestservicesTableSeeder extends Seeder
             219 => 
             array (
                 'id' => 220,
-                'laboratory_type' => 1,
                 'sampletype_id' => 201,
                 'testname_id' => 38,
                 'method_id' => 109,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2661,10 +2661,10 @@ class TestservicesTableSeeder extends Seeder
             220 => 
             array (
                 'id' => 221,
-                'laboratory_type' => 1,
                 'sampletype_id' => 201,
                 'testname_id' => 40,
                 'method_id' => 114,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2673,10 +2673,10 @@ class TestservicesTableSeeder extends Seeder
             221 => 
             array (
                 'id' => 222,
-                'laboratory_type' => 1,
                 'sampletype_id' => 204,
                 'testname_id' => 42,
                 'method_id' => 115,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2685,10 +2685,10 @@ class TestservicesTableSeeder extends Seeder
             222 => 
             array (
                 'id' => 223,
-                'laboratory_type' => 1,
                 'sampletype_id' => 206,
                 'testname_id' => 42,
                 'method_id' => 83,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2697,10 +2697,10 @@ class TestservicesTableSeeder extends Seeder
             223 => 
             array (
                 'id' => 224,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 2,
                 'method_id' => 1,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2709,10 +2709,10 @@ class TestservicesTableSeeder extends Seeder
             224 => 
             array (
                 'id' => 225,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 208,
                 'method_id' => 116,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2721,10 +2721,10 @@ class TestservicesTableSeeder extends Seeder
             225 => 
             array (
                 'id' => 226,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 40,
                 'method_id' => 117,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2733,10 +2733,10 @@ class TestservicesTableSeeder extends Seeder
             226 => 
             array (
                 'id' => 227,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 143,
                 'method_id' => 118,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2745,10 +2745,10 @@ class TestservicesTableSeeder extends Seeder
             227 => 
             array (
                 'id' => 228,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 146,
                 'method_id' => 119,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2757,10 +2757,10 @@ class TestservicesTableSeeder extends Seeder
             228 => 
             array (
                 'id' => 229,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 14,
                 'method_id' => 120,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2769,10 +2769,10 @@ class TestservicesTableSeeder extends Seeder
             229 => 
             array (
                 'id' => 230,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 16,
                 'method_id' => 7,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2781,10 +2781,10 @@ class TestservicesTableSeeder extends Seeder
             230 => 
             array (
                 'id' => 231,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 57,
                 'method_id' => 28,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2793,10 +2793,10 @@ class TestservicesTableSeeder extends Seeder
             231 => 
             array (
                 'id' => 232,
-                'laboratory_type' => 1,
                 'sampletype_id' => 207,
                 'testname_id' => 42,
                 'method_id' => 121,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2805,10 +2805,10 @@ class TestservicesTableSeeder extends Seeder
             232 => 
             array (
                 'id' => 233,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 90,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2817,10 +2817,10 @@ class TestservicesTableSeeder extends Seeder
             233 => 
             array (
                 'id' => 234,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 158,
                 'method_id' => 123,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2829,10 +2829,10 @@ class TestservicesTableSeeder extends Seeder
             234 => 
             array (
                 'id' => 235,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 219,
                 'method_id' => 124,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2841,10 +2841,10 @@ class TestservicesTableSeeder extends Seeder
             235 => 
             array (
                 'id' => 236,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 64,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2853,10 +2853,10 @@ class TestservicesTableSeeder extends Seeder
             236 => 
             array (
                 'id' => 237,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 221,
                 'method_id' => 125,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2865,10 +2865,10 @@ class TestservicesTableSeeder extends Seeder
             237 => 
             array (
                 'id' => 238,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 223,
                 'method_id' => 126,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2877,10 +2877,10 @@ class TestservicesTableSeeder extends Seeder
             238 => 
             array (
                 'id' => 239,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 25,
                 'method_id' => 127,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2889,10 +2889,10 @@ class TestservicesTableSeeder extends Seeder
             239 => 
             array (
                 'id' => 240,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 227,
                 'method_id' => 128,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2901,10 +2901,10 @@ class TestservicesTableSeeder extends Seeder
             240 => 
             array (
                 'id' => 241,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 229,
                 'method_id' => 129,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2913,10 +2913,10 @@ class TestservicesTableSeeder extends Seeder
             241 => 
             array (
                 'id' => 242,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 231,
                 'method_id' => 130,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2925,10 +2925,10 @@ class TestservicesTableSeeder extends Seeder
             242 => 
             array (
                 'id' => 243,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 233,
                 'method_id' => 131,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2937,10 +2937,10 @@ class TestservicesTableSeeder extends Seeder
             243 => 
             array (
                 'id' => 244,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 146,
                 'method_id' => 132,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2949,10 +2949,10 @@ class TestservicesTableSeeder extends Seeder
             244 => 
             array (
                 'id' => 245,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 236,
                 'method_id' => 133,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2961,10 +2961,10 @@ class TestservicesTableSeeder extends Seeder
             245 => 
             array (
                 'id' => 246,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 238,
                 'method_id' => 134,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2973,10 +2973,10 @@ class TestservicesTableSeeder extends Seeder
             246 => 
             array (
                 'id' => 247,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 240,
                 'method_id' => 135,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2985,10 +2985,10 @@ class TestservicesTableSeeder extends Seeder
             247 => 
             array (
                 'id' => 248,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 242,
                 'method_id' => 136,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -2997,10 +2997,10 @@ class TestservicesTableSeeder extends Seeder
             248 => 
             array (
                 'id' => 249,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 98,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3009,10 +3009,10 @@ class TestservicesTableSeeder extends Seeder
             249 => 
             array (
                 'id' => 250,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 244,
                 'method_id' => 137,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3021,10 +3021,10 @@ class TestservicesTableSeeder extends Seeder
             250 => 
             array (
                 'id' => 251,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 10,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3033,10 +3033,10 @@ class TestservicesTableSeeder extends Seeder
             251 => 
             array (
                 'id' => 252,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 139,
                 'method_id' => 138,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3045,10 +3045,10 @@ class TestservicesTableSeeder extends Seeder
             252 => 
             array (
                 'id' => 253,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 157,
                 'method_id' => 138,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3057,10 +3057,10 @@ class TestservicesTableSeeder extends Seeder
             253 => 
             array (
                 'id' => 254,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 16,
                 'method_id' => 139,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3069,10 +3069,10 @@ class TestservicesTableSeeder extends Seeder
             254 => 
             array (
                 'id' => 255,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 219,
                 'method_id' => 140,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3081,10 +3081,10 @@ class TestservicesTableSeeder extends Seeder
             255 => 
             array (
                 'id' => 256,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 249,
                 'method_id' => 141,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3093,10 +3093,10 @@ class TestservicesTableSeeder extends Seeder
             256 => 
             array (
                 'id' => 257,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 251,
                 'method_id' => 142,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3105,10 +3105,10 @@ class TestservicesTableSeeder extends Seeder
             257 => 
             array (
                 'id' => 258,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 65,
                 'method_id' => 143,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3117,10 +3117,10 @@ class TestservicesTableSeeder extends Seeder
             258 => 
             array (
                 'id' => 259,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 253,
                 'method_id' => 144,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3129,10 +3129,10 @@ class TestservicesTableSeeder extends Seeder
             259 => 
             array (
                 'id' => 260,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 8,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3141,10 +3141,10 @@ class TestservicesTableSeeder extends Seeder
             260 => 
             array (
                 'id' => 261,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 31,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3153,10 +3153,10 @@ class TestservicesTableSeeder extends Seeder
             261 => 
             array (
                 'id' => 262,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 66,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3165,10 +3165,10 @@ class TestservicesTableSeeder extends Seeder
             262 => 
             array (
                 'id' => 263,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 255,
                 'method_id' => 145,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3177,10 +3177,10 @@ class TestservicesTableSeeder extends Seeder
             263 => 
             array (
                 'id' => 264,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 67,
                 'method_id' => 122,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3189,10 +3189,10 @@ class TestservicesTableSeeder extends Seeder
             264 => 
             array (
                 'id' => 265,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 257,
                 'method_id' => 146,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3201,10 +3201,10 @@ class TestservicesTableSeeder extends Seeder
             265 => 
             array (
                 'id' => 266,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 177,
                 'method_id' => 147,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3213,10 +3213,10 @@ class TestservicesTableSeeder extends Seeder
             266 => 
             array (
                 'id' => 267,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 260,
                 'method_id' => 148,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3225,10 +3225,10 @@ class TestservicesTableSeeder extends Seeder
             267 => 
             array (
                 'id' => 268,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 262,
                 'method_id' => 149,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3237,10 +3237,10 @@ class TestservicesTableSeeder extends Seeder
             268 => 
             array (
                 'id' => 269,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 264,
                 'method_id' => 150,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3249,10 +3249,10 @@ class TestservicesTableSeeder extends Seeder
             269 => 
             array (
                 'id' => 270,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 29,
                 'method_id' => 143,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3261,10 +3261,10 @@ class TestservicesTableSeeder extends Seeder
             270 => 
             array (
                 'id' => 271,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 266,
                 'method_id' => 151,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3273,10 +3273,10 @@ class TestservicesTableSeeder extends Seeder
             271 => 
             array (
                 'id' => 272,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 268,
                 'method_id' => 152,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3285,10 +3285,10 @@ class TestservicesTableSeeder extends Seeder
             272 => 
             array (
                 'id' => 273,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 270,
                 'method_id' => 152,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3297,10 +3297,10 @@ class TestservicesTableSeeder extends Seeder
             273 => 
             array (
                 'id' => 274,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 271,
                 'method_id' => 152,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3309,10 +3309,10 @@ class TestservicesTableSeeder extends Seeder
             274 => 
             array (
                 'id' => 275,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 272,
                 'method_id' => 152,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3321,10 +3321,10 @@ class TestservicesTableSeeder extends Seeder
             275 => 
             array (
                 'id' => 276,
-                'laboratory_type' => 1,
                 'sampletype_id' => 215,
                 'testname_id' => 273,
                 'method_id' => 152,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3333,10 +3333,10 @@ class TestservicesTableSeeder extends Seeder
             276 => 
             array (
                 'id' => 277,
-                'laboratory_type' => 1,
                 'sampletype_id' => 274,
                 'testname_id' => 16,
                 'method_id' => 153,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3345,10 +3345,10 @@ class TestservicesTableSeeder extends Seeder
             277 => 
             array (
                 'id' => 278,
-                'laboratory_type' => 1,
                 'sampletype_id' => 276,
                 'testname_id' => 16,
                 'method_id' => 154,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3357,10 +3357,10 @@ class TestservicesTableSeeder extends Seeder
             278 => 
             array (
                 'id' => 279,
-                'laboratory_type' => 1,
                 'sampletype_id' => 278,
                 'testname_id' => 16,
                 'method_id' => 155,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3369,10 +3369,10 @@ class TestservicesTableSeeder extends Seeder
             279 => 
             array (
                 'id' => 280,
-                'laboratory_type' => 1,
                 'sampletype_id' => 193,
                 'testname_id' => 16,
                 'method_id' => 156,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3381,10 +3381,10 @@ class TestservicesTableSeeder extends Seeder
             280 => 
             array (
                 'id' => 281,
-                'laboratory_type' => 1,
                 'sampletype_id' => 77,
                 'testname_id' => 40,
                 'method_id' => 157,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3393,10 +3393,10 @@ class TestservicesTableSeeder extends Seeder
             281 => 
             array (
                 'id' => 282,
-                'laboratory_type' => 1,
                 'sampletype_id' => 50,
                 'testname_id' => 42,
                 'method_id' => 158,
+                'laboratory_type' => 1,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:03',
@@ -3405,10 +3405,10 @@ class TestservicesTableSeeder extends Seeder
             282 => 
             array (
                 'id' => 283,
-                'laboratory_type' => 3,
                 'sampletype_id' => 283,
                 'testname_id' => 284,
                 'method_id' => 159,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3417,10 +3417,10 @@ class TestservicesTableSeeder extends Seeder
             283 => 
             array (
                 'id' => 284,
-                'laboratory_type' => 3,
                 'sampletype_id' => 283,
                 'testname_id' => 287,
                 'method_id' => 160,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3429,10 +3429,10 @@ class TestservicesTableSeeder extends Seeder
             284 => 
             array (
                 'id' => 285,
-                'laboratory_type' => 3,
                 'sampletype_id' => 283,
                 'testname_id' => 288,
                 'method_id' => 161,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3441,10 +3441,10 @@ class TestservicesTableSeeder extends Seeder
             285 => 
             array (
                 'id' => 286,
-                'laboratory_type' => 3,
                 'sampletype_id' => 283,
                 'testname_id' => 289,
                 'method_id' => 162,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3453,10 +3453,10 @@ class TestservicesTableSeeder extends Seeder
             286 => 
             array (
                 'id' => 287,
-                'laboratory_type' => 3,
                 'sampletype_id' => 283,
                 'testname_id' => 290,
                 'method_id' => 163,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3465,10 +3465,10 @@ class TestservicesTableSeeder extends Seeder
             287 => 
             array (
                 'id' => 288,
-                'laboratory_type' => 3,
                 'sampletype_id' => 283,
                 'testname_id' => 291,
                 'method_id' => 164,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3477,10 +3477,10 @@ class TestservicesTableSeeder extends Seeder
             288 => 
             array (
                 'id' => 289,
-                'laboratory_type' => 3,
                 'sampletype_id' => 292,
                 'testname_id' => 293,
                 'method_id' => 165,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3489,10 +3489,10 @@ class TestservicesTableSeeder extends Seeder
             289 => 
             array (
                 'id' => 290,
-                'laboratory_type' => 3,
                 'sampletype_id' => 294,
                 'testname_id' => 295,
                 'method_id' => 166,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3501,10 +3501,10 @@ class TestservicesTableSeeder extends Seeder
             290 => 
             array (
                 'id' => 291,
-                'laboratory_type' => 3,
                 'sampletype_id' => 294,
                 'testname_id' => 296,
                 'method_id' => 167,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3513,10 +3513,10 @@ class TestservicesTableSeeder extends Seeder
             291 => 
             array (
                 'id' => 292,
-                'laboratory_type' => 3,
                 'sampletype_id' => 297,
                 'testname_id' => 298,
                 'method_id' => 168,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3525,10 +3525,10 @@ class TestservicesTableSeeder extends Seeder
             292 => 
             array (
                 'id' => 293,
-                'laboratory_type' => 3,
                 'sampletype_id' => 297,
                 'testname_id' => 301,
                 'method_id' => 169,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3537,10 +3537,10 @@ class TestservicesTableSeeder extends Seeder
             293 => 
             array (
                 'id' => 294,
-                'laboratory_type' => 3,
                 'sampletype_id' => 297,
                 'testname_id' => 303,
                 'method_id' => 170,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3549,10 +3549,10 @@ class TestservicesTableSeeder extends Seeder
             294 => 
             array (
                 'id' => 295,
-                'laboratory_type' => 3,
                 'sampletype_id' => 304,
                 'testname_id' => 295,
                 'method_id' => 171,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3561,10 +3561,10 @@ class TestservicesTableSeeder extends Seeder
             295 => 
             array (
                 'id' => 296,
-                'laboratory_type' => 3,
                 'sampletype_id' => 304,
                 'testname_id' => 296,
                 'method_id' => 172,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3573,10 +3573,10 @@ class TestservicesTableSeeder extends Seeder
             296 => 
             array (
                 'id' => 297,
-                'laboratory_type' => 3,
                 'sampletype_id' => 305,
                 'testname_id' => 306,
                 'method_id' => 173,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3585,10 +3585,10 @@ class TestservicesTableSeeder extends Seeder
             297 => 
             array (
                 'id' => 298,
-                'laboratory_type' => 3,
                 'sampletype_id' => 305,
                 'testname_id' => 307,
                 'method_id' => 174,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3597,10 +3597,10 @@ class TestservicesTableSeeder extends Seeder
             298 => 
             array (
                 'id' => 299,
-                'laboratory_type' => 3,
                 'sampletype_id' => 305,
                 'testname_id' => 308,
                 'method_id' => 175,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3609,10 +3609,10 @@ class TestservicesTableSeeder extends Seeder
             299 => 
             array (
                 'id' => 300,
-                'laboratory_type' => 3,
                 'sampletype_id' => 309,
                 'testname_id' => 310,
                 'method_id' => 176,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3621,10 +3621,10 @@ class TestservicesTableSeeder extends Seeder
             300 => 
             array (
                 'id' => 301,
-                'laboratory_type' => 3,
                 'sampletype_id' => 309,
                 'testname_id' => 313,
                 'method_id' => 177,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3633,10 +3633,10 @@ class TestservicesTableSeeder extends Seeder
             301 => 
             array (
                 'id' => 302,
-                'laboratory_type' => 3,
                 'sampletype_id' => 309,
                 'testname_id' => 314,
                 'method_id' => 178,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3645,10 +3645,10 @@ class TestservicesTableSeeder extends Seeder
             302 => 
             array (
                 'id' => 303,
-                'laboratory_type' => 3,
                 'sampletype_id' => 315,
                 'testname_id' => 316,
                 'method_id' => 166,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3657,10 +3657,10 @@ class TestservicesTableSeeder extends Seeder
             303 => 
             array (
                 'id' => 304,
-                'laboratory_type' => 3,
                 'sampletype_id' => 317,
                 'testname_id' => 318,
                 'method_id' => 179,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3669,10 +3669,10 @@ class TestservicesTableSeeder extends Seeder
             304 => 
             array (
                 'id' => 305,
-                'laboratory_type' => 3,
                 'sampletype_id' => 320,
                 'testname_id' => 321,
                 'method_id' => 180,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3681,10 +3681,10 @@ class TestservicesTableSeeder extends Seeder
             305 => 
             array (
                 'id' => 306,
-                'laboratory_type' => 3,
                 'sampletype_id' => 320,
                 'testname_id' => 323,
                 'method_id' => 180,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3693,10 +3693,10 @@ class TestservicesTableSeeder extends Seeder
             306 => 
             array (
                 'id' => 307,
-                'laboratory_type' => 3,
                 'sampletype_id' => 324,
                 'testname_id' => 325,
                 'method_id' => 181,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3705,10 +3705,10 @@ class TestservicesTableSeeder extends Seeder
             307 => 
             array (
                 'id' => 308,
-                'laboratory_type' => 3,
                 'sampletype_id' => 324,
                 'testname_id' => 328,
                 'method_id' => 182,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3717,10 +3717,10 @@ class TestservicesTableSeeder extends Seeder
             308 => 
             array (
                 'id' => 309,
-                'laboratory_type' => 3,
                 'sampletype_id' => 324,
                 'testname_id' => 329,
                 'method_id' => 183,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3729,10 +3729,10 @@ class TestservicesTableSeeder extends Seeder
             309 => 
             array (
                 'id' => 310,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 331,
                 'method_id' => 184,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3741,10 +3741,10 @@ class TestservicesTableSeeder extends Seeder
             310 => 
             array (
                 'id' => 311,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 333,
                 'method_id' => 185,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3753,10 +3753,10 @@ class TestservicesTableSeeder extends Seeder
             311 => 
             array (
                 'id' => 312,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 334,
                 'method_id' => 186,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3765,10 +3765,10 @@ class TestservicesTableSeeder extends Seeder
             312 => 
             array (
                 'id' => 313,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 335,
                 'method_id' => 187,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3777,10 +3777,10 @@ class TestservicesTableSeeder extends Seeder
             313 => 
             array (
                 'id' => 314,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 336,
                 'method_id' => 188,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3789,10 +3789,10 @@ class TestservicesTableSeeder extends Seeder
             314 => 
             array (
                 'id' => 315,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 325,
                 'method_id' => 189,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3801,10 +3801,10 @@ class TestservicesTableSeeder extends Seeder
             315 => 
             array (
                 'id' => 316,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 337,
                 'method_id' => 190,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3813,10 +3813,10 @@ class TestservicesTableSeeder extends Seeder
             316 => 
             array (
                 'id' => 317,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 338,
                 'method_id' => 191,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3825,10 +3825,10 @@ class TestservicesTableSeeder extends Seeder
             317 => 
             array (
                 'id' => 318,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 339,
                 'method_id' => 192,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3837,10 +3837,10 @@ class TestservicesTableSeeder extends Seeder
             318 => 
             array (
                 'id' => 319,
-                'laboratory_type' => 3,
                 'sampletype_id' => 330,
                 'testname_id' => 340,
                 'method_id' => 193,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3849,10 +3849,10 @@ class TestservicesTableSeeder extends Seeder
             319 => 
             array (
                 'id' => 320,
-                'laboratory_type' => 3,
                 'sampletype_id' => 341,
                 'testname_id' => 342,
                 'method_id' => 194,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3861,10 +3861,10 @@ class TestservicesTableSeeder extends Seeder
             320 => 
             array (
                 'id' => 321,
-                'laboratory_type' => 3,
                 'sampletype_id' => 341,
                 'testname_id' => 344,
                 'method_id' => 195,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3873,10 +3873,10 @@ class TestservicesTableSeeder extends Seeder
             321 => 
             array (
                 'id' => 322,
-                'laboratory_type' => 3,
                 'sampletype_id' => 341,
                 'testname_id' => 345,
                 'method_id' => 196,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3885,10 +3885,10 @@ class TestservicesTableSeeder extends Seeder
             322 => 
             array (
                 'id' => 323,
-                'laboratory_type' => 3,
                 'sampletype_id' => 346,
                 'testname_id' => 347,
                 'method_id' => 197,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3897,10 +3897,10 @@ class TestservicesTableSeeder extends Seeder
             323 => 
             array (
                 'id' => 324,
-                'laboratory_type' => 3,
                 'sampletype_id' => 349,
                 'testname_id' => 350,
                 'method_id' => 198,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3909,10 +3909,10 @@ class TestservicesTableSeeder extends Seeder
             324 => 
             array (
                 'id' => 325,
-                'laboratory_type' => 3,
                 'sampletype_id' => 351,
                 'testname_id' => 352,
                 'method_id' => 199,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3921,10 +3921,10 @@ class TestservicesTableSeeder extends Seeder
             325 => 
             array (
                 'id' => 326,
-                'laboratory_type' => 3,
                 'sampletype_id' => 351,
                 'testname_id' => 355,
                 'method_id' => 200,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3933,10 +3933,10 @@ class TestservicesTableSeeder extends Seeder
             326 => 
             array (
                 'id' => 327,
-                'laboratory_type' => 3,
                 'sampletype_id' => 356,
                 'testname_id' => 352,
                 'method_id' => 201,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3945,10 +3945,10 @@ class TestservicesTableSeeder extends Seeder
             327 => 
             array (
                 'id' => 328,
-                'laboratory_type' => 3,
                 'sampletype_id' => 356,
                 'testname_id' => 355,
                 'method_id' => 202,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3957,10 +3957,10 @@ class TestservicesTableSeeder extends Seeder
             328 => 
             array (
                 'id' => 329,
-                'laboratory_type' => 3,
                 'sampletype_id' => 359,
                 'testname_id' => 360,
                 'method_id' => 203,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3969,10 +3969,10 @@ class TestservicesTableSeeder extends Seeder
             329 => 
             array (
                 'id' => 330,
-                'laboratory_type' => 3,
                 'sampletype_id' => 359,
                 'testname_id' => 362,
                 'method_id' => 204,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3981,10 +3981,10 @@ class TestservicesTableSeeder extends Seeder
             330 => 
             array (
                 'id' => 331,
-                'laboratory_type' => 3,
                 'sampletype_id' => 359,
                 'testname_id' => 363,
                 'method_id' => 205,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -3993,10 +3993,10 @@ class TestservicesTableSeeder extends Seeder
             331 => 
             array (
                 'id' => 332,
-                'laboratory_type' => 3,
                 'sampletype_id' => 364,
                 'testname_id' => 362,
                 'method_id' => 206,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4005,10 +4005,10 @@ class TestservicesTableSeeder extends Seeder
             332 => 
             array (
                 'id' => 333,
-                'laboratory_type' => 3,
                 'sampletype_id' => 364,
                 'testname_id' => 363,
                 'method_id' => 207,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4017,10 +4017,10 @@ class TestservicesTableSeeder extends Seeder
             333 => 
             array (
                 'id' => 334,
-                'laboratory_type' => 3,
                 'sampletype_id' => 364,
                 'testname_id' => 365,
                 'method_id' => 208,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4029,10 +4029,10 @@ class TestservicesTableSeeder extends Seeder
             334 => 
             array (
                 'id' => 335,
-                'laboratory_type' => 3,
                 'sampletype_id' => 364,
                 'testname_id' => 366,
                 'method_id' => 205,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4041,10 +4041,10 @@ class TestservicesTableSeeder extends Seeder
             335 => 
             array (
                 'id' => 336,
-                'laboratory_type' => 3,
                 'sampletype_id' => 367,
                 'testname_id' => 368,
                 'method_id' => 209,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4053,10 +4053,10 @@ class TestservicesTableSeeder extends Seeder
             336 => 
             array (
                 'id' => 337,
-                'laboratory_type' => 3,
                 'sampletype_id' => 367,
                 'testname_id' => 370,
                 'method_id' => 210,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4065,10 +4065,10 @@ class TestservicesTableSeeder extends Seeder
             337 => 
             array (
                 'id' => 338,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 373,
                 'method_id' => 211,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4077,10 +4077,10 @@ class TestservicesTableSeeder extends Seeder
             338 => 
             array (
                 'id' => 339,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 376,
                 'method_id' => 212,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4089,10 +4089,10 @@ class TestservicesTableSeeder extends Seeder
             339 => 
             array (
                 'id' => 340,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 377,
                 'method_id' => 213,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4101,10 +4101,10 @@ class TestservicesTableSeeder extends Seeder
             340 => 
             array (
                 'id' => 341,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 378,
                 'method_id' => 214,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4113,10 +4113,10 @@ class TestservicesTableSeeder extends Seeder
             341 => 
             array (
                 'id' => 342,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 379,
                 'method_id' => 215,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4125,10 +4125,10 @@ class TestservicesTableSeeder extends Seeder
             342 => 
             array (
                 'id' => 343,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 380,
                 'method_id' => 216,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4137,10 +4137,10 @@ class TestservicesTableSeeder extends Seeder
             343 => 
             array (
                 'id' => 344,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 381,
                 'method_id' => 217,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4149,10 +4149,10 @@ class TestservicesTableSeeder extends Seeder
             344 => 
             array (
                 'id' => 345,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 382,
                 'method_id' => 218,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4161,10 +4161,10 @@ class TestservicesTableSeeder extends Seeder
             345 => 
             array (
                 'id' => 346,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 383,
                 'method_id' => 219,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4173,10 +4173,10 @@ class TestservicesTableSeeder extends Seeder
             346 => 
             array (
                 'id' => 347,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 384,
                 'method_id' => 220,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4185,10 +4185,10 @@ class TestservicesTableSeeder extends Seeder
             347 => 
             array (
                 'id' => 348,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 386,
                 'method_id' => 221,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4197,10 +4197,10 @@ class TestservicesTableSeeder extends Seeder
             348 => 
             array (
                 'id' => 349,
-                'laboratory_type' => 3,
                 'sampletype_id' => 372,
                 'testname_id' => 388,
                 'method_id' => 222,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4209,10 +4209,10 @@ class TestservicesTableSeeder extends Seeder
             349 => 
             array (
                 'id' => 350,
-                'laboratory_type' => 3,
                 'sampletype_id' => 390,
                 'testname_id' => 295,
                 'method_id' => 223,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4221,10 +4221,10 @@ class TestservicesTableSeeder extends Seeder
             350 => 
             array (
                 'id' => 351,
-                'laboratory_type' => 3,
                 'sampletype_id' => 390,
                 'testname_id' => 296,
                 'method_id' => 224,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4233,10 +4233,10 @@ class TestservicesTableSeeder extends Seeder
             351 => 
             array (
                 'id' => 352,
-                'laboratory_type' => 3,
                 'sampletype_id' => 391,
                 'testname_id' => 316,
                 'method_id' => 162,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4245,10 +4245,10 @@ class TestservicesTableSeeder extends Seeder
             352 => 
             array (
                 'id' => 353,
-                'laboratory_type' => 3,
                 'sampletype_id' => 392,
                 'testname_id' => 393,
                 'method_id' => 225,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4257,10 +4257,10 @@ class TestservicesTableSeeder extends Seeder
             353 => 
             array (
                 'id' => 354,
-                'laboratory_type' => 3,
                 'sampletype_id' => 392,
                 'testname_id' => 395,
                 'method_id' => 225,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4269,10 +4269,10 @@ class TestservicesTableSeeder extends Seeder
             354 => 
             array (
                 'id' => 355,
-                'laboratory_type' => 3,
                 'sampletype_id' => 392,
                 'testname_id' => 396,
                 'method_id' => 226,
+                'laboratory_type' => 3,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:14',
@@ -4281,10 +4281,10 @@ class TestservicesTableSeeder extends Seeder
             355 => 
             array (
                 'id' => 356,
-                'laboratory_type' => 2,
                 'sampletype_id' => 397,
                 'testname_id' => 398,
                 'method_id' => 227,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4293,10 +4293,10 @@ class TestservicesTableSeeder extends Seeder
             356 => 
             array (
                 'id' => 357,
-                'laboratory_type' => 2,
                 'sampletype_id' => 397,
                 'testname_id' => 400,
                 'method_id' => 227,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4305,10 +4305,10 @@ class TestservicesTableSeeder extends Seeder
             357 => 
             array (
                 'id' => 358,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 402,
                 'method_id' => 228,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4317,10 +4317,10 @@ class TestservicesTableSeeder extends Seeder
             358 => 
             array (
                 'id' => 359,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 400,
                 'method_id' => 229,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4329,10 +4329,10 @@ class TestservicesTableSeeder extends Seeder
             359 => 
             array (
                 'id' => 360,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 407,
                 'method_id' => 230,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4341,10 +4341,10 @@ class TestservicesTableSeeder extends Seeder
             360 => 
             array (
                 'id' => 361,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 409,
                 'method_id' => 231,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4353,10 +4353,10 @@ class TestservicesTableSeeder extends Seeder
             361 => 
             array (
                 'id' => 362,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 411,
                 'method_id' => 232,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4365,10 +4365,10 @@ class TestservicesTableSeeder extends Seeder
             362 => 
             array (
                 'id' => 363,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 413,
                 'method_id' => 233,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4377,10 +4377,10 @@ class TestservicesTableSeeder extends Seeder
             363 => 
             array (
                 'id' => 364,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 415,
                 'method_id' => 233,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4389,10 +4389,10 @@ class TestservicesTableSeeder extends Seeder
             364 => 
             array (
                 'id' => 365,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 402,
                 'method_id' => 234,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4401,10 +4401,10 @@ class TestservicesTableSeeder extends Seeder
             365 => 
             array (
                 'id' => 366,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 400,
                 'method_id' => 235,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4413,10 +4413,10 @@ class TestservicesTableSeeder extends Seeder
             366 => 
             array (
                 'id' => 367,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 418,
                 'method_id' => 236,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4425,10 +4425,10 @@ class TestservicesTableSeeder extends Seeder
             367 => 
             array (
                 'id' => 368,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 407,
                 'method_id' => 237,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4437,10 +4437,10 @@ class TestservicesTableSeeder extends Seeder
             368 => 
             array (
                 'id' => 369,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 421,
                 'method_id' => 238,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4449,10 +4449,10 @@ class TestservicesTableSeeder extends Seeder
             369 => 
             array (
                 'id' => 370,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 421,
                 'method_id' => 239,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4461,10 +4461,10 @@ class TestservicesTableSeeder extends Seeder
             370 => 
             array (
                 'id' => 371,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 424,
                 'method_id' => 240,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4473,10 +4473,10 @@ class TestservicesTableSeeder extends Seeder
             371 => 
             array (
                 'id' => 372,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 425,
                 'method_id' => 240,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4485,10 +4485,10 @@ class TestservicesTableSeeder extends Seeder
             372 => 
             array (
                 'id' => 373,
-                'laboratory_type' => 2,
                 'sampletype_id' => 401,
                 'testname_id' => 426,
                 'method_id' => 241,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4497,10 +4497,10 @@ class TestservicesTableSeeder extends Seeder
             373 => 
             array (
                 'id' => 374,
-                'laboratory_type' => 2,
                 'sampletype_id' => 428,
                 'testname_id' => 421,
                 'method_id' => 242,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4509,10 +4509,10 @@ class TestservicesTableSeeder extends Seeder
             374 => 
             array (
                 'id' => 375,
-                'laboratory_type' => 2,
                 'sampletype_id' => 428,
                 'testname_id' => 425,
                 'method_id' => 243,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4521,10 +4521,10 @@ class TestservicesTableSeeder extends Seeder
             375 => 
             array (
                 'id' => 376,
-                'laboratory_type' => 2,
                 'sampletype_id' => 428,
                 'testname_id' => 426,
                 'method_id' => 241,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4533,10 +4533,10 @@ class TestservicesTableSeeder extends Seeder
             376 => 
             array (
                 'id' => 377,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 432,
                 'method_id' => 244,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4545,10 +4545,10 @@ class TestservicesTableSeeder extends Seeder
             377 => 
             array (
                 'id' => 378,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 434,
                 'method_id' => 245,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4557,10 +4557,10 @@ class TestservicesTableSeeder extends Seeder
             378 => 
             array (
                 'id' => 379,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 435,
                 'method_id' => 246,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4569,10 +4569,10 @@ class TestservicesTableSeeder extends Seeder
             379 => 
             array (
                 'id' => 380,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 421,
                 'method_id' => 247,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4581,10 +4581,10 @@ class TestservicesTableSeeder extends Seeder
             380 => 
             array (
                 'id' => 381,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 421,
                 'method_id' => 248,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4593,10 +4593,10 @@ class TestservicesTableSeeder extends Seeder
             381 => 
             array (
                 'id' => 382,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 439,
                 'method_id' => 249,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4605,10 +4605,10 @@ class TestservicesTableSeeder extends Seeder
             382 => 
             array (
                 'id' => 383,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 425,
                 'method_id' => 250,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4617,10 +4617,10 @@ class TestservicesTableSeeder extends Seeder
             383 => 
             array (
                 'id' => 384,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 425,
                 'method_id' => 251,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4629,10 +4629,10 @@ class TestservicesTableSeeder extends Seeder
             384 => 
             array (
                 'id' => 385,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 425,
                 'method_id' => 252,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',
@@ -4641,10 +4641,10 @@ class TestservicesTableSeeder extends Seeder
             385 => 
             array (
                 'id' => 386,
-                'laboratory_type' => 2,
                 'sampletype_id' => 431,
                 'testname_id' => 443,
                 'method_id' => 253,
+                'laboratory_type' => 2,
                 'laboratory_id' => 14,
                 'is_active' => 1,
                 'created_at' => '2024-07-31 08:38:21',

@@ -152,28 +152,28 @@ class CroClass
         return [
             [
                 'name' => 'Due Today',
-                'description' => 'List of items',
-                'count' => Tsr::where('due_at',now())->where('laboratory_id',$this->laboratory)->count(),
+                'description' => 'See all requests due for today',
+                'count' => Tsr::whereDate('due_at',now())->where('laboratory_id',$this->laboratory)->count(),
                 'icon' => 'ri-error-warning-line',
                 'color' => 'bg-warning-subtle text-warning'
             ],
             [
                 'name' => 'Overdue Request',
-                'description' => 'List of items',
-                'count' => Tsr::where('status_id',3)->where('due_at','>',now())->where('laboratory_id',$this->laboratory)->count(),
+                'description' => 'Keep track of all laboratory tasks',
+                'count' => Tsr::where('status_id',3)->whereDate('due_at','<',now())->where('laboratory_id',$this->laboratory)->count(),
                 'icon' => 'ri-error-warning-fill',
                 'color' => 'bg-danger-subtle text-danger'
             ],
             [
                 'name' => 'For Released',
-                'description' => 'Check for expiration',
+                'description' => 'Reports that are ready to be released',
                 'count' => Tsr::where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->count(),
                 'icon' => 'ri-alert-fill',
                 'color' => 'bg-success-subtle text-success'
             ],
             [
                 'name' => 'Unclaimed Reports',
-                'description' => 'Please restock soon',
+                'description' => 'Ensure follow-up on unclaimed reports.',
                 'count' => Tsr::where('status_id',4)->where('due_at','<',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->count(),
                 'icon' => 'ri-information-fill',
                 'color' => 'bg-dark-subtle text-dark'

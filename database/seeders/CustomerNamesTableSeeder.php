@@ -828,6 +828,114 @@ class CustomerNamesTableSeeder extends Seeder
                 'created_at' => '2024-08-07 08:37:53',
                 'updated_at' => '2024-08-07 08:37:53',
             ),
+            90 => 
+            array (
+                'id' => 94,
+                'name' => 'Dipolog Livelihood Distribution Inc.',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:09:26',
+                'updated_at' => '2024-08-14 09:09:26',
+            ),
+            91 => 
+            array (
+                'id' => 95,
+                'name' => 'Zamboanga Nickel Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:11:26',
+                'updated_at' => '2024-08-14 09:11:26',
+            ),
+            92 => 
+            array (
+                'id' => 96,
+                'name' => 'Genmeds Pharmacy',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:18:10',
+                'updated_at' => '2024-08-14 09:18:10',
+            ),
+            93 => 
+            array (
+                'id' => 97,
+                'name' => 'Sunbiotech Medical and Laboratory Supplies Company',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:19:57',
+                'updated_at' => '2024-08-14 09:19:57',
+            ),
+            94 => 
+            array (
+                'id' => 98,
+                'name' => 'Southern Island Petroleum Company',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:21:14',
+                'updated_at' => '2024-08-14 09:21:14',
+            ),
+            95 => 
+            array (
+                'id' => 99,
+                'name' => 'Sis Pharmacy',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:26:16',
+                'updated_at' => '2024-08-14 09:26:16',
+            ),
+            96 => 
+            array (
+                'id' => 100,
+                'name' => 'Department of Science and Technology',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:30:14',
+                'updated_at' => '2024-08-14 09:30:14',
+            ),
+            97 => 
+            array (
+                'id' => 101,
+                'name' => 'B & S Hardware and Construction Supplies',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:32:56',
+                'updated_at' => '2024-08-14 09:32:56',
+            ),
+            98 => 
+            array (
+                'id' => 102,
+                'name' => 'Mattheo\'s Pharma and Convenience Store',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:38:12',
+                'updated_at' => '2024-08-14 09:38:12',
+            ),
+            99 => 
+            array (
+                'id' => 103,
+                'name' => 'Shell Station',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:39:49',
+                'updated_at' => '2024-08-14 09:39:49',
+            ),
+            100 => 
+            array (
+                'id' => 104,
+                'name' => 'Philippine Ports Authority',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:45:13',
+                'updated_at' => '2024-08-14 09:45:13',
+            ),
+            101 => 
+            array (
+                'id' => 105,
+                'name' => 'SureCare Pharmacy',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-14 09:50:29',
+                'updated_at' => '2024-08-14 09:50:29',
+            ),
         ));
 
         
