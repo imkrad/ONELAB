@@ -76,6 +76,12 @@ class SaveClass
                 $s->save();
             }
             $this->report($request->id);
+            
+            if($request->is_government){
+                $data->status_id = 3;
+                $data->save();
+                $data->payment()->update(['status_id' => 18]);
+            }
         }
 
         $final =  Tsr::query()

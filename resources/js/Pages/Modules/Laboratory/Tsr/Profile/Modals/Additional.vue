@@ -3,6 +3,7 @@
         
         <div class="row g-2 mt-n2">
             <div class="col-md-9">
+                {{selected}}
                 <div class="form-floating">
                     <input type="text" v-model="selected.name" class="form-control" readonly>
                     <label>Description</label>
@@ -75,9 +76,13 @@ export default {
     },
     computed: {
         total() {
-            const total = this.selected.fee.replace(/₱|,/g, '') * this.form.quantity;
-            this.form.total = total;
-            return this.formatMoney(total);
+            if(this.selected.length == 1){
+                const total = this.selected.fees.replace(/₱|,/g, '') * this.form.quantity;
+                this.form.total = total;
+                return this.formatMoney(total);
+            }else{
+                
+            }
         }
     },
     methods: { 

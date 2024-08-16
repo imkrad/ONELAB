@@ -10,7 +10,7 @@ class Testservice extends Model
     use HasFactory;
 
     protected $fillable = [
-        'laboratory_type','sampletype_id','testname_id','method_id','laboratory_id','is_active','is_synced'
+        'laboratory_type','sampletype_id','testname_id','method_id','laboratory_id','is_active'
     ];
 
     public function sampletype()

@@ -936,6 +936,24 @@ class CustomerNamesTableSeeder extends Seeder
                 'created_at' => '2024-08-14 09:50:29',
                 'updated_at' => '2024-08-14 09:50:29',
             ),
+            102 => 
+            array (
+                'id' => 106,
+                'name' => 'Del Monte Coconut Farmers Credit Cooperative',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-16 08:26:57',
+                'updated_at' => '2024-08-16 08:26:57',
+            ),
+            103 => 
+            array (
+                'id' => 107,
+                'name' => '11th Avenue Gasoline Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-16 08:28:10',
+                'updated_at' => '2024-08-16 08:28:10',
+            ),
         ));
 
         
