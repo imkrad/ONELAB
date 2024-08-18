@@ -22,8 +22,10 @@ return new class extends Migration
             $table->foreign('orseries_id')->references('id')->on('finance_orseries')->onDelete('cascade');
             $table->tinyInteger('deposit_id')->unsigned()->index();
             $table->foreign('deposit_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
-            $table->bigInteger('payor_id')->unsigned()->index();
-            $table->foreign('payor_id')->references('id')->on('customers')->onDelete('cascade');
+            // $table->bigInteger('payor_id')->unsigned()->index();
+            // $table->foreign('payor_id')->references('id')->on('customers')->onDelete('cascade');
+            // $table->unsignedInteger('payorable_id');
+            // $table->string('payorable_type');
             $table->integer('created_by')->unsigned()->index();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->integer('laboratory_id')->unsigned()->index();

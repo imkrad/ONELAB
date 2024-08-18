@@ -62,27 +62,27 @@ class ViewClass
             ->with('items.itemable','or')
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
             ->with('collection:id,name','payment:id,name,others','status:id,name,color,others')
-            ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
-            ->with('customer.contact:id,email,contact_no,customer_id')
-            ->when($request->keyword, function ($query, $keyword) {
-                $query->where('code', 'LIKE', "%{$keyword}%")
-                ->orWhereHas('customer',function ($query) use ($keyword) {
-                    $query->whereHas('customer_name',function ($query) use ($keyword) {
-                        $query->where('name', 'LIKE', "%{$keyword}%");
-                    });
-                })
-                ->orWhereHas('or',function ($query) use ($keyword) {
-                    $query->where('number', 'LIKE', "%{$keyword}%");
-                });
-            })
+            ->with('payorable')
             ->when($request->status, function ($query, $status) {
                 $query->where('status_id',$status);
             })
             ->when($this->laboratory, function ($query, $lab) {
                 $query->where('laboratory_id',$lab);
             })
-            ->orderBy('created_at','DESC')
+            ->orderBy('updated_at','DESC')
             ->paginate($request->count)
+            ->loadMorph('payorable', [
+                FinanceName::class => [],
+                Customer::class => [
+                    'customer_name:id,name,has_branches',
+                    'address:address,addressable_id,region_code,province_code,municipality_code,barangay_code',
+                    'address.region:code,name,region',
+                    'address.province:code,name',
+                    'address.municipality:code,name',
+                    'address.barangay:code,name',
+                    'contact:id,email,contact_no,customer_id'
+                ],
+             ])
         );
         return $data;
     }

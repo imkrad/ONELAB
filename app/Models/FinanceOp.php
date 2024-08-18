@@ -15,10 +15,14 @@ class FinanceOp extends Model
         'status_id',
         'collection_id',
         'payment_id',
-        'customer_id',
         'created_by',
         'laboratory_id'
     ];
+
+    public function payorable()
+    {
+        return $this->morphTo();
+    }
 
     public function items()
     {
@@ -30,10 +34,10 @@ class FinanceOp extends Model
         return $this->hasOne('App\Models\FinanceReceipt', 'op_id');
     }
 
-    public function customer()
-    {
-        return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
-    }
+    // public function customer()
+    // {
+    //     return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
+    // }
 
     public function createdby()
     {

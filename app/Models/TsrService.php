@@ -24,7 +24,7 @@ class TsrService extends Model
     
     public function service()
     {
-        return $this->belongsTo('App\Models\ListService', 'service_id', 'id');
+        return $this->belongsTo('App\Models\TestserviceAddon', 'service_id', 'id');
     }
 
     public function setFeeAttribute($value)

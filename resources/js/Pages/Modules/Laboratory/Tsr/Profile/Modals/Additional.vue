@@ -3,7 +3,6 @@
         
         <div class="row g-2 mt-n2">
             <div class="col-md-9">
-                {{selected}}
                 <div class="form-floating">
                     <input type="text" v-model="selected.name" class="form-control" readonly>
                     <label>Description</label>
@@ -76,21 +75,20 @@ export default {
     },
     computed: {
         total() {
-            if(this.selected.length == 1){
-                const total = this.selected.fees.replace(/₱|,/g, '') * this.form.quantity;
-                this.form.total = total;
-                return this.formatMoney(total);
-            }else{
-                
-            }
+            const total = this.selected.fee.replace(/₱|,/g, '') * this.form.quantity;
+            this.form.total = total;
+            return this.formatMoney(total);
         }
     },
     methods: { 
         show(data,id,tsr){
             this.form.tsr_id = tsr;
             this.form.id = id;
-            this.form.service = data;
-            this.selected = data;
+            
+            if(data.length == 1){
+                this.selected = data[0];
+                this.form.service = data[0];
+            }
             this.showModal = true;
         },
         submit(){

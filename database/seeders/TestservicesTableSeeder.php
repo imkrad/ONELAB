@@ -4650,6 +4650,18 @@ class TestservicesTableSeeder extends Seeder
                 'created_at' => '2024-07-31 08:38:21',
                 'updated_at' => '2024-07-31 08:38:21',
             ),
+            386 => 
+            array (
+                'id' => 387,
+                'sampletype_id' => 137,
+                'testname_id' => 146,
+                'method_id' => 82,
+                'laboratory_type' => 1,
+                'laboratory_id' => 14,
+                'is_active' => 1,
+                'created_at' => '2024-08-16 15:39:55',
+                'updated_at' => '2024-08-16 15:39:55',
+            ),
         ));
 
         

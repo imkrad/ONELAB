@@ -954,6 +954,33 @@ class CustomerNamesTableSeeder extends Seeder
                 'created_at' => '2024-08-16 08:28:10',
                 'updated_at' => '2024-08-16 08:28:10',
             ),
+            104 => 
+            array (
+                'id' => 108,
+                'name' => 'Sulu State College',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-16 16:54:21',
+                'updated_at' => '2024-08-16 16:54:21',
+            ),
+            105 => 
+            array (
+                'id' => 109,
+                'name' => 'Zamboanga City Water District',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-16 17:00:01',
+                'updated_at' => '2024-08-16 17:00:01',
+            ),
+            106 => 
+            array (
+                'id' => 110,
+                'name' => 'Western Mindanao State University',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-16 17:02:46',
+                'updated_at' => '2024-08-16 17:02:46',
+            ),
         ));
 
         

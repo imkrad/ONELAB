@@ -207,6 +207,15 @@ class FinanceNamesTableSeeder extends Seeder
                 'created_at' => '2024-08-02 18:09:29',
                 'updated_at' => '2024-08-02 18:09:29',
             ),
+            21 => 
+            array (
+                'id' => 22,
+                'name' => 'Marielle R. Atilano',
+                'is_individual' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-17 18:01:59',
+                'updated_at' => '2024-08-17 18:01:59',
+            ),
         ));
 
         

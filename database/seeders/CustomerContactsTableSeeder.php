@@ -1116,6 +1116,33 @@ class CustomerContactsTableSeeder extends Seeder
                 'created_at' => '2024-08-16 08:28:10',
                 'updated_at' => '2024-08-16 08:28:10',
             ),
+            122 => 
+            array (
+                'id' => 123,
+                'email' => 'eyJpdiI6InZCWXRaanJndk4zUXhnWDNaS0JLNmc9PSIsInZhbHVlIjoiRHNCcWtWeGJUYXFzTzEwS3FNKzZiK09EU0VxSUlTREhQZWN6TmxnQzNIaz0iLCJtYWMiOiI5NGI5MzMwNjg0YTIyMGEyZDc4MWZkOWZjOTJiNjg3MDc5MzlkYzVkNGZlYWZmNWEyMDk5MDYxMDU0NTQ1N2E5IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IkpzOHRpem54M21JenMwVm5VNGlLZFE9PSIsInZhbHVlIjoiakxRK1NGU0JFNlA5OEl5WVdwMXdyZz09IiwibWFjIjoiODZjYmNhMjZlNmQ0M2E1MDAyOGU5OGY2NDYwYjMwYWI5NmM3NGQxNWMyNWFlNjMyZDZmZjg3NWU0NTJmMjc0ZCIsInRhZyI6IiJ9',
+                'customer_id' => 124,
+                'created_at' => '2024-08-16 16:54:21',
+                'updated_at' => '2024-08-16 16:54:21',
+            ),
+            123 => 
+            array (
+                'id' => 124,
+                'email' => 'eyJpdiI6ImpkanVlYVloQXZBYVFmSWphd0cwc2c9PSIsInZhbHVlIjoiZ20yR2huc1RnWXN3NHhhWXQ4V0JCdz09IiwibWFjIjoiYWFiZjBkZWMwMTg3ZWYyNzI2ODgxZGI4MjMyZTQwMGNjNmFkYmVlODFlNDQ3YjNiY2FjNWRiNjYzNGQ2ZTRmMCIsInRhZyI6IiJ9',
+                'contact_no' => 'eyJpdiI6IjhQaEliMWFTVnVmRUtMRXh5UkJpY3c9PSIsInZhbHVlIjoiTGJMV2ZMOCt1LytyK1dRYWZoKzZyUT09IiwibWFjIjoiODgyNGFjZGI1NDZkOWNkNmRiYWMyOGE2NTU0OWI5N2E1ODkxM2NiYjJjNzI2MjBhM2ExZDNmMjcyY2Q2MWJhNyIsInRhZyI6IiJ9',
+                'customer_id' => 125,
+                'created_at' => '2024-08-16 17:00:01',
+                'updated_at' => '2024-08-16 17:00:01',
+            ),
+            124 => 
+            array (
+                'id' => 125,
+                'email' => 'eyJpdiI6InNOUWJKTVd0U0QyQUhEUVJqckRtZXc9PSIsInZhbHVlIjoieWo3dmM4RG5tK3ZOcno5ZjdGWmhpN0ZkdUJOSXpIZnhXd2l4MHgyWFhwaz0iLCJtYWMiOiI5M2E1NTM2OGNkOWIxZDZjZWEyNzYyOTcwOTVlN2EyOTEzMTA5NzdmN2UzNWY2MzQyMDUxZDFmZDEzNzFkNDFhIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IjVZS0hVYlBnV1Y1MjJ1Sk5LaXdvYmc9PSIsInZhbHVlIjoicVFXczV3Nkc1eXZPUUZwKzVnMW0ydz09IiwibWFjIjoiYWZiMzlhZjQwOGQ3YTIzM2JlZTQ2M2Y2MTJmOWM4YTI4NjNhOWY2OTMxZDI5ZTZmNTk4N2FkOGQwMGZkOTg2ZSIsInRhZyI6IiJ9',
+                'customer_id' => 126,
+                'created_at' => '2024-08-16 17:02:46',
+                'updated_at' => '2024-08-16 17:02:46',
+            ),
         ));
 
         

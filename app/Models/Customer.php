@@ -25,6 +25,11 @@ class Customer extends Model
         'user_id'
     ];
 
+    public function payorable()
+    {
+        return $this->morphOne('App\Models\FinanceOp', 'payorable');
+    }
+
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');

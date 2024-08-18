@@ -15,7 +15,7 @@ class TestserviceNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('testservice_names')->truncate();
+        \DB::table('testservice_names')->delete();
         
         \DB::table('testservice_names')->insert(array (
             0 => 
@@ -2529,7 +2529,7 @@ class TestserviceNamesTableSeeder extends Seeder
             228 => 
             array (
                 'id' => 229,
-                'name' => 'Chemical Oxygen Dem&',
+                'name' => 'Chemical Oxygen Demand',
                 'short' => NULL,
                 'type_id' => 31,
                 'laboratory_type' => 1,
@@ -2936,7 +2936,7 @@ class TestserviceNamesTableSeeder extends Seeder
             265 => 
             array (
                 'id' => 266,
-                'name' => 'Biochemical Oxygen Dem&',
+                'name' => 'Biochemical Oxygen Demand',
                 'short' => NULL,
                 'type_id' => 31,
                 'laboratory_type' => 1,

@@ -14,4 +14,8 @@ class FinanceName extends Model
         'is_individual'
     ];
 
+    public function payorable()
+    {
+        return $this->morphOne('App\Models\FinanceOp', 'payorable');
+    }
 }

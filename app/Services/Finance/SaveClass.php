@@ -123,7 +123,7 @@ class SaveClass
                 'number' => $request->orseries['next'],
                 'orseries_id' => $request->orseries['value'],  
                 'op_id' => $request->selected['id'],
-                'payor_id' => $request->selected['customer_id'],
+                // 'payor_id' => $request->selected['customer_id'],
                 'created_by' => \Auth::user()->id,
                 'laboratory_id' => \Auth::user()->userrole->laboratory_id
             ]));
@@ -239,7 +239,9 @@ class SaveClass
     public function receipt_nonlab($request){
         $result = \DB::transaction(function () use ($request){
             \DB::beginTransaction();
-            $op = FinanceOp::create(array_merge($request->all(), [
+            $payor = FinanceName::where('id',$request->customer_id)->first();
+            // dd($payor);
+            $op = $payor->payorable()->create(array_merge($request->all(), [
                 'code' => $this->generateCode(),
                 'total' => 0,
                 'status_id' => 7,
@@ -269,7 +271,7 @@ class SaveClass
                     'number' => $request->orseries['next'],
                     'orseries_id' => $request->orseries['value'],  
                     'op_id' => $op->id,
-                    'payor_id' => $request->customer_id,
+                    // 'payor_id' => $request->customer_id,
                     'deposit_id' => $request->deposit_id,
                     'created_by' => \Auth::user()->id,
                     'laboratory_id' => \Auth::user()->userrole->laboratory_id

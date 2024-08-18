@@ -14,12 +14,11 @@ class FinanceReceipt extends Model
         'op_id',
         'orseries_id',
         'deposit_id',
-        'payor_id',
         'created_by',
         'laboratory_id',
         'is_deposited'
     ];
-
+    
     public function wallet()
     {
         return $this->hasMany('App\Models\WalletTransaction', 'receipt_id');
@@ -40,10 +39,10 @@ class FinanceReceipt extends Model
         return $this->belongsTo('App\Models\FinanceOp', 'op_id', 'id');
     }
 
-    public function payor()
-    {
-        return $this->belongsTo('App\Models\Customer', 'payor_id', 'id');
-    }
+    // public function payor()
+    // {
+    //     return $this->belongsTo('App\Models\Customer', 'payor_id', 'id');
+    // }
 
     public function laboratory()
     {

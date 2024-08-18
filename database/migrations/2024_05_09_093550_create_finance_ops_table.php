@@ -22,8 +22,10 @@ return new class extends Migration
             $table->foreign('collection_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->tinyInteger('payment_id')->unsigned()->nullable();
             $table->foreign('payment_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
-            $table->bigInteger('customer_id')->unsigned()->index();
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            // $table->bigInteger('customer_id')->unsigned()->index();
+            // $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->unsignedInteger('payorable_id');
+            $table->string('payorable_type');
             $table->integer('created_by')->unsigned()->index();
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->integer('laboratory_id')->unsigned()->index();

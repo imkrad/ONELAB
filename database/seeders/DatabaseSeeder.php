@@ -72,5 +72,25 @@ class DatabaseSeeder extends Seeder
         $this->call(TargetBreakdownsTableSeeder::class);
         $this->call(TestserviceAddonsTableSeeder::class);
         // $this->call(ConfigurationsTableSeeder::class);
+        $this->call(CustomerConformesTableSeeder::class);
+
+        
+        $this->call(WalletsTableSeeder::class);
+        $this->call(WalletTransactionsTableSeeder::class);
+        $this->call(TsrsTableSeeder::class);
+        $this->call(TsrPaymentsTableSeeder::class);
+        $this->call(TsrPaymentDeductionsTableSeeder::class);
+        $this->call(TsrSamplesTableSeeder::class);
+        $this->call(TsrAnalysesTableSeeder::class);
+        $this->call(TsrSampleReportsTableSeeder::class);
+        $this->call(TsrServicesTableSeeder::class);
+        $this->call(TsrReportsTableSeeder::class);
+        
+        $this->call(FinanceOrseriesTableSeeder::class);
+        $this->call(FinanceOpsTableSeeder::class);
+        $this->call(FinanceOpItemsTableSeeder::class);
+        $this->call(FinanceReceiptsTableSeeder::class);
+        $this->call(FinanceReceiptDetailsTableSeeder::class);
+        
     }
 }

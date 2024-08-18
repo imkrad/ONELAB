@@ -2268,6 +2268,51 @@ class AddressesTableSeeder extends Seeder
                 'created_at' => '2024-08-16 08:28:10',
                 'updated_at' => '2024-08-16 08:28:10',
             ),
+            150 => 
+            array (
+                'id' => 151,
+                'address' => 'Main road',
+                'longitude' => '121.106589',
+                'latitude' => '6.080231',
+                'barangay_code' => '156611003',
+                'municipality_code' => '156611000',
+                'province_code' => '156600000',
+                'region_code' => '150000000',
+                'addressable_id' => 124,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-08-16 16:54:21',
+                'updated_at' => '2024-08-16 16:54:21',
+            ),
+            151 => 
+            array (
+                'id' => 152,
+                'address' => 'Main road',
+                'longitude' => '122.073284',
+                'latitude' => '6.946671',
+                'barangay_code' => '097332059',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 125,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-08-16 17:00:01',
+                'updated_at' => '2024-08-16 17:00:01',
+            ),
+            152 => 
+            array (
+                'id' => 153,
+                'address' => 'road',
+                'longitude' => '122.060095',
+                'latitude' => '6.915545',
+                'barangay_code' => '097332004',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 126,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-08-16 17:02:46',
+                'updated_at' => '2024-08-16 17:02:46',
+            ),
         ));
 
         
