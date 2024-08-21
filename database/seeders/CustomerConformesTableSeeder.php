@@ -15,7 +15,7 @@ class CustomerConformesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_conformes')->truncate();
+        \DB::table('customer_conformes')->delete();
         
         \DB::table('customer_conformes')->insert(array (
             0 => 
