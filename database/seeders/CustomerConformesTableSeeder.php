@@ -15,7 +15,7 @@ class CustomerConformesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_conformes')->delete();
+        \DB::table('customer_conformes')->truncate();
         
         \DB::table('customer_conformes')->insert(array (
             0 => 
@@ -494,6 +494,24 @@ class CustomerConformesTableSeeder extends Seeder
                 'customer_id' => 54,
                 'created_at' => '2024-08-19 15:19:17',
                 'updated_at' => '2024-08-19 15:19:17',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'name' => 'eyJpdiI6IndIaE9DZlh5bDhDb2MwQ2R3azZkMlE9PSIsInZhbHVlIjoib2F6MDhpUzZCb3UybHFYNkEyTlBRWHUwWmZaQUZVYzVqKzQrS01MUG9QMD0iLCJtYWMiOiJlNmMwNjcxZDcxYjc0MWY0Mjg0MDA2OTgyNTExNDBlN2ZjNzk5ODMzNTc1YjRlMjA2ZDI0OGZmNDdmMzBmMWZjIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IjJwbm1Lek5TT2Y3Vjg0b2VGZ05UUkE9PSIsInZhbHVlIjoiaVRoczlrdTFka1ZEUlJqTVJUWUxFdz09IiwibWFjIjoiNDYzOWQ3MDg3YTMyM2JhODlkNjViMDc2YWNhNzIwZjNlNjc3MjNhNTIxMzJlZjhhMjMyMWM5MzA2YmYxM2NjYSIsInRhZyI6IiJ9',
+                'customer_id' => 132,
+                'created_at' => '2024-08-21 08:27:36',
+                'updated_at' => '2024-08-21 08:27:36',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'name' => 'eyJpdiI6IkQzbXF1R2daeEUwbEJXSll5ZlBkanc9PSIsInZhbHVlIjoiNC9Xd042bHZoTG8vaVAzc0x4bTRha2c1b2RrcUN6anQwV3ZRRDlDODV2Zz0iLCJtYWMiOiIyNDFlOWQzYzdiMjU0MTk4Y2Y5MjZiOWIzZmY0YmMxODVkYmEwNTRjZDY1NWRkZGMzMjI5ODMxYWRlOThkMDVlIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IkpZQmRISm5zMWZoQWROUEFFdWVyN0E9PSIsInZhbHVlIjoiYW5KeVZzOE9TQWhXd2RWWXpqQmtEdz09IiwibWFjIjoiNDQ3NTk3OTQ3MTQ5MzJlMjkxYTY4YTdjNDA4ZDhjMmQyNWQ1OTYzNzMzOGQ0OTcwNzA4YjQ5YzZiYTFkOWU5YyIsInRhZyI6IiJ9',
+                'customer_id' => 133,
+                'created_at' => '2024-08-21 08:29:39',
+                'updated_at' => '2024-08-21 08:29:39',
             ),
         ));
 
