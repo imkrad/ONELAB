@@ -15,7 +15,7 @@ class TsrsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsrs')->truncate();
+        \DB::table('tsrs')->delete();
         
         \DB::table('tsrs')->insert(array (
             0 => 
@@ -1393,6 +1393,38 @@ class TsrsTableSeeder extends Seeder
                 'released_at' => NULL,
                 'created_at' => '2024-08-19 15:19:33',
                 'updated_at' => '2024-08-19 16:26:14',
+            ),
+            86 => 
+            array (
+                'id' => 89,
+                'code' => 'R9-082024-MIC-0365',
+                'laboratory_id' => 14,
+                'laboratory_type' => 2,
+                'status_id' => 2,
+                'customer_id' => 132,
+                'conforme_id' => 54,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-08-28',
+                'released_at' => NULL,
+                'created_at' => '2024-08-20 08:27:45',
+                'updated_at' => '2024-08-21 08:28:54',
+            ),
+            87 => 
+            array (
+                'id' => 90,
+                'code' => 'R9-082024-MET-0456',
+                'laboratory_id' => 14,
+                'laboratory_type' => 3,
+                'status_id' => 2,
+                'customer_id' => 133,
+                'conforme_id' => 55,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-09-20',
+                'released_at' => NULL,
+                'created_at' => '2024-08-20 08:29:54',
+                'updated_at' => '2024-08-21 08:30:52',
             ),
         ));
 

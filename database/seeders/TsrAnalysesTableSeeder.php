@@ -15,7 +15,7 @@ class TsrAnalysesTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_analyses')->truncate();
+        \DB::table('tsr_analyses')->delete();
         
         \DB::table('tsr_analyses')->insert(array (
             0 => 
@@ -5555,6 +5555,45 @@ class TsrAnalysesTableSeeder extends Seeder
                 'end_at' => NULL,
                 'created_at' => '2024-08-19 15:20:07',
                 'updated_at' => '2024-08-19 15:20:07',
+            ),
+            426 => 
+            array (
+                'id' => 433,
+                'fee' => '1000.00',
+                'status_id' => 10,
+                'testservice_id' => 381,
+                'sample_id' => 198,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-08-21 08:28:38',
+                'updated_at' => '2024-08-21 08:28:38',
+            ),
+            427 => 
+            array (
+                'id' => 434,
+                'fee' => '550.00',
+                'status_id' => 10,
+                'testservice_id' => 382,
+                'sample_id' => 198,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-08-21 08:28:38',
+                'updated_at' => '2024-08-21 08:28:38',
+            ),
+            428 => 
+            array (
+                'id' => 435,
+                'fee' => '2000.00',
+                'status_id' => 10,
+                'testservice_id' => 317,
+                'sample_id' => 199,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-08-21 08:30:38',
+                'updated_at' => '2024-08-21 08:30:38',
             ),
         ));
 

@@ -15,7 +15,7 @@ class TsrPaymentsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_payments')->truncate();
+        \DB::table('tsr_payments')->delete();
         
         \DB::table('tsr_payments')->insert(array (
             0 => 
@@ -1479,6 +1479,40 @@ class TsrPaymentsTableSeeder extends Seeder
                 'status_id' => 7,
                 'tsr_id' => 88,
                 'paid_at' => '2024-08-19 16:26:14',
+            ),
+            86 => 
+            array (
+                'id' => 89,
+                'total' => '1550.00',
+                'subtotal' => '1550.00',
+                'discount' => '0.00',
+                'or_number' => NULL,
+                'is_paid' => 0,
+                'is_free' => 0,
+                'has_deduction' => 0,
+                'discount_id' => 1,
+                'payment_id' => NULL,
+                'collection_id' => NULL,
+                'status_id' => 6,
+                'tsr_id' => 89,
+                'paid_at' => NULL,
+            ),
+            87 => 
+            array (
+                'id' => 90,
+                'total' => '2000.00',
+                'subtotal' => '2000.00',
+                'discount' => '0.00',
+                'or_number' => NULL,
+                'is_paid' => 0,
+                'is_free' => 0,
+                'has_deduction' => 0,
+                'discount_id' => 1,
+                'payment_id' => NULL,
+                'collection_id' => NULL,
+                'status_id' => 6,
+                'tsr_id' => 90,
+                'paid_at' => NULL,
             ),
         ));
 

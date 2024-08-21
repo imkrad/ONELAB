@@ -15,7 +15,7 @@ class TsrSamplesTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_samples')->truncate();
+        \DB::table('tsr_samples')->delete();
         
         \DB::table('tsr_samples')->insert(array (
             0 => 
@@ -2276,6 +2276,30 @@ Graduation: 2 °C',
                 'tsr_id' => 88,
                 'created_at' => '2024-08-19 15:19:46',
                 'updated_at' => '2024-08-19 15:20:25',
+            ),
+            188 => 
+            array (
+                'id' => 198,
+                'code' => 'MIC-00973',
+                'name' => 'Water',
+                'customer_description' => 'Source: Product Water, Date and Time of Sampling: August 20, 2024 at 03:00 AM',
+                'description' => 'Sampling Date: 1970-01-01 08:00 AM, approx. 350 mL, clear, chilled, in sterile glass. Temperature: 19.6 °C.',
+                'is_disposed' => 0,
+                'tsr_id' => 89,
+                'created_at' => '2024-08-21 08:28:01',
+                'updated_at' => '2024-08-21 08:28:54',
+            ),
+            189 => 
+            array (
+                'id' => 199,
+                'code' => 'MET-01606',
+                'name' => 'Road Tanker',
+                'customer_description' => '-',
+                'description' => 'Capacity: 13,000 L, Make: Fuso, Engine Number: 6D22-168997, Chassis Number: FT418L-520343, Plate Number: WNU 615, Compartments: Four',
+                'is_disposed' => 0,
+                'tsr_id' => 90,
+                'created_at' => '2024-08-21 08:30:07',
+                'updated_at' => '2024-08-21 08:30:52',
             ),
         ));
 

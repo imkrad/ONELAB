@@ -15,7 +15,7 @@ class CustomersTableSeeder extends Seeder
     {
         
 
-        \DB::table('customers')->truncate();
+        \DB::table('customers')->delete();
         
         \DB::table('customers')->insert(array (
             0 => 
@@ -2097,6 +2097,70 @@ class CustomersTableSeeder extends Seeder
                 'user_id' => 2,
                 'created_at' => '2024-08-19 15:11:30',
                 'updated_at' => '2024-08-19 15:11:30',
+            ),
+            130 => 
+            array (
+                'id' => 132,
+                'code' => 'R9-CSTMR-00131',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 56,
+                'classification_id' => 8,
+                'name_id' => 115,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-21 08:20:59',
+                'updated_at' => '2024-08-21 08:20:59',
+            ),
+            131 => 
+            array (
+                'id' => 133,
+                'code' => 'R9-CSTMR-00132',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 4,
+                'classification_id' => 8,
+                'name_id' => 116,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-21 08:22:49',
+                'updated_at' => '2024-08-21 08:22:49',
+            ),
+            132 => 
+            array (
+                'id' => 134,
+                'code' => 'R9-CSTMR-00133',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 107,
+                'classification_id' => 9,
+                'name_id' => 117,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-21 08:24:02',
+                'updated_at' => '2024-08-21 08:24:02',
+            ),
+            133 => 
+            array (
+                'id' => 135,
+                'code' => 'R9-CSTMR-00134',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 56,
+                'classification_id' => 8,
+                'name_id' => 118,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-21 08:26:22',
+                'updated_at' => '2024-08-21 08:26:22',
             ),
         ));
 

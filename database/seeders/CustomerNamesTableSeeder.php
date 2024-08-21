@@ -15,7 +15,7 @@ class CustomerNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_names')->truncate();
+        \DB::table('customer_names')->delete();
         
         \DB::table('customer_names')->insert(array (
             0 => 
@@ -1016,6 +1016,42 @@ class CustomerNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-08-19 15:11:30',
                 'updated_at' => '2024-08-19 15:11:30',
+            ),
+            111 => 
+            array (
+                'id' => 115,
+                'name' => 'Aqua Torejas Water Refilling Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-21 08:20:59',
+                'updated_at' => '2024-08-21 08:20:59',
+            ),
+            112 => 
+            array (
+                'id' => 116,
+                'name' => 'ETE Gas Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-21 08:22:49',
+                'updated_at' => '2024-08-21 08:22:49',
+            ),
+            113 => 
+            array (
+                'id' => 117,
+                'name' => 'Catherine Rose Y. Veñales',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-21 08:24:02',
+                'updated_at' => '2024-08-21 08:24:02',
+            ),
+            114 => 
+            array (
+                'id' => 118,
+                'name' => 'Manicahan Rural Water Works & Sanitation Association Inc.',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-21 08:26:22',
+                'updated_at' => '2024-08-21 08:26:22',
             ),
         ));
 
