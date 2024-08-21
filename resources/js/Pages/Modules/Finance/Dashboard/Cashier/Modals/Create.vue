@@ -85,7 +85,7 @@
                         </BCol>
                         <BCol lg="6 mt-n1 mb-n3">
                             <InputLabel value="Bank Name" :message="form.errors.bank"/>
-                            <TextInput v-model="bank" type="text" class="form-control" @input="handleInput('bank')" :light="true"/>
+                            <TextInput v-model="details.bank" type="text" class="form-control" @input="handleInput('bank')" :light="true"/>
                         </BCol>
                         <BCol lg="12 mt-1 mb-n3">
                             <hr class="text-muted"/>
@@ -159,11 +159,12 @@
 </template>
 <script>
 import {VMoney} from 'v-money';
+import Amount from '@/Shared/Components/Forms/Amount.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 import Multiselect from "@vueform/multiselect";
 export default {
-    components: { Multiselect, InputLabel, TextInput },
+    components: { Multiselect, InputLabel, TextInput, Amount },
     props: ['deposits','orseries','collections','payments'],
     directives: {money: VMoney},
     data(){
@@ -220,6 +221,9 @@ export default {
     methods: { 
         show(){
             this.showModal = true;
+        },
+        amount(val){
+            this.details.amount = val;
         },
         fetchCustomer(code){
             axios.get('/finance',{

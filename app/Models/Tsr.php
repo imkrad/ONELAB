@@ -54,11 +54,6 @@ class Tsr extends Model
         return $this->belongsTo('App\Models\ListLaboratory', 'laboratory_type', 'id');
     }
 
-    // public function purpose()
-    // {
-    //     return $this->belongsTo('App\Models\ListDropdown', 'purpose_id', 'id');
-    // }
-
     public function status()
     {
         return $this->belongsTo('App\Models\ListStatus', 'status_id', 'id');
@@ -92,6 +87,16 @@ class Tsr extends Model
     public function itemable()
     {
         return $this->morphOne('App\Models\FinanceOpItem', 'itemable');
+    }
+
+    public function children()
+    {
+        return $this->hasMany('App\Models\TsrChild', 'parent_id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo('App\Models\Tsr', 'child_id', 'id');
     }
 
     public function getUpdatedAtAttribute($value)

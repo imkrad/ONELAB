@@ -48,6 +48,10 @@ class TsrController extends Controller
         }
     }
 
+    public function report(){
+        $this->save->report();
+    }
+
     public function store(TsrRequest $request){
         $result = $this->handleTransaction(function () use ($request) {
             return $this->save->tsr($request);

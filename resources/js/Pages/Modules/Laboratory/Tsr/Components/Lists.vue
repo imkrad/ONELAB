@@ -3,7 +3,8 @@
         <b-col lg>
             <div class="input-group mb-1">
                 <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                <input type="text" v-model="filter.keyword" placeholder="Search Request" class="form-control" style="width: 60%;">
+                <input type="text" v-model="filter.keyword" placeholder="Search Request" class="form-control" style="width: 50%;">
+                <input type="date" v-model="filter.date" placeholder="Search Request" class="form-control" style="width: 100px;">
                 <select v-model="filter.laboratory" @change="fetch()" class="form-select" id="inputGroupSelect01" style="width: 100px;">
                     <option :value="null" selected>Select Laboratory</option>
                     <option :value="list.value" v-for="list in dropdowns.laboratories" v-bind:key="list.id">{{list.name}}</option>
@@ -138,7 +139,8 @@ export default {
                 status: null,
                 laboratory: null,
                 sortby: 'Requested At',
-                sort: 'desc'
+                sort: 'desc',
+                date:null
             },
             chartOptions: {
                 chart: {
@@ -171,6 +173,9 @@ export default {
     watch: {
         "filter.keyword"(newVal){
             this.checkSearchStr(newVal)
+        },
+        "filter.date"(newVal){
+            this.fetch();
         }
     },
     created(){
@@ -188,6 +193,7 @@ export default {
                     status: this.filter.status,
                     sortby: this.filter.sortby,
                     sort: this.filter.sort,
+                    date: this.filter.date,
                     laboratory: this.filter.laboratory,
                     count: ((window.innerHeight-390)/58),
                     option: 'lists'

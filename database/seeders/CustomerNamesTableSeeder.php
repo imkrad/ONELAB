@@ -15,7 +15,7 @@ class CustomerNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_names')->delete();
+        \DB::table('customer_names')->truncate();
         
         \DB::table('customer_names')->insert(array (
             0 => 
@@ -980,6 +980,42 @@ class CustomerNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-08-16 17:02:46',
                 'updated_at' => '2024-08-16 17:02:46',
+            ),
+            107 => 
+            array (
+                'id' => 111,
+                'name' => 'TianYuan Construction Group Corporation/Grace Construction Corporation - J.V',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-19 14:36:39',
+                'updated_at' => '2024-08-19 14:36:39',
+            ),
+            108 => 
+            array (
+                'id' => 112,
+                'name' => 'Coca-Cola Beverages Philippines, Inc.',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-19 14:40:12',
+                'updated_at' => '2024-08-19 14:40:12',
+            ),
+            109 => 
+            array (
+                'id' => 113,
+                'name' => 'Three J Builders and Developer',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-19 14:41:21',
+                'updated_at' => '2024-08-19 14:41:21',
+            ),
+            110 => 
+            array (
+                'id' => 114,
+                'name' => 'L\'Arcada Complex',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-19 15:11:30',
+                'updated_at' => '2024-08-19 15:11:30',
             ),
         ));
 

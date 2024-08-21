@@ -37,6 +37,7 @@ class CroClass
         $series = [];
         $data = Tsr::select(\DB::raw('DATE(created_at) AS x'), \DB::raw('count(*) AS y'))
         ->where('laboratory_id', $this->laboratory)
+        ->whereIn('status_id',[1,2,3,4]) //status is completed
         ->whereBetween('created_at', [$this->start, $this->end])
         ->groupBy(\DB::raw('DATE(created_at)'))
         ->orderBy(\DB::raw('DATE(created_at)'))
@@ -56,7 +57,7 @@ class CroClass
             'icon' => 'ri-hand-coin-fill',
             'color' => '',
             'series' => $series,
-            'total' => Tsr::whereBetween('created_at',[$this->start,$this->end])->where('laboratory_id',$this->laboratory)->count()
+            'total' => Tsr::whereBetween('created_at',[$this->start,$this->end])->whereIn('status_id',[1,2,3,4])->where('laboratory_id',$this->laboratory)->count()
         ];
     }
 
@@ -64,7 +65,7 @@ class CroClass
         $series = [];
         $data = TsrSample::select(\DB::raw('DATE(created_at) AS x'), \DB::raw('count(*) AS y'))
         ->whereHas('tsr', function ($query){
-            $query->where('laboratory_id',$this->laboratory);
+            $query->where('laboratory_id',$this->laboratory)->whereIn('status_id',[1,2,3,4]);
         })
         ->whereBetween('created_at', [$this->start, $this->end])
         ->groupBy(\DB::raw('DATE(created_at)'))
@@ -86,7 +87,7 @@ class CroClass
             'color' => '',
             'series' => $series,
             'total' => TsrSample::whereBetween('created_at',[$this->start,$this->end])->whereHas('tsr', function ($query){
-                $query->where('laboratory_id',$this->laboratory);
+                $query->where('laboratory_id',$this->laboratory)->whereIn('status_id',[1,2,3,4]);
             })->count()
         ];
     }
@@ -96,7 +97,7 @@ class CroClass
         $data = TsrAnalysis::select(\DB::raw('DATE(created_at) AS x'), \DB::raw('count(*) AS y'))
         ->whereHas('sample', function ($query){
             $query->whereHas('tsr', function ($query){
-                $query->where('laboratory_id',$this->laboratory);
+                $query->where('laboratory_id',$this->laboratory)->whereIn('status_id',[1,2,3,4]);
             });
         })
         ->whereBetween('created_at', [$this->start, $this->end])
@@ -120,7 +121,7 @@ class CroClass
             'series' => $series,
             'total' => TsrAnalysis::whereBetween('created_at',[$this->start,$this->end])->whereHas('sample', function ($query){
                 $query->whereHas('tsr', function ($query){
-                    $query->where('laboratory_id',$this->laboratory);
+                    $query->where('laboratory_id',$this->laboratory)->whereIn('status_id',[1,2,3,4]);
                 });
             })
            ->count()

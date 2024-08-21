@@ -15,7 +15,7 @@ class CustomersTableSeeder extends Seeder
     {
         
 
-        \DB::table('customers')->delete();
+        \DB::table('customers')->truncate();
         
         \DB::table('customers')->insert(array (
             0 => 
@@ -2017,6 +2017,86 @@ class CustomersTableSeeder extends Seeder
                 'user_id' => 2,
                 'created_at' => '2024-08-16 17:02:46',
                 'updated_at' => '2024-08-16 17:02:46',
+            ),
+            125 => 
+            array (
+                'id' => 127,
+                'code' => 'R9-CSTMR-00126',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 60,
+                'classification_id' => 8,
+                'name_id' => 111,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-19 14:36:39',
+                'updated_at' => '2024-08-19 14:36:39',
+            ),
+            126 => 
+            array (
+                'id' => 128,
+                'code' => 'R9-CSTMR-00127',
+                'name' => 'Guiwan',
+                'is_main' => 0,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 4,
+                'classification_id' => 8,
+                'name_id' => 103,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-19 14:37:58',
+                'updated_at' => '2024-08-19 14:37:58',
+            ),
+            127 => 
+            array (
+                'id' => 129,
+                'code' => 'R9-CSTMR-00128',
+                'name' => 'Zamboanga Plant',
+                'is_main' => 0,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 32,
+                'classification_id' => 8,
+                'name_id' => 112,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-19 14:40:12',
+                'updated_at' => '2024-08-19 14:40:12',
+            ),
+            128 => 
+            array (
+                'id' => 130,
+                'code' => 'R9-CSTMR-00129',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 60,
+                'classification_id' => 8,
+                'name_id' => 113,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-19 14:41:21',
+                'updated_at' => '2024-08-19 14:41:21',
+            ),
+            129 => 
+            array (
+                'id' => 131,
+                'code' => 'R9-CSTMR-00130',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 104,
+                'classification_id' => 8,
+                'name_id' => 114,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-08-19 15:11:30',
+                'updated_at' => '2024-08-19 15:11:30',
             ),
         ));
 

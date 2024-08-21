@@ -15,7 +15,7 @@ class CustomerContactsTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_contacts')->delete();
+        \DB::table('customer_contacts')->truncate();
         
         \DB::table('customer_contacts')->insert(array (
             0 => 
@@ -1142,6 +1142,51 @@ class CustomerContactsTableSeeder extends Seeder
                 'customer_id' => 126,
                 'created_at' => '2024-08-16 17:02:46',
                 'updated_at' => '2024-08-16 17:02:46',
+            ),
+            125 => 
+            array (
+                'id' => 126,
+                'email' => 'eyJpdiI6IkU0TVArU3Fqc1VLYkpBZkgwZVdCYmc9PSIsInZhbHVlIjoiZ2hSenF6WXVvT04yYU9YWmN3L2o2MHEvZEluSXhQVndQQk1IZ3RGemhnYz0iLCJtYWMiOiJlZDE3MTVhYjc5NGY5N2Q2NjI5NDgzMTM3M2ViN2ViNjMzNGE1NjcyZmE3OTYzN2IxYjM3MWQxM2E5ZTEyY2EzIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IllpYmJ1RHVLVFM5emVPOGZrckdnMHc9PSIsInZhbHVlIjoia2lNY0p5aVYxM0RmeWdVbXNlbVVlQT09IiwibWFjIjoiZjNhYzA4ZTc5YmM0NDRiMzI0YTdlMWViMjM0YTYyNDhmNjFlNmY4MTA5ZjU0ZjdiZGZkYTMwNDBmMDRmZDUzNiIsInRhZyI6IiJ9',
+                'customer_id' => 127,
+                'created_at' => '2024-08-19 14:36:39',
+                'updated_at' => '2024-08-19 14:36:39',
+            ),
+            126 => 
+            array (
+                'id' => 127,
+                'email' => 'eyJpdiI6ImdzNTBDZkdrZGpzZWI5NzU5RksyUFE9PSIsInZhbHVlIjoiWGE1ekk0U3JHeVJZTGd6RGRFeTJNQkRSMkFRYnBSV2w1TWhjdTlkZ0c4MD0iLCJtYWMiOiI4YWI3NDg1OGQwMDM0Zjk5Y2Y0M2YwZTllMzljMmRiZGFmZjA0NjUyNDMxZTc1ODE1Yzk1YmYzZjAyYjgxZjcyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IjNXc1IwT0oyYnZ4OEROTFQ0YTF0MkE9PSIsInZhbHVlIjoiNUVQUnp0SGh0RHE0cWtPaStLM0JCZz09IiwibWFjIjoiOWM0YmFjMWEwNzM2YjhlNGE2ZTJiYjYwZTIxYWQxOWYxOTQ4NWJjMzE0ZDQ4NmE4Yzc2YmQ2MWI5YjQ1M2I1MiIsInRhZyI6IiJ9',
+                'customer_id' => 128,
+                'created_at' => '2024-08-19 14:37:58',
+                'updated_at' => '2024-08-19 14:37:58',
+            ),
+            127 => 
+            array (
+                'id' => 128,
+                'email' => 'eyJpdiI6IjlPNjFaMTMxbjRhaHF2a3pvaGc4dGc9PSIsInZhbHVlIjoidE5OOXFvR1BRS0VuNmkvUnlibCsxcDNobnVxaGR0UlJ1VU5wZWdkWmhZbz0iLCJtYWMiOiIwZGU2OTk5YmI5YWUxYzUwMzZhNWVkNWNiZTVhOWI2MGE5NGQyYTNlMjg2NzM5MzE4ZTM1Zjk2YTU3MzNlODdjIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6InU1ekU1VXpqNTgyYm9uNTI0K2FPQkE9PSIsInZhbHVlIjoibkVwQmtQSVA3UmhSZU9DdDYxNTh0QT09IiwibWFjIjoiNWE3MDdhYmM1NDU1ZjMyOWI1MDI5NTVjYjA2YTE2YTQwOWMxMzBhNGRmMTVlMDJhNzkxZDQwNjczNzFjZDRmYiIsInRhZyI6IiJ9',
+                'customer_id' => 129,
+                'created_at' => '2024-08-19 14:40:12',
+                'updated_at' => '2024-08-19 14:40:12',
+            ),
+            128 => 
+            array (
+                'id' => 129,
+                'email' => 'eyJpdiI6InVDUjVFWlBxR2NRa29IMGVWTGtsbVE9PSIsInZhbHVlIjoiUUpjbU1jUXJTRTV0UlluWEZMbHRGMDFzcmpzSE5ZaVovcjBNRW0zajNZND0iLCJtYWMiOiJjZjkyZjY2OGRjMzU1YTgzZGRlMzVlZWE2M2I2MDE1ZGI4MGZkYzQ2NDNmZmY4OTkxOTNlNzdlNjYyOGZhYjFjIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6ImdMdHRJV09ENW13cisyVWNJVzA3V1E9PSIsInZhbHVlIjoiWWJGM1pycmV1dDFRTFU3dDlkVXV6Zz09IiwibWFjIjoiZjk0M2JhOWI2MTQxZWM4YjY4ZWYxZTBlYzZmYzNmYjM3MjdiZjQ5NDI1N2U4YmMzZDNjOWY4N2Y5NTA2MjBmMCIsInRhZyI6IiJ9',
+                'customer_id' => 130,
+                'created_at' => '2024-08-19 14:41:21',
+                'updated_at' => '2024-08-19 14:41:21',
+            ),
+            129 => 
+            array (
+                'id' => 130,
+                'email' => 'eyJpdiI6Im4vOE5RUUxKbkJvOVdwdmZVWTVJT0E9PSIsInZhbHVlIjoiZlFRazc0cU9HSnk2OXVWK3lpKzVVTDZKNW9RajI0endKODVJOFpWbjFBMEtBdDVTN1VDcFBHWStvVWYxc1FvdSIsIm1hYyI6Ijc3YzExMjBlZmZiNWQyZGVkOTVlYWEyMzBhN2RjN2Y4Mjk5NzJlOTNjZjM4N2I3YmFlZTQ0ZDNiZTJmZDM1ZDkiLCJ0YWciOiIifQ==',
+                'contact_no' => 'eyJpdiI6IlQzdWxKT1ZybkJvUktaYllrTmlBaHc9PSIsInZhbHVlIjoiVHBXUWcxYXZRVG1tMU1acWhYUDl4QT09IiwibWFjIjoiYTU1NDdmODM0MTY1N2FiNDQyZjlkZTIzZTUzM2VjNmQ2YWRkNzc3MTFhMDgwYjdmNTg1YjUwYjg2MjkyZTA3OSIsInRhZyI6IiJ9',
+                'customer_id' => 131,
+                'created_at' => '2024-08-19 15:11:30',
+                'updated_at' => '2024-08-19 15:11:30',
             ),
         ));
 

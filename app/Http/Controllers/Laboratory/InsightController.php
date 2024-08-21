@@ -8,12 +8,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\DefaultResource;
 use App\Services\Laboratory\Insights\MainClass;
+use App\Services\Laboratory\Insights\LocationClass;
 use App\Services\Laboratory\Insights\CustomerClass;
 use App\Services\Laboratory\Insights\LaboratoryClass;
 
 class InsightController extends Controller
 {
-    public function __construct(CustomerClass $customer, LaboratoryClass $laboratory, MainClass $main){
+    public function __construct(CustomerClass $customer, LaboratoryClass $laboratory, LocationClass $location, MainClass $main){
         $this->customer = $customer;
         $this->laboratory = $laboratory;
         $this->main = $main;
@@ -75,6 +76,16 @@ class InsightController extends Controller
                         'samples' => $this->laboratory->samples($request)
                     ]
                 ]);
+        }
+    }
+
+    public function locations_view(Request $request){
+        switch($request->option){
+            case 'info':
+                return $this->laboratory->info($request);
+            break;
+            default:
+            return inertia('Modules/Laboratory/Insights/Location/Index');
         }
     }
 

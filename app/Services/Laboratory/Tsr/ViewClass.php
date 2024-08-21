@@ -60,6 +60,9 @@ class ViewClass
             ->when($request->status, function ($query, $status) {
                 $query->where('status_id',$status);
             })
+            ->when($request->date, function ($query, $date) {
+                $query->whereDate('created_at',$date);
+            })
             ->when($this->laboratory, function ($query, $lab) {
                 $query->where('laboratory_id',$lab);
             })
@@ -71,6 +74,22 @@ class ViewClass
                     $query->orderBy('created_at',$request->sort);
                 }else{
                     $query->orderBy('due_at',$request->sort);
+                }
+            })
+            ->when($request->reminder, function ($query, $reminder) {
+                switch($reminder){
+                    case 'Due Today':
+                        $query->whereDate('due_at',now());
+                    break;
+                    case 'Overdue Request':
+                        $query->where('status_id',3)->whereDate('due_at','<',now());
+                    break;
+                    case 'For Released':
+                        $query->where('status_id',4)->where('due_at','>',now())->where('released_at',null);
+                    break;
+                    case 'Unclaimed Reports':
+                        $query->where('status_id',4)->where('due_at','<',now())->where('released_at',null);
+                    break;
                 }
             })
             ->paginate($request->count)

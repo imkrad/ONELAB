@@ -15,7 +15,7 @@ class FinanceOpItemsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_op_items')->delete();
+        \DB::table('finance_op_items')->truncate();
         
         \DB::table('finance_op_items')->insert(array (
             0 => 
@@ -485,8 +485,98 @@ class FinanceOpItemsTableSeeder extends Seeder
                 'itemable_id' => 1,
                 'itemable_type' => 'App\\Models\\FinanceItem',
                 'op_id' => 43,
-                'created_at' => '2024-08-17 18:02:49',
-                'updated_at' => '2024-08-17 18:02:49',
+                'created_at' => '2024-08-19 08:47:56',
+                'updated_at' => '2024-08-19 08:47:56',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'amount' => '464.00',
+                'itemable_id' => 2,
+                'itemable_type' => 'App\\Models\\FinanceItem',
+                'op_id' => 44,
+                'created_at' => '2024-08-19 08:50:43',
+                'updated_at' => '2024-08-19 08:50:43',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'amount' => '69445.00',
+                'itemable_id' => 3,
+                'itemable_type' => 'App\\Models\\FinanceItem',
+                'op_id' => 45,
+                'created_at' => '2024-08-19 08:53:11',
+                'updated_at' => '2024-08-19 08:53:11',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'amount' => '8400.00',
+                'itemable_id' => 82,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 46,
+                'created_at' => '2024-08-19 15:29:39',
+                'updated_at' => '2024-08-19 15:29:39',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'amount' => '500.00',
+                'itemable_id' => 84,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 47,
+                'created_at' => '2024-08-19 15:30:17',
+                'updated_at' => '2024-08-19 15:30:17',
+            ),
+            51 => 
+            array (
+                'id' => 52,
+                'amount' => '10850.00',
+                'itemable_id' => 85,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 48,
+                'created_at' => '2024-08-19 15:30:45',
+                'updated_at' => '2024-08-19 15:30:45',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'amount' => '550.00',
+                'itemable_id' => 86,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 49,
+                'created_at' => '2024-08-19 15:53:41',
+                'updated_at' => '2024-08-19 15:53:41',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'amount' => '550.00',
+                'itemable_id' => 87,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 50,
+                'created_at' => '2024-08-19 15:54:13',
+                'updated_at' => '2024-08-19 15:54:13',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'amount' => '900.00',
+                'itemable_id' => 88,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 51,
+                'created_at' => '2024-08-19 15:54:33',
+                'updated_at' => '2024-08-19 15:54:33',
+            ),
+            55 => 
+            array (
+                'id' => 66,
+                'amount' => '4867500.00',
+                'itemable_id' => 15,
+                'itemable_type' => 'App\\Models\\FinanceItem',
+                'op_id' => 64,
+                'created_at' => '2024-08-19 16:24:43',
+                'updated_at' => '2024-08-19 16:24:43',
             ),
         ));
 

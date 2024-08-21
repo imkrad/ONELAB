@@ -14,7 +14,7 @@ Route::middleware(['2fa','auth','verified'])->group(function () {
 Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function () {
     Route::get('/', [App\Http\Controllers\DashboardController::class, 'index']);
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
-
+    Route::get('/report', [App\Http\Controllers\Laboratory\TsrController::class, 'report']);
     Route::resource('/customers', App\Http\Controllers\Laboratory\CustomerController::class);
     Route::resource('/quotations', App\Http\Controllers\Laboratory\QuotationController::class);
     Route::resource('/requests', App\Http\Controllers\Laboratory\TsrController::class);
@@ -23,12 +23,14 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
     Route::resource('/csf', App\Http\Controllers\Laboratory\CsfController::class);
     Route::resource('/calendar', App\Http\Controllers\Laboratory\CalendarController::class);
     Route::resource('/targets', App\Http\Controllers\Laboratory\TargetController::class);
+    Route::resource('/reports', App\Http\Controllers\Laboratory\ReportController::class);
 
     Route::prefix('insights')->group(function(){
         Route::controller(App\Http\Controllers\Laboratory\InsightController::class)->group(function () {
             Route::get('/','index');
             Route::get('/customers','customers_view');
             Route::get('/laboratories','laboratories_view');
+            Route::get('/locations','locations_view');
         });
     });
 

@@ -6,6 +6,7 @@ use App\Models\Tsr;
 use App\Models\TsrPayment;
 use App\Models\TsrPaymentDeduction;
 use App\Models\Wallet;
+use App\Models\Customer;
 use App\Models\ListDropdown;
 use App\Models\FinanceOp;
 use App\Models\FinanceItem;
@@ -22,14 +23,15 @@ class SaveClass
     public function op($request){
         $payment_id = $request->payment_id;
         $collection_id = $request->collection_id;
-        $data = FinanceOp::create(array_merge($request->all(), [
-            'code' => $this->generateCode(), 
-            'created_by' => \Auth::user()->id, 
+        $payor = Customer::where('id',$request->customer_id)->first();
+        $op = $payor->payorable()->create(array_merge($request->all(), [
+            'code' => $this->generateCode(),
             'status_id' => 6,
+            'created_by' => \Auth::user()->id,
             'laboratory_id' => \Auth::user()->userrole->laboratory_id
         ]));
-        $id = $data->id;
-        if($data){
+        $id = $op->id;
+        if($op){
             $items = $request->selected;
             foreach($items as $item){
                 $tsr = Tsr::findOrFail($item['id']);
@@ -45,7 +47,7 @@ class SaveClass
                 }
             }
         }
-        $op = FinanceOp::findOrFail($data->id);
+        $op = FinanceOp::findOrFail($op->id);
 
         return [
             'data' => $op,
@@ -240,7 +242,6 @@ class SaveClass
         $result = \DB::transaction(function () use ($request){
             \DB::beginTransaction();
             $payor = FinanceName::where('id',$request->customer_id)->first();
-            // dd($payor);
             $op = $payor->payorable()->create(array_merge($request->all(), [
                 'code' => $this->generateCode(),
                 'total' => 0,
@@ -257,7 +258,7 @@ class SaveClass
                         'amount' => $item['amount']
                     ]);
                     if($i){
-                        $i->itemable()->create([
+                        $d = $i->itemable()->create([
                             'amount' => $item['amount'],
                             'op_id' => $op->id
                         ]);
@@ -286,6 +287,7 @@ class SaveClass
                     }
 
                     if($or->save()){
+                        
                         if($request->type === 'Cheque' || $request->type === 'Online Transfer' || $request->type === 'Bank Deposit'){
                             $details = new FinanceReceiptDetail;
                             $details->number = $request->details_number;
@@ -295,6 +297,7 @@ class SaveClass
                             $details->is_cheque = ($request->type === 'Bank Deposit') ? $request->details_is_cheque : false;
                             $details->receipt_id = $receipt->id;
                             $details->save();
+                            \DB::commit();  
                         }else{
                             \DB::commit();  
                         }

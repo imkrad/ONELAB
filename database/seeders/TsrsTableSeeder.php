@@ -15,7 +15,7 @@ class TsrsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsrs')->delete();
+        \DB::table('tsrs')->truncate();
         
         \DB::table('tsrs')->insert(array (
             0 => 
@@ -616,7 +616,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0414',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 103,
                 'conforme_id' => 15,
                 'received_by' => 2,
@@ -624,7 +624,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-21',
                 'released_at' => NULL,
                 'created_at' => '2024-08-06 16:46:06',
-                'updated_at' => '2024-08-16 16:52:05',
+                'updated_at' => '2024-08-19 09:00:15',
             ),
             38 => 
             array (
@@ -632,7 +632,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0351',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 124,
                 'conforme_id' => 16,
                 'received_by' => 2,
@@ -640,7 +640,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-15',
                 'released_at' => NULL,
                 'created_at' => '2024-08-07 16:55:05',
-                'updated_at' => '2024-08-16 16:57:30',
+                'updated_at' => '2024-08-19 08:54:21',
             ),
             39 => 
             array (
@@ -648,7 +648,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0352',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 125,
                 'conforme_id' => 18,
                 'received_by' => 2,
@@ -656,7 +656,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-15',
                 'released_at' => NULL,
                 'created_at' => '2024-08-07 17:13:41',
-                'updated_at' => '2024-08-16 17:14:30',
+                'updated_at' => '2024-08-19 08:58:35',
             ),
             40 => 
             array (
@@ -664,7 +664,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0415',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 125,
                 'conforme_id' => 18,
                 'received_by' => 2,
@@ -672,7 +672,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-09',
                 'released_at' => NULL,
                 'created_at' => '2024-08-07 17:14:56',
-                'updated_at' => '2024-08-16 17:17:21',
+                'updated_at' => '2024-08-19 08:58:35',
             ),
             41 => 
             array (
@@ -680,7 +680,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0416',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 126,
                 'conforme_id' => 17,
                 'received_by' => 2,
@@ -688,7 +688,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-16',
                 'released_at' => NULL,
                 'created_at' => '2024-08-07 17:18:00',
-                'updated_at' => '2024-08-16 17:19:24',
+                'updated_at' => '2024-08-19 08:55:33',
             ),
             42 => 
             array (
@@ -712,7 +712,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0353',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 26,
                 'conforme_id' => 20,
                 'received_by' => 2,
@@ -720,7 +720,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-06',
                 'released_at' => NULL,
                 'created_at' => '2024-08-09 19:39:38',
-                'updated_at' => '2024-08-16 19:45:06',
+                'updated_at' => '2024-08-19 08:56:40',
             ),
             44 => 
             array (
@@ -760,7 +760,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0418',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 43,
                 'conforme_id' => 22,
                 'received_by' => 2,
@@ -768,7 +768,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-03',
                 'released_at' => NULL,
                 'created_at' => '2024-08-09 20:54:33',
-                'updated_at' => '2024-08-16 20:57:17',
+                'updated_at' => '2024-08-19 08:55:50',
             ),
             47 => 
             array (
@@ -776,7 +776,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0433',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 104,
                 'conforme_id' => 23,
                 'received_by' => 2,
@@ -784,7 +784,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-16',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 20:58:05',
-                'updated_at' => '2024-08-16 21:14:04',
+                'updated_at' => '2024-08-19 08:55:08',
             ),
             48 => 
             array (
@@ -792,7 +792,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0356',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 105,
                 'conforme_id' => 24,
                 'received_by' => 2,
@@ -800,7 +800,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-20',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 21:16:23',
-                'updated_at' => '2024-08-16 21:18:55',
+                'updated_at' => '2024-08-19 08:55:56',
             ),
             49 => 
             array (
@@ -808,7 +808,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0419',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 105,
                 'conforme_id' => 24,
                 'received_by' => 2,
@@ -816,7 +816,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 21:19:27',
-                'updated_at' => '2024-08-16 21:22:34',
+                'updated_at' => '2024-08-19 08:55:56',
             ),
             50 => 
             array (
@@ -840,7 +840,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0435',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 107,
                 'conforme_id' => 26,
                 'received_by' => 2,
@@ -848,7 +848,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 21:26:25',
-                'updated_at' => '2024-08-16 21:27:15',
+                'updated_at' => '2024-08-19 08:57:04',
             ),
             52 => 
             array (
@@ -856,7 +856,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0436',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 108,
                 'conforme_id' => 27,
                 'received_by' => 2,
@@ -864,7 +864,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 23:09:33',
-                'updated_at' => '2024-08-16 23:12:11',
+                'updated_at' => '2024-08-19 08:59:05',
             ),
             53 => 
             array (
@@ -872,7 +872,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0357',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 52,
                 'conforme_id' => 28,
                 'received_by' => 2,
@@ -880,7 +880,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-20',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 23:12:58',
-                'updated_at' => '2024-08-16 23:13:49',
+                'updated_at' => '2024-08-19 08:59:14',
             ),
             54 => 
             array (
@@ -888,7 +888,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0420',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 52,
                 'conforme_id' => 28,
                 'received_by' => 2,
@@ -896,7 +896,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 23:14:15',
-                'updated_at' => '2024-08-16 23:16:43',
+                'updated_at' => '2024-08-19 08:59:14',
             ),
             55 => 
             array (
@@ -904,7 +904,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0437',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 109,
                 'conforme_id' => 29,
                 'received_by' => 2,
@@ -912,7 +912,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 23:20:22',
-                'updated_at' => '2024-08-16 23:21:11',
+                'updated_at' => '2024-08-19 08:59:21',
             ),
             56 => 
             array (
@@ -920,7 +920,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0438',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 110,
                 'conforme_id' => 30,
                 'received_by' => 2,
@@ -928,7 +928,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 23:21:59',
-                'updated_at' => '2024-08-16 23:22:50',
+                'updated_at' => '2024-08-19 08:59:40',
             ),
             57 => 
             array (
@@ -968,7 +968,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0421',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 65,
                 'conforme_id' => 31,
                 'received_by' => 2,
@@ -976,7 +976,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 14:19:30',
-                'updated_at' => '2024-08-17 14:23:20',
+                'updated_at' => '2024-08-19 08:59:54',
             ),
             60 => 
             array (
@@ -984,7 +984,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0441',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 111,
                 'conforme_id' => 32,
                 'received_by' => 2,
@@ -992,7 +992,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 14:24:19',
-                'updated_at' => '2024-08-17 14:25:21',
+                'updated_at' => '2024-08-19 09:03:07',
             ),
             61 => 
             array (
@@ -1000,7 +1000,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0442',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 112,
                 'conforme_id' => 33,
                 'received_by' => 2,
@@ -1008,7 +1008,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-11',
                 'released_at' => NULL,
                 'created_at' => '2024-08-12 14:33:13',
-                'updated_at' => '2024-08-17 14:34:07',
+                'updated_at' => '2024-08-19 09:00:41',
             ),
             62 => 
             array (
@@ -1016,7 +1016,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0443',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 113,
                 'conforme_id' => 34,
                 'received_by' => 2,
@@ -1024,7 +1024,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-12',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 15:16:27',
-                'updated_at' => '2024-08-17 15:17:43',
+                'updated_at' => '2024-08-19 09:00:57',
             ),
             63 => 
             array (
@@ -1032,7 +1032,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0358',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 114,
                 'conforme_id' => 35,
                 'received_by' => 2,
@@ -1040,7 +1040,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-21',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 15:18:31',
-                'updated_at' => '2024-08-17 15:20:30',
+                'updated_at' => '2024-08-19 09:01:16',
             ),
             64 => 
             array (
@@ -1048,7 +1048,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0444',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 115,
                 'conforme_id' => 36,
                 'received_by' => 2,
@@ -1056,7 +1056,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-13',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 16:25:31',
-                'updated_at' => '2024-08-17 16:26:12',
+                'updated_at' => '2024-08-19 09:04:18',
             ),
             65 => 
             array (
@@ -1064,7 +1064,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0359',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 3,
                 'conforme_id' => 37,
                 'received_by' => 2,
@@ -1072,7 +1072,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-28',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 16:26:50',
-                'updated_at' => '2024-08-17 16:29:21',
+                'updated_at' => '2024-08-19 09:01:59',
             ),
             66 => 
             array (
@@ -1080,7 +1080,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0360',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 3,
                 'conforme_id' => 37,
                 'received_by' => 2,
@@ -1088,7 +1088,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-21',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 16:29:51',
-                'updated_at' => '2024-08-17 16:35:47',
+                'updated_at' => '2024-08-19 09:01:59',
             ),
             67 => 
             array (
@@ -1096,7 +1096,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0445',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 116,
                 'conforme_id' => 38,
                 'received_by' => 2,
@@ -1104,7 +1104,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 16:36:47',
-                'updated_at' => '2024-08-17 16:38:47',
+                'updated_at' => '2024-08-19 09:02:24',
             ),
             68 => 
             array (
@@ -1112,7 +1112,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0446',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 117,
                 'conforme_id' => 39,
                 'received_by' => 2,
@@ -1120,7 +1120,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-13 16:39:27',
-                'updated_at' => '2024-08-17 16:40:29',
+                'updated_at' => '2024-08-19 09:03:19',
             ),
             69 => 
             array (
@@ -1128,7 +1128,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0447',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 118,
                 'conforme_id' => 40,
                 'received_by' => 2,
@@ -1136,7 +1136,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 16:42:34',
-                'updated_at' => '2024-08-17 16:44:06',
+                'updated_at' => '2024-08-19 09:03:48',
             ),
             70 => 
             array (
@@ -1144,7 +1144,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0422',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 99,
                 'conforme_id' => 7,
                 'received_by' => 2,
@@ -1152,7 +1152,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-16',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 16:44:55',
-                'updated_at' => '2024-08-17 16:49:51',
+                'updated_at' => '2024-08-19 09:03:56',
             ),
             71 => 
             array (
@@ -1160,7 +1160,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-CHE-0423',
                 'laboratory_id' => 14,
                 'laboratory_type' => 1,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 37,
                 'conforme_id' => 41,
                 'received_by' => 2,
@@ -1168,7 +1168,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-21',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 16:50:56',
-                'updated_at' => '2024-08-17 16:52:36',
+                'updated_at' => '2024-08-19 09:04:09',
             ),
             72 => 
             array (
@@ -1176,7 +1176,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0448',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 119,
                 'conforme_id' => 42,
                 'received_by' => 2,
@@ -1184,7 +1184,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 16:54:23',
-                'updated_at' => '2024-08-17 16:55:07',
+                'updated_at' => '2024-08-19 09:04:44',
             ),
             73 => 
             array (
@@ -1192,7 +1192,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0449',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 120,
                 'conforme_id' => 43,
                 'received_by' => 2,
@@ -1200,7 +1200,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 16:56:00',
-                'updated_at' => '2024-08-17 16:56:38',
+                'updated_at' => '2024-08-19 09:04:57',
             ),
             74 => 
             array (
@@ -1208,7 +1208,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0450',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 121,
                 'conforme_id' => 44,
                 'received_by' => 2,
@@ -1216,7 +1216,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-10-14',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 16:57:46',
-                'updated_at' => '2024-08-17 16:58:26',
+                'updated_at' => '2024-08-19 09:04:38',
             ),
             75 => 
             array (
@@ -1224,7 +1224,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MIC-0361',
                 'laboratory_id' => 14,
                 'laboratory_type' => 2,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 35,
                 'conforme_id' => 45,
                 'received_by' => 2,
@@ -1232,7 +1232,7 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-08-22',
                 'released_at' => NULL,
                 'created_at' => '2024-08-14 17:00:32',
-                'updated_at' => '2024-08-17 17:01:21',
+                'updated_at' => '2024-08-19 09:05:18',
             ),
             76 => 
             array (
@@ -1272,7 +1272,7 @@ class TsrsTableSeeder extends Seeder
                 'code' => 'R9-082024-MET-0452',
                 'laboratory_id' => 14,
                 'laboratory_type' => 3,
-                'status_id' => 2,
+                'status_id' => 3,
                 'customer_id' => 123,
                 'conforme_id' => 47,
                 'received_by' => 2,
@@ -1280,7 +1280,119 @@ class TsrsTableSeeder extends Seeder
                 'due_at' => '2024-09-16',
                 'released_at' => NULL,
                 'created_at' => '2024-08-15 17:16:27',
-                'updated_at' => '2024-08-17 17:17:11',
+                'updated_at' => '2024-08-19 09:05:27',
+            ),
+            79 => 
+            array (
+                'id' => 82,
+                'code' => 'R9-082024-CHE-0425',
+                'laboratory_id' => 14,
+                'laboratory_type' => 1,
+                'status_id' => 3,
+                'customer_id' => 127,
+                'conforme_id' => 48,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-09-10',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 14:43:00',
+                'updated_at' => '2024-08-19 15:57:49',
+            ),
+            80 => 
+            array (
+                'id' => 83,
+                'code' => 'R9-082024-MET-0454',
+                'laboratory_id' => 14,
+                'laboratory_type' => 3,
+                'status_id' => 3,
+                'customer_id' => 7,
+                'conforme_id' => 2,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-09-19',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 14:47:38',
+                'updated_at' => '2024-08-19 14:59:01',
+            ),
+            81 => 
+            array (
+                'id' => 84,
+                'code' => 'R9-082024-MET-0453',
+                'laboratory_id' => 14,
+                'laboratory_type' => 3,
+                'status_id' => 3,
+                'customer_id' => 128,
+                'conforme_id' => 49,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-10-21',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 15:00:56',
+                'updated_at' => '2024-08-19 16:25:44',
+            ),
+            82 => 
+            array (
+                'id' => 85,
+                'code' => 'R9-082024-MIC-0362',
+                'laboratory_id' => 14,
+                'laboratory_type' => 2,
+                'status_id' => 3,
+                'customer_id' => 129,
+                'conforme_id' => 50,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-08-27',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 15:03:30',
+                'updated_at' => '2024-08-19 16:25:58',
+            ),
+            83 => 
+            array (
+                'id' => 86,
+                'code' => 'R9-082024-MIC-0363',
+                'laboratory_id' => 14,
+                'laboratory_type' => 2,
+                'status_id' => 3,
+                'customer_id' => 130,
+                'conforme_id' => 51,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-08-27',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 15:07:33',
+                'updated_at' => '2024-08-19 16:26:04',
+            ),
+            84 => 
+            array (
+                'id' => 87,
+                'code' => 'R9-082024-MIC-0364',
+                'laboratory_id' => 14,
+                'laboratory_type' => 2,
+                'status_id' => 3,
+                'customer_id' => 131,
+                'conforme_id' => 52,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-08-27',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 15:17:39',
+                'updated_at' => '2024-08-19 16:26:09',
+            ),
+            85 => 
+            array (
+                'id' => 88,
+                'code' => 'R9-082024-MET-0455',
+                'laboratory_id' => 14,
+                'laboratory_type' => 3,
+                'status_id' => 3,
+                'customer_id' => 54,
+                'conforme_id' => 53,
+                'received_by' => 2,
+                'is_referral' => 0,
+                'due_at' => '2024-10-21',
+                'released_at' => NULL,
+                'created_at' => '2024-08-19 15:19:33',
+                'updated_at' => '2024-08-19 16:26:14',
             ),
         ));
 

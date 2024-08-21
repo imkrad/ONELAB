@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\Dashboard\CroClass;
 use App\Services\Dashboard\FinanceClass;
+use App\Services\Laboratory\DropdownClass;
 
 class DashboardController extends Controller
 {
-    public function __construct(FinanceClass $finance, CroClass $cro){
+    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown){
         $this->finance = $finance;
         $this->cro = $cro;
+        $this->dropdown = $dropdown;
     }
 
     public function index(Request $request){
@@ -34,7 +36,8 @@ class DashboardController extends Controller
                                 'info' => $this->cro->info($request),
                                 'counts' => $this->cro->counts($request),
                                 'reminders' => $this->cro->reminders($request),
-                                'statuses' => $this->cro->statuses($request)
+                                'statuses' => $this->cro->statuses($request),
+                                'laboratories' => $this->dropdown->laboratory_types($request),
                             ]
                         ]);
                     break;
