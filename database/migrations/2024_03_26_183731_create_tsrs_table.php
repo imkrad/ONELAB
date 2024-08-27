@@ -31,6 +31,8 @@ return new class extends Migration
             $table->integer('received_by')->unsigned()->index();
             $table->foreign('received_by')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('is_referral')->default(0);
+            $table->boolean('is_shelf')->default(0);
+            $table->boolean('is_parent')->default(0);
             $table->date('due_at')->nullable();
             $table->datetime('released_at')->nullable();
             $table->timestamps();

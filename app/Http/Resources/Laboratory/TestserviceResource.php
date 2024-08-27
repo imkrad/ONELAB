@@ -12,6 +12,7 @@ class TestserviceResource extends JsonResource
         return [
             'id' => $this->id,
             'is_checked' => false,
+            'is_fixed' => $this->is_fixed,
             'value' => $this->id,
             'name' => $this->testname->name.' - '.$this->method->method->name.' ('.$this->method->reference->name.')',
             'sampletype' => $this->sampletype->name,

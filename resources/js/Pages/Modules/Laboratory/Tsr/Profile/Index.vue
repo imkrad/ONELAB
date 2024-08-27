@@ -5,7 +5,8 @@
             <Top :selected="tsr.data" :analyses="analyses.data.length"/>
             <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
                 <div class="file-manager-content w-100 p-4 pb-0" ref="box" style="margin-left: 20px;">
-                    <Main :selected="tsr.data" :services="services" :analyses="analyses.data"/>  
+                    <Main v-if="!tsr.data.is_shelf" :selected="tsr.data" :services="services" :analyses="analyses.data"/>  
+                    <Shelf v-else :selected="tsr.data" :services="services" :analyses="analyses.data" :laboratories="laboratories"/>
                 </div>
                 <div class="file-manager-sidebar" style="margin-right: 20px; overflow-y: auto; overflow-x: hidden;">
                     <Sidebar :selected="tsr.data"/>
@@ -19,13 +20,14 @@
 import Top from './Components/Top.vue';
 import simplebar from "simplebar-vue";
 import Main from './Components/Main.vue';
+import Shelf from './Components/Shelf.vue';
 import Message from './Modals/Message.vue';
 import Sidebar from './Components/Sidebar.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
     layout: null,
-    components: { PageHeader, Top, Main, Sidebar, simplebar, Message },
-    props: ['tsr','services','analyses'],
+    components: { PageHeader, Top, Main, Sidebar, simplebar, Message, Shelf },
+    props: ['tsr','services','analyses','laboratories'],
 }
 </script>
 <style scoped>

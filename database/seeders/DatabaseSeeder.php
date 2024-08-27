@@ -93,5 +93,6 @@ class DatabaseSeeder extends Seeder
         $this->call(FinanceReceiptDetailsTableSeeder::class);
         
         $this->call(FinanceItemsTableSeeder::class);
+        // $this->call(TsrGroupsTableSeeder::class);
     }
 }

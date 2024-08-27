@@ -21,7 +21,9 @@ class Tsr extends Model
         'conforme_id',
         'received_by',
         'due_at',
-        'released_at'
+        'released_at',
+        'is_parent',
+        'is_shelf'
     ];
 
     public function payment()
@@ -87,6 +89,11 @@ class Tsr extends Model
     public function itemable()
     {
         return $this->morphOne('App\Models\FinanceOpItem', 'itemable');
+    }
+
+    public function groups()
+    {
+        return $this->hasMany('App\Models\TsrGroup', 'tsr_id');
     }
 
     public function children()

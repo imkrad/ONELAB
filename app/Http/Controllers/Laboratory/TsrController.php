@@ -92,7 +92,8 @@ class TsrController extends Controller
         return inertia('Modules/Laboratory/Tsr/Profile/Index',[
             'tsr' => $this->view->view($id),
             'analyses' => $this->view->analyses($id),
-            'services' => $this->dropdown->services()
+            'services' => $this->dropdown->services(),
+            'laboratories' => $this->dropdown->laboratory_types()
         ]);
     }
 }

@@ -39,6 +39,9 @@ class AnalysisController extends Controller
                 case 'remove':
                     return $this->analysis->remove($request);
                 break;
+                case 'group':
+                    return $this->analysis->group($request);
+                break;
                 default:
                     return $this->analysis->save($request);
             }

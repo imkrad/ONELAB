@@ -3,6 +3,8 @@
 namespace App\Services\Laboratory\Tsr;
 
 use App\Models\Tsr;
+use App\Models\TsrGroup;
+use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
 use App\Models\TsrPayment;
 use App\Models\TsrService;
@@ -31,6 +33,10 @@ class AnalysisClass
                     'fee' => $list['fee_num'],
                     'sample_id' => $sample
                 ]));
+                if(!$list['is_fixed']){
+                    $id = TsrSample::where('id',$sample)->value('tsr_id');
+                    $tsr = Tsr::where('id',$id)->update(['is_shelf' => 1]);
+                }
                 $data = TsrAnalysis::with('sample','testservice.method.method')->where('id',$data->id)->first();
                 $total =  $this->updateTotal($data->sample->tsr_id,$list['fee']);
             }
@@ -190,5 +196,28 @@ class AnalysisClass
         ->groupBy('list_testservices.testname_id')
         ->orderBy('count', $sort)->paginate(10);
         return TestnameTopResource::collection($data);
+    }
+
+    public function group($request){
+        $lists = $request->lists;
+        foreach($lists as $list){
+            $data = TsrGroup::create([
+                'days' => $request->days,
+                'date' => $request->date,
+                'quantity' => $list['quantity'],
+                'fee' => $list['fee_num'],
+                'total' => $list['quantity']*$list['fee_num'],
+                'testservice_id' => $list['id'],
+                'status_id' => 23,
+                'tsr_id' => $request->tsr_id
+            ]);
+            $total =  $this->updateTotal($request->tsr_id,$list['fee_num']);
+        }
+
+        return [
+            'data' => true,
+            'message' => 'Group added was successful!', 
+            'info' => "You've successfully added a group."
+        ];
     }
 }
