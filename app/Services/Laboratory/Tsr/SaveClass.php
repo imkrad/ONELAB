@@ -4,8 +4,11 @@ namespace App\Services\Laboratory\Tsr;
 
 use Hashids\Hashids;
 use App\Models\Tsr;
+use App\Models\TsrChild;
 use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
+use App\Models\TsrPayment;
+use App\Models\TsrGroup;
 use App\Models\TsrReport;
 use App\Models\Laboratory;
 use App\Models\ListLaboratory;
@@ -31,6 +34,55 @@ class SaveClass
         
         $payment = (in_array($request->discount_id, [5, 6, 7])) ? ['status_id' => 8,'is_free' => 1,'paid_at' => now()] : ['status_id' => 6];
         $data->payment()->create(array_merge($request->all(),$payment));
+
+        return [
+            'data' => $data,
+            'message' => 'TS Request creation was successful!', 
+            'info' => "You've successfully created the new request."
+        ];
+    }
+
+    public function child($request){
+        $data = Tsr::create(array_merge($request->all(),[
+            'code' => $this->generateCode($request),
+            'laboratory_id' => $this->laboratory,
+            'received_by' => \Auth::user()->id
+        ]));
+
+        if($data){
+            TsrChild::create([
+                'parent_id' => $request->tsr_id,
+                'child_id' => $data->id
+            ]);
+            $data->payment()->create([
+                'discount_id' => $request->payment['discount_id'],
+                'collection_id' => $request->payment['collection_id'],
+                'payment_id' => $request->payment['payment_id'],
+                'status_id' => $request->payment['status_id'],
+                'or_number' => $request->payment['or_number'],
+                'is_child' => 1,
+                'is_paid' => 1
+            ]);
+            $count = ($request->has_control) ? 2 : 1;
+            for ($i = 0; $i < $count; $i++) {
+                $sample = $data->samples()->create([
+                    'name' => $request->name,
+                    'customer_description' => $request->customer_description,
+                    'description' => $request->description
+                ]);
+                foreach($request->lists as $list){
+                    TsrGroup::where('id',$list['id'])->update(['status_id' => 24]);
+                    TsrAnalysis::create([
+                        'status_id' => 10,
+                        'testservice_id' => $list['testservice_id'],
+                        'sample_id' => $sample->id,
+                        'fee' => $list['fee']
+                    ]);
+
+                    $total = $this->updateTotal($data->id,$list['fee']);
+                }
+            }
+        }
 
         return [
             'data' => $data,
@@ -132,6 +184,26 @@ class SaveClass
             $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type);
         })->whereYear('created_at',$year)->where('code','!=','NULL')->count();
         return $lab_type->short.'-'.str_pad(($sample_count+$c+1), 5, '0', STR_PAD_LEFT); 
+    }
+
+    private function updateTotal($id,$fee){
+        $data = TsrPayment::with('discounted')->where('tsr_id',$id)->first();
+        $fee = (float) trim(str_replace(',','',$fee),'₱ ');
+        $subtotal = (float) trim(str_replace(',','',$data->subtotal),'₱ ');
+        if($data->discount_id === 1){
+            $discount = 0;
+            $subtotal = $subtotal + $fee;
+            $total = $subtotal;
+        }else{
+            $subtotal = $subtotal + $fee;
+            $discount = (float) (($data->discounted->value/100) * $subtotal);
+            $total =  ((float) $subtotal - (float) $discount);
+        }
+        $data->subtotal = $subtotal;
+        $data->discount = $discount;
+        $data->total = $total;
+        $data->save();
+        return $data;
     }
 
     private function report($id){

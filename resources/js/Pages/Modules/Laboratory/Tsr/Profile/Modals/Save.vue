@@ -3,7 +3,6 @@
         <div class="modal-body">
             <div class="mt-2">
                 <h4 class="mb-4 text-center">Confirm TS Request</h4>
-                {{industry}}
                 <p class="text-primary mb-4 text-center">Upon confirming, you cannot add samples, analyses, or edit information for the TS Request.</p>
                 <!-- <p class="text-muted mb-4">Please double-check all data to avoid cancellation or updating of the data.</p> -->
                 <div class="customform">

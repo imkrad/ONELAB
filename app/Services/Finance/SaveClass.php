@@ -40,7 +40,7 @@ class SaveClass
                     'op_id' => $id
                 ]);
                 if($opitem){
-                    $payment = TsrPayment::findOrFail($item['id']);
+                    $payment = TsrPayment::where('tsr_id',$item['id'])->first();
                     $payment->collection_id = $collection_id;
                     $payment->payment_id = $payment_id;
                     $payment->save();

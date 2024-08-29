@@ -141,6 +141,7 @@ class ViewClass
             Tsr::query()
             ->with('samples.report','samples.analyses','samples.analyses.addfee.service','samples.analyses.testservice.testname','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference','samples.analyses.testservice.fees')
             ->with('service.service')
+            ->with('children.child.status')
             ->with('groups.testservice:id,testname_id,method_id,laboratory_type','groups.testservice.testname:id,name','groups.testservice.type:id,name')
             ->with('received:id','received.profile:id,firstname,lastname,user_id')
             ->with('laboratory','laboratory_type:id,name','status:id,name,color,others')

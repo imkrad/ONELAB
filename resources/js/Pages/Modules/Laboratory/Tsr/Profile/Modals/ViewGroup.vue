@@ -5,7 +5,7 @@
                 <thead class="table-light thead-fixed">
                     <tr class="fs-11">
                         <th width="40%">Testname</th>
-                        <th class="text-center" width="20%">Qunatity</th>
+                        <th class="text-center" width="20%">Quantity</th>
                         <th class="text-center" width="20%">Fee</th>
                         <th class="text-center" width="20%">Total</th>
                     </tr>
@@ -67,7 +67,9 @@ export default {
                 lists: [],
                 option: 'group'
             }),
+            id: null,
             customer: null,
+            payment: null,
             selected: null,
             showModal: false
         }
@@ -90,6 +92,12 @@ export default {
                         customer: this.customer.name,
                         customer_id: this.customer.id,
                         conformes: this.customer.conformes,
+                        or_number: this.payment.or_number,
+                        discount_id: this.payment.discount_id,
+                        payment_id: this.payment.payment_id,
+                        collection_id: this.payment.collection_id,
+                        status_id: this.payment.status_id,
+                        tsr_id: this.id,
                         items: []
                     }];
                     acc.push(group);
@@ -103,7 +111,9 @@ export default {
         }
     },
     methods: { 
-        show(data,customer){
+        show(data,customer,payment,id){
+            this.id = id;
+            this.payment = payment;
             this.customer = customer;
             this.selected = data;
             this.showModal = true;
@@ -119,7 +129,6 @@ export default {
             });
         },
         openGenerate(data){
-            console.log(data);
             this.$refs.generate.show(data);
         },
         handleInput(field) {

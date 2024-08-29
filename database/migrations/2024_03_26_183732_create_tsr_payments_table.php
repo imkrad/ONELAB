@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('or_number')->nullable();
             $table->boolean('is_paid')->default(0);
             $table->boolean('is_free')->default(0);
-            $table->boolean('is_parent')->default(0);
+            $table->boolean('is_child')->default(0);
             $table->boolean('has_deduction')->default(0);
             $table->tinyInteger('discount_id')->unsigned()->index();
             $table->foreign('discount_id')->references('id')->on('list_discounts')->onDelete('cascade');

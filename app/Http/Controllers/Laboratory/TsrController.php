@@ -77,6 +77,9 @@ class TsrController extends Controller
                 case 'release':
                     return $this->save->release($request);
                 break;
+                case 'child':
+                    return $this->save->child($request);
+                break;
             }
         });
         

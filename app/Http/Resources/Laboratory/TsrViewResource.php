@@ -22,6 +22,7 @@ class TsrViewResource extends JsonResource
             // 'purpose' => $this->purpose->name,
             'status' => $this->status,
             'groups' => $this->groups,
+            'children' => $this->children,
             'customer' => new CustomerViewResource($this->customer),
             'samples' => SampleResource::collection($this->samples),
             'conforme' => $this->conforme->name, 

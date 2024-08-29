@@ -16,11 +16,12 @@ class TsrRequest extends FormRequest
         return [
             'customer' => 'sometimes|required',
             'conforme' => 'sometimes|required',
+            'conforme_id' => 'sometimes|required',
             'laboratory_id' => 'sometimes|required|integer',
             'laboratory_type' => 'sometimes|required',
             'discount_id' => 'sometimes|required|integer',
             'due_at' => 'sometimes|required',
-            'is_government' => 'sometimes|required_if:industry,Government',
+            'is_government' => 'sometimes|required_if:industry,Government'
         ];
     }
 }

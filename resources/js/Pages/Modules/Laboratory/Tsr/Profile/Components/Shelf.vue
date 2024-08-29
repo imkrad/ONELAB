@@ -7,7 +7,7 @@
         </li>
         <li class="nav-item">
             <b-link class="nav-link" data-bs-toggle="tab" href="#groups" role="tab">
-                Groups
+                Cycles
             </b-link>
         </li>
          <li class="nav-item">
@@ -131,7 +131,7 @@
         <div class="tab-pane" id="groups" role="tabpanel">
             <div class="d-grid gap-2" >
                 <b-button v-if="selected.status.name == 'Pending'" @click="openGroup()" type="button" variant="light">
-                    <i class="ri-add-circle-fill align-bottom me-1"></i>Add Group
+                    <i class="ri-add-circle-fill align-bottom me-1"></i>Add Cycle
                 </b-button>
             </div>  
 
@@ -149,9 +149,9 @@
                     <tbody>
                         <tr class="fs-11" v-for="(group, day) in groupedByDays" :key="day">
                             <td class="text-center" style="cursor: pointer;">
-                                <i @click="openViewGroup(group,selected.customer)" v-if="group.status_id == 24" class="ri-checkbox-circle-fill text-success fs-15" v-b-tooltip.hover title="Confirmed"></i>
-                                <i @click="openViewGroup(group,selected.customer)" v-else-if="group.status_id == 25" class="ri-checkbox-circle-fill text-info fs-15" v-b-tooltip.hover title="Unprocessed"></i>
-                                <i @click="openViewGroup(group,selected.customer)" v-else class="ri-close-circle-fill text-danger fs-15" v-b-tooltip.hover title="Pending"></i>
+                                <i @click="openViewGroup(group,selected.customer,selected.payment,selected.id)" v-if="group.status_id == 24" class="ri-checkbox-circle-fill text-success fs-15" v-b-tooltip.hover title="Confirmed"></i>
+                                <i @click="openViewGroup(group,selected.customer,selected.payment,selected.id)" v-else-if="group.status_id == 25" class="ri-checkbox-circle-fill text-info fs-15" v-b-tooltip.hover title="Unprocessed"></i>
+                                <i @click="openViewGroup(group,selected.customer,selected.payment,selected.id)" v-else class="ri-close-circle-fill text-danger fs-15" v-b-tooltip.hover title="Pending"></i>
                             </td>
                             <td class="text-center">{{day}}</td>
                             <td class="text-center">{{group.date}}</td>
@@ -180,17 +180,18 @@
                      <thead class="table-light thead-fixed">
                         <tr class="fs-11">
                             <th></th>
-                            <th style="width: 40%;">TSR</th>
-                            <th style="width: 10%;" class="text-center">Progress</th>
-                            <th style="width: 10%;" class="text-center">Payment</th>
-                            <th style="width: 10%;" class="text-center">Report</th>
+                            <th style="width: 65%;">TSR</th>
                             <th style="width: 15%;" class="text-center">Due At</th>
                             <th style="width: 15%;" class="text-center">Status</th>
-                            <th style="width: 7%;" ></th>
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        <tr class="fs-11" v-for="(list,index) in selected.children" v-bind:key="index">
+                            <td class="text-center" style="cursor: pointer;"> #</td>
+                            <td>{{list.child.code}}</td>
+                            <td class="text-center">{{list.child.due_at}}</td>
+                            <td class="text-center"><span :class="'badge '+list.child.status.color">{{list.child.status.name}}</span></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -257,8 +258,8 @@ export default {
         openAnalysis(){
             (this.samples.length > 0) ? this.$refs.analysis.show(this.samples,this.selected.laboratory_type) : '';
         },
-        openViewGroup(data,customer){
-            this.$refs.viewgroup.show(data,customer);
+        openViewGroup(data,customer,payment,id){
+            this.$refs.viewgroup.show(data,customer,payment,id);
         }
     }
 }

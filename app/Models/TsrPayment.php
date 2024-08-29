@@ -22,6 +22,7 @@ class TsrPayment extends Model
         'paid_at',
         'is_paid',
         'is_free',
+        'is_child',
         'has_deduction'
     ];
 

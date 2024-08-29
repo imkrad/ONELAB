@@ -22,6 +22,7 @@ use App\Http\Resources\VerificationResource;
 use App\Http\Resources\ItemsResource;
 use App\Models\InventoryItem;
 use App\Models\InventoryStock;
+use Illuminate\Support\Facades\Http;
 
 class WelcomeController extends Controller
 {
@@ -213,6 +214,25 @@ class WelcomeController extends Controller
     }
 
     public function new(){
-        return inertia('Auth/New');
+        $url = 'https://api.dost9.ph/sms/messages';
+
+        $recipient = '09171531652';
+        $title = 'Notification';
+        $message = 'This is a test message.';
+        
+        $response = Http::post($url, [
+            'hash' => 's', 
+            'sender' => 'a', 
+            'recipient' => $recipient,
+            'title' => $title,
+            'message' => $message,
+            'via' => 'v', 
+            'module' => 'm', 
+            'action' => 'a'
+        ]);
+    
+        return $response->json();
     }
+
+
 }
