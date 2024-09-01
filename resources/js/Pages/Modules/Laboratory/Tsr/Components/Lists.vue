@@ -115,7 +115,7 @@
         </table>
         <Pagination class="ms-2 me-2" v-if="meta" @fetch="fetch" :lists="lists.length" :links="links" :pagination="meta" />
     </div>
-    <Create :dropdowns="dropdowns" @success="fetch()" ref="create"/>
+    <Create :dropdowns="dropdowns" @success="moveTo" ref="create"/>
     <Cancel @success="fetch()" ref="cancel"/>
 </template>
 <script>
@@ -226,6 +226,10 @@ export default {
             this.filter.sortby = sortby;
             this.filter.sort = sort;
             this.fetch();
+        },
+        moveTo(data){
+            console.log('/requests/'+data);
+            this.$inertia.visit('/requests/'+data);
         },
         refresh(){
             this.filter.sortby = 'Request At';

@@ -101,7 +101,7 @@ export default {
             this.form.post('/requests',{
                 preserveScroll: true,
                 onSuccess: (response) => {
-                    this.$emit('success',true);
+                    this.$emit('success',this.$page.props.flash.data);
                     this.hide();
                 },
             });

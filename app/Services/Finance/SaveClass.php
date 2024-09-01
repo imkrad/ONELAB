@@ -78,7 +78,7 @@ class SaveClass
                 ]);
 
                 if($data){
-                    if($available > $total){
+                    if($available >= $total){
                         $payment = TsrPayment::where('id',$id)->update([
                             'is_paid' => 1,
                             'payment_id' => 21, //wallet payment mode
@@ -166,7 +166,7 @@ class SaveClass
                             $cheque->is_cheque = ($request->type === 'Bank Deposit') ? $request->details_is_cheque : false;
                             $cheque->receipt_id = $data->id;
                             if($cheque->save()){
-                                $amount = trim(str_replace(',','',$request->cheque_amount),'₱');
+                                $amount = trim(str_replace(',','',$request->details_amount),'₱');
                                 $total = trim(str_replace(',','',$request->total),'₱');
                                 
                                 if($amount > $total){

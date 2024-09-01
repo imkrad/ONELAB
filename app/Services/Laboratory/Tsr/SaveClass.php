@@ -35,8 +35,11 @@ class SaveClass
         $payment = (in_array($request->discount_id, [5, 6, 7])) ? ['status_id' => 8,'is_free' => 1,'paid_at' => now()] : ['status_id' => 6];
         $data->payment()->create(array_merge($request->all(),$payment));
 
+        $hashids = new Hashids('krad',10);
+        $code = $hashids->encode($data->id);
+
         return [
-            'data' => $data,
+            'data' => $code,
             'message' => 'TS Request creation was successful!', 
             'info' => "You've successfully created the new request."
         ];
