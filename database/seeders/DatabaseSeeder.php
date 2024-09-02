@@ -93,7 +93,7 @@ class DatabaseSeeder extends Seeder
         $this->call(FinanceReceiptDetailsTableSeeder::class);
         
         $this->call(FinanceItemsTableSeeder::class);
-        // $this->call(TsrGroupsTableSeeder::class);
+        $this->call(TsrGroupsTableSeeder::class);
         $this->call(TsrChildrenTableSeeder::class);
         $this->call(FinanceDepositsTableSeeder::class);
     }

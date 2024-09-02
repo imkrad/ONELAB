@@ -15,7 +15,7 @@ class FinanceOpsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_ops')->truncate();
+        \DB::table('finance_ops')->delete();
         
         \DB::table('finance_ops')->insert(array (
             0 => 
