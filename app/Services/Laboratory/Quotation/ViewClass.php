@@ -24,7 +24,7 @@ class ViewClass
         $data = QuotationResource::collection(
             Quotation::query()
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
-            ->with('laboratory:id,name','type:id,name','purpose:id,name','status:id,name,color,others','discounted:id,name,value')
+            ->with('laboratory:id,name','type:id,name','status:id,name,color,others','discounted:id,name,value')
             ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
             ->with('customer.contact:id,email,contact_no,customer_id')
             ->with('conforme:id,name,contact_no')
@@ -56,7 +56,7 @@ class ViewClass
             Quotation::query()
             ->with('samples')
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
-            ->with('laboratory:id,name','type:id,name','purpose:id,name','status:id,name,color,others','discounted:id,name,value')
+            ->with('laboratory:id,name','type:id,name','status:id,name,color,others','discounted:id,name,value')
             ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
             ->with('customer.contact:id,email,contact_no,customer_id')
             ->with('conforme:id,name,contact_no')
@@ -89,7 +89,7 @@ class ViewClass
 
         $quotation = Quotation::query()
         ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
-        ->with('laboratory:id,name','purpose:id,name','status:id,name,color,others')
+        ->with('laboratory:id,name','status:id,name,color,others')
         ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
         ->with('conforme:id,name,contact_no','customer.contact:id,email,contact_no,customer_id')
         ->where('id',$id[0])

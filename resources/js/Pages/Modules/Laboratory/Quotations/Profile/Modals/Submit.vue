@@ -71,7 +71,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Purpose:</p>
-                            <h5 class="fs-12 mb-0">{{selected.purpose.name}}</h5>
+                            <h5 class="fs-12 mb-0">-</h5>
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,6 @@ export default {
                 laboratory_type: null,
                 customer_id: null,
                 conforme_id: null,
-                purpose_id: null,
                 discount_id: null,
                 total: null,
                 due_at: null,
@@ -186,7 +185,6 @@ export default {
             this.form.laboratory_type = data.type.id;
             this.form.customer_id = data.customer.id;
             this.form.conforme_id = data.conforme_id;
-            this.form.purpose_id = data.purpose.id;
             this.form.due_at = data.due_at;
             this.form.discount_id = data.discounted.id;
             this.form.total = data.total;

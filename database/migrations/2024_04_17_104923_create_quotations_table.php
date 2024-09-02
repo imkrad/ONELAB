@@ -18,10 +18,8 @@ return new class extends Migration
             $table->decimal('total',12,2)->default(0.00);
             $table->decimal('subtotal',12,2)->default(0.00);
             $table->decimal('discount',12,2)->default(0.00);
-            $table->tinyInteger('purpose_id')->unsigned()->index();
             $table->tinyInteger('status_id')->unsigned()->index();
             $table->foreign('status_id')->references('id')->on('list_statuses')->onDelete('cascade');
-            $table->foreign('purpose_id')->references('id')->on('list_dropdowns')->onDelete('cascade');
             $table->tinyInteger('discount_id')->unsigned()->index();
             $table->foreign('discount_id')->references('id')->on('list_discounts')->onDelete('cascade');
             $table->integer('laboratory_id')->unsigned()->index();

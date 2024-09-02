@@ -24,7 +24,6 @@ class QuotationResource extends JsonResource
             'discounted' => $this->discounted,
             'laboratory' => $this->laboratory,
             'type' => $this->type,
-            'purpose' => $this->purpose,
             'status' => $this->status,
             'customer' => new CustomerViewResource($this->customer),
             'conforme' => $this->conforme->name, 

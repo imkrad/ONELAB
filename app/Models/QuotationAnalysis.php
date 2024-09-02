@@ -20,7 +20,7 @@ class QuotationAnalysis extends Model
 
     public function testservice()
     {
-        return $this->belongsTo('App\Models\ListTestservice', 'testservice_id', 'id');
+        return $this->belongsTo('App\Models\Testservice', 'testservice_id', 'id');
     }
 
     public function setFeeAttribute($value)

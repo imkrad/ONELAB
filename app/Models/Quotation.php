@@ -19,7 +19,6 @@ class Quotation extends Model
         'laboratory_type',
         'status_id',
         'customer_id',
-        'purpose_id',
         'discount_id',
         'conforme_id',
         'created_by'
@@ -48,11 +47,6 @@ class Quotation extends Model
     public function discounted()
     {
         return $this->belongsTo('App\Models\ListDiscount', 'discount_id', 'id');
-    }
-
-    public function purpose()
-    {
-        return $this->belongsTo('App\Models\ListDropdown', 'purpose_id', 'id');
     }
 
     public function customer()
