@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="row g-3">
 
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="row g-3 mb-n2">
                         <b-col lg="4" md="6" v-for="(item, index) of dropdowns.counts" :key="index">
                             <b-card no-body>
@@ -43,9 +43,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
 
-                </div>
+                </div> -->
 
             </div>
         </div>
