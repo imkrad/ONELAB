@@ -15,7 +15,7 @@ class TestserviceNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('testservice_names')->truncate();
+        \DB::table('testservice_names')->delete();
         
         \DB::table('testservice_names')->insert(array (
             0 => 

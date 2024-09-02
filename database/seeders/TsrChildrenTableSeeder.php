@@ -15,7 +15,7 @@ class TsrChildrenTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_children')->truncate();
+        \DB::table('tsr_children')->delete();
         
         \DB::table('tsr_children')->insert(array (
             0 => 
