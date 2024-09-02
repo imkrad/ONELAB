@@ -89,4 +89,24 @@ class AnalystClass
             ],
         ];
     }
+
+    public function tasks($request){
+        $laboratory = \Auth::user()->userrole->laboratory_type;
+        return [
+            [
+                'name' => 'Ongoing Task',
+                'description' => 'Task I\'ve handled for completion',
+                'count' => TsrAnalysis::where('status_id',11)->where('analyst_id',\Auth::user()->id)->count(),
+                'icon' => 'ri-error-warning-fill',
+                'color' => 'bg-info-subtle text-info'
+            ],
+            [
+                'name' => 'Completed',
+                'description' => 'Task I\'ve successfully completed',
+                'count' => TsrAnalysis::where('status_id',12)->where('analyst_id',\Auth::user()->id)->count(),
+                'icon' => 'ri-alert-fill',
+                'color' => 'bg-success-subtle text-success'
+            ]
+        ];
+    }
 }

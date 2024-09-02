@@ -6,7 +6,26 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body" style="height: calc(100vh - 220px); overflow: auto;" >
-                    <p class="text-muted text-uppercase fs-12 fw-medium mb-2">Reminders</p>
+                    <p class="text-muted text-uppercase fs-12 fw-medium mb-2">My Tasks</p>
+                    <b-list-group>
+                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in tasks" v-bind:key="index" style="cursor: pointer;">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0">
+                                    <div class="avatar-xs">
+                                        <div class="avatar-title rounded" :class="list.color">
+                                        <i class="fs-15" :class="list.icon"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h5 class="mb-0 fs-12">{{list.name}}</h5>
+                                    <p class="mb-0 fs-11 text-muted">{{list.description}}</p>
+                                </div>
+                                <span class="text-muted fs-12">{{list.count}} </span>
+                            </div>
+                        </BListGroupItem>
+                    </b-list-group>
+                    <p class="text-muted text-uppercase fs-12 fw-medium mb-2 mt-3">Reminders</p>
                     <b-list-group>
                         <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in reminders" v-bind:key="index" style="cursor: pointer;">
                             <div class="d-flex align-items-center">
@@ -89,7 +108,7 @@ import Show from './Modals/Show.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
     components: { PageHeader, View, Show, simplebar, Tsr },
-    props: ['samples','reminders'],
+    props: ['samples','reminders','tasks'],
     data(){
         return {
             currentUrl: window.location.origin,
