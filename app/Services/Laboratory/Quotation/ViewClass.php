@@ -104,7 +104,9 @@ class ViewClass
         $head = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
         ->where('laboratory_id',$quotation->laboratory_id)->whereHas('role',function ($query){
             $query->where('name','Technical Manager');
-        })->first();
+        })
+        ->where('laboratory_type',$quotation->laboratory_type)
+        ->first();
 
         $array= [
             'configuration' => Configuration::first(),

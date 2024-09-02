@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         
 
-        \DB::table('users')->delete();
+        \DB::table('users')->truncate();
         
         \DB::table('users')->insert(array (
             0 => 
@@ -89,6 +89,42 @@ class UsersTableSeeder extends Seeder
                 'two_factor_confirmed_at' => NULL,
                 'created_at' => '2024-08-03 14:47:33',
                 'updated_at' => '2024-08-03 14:47:35',
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'username' => 'jtf',
+                'email' => 'schezzojuly@gmail.com',
+                'password' => '$2y$12$yO.mty8fFFfXwQvshLsSgOZ41IT2FO.lAw8lmfZ3MSlTBu5Lu6Lcq',
+                'role' => 'Staff',
+                'is_active' => 0,
+                'is_new' => 0,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'email_verified_at' => NULL,
+                'password_changed_at' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'created_at' => '2024-09-02 10:54:01',
+                'updated_at' => '2024-09-02 10:54:01',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'username' => 'slb',
+                'email' => 'sonora.bunag@ro9.dost.gov.ph',
+                'password' => '$2y$12$X3c9LX.lgw0DBDOpWGwNLepCSuvxl.w8l5Hjf3DyLNE056poLi8Xu',
+                'role' => 'Staff',
+                'is_active' => 0,
+                'is_new' => 0,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'email_verified_at' => NULL,
+                'password_changed_at' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'created_at' => '2024-09-02 10:54:37',
+                'updated_at' => '2024-09-02 10:54:37',
             ),
         ));
 
