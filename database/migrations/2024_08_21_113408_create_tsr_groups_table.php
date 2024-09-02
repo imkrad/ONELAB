@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('tsr_groups', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->integer('group');
             $table->integer('days');
             $table->integer('quantity');
             $table->decimal('fee',12,2);
