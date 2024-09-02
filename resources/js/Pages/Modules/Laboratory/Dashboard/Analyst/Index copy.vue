@@ -1,30 +1,40 @@
 <template lang="">
     <Head title="Dashboard"/>
     <PageHeader title="Dashboard" pageTitle="Lab Analyst" />
-    
-    <b-row class="g-4">
+    <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
+         <!-- style="max-width: 400px; min-width: 400px;" -->
+        <div class="file-manager-sidebar" style="max-width: 400px; min-width: 400px;">  
+           
+        </div>
+        <div class="file-manager-content w-100 p-4 pb-0" style="height: calc(100vh - 180px); overflow: auto;" ref="box">
+            <div class="row">
+                <div class="col-md-12 mb-1">
+                    <b-col lg>
+                        <div class="input-group mb-0">
+                            <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
+                            <input type="text"  placeholder="Search Request" class="form-control" style="width: 65%;">
+                            <select class="form-select" id="inputGroupSelect01">
+                                <option  @click="setDisplay('tsr')" selected>Show by TSR</option>
+                                <option  @click="setDisplay('sample')" selected>Show by Sample</option>
+                            </select>
+                            <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
+                                <i class="bx bx-refresh search-icon"></i>
+                            </span>
+                            <b-button type="button" variant="primary" @click="openCreate">
+                                <i class="ri-add-circle-fill align-bottom me-1"></i> Create
+                            </b-button>
+                        </div>
+                    </b-col>
+                </div>
+                <Tsr v-if="mode === 'tsr'" :samples="samples"/>
+            </div>
+        </div>
+    </div>
+    <!-- <b-row class="g-4">
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body" style="height: calc(100vh - 220px); overflow: auto;" >
-                    <p class="text-muted text-uppercase fs-12 fw-medium mb-2">Reminders</p>
-                    <b-list-group>
-                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in reminders" v-bind:key="index" style="cursor: pointer;">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <div class="avatar-xs">
-                                        <div class="avatar-title rounded" :class="list.color">
-                                        <i class="fs-15" :class="list.icon"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mb-0 fs-12">{{list.name}}</h5>
-                                    <p class="mb-0 fs-11 text-muted">{{list.description}}</p>
-                                </div>
-                                <span class="text-muted fs-12">{{list.count}} </span>
-                            </div>
-                        </BListGroupItem>
-                    </b-list-group>
+                    
                 </div>
             </div>
         </div>
@@ -33,7 +43,7 @@
                 <div class="col-md-12 mb-n4">
                     <div class="card">
                         <div class="card-body">
-                            <!-- <div class="row g-3">
+                            <div class="row g-3">
                                 <div class="col-md-3">
                                     <div class="search-box">
                                         <input type="text" v-model="searchTerm" @input="search" class="form-control search" placeholder="Search for sample code">
@@ -54,30 +64,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
-                            <b-col lg>
-                        <div class="input-group mb-0">
-                            <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                            <input type="text"  placeholder="Search Request" class="form-control" style="width: 65%;">
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option  @click="setDisplay('tsr')" selected>Show by TSR</option>
-                                <option  @click="setDisplay('sample')" selected>Show by Sample</option>
-                            </select>
-                            <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
-                                <i class="bx bx-refresh search-icon"></i>
-                            </span>
-                            <b-button type="button" variant="primary" @click="openCreate">
-                                <i class="ri-add-circle-fill align-bottom me-1"></i> Create
-                            </b-button>
-                        </div>
-                    </b-col>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <Tsr v-if="mode === 'tsr'" :samples="samples"/>
             </div>
         </div>
-    </b-row>
+    </b-row> -->
     <View ref="view"/>
     <Show ref="show"/>
 </template>
@@ -89,7 +83,7 @@ import Show from './Modals/Show.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
     components: { PageHeader, View, Show, simplebar, Tsr },
-    props: ['samples','reminders'],
+    props: ['samples'],
     data(){
         return {
             currentUrl: window.location.origin,

@@ -16,14 +16,14 @@
             </BLink>
         </BCard>
     
-        <simplebar data-simplebar style="height: calc(100vh - 402px);">
+        <simplebar data-simplebar style="height: calc(100vh - 395px);">
             <BRow v-if="pendings.length > 0">
-                <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of pendings" :key="index">
+                <BCol lg="12" class="project-card border-1 mb-n3" v-for="(item, index) of pendings" :key="index">
                     <div class="card" style="cursor: pointer;" @click="openShow(item,'Pending')">
-                        <div class="card-header">
+                        <div class="card-header bg-light">
                             <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.tsr.code}}</span></h6>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body bg-light">
                             <div class="d-flex flex-column h-100">
                                 <div class="mt-auto">
                                     <div class="d-flex mb-2">
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer py-2">
+                        <div class="card-footer bg-light py-2">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1 text-muted fs-13">
                                     {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span> 
@@ -74,14 +74,14 @@
                 </div>
             </BLink>
         </BCard>
-        <simplebar data-simplebar style="height: calc(100vh - 402px);">
+        <simplebar data-simplebar style="height: calc(100vh - 395px);">
         <BRow v-if="ongoings.length > 0">
             <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of ongoings" :key="index">
                 <div class="card" style="cursor: pointer;" @click="openShow(item,'Ongoing')">
-                    <div class="card-header">
+                    <div class="card-header bg-light">
                         <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.tsr.code}}</span></h6>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-light">
                         <div class="d-flex flex-column h-100">
                             <div class="mt-auto">
                                 <div class="d-flex mb-2">
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer py-2">
+                    <div class="card-footer bg-light py-2">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted fs-13">
                                 {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span> 
@@ -132,14 +132,14 @@
                 </div>
             </BLink>
         </BCard>
-        <simplebar data-simplebar style="height: calc(100vh - 402px);">
+        <simplebar data-simplebar style="height: calc(100vh - 395px);">
             <BRow v-if="completeds.length > 0">
             <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of completeds" :key="index">
                 <div class="card" style="cursor: pointer;" @click="openShow(item,'Completed')">
-                    <div class="card-header">
+                    <div class="card-header bg-light">
                         <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.tsr.code}}</span></h6>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body  bg-light">
                         <div class="d-flex flex-column h-100">
                             <div class="mt-auto">
                                 <div class="d-flex mb-2">
@@ -158,7 +158,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer py-2">
+                    <div class="card-footer bg-light py-2">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted fs-13">
                                 {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span> 

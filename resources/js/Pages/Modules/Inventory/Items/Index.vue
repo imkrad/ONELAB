@@ -1,7 +1,7 @@
 <template>
     <Head title="Items"/>
     <PageHeader title="List of Items" pageTitle="Inventory" />
-     <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
+    <div class="chat-wrapper d-lg-flex gap-1 mx-n4 mt-n4 p-1">
          <!-- style="max-width: 400px; min-width: 400px;" -->
         <div class="file-manager-sidebar" style="max-width: 400px; min-width: 400px;">  
             <Sidebar :analytics="analytics"/>

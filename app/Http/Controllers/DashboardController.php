@@ -43,6 +43,12 @@ class DashboardController extends Controller
                             ]
                         ]);
                     break;
+                    case 'Lab Analyst':
+                        return inertia('Modules/Laboratory/Dashboard/Analyst/Index',[
+                            'samples' => $this->analyst->samples(),
+                            'reminders' => $this->analyst->reminders($request),
+                        ]);
+                    break;
                     case 'Cashier':
                         return inertia('Modules/Finance/Dashboard/Cashier/Index',[
                             'dropdowns' => [
@@ -61,11 +67,6 @@ class DashboardController extends Controller
                                 'collections' => $this->finance->collections('Laboratory'),
                                 'payments' => $this->finance->payments(),
                             ]
-                        ]);
-                    break;
-                    case 'Lab Analyst':
-                        return inertia('Modules/Laboratory/Dashboard/Analyst/Index',[
-                            'samples' => $this->analyst->samples()
                         ]);
                     break;
                 }

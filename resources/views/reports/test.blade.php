@@ -125,7 +125,7 @@
                 <tr>
                     <td>Address</td>
                     <td>:</td>
-                    <td>{{$sample->tsr->customer->address->address}}, {{$sample->tsr->customer->address->barangay->name}}, {{$sample->tsr->customer->address->municipality->name}}, , {{$sample->tsr->customer->address->province->name}}</td>
+                    <td>{{$sample->tsr->customer->address->address}}, {{$sample->tsr->customer->address->barangay->name}}, {{$sample->tsr->customer->address->municipality->name}}</td>
                     <!-- , {{$sample->tsr->customer->address->region->region}} -->
                 </tr>
             </tbody>

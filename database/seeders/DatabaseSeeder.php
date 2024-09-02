@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TargetsTableSeeder::class);
         $this->call(TargetBreakdownsTableSeeder::class);
         $this->call(TestserviceAddonsTableSeeder::class);
-        // $this->call(ConfigurationsTableSeeder::class);
+        $this->call(ConfigurationsTableSeeder::class);
         $this->call(CustomerConformesTableSeeder::class);
 
         

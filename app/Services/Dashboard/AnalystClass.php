@@ -8,6 +8,11 @@ use App\Http\Resources\Laboratory\AnalysisResource;
 
 class AnalystClass
 {
+    public function __construct()
+    {
+        $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
+    }
+
     public function samples(){
         $laboratory = \Auth::user()->userrole->laboratory_type;
         $data = Tsr::with('status')->where('laboratory_type',$laboratory)->whereIn('status_id',[3,4])->where('released_at',null)
@@ -49,5 +54,39 @@ class AnalystClass
             ];
         });
         return $data;
+    }
+
+    public function reminders($request){
+        $laboratory = \Auth::user()->userrole->laboratory_type;
+        return [
+            [
+                'name' => 'Due Today',
+                'description' => 'See all requests due for today',
+                'count' => Tsr::whereDate('due_at',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'icon' => 'ri-error-warning-line',
+                'color' => 'bg-warning-subtle text-warning'
+            ],
+            [
+                'name' => 'Overdue Request',
+                'description' => 'Keep track of all laboratory tasks',
+                'count' => Tsr::where('status_id',3)->whereDate('due_at','<',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'icon' => 'ri-error-warning-fill',
+                'color' => 'bg-danger-subtle text-danger'
+            ],
+            [
+                'name' => 'For Released',
+                'description' => 'Reports that are ready to be released',
+                'count' => Tsr::where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'icon' => 'ri-alert-fill',
+                'color' => 'bg-success-subtle text-success'
+            ],
+            [
+                'name' => 'Unclaimed Reports',
+                'description' => 'Ensure follow-up on unclaimed reports.',
+                'count' => Tsr::where('status_id',4)->where('due_at','<',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'icon' => 'ri-information-fill',
+                'color' => 'bg-dark-subtle text-dark'
+            ],
+        ];
     }
 }

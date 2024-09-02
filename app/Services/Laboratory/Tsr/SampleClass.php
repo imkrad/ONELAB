@@ -9,6 +9,7 @@ use App\Models\TsrSampleReport;
 use App\Models\TsrPayment;
 use App\Models\Configuration;
 use App\Models\ListDropdown;
+use App\Models\ListLaboratory;
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 use App\Http\Resources\SampleResource;
@@ -52,14 +53,14 @@ class SampleClass
         }));
         $report_count = $lab[0]['report_count'];
 
-        $lab_type = ListDropdown::select('others')->where('id',$laboratory_type)->first();
+        $lab_type = ListLaboratory::select('short')->where('id',$laboratory_type)->first();
         $c = TsrSampleReport::whereHas('sample',function ($query) use ($laboratory_type){
             $query->whereHas('tsr',function ($query) use ($laboratory_type){
                 $query->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory_type);
             });
         })
         ->whereYear('created_at',date('Y'))->where('code','!=',NULL)->count();
-        $code = date('m').date('d').date('Y').'-'.$lab_type->others.'-'.str_pad(($report_count+$c+1), 4, '0', STR_PAD_LEFT);  
+        $code = $this->configuration->code.'-'.date('m').date('d').date('Y').'-'.$lab_type->short.'-'.str_pad(($report_count+$c+1), 4, '0', STR_PAD_LEFT);  
 
         $data = TsrSampleReport::create([
             'code' => $code,
