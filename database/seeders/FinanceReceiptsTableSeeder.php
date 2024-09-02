@@ -15,7 +15,7 @@ class FinanceReceiptsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_receipts')->delete();
+        \DB::table('finance_receipts')->truncate();
         
         \DB::table('finance_receipts')->insert(array (
             0 => 
@@ -1681,6 +1681,97 @@ class FinanceReceiptsTableSeeder extends Seeder
                 'laboratory_id' => 14,
                 'created_at' => '2024-08-31 18:15:02',
                 'updated_at' => '2024-08-31 18:15:02',
+            ),
+            128 => 
+            array (
+                'id' => 161,
+                'number' => '87110',
+                'is_deposit' => 0,
+                'op_id' => 164,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:15:59',
+                'updated_at' => '2024-09-02 16:15:59',
+            ),
+            129 => 
+            array (
+                'id' => 162,
+                'number' => '87111',
+                'is_deposit' => 0,
+                'op_id' => 165,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:16:13',
+                'updated_at' => '2024-09-02 16:16:13',
+            ),
+            130 => 
+            array (
+                'id' => 163,
+                'number' => '87112',
+                'is_deposit' => 0,
+                'op_id' => 166,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:16:24',
+                'updated_at' => '2024-09-02 16:16:24',
+            ),
+            131 => 
+            array (
+                'id' => 164,
+                'number' => '87113',
+                'is_deposit' => 0,
+                'op_id' => 167,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:16:29',
+                'updated_at' => '2024-09-02 16:16:29',
+            ),
+            132 => 
+            array (
+                'id' => 165,
+                'number' => '87114',
+                'is_deposit' => 0,
+                'op_id' => 168,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:16:35',
+                'updated_at' => '2024-09-02 16:16:35',
+            ),
+            133 => 
+            array (
+                'id' => 166,
+                'number' => '87115',
+                'is_deposit' => 0,
+                'op_id' => 169,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:25:31',
+                'updated_at' => '2024-09-02 16:25:31',
+            ),
+            134 => 
+            array (
+                'id' => 167,
+                'number' => '87116',
+                'is_deposit' => 0,
+                'op_id' => 170,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:26:11',
+                'updated_at' => '2024-09-02 16:26:11',
             ),
         ));
 

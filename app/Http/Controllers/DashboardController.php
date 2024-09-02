@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\Dashboard\CroClass;
+use App\Services\Dashboard\AnalystClass;
 use App\Services\Dashboard\FinanceClass;
 use App\Services\Laboratory\DropdownClass;
 
 class DashboardController extends Controller
 {
-    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown){
+    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown, AnalystClass $analyst){
         $this->finance = $finance;
         $this->cro = $cro;
         $this->dropdown = $dropdown;
+        $this->analyst = $analyst;
     }
 
     public function index(Request $request){
@@ -59,6 +61,11 @@ class DashboardController extends Controller
                                 'collections' => $this->finance->collections('Laboratory'),
                                 'payments' => $this->finance->payments(),
                             ]
+                        ]);
+                    break;
+                    case 'Lab Analyst':
+                        return inertia('Modules/Laboratory/Dashboard/Analyst/Index',[
+                            'samples' => $this->analyst->samples()
                         ]);
                     break;
                 }

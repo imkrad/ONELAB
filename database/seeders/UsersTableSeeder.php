@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         
 
-        \DB::table('users')->delete();
+        \DB::table('users')->truncate();
         
         \DB::table('users')->insert(array (
             0 => 
@@ -102,11 +102,11 @@ class UsersTableSeeder extends Seeder
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'remember_token' => NULL,
-                'email_verified_at' => NULL,
+                'email_verified_at' => '2024-05-15 08:46:33',
                 'password_changed_at' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'created_at' => '2024-09-02 10:54:01',
-                'updated_at' => '2024-09-02 10:54:01',
+                'updated_at' => '2024-09-02 11:09:19',
             ),
             5 => 
             array (
@@ -120,11 +120,29 @@ class UsersTableSeeder extends Seeder
                 'two_factor_secret' => NULL,
                 'two_factor_recovery_codes' => NULL,
                 'remember_token' => NULL,
-                'email_verified_at' => NULL,
+                'email_verified_at' => '2024-05-15 08:46:33',
                 'password_changed_at' => NULL,
                 'two_factor_confirmed_at' => NULL,
                 'created_at' => '2024-09-02 10:54:37',
-                'updated_at' => '2024-09-02 10:54:37',
+                'updated_at' => '2024-09-02 11:09:22',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'username' => 'ses',
+                'email' => 'suganobshadam@gmail.com',
+                'password' => '$2y$12$VJGLQG/BiTjaafMAkWrxA.zCvDOFjK5X7XfMThkwhnWxUu/mh8w7i',
+                'role' => 'Staff',
+                'is_active' => 1,
+                'is_new' => 0,
+                'two_factor_secret' => NULL,
+                'two_factor_recovery_codes' => NULL,
+                'remember_token' => NULL,
+                'email_verified_at' => '2024-05-15 08:46:33',
+                'password_changed_at' => NULL,
+                'two_factor_confirmed_at' => NULL,
+                'created_at' => '2024-09-02 11:24:53',
+                'updated_at' => '2024-09-02 11:25:30',
             ),
         ));
 

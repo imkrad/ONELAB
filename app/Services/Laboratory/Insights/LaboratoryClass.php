@@ -41,7 +41,7 @@ class LaboratoryClass
 
         $months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
-        $laboratories = ListDropdown::whereIn('id',$lab_id)->get();
+        $laboratories = ListLaboratory::whereIn('id',$lab_id)->get();
         foreach($laboratories as $list){
             $data = [];
             for($month = 1; $month <= 12; $month++){

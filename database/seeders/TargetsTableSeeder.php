@@ -15,7 +15,7 @@ class TargetsTableSeeder extends Seeder
     {
         
 
-        \DB::table('targets')->delete();
+        \DB::table('targets')->truncate();
         
         \DB::table('targets')->insert(array (
             0 => 

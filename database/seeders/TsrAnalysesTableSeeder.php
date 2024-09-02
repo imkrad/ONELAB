@@ -15,7 +15,7 @@ class TsrAnalysesTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_analyses')->delete();
+        \DB::table('tsr_analyses')->truncate();
         
         \DB::table('tsr_analyses')->insert(array (
             0 => 
@@ -8833,6 +8833,214 @@ class TsrAnalysesTableSeeder extends Seeder
                 'end_at' => NULL,
                 'created_at' => '2024-08-31 11:50:38',
                 'updated_at' => '2024-08-31 11:50:38',
+            ),
+            178 => 
+            array (
+                'id' => 689,
+                'fee' => '550.00',
+                'status_id' => 10,
+                'testservice_id' => 366,
+                'sample_id' => 339,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:02:14',
+                'updated_at' => '2024-09-02 15:02:14',
+            ),
+            179 => 
+            array (
+                'id' => 690,
+                'fee' => '550.00',
+                'status_id' => 10,
+                'testservice_id' => 373,
+                'sample_id' => 339,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:02:14',
+                'updated_at' => '2024-09-02 15:02:14',
+            ),
+            180 => 
+            array (
+                'id' => 691,
+                'fee' => '168.00',
+                'status_id' => 10,
+                'testservice_id' => 141,
+                'sample_id' => 340,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:04:31',
+                'updated_at' => '2024-09-02 15:04:31',
+            ),
+            181 => 
+            array (
+                'id' => 692,
+                'fee' => '560.00',
+                'status_id' => 10,
+                'testservice_id' => 7,
+                'sample_id' => 340,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:04:31',
+                'updated_at' => '2024-09-02 15:04:31',
+            ),
+            182 => 
+            array (
+                'id' => 693,
+                'fee' => '325.00',
+                'status_id' => 10,
+                'testservice_id' => 8,
+                'sample_id' => 340,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:04:31',
+                'updated_at' => '2024-09-02 15:04:31',
+            ),
+            183 => 
+            array (
+                'id' => 694,
+                'fee' => '1000.00',
+                'status_id' => 10,
+                'testservice_id' => 381,
+                'sample_id' => 341,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:30:53',
+                'updated_at' => '2024-09-02 15:30:53',
+            ),
+            184 => 
+            array (
+                'id' => 703,
+                'fee' => '1200.00',
+                'status_id' => 10,
+                'testservice_id' => 368,
+                'sample_id' => 347,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:57:50',
+                'updated_at' => '2024-09-02 15:57:50',
+            ),
+            185 => 
+            array (
+                'id' => 704,
+                'fee' => '1000.00',
+                'status_id' => 10,
+                'testservice_id' => 370,
+                'sample_id' => 347,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:57:50',
+                'updated_at' => '2024-09-02 15:57:50',
+            ),
+            186 => 
+            array (
+                'id' => 705,
+                'fee' => '1200.00',
+                'status_id' => 10,
+                'testservice_id' => 368,
+                'sample_id' => 348,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:57:50',
+                'updated_at' => '2024-09-02 15:57:50',
+            ),
+            187 => 
+            array (
+                'id' => 706,
+                'fee' => '1000.00',
+                'status_id' => 10,
+                'testservice_id' => 370,
+                'sample_id' => 348,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:57:50',
+                'updated_at' => '2024-09-02 15:57:50',
+            ),
+            188 => 
+            array (
+                'id' => 707,
+                'fee' => '500.00',
+                'status_id' => 10,
+                'testservice_id' => 328,
+                'sample_id' => 349,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 15:59:36',
+                'updated_at' => '2024-09-02 15:59:36',
+            ),
+            189 => 
+            array (
+                'id' => 708,
+                'fee' => '500.00',
+                'status_id' => 10,
+                'testservice_id' => 328,
+                'sample_id' => 350,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 16:01:05',
+                'updated_at' => '2024-09-02 16:01:05',
+            ),
+            190 => 
+            array (
+                'id' => 709,
+                'fee' => '1000.00',
+                'status_id' => 10,
+                'testservice_id' => 67,
+                'sample_id' => 351,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 16:22:33',
+                'updated_at' => '2024-09-02 16:22:33',
+            ),
+            191 => 
+            array (
+                'id' => 710,
+                'fee' => '960.00',
+                'status_id' => 10,
+                'testservice_id' => 70,
+                'sample_id' => 351,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 16:22:33',
+                'updated_at' => '2024-09-02 16:22:33',
+            ),
+            192 => 
+            array (
+                'id' => 711,
+                'fee' => '550.00',
+                'status_id' => 10,
+                'testservice_id' => 71,
+                'sample_id' => 351,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 16:22:33',
+                'updated_at' => '2024-09-02 16:22:33',
+            ),
+            193 => 
+            array (
+                'id' => 712,
+                'fee' => '400.00',
+                'status_id' => 10,
+                'testservice_id' => 72,
+                'sample_id' => 351,
+                'analyst_id' => NULL,
+                'start_at' => NULL,
+                'end_at' => NULL,
+                'created_at' => '2024-09-02 16:22:33',
+                'updated_at' => '2024-09-02 16:22:33',
             ),
         ));
 

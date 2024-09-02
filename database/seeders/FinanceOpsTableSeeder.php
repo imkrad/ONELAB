@@ -15,7 +15,7 @@ class FinanceOpsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_ops')->delete();
+        \DB::table('finance_ops')->truncate();
         
         \DB::table('finance_ops')->insert(array (
             0 => 
@@ -1939,6 +1939,111 @@ class FinanceOpsTableSeeder extends Seeder
                 'laboratory_id' => 14,
                 'created_at' => '2024-08-31 18:14:00',
                 'updated_at' => '2024-08-31 18:14:00',
+            ),
+            128 => 
+            array (
+                'id' => 164,
+                'code' => '202409-00129',
+                'total' => '1650.00',
+                'status_id' => 7,
+                'collection_id' => 25,
+                'payment_id' => 17,
+                'payorable_id' => 159,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:13:57',
+                'updated_at' => '2024-09-02 16:15:59',
+            ),
+            129 => 
+            array (
+                'id' => 165,
+                'code' => '202409-00130',
+                'total' => '1000.00',
+                'status_id' => 7,
+                'collection_id' => 25,
+                'payment_id' => 17,
+                'payorable_id' => 160,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:14:28',
+                'updated_at' => '2024-09-02 16:16:13',
+            ),
+            130 => 
+            array (
+                'id' => 166,
+                'code' => '202409-00131',
+                'total' => '3520.00',
+                'status_id' => 7,
+                'collection_id' => 25,
+                'payment_id' => 17,
+                'payorable_id' => 161,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:14:37',
+                'updated_at' => '2024-09-02 16:16:24',
+            ),
+            131 => 
+            array (
+                'id' => 167,
+                'code' => '202409-00132',
+                'total' => '500.00',
+                'status_id' => 7,
+                'collection_id' => 24,
+                'payment_id' => 17,
+                'payorable_id' => 162,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:15:04',
+                'updated_at' => '2024-09-02 16:16:29',
+            ),
+            132 => 
+            array (
+                'id' => 168,
+                'code' => '202409-00133',
+                'total' => '500.00',
+                'status_id' => 7,
+                'collection_id' => 24,
+                'payment_id' => 17,
+                'payorable_id' => 163,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:15:13',
+                'updated_at' => '2024-09-02 16:16:35',
+            ),
+            133 => 
+            array (
+                'id' => 169,
+                'code' => '202409-00134',
+                'total' => '2910.00',
+                'status_id' => 7,
+                'collection_id' => 25,
+                'payment_id' => 17,
+                'payorable_id' => 16,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:24:23',
+                'updated_at' => '2024-09-02 16:25:31',
+            ),
+            134 => 
+            array (
+                'id' => 170,
+                'code' => '202409-00135',
+                'total' => '5760.00',
+                'status_id' => 7,
+                'collection_id' => 25,
+                'payment_id' => 18,
+                'payorable_id' => 152,
+                'payorable_type' => 'App\\Models\\Customer',
+                'created_by' => 4,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-02 16:25:09',
+                'updated_at' => '2024-09-02 16:26:11',
             ),
         ));
 

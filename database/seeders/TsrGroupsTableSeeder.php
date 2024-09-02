@@ -15,7 +15,7 @@ class TsrGroupsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_groups')->delete();
+        \DB::table('tsr_groups')->truncate();
         
         \DB::table('tsr_groups')->insert(array (
             0 => 
@@ -319,12 +319,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 366,
                 'tsr_id' => 91,
                 'date' => '2024-09-02',
                 'created_at' => '2024-08-22 10:12:06',
-                'updated_at' => '2024-08-22 10:12:06',
+                'updated_at' => '2024-09-02 15:02:14',
             ),
             22 => 
             array (
@@ -333,12 +333,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 373,
                 'tsr_id' => 91,
                 'date' => '2024-09-02',
                 'created_at' => '2024-08-22 10:12:06',
-                'updated_at' => '2024-08-22 10:12:06',
+                'updated_at' => '2024-09-02 15:02:14',
             ),
             23 => 
             array (
@@ -347,12 +347,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '168.00',
                 'total' => '168.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 141,
                 'tsr_id' => 91,
                 'date' => '2024-09-02',
                 'created_at' => '2024-08-22 10:12:06',
-                'updated_at' => '2024-08-22 10:12:06',
+                'updated_at' => '2024-09-02 15:04:31',
             ),
             24 => 
             array (
@@ -361,12 +361,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '560.00',
                 'total' => '560.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 7,
                 'tsr_id' => 91,
                 'date' => '2024-09-02',
                 'created_at' => '2024-08-22 10:12:06',
-                'updated_at' => '2024-08-22 10:12:06',
+                'updated_at' => '2024-09-02 15:04:31',
             ),
             25 => 
             array (
@@ -375,12 +375,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '325.00',
                 'total' => '325.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 8,
                 'tsr_id' => 91,
                 'date' => '2024-09-02',
                 'created_at' => '2024-08-22 10:12:06',
-                'updated_at' => '2024-08-22 10:12:06',
+                'updated_at' => '2024-09-02 15:04:31',
             ),
             26 => 
             array (

@@ -15,7 +15,7 @@ class CustomerContactsTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_contacts')->delete();
+        \DB::table('customer_contacts')->truncate();
         
         \DB::table('customer_contacts')->insert(array (
             0 => 
@@ -1439,6 +1439,42 @@ class CustomerContactsTableSeeder extends Seeder
                 'customer_id' => 159,
                 'created_at' => '2024-08-31 11:47:27',
                 'updated_at' => '2024-08-31 11:47:27',
+            ),
+            158 => 
+            array (
+                'id' => 159,
+                'email' => 'eyJpdiI6IlNJWURRaTN6NjBtb1ZURVFQdG84N3c9PSIsInZhbHVlIjoiNERFWExVK1d2OXRlbjhyMVNjWlk4UT09IiwibWFjIjoiMWY0NGVlMThjNzU1MzAyNDFlOGVmMGExZjI5NjJlYmY3OTVlM2VkMzlkZjM5MDliZGZiZGVjN2U1M2Y3MWQzNSIsInRhZyI6IiJ9',
+                'contact_no' => 'eyJpdiI6InlVYmZIL3dQMFNjK3dQbW1LZU0vekE9PSIsInZhbHVlIjoidjdGMEZnMjlxT1pNT3U3ZVN0MUpKdz09IiwibWFjIjoiNGUyMjFjMjFhZGM0OWQ0Nzc1YmMyN2Q3NDVhYWI0MGQyNjU5MDliYzgzYTg1MjYyYWU3MmZiYzE3ZGZiZDVmNyIsInRhZyI6IiJ9',
+                'customer_id' => 160,
+                'created_at' => '2024-09-02 15:10:28',
+                'updated_at' => '2024-09-02 15:10:28',
+            ),
+            159 => 
+            array (
+                'id' => 160,
+                'email' => 'eyJpdiI6Ik9SMlE4anV0K242bzl2VktTZk1YZVE9PSIsInZhbHVlIjoiZEJKMUlNQ1EweFR6dTRza1FDZk01S3NaL2RleHlTRXFON1BhaUhJYlNNbz0iLCJtYWMiOiI2OGRkYjQ1ZTlmMjdlMzA4ZmFiMmNlZTJmYjJjZWQyZDJkNGJjOTBjNmU0NTE1YmRkMWVmMTAzMjY0MmZkNGYzIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6ImZYRGdEZlZWZ0RzdmVvUlZvcUg4U2c9PSIsInZhbHVlIjoiaDN6ZHBpMjFHSnpZK1U4S29WQ0ZUZz09IiwibWFjIjoiOGM1ODQ1OTBmY2VmMDc3ZTgxOTU0NDk0ZjNjN2I1ZTZkZjE5YmM1NzZjYTlkNWJmYmQxNzcxMDNiMzkxYjhjNiIsInRhZyI6IiJ9',
+                'customer_id' => 161,
+                'created_at' => '2024-09-02 15:12:13',
+                'updated_at' => '2024-09-02 15:12:13',
+            ),
+            160 => 
+            array (
+                'id' => 161,
+                'email' => 'eyJpdiI6ImduSllabVdvVE8xTW9QUlVrNm5qNXc9PSIsInZhbHVlIjoiMS84NE9Kd3d3c2czcENsSnM3V01IOUp1eXZSSzNQd3VuOStPUEw3M2JMRT0iLCJtYWMiOiI5YmMwMWI1MjQ0OTgyN2Y2MmU0MjhlYjBhY2QzNzQ0MDk0Njk1YTAwMzM5YTUyNzM1ZDNhNjMzNTFiNTVlZDA5IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6Im5IOUh5VHplTmdnRWZLclFHdjdDeFE9PSIsInZhbHVlIjoia21wRjV1LytyMFFuR1dYVTlyR0xYQT09IiwibWFjIjoiYzkwYjc4NTI3ZTZkMTg5NzZiZDcyMzBhNDMwZjM1NDJmMzY4ZDRmNWU5MzZhZDUxZTRhZGVmNDM4NGViYTViYiIsInRhZyI6IiJ9',
+                'customer_id' => 162,
+                'created_at' => '2024-09-02 15:22:53',
+                'updated_at' => '2024-09-02 15:22:53',
+            ),
+            161 => 
+            array (
+                'id' => 162,
+                'email' => 'eyJpdiI6InN0c0UxL09hd2dMR1hBdWNLYU1KbHc9PSIsInZhbHVlIjoiZE15K2xCYXpBQU90NGMydFlWZS9RcWFmTVRheHI2VDJrY0NETzhIcXdCaz0iLCJtYWMiOiIyMGE1MmJiYjkxYjFkY2IzMjM0OGI4YmI5ZTM0MDNlOWQzMjE3ZjAxNzE1NzdkZjE3OTg4MWJiM2I0YjFkZjEwIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6Imlid09FRktyek5USnljTWpmdVlEVFE9PSIsInZhbHVlIjoia3lrRlZXMTNDcmJydUovL0RzRkRsZz09IiwibWFjIjoiOTdmMWY3NDY4YTZiNWRlY2FkNDU3NmQ3ZTAwZDg4YjUyMWM2ZDg3ZTJiN2RjZDhhMTIwOWU3MDc3N2FmZmI2NyIsInRhZyI6IiJ9',
+                'customer_id' => 163,
+                'created_at' => '2024-09-02 15:29:15',
+                'updated_at' => '2024-09-02 15:29:15',
             ),
         ));
 

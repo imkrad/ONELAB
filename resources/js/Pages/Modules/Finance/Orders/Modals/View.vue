@@ -5,9 +5,9 @@
                 <div class="row align-items-center g-3">
                     <div class="col-md">
                         <div >
-                            <h5 class="fs-15 fw-semibold text-primary mb-2">{{selected.customer}}</h5>
+                            <h5 class="fs-15 fw-semibold text-primary mb-2">{{selected.payorable.name}}</h5>
                             <div class="hstack gap-3 flex-wrap">
-                                <div class="text-muted"><i class="ri-map-pin-fill me-1"></i>{{selected.address}}</div>
+                                <div class="text-muted"><i class="ri-map-pin-fill me-1"></i>{{selected.payorable.address}}</div>
                                 <div class="vr"></div>
                                 <div class="text-muted"><i class="ri-calendar-2-fill me-1"></i>{{selected.date}}</div>
                             </div>
@@ -69,6 +69,7 @@ export default {
         return {
             currentUrl: window.location.origin,
             selected: {
+                payorable: {},
                 collection: {},
                 payment: {},
                 createdby: {

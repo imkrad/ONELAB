@@ -44,7 +44,7 @@
                             <td>
                                 <h5 class="fs-13 mb-0 text-dark" v-if="list.or">{{list.code}} <span class="text-muted">(OR# : {{list.or.number}})</span></h5>
                                 <h5 class="fs-13 mb-0 text-dark" v-else>{{list.code}}</h5>
-                                <p class="fs-12 text-muted mb-0">{{list.customer}}</p>
+                                <p class="fs-12 text-muted mb-0">{{list.payorable.name}}</p>
                             </td>
                             <td class="text-center fs-12">{{list.collection}}</td>
                             <td class="text-center fs-12">{{list.payment.name}}</td>

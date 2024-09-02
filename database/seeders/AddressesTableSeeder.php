@@ -15,7 +15,7 @@ class AddressesTableSeeder extends Seeder
     {
         
 
-        \DB::table('addresses')->delete();
+        \DB::table('addresses')->truncate();
         
         \DB::table('addresses')->insert(array (
             0 => 
@@ -2807,6 +2807,66 @@ class AddressesTableSeeder extends Seeder
                 'addressable_type' => 'App\\Models\\Customer',
                 'created_at' => '2024-08-31 11:47:27',
                 'updated_at' => '2024-08-31 11:47:27',
+            ),
+            186 => 
+            array (
+                'id' => 187,
+                'address' => 'Main road',
+                'longitude' => '122.084117',
+                'latitude' => '6.919256',
+                'barangay_code' => '097332087',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 160,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-02 15:10:28',
+                'updated_at' => '2024-09-02 15:10:28',
+            ),
+            187 => 
+            array (
+                'id' => 188,
+                'address' => 'Callejon Old Highway',
+                'longitude' => '122.08794',
+                'latitude' => '6.928872',
+                'barangay_code' => '097332031',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 161,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-02 15:12:13',
+                'updated_at' => '2024-09-02 15:12:13',
+            ),
+            188 => 
+            array (
+                'id' => 189,
+                'address' => 'MCLL Highway',
+                'longitude' => '122.147542',
+                'latitude' => '6.958477',
+                'barangay_code' => '097332053',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 162,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-02 15:22:53',
+                'updated_at' => '2024-09-02 15:22:53',
+            ),
+            189 => 
+            array (
+                'id' => 190,
+                'address' => 'MCLL Highway',
+                'longitude' => '122.145066',
+                'latitude' => '6.956874',
+                'barangay_code' => '097332053',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 163,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-02 15:29:15',
+                'updated_at' => '2024-09-02 15:29:15',
             ),
         ));
 

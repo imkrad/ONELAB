@@ -15,7 +15,7 @@ class UserRolesTableSeeder extends Seeder
     {
         
 
-        \DB::table('user_roles')->delete();
+        \DB::table('user_roles')->truncate();
         
         \DB::table('user_roles')->insert(array (
             0 => 
@@ -77,6 +77,16 @@ class UserRolesTableSeeder extends Seeder
                 'role_id' => 2,
                 'created_at' => '2024-09-02 10:54:37',
                 'updated_at' => '2024-09-02 10:54:37',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'laboratory_id' => 14,
+                'laboratory_type' => 1,
+                'user_id' => 7,
+                'role_id' => 4,
+                'created_at' => '2024-09-02 11:24:53',
+                'updated_at' => '2024-09-02 11:24:53',
             ),
         ));
 

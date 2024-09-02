@@ -15,7 +15,7 @@ class TsrPaymentDeductionsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_payment_deductions')->delete();
+        \DB::table('tsr_payment_deductions')->truncate();
         
         \DB::table('tsr_payment_deductions')->insert(array (
             0 => 

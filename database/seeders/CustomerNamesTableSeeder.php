@@ -15,7 +15,7 @@ class CustomerNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_names')->delete();
+        \DB::table('customer_names')->truncate();
         
         \DB::table('customer_names')->insert(array (
             0 => 
@@ -1223,6 +1223,42 @@ class CustomerNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-08-31 11:47:27',
                 'updated_at' => '2024-08-31 11:47:27',
+            ),
+            134 => 
+            array (
+                'id' => 138,
+                'name' => 'Tetuan Central School SPED Center',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-02 15:10:28',
+                'updated_at' => '2024-09-02 15:10:28',
+            ),
+            135 => 
+            array (
+                'id' => 139,
+                'name' => 'Starrah Princess A. Tubig',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-02 15:12:13',
+                'updated_at' => '2024-09-02 15:12:13',
+            ),
+            136 => 
+            array (
+                'id' => 140,
+                'name' => 'Mercedez Shell Gasoline Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-02 15:22:53',
+                'updated_at' => '2024-09-02 15:22:53',
+            ),
+            137 => 
+            array (
+                'id' => 141,
+                'name' => 'RYT Shell Gasoline Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-02 15:29:15',
+                'updated_at' => '2024-09-02 15:29:15',
             ),
         ));
 

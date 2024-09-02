@@ -15,7 +15,7 @@ class TsrSamplesTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_samples')->delete();
+        \DB::table('tsr_samples')->truncate();
         
         \DB::table('tsr_samples')->insert(array (
             0 => 
@@ -3932,6 +3932,102 @@ Graduation: 2 °C',
                 'tsr_id' => 168,
                 'created_at' => '2024-08-31 11:50:04',
                 'updated_at' => '2024-08-31 11:50:52',
+            ),
+            326 => 
+            array (
+                'id' => 339,
+                'code' => NULL,
+                'name' => 'Calamansi Juice',
+                'customer_description' => 'Customer: Sophitle Food Corporation, Mom-C Calamansi Juice Drink, 350 mL, BB 20NOV2024, PD 20MAY2024',
+                'description' => 'Sampling Date: 1970-01-01 08:00 AM, TSR No.: R9-052024-CHE-0292, Sample Code: 948, Storage Date: May 20, 2024, Storage Temperature: 27.5 °C, Sampling Date: September 02, 2024, Sampling Days: 105 days, light yellow, in PET bottle with label.',
+                'is_disposed' => 0,
+                'tsr_id' => 169,
+                'created_at' => '2024-09-02 15:02:14',
+                'updated_at' => '2024-09-02 15:02:14',
+            ),
+            327 => 
+            array (
+                'id' => 340,
+                'code' => NULL,
+                'name' => 'Calamansi Juice',
+                'customer_description' => 'Customer: Sophitle Food Corporation, Mom-C Calamansi Juice Drink, 350 mL, BB 20NOV2024, PD 20MAY2024',
+                'description' => 'TSR No.: R9-052024-CHE-0292, Sample Code: 784, Storage Date: May 20, 2024, Storage Temperature: 27.5 °C, Sampling Date: September 02, 2024, Sampling Days: 105 days, light yellow, in PET bottle with label.',
+                'is_disposed' => 0,
+                'tsr_id' => 170,
+                'created_at' => '2024-09-02 15:04:31',
+                'updated_at' => '2024-09-02 15:04:31',
+            ),
+            328 => 
+            array (
+                'id' => 341,
+                'code' => 'MIC-01040',
+                'name' => 'Water',
+                'customer_description' => 'Source: ZCWD, Date and Time of Sampling: Sep 2, 2024 at 08:00 AM',
+                'description' => 'Sampling Date: 1970-01-01 08:00 AM, approx. 350 mL, in PET bottle provided by the customer. Temperature: 28.3 °C.',
+                'is_disposed' => 0,
+                'tsr_id' => 171,
+                'created_at' => '2024-09-02 15:30:37',
+                'updated_at' => '2024-09-02 15:31:03',
+            ),
+            329 => 
+            array (
+                'id' => 347,
+                'code' => 'MIC-01043',
+                'name' => 'Swab Sample',
+                'customer_description' => 'Source : Sink',
+                'description' => 'Sampling Date: 1970-01-01 08:00 AM, cotton swab in 5 ml nutrient broth',
+                'is_disposed' => 0,
+                'tsr_id' => 174,
+                'created_at' => '2024-09-02 15:57:21',
+                'updated_at' => '2024-09-02 15:57:58',
+            ),
+            330 => 
+            array (
+                'id' => 348,
+                'code' => 'MIC-01044',
+                'name' => 'Swab Sample',
+                'customer_description' => 'Source : Toilet',
+                'description' => 'Sampling Date: 1970-01-01 08:00 AM, cotton swab in 5ml nutrient broth',
+                'is_disposed' => 0,
+                'tsr_id' => 174,
+                'created_at' => '2024-09-02 15:57:32',
+                'updated_at' => '2024-09-02 15:57:58',
+            ),
+            331 => 
+            array (
+                'id' => 349,
+                'code' => 'MET-01643',
+                'name' => 'Test Measure',
+                'customer_description' => '-',
+                'description' => 'Capacity: 10 L, Type: To deliver, Material: Galvanized Iron, Serial Number: MSGS-08132019',
+                'is_disposed' => 0,
+                'tsr_id' => 175,
+                'created_at' => '2024-09-02 15:59:23',
+                'updated_at' => '2024-09-02 15:59:48',
+            ),
+            332 => 
+            array (
+                'id' => 350,
+                'code' => 'MET-01644',
+                'name' => 'Test Measure',
+                'customer_description' => '-',
+                'description' => 'Capacity: 10 L, Type: To deliver, Material: Galvanized Iron, Serial Number: 41135',
+                'is_disposed' => 0,
+                'tsr_id' => 176,
+                'created_at' => '2024-09-02 16:00:55',
+                'updated_at' => '2024-09-02 16:01:18',
+            ),
+            333 => 
+            array (
+                'id' => 351,
+                'code' => 'CHE-01074',
+                'name' => 'Fish Meal',
+                'customer_description' => 'Production Date: September 2, 2024',
+                'description' => 'approx. 250 g in plastic packaging.',
+                'is_disposed' => 0,
+                'tsr_id' => 177,
+                'created_at' => '2024-09-02 16:21:46',
+                'updated_at' => '2024-09-02 16:32:42',
             ),
         ));
 

@@ -15,7 +15,7 @@ class FinanceReceiptDetailsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_receipt_details')->delete();
+        \DB::table('finance_receipt_details')->truncate();
         
         \DB::table('finance_receipt_details')->insert(array (
             0 => 
@@ -749,6 +749,18 @@ class FinanceReceiptDetailsTableSeeder extends Seeder
                 'date_at' => '2024-08-14',
                 'created_at' => '2024-08-31 18:12:19',
                 'updated_at' => '2024-08-31 18:12:19',
+            ),
+            61 => 
+            array (
+                'id' => 69,
+                'amount' => '5760.00',
+                'bank' => 'MBTC',
+                'number' => '6312892955',
+                'is_cheque' => 0,
+                'receipt_id' => 167,
+                'date_at' => '2024-08-28',
+                'created_at' => '2024-09-02 16:26:11',
+                'updated_at' => '2024-09-02 16:26:11',
             ),
         ));
 

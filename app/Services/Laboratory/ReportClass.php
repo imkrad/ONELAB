@@ -32,26 +32,29 @@ class ReportClass
         $lists = []; $requests_total = 0; $samples_total = 0; $analyses_total = 0; $fees_total = 0; $gratis_total = 0; $discount_total = 0; $gross_total = 0;
         
         foreach($laboratories as $laboratory){
-            $req = Tsr::whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->count();
-            $total1 = TsrPayment::where('status_id',18)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
-                $query->whereMonth('created_at',$month)->whereYear('created_at',$year)
-                ->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
-            }) ->sum('total');
+            $req = Tsr::where('status_id','!=',5)->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->count();
 
             $sample  = TsrSample::whereMonth('created_at',$month)->whereYear('created_at',$year)->whereHas('tsr', function ($query) use ($laboratory){
-                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->where('status_id','!=',5);
             })->count();
 
             $analysis = TsrAnalysis::whereMonth('created_at',$month)->whereYear('created_at',$year)->whereHas('sample', function ($query) use ($laboratory){
                 $query->whereHas('tsr', function ($query) use ($laboratory){
-                    $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+                    $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->where('status_id','!=',5)->where('is_shelf',0);
                 });
             })->count();
 
-            $total = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)
-            ->whereHas('tsr', function ($query) use ($laboratory){
-                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
-            }) ->sum('total');
+            $contract = TsrPayment::where('status_id',18)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
+                $query->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+            })->sum('total');
+
+            $pending = TsrPayment::where('status_id',6)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
+                $query->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+            })->sum('total');
+
+            $total = TsrPayment::where('is_child',0)->where('paid_at','!=',NULL)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
+                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('status_id','!=',5);
+            })->sum('total');
 
             $gratis = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)->where('is_free',1)
             ->whereHas('tsr', function ($query) use ($laboratory){
@@ -68,19 +71,19 @@ class ReportClass
                 $req,
                 $sample,
                 $analysis,
-                '₱'.number_format($total + $total1),
+                '₱'.number_format($total+$contract+$pending),
                 '₱'.number_format($gratis),
                 '₱'.number_format($discount),
-                '₱'.number_format(($total1 + $total) + $gratis + $discount)
+                '₱'.number_format(($total+$contract+$pending) + $gratis + $discount)
             ];
 
             $requests_total += $req;
             $samples_total += $sample;
             $analyses_total += $analysis;
-            $fees_total += ($total + $total1);
+            $fees_total += ($total+$contract+$pending);
             $gratis_total += $gratis;
             $discount_total += $discount;
-            $gross_total += (($total1 + $total) + $gratis + $discount);
+            $gross_total += (($total+$contract+$pending) + $gratis + $discount);
         }
         $footer[] = [
             'Total',$requests_total, $samples_total, $analyses_total, '₱'.number_format($fees_total), '₱'.number_format($gratis_total), '₱'.number_format($discount_total), '₱'.number_format($gross_total)
@@ -99,10 +102,10 @@ class ReportClass
         
        
             $req = Tsr::whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->count();
-            $total1 = TsrPayment::where('status_id',18)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
-                $query->whereMonth('created_at',$month)->whereYear('created_at',$year)
-                ->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
-            }) ->sum('total');
+            // $total1 = TsrPayment::where('status_id',18)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
+            //     $query->whereMonth('created_at',$month)->whereYear('created_at',$year)
+            //     ->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+            // }) ->sum('total');
 
             $sample  = TsrSample::whereMonth('created_at',$month)->whereYear('created_at',$year)->whereHas('tsr', function ($query) use ($laboratory){
                 $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
