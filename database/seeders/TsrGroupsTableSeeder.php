@@ -15,7 +15,7 @@ class TsrGroupsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_groups')->truncate();
+        \DB::table('tsr_groups')->delete();
         
         \DB::table('tsr_groups')->insert(array (
             0 => 
@@ -25,12 +25,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 359,
                 'tsr_id' => 91,
                 'date' => '2024-05-20',
                 'created_at' => '2024-08-22 09:07:59',
-                'updated_at' => '2024-08-22 09:07:59',
+                'updated_at' => '2024-08-28 13:07:01',
             ),
             1 => 
             array (
@@ -39,12 +39,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 372,
                 'tsr_id' => 91,
                 'date' => '2024-05-20',
                 'created_at' => '2024-08-22 09:07:59',
-                'updated_at' => '2024-08-22 09:07:59',
+                'updated_at' => '2024-08-28 13:07:01',
             ),
             2 => 
             array (
@@ -53,12 +53,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 373,
                 'tsr_id' => 91,
                 'date' => '2024-05-20',
                 'created_at' => '2024-08-22 09:07:59',
-                'updated_at' => '2024-08-22 09:07:59',
+                'updated_at' => '2024-08-28 13:07:01',
             ),
             3 => 
             array (
@@ -67,12 +67,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '168.00',
                 'total' => '168.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 141,
                 'tsr_id' => 91,
                 'date' => '2024-05-20',
                 'created_at' => '2024-08-22 09:07:59',
-                'updated_at' => '2024-08-22 09:07:59',
+                'updated_at' => '2024-08-28 13:26:52',
             ),
             4 => 
             array (
@@ -81,12 +81,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '560.00',
                 'total' => '560.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 7,
                 'tsr_id' => 91,
                 'date' => '2024-05-20',
                 'created_at' => '2024-08-22 09:07:59',
-                'updated_at' => '2024-08-22 09:07:59',
+                'updated_at' => '2024-08-28 13:26:52',
             ),
             5 => 
             array (
@@ -95,12 +95,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '325.00',
                 'total' => '325.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 8,
                 'tsr_id' => 91,
                 'date' => '2024-05-20',
                 'created_at' => '2024-08-22 09:07:59',
-                'updated_at' => '2024-08-22 09:07:59',
+                'updated_at' => '2024-08-28 13:26:52',
             ),
             6 => 
             array (
@@ -109,12 +109,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 366,
                 'tsr_id' => 91,
                 'date' => '2024-06-19',
                 'created_at' => '2024-08-22 09:21:10',
-                'updated_at' => '2024-08-22 09:21:10',
+                'updated_at' => '2024-08-28 13:30:12',
             ),
             7 => 
             array (
@@ -123,12 +123,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 373,
                 'tsr_id' => 91,
                 'date' => '2024-06-19',
                 'created_at' => '2024-08-22 09:21:10',
-                'updated_at' => '2024-08-22 09:21:10',
+                'updated_at' => '2024-08-28 13:30:12',
             ),
             8 => 
             array (
@@ -137,12 +137,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '168.00',
                 'total' => '168.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 141,
                 'tsr_id' => 91,
                 'date' => '2024-06-19',
                 'created_at' => '2024-08-22 09:21:10',
-                'updated_at' => '2024-08-22 09:21:10',
+                'updated_at' => '2024-08-28 13:35:00',
             ),
             9 => 
             array (
@@ -151,12 +151,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '560.00',
                 'total' => '560.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 7,
                 'tsr_id' => 91,
                 'date' => '2024-06-19',
                 'created_at' => '2024-08-22 09:21:10',
-                'updated_at' => '2024-08-22 09:21:10',
+                'updated_at' => '2024-08-28 13:35:00',
             ),
             10 => 
             array (
@@ -165,12 +165,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '325.00',
                 'total' => '325.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 8,
                 'tsr_id' => 91,
                 'date' => '2024-06-19',
                 'created_at' => '2024-08-22 09:21:10',
-                'updated_at' => '2024-08-22 09:21:10',
+                'updated_at' => '2024-08-28 13:35:00',
             ),
             11 => 
             array (
@@ -179,12 +179,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 366,
                 'tsr_id' => 91,
                 'date' => '2024-07-19',
                 'created_at' => '2024-08-22 09:49:30',
-                'updated_at' => '2024-08-22 09:49:30',
+                'updated_at' => '2024-08-28 13:45:56',
             ),
             12 => 
             array (
@@ -193,12 +193,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '550.00',
                 'total' => '550.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 373,
                 'tsr_id' => 91,
                 'date' => '2024-07-19',
                 'created_at' => '2024-08-22 09:49:30',
-                'updated_at' => '2024-08-22 09:49:30',
+                'updated_at' => '2024-08-28 13:45:56',
             ),
             13 => 
             array (
@@ -207,12 +207,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '168.00',
                 'total' => '168.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 141,
                 'tsr_id' => 91,
                 'date' => '2024-07-19',
                 'created_at' => '2024-08-22 09:49:30',
-                'updated_at' => '2024-08-22 09:49:30',
+                'updated_at' => '2024-08-28 13:41:12',
             ),
             14 => 
             array (
@@ -221,12 +221,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '560.00',
                 'total' => '560.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 7,
                 'tsr_id' => 91,
                 'date' => '2024-07-19',
                 'created_at' => '2024-08-22 09:49:30',
-                'updated_at' => '2024-08-22 09:49:30',
+                'updated_at' => '2024-08-28 13:41:12',
             ),
             15 => 
             array (
@@ -235,12 +235,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 1,
                 'fee' => '325.00',
                 'total' => '325.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 8,
                 'tsr_id' => 91,
                 'date' => '2024-07-19',
                 'created_at' => '2024-08-22 09:49:30',
-                'updated_at' => '2024-08-22 09:49:30',
+                'updated_at' => '2024-08-28 13:41:12',
             ),
             16 => 
             array (
@@ -249,12 +249,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 2,
                 'fee' => '550.00',
                 'total' => '1100.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 373,
                 'tsr_id' => 91,
                 'date' => '2024-08-18',
                 'created_at' => '2024-08-22 10:09:11',
-                'updated_at' => '2024-08-22 10:09:11',
+                'updated_at' => '2024-08-28 15:15:12',
             ),
             17 => 
             array (
@@ -263,12 +263,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 2,
                 'fee' => '550.00',
                 'total' => '1100.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 366,
                 'tsr_id' => 91,
                 'date' => '2024-08-18',
                 'created_at' => '2024-08-22 10:09:11',
-                'updated_at' => '2024-08-22 10:09:11',
+                'updated_at' => '2024-08-28 15:15:12',
             ),
             18 => 
             array (
@@ -277,12 +277,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 2,
                 'fee' => '168.00',
                 'total' => '336.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 141,
                 'tsr_id' => 91,
                 'date' => '2024-08-18',
                 'created_at' => '2024-08-22 10:10:00',
-                'updated_at' => '2024-08-22 10:10:00',
+                'updated_at' => '2024-08-28 15:22:54',
             ),
             19 => 
             array (
@@ -291,12 +291,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 2,
                 'fee' => '560.00',
                 'total' => '1120.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 7,
                 'tsr_id' => 91,
                 'date' => '2024-08-18',
                 'created_at' => '2024-08-22 10:10:00',
-                'updated_at' => '2024-08-22 10:10:00',
+                'updated_at' => '2024-08-28 15:22:54',
             ),
             20 => 
             array (
@@ -305,12 +305,12 @@ class TsrGroupsTableSeeder extends Seeder
                 'quantity' => 2,
                 'fee' => '325.00',
                 'total' => '650.00',
-                'status_id' => 23,
+                'status_id' => 24,
                 'testservice_id' => 8,
                 'tsr_id' => 91,
                 'date' => '2024-08-18',
                 'created_at' => '2024-08-22 10:10:00',
-                'updated_at' => '2024-08-22 10:10:00',
+                'updated_at' => '2024-08-28 15:22:54',
             ),
             21 => 
             array (

@@ -2801,6 +2801,28 @@ class TestserviceMethodsTableSeeder extends Seeder
                 'created_at' => '2024-07-31 08:38:21',
                 'updated_at' => '2024-07-31 08:38:21',
             ),
+            253 => 
+            array (
+                'id' => 254,
+                'fee' => '0.00',
+                'method_id' => 446,
+                'reference_id' => 447,
+                'laboratory_type' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-27 09:48:37',
+                'updated_at' => '2024-08-27 09:48:37',
+            ),
+            254 => 
+            array (
+                'id' => 255,
+                'fee' => '0.00',
+                'method_id' => 448,
+                'reference_id' => 447,
+                'laboratory_type' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-27 11:13:11',
+                'updated_at' => '2024-08-27 11:13:11',
+            ),
         ));
 
         

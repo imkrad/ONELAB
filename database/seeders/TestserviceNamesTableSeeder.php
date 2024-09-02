@@ -4902,6 +4902,50 @@ class TestserviceNamesTableSeeder extends Seeder
                 'created_at' => '2024-07-31 08:38:21',
                 'updated_at' => '2024-07-31 08:38:21',
             ),
+            444 => 
+            array (
+                'id' => 445,
+                'name' => 'Shelf-life Testing',
+                'short' => NULL,
+                'type_id' => 31,
+                'laboratory_type' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-21 10:31:43',
+                'updated_at' => '2024-08-21 10:31:43',
+            ),
+            445 => 
+            array (
+                'id' => 446,
+                'name' => 'Direct Method',
+                'short' => NULL,
+                'type_id' => 28,
+                'laboratory_type' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-27 09:48:27',
+                'updated_at' => '2024-08-27 09:48:27',
+            ),
+            446 => 
+            array (
+                'id' => 447,
+                'name' => 'ITDI/FDC',
+                'short' => NULL,
+                'type_id' => 29,
+                'laboratory_type' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-27 09:48:32',
+                'updated_at' => '2024-08-27 09:48:32',
+            ),
+            447 => 
+            array (
+                'id' => 448,
+                'name' => 'Temperature Acceleration',
+                'short' => NULL,
+                'type_id' => 28,
+                'laboratory_type' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-27 11:13:07',
+                'updated_at' => '2024-08-27 11:13:07',
+            ),
         ));
 
         

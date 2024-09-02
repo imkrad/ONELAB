@@ -15,7 +15,7 @@ class FinanceOrseriesTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_orseries')->delete();
+        \DB::table('finance_orseries')->truncate();
         
         \DB::table('finance_orseries')->insert(array (
             0 => 
@@ -23,13 +23,13 @@ class FinanceOrseriesTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Jali GF 2021',
                 'start' => '84001',
-                'next' => '87035',
+                'next' => '87110',
                 'end' => '87500',
                 'is_active' => 1,
                 'user_id' => 3,
                 'laboratory_id' => 14,
                 'created_at' => '2024-08-16 09:04:23',
-                'updated_at' => '2024-08-19 16:26:14',
+                'updated_at' => '2024-08-31 18:15:02',
             ),
         ));
 

@@ -1053,6 +1053,177 @@ class CustomerNamesTableSeeder extends Seeder
                 'created_at' => '2024-08-21 08:26:22',
                 'updated_at' => '2024-08-21 08:26:22',
             ),
+            115 => 
+            array (
+                'id' => 119,
+                'name' => 'Sophitle Food Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-21 10:26:28',
+                'updated_at' => '2024-08-21 10:26:28',
+            ),
+            116 => 
+            array (
+                'id' => 120,
+                'name' => 'DS Fuel Station',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-28 16:43:51',
+                'updated_at' => '2024-08-28 16:43:51',
+            ),
+            117 => 
+            array (
+                'id' => 121,
+                'name' => 'Tandem Cedar Cypress Corporation',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-28 17:00:50',
+                'updated_at' => '2024-08-28 17:00:50',
+            ),
+            118 => 
+            array (
+                'id' => 122,
+                'name' => 'LKB OPC',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-28 17:06:00',
+                'updated_at' => '2024-08-28 17:06:00',
+            ),
+            119 => 
+            array (
+                'id' => 123,
+                'name' => 'DCMJR Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 18:54:42',
+                'updated_at' => '2024-08-29 18:54:42',
+            ),
+            120 => 
+            array (
+                'id' => 124,
+                'name' => 'Dominican Sisters',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 18:56:39',
+                'updated_at' => '2024-08-29 18:56:39',
+            ),
+            121 => 
+            array (
+                'id' => 125,
+                'name' => 'Tinker Mike\'s Herbal Food Supplement Retailing',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 18:58:11',
+                'updated_at' => '2024-08-29 18:58:11',
+            ),
+            122 => 
+            array (
+                'id' => 126,
+                'name' => 'Supreme Shell Gasoline Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 18:59:08',
+                'updated_at' => '2024-08-29 18:59:08',
+            ),
+            123 => 
+            array (
+                'id' => 127,
+                'name' => 'Saiddi Agri-Farm and Trading Incorporated',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:01:52',
+                'updated_at' => '2024-08-29 19:01:52',
+            ),
+            124 => 
+            array (
+                'id' => 128,
+                'name' => 'Chaoching Marine Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:05:43',
+                'updated_at' => '2024-08-29 19:05:43',
+            ),
+            125 => 
+            array (
+                'id' => 129,
+                'name' => 'Recodo National High School',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:06:54',
+                'updated_at' => '2024-08-29 19:06:54',
+            ),
+            126 => 
+            array (
+                'id' => 130,
+                'name' => 'Mega Fishing Corporation',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:08:45',
+                'updated_at' => '2024-08-29 19:08:45',
+            ),
+            127 => 
+            array (
+                'id' => 131,
+                'name' => 'Century Pacific Food Incorporated',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:12:12',
+                'updated_at' => '2024-08-29 19:12:12',
+            ),
+            128 => 
+            array (
+                'id' => 132,
+                'name' => 'Azzura Gasoline Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:13:18',
+                'updated_at' => '2024-08-29 19:13:18',
+            ),
+            129 => 
+            array (
+                'id' => 133,
+                'name' => 'Bellfuel Gasoline Station',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:15:36',
+                'updated_at' => '2024-08-29 19:15:36',
+            ),
+            130 => 
+            array (
+                'id' => 134,
+                'name' => 'Asahi Hi-Quality Food Manufacturing, Inc.',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:17:05',
+                'updated_at' => '2024-08-29 19:17:05',
+            ),
+            131 => 
+            array (
+                'id' => 135,
+                'name' => 'Quinex Gas Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-29 19:18:18',
+                'updated_at' => '2024-08-29 19:18:18',
+            ),
+            132 => 
+            array (
+                'id' => 136,
+                'name' => 'Southern Metrology Proficiency Testing Center',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-31 10:48:06',
+                'updated_at' => '2024-08-31 10:48:06',
+            ),
+            133 => 
+            array (
+                'id' => 137,
+                'name' => 'Suprem\'o Food Products Trading',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-08-31 11:47:27',
+                'updated_at' => '2024-08-31 11:47:27',
+            ),
         ));
 
         
