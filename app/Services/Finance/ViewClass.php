@@ -2,6 +2,7 @@
 
 namespace App\Services\Finance;
 
+use NumberFormatter;
 use App\Exports\OrExport;
 use App\Models\Customer;
 use App\Models\Configuration;
@@ -145,12 +146,13 @@ class ViewClass
         $val = (float) str_replace(',', '', $val);
         $wholeNumber = intval($val);
         $excess = $this->checkDecimal($val);
+        $digit = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+        $number = $digit->format($wholeNumber);
 
         $array = [
             'agency' => $this->configuration->acronym,
             'customer' => $customer.$sub,
-            'number' => $wholeNumber,
-            'excess' => $excess,
+            'word' => ucwords($number).$excess,
             'date' => $data->created_at,
             'total' => $data->op->total,
             'items' => $items,
