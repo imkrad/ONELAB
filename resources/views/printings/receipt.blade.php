@@ -73,7 +73,7 @@
             }
         </style>
     </head>
-    <body style="color: red;">
+    <body style="color: black;">
         <div class="text">{{$date}}</div>
         <div class="agency">{{$agency}}</div>
         <div class="payor">{{$customer}}</div>
