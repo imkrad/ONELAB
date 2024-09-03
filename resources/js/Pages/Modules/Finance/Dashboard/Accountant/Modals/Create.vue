@@ -110,7 +110,7 @@ export default {
             currentUrl: window.location.origin,
             form: useForm({
                 customer_id: null,
-                collection_id: null,
+                collection_id: 54,
                 payment_id: null,
                 selected: [],
                 total: null,

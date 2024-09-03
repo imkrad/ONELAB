@@ -9,6 +9,7 @@ use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
 use App\Models\TsrPayment;
+use App\Models\TsrPaymentDeduction;
 
 class ReportClass
 {
@@ -44,6 +45,13 @@ class ReportClass
                 });
             })->count();
 
+            $wallet = TsrPaymentDeduction::whereMonth('created_at',$month)->whereYear('created_at',$year)
+            ->whereHas('payment', function ($query) use ($laboratory){
+                $query->whereHas('tsr', function ($query) use ($laboratory){
+                    $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+                });
+            })->sum('amount');
+
             $contract = TsrPayment::where('status_id',18)->whereHas('tsr', function ($query) use ($laboratory,$month,$year){
                 $query->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
             })->sum('total');
@@ -71,19 +79,19 @@ class ReportClass
                 $req,
                 $sample,
                 $analysis,
-                '₱'.number_format($total+$contract+$pending),
+                '₱'.number_format($total+$contract+$pending+$wallet),
                 '₱'.number_format($gratis),
                 '₱'.number_format($discount),
-                '₱'.number_format(($total+$contract+$pending) + $gratis + $discount)
+                '₱'.number_format(($total+$contract+$pending+$wallet) + $gratis + $discount)
             ];
 
             $requests_total += $req;
             $samples_total += $sample;
             $analyses_total += $analysis;
-            $fees_total += ($total+$contract+$pending);
+            $fees_total += ($total+$contract+$pending+$wallet);
             $gratis_total += $gratis;
             $discount_total += $discount;
-            $gross_total += (($total+$contract+$pending) + $gratis + $discount);
+            $gross_total += (($total+$contract+$pending+$wallet) + $gratis + $discount);
         }
         $footer[] = [
             'Total',$requests_total, $samples_total, $analyses_total, '₱'.number_format($fees_total), '₱'.number_format($gratis_total), '₱'.number_format($discount_total), '₱'.number_format($gross_total)
@@ -116,6 +124,11 @@ class ReportClass
                     $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
                 });
             })->count();
+
+            $wallet = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)->where('payment_id',21)
+            ->whereHas('tsr', function ($query) use ($laboratory){
+                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory);
+            }) ->sum('subtotal');
 
             $total = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)
             ->whereHas('tsr', function ($query) use ($laboratory){

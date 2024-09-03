@@ -2,8 +2,10 @@
 
 namespace App\Services\Finance;
 
+use NumberFormatter;
 use App\Exports\OrExport;
 use App\Models\Customer;
+use App\Models\Configuration;
 use App\Models\ListDropdown;
 use App\Models\FinanceOp;
 use App\Models\FinanceName;
@@ -20,6 +22,7 @@ class ViewClass
     public function __construct()
     {
         $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
+        $this->configuration = Configuration::where('laboratory_id',$this->laboratory)->first();
     }
 
     public function payor($request){
@@ -115,7 +118,58 @@ class ViewClass
 
     public function print($request){
         $id = $request->id;
-        return Excel::download(new OrExport($id), 'or.xlsx');
+        $items = [];
+        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection')->where('id',$id)->first();
+        // return Excel::download(new OrExport($id), 'or.xlsx');
+        if($data){
+            $customer = ($data->op->payorable->customer_name) ? $data->op->payorable->customer_name->name : $data->op->payorable->name; 
+            if($data->op->payorable->customer_name){
+                $sub = ($data->op->payorable->name == 'Main') ? '' : ' - '.$data->op->payorable->name;
+                foreach($data->op->items as $item){
+                    $items[] = [
+                        'name' => $item->itemable->code,
+                        'amount' => $item->itemable->payment->total
+                    ];
+                }
+                
+            }else{
+                $sub = '';
+                foreach($data->op->items as $item){
+                    $items[] = [
+                        'name' => $item->itemable->name,
+                        'amount' => $item->itemable->amount
+                    ];
+                }
+            }
+        }
+        $val = trim($data->op->total, '₱ ');
+        $val = (float) str_replace(',', '', $val);
+        $wholeNumber = intval($val);
+        $excess = $this->checkDecimal($val);
+        $digit = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+        $number = $digit->format($wholeNumber);
+
+        $array = [
+            'agency' => $this->configuration->acronym,
+            'customer' => $customer.$sub,
+            'word' => ucwords($number).$excess,
+            'date' => $data->created_at,
+            'total' => $data->op->total,
+            'items' => $items,
+        ];
+        $pdf = \PDF::loadView('printings.receipt',$array)->setPaper([0, 0, 300, 641.68], 'portrait');
+        return $pdf->stream('officialreceipt.pdf');
+    }
+
+    private function checkDecimal($number) {
+        $decimal = $number - floor($number);
+        $decimal = round($decimal, 2);
+    
+        if ($decimal == 0.00) {
+            return ' And 00/100';
+        } else {
+            return ' And '.ltrim(substr($decimal, 2), '0').'/100';
+        }
     }
 
     public function ornumbers($request){
@@ -123,7 +177,7 @@ class ViewClass
             return [
                 'value' => $item->number,
                 'name' => $item->number,
-                'amount' => $item->op->total,
+                'amount' => $item->op->total
             ];
         });
         return $receipt;

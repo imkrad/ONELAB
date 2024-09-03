@@ -16,8 +16,10 @@ class OrExport implements FromView
 
     public function view(): View
     {
+        
+        dd(FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection')->where('id',$this->id)->first());
         return view('exports.or', [
-            'receipt' => FinanceReceipt::with('payor.customer_name','laboratory','op.collection','op.items.tsr.payment')->where('id',$this->id)->first()
+            'receipt' => FinanceReceipt::with('op.payorable.customer_name','op.items.itemable.payment','laboratory','op.collection')->where('id',$this->id)->first()
         ]);
     }
 }

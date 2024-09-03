@@ -26,7 +26,7 @@
                     <th style="width: 7%;" ></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody v-if="lists.length > 0">
                 <tr v-for="(list,index) in lists" v-bind:key="index">
                     <td class="text-center"> 
                         {{ (meta.current_page - 1) * meta.per_page + index + 1 }}.
@@ -54,6 +54,13 @@
                         <b-button type="button" variant="success" size="sm" @click="openView(list)">
                             Mark as paid
                         </b-button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody v-else>
+                <tr>
+                    <td colspan="7" class="text-center text-muted">
+                        There are no records to display
                     </td>
                 </tr>
             </tbody>

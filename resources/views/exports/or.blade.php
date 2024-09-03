@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td colspan="3" style="height: 30px;">{{$receipt->payor->customer_name->name}}</td>
+                <td colspan="3" style="height: 30px;">{{$receipt->op->payorable->customer_name->name}}</td>
             </tr>
             <tr><td colspan="4" style="height: 50px;"></td></tr>
             <tr><td colspan="4">{{$receipt->op->collection->name}}</td></tr>
@@ -25,8 +25,8 @@
             @endphp
             @foreach($receipt->op->items as $item)
             <tr>
-                <td colspan="2" style="height: 22px;">{{$item->tsr->code}}</td>
-                <td colspan="2" style="text-align: right;">{{$item->tsr->payment->total}}</td>
+                <td colspan="2" style="height: 22px;">{{$item->itemable->code}}</td>
+                <td colspan="2" style="text-align: right;">{{$item->itemable->payment->total}}</td>
             </tr>
             @endforeach
             @for ($i = 0; $i < $total; $i++)
