@@ -49,12 +49,14 @@ class AnalysisClass
     }
 
     public function service($request){
-        $data = TsrService::create([
-            'tsr_id' => $request->id,
+        $data = Tsr::findOrFail($request->id);
+        $data->service()->create([
             'service_id' => $request->service['value'],
-            'fee' => $request->service['fee']
+            'fee' => $request->service['fee'],
+            'quantity' => $request->quantity,
+            'total' => $request->total,
         ]);
-        $total = $this->updateTotal($request->id,$request->service['fee']);
+        $total = $this->updateTotal($request->id,$request->total);
         return [
             'data' => $total,
             'message' => 'Service added was successful!', 

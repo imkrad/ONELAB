@@ -15,7 +15,7 @@ class CustomersTableSeeder extends Seeder
     {
         
 
-        \DB::table('customers')->delete();
+        \DB::table('customers')->truncate();
         
         \DB::table('customers')->insert(array (
             0 => 
@@ -2609,6 +2609,54 @@ class CustomersTableSeeder extends Seeder
                 'user_id' => 2,
                 'created_at' => '2024-09-02 15:29:15',
                 'updated_at' => '2024-09-02 15:29:15',
+            ),
+            162 => 
+            array (
+                'id' => 164,
+                'code' => 'R9-CSTMR-00163',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 31,
+                'classification_id' => 8,
+                'name_id' => 142,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-09-03 19:05:51',
+                'updated_at' => '2024-09-03 19:05:51',
+            ),
+            163 => 
+            array (
+                'id' => 166,
+                'code' => 'R9-CSTMR-00164',
+                'name' => 'Sto. Niño',
+                'is_main' => 0,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 95,
+                'classification_id' => 8,
+                'name_id' => 41,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-09-03 19:08:00',
+                'updated_at' => '2024-09-03 19:08:00',
+            ),
+            164 => 
+            array (
+                'id' => 167,
+                'code' => 'R9-CSTMR-00165',
+                'name' => 'Main',
+                'is_main' => 1,
+                'is_internal' => 0,
+                'is_active' => 1,
+                'industry_id' => 54,
+                'classification_id' => 8,
+                'name_id' => 143,
+                'laboratory_id' => 14,
+                'user_id' => 2,
+                'created_at' => '2024-09-03 19:09:26',
+                'updated_at' => '2024-09-03 19:09:26',
             ),
         ));
 

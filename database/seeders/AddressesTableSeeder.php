@@ -15,7 +15,7 @@ class AddressesTableSeeder extends Seeder
     {
         
 
-        \DB::table('addresses')->delete();
+        \DB::table('addresses')->truncate();
         
         \DB::table('addresses')->insert(array (
             0 => 
@@ -2867,6 +2867,51 @@ class AddressesTableSeeder extends Seeder
                 'addressable_type' => 'App\\Models\\Customer',
                 'created_at' => '2024-09-02 15:29:15',
                 'updated_at' => '2024-09-02 15:29:15',
+            ),
+            190 => 
+            array (
+                'id' => 191,
+                'address' => 'Km 7',
+                'longitude' => '122.133926',
+                'latitude' => '6.916003',
+                'barangay_code' => '097332048',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 164,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-03 19:05:51',
+                'updated_at' => '2024-09-03 19:05:51',
+            ),
+            191 => 
+            array (
+                'id' => 192,
+                'address' => 'Normal road',
+                'longitude' => '122.069769',
+                'latitude' => '6.908174',
+                'barangay_code' => '097332077',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 166,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-03 19:08:00',
+                'updated_at' => '2024-09-03 19:08:00',
+            ),
+            192 => 
+            array (
+                'id' => 193,
+                'address' => 'Dr. D. Evangelista St.',
+                'longitude' => '122.100883',
+                'latitude' => '6.909909',
+                'barangay_code' => '097332101',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 167,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-03 19:09:26',
+                'updated_at' => '2024-09-03 19:09:26',
             ),
         ));
 

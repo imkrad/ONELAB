@@ -15,7 +15,7 @@ class CustomerNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_names')->delete();
+        \DB::table('customer_names')->truncate();
         
         \DB::table('customer_names')->insert(array (
             0 => 
@@ -1259,6 +1259,24 @@ class CustomerNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-09-02 15:29:15',
                 'updated_at' => '2024-09-02 15:29:15',
+            ),
+            138 => 
+            array (
+                'id' => 142,
+                'name' => 'Kingland Hopia Factory',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-03 19:05:51',
+                'updated_at' => '2024-09-03 19:05:51',
+            ),
+            139 => 
+            array (
+                'id' => 143,
+                'name' => 'Tenpoint Manufacturing Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-03 19:09:26',
+                'updated_at' => '2024-09-03 19:09:26',
             ),
         ));
 
