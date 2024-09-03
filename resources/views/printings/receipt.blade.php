@@ -6,6 +6,7 @@
         <style>
             html * {
                 font-family:Arial, Helvetica, sans-serif;
+                font-weight: bold;
             }
             table,
             td,
@@ -30,37 +31,37 @@
             }
             .text {
                 position: absolute;
-                top: 82; /* 4 cm from the top */
-                left: 120; /* 7 cm from the left */
+                top: 79; /* 4 cm from the top */
+                left: 110; /* 7 cm from the left */
                 font-size: 10pt; /* Adjust font size as needed */
             }
             .agency {
                 position: absolute;
-                top: 110; /* 4 cm from the top */
+                top: 104; /* 4 cm from the top */
                 left: 30; /* 7 cm from the left */
                 font-size: 10pt; /* Adjust font size as needed */
             }
             .payor {
                 position: absolute;
-                top: 130; /* 4 cm from the top */
+                top: 126; /* 4 cm from the top */
                 left: 30; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
             .total {
                 position: absolute;
-                top: 325; /* 4 cm from the top */
-                left: 190; /* 7 cm from the left */
+                top: 308; /* 4 cm from the top */
+                left: 180; /* 7 cm from the left */
                 font-size: 10pt; /* Adjust font size as needed */
             }
             .word {
                 position: absolute;
-                top: 356; /* 4 cm from the top */
-                left: 3; /* 7 cm from the left */
+                top: 350; /* 4 cm from the top */
+                left: -13; /* 7 cm from the left */
                 font-size: 8pt; /* Adjust font size as needed */
             }
             .items {
                 position: absolute;
-                top: 169; /* 4 cm from the top */
+                top: 167; /* 4 cm from the top */
                 left: -16; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
@@ -76,7 +77,7 @@
                 <tbody>
                 @foreach($items as $index=>$item)
                     <tr>
-                        <td style="border: hidden; width: 250px;">{{$item['name']}}</td>
+                        <td style="border: hidden; width: 240px;">{{$item['name']}}</td>
                         <td style="border: hidden; text-align: center; width: 80px;">{{trim($item['amount'],'₱ ')}}</td>
                     </tr>
                 @endforeach  
