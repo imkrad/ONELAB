@@ -2,7 +2,7 @@
 
 namespace App\Services\Finance;
 
-use NumberFormatter;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat\NumberFormatter;
 use App\Exports\OrExport;
 use App\Models\Customer;
 use App\Models\Configuration;
