@@ -2,7 +2,6 @@
 
 namespace App\Services\Finance;
 
-use PhpOffice\PhpSpreadsheet\Style\NumberFormat\NumberFormatter;
 use App\Exports\OrExport;
 use App\Models\Customer;
 use App\Models\Configuration;
@@ -146,13 +145,12 @@ class ViewClass
         $val = (float) str_replace(',', '', $val);
         $wholeNumber = intval($val);
         $excess = $this->checkDecimal($val);
-        $digit = new NumberFormatter("en", NumberFormatter::SPELLOUT);
-        $number = $digit->format($wholeNumber);
 
         $array = [
             'agency' => $this->configuration->acronym,
             'customer' => $customer.$sub,
-            'word' => ucwords($number).$excess,
+            'number' => $wholeNumber,
+            'excess' => $excess,
             'date' => $data->created_at,
             'total' => $data->op->total,
             'items' => $items,

@@ -66,6 +66,14 @@
             }
         </style>
     </head>
+    <?php 
+           
+
+        
+            $digit = new NumberFormatter("en", NumberFormatter::SPELLOUT);
+            $number = $digit->format($number);
+            
+        ?>
     <body style="color: black;">
         <div class="text">{{$date}}</div>
         <div class="agency">{{$agency}}</div>
@@ -83,45 +91,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="word">{{$word}}</div>
-        <!-- <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
-            <tbody>
-                <tr>
-                    <td>{{$date}}</td>
-                </tr>  
-                <tr>
-                    <td>{{$agency}}</td>
-                </tr>   
-                <tr>
-                    <td>{{$customer}}</td>
-                </tr>  
-            </tbody>
-        </table>
-
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
-            <tbody>
-            @foreach($items as $index=>$item)
-                <tr>
-                    <td>{{$item['name']}}</td>
-                    <td style="text-align: center;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($item['amount'],'₱ ')}}</td>
-                </tr>
-            @endforeach  
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td></td>
-                    <td style="text-align: center;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}}</td>
-                </tr>
-            </tfoot>
-        </table>
-
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
-            <tbody>
-                <tr>
-                    <td>{{$word}}</td>
-                </tr>
-            </tbody>
-        </table> -->
+        <div class="word">{{ucwords($number)}}{{$excess}}</div>
 
     </body>
 </html>
