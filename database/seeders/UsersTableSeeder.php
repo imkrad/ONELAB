@@ -76,7 +76,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'username' => 'ita',
-                'email' => 'ita@gmail.com',
+                'email' => 'ingridtac.dostro09@yahoo.com',
                 'password' => '$2y$12$jPEwKz8AyA/xGvtK8Us0KOSanNyytI5urYvSf2U1Eet5piGc0tTBi',
                 'role' => 'Staff',
                 'is_active' => 1,

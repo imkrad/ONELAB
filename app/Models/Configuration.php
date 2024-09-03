@@ -10,7 +10,7 @@ class Configuration extends Model
     use HasFactory;
     
     protected $fillable = [
-        'name','acronym','sample_count','tsr_count','laboratories','samplecode_year','laboratory_id'
+        'code','name','acronym','sample_count','tsr_count','laboratories','samplecode_year','laboratory_id'
     ];
 
     public function laboratory()

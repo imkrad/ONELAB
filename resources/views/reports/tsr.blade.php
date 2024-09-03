@@ -133,7 +133,7 @@
             <center style="font-size: 11px; margin-bottom: 0px; font-weight: bold;">REGIONAL STANDARDS AND TESTING LABORATORIES</center>
             <center style="font-size: 11px;">Pettit Baracks, Zamboanga City | (062) 991-1024</center>
             <br/>
-            <center style="margin-top: 8px; font-size: 10px; background-color: #000; color:#fff; font-weight: bold; padding: 2px;">TECHNICAL SERVICES REQUEST</center>
+            <center style="margin-top: 8px; font-size: 10px; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;  color:#000; font-weight: bold; padding: 2px;">TECHNICAL SERVICES REQUEST</center>
             <center style="font-size: 10px; background-color: <?php echo $page['color']; ?>; color:#fff; font-weight: bold; padding: 2px;">{{$page['name']}}</center>
         </div>
 
@@ -169,25 +169,25 @@
         <table style="border: 1px solid black; font-size: 10px; margin-top: -22px;">
             <thead style="background-color:#c8c8c8; padding: 5px; font-size: 9px;">
                 <tr>    
-                    <th width="13%">CODE</th>
+                    <th style="text-align: left;" width="13%">CODE</th>
                     <th width="16%">SAMPLE</th>
                     <th width="20%">TESTNAME</th>
                     <th width="25%">TEST METHOD</th>
                     <th width="6%">QNTY</th>
                     <th width="10%">COST</th>
-                    <th width="10%">TOTAL</th>
+                    <th style="text-align: right;" width="10%">TOTAL</th>
                 </tr>
             </thead>
             <tbody>
             @foreach($tsr['samples'] as $index=>$sample)
                 <tr style="text-align: center; font-size: 9px; color: #072388;">
-                    <td>{{$sample['samplecode']}}</td>
+                    <td style="text-align: left;">{{$sample['samplecode']}}</td>
                     <td>{{$sample['samplename']}}</td>
                     <td>{{$sample['testname']}}</td>
                     <td>{{$sample['method']}}</td>
                     <td>{{$sample['count']}}</td>
                     <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($sample['fee'],'₱ ')}}</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -195,17 +195,17 @@
                 <tr>
                     <td colspan="5"></td>
                     <td style="font-size: 8px;">SUBTOTAL</td>
-                    <td style="font-size: 9px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($tsr['payment']['subtotal'],'₱ ')}}</td>
+                    <td style="font-size: 9px; text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($tsr['payment']['subtotal'],'₱ ')}}</td>
                 </tr>
                 <tr>
                     <td colspan="5"></td>
                     <td style="font-size: 8px;">DISCOUNT</td>
-                    <td style="font-size: 9px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($tsr['payment']['discount'],'₱ ')}}</td>
+                    <td style="font-size: 9px; text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($tsr['payment']['discount'],'₱ ')}}</td>
                 </tr>
                 <tr>
                     <td colspan="5"></td>
                     <td style="font-size: 8px;">TOTAL</td>
-                    <td style="font-size: 9px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($tsr['payment']['total'],'₱ ')}}</td>
+                    <td style="font-size: 9px; text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($tsr['payment']['total'],'₱ ')}}</td>
                 </tr>
             </tfoot>
         </table>
@@ -258,7 +258,7 @@
                 </tr>
                 <tr>
                     <td width="25%">Report number : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">n/a</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;"></span></td>
                 </tr>
             </tbody>
         </table>

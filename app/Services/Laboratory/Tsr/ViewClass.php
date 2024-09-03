@@ -212,16 +212,18 @@ class ViewClass
         $dompdf = $pdf->getDomPDF();
         $canvas = $dompdf->getCanvas();
         $canvas->page_script(function ($pageNumber, $pageCount, $canvas, $fontMetrics) {
-            $adjustedPageNumber = ($pageNumber - 1) % 3 + 1;
-            $setNumber = ceil($pageNumber / 3); 
-            $totalSets = ceil($pageCount / 3); 
-            
-            $text = "PAGE $adjustedPageNumber OF $totalSets"; 
+            $copies = 3; // Number of copies
+            $totalPagesPerCopy = $pageCount / $copies; // Pages per copy
+            // Calculate the current page number within the current copy
+            $currentPageInCopy = ($pageNumber - 1) % $totalPagesPerCopy + 1;
+            // Generate the text for page numbering
+            $text = "PAGE $currentPageInCopy OF $totalPagesPerCopy";
+            // Set font and size for the text
             $font = $fontMetrics->get_font("Helvetica", "normal");
             $size = 7;
             $width = $fontMetrics->get_text_width($text, $font, $size);
+            // Position the text on the canvas
             $canvas->text(106 - $width, 796, $text, $font, $size);
-            // $canvas->image($base64Image, 400, 750, 100, 100);
         });
 
         return $pdf->stream($lab->code.'.pdf');
