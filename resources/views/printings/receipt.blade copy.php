@@ -38,13 +38,13 @@
             .agency {
                 position: absolute;
                 top: 112; /* 4 cm from the top */
-                left: 33; /* 7 cm from the left */
+                left: 32; /* 7 cm from the left */
                 font-size: 10pt; /* Adjust font size as needed */
             }
             .payor {
                 position: absolute;
                 top: 134; /* 4 cm from the top */
-                left: 33; /* 7 cm from the left */
+                left: 30; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
             .total {
@@ -59,16 +59,10 @@
                 left: -6; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
-            .word2 {
-                position: absolute;
-                top: 333; /* 4 cm from the top */
-                left: -5; /* 7 cm from the left */
-                font-size: 9pt; /* Adjust font size as needed */
-            }
             .items {
                 position: absolute;
                 top: 170; /* 4 cm from the top */
-                left: -6; /* 7 cm from the left */
+                left: -7; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
         </style>
@@ -90,11 +84,7 @@
                 </tbody>
             </table>
         </div>
-        @if(strlen($word) >= 50)
-            <div class="word2" style="text-indent: 110px;">{{$word}}</div>
-        @else
-            <div class="word">{{$word}}</div>
-        @endif
+        <div class="word">{{$word}}</div>
     </body>
 </html>
 
