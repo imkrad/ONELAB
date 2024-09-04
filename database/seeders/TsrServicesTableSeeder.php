@@ -57,6 +57,19 @@ class TsrServicesTableSeeder extends Seeder
                 'created_at' => '2024-08-17 14:01:16',
                 'updated_at' => '2024-08-17 14:01:16',
             ),
+            3 => 
+            array (
+                'id' => 4,
+                'fee' => '2000.00',
+                'total' => '4000.00',
+                'quantity' => 2,
+                'service_id' => 2,
+                'typeable_id' => 184,
+                'typeable_type' => 'App\\Models\\Tsr',
+                'is_additional' => 0,
+                'created_at' => '2024-09-04 08:41:18',
+                'updated_at' => '2024-09-04 08:41:18',
+            ),
         ));
 
         
