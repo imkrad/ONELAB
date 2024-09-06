@@ -128,7 +128,7 @@ export default {
             this.$refs.view.show(data);
         },
         openPrint(id){
-            window.open(this.currentUrl + '/finance?option=print&id='+id);
+            window.open(this.currentUrl + '/finance?option=op&id='+id);
         },
     }
 }   

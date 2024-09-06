@@ -6,6 +6,7 @@ use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
 use App\Models\TsrPayment;
+use App\Models\TsrPaymentDeduction;
 use App\Models\ListStatus;
 
 class CroClass
@@ -129,15 +130,42 @@ class CroClass
     }
 
     private function fees($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+        $wallet = TsrPaymentDeduction::whereMonth('created_at',$month)->whereYear('created_at',$year)
+        ->whereHas('payment', function ($query){
+            $query->whereHas('tsr', function ($query){
+                $query->where('laboratory_id',$this->laboratory);
+            });
+        })->sum('amount');
+
+        $contract = TsrPayment::where('status_id',18)->whereHas('tsr', function ($query) use ($month,$year){
+            $query->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_id',$this->laboratory);
+        })->sum('total');
+
+        $pending = TsrPayment::where('status_id',6)->whereHas('tsr', function ($query) use ($month,$year){
+            $query->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('laboratory_id',$this->laboratory);
+        })->sum('total');
+
+        $gratis = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)->where('is_free',1)
+        ->whereHas('tsr', function ($query){
+            $query->where('laboratory_id',$this->laboratory);
+        })->sum('discount');
+
+        $discount = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)->where('is_free',0)
+        ->whereHas('tsr', function ($query){
+            $query->where('laboratory_id',$this->laboratory);
+        })->sum('discount');
+
+        $total = TsrPayment::where('is_child',0)->where('paid_at','!=',NULL)->whereHas('tsr', function ($query) use ($month,$year){
+            $query->where('laboratory_id',$this->laboratory)->whereMonth('created_at',$month)->whereYear('created_at',$year)->where('status_id','!=',5);
+        })->sum('total');
+
         return $arr = [
             'name' => 'Actual Fees Collected',
             'icon' => 'ri-bank-card-fill',
             'color' => 'bg-info-subtle',
-            'total' => TsrPayment::whereBetween('paid_at',[$this->start,$this->end])->where('is_paid',1)
-            ->whereHas('tsr', function ($query){
-                $query->where('laboratory_id',$this->laboratory);
-            })
-           ->sum('total')
+            'total' => $total+$pending+$contract+$wallet+$gratis+$discount
         ];
     }
 

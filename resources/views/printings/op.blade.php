@@ -9,8 +9,8 @@
         }
         body {
             margin-top: 20px;
-            margin-left: 90px;
-            margin-right: 90px;
+            margin-left: 50px;
+            margin-right: 50px;
         }
         table,
         td,
@@ -77,24 +77,13 @@ label {
     </head>
 
     <body>
-        <?php 
-            $op = json_encode($op); 
-            $op = json_decode($op, true);   
-
-            $val = trim($op['total'],'₱ ');
-            $val = (float) str_replace(',', '', $val);
-            $digit = new NumberFormatter("en", NumberFormatter::SPELLOUT);
-            $number = $digit->format($val);
-            
-        ?>
-
         <div style="font-family:Arial;">
-            <center style="font-size: 10px; margin-bottom: 0px; text-transform: uppercase;">{{$configuration['name']}}</center>
+            <center style="font-size: 10px; margin-bottom: 0px; text-transform: uppercase;">DEPARTMENT OF SCIENCE AND TECHNOLOGY</center>
             <center style="font-size: 11px; margin-bottom: 0px; font-weight: bold;">REGIONAL STANDARDS AND TESTING LABORATORIES</center>
             <center style="font-size: 11px;">Pettit Baracks, Zamboanga City | (062) 991-1024</center>
             <br/>
             
-            <center style="font-size: 10px; background-color: #000; color:#fff; font-weight: bold; padding: 3px;">ORDER OF PAYMENT</center>
+            <center style="font-size: 12px; background-color: #000; color:#fff; font-weight: bold; padding: 3px;">ORDER OF PAYMENT</center>
         </div>
 
         <table style="border: 1px solid black; font-size: 10px; margin-top: 25px;">
@@ -105,7 +94,7 @@ label {
                     <span style="display: inline-block; padding: 5px; border: 1px solid black; margin-bottom: -2px;"></span><span> 01 MDS</span>
                     </td>
                     <td width="25%">No.:</td>
-                    <td width="25%"><span>{{$op['code']}}</span></td>
+                    <td width="25%"><span>{{$code}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%"></td>
@@ -113,7 +102,7 @@ label {
                     <span style="display: inline-block; padding: 5px; border: 1px solid black; margin-bottom: -2px;"></span><span> 07 TF</span>
                     </td>
                     <td width="25%">Date:</td>
-                    <td width="25%"><span>{{$op['created_at']}}</span></td>
+                    <td width="25%"><span>{{$date}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -131,14 +120,14 @@ label {
             </tbody>
         </table>
         
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
+        <table style="border: 1px solid black; margin-top: 15px;">
             <tbody>
                 <tr>
-                    <td style="padding: 10px;">
-                        <span style="margin-left: 80px;">Please issue Official Receipt in favor of</span> <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold;">{{$op['customer']['customer_name']['name']}} - {{$op['customer']['name']}}</span> (<i>{{$op['customer']['address']['barangay']['name']}}, {{$op['customer']['address']['municipality']['name']}}, {{$op['customer']['address']['province']['name']}}, {{$op['customer']['address']['region']['name']}}</i>) in the amount of <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold;">{{ucwords($number)}} Pesos (<span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($op['total'],'₱ ')}})</span> for payment of : <br/><br/>
-                        @foreach($op['items'] as $index=>$item)
-                            @foreach($item['tsr']['samples'] as $index2=>$ts)
-                            <span style="color:#636363; font-size: 8px;">{{$ts['name']}} (@foreach($ts['analyses'] as $index2=>$a){{$a['testservice']['testname']['name']}}@if(count($ts['analyses']) > 1),@endif @endforeach)</span>@if(count($op['items']) > 1)@if((count($op['items'])-1) != $index),@endif @endif
+                    <td style="padding: 10px; font-size: 8px;">
+                        <span style="font-size: 12px;"><span style="margin-left: 80px;">Please issue Official Receipt in favor of</span> <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold;">{{$customer}} </span> (<i>{{$address}}</i>) in the amount of <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold;">{{$word}} (<span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}})</span> for payment of :</span> <br/><br/>
+                        @foreach($lists as $index=>$item)
+                            @foreach($item['itemable']['samples'] as $index2=>$ts)
+                            <span style="color:#636363; font-size: 8px; line-height: .2; margin: 0; padding: 0;">{{$ts['name']}} (@foreach($ts['analyses'] as $index2=>$a){{$a['testservice']['testname']['name']}}@if(count($ts['analyses']) > 1),@endif @endforeach)@if(count($items) > 1)@if((count($items)-1) != $index),@endif @endif</span>
                             @endforeach
                         @endforeach
                     </td>
@@ -148,12 +137,12 @@ label {
 
         <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
             <tbody>
-            @foreach($op['items'] as $index=>$item)
-                <tr>
+            @foreach($items as $index=>$item)
+                <tr style="font-size: 9px;">
                     <td width="15%" style="text-align: center;">Per Bill no.: </td>
-                    <td width="35%">{{$item['tsr']['code']}}</td>
+                    <td width="35%">{{$item['name']}}</td>
                     <td width="15%" style="text-align: center;">Request Date:</td>
-                    <td width="35%"><span>{{$item['tsr']['created_at']}}</span></td>
+                    <td width="35%">{{$item['date']}}</td>
                 </tr>
             @endforeach
             </tbody>
@@ -172,7 +161,7 @@ label {
                 <tr style="font-size: 9px;">
                     <td>{{$i+1}}.</td>
                     <td></td>
-                    <td style="text-align:center; ">@if($i == 0) <span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($op['total'],'₱ ')}} @endif</td>
+                    <td style="text-align:center; ">@if($i == 0) <span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}} @endif</td>
                 </tr>
                 @endfor
             </tbody>
@@ -180,7 +169,7 @@ label {
                 <tr>
                     <td></td>
                     <td style="font-size: 8px;">TOTAL</td>
-                    <td style="font-size: 9px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($op['total'],'₱ ')}}</td>
+                    <td style="font-size: 9px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}}</td>
                 </tr>
             </tfoot>
         </table>
@@ -190,7 +179,7 @@ label {
                 <tr>
                     <td width="50%" style="border: none;"></td>
                     <td width="50%" style="text-align: center; padding-top: 50px; border: none;">
-                        <span style="font-weight: bold; font-size: 11px; color: #000000; text-transform: uppercase;">{{$accountant}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Accountant </br> <span style="font-size:9px; color: #606060;">(Authorized Signatory)</span>
+                        <span style="font-weight: bold; font-size: 11px; color: #000000; text-transform: uppercase;">Test</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Accountant </br> <span style="font-size:9px; color: #606060;">(Authorized Signatory)</span>
                     </td>
                 </tr>
             </tbody>

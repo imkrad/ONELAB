@@ -42,14 +42,17 @@ class FinanceController extends Controller
             case 'ops_pending':
                 return $this->view->ops_pending($request);
             break;
-            case 'ornumbers':
-                return $this->view->ornumbers($request);
+            case 'op':
+                return $this->view->print_op($request);
             break;
             case 'print':
                 return $this->view->print($request);
             break;
             case 'payor':
                 return $this->view->payor($request);
+            break;
+            case 'ornumbers':
+                return $this->view->ornumbers($request);
             break;
             default:
                 return inertia('Modules/Finance/Dashboard/Index'); 
