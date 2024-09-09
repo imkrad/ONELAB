@@ -15,6 +15,7 @@ use App\Models\FinanceOrseries;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Resources\DefaultResource;
 use App\Http\Resources\Finance\OpResource;
+use App\Http\Resources\Finance\FinanceResource;
 use App\Http\Resources\Finance\ReceiptResource;
 
 class ViewClass
@@ -76,6 +77,33 @@ class ViewClass
             ->orderBy('updated_at','DESC')
             ->paginate($request->count)
             ->loadMorph('payorable', [
+                FinanceName::class => [],
+                Customer::class => [
+                    'customer_name:id,name,has_branches',
+                    'address:address,addressable_id,region_code,province_code,municipality_code,barangay_code',
+                    'address.region:code,name,region',
+                    'address.province:code,name',
+                    'address.municipality:code,name',
+                    'address.barangay:code,name',
+                    'contact:id,email,contact_no,customer_id'
+                ],
+             ])
+        );
+        return $data;
+    }
+
+    public function receipts($request){
+        $data = ReceiptResource::collection(
+            FinanceReceipt::query()
+            ->with('op.items.itemable')
+            ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
+            ->with('op.payorable','op.collection','op.payment')
+            ->when($this->laboratory, function ($query, $lab) {
+                $query->where('laboratory_id',$lab);
+            })
+            ->orderBy('updated_at','DESC')
+            ->paginate($request->count)
+            ->loadMorph('op.payorable', [
                 FinanceName::class => [],
                 Customer::class => [
                     'customer_name:id,name,has_branches',

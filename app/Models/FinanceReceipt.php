@@ -44,6 +44,11 @@ class FinanceReceipt extends Model
     //     return $this->belongsTo('App\Models\Customer', 'payor_id', 'id');
     // }
 
+    public function createdby()
+    {
+        return $this->belongsTo('App\Models\User', 'created_by', 'id');
+    }
+
     public function laboratory()
     {
         return $this->belongsTo('App\Models\Laboratory', 'laboratory_id', 'id');
