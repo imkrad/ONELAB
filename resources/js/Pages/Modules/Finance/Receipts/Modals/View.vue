@@ -5,9 +5,9 @@
                 <div class="row align-items-center g-3">
                     <div class="col-md">
                         <div >
-                            <h5 class="fs-15 fw-semibold text-primary mb-2">{{selected.payorable.name}}</h5>
+                            <h5 class="fs-15 fw-semibold text-primary mb-2">{{selected.customer}}</h5>
                             <div class="hstack gap-3 flex-wrap">
-                                <div class="text-muted"><i class="ri-map-pin-fill me-1"></i>{{selected.payorable.address}}</div>
+                                <div class="text-muted"><i class="ri-map-pin-fill me-1"></i>{{selected.address}}</div>
                                 <div class="vr"></div>
                                 <div class="text-muted"><i class="ri-calendar-2-fill me-1"></i>{{selected.date}}</div>
                             </div>
@@ -21,7 +21,7 @@
             <div class="row g-3">
                 <div class="col-lg-3 col-6" v-if="selected.or">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">OR Number</p>
-                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.or.number}}</span></h5>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.number}}</span></h5>
                 </div>
                 <div class="col-lg-3 col-6" v-else>
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Code</p>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Payment</p>
-                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.payment.name}}</span></h5>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.payment}}</span></h5>
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Collection</p>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Status</p>
-                    <h5 class="fs-12 mb-0">{{selected.status.name}}</h5>
+                    <h5 class="fs-12 mb-0">tEST</h5>
                 </div>
             </div>
         </div>

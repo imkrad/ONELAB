@@ -19,8 +19,11 @@ class ReceiptResource extends JsonResource
             'id' => $this->id,
             'number' => $this->number,
             'customer' => ($this->op->payorable->customer_name) ? $this->op->payorable->customer_name->name : $this->op->payorable->name,
+            'address' => ($this->op->payorable->customer_name) ? $this->op->payorable->address->barangay->name.', '.$this->op->payorable->address->municipality->name.', '.$this->op->payorable->address->province->name : '-',
             'collection' => $this->op->collection->name,
             'total' => $this->op->total,
+            'items' => $this->op->items,
+            'status' => $this->op->status,
             'payment' => $this->op->payment->name,
             'user' => $this->createdby->profile->firstname.' '.$this->createdby->profile->lastname,
             'date' => $this->created_at
