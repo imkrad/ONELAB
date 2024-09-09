@@ -86,7 +86,7 @@ border-top: none !important;
             <center style="font-size: 11px;">Pettit Baracks, Zamboanga City | (062) 991-1024</center>
             <br/>
             
-            <center style="font-size: 10px; background-color: #000; color:#fff; font-weight: bold; padding: 2px;">QUOTATION</center>
+            <center style="margin-top: 8px; font-size: 10px; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;  color:#000; font-weight: bold; padding: 2px;">QUOTATION</center>
             <center style="font-size: 10px; background-color: #1fdf62; color:#fff; font-weight: bold; padding: 2px;">CUSTOMER COPY</center>
         </div>
 
