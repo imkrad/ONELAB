@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <style>
             html * {
-                font-family: sans-serif;
+                font-family: Times New Roman;
                 /* font-weight: bold; */
             }
             table,

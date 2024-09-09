@@ -126,7 +126,7 @@ label {
                         <span style="font-size: 12px;"><span style="margin-left: 80px;">Please issue Official Receipt in favor of</span> <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; text-decoration: underline;">{{$customer}} </span> (<i>{{$address}}</i>) in the amount of <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; text-decoration: underline;">{{$word}} (<span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}})</span> for payment of :</span> <br/><br/>
                         @foreach($lists as $index=>$item)
                             @foreach($item['itemable']['samples'] as $index2=>$ts)
-                            <span style="color:#636363; font-size: 10px; line-height: .2; margin: 0; padding: 0;">{{$ts['name']}} (@foreach($ts['analyses'] as $index2=>$a){{$a['testservice']['testname']['name']}}@if(count($ts['analyses']) > 1),@endif @endforeach)@if(count($items) > 1)@if((count($items)-1) != $index),@endif @endif</span>
+                            <span style="font-size: 10px; line-height: .2; margin: 0; padding: 0;">{{$ts['name']}} (@foreach($ts['analyses'] as $index2=>$a){{$a['testservice']['testname']['name']}}@if(count($ts['analyses']) > 1),@endif @endforeach)@if(count($items) > 1)@if((count($items)-1) != $index),@endif @endif</span>
                             @endforeach
                         @endforeach
                     </td>
@@ -156,19 +156,19 @@ label {
                 </tr>
             </thead>
             <tbody>
-                @for ($i = 0; $i < 5; $i++)
-                <tr style="font-size: 9px;">
-                    <td>{{$i+1}}.</td>
-                    <td></td>
+                @for ($i = 0; $i < 1; $i++)
+                <tr style="font-size: 11px;">
+                    <td style="font-weight: bold; text-align: center;">@if($i == 0)3402-2844-20 @endif</td>
+                    <td style="text-align: center;">@if($i == 0)LANDBANK @endif</td>
                     <td style="text-align:center; ">@if($i == 0) <span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}} @endif</td>
                 </tr>
                 @endfor
             </tbody>
-            <tfoot style="text-align: center; font-weight: bold; background-color:#c8c8c8; font-size: 9px;">
+            <tfoot style="text-align: center; font-weight: bold; background-color:#c8c8c8; font-size: 11px;">
                 <tr>
                     <td></td>
-                    <td style="font-size: 8px;">TOTAL</td>
-                    <td style="font-size: 9px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}}</td>
+                    <td style="font-size: 9px;">TOTAL</td>
+                    <td style="font-size: 10px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}}</td>
                 </tr>
             </tfoot>
         </table>
@@ -178,7 +178,7 @@ label {
                 <tr>
                     <td width="50%" style="border: none;"></td>
                     <td width="50%" style="text-align: center; padding-top: 50px; border: none;">
-                        <span style="font-weight: bold; font-size: 11px; color: #000000; text-transform: uppercase;">Ingrid T. Abella-Colcol</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Accountant </br> <span style="font-size:9px; color: #606060;">(Authorized Signatory)</span>
+                        <span style="font-weight: bold; font-size: 12px; color: #000000; text-transform: uppercase;">Ingrid T. Abella-Colcol</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Accountant III</br> <span style="font-size:9px; color: #606060;">(Authorized Signatory)</span>
                     </td>
                 </tr>
             </tbody>
