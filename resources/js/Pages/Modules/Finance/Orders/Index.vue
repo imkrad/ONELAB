@@ -12,11 +12,12 @@
                             <option :value="null" selected>Select Status</option>
                             <option :value="list.value" v-for="list in statuses" v-bind:key="list.id">{{list.name}}</option>
                         </select>
-                        <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
+                        <!-- <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
                             <i class="bx bx-refresh search-icon"></i>
-                        </span>
-                        <b-button type="button" variant="primary" @click="openCreate()">
-                            <i class="ri-add-circle-fill align-bottom me-1"></i> Create
+                        </span> -->
+                        <b-button type="button" variant="primary" @click="refresh()">
+                            <!-- <i class="ri-add-circle-fill align-bottom me-1"></i> Create -->
+                            <i class="bx bx-refresh search-icon"></i>
                         </b-button>
                     </div>
                 </b-col>
