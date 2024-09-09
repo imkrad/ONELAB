@@ -67,7 +67,6 @@
                 </table>
                 <Pagination class="ms-2 me-2" v-if="meta" @fetch="fetch" :lists="lists.length" :links="links" :pagination="meta" />
             </div>
-
         </div>
     </div>
     <View :deposits="deposits" :orseries="orseries" @update="fetch()" ref="view"/>
