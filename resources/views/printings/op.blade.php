@@ -83,7 +83,6 @@ label {
             <center style="font-size: 11px;">Pettit Baracks, Zamboanga City | (062) 991-1024</center>
             <br/>
             
-            <center style="font-size: 12px; background-color: #000; color:#fff; font-weight: bold; padding: 3px;">ORDER OF PAYMENT</center>
         </div>
 
         <table style="border: 1px solid black; font-size: 10px; margin-top: 25px;">
@@ -106,7 +105,7 @@ label {
                 </tr>
             </tbody>
         </table>
-
+        <center style="font-size: 12px; background-color: #000; color:#fff; font-weight: bold; padding: 3px; margin-top: 15px;">ORDER OF PAYMENT</center>
         <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
             <tbody>
                 <tr>
