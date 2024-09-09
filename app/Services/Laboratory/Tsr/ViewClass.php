@@ -179,9 +179,9 @@ class ViewClass
         $labcolor = Tsr::where('id',$id)->with('lab_type')->first();
         $tsr = TsrReport::where('tsr_id',$id)->value('information');
         $lab = json_decode($tsr);
-
+        
         $head = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
-        ->where('laboratory_id',$lab->laboratory_id)->whereHas('role',function ($query){
+        ->where('laboratory_id',$lab->laboratory_id)->where('laboratory_type',$labcolor->lab_type->id)->whereHas('role',function ($query){
             $query->where('name','Technical Manager');
         })->first();
 
