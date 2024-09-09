@@ -223,7 +223,7 @@ class SaveClass
         ->where('laboratory_id',$this->laboratory)
         ->whereYear('created_at',$year)
         ->where('code','!=',NULL)->count();
-        $code = $lab->code.'QOU-'.date('Y').str_pad((419+$c+1), 3, '0', STR_PAD_LEFT);  
+        $code = 'QUO-'.date('Y').str_pad((419+$c+1), 3, '0', STR_PAD_LEFT);  
         return $code;
     }
 }
