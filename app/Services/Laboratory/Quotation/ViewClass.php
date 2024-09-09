@@ -117,7 +117,7 @@ class ViewClass
             'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname
         ]; 
         $pdf = \PDF::loadView('reports.quotation',$array)->setPaper('a4', 'portrait');
-        return $pdf->download('Quotation.pdf');
+        return $pdf->stream('Quotation.pdf');
     }
 
     public function analysesList($id){
