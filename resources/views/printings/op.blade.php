@@ -179,7 +179,7 @@ label {
                 <tr>
                     <td width="50%" style="border: none;"></td>
                     <td width="50%" style="text-align: center; padding-top: 50px; border: none;">
-                        <span style="font-weight: bold; font-size: 11px; color: #000000; text-transform: uppercase;">Test</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Accountant </br> <span style="font-size:9px; color: #606060;">(Authorized Signatory)</span>
+                        <span style="font-weight: bold; font-size: 11px; color: #000000; text-transform: uppercase;">Ingrid T. Abella-Colcol</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Accountant </br> <span style="font-size:9px; color: #606060;">(Authorized Signatory)</span>
                     </td>
                 </tr>
             </tbody>
