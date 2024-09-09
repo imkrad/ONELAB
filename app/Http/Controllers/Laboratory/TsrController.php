@@ -31,6 +31,9 @@ class TsrController extends Controller
             case 'print':
                 return $this->view->print($request);
             break;
+            case 'sampleqr':
+                return $this->view->sampleqr($request);
+            break;
             case 'tsrs':
                 return $this->view->tsrs($request);
             break;

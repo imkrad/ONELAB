@@ -295,8 +295,11 @@ export default {
         openService(){
             this.$refs.service.show(this.selected.id);
         },
+        // openQr(data){
+        //     this.$refs.qr.show(data,this.selected.created_at,this.selected.due_at);
+        // },
         openQr(data){
-            this.$refs.qr.show(data,this.selected.created_at,this.selected.due_at);
+            window.open('/requests?option=sampleqr&id='+data.id);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');

@@ -113,7 +113,7 @@ class Tsr extends Model
 
     public function getCreatedAtAttribute($value)
     {
-        return date('M d, Y g:i a', strtotime($value));
+        return date('F d, Y', strtotime($value));
     }
 
     public function getDueAtAttribute($value)
