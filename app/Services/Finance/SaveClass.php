@@ -373,7 +373,7 @@ class SaveClass
     private function generateCode(){
         $year = date('Y'); 
         $c = FinanceOp::whereYear('created_at',$year)->count();
-        $code = date('Y').date('m').'-'.str_pad((729+$c+1), 4, '0', STR_PAD_LEFT);  
+        $code = date('Y').date('m').'-'.str_pad((730+$c+1), 4, '0', STR_PAD_LEFT);  
         return $code;
     }
 }
