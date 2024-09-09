@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <style>
             html * {
-                font-family: Calibri, sans-serif;
+                font-family: sans-serif;
                 /* font-weight: bold; */
             }
             table,
@@ -45,7 +45,7 @@
                 position: absolute;
                 top: 134; /* 4 cm from the top */
                 left: 33; /* 7 cm from the left */
-                font-size: 9pt; /* Adjust font size as needed */
+                font-size: 10pt; /* Adjust font size as needed */
             }
             .total {
                 position: absolute;
@@ -79,7 +79,7 @@
         <div class="payor">{{$customer}}</div>
         <div class="total">{{trim($total,'₱ ')}}</div>
         <div class="items">
-            <table style="border: hidden; font-size: 10px; margin-top: 15px;">
+            <table style="border: hidden; font-size: 11px; margin-top: 15px;">
                 <tbody>
                 @foreach($items as $index=>$item)
                     <tr>

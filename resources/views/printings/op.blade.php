@@ -8,9 +8,9 @@
             font-family:Arial, Helvetica, sans-serif;
         }
         body {
-            margin-top: 20px;
-            margin-left: 50px;
-            margin-right: 50px;
+            margin-top: 15px;
+            margin-left: 40px;
+            margin-right: 40px;
         }
         table,
         td,
@@ -85,7 +85,7 @@ label {
             
         </div>
 
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 25px;">
+        <table style="border: 1px solid black; font-size: 11px; margin-top: 25px;">
             <tbody>
                 <tr>
                     <td width="25%">Fund Cluster: </td>
@@ -106,7 +106,7 @@ label {
             </tbody>
         </table>
         <center style="font-size: 12px; background-color: #000; color:#fff; font-weight: bold; padding: 3px; margin-top: 15px;">ORDER OF PAYMENT</center>
-        <table style="border: 1px solid black; font-size: 10px; margin-top: 15px;">
+        <table style="border: 1px solid black; font-size: 11px; margin-top: 15px;">
             <tbody>
                 <tr>
                     <td width="25%">The Collection Officer</td>
@@ -122,11 +122,11 @@ label {
         <table style="border: 1px solid black; margin-top: 15px;">
             <tbody>
                 <tr>
-                    <td style="padding: 10px; font-size: 8px;">
-                        <span style="font-size: 12px;"><span style="margin-left: 80px;">Please issue Official Receipt in favor of</span> <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold;">{{$customer}} </span> (<i>{{$address}}</i>) in the amount of <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold;">{{$word}} (<span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}})</span> for payment of :</span> <br/><br/>
+                    <td style="padding: 10px; font-size: 9px;">
+                        <span style="font-size: 12px;"><span style="margin-left: 80px;">Please issue Official Receipt in favor of</span> <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; text-decoration: underline;">{{$customer}} </span> (<i>{{$address}}</i>) in the amount of <span style="font-family:Arial, Helvetica, sans-serif; font-weight:bold; text-decoration: underline;">{{$word}} (<span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}})</span> for payment of :</span> <br/><br/>
                         @foreach($lists as $index=>$item)
                             @foreach($item['itemable']['samples'] as $index2=>$ts)
-                            <span style="color:#636363; font-size: 8px; line-height: .2; margin: 0; padding: 0;">{{$ts['name']}} (@foreach($ts['analyses'] as $index2=>$a){{$a['testservice']['testname']['name']}}@if(count($ts['analyses']) > 1),@endif @endforeach)@if(count($items) > 1)@if((count($items)-1) != $index),@endif @endif</span>
+                            <span style="color:#636363; font-size: 10px; line-height: .2; margin: 0; padding: 0;">{{$ts['name']}} (@foreach($ts['analyses'] as $index2=>$a){{$a['testservice']['testname']['name']}}@if(count($ts['analyses']) > 1),@endif @endforeach)@if(count($items) > 1)@if((count($items)-1) != $index),@endif @endif</span>
                             @endforeach
                         @endforeach
                     </td>
