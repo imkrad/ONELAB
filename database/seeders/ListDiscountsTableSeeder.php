@@ -15,7 +15,7 @@ class ListDiscountsTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_discounts')->truncate();
+        \DB::table('list_discounts')->delete();
         
         \DB::table('list_discounts')->insert(array (
             0 => 

@@ -15,7 +15,7 @@ class TsrsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsrs')->truncate();
+        \DB::table('tsrs')->delete();
         
         \DB::table('tsrs')->insert(array (
             0 => 

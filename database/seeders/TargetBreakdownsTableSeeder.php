@@ -15,7 +15,7 @@ class TargetBreakdownsTableSeeder extends Seeder
     {
         
 
-        \DB::table('target_breakdowns')->truncate();
+        \DB::table('target_breakdowns')->delete();
         
         \DB::table('target_breakdowns')->insert(array (
             0 => 

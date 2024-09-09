@@ -15,7 +15,7 @@ class TsrSampleReportsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_sample_reports')->truncate();
+        \DB::table('tsr_sample_reports')->delete();
         
 
         

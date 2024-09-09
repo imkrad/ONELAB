@@ -15,7 +15,7 @@ class TsrGroupsTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_groups')->truncate();
+        \DB::table('tsr_groups')->delete();
         
         \DB::table('tsr_groups')->insert(array (
             0 => 

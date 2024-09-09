@@ -15,7 +15,7 @@ class CustomerContactsTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_contacts')->truncate();
+        \DB::table('customer_contacts')->delete();
         
         \DB::table('customer_contacts')->insert(array (
             0 => 

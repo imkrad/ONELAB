@@ -15,7 +15,7 @@ class TsrSamplesTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_samples')->truncate();
+        \DB::table('tsr_samples')->delete();
         
         \DB::table('tsr_samples')->insert(array (
             0 => 

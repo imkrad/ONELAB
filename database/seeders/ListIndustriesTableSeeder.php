@@ -15,7 +15,7 @@ class ListIndustriesTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_industries')->truncate();
+        \DB::table('list_industries')->delete();
         
         \DB::table('list_industries')->insert(array (
             0 => 

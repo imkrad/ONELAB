@@ -15,7 +15,7 @@ class WalletTransactionsTableSeeder extends Seeder
     {
         
 
-        \DB::table('wallet_transactions')->truncate();
+        \DB::table('wallet_transactions')->delete();
         
         \DB::table('wallet_transactions')->insert(array (
             0 => 

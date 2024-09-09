@@ -15,7 +15,7 @@ class FinanceReceiptDetailsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_receipt_details')->truncate();
+        \DB::table('finance_receipt_details')->delete();
         
         \DB::table('finance_receipt_details')->insert(array (
             0 => 

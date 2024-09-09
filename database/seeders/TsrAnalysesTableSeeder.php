@@ -15,7 +15,7 @@ class TsrAnalysesTableSeeder extends Seeder
     {
         
 
-        \DB::table('tsr_analyses')->truncate();
+        \DB::table('tsr_analyses')->delete();
         
         \DB::table('tsr_analyses')->insert(array (
             0 => 

@@ -15,7 +15,7 @@ class ListLaboratoriesTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_laboratories')->truncate();
+        \DB::table('list_laboratories')->delete();
         
         \DB::table('list_laboratories')->insert(array (
             0 => 
