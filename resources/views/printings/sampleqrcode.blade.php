@@ -16,42 +16,50 @@
             .code {
                 position: absolute;
                 top: -30; /* 4 cm from the top */
-                left: 5; /* 7 cm from the left */
+                left: 10; /* 7 cm from the left */
                 font-size: 10pt; /* Adjust font size as needed */
-                width: 180px;
+                width: 170px;
+                /* background-color: red; */
             }
             .received {
                 position: absolute;
                 top: -17; /* 4 cm from the top */
-                left: 5; /* 7 cm from the left */
+                left: 10; /* 7 cm from the left */
                 font-size: 7pt; /* Adjust font size as needed */
-                width: 180px;
+                width: 170px;
             }
             .due {
                 position: absolute;
                 top: -9; /* 4 cm from the top */
-                left: 5; /* 7 cm from the left */
+                left: 10; /* 7 cm from the left */
                 font-size: 7pt; /* Adjust font size as needed */
-                width: 180px;
+                width: 170px;
             }
             .names {
                 position: absolute;
                 top: 10; /* 4 cm from the top */
-                left: -22; /* 7 cm from the left */
+                left: -15; /* 7 cm from the left */
                 font-size: 7.5pt; /* Adjust font size as needed */
             }
             .breakline {
                 position: absolute;
-                width: 225px; /* or any desired width */
+                width: 210px; /* or any desired width */
                 top: 5; /* 4 cm from the top */
-                left: -29; /* 7 cm from the left */
+                left: -21; /* 7 cm from the left */
                 border-top: 1px solid black; /* Thickness and color of the line */
+            }
+            .image {
+                position: absolute;
+                width: 30;
+                height: 30;
+                margin-top: -39px; 
+                margin-left: -30px;
             }
         </style>
     </head>
 
     <body>
-        <img src="<?php echo $qrCodeImage; ?>" width="40" height="40" style="margin-top: -40px; margin-left: -40px;" alt="QR Code">
+        <img class="image" src="<?php echo $qrCodeImage; ?>" alt="QR Code"/>
         <div class="code">{{$sample_code}} <span style="font-size: 10px;">({{$sample_name}})</span></div>
         <div class="received">Received: {{$created_at}}</div>
         <div class="due">Due at: {{$due_at}}</div>
