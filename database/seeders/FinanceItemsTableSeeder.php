@@ -15,7 +15,7 @@ class FinanceItemsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_items')->delete();
+        \DB::table('finance_items')->truncate();
         
         \DB::table('finance_items')->insert(array (
             0 => 
@@ -457,6 +457,22 @@ class FinanceItemsTableSeeder extends Seeder
                 'name' => 'For the Month of Aug 2024',
                 'created_at' => '2024-08-31 18:14:00',
                 'updated_at' => '2024-08-31 18:14:00',
+            ),
+            55 => 
+            array (
+                'id' => 88,
+                'amount' => '9629.25',
+                'name' => 'Refund of Excess CA',
+                'created_at' => '2024-09-06 09:05:30',
+                'updated_at' => '2024-09-06 09:05:30',
+            ),
+            56 => 
+            array (
+                'id' => 89,
+                'amount' => '3700.00',
+                'name' => 'Refund of Excess CA Travel',
+                'created_at' => '2024-09-06 10:21:52',
+                'updated_at' => '2024-09-06 10:21:52',
             ),
         ));
 

@@ -15,7 +15,7 @@ class FinanceOpItemsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_op_items')->delete();
+        \DB::table('finance_op_items')->truncate();
         
         \DB::table('finance_op_items')->insert(array (
             0 => 
@@ -1637,6 +1637,216 @@ class FinanceOpItemsTableSeeder extends Seeder
                 'op_id' => 170,
                 'created_at' => '2024-09-02 16:25:09',
                 'updated_at' => '2024-09-02 16:25:09',
+            ),
+            162 => 
+            array (
+                'id' => 200,
+                'amount' => '2100.00',
+                'itemable_id' => 181,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 171,
+                'created_at' => '2024-09-05 16:20:29',
+                'updated_at' => '2024-09-05 16:20:29',
+            ),
+            163 => 
+            array (
+                'id' => 201,
+                'amount' => '4950.00',
+                'itemable_id' => 180,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 171,
+                'created_at' => '2024-09-05 16:20:29',
+                'updated_at' => '2024-09-05 16:20:29',
+            ),
+            164 => 
+            array (
+                'id' => 202,
+                'amount' => '2800.00',
+                'itemable_id' => 179,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 171,
+                'created_at' => '2024-09-05 16:20:29',
+                'updated_at' => '2024-09-05 16:20:29',
+            ),
+            165 => 
+            array (
+                'id' => 203,
+                'amount' => '6600.00',
+                'itemable_id' => 178,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 171,
+                'created_at' => '2024-09-05 16:20:29',
+                'updated_at' => '2024-09-05 16:20:29',
+            ),
+            166 => 
+            array (
+                'id' => 204,
+                'amount' => '23250.00',
+                'itemable_id' => 184,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 172,
+                'created_at' => '2024-09-05 16:21:47',
+                'updated_at' => '2024-09-05 16:21:47',
+            ),
+            167 => 
+            array (
+                'id' => 205,
+                'amount' => '7000.00',
+                'itemable_id' => 183,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 172,
+                'created_at' => '2024-09-05 16:21:47',
+                'updated_at' => '2024-09-05 16:21:47',
+            ),
+            168 => 
+            array (
+                'id' => 206,
+                'amount' => '2910.00',
+                'itemable_id' => 162,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 173,
+                'created_at' => '2024-09-05 16:22:34',
+                'updated_at' => '2024-09-05 16:22:34',
+            ),
+            169 => 
+            array (
+                'id' => 207,
+                'amount' => '5500.00',
+                'itemable_id' => 188,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 174,
+                'created_at' => '2024-09-05 16:23:01',
+                'updated_at' => '2024-09-05 16:23:01',
+            ),
+            170 => 
+            array (
+                'id' => 208,
+                'amount' => '1400.00',
+                'itemable_id' => 187,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 174,
+                'created_at' => '2024-09-05 16:23:01',
+                'updated_at' => '2024-09-05 16:23:01',
+            ),
+            171 => 
+            array (
+                'id' => 209,
+                'amount' => '3300.00',
+                'itemable_id' => 186,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 174,
+                'created_at' => '2024-09-05 16:23:01',
+                'updated_at' => '2024-09-05 16:23:01',
+            ),
+            172 => 
+            array (
+                'id' => 210,
+                'amount' => '3150.00',
+                'itemable_id' => 190,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 175,
+                'created_at' => '2024-09-05 16:23:23',
+                'updated_at' => '2024-09-05 16:23:23',
+            ),
+            173 => 
+            array (
+                'id' => 211,
+                'amount' => '6525.00',
+                'itemable_id' => 79,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 176,
+                'created_at' => '2024-09-06 08:52:49',
+                'updated_at' => '2024-09-06 08:52:49',
+            ),
+            174 => 
+            array (
+                'id' => 212,
+                'amount' => '2500.00',
+                'itemable_id' => 189,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 177,
+                'created_at' => '2024-09-06 08:53:31',
+                'updated_at' => '2024-09-06 08:53:31',
+            ),
+            175 => 
+            array (
+                'id' => 213,
+                'amount' => '500.00',
+                'itemable_id' => 191,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 178,
+                'created_at' => '2024-09-06 08:54:14',
+                'updated_at' => '2024-09-06 08:54:14',
+            ),
+            176 => 
+            array (
+                'id' => 214,
+                'amount' => '500.00',
+                'itemable_id' => 192,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 179,
+                'created_at' => '2024-09-06 08:54:30',
+                'updated_at' => '2024-09-06 08:54:30',
+            ),
+            177 => 
+            array (
+                'id' => 215,
+                'amount' => '1650.00',
+                'itemable_id' => 194,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 180,
+                'created_at' => '2024-09-06 08:55:15',
+                'updated_at' => '2024-09-06 08:55:15',
+            ),
+            178 => 
+            array (
+                'id' => 216,
+                'amount' => '500.00',
+                'itemable_id' => 195,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 181,
+                'created_at' => '2024-09-06 08:55:41',
+                'updated_at' => '2024-09-06 08:55:41',
+            ),
+            179 => 
+            array (
+                'id' => 217,
+                'amount' => '9629.25',
+                'itemable_id' => 88,
+                'itemable_type' => 'App\\Models\\FinanceItem',
+                'op_id' => 182,
+                'created_at' => '2024-09-06 09:05:30',
+                'updated_at' => '2024-09-06 09:05:30',
+            ),
+            180 => 
+            array (
+                'id' => 218,
+                'amount' => '500.00',
+                'itemable_id' => 196,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 183,
+                'created_at' => '2024-09-06 10:19:53',
+                'updated_at' => '2024-09-06 10:19:53',
+            ),
+            181 => 
+            array (
+                'id' => 219,
+                'amount' => '3700.00',
+                'itemable_id' => 89,
+                'itemable_type' => 'App\\Models\\FinanceItem',
+                'op_id' => 184,
+                'created_at' => '2024-09-06 10:21:52',
+                'updated_at' => '2024-09-06 10:21:52',
+            ),
+            182 => 
+            array (
+                'id' => 220,
+                'amount' => '1750.00',
+                'itemable_id' => 197,
+                'itemable_type' => 'App\\Models\\Tsr',
+                'op_id' => 185,
+                'created_at' => '2024-09-06 14:09:07',
+                'updated_at' => '2024-09-06 14:09:07',
             ),
         ));
 

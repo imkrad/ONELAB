@@ -15,7 +15,7 @@ class FinanceNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_names')->delete();
+        \DB::table('finance_names')->truncate();
         
         \DB::table('finance_names')->insert(array (
             0 => 
@@ -566,6 +566,15 @@ class FinanceNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-08-31 15:19:05',
                 'updated_at' => '2024-08-31 15:19:05',
+            ),
+            61 => 
+            array (
+                'id' => 62,
+                'name' => 'Ian C. Avenido',
+                'is_individual' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-09-06 10:21:25',
+                'updated_at' => '2024-09-06 10:21:25',
             ),
         ));
 

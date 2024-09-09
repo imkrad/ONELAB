@@ -15,7 +15,7 @@ class FinanceReceiptsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_receipts')->delete();
+        \DB::table('finance_receipts')->truncate();
         
         \DB::table('finance_receipts')->insert(array (
             0 => 
@@ -1772,6 +1772,201 @@ class FinanceReceiptsTableSeeder extends Seeder
                 'laboratory_id' => 14,
                 'created_at' => '2024-09-02 16:26:11',
                 'updated_at' => '2024-09-02 16:26:11',
+            ),
+            135 => 
+            array (
+                'id' => 168,
+                'number' => '87117',
+                'is_deposit' => 0,
+                'op_id' => 171,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-03 08:58:32',
+                'updated_at' => '2024-09-06 08:58:32',
+            ),
+            136 => 
+            array (
+                'id' => 169,
+                'number' => '87118',
+                'is_deposit' => 0,
+                'op_id' => 172,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-03 08:59:32',
+                'updated_at' => '2024-09-06 08:59:32',
+            ),
+            137 => 
+            array (
+                'id' => 170,
+                'number' => '87119',
+                'is_deposit' => 0,
+                'op_id' => 173,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-03 08:59:55',
+                'updated_at' => '2024-09-06 08:59:55',
+            ),
+            138 => 
+            array (
+                'id' => 171,
+                'number' => '87120',
+                'is_deposit' => 0,
+                'op_id' => 174,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-04 09:00:22',
+                'updated_at' => '2024-09-06 09:00:22',
+            ),
+            139 => 
+            array (
+                'id' => 172,
+                'number' => '87121',
+                'is_deposit' => 0,
+                'op_id' => 175,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-04 09:00:37',
+                'updated_at' => '2024-09-06 09:00:37',
+            ),
+            140 => 
+            array (
+                'id' => 173,
+                'number' => '87122',
+                'is_deposit' => 0,
+                'op_id' => 177,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-04 09:01:35',
+                'updated_at' => '2024-09-06 09:01:35',
+            ),
+            141 => 
+            array (
+                'id' => 174,
+                'number' => '87123',
+                'is_deposit' => 0,
+                'op_id' => 176,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-04 09:01:44',
+                'updated_at' => '2024-09-06 09:01:44',
+            ),
+            142 => 
+            array (
+                'id' => 175,
+                'number' => '87124',
+                'is_deposit' => 0,
+                'op_id' => 182,
+                'orseries_id' => 1,
+                'deposit_id' => 27,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-04 09:05:30',
+                'updated_at' => '2024-09-06 09:05:30',
+            ),
+            143 => 
+            array (
+                'id' => 176,
+                'number' => '87125',
+                'is_deposit' => 0,
+                'op_id' => 178,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-05 09:06:14',
+                'updated_at' => '2024-09-06 09:06:14',
+            ),
+            144 => 
+            array (
+                'id' => 177,
+                'number' => '87126',
+                'is_deposit' => 0,
+                'op_id' => 179,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-05 09:06:23',
+                'updated_at' => '2024-09-06 09:06:23',
+            ),
+            145 => 
+            array (
+                'id' => 178,
+                'number' => '87127',
+                'is_deposit' => 0,
+                'op_id' => 180,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-05 09:06:31',
+                'updated_at' => '2024-09-06 09:06:31',
+            ),
+            146 => 
+            array (
+                'id' => 179,
+                'number' => '87128',
+                'is_deposit' => 0,
+                'op_id' => 181,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-05 09:06:40',
+                'updated_at' => '2024-09-06 09:06:40',
+            ),
+            147 => 
+            array (
+                'id' => 180,
+                'number' => '87129',
+                'is_deposit' => 0,
+                'op_id' => 183,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-06 10:20:22',
+                'updated_at' => '2024-09-06 10:20:22',
+            ),
+            148 => 
+            array (
+                'id' => 181,
+                'number' => '87130',
+                'is_deposit' => 0,
+                'op_id' => 184,
+                'orseries_id' => 1,
+                'deposit_id' => 27,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-06 10:21:52',
+                'updated_at' => '2024-09-06 10:21:52',
+            ),
+            149 => 
+            array (
+                'id' => 182,
+                'number' => '87131',
+                'is_deposit' => 0,
+                'op_id' => 185,
+                'orseries_id' => 1,
+                'deposit_id' => 26,
+                'created_by' => 3,
+                'laboratory_id' => 14,
+                'created_at' => '2024-09-06 14:09:25',
+                'updated_at' => '2024-09-06 14:09:25',
             ),
         ));
 

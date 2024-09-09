@@ -15,7 +15,7 @@ class ListRolesTableSeeder extends Seeder
     {
         
 
-        \DB::table('list_roles')->delete();
+        \DB::table('list_roles')->truncate();
         
         \DB::table('list_roles')->insert(array (
             0 => 

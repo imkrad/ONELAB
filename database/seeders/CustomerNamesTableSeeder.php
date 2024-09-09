@@ -15,7 +15,7 @@ class CustomerNamesTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_names')->delete();
+        \DB::table('customer_names')->truncate();
         
         \DB::table('customer_names')->insert(array (
             0 => 
@@ -1277,6 +1277,78 @@ class CustomerNamesTableSeeder extends Seeder
                 'is_active' => 1,
                 'created_at' => '2024-09-03 19:09:26',
                 'updated_at' => '2024-09-03 19:09:26',
+            ),
+            140 => 
+            array (
+                'id' => 144,
+                'name' => 'Shaan Petroleum Corporation',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-05 11:13:52',
+                'updated_at' => '2024-09-05 11:13:52',
+            ),
+            141 => 
+            array (
+                'id' => 145,
+                'name' => 'Fresh N\' Famous Foods Inc.',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-09-05 11:17:15',
+                'updated_at' => '2024-09-05 11:17:15',
+            ),
+            142 => 
+            array (
+                'id' => 146,
+                'name' => 'JED12 Builders Inc.',
+                'has_branches' => 1,
+                'is_active' => 1,
+                'created_at' => '2024-09-05 11:37:31',
+                'updated_at' => '2024-09-05 11:37:31',
+            ),
+            143 => 
+            array (
+                'id' => 147,
+                'name' => 'Cagoco Drugstore',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-05 15:42:02',
+                'updated_at' => '2024-09-05 15:42:02',
+            ),
+            144 => 
+            array (
+                'id' => 148,
+                'name' => 'Sweet and Savoury Delights',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-05 15:44:03',
+                'updated_at' => '2024-09-05 15:44:03',
+            ),
+            145 => 
+            array (
+                'id' => 149,
+                'name' => 'Ordeniza Gasoline Micro Filling Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-05 15:45:59',
+                'updated_at' => '2024-09-05 15:45:59',
+            ),
+            146 => 
+            array (
+                'id' => 150,
+                'name' => 'Mikay Gas Refilling Station',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-06 10:01:30',
+                'updated_at' => '2024-09-06 10:01:30',
+            ),
+            147 => 
+            array (
+                'id' => 151,
+                'name' => 'Ruru Mushrooms Mushroom Products Trading',
+                'has_branches' => 0,
+                'is_active' => 1,
+                'created_at' => '2024-09-06 16:00:56',
+                'updated_at' => '2024-09-06 16:00:56',
             ),
         ));
 

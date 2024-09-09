@@ -15,7 +15,7 @@ class FinanceDepositsTableSeeder extends Seeder
     {
         
 
-        \DB::table('finance_deposits')->delete();
+        \DB::table('finance_deposits')->truncate();
         
 
         

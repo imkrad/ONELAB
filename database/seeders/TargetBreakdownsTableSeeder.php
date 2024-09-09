@@ -15,7 +15,7 @@ class TargetBreakdownsTableSeeder extends Seeder
     {
         
 
-        \DB::table('target_breakdowns')->delete();
+        \DB::table('target_breakdowns')->truncate();
         
         \DB::table('target_breakdowns')->insert(array (
             0 => 
@@ -23,84 +23,84 @@ class TargetBreakdownsTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'Samples Received',
                 'count' => 2020,
-                'accom' => 103,
+                'accom' => 118,
                 'is_set' => 1,
                 'is_amount' => 0,
                 'is_consolidated' => 0,
                 'laboratory_type' => 1,
                 'target_id' => 1,
                 'created_at' => '2024-08-07 08:45:21',
-                'updated_at' => '2024-09-02 16:32:42',
+                'updated_at' => '2024-09-06 09:01:44',
             ),
             1 => 
             array (
                 'id' => 2,
                 'name' => 'Samples Received',
                 'count' => 1515,
-                'accom' => 189,
+                'accom' => 216,
                 'is_set' => 1,
                 'is_amount' => 0,
                 'is_consolidated' => 0,
                 'laboratory_type' => 2,
                 'target_id' => 1,
                 'created_at' => '2024-08-07 08:45:21',
-                'updated_at' => '2024-09-02 16:16:24',
+                'updated_at' => '2024-09-06 16:11:58',
             ),
             2 => 
             array (
                 'id' => 3,
                 'name' => 'Samples Received',
                 'count' => 1515,
-                'accom' => 159,
+                'accom' => 187,
                 'is_set' => 1,
                 'is_amount' => 0,
                 'is_consolidated' => 0,
                 'laboratory_type' => 3,
                 'target_id' => 1,
                 'created_at' => '2024-08-07 08:45:21',
-                'updated_at' => '2024-09-02 16:16:35',
+                'updated_at' => '2024-09-06 14:09:25',
             ),
             3 => 
             array (
                 'id' => 4,
                 'name' => 'Services Conducted',
                 'count' => 4292,
-                'accom' => 421,
+                'accom' => 459,
                 'is_set' => 1,
                 'is_amount' => 0,
                 'is_consolidated' => 0,
                 'laboratory_type' => 1,
                 'target_id' => 1,
                 'created_at' => '2024-08-07 08:45:21',
-                'updated_at' => '2024-09-02 16:32:42',
+                'updated_at' => '2024-09-06 09:01:44',
             ),
             4 => 
             array (
                 'id' => 5,
                 'name' => 'Services Conducted',
                 'count' => 4293,
-                'accom' => 301,
+                'accom' => 370,
                 'is_set' => 1,
                 'is_amount' => 0,
                 'is_consolidated' => 0,
                 'laboratory_type' => 2,
                 'target_id' => 1,
                 'created_at' => '2024-08-07 08:45:21',
-                'updated_at' => '2024-09-02 16:16:24',
+                'updated_at' => '2024-09-06 16:11:58',
             ),
             5 => 
             array (
                 'id' => 6,
                 'name' => 'Services Conducted',
                 'count' => 2020,
-                'accom' => 190,
+                'accom' => 220,
                 'is_set' => 1,
                 'is_amount' => 0,
                 'is_consolidated' => 0,
                 'laboratory_type' => 3,
                 'target_id' => 1,
                 'created_at' => '2024-08-07 08:45:21',
-                'updated_at' => '2024-09-02 16:16:35',
+                'updated_at' => '2024-09-06 14:09:25',
             ),
             6 => 
             array (

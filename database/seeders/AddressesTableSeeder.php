@@ -15,7 +15,7 @@ class AddressesTableSeeder extends Seeder
     {
         
 
-        \DB::table('addresses')->delete();
+        \DB::table('addresses')->truncate();
         
         \DB::table('addresses')->insert(array (
             0 => 
@@ -2912,6 +2912,141 @@ class AddressesTableSeeder extends Seeder
                 'addressable_type' => 'App\\Models\\Customer',
                 'created_at' => '2024-09-03 19:09:26',
                 'updated_at' => '2024-09-03 19:09:26',
+            ),
+            193 => 
+            array (
+                'id' => 194,
+                'address' => 'Nuñez Street',
+                'longitude' => '122.071592',
+                'latitude' => '6.924442',
+                'barangay_code' => '097332099',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 168,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 11:13:52',
+                'updated_at' => '2024-09-05 11:13:52',
+            ),
+            194 => 
+            array (
+                'id' => 195,
+                'address' => 'Governor Camins Avenue',
+                'longitude' => '122.076314',
+                'latitude' => '6.920991',
+                'barangay_code' => '097332063',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 169,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 11:17:15',
+                'updated_at' => '2024-09-05 11:17:15',
+            ),
+            195 => 
+            array (
+                'id' => 196,
+                'address' => 'Bench Drive',
+                'longitude' => '122.154614',
+                'latitude' => '6.93346',
+                'barangay_code' => '097332001',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 170,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 11:37:31',
+                'updated_at' => '2024-09-05 11:37:31',
+            ),
+            196 => 
+            array (
+                'id' => 197,
+                'address' => 'Polanco',
+                'longitude' => '123.388405',
+                'latitude' => '8.560208',
+                'barangay_code' => '097202001',
+                'municipality_code' => '097202000',
+                'province_code' => '097200000',
+                'region_code' => '090000000',
+                'addressable_id' => 171,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 13:34:02',
+                'updated_at' => '2024-09-05 13:34:02',
+            ),
+            197 => 
+            array (
+                'id' => 198,
+                'address' => 'IBT Tambulig',
+                'longitude' => '123.535956',
+                'latitude' => '8.06562',
+                'barangay_code' => '097328013',
+                'municipality_code' => '097328000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 172,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 15:42:02',
+                'updated_at' => '2024-09-05 15:42:02',
+            ),
+            198 => 
+            array (
+                'id' => 199,
+                'address' => 'Gregorio Drive',
+                'longitude' => '122.085918',
+                'latitude' => '6.928318',
+                'barangay_code' => '097332031',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 173,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 15:44:03',
+                'updated_at' => '2024-09-05 15:44:03',
+            ),
+            199 => 
+            array (
+                'id' => 200,
+                'address' => 'Crossing',
+                'longitude' => '122.694294',
+                'latitude' => '7.798733',
+                'barangay_code' => '098309014',
+                'municipality_code' => '098309000',
+                'province_code' => '098300000',
+                'region_code' => '090000000',
+                'addressable_id' => 174,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-05 15:45:59',
+                'updated_at' => '2024-09-05 15:45:59',
+            ),
+            200 => 
+            array (
+                'id' => 201,
+                'address' => 'Purok Santan',
+                'longitude' => '122.468575',
+                'latitude' => '7.653729',
+                'barangay_code' => '098312021',
+                'municipality_code' => '098312000',
+                'province_code' => '098300000',
+                'region_code' => '090000000',
+                'addressable_id' => 175,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-06 10:01:30',
+                'updated_at' => '2024-09-06 10:01:30',
+            ),
+            201 => 
+            array (
+                'id' => 202,
+                'address' => 'Lumiyap',
+                'longitude' => '122.102811',
+                'latitude' => '6.945886',
+                'barangay_code' => '097332026',
+                'municipality_code' => '097332000',
+                'province_code' => '097300000',
+                'region_code' => '090000000',
+                'addressable_id' => 176,
+                'addressable_type' => 'App\\Models\\Customer',
+                'created_at' => '2024-09-06 16:00:56',
+                'updated_at' => '2024-09-06 16:00:56',
             ),
         ));
 

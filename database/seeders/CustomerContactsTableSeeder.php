@@ -15,7 +15,7 @@ class CustomerContactsTableSeeder extends Seeder
     {
         
 
-        \DB::table('customer_contacts')->delete();
+        \DB::table('customer_contacts')->truncate();
         
         \DB::table('customer_contacts')->insert(array (
             0 => 
@@ -1502,6 +1502,87 @@ class CustomerContactsTableSeeder extends Seeder
                 'customer_id' => 167,
                 'created_at' => '2024-09-03 19:09:26',
                 'updated_at' => '2024-09-03 19:09:26',
+            ),
+            165 => 
+            array (
+                'id' => 166,
+                'email' => 'eyJpdiI6InNlYTVnTmRBQmFvdThpek5hSXhpMUE9PSIsInZhbHVlIjoiWjgzSG9PNHZ5dEZBL3R5S1hTMnVMMzROTVdWOUNZNFhHOEw4RDNuV0V3OD0iLCJtYWMiOiI3ODI0MjQ0YzM4OWFjM2ViNGEzMThlZjdjZGJiMjg5Yzg0YjE5OGNjNjUzMzMzN2ZjMWE4N2NmMDk3MjEyNTMyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IlV0c1BLeHFqMTNjMUttRW1waDZtUnc9PSIsInZhbHVlIjoiUUpVandBbTlmS2NGZEt0ZXlHd2pYUT09IiwibWFjIjoiNDg1MDRkOWZhY2Q2NGJhNTBmZGM3NzJlYjY0YjBmYTFmNjUxZjdiYjM3MGNmNzczMzkwMzg2ODg2ZjVhNmI5NCIsInRhZyI6IiJ9',
+                'customer_id' => 168,
+                'created_at' => '2024-09-05 11:13:52',
+                'updated_at' => '2024-09-05 11:13:52',
+            ),
+            166 => 
+            array (
+                'id' => 167,
+                'email' => 'eyJpdiI6Im12ZktsbzBtajlkaVU3VXdnN3JMbFE9PSIsInZhbHVlIjoiZHpNY1RQWDhKL2RvdXJFZndJT1pZUkZ1bEJWZ01hREY5Ymd0cjFvei9GOD0iLCJtYWMiOiI5YzIwMTAzZTU2MDQwY2VhNDA1YmUyMzQ2ZmM3MzgyZWJmODQyYTE3NzFlNjI5N2M4MWFlMGM4MGU5YTQzM2I5IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IlFzcmRYdkdJUi9wL0hhNCt3Sk9PTWc9PSIsInZhbHVlIjoiM1dYK1RyRlZaMUtrL1ZEcUlHb0Rhdz09IiwibWFjIjoiOWY2MWZlMTBkZTJkNGYzNTRhYmZjNWQ1NzlmMGM3MTk3OTdjZWY3NTY1ZGFlNmRhNjFjMTRkNTk3YzAyMzUwNSIsInRhZyI6IiJ9',
+                'customer_id' => 169,
+                'created_at' => '2024-09-05 11:17:15',
+                'updated_at' => '2024-09-05 11:17:15',
+            ),
+            167 => 
+            array (
+                'id' => 168,
+                'email' => 'eyJpdiI6IkJ0akFNalV1SFprWWFpb1FQZjlLL1E9PSIsInZhbHVlIjoiZjQ5cU1PZUFxV1hxSDNRcVV1M0pDZjN3VURYa29zRFNMQkt4ZkJxcTNYOD0iLCJtYWMiOiJlMDU0YjhiNzJhZGVlOTcwNDc2YmNiNjdlNGI2OGZkOTQyZjhmYmFkOGJiMzA3ZmMwY2EzMjQxMzZmZWVlZTY1IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IlNlSFRKU2tJVmpuSlBxeFR3OXJBU0E9PSIsInZhbHVlIjoiU252SjBqTW14NkJWU0xGN3hzZjB5UT09IiwibWFjIjoiNmY2YzA4OGUyMDMzMWQ2ODFmOWJjODAyNTdlMGFhYjFiMGNlNjAyNTQzYmE4ZWM2OTRkZTlhODZhMWI1YmM3MiIsInRhZyI6IiJ9',
+                'customer_id' => 170,
+                'created_at' => '2024-09-05 11:37:31',
+                'updated_at' => '2024-09-05 11:37:31',
+            ),
+            168 => 
+            array (
+                'id' => 169,
+                'email' => 'eyJpdiI6IlBIYnJCbEdmV3BWVHBpeEFmZit6aXc9PSIsInZhbHVlIjoiK2hJUkNZSTJwUGZoWVpaenV0STF3UzluU1VkaVgyd0FBZEdBU1o1aFdkMD0iLCJtYWMiOiI5MDZhNzY0YTYxNDIyNDdkZjU2NDk3YzA3Mjk3ZDczYTdjMjQ5OGVmZjMwZTg5YzAxZGI4NDYzMWVmN2QxYmVjIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6Im9JSmNKN1loR3JVcVllTUVoSXU3YVE9PSIsInZhbHVlIjoiOFZqQkY3Ui9VWHBFUk9ZRWFHK0U4UT09IiwibWFjIjoiMzgyMmYyYzgwOWRiNzg2MzU1ZTgzMTNkZDlkZTY0NTM3MTgwZmEwOTAwMjZiZjcxMDE5MGJkMmQzYzhjMmYzYiIsInRhZyI6IiJ9',
+                'customer_id' => 171,
+                'created_at' => '2024-09-05 13:34:02',
+                'updated_at' => '2024-09-05 13:34:02',
+            ),
+            169 => 
+            array (
+                'id' => 170,
+                'email' => 'eyJpdiI6IlRkMTVsN3RPdUEyR3h4bDJ2NlduR2c9PSIsInZhbHVlIjoic2wwZFZaU3BTUmFDUE9pZm5IUWhWNnp3NHhYVW9ZeTlZMmorU3RFQkRnZz0iLCJtYWMiOiIxZDVlOTMzNjRiMTIxNTU0MGQxYjMzNjdkNTQ0NTg0ODg5NWJjMGIxYjI5NzA3NjlkNjFmYzZhOGU0Y2ViNmUyIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6Ik53K0ZjVWpzRkFERVQ3N292NGNZRWc9PSIsInZhbHVlIjoicmplZXFaYWp1eWNUZ0tJOGxjVG54QT09IiwibWFjIjoiZTc4Y2E5NmVhNGVlZGYzNDZlZmZmNjAwMDUyMzJhZWRmYjcwMzljNWRmOWM5MGI5NzRmNGE1NzEzYTRkN2RmZiIsInRhZyI6IiJ9',
+                'customer_id' => 172,
+                'created_at' => '2024-09-05 15:42:02',
+                'updated_at' => '2024-09-05 15:42:02',
+            ),
+            170 => 
+            array (
+                'id' => 171,
+                'email' => 'eyJpdiI6ImZrMTRveEduQ1ZnT3RXd3loRGxuVGc9PSIsInZhbHVlIjoiM3BTTC9BMWtrd28rSTZCMGNSdjZaQT09IiwibWFjIjoiNDBlNDcwZGYyZTAyYmI0NzMyODM5YTQ4NzNjNzAzY2IyZGJjYjMzMjI2MzQ2YTVlMDQ5NWI3MzVkYTc3ZjI4ZiIsInRhZyI6IiJ9',
+                'contact_no' => 'eyJpdiI6Ik9Wa1RkTE9URklEMmxJVlVvNU9wNWc9PSIsInZhbHVlIjoibDRsVHJWYzMxYzlyajBlNVZ2elNrdz09IiwibWFjIjoiNDAyODhkOTIwZmNkOThmZmNiMDE4MzdiMzA4NGRkNDNkMWRkNmRhODRmZTRmOGQxMzRmMjA5YmY3ZTRlNTliNyIsInRhZyI6IiJ9',
+                'customer_id' => 173,
+                'created_at' => '2024-09-05 15:44:03',
+                'updated_at' => '2024-09-05 15:44:03',
+            ),
+            171 => 
+            array (
+                'id' => 172,
+                'email' => 'eyJpdiI6IndOTDkxRVpOMWEvVkFrSFRza25tYUE9PSIsInZhbHVlIjoiUXlvWnRvRWJJQklseTY1T0NhK2ttRW5QaFVVdHdtM0pseDZkdkRwank3WT0iLCJtYWMiOiJlOTUyYmUyMzRjNmNjYzAwZTA3Njk2M2QyN2U1YmFhOTMwMDllNzFhMzFlMDc5NTEwOGU4NWNhNjk0ZDFkNDEwIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6Ik0yS1M5SkprbEU5YmRFVzZKQzQ1TFE9PSIsInZhbHVlIjoibENKSUo1YnpuZTZBakVIdGVLNzJLUT09IiwibWFjIjoiMjI3OGYyM2MxM2M3MmVmNTViZjhkYjlmMDk5MDdmOTQ2YjdlZjkxNzZiOGMxYTIzYzMwMjA5ZmM1YmM3M2FmNiIsInRhZyI6IiJ9',
+                'customer_id' => 174,
+                'created_at' => '2024-09-05 15:45:59',
+                'updated_at' => '2024-09-05 15:45:59',
+            ),
+            172 => 
+            array (
+                'id' => 173,
+                'email' => 'eyJpdiI6IjIxUjNpVFJzUzhaLzBiT2xHWEp6Qmc9PSIsInZhbHVlIjoib3ZjSmVhWDNPOFFDUDJRdWg4MFRNZmJ1Ni9aazZONithMEdCQVpUczdVbz0iLCJtYWMiOiIwYmYxZjhmN2EyYWZiZjNjNGE1NWQzMmU3YjU5ZDU2MjU1NzE3NGRkMjVjMDFjNjljZDcyN2FmZTJlMGFjZDM2IiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IjJTRHQ3bVBJczMwSExtTWRWN29sYkE9PSIsInZhbHVlIjoiRThFZUZld2lsNldGTHMzSG8yK3FzZz09IiwibWFjIjoiZmY4ZmY1MDY3YWM1NDc4NmUyNTRhOTZmNjlmNTZhMWM4ZjU1MmFlZDg4NTY2MDBjN2E5YzkzNGJlYTI1YjRkYiIsInRhZyI6IiJ9',
+                'customer_id' => 175,
+                'created_at' => '2024-09-06 10:01:30',
+                'updated_at' => '2024-09-06 10:01:30',
+            ),
+            173 => 
+            array (
+                'id' => 174,
+                'email' => 'eyJpdiI6IjNnKzR1Rm54cy9IUEIwdTlhQVhMRUE9PSIsInZhbHVlIjoiVzR4Wkp4TVRuVkR2bE56SVFzOG9UcndiZEhaTU9rKzR3amZScHk2d3NZMD0iLCJtYWMiOiI5Y2Y1MjM2OGExYTI0MTMwOWUyYjBhMTNkM2RkZDdlMDhlMjA3NmNjNTU4MzhlNTI3ODgzOWU5ODg3YzNhZDJlIiwidGFnIjoiIn0=',
+                'contact_no' => 'eyJpdiI6IkFOMVYrOGoraW1EUlhmbHc3OUVCcGc9PSIsInZhbHVlIjoiaWpVM0pyV3VTYzZwbHN4NTQvOFMvQT09IiwibWFjIjoiYzI2ODFhNGQ3ZDVjMDc1ZThiZGI2M2Q3MmY5MDY5NjRhMzRhMjhkZTc3ZDg3NTk3YTI4YzRhZmEzOTdhM2M1MCIsInRhZyI6IiJ9',
+                'customer_id' => 176,
+                'created_at' => '2024-09-06 16:00:56',
+                'updated_at' => '2024-09-06 16:00:56',
             ),
         ));
 
