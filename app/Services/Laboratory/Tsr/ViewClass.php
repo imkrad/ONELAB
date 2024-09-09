@@ -195,7 +195,7 @@ class ViewClass
         $array = [
             'qrCodeImage' => $base64Image,
             'sample_code' => $code,
-            'sample_name' => $sample->name,
+            'sample_name' => 'test measure',
             'due_at' => $sample->tsr->due_at,
             'created_at' => $sample->tsr->created_at,
             'testnames' => $testnames

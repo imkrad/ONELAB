@@ -18,18 +18,21 @@
                 top: -30; /* 4 cm from the top */
                 left: 5; /* 7 cm from the left */
                 font-size: 10pt; /* Adjust font size as needed */
+                width: 180px;
             }
             .received {
                 position: absolute;
                 top: -17; /* 4 cm from the top */
                 left: 5; /* 7 cm from the left */
                 font-size: 7pt; /* Adjust font size as needed */
+                width: 180px;
             }
             .due {
                 position: absolute;
                 top: -9; /* 4 cm from the top */
                 left: 5; /* 7 cm from the left */
                 font-size: 7pt; /* Adjust font size as needed */
+                width: 180px;
             }
             .names {
                 position: absolute;
