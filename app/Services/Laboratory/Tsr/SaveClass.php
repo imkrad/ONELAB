@@ -228,27 +228,53 @@ class SaveClass
         ->orderBy('created_at','ASC')
         ->get();
 
+        $samples = TsrSample::with('analyses.testservice.method.method','analyses.testservice.testname')->whereHas('tsr',function ($query) use ($id) {
+            $query->where('id',$id);
+        })->get();
+
         $groupedData = [];
         foreach ($samples as $row) {
-            $sampleCode = $row['sample']['code'];
-            $sampleName = $row['sample']['name'];
-            $testName = $row['testservice']['testname']['name'];
-            $testMethod = $row['testservice']['method']['method']['name'];
+            $sampleCode = $row['code'];
+            $sampleName = $row['name'];
             
-            $key = $sampleCode . "_" . $testName . "_" . $testMethod;
-            
-            if (!isset($groupedData[$key])) {
-                $groupedData[$key] = [
-                    "samplecode" => $sampleCode,
-                    "samplename" => $sampleName,
-                    "testname" => $testName,
-                    "method" => $testMethod,
-                    "count" => 0,
-                    "fee" => $row['fee']
-                ];
+            foreach($row['analyses'] as $index=>$analysis){
+                $testName = $analysis['testservice']['testname']['name'];
+                $testMethod = $analysis['testservice']['method']['method']['name'];
+                $key = $sampleCode . "_" . $testName . "_" . $testMethod;
+                
+                if (!isset($groupedData[$key])) {
+                    $groupedData[$key] = [
+                        "samplecode" => ($index == 0) ? $sampleCode : '',
+                        "samplename" => ($index == 0) ? $sampleName : '-',
+                        "testname" => $testName,
+                        "method" => $testMethod,
+                        "count" => 0,
+                        "fee" => $analysis['fee']
+                    ];
+                }
+                $groupedData[$key]["count"] += 1;
             }
-            $groupedData[$key]["count"] += 1;
         }
+        // foreach ($samples as $row) {
+        //     $sampleCode = $row['sample']['code'];
+        //     $sampleName = $row['sample']['name'];
+        //     $testName = $row['testservice']['testname']['name'];
+        //     $testMethod = $row['testservice']['method']['method']['name'];
+            
+        //     $key = $sampleCode . "_" . $testName . "_" . $testMethod;
+            
+        //     if (!isset($groupedData[$key])) {
+        //         $groupedData[$key] = [
+        //             "samplecode" => $sampleCode,
+        //             "samplename" => $sampleName,
+        //             "testname" => $testName,
+        //             "method" => $testMethod,
+        //             "count" => 0,
+        //             "fee" => $row['fee']
+        //         ];
+        //     }
+        //     $groupedData[$key]["count"] += 1;
+        // }
         $samples = array_values($groupedData);
 
         $descs = TsrSample::query()
