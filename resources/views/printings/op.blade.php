@@ -167,8 +167,8 @@ label {
             <tfoot style="text-align: center; font-weight: bold; background-color:#c8c8c8; font-size: 11px;">
                 <tr>
                     <td></td>
-                    <td style="font-size: 9px;">TOTAL</td>
-                    <td style="font-size: 10px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}}</td>
+                    <td style="font-size: 11px;">TOTAL</td>
+                    <td style="font-size: 11px;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($total,'₱ ')}}</td>
                 </tr>
             </tfoot>
         </table>

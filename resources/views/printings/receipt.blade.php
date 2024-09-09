@@ -57,13 +57,13 @@
                 position: absolute;
                 top: 348; /* 4 cm from the top */
                 left: -6; /* 7 cm from the left */
-                font-size: 9pt; /* Adjust font size as needed */
+                font-size: 10pt; /* Adjust font size as needed */
             }
             .word2 {
                 position: absolute;
                 top: 333; /* 4 cm from the top */
                 left: -5; /* 7 cm from the left */
-                font-size: 9pt; /* Adjust font size as needed */
+                font-size: 10pt; /* Adjust font size as needed */
             }
             .items {
                 position: absolute;
@@ -79,7 +79,7 @@
         <div class="payor">{{$customer}}</div>
         <div class="total">{{trim($total,'₱ ')}}</div>
         <div class="items">
-            <table style="border: hidden; font-size: 11px; margin-top: 15px;">
+            <table style="border: hidden; font-size: 12px; margin-top: 15px;">
                 <tbody>
                 @foreach($items as $index=>$item)
                     <tr>
