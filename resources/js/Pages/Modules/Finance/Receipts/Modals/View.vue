@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-lg-3 col-6">
                     <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Status</p>
-                    <h5 class="fs-12 mb-0">tEST</h5>
+                    <h5 class="fs-12 mb-0">{{selected.status.name}}</h5>
                 </div>
             </div>
         </div>
