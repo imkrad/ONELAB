@@ -67,6 +67,9 @@
                                     <b-button @click="openView(list)" variant="soft-primary" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                         <i class="ri-eye-fill align-bottom"></i>
                                     </b-button>
+                                    <b-button v-if="selected.status.name != 'Pending'" @click="openQr(list)" variant="soft-success" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                        <i class="ri-qr-code-fill align-bottom"></i>
+                                    </b-button>
                                     <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
                                         <i class="ri-delete-bin-fill align-bottom"></i>
                                     </b-button>
@@ -218,8 +221,10 @@
     <Certificate ref="certificate"/>
     <Analyst ref="analyst"/>
     <Additional ref="additional"/>
+    <QR ref="qr"/>
 </template>
 <script>
+import QR from '../Modals/QR.vue';
 import simplebar from "simplebar-vue";
 import Delete from '../Modals/Delete.vue';
 import Sample from '../Modals/Sample.vue';
@@ -229,7 +234,7 @@ import Analyst from '../Modals/Analyst.vue';
 import Certificate from '../Modals/Certificate.vue';
 import Additional from '../Modals/Additional.vue';
 export default {
-    components: { simplebar, Delete, Sample, Service, Analysis, Certificate, Analyst, Additional },
+    components: { simplebar, Delete, Sample, Service, Analysis, Certificate, Analyst, Additional, QR },
     props:['selected','services','analyses'],
     data(){
         return {
@@ -289,6 +294,9 @@ export default {
         },
         openService(){
             this.$refs.service.show(this.selected.id);
+        },
+        openQr(data){
+            this.$refs.qr.show(data,this.selected.created_at,this.selected.due_at);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');
