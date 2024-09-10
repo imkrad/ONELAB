@@ -35,7 +35,7 @@
                                         <div class="mb-3">
                                             <InputLabel for="password" value="Password" />
                                             <div class="position-relative auth-pass-inputgroup mb-3">
-                                                <input :type="togglePassword ? 'text' : 'password'" class="form-control pe-5" placeholder="Enter password" id="password-input" v-model="form.password" autocomplete="password" required :class="{ 'is-invalid': form.errors.password }">
+                                                <input :type="togglePassword ? 'text' : 'password'" class="form-control pe-5" placeholder="Enter password" id="password-input" v-model="form.password" autocomplete="password" required :class="{ 'is-invalid': form.errors.password }"/>
                                                 <BButton variant="link" class="position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon" @click="togglePassword = !togglePassword">
                                                     <i class="ri-eye-fill align-middle"></i>
                                                 </BButton>
@@ -63,7 +63,7 @@
                                 </div>
                             </BCardBody>
                         </BCard>
-                        <div class="mt-4 text-center" style="cursor: pointer;"><p @click="openRegister" class="mb-0">Don't have an account ? <span class="fw-semibold text-primary text-decoration-underline"> Signup </span></p></div>
+                        <div class="mt-4 text-center" style="cursor: pointer;"><p class="mb-0">Don't have an account ? <span class="fw-semibold text-primary text-decoration-underline"> Signup </span></p></div>
 
                     </BCol>
                 </BRow>
