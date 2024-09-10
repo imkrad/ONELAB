@@ -120,22 +120,24 @@ class SaveClass
 
     public function confirm($request){
         $data = Tsr::with('payment')->where('id',$request->id)->first();
-        $data->status_id = (in_array($data->payment->discount_id, [5, 6, 7])) ? 3 : $request->status_id;
-        $data->due_at = $request->due_at;
-        $data->code = $this->generateCode($data);
-        if($data->save()){
-            $samples = TsrSample::where('tsr_id',$request->id)->get();
-            foreach($samples as $sample){
-                $s = TsrSample::findOrFail($sample->id);
-                $s->code = $this->generateSampleCode($data);
-                $s->save();
-            }
-            $this->report($request->id);
-            
-            if($request->is_government){
-                $data->status_id = 3;
-                $data->save();
-                $data->payment()->update(['status_id' => 18]);
+        if(is_null($data->code)){
+            $data->status_id = (in_array($data->payment->discount_id, [5, 6, 7])) ? 3 : $request->status_id;
+            $data->due_at = $request->due_at;
+            $data->code = $this->generateCode($data);
+            if($data->save()){
+                $samples = TsrSample::where('tsr_id',$request->id)->get();
+                foreach($samples as $sample){
+                    $s = TsrSample::findOrFail($sample->id);
+                    $s->code = $this->generateSampleCode($data);
+                    $s->save();
+                }
+                $this->report($request->id);
+                
+                if($request->is_government){
+                    $data->status_id = 3;
+                    $data->save();
+                    $data->payment()->update(['status_id' => 18]);
+                }
             }
         }
 
