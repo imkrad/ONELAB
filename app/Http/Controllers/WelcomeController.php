@@ -214,24 +214,25 @@ class WelcomeController extends Controller
     }
 
     public function new(){
-        $url = 'https://api.dost9.ph/sms/messages';
+        return inertia('Auth/New');
+        // $url = 'https://api.dost9.ph/sms/messages';
 
-        $recipient = '09171531652';
-        $title = 'Notification';
-        $message = 'This is a test message.';
+        // $recipient = '09171531652';
+        // $title = 'Notification';
+        // $message = 'This is a test message.';
         
-        $response = Http::post($url, [
-            'hash' => 's', 
-            'sender' => 'a', 
-            'recipient' => $recipient,
-            'title' => $title,
-            'message' => $message,
-            'via' => 'v', 
-            'module' => 'm', 
-            'action' => 'a'
-        ]);
+        // $response = Http::post($url, [
+        //     'hash' => 's', 
+        //     'sender' => 'a', 
+        //     'recipient' => $recipient,
+        //     'title' => $title,
+        //     'message' => $message,
+        //     'via' => 'v', 
+        //     'module' => 'm', 
+        //     'action' => 'a'
+        // ]);
     
-        return $response->json();
+        // return $response->json();
     }
 
 
