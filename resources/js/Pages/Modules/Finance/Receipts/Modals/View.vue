@@ -56,6 +56,29 @@
                 </tr>
             </tbody>
         </table>
+        <h6 v-if="selected.detail" class="mb-n2 mt-4 text-muted fw-semibold">Bank Details :</h6>
+        <hr v-if="selected.detail" class="text-muted"/>
+        <div v-if="selected.detail" class="card-body text-center">
+            <div class="row g-3">
+                <div class="col-lg-3 col-6">
+                    <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Bank Name</p>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.detail.bank}}</span></h5>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Account</p>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.detail.number}}</span></h5>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Amount</p>
+                     <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.detail.amount}}</span></h5>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Date</p>
+                    <h5 class="fs-12 mb-0">{{selected.detail.date_at}}</h5>
+                </div>
+            </div>
+        </div>
+        <hr v-if="selected.detail" class="text-muted"/>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Close</b-button>
             <b-button v-if="selected.status.name == 'Pending'" @click="openOr" variant="primary" :disabled="form.processing" block>Create Receipt</b-button>

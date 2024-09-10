@@ -25,6 +25,7 @@ class ReceiptResource extends JsonResource
             'items' => $this->op->items,
             'status' => $this->op->status,
             'payment' => $this->op->payment->name,
+            'detail' => $this->detail,
             'user' => $this->createdby->profile->firstname.' '.$this->createdby->profile->lastname,
             'date' => $this->created_at
         ];

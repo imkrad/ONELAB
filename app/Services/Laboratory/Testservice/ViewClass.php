@@ -40,6 +40,7 @@ class ViewClass
             ->with('fees')
             ->with('sampletype','testname','laboratory.member','laboratory.address.region','type')
             ->with('method.method','method.reference')
+            ->where('is_active',1)
             ->orderBy('created_at','DESC')
             ->paginate($request->count)
         );
@@ -66,6 +67,7 @@ class ViewClass
       
         $data = DefaultResource::collection(
             TestserviceMethod::query()
+            ->where('is_active',1)
             ->withWhereHas('method', function ($query) use ($keyword){
                 $query->select('id','name','short');
                 $query->when($keyword, function ($query, $keyword) {
@@ -101,6 +103,7 @@ class ViewClass
             ->with(['testname' => function ($query) {
                 $query->orderBy('name', 'asc');
             }])
+            ->where('is_active',1)
             ->get()
         );
         return $data;

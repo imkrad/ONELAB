@@ -116,7 +116,7 @@ export default {
             this.fetch();
         }, 300),
         fetch(page_url){
-            page_url = page_url || '/quotations2';
+            page_url = page_url || '/quotations';
             axios.get(page_url,{
                 params : {
                     keyword: this.filter.keyword,

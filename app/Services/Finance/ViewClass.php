@@ -98,6 +98,7 @@ class ViewClass
             ->with('op.items.itemable')
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
             ->with('op.payorable','op.collection','op.payment')
+            ->with('detail')
             ->when($this->laboratory, function ($query, $lab) {
                 $query->where('laboratory_id',$lab);
             })

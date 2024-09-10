@@ -203,7 +203,6 @@ class ViewClass
         $width = 6.20 * 28.35; 
         $height = 6.00 * 28.35;
         $pdf = \PDF::loadView('printings.sampleqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
-       
 
         return $pdf->stream('sampleqrcode.pdf');
     }
