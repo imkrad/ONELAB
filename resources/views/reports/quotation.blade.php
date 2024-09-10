@@ -184,7 +184,7 @@ border-top: none !important;
                             <li>Payment Method: Cheque payment should be paid to DOST IX;</li>
                             <li>DOST IX Trust Fund 1952101052 Landbank of the Philippines.</li>
                             <li>Cash payment should be made directly to the cashier or deposit to DOST IX account.</li>
-                            <li>This quotation is valid only until <b>April 25, 2024</b>.</li>
+                            <li>This quotation is valid only until </li>
                         </ul>
                     </td>
                 </tr>
