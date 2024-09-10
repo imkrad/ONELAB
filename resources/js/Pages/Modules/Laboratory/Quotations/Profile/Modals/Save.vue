@@ -7,7 +7,7 @@
                 <!-- <p class="text-muted mb-4">Please double-check all data to avoid cancellation or updating of the data.</p> -->
                 <div class="customform">
                     <BCol lg="12" class="mt-2">
-                        <InputLabel for="due" value="Report Due" :message="form.errors.due_at"/>
+                        <InputLabel for="due" value="Valid Until" :message="form.errors.due_at"/>
                         <TextInput v-model="form.due_at" type="date" class="form-control" autofocus placeholder="Please enter email" autocomplete="email" required @input="handleInput('due_at')" :light="true"/>
                     </BCol>
                     <BCol lg="12" class="mt-2">

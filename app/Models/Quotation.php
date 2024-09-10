@@ -74,6 +74,11 @@ class Quotation extends Model
         return date('M d, Y g:i a', strtotime($value));
     }
 
+    public function getDueAtAttribute($value)
+    {
+        return date('F d, Y', strtotime($value));
+    }
+
     public function getSubtotalAttribute($value)
     {
         return '₱'.number_format($value,2,'.',',');

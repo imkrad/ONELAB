@@ -38,7 +38,7 @@
                                     <i class="ri-printer-fill"></i>
                                 </b-button>
                                 <Link href="/quotations">
-                                    <b-button @click="openSave(selected.id)" variant="soft-danger">
+                                    <b-button variant="soft-danger">
                                         <i class="ri-close-circle-fill align-bottom"></i> 
                                     </b-button>
                                 </Link>
