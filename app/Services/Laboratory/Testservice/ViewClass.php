@@ -87,6 +87,7 @@ class ViewClass
     }
 
     public function testservices($request){
+        $keyword = $request->keyword;
         $data = TestserviceResource::collection(
             Testservice::query()
             ->when($this->role != 'Administrator', function ($query) {
@@ -100,9 +101,12 @@ class ViewClass
             })
             ->with('sampletype','laboratory.member','laboratory.address.region','type')
             ->with('method.method','method.reference')
-            ->with(['testname' => function ($query) {
-                $query->orderBy('name', 'asc');
-            }])
+            // ->with('testname')
+            ->withWhereHas('testname', function ($query) use ($keyword){
+                $query->when($keyword, function ($query, $keyword) {
+                    $query->where('name', 'LIKE', "%{$keyword}%")->orWhere('short', 'LIKE', "%{$keyword}%");
+                });
+            })
             ->where('is_active',1)
             ->get()
         );

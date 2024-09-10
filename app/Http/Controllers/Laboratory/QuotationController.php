@@ -93,7 +93,7 @@ class QuotationController extends Controller
     }
 
     public function show($id){
-        return inertia('Modules/Laboratory/Quotations/Profile/Index',[
+        return inertia('Modules/Laboratory/Quotations/Profile2/Index',[
             'quotation' => $this->view->view($id),
             'analyses' => $this->view->analyses($id),
             'services' => $this->dropdown->services()

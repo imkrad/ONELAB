@@ -30,7 +30,7 @@ class QuotationResource extends JsonResource
             'conforme_no' => $this->conforme->contact_no,
             'conforme_id' => $this->conforme->id, 
             'received' => $this->createdby->profile->firstname.' '.$this->createdby->profile->lastname,
-            'samples' => $this->samples,
+            'samples' => SampleResource::collection($this->samples),
             'due_at' => $this->due_at,
             'updated_at' => $this->updated_at,
             'created_at' => $this->created_at,

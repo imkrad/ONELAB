@@ -140,7 +140,6 @@ class SaveClass
             'laboratory_id' => $request->laboratory_id,
             'laboratory_type' => $request->laboratory_type,
             'mode' => json_encode($request->mode),
-            'due_at' => $request->due_at,
             'status_id' => 1,
             'received_by' => \Auth::user()->id
         ]);
