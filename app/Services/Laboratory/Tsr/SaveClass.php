@@ -23,6 +23,10 @@ class SaveClass
         $this->configuration = Configuration::with('laboratory.address')->where('laboratory_id',$this->laboratory)->first();
     }
 
+    public function updateReport(){
+        $this->report(209);
+    }
+
     public function tsr($request){
         $data = Tsr::create(array_merge($request->all(),[
             'status_id' => 1,

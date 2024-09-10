@@ -37,6 +37,9 @@ class TsrController extends Controller
             case 'tsrs':
                 return $this->view->tsrs($request);
             break;
+            case 'updatereport':
+                return $this->save->updateReport($request);
+            break;
             default :
             return inertia('Modules/Laboratory/Tsr/Index',[
                 'dropdowns' => [

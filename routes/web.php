@@ -17,6 +17,7 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
     Route::get('/report', [App\Http\Controllers\Laboratory\TsrController::class, 'report']);
     Route::resource('/customers', App\Http\Controllers\Laboratory\CustomerController::class);
     Route::resource('/quotations', App\Http\Controllers\Laboratory\QuotationController::class);
+    Route::resource('/quotations2', App\Http\Controllers\Laboratory\Quotation2Controller::class);
     Route::resource('/requests', App\Http\Controllers\Laboratory\TsrController::class);
     Route::resource('/samples', App\Http\Controllers\Laboratory\SampleController::class);
     Route::resource('/analyses', App\Http\Controllers\Laboratory\AnalysisController::class);
