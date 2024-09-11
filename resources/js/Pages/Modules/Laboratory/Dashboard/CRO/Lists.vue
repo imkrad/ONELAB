@@ -66,7 +66,6 @@
                                 <i class="ri-eye-fill align-bottom"></i>
                             </b-button>
                         </a>
-                        
                     </td>
                 </tr>
             </tbody>

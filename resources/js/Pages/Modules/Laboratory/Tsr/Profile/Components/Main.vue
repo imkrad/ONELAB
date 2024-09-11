@@ -241,7 +241,7 @@ export default {
             currentUrl: window.location.origin,
             samples : [],
             sample: {},
-            showAnalyses: false,
+            showAnalyses: true,
             view: false,
             mark: false,
         }
