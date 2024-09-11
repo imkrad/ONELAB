@@ -70,6 +70,9 @@ class DashboardController extends Controller
                             ]
                         ]);
                     break;
+                    case 'Technical Manager':
+                        return inertia('Modules/Laboratory/Dashboard/TM/Index');
+                    break;
                 }
             }
         }
