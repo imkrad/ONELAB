@@ -214,8 +214,16 @@ class WelcomeController extends Controller
     }
 
     public function new(Request $request){
-        dd($request->ip());
-        // return inertia('Auth/New');
+        // $response = Http::get('https://api.ipify.org?format=json');
+    
+        // if ($response->successful()) {
+        //     $ipAddress = $response->json()['ip'];
+        //     return $ipAddress;
+        // }
+    
+        // return 'Unable to get public IP';
+        // dd($request->ip());
+        return inertia('Auth/New');
         // $url = 'https://api.dost9.ph/sms/messages';
 
         // $recipient = '09171531652';
