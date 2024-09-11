@@ -43,7 +43,8 @@ class ChatboxController extends Controller
         $hashids = new Hashids('krad',10);
         $id = $hashids->decode($request->id);
         $id = $id[0];
-        $data = ChatMessage::with('sender.profile')->where('receivable_id',$id)
+        $type = ($request->type == 'personnel') ? 'App\Models\ChatConversation' : 'App\Models\ListLaboratory';
+        $data = ChatMessage::with('sender.profile')->where('receivable_id',$id)->where('receivable_type',$type)
         ->orderBy('created_at','DESC')
         ->take(10)->get()->reverse();
         return ChatboxResource::collection($data);
