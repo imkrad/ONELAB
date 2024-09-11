@@ -66,7 +66,7 @@ class CustomerClass
         $query = Customer::query()->select('id','name','is_main','name_id','laboratory_id')->with('customer_name:id,name,has_branches');
         $query->where('laboratory_id', $this->laboratory);
         $query->withCount(['tsrs' => function ($query) use ($year,$month){
-            $query->where('status_id', 4);
+            $query->whereIn('status_id', [3,4]);
             ($year) ? $query->whereYear('created_at',$year) : '';
             ($month) ? $query->whereMonth('created_at',$month) : '';
         }])

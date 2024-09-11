@@ -20,33 +20,50 @@
                 <hr class="text-muted"/>
             </BCol>
             <BCol lg="12" class="mt-0" v-if="sampletype">
-                <b-col lg>
-                    <div class="input-group mb-1">
-                        <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                        <input type="text" v-model="searchTerm" @input="search" placeholder="Search Test Service" class="form-control" style="width: 35%;">
-                        <b-button type="button" variant="primary">
-                            {{countTestServices}} testservices selected
-                        </b-button>
-                    </div>
-                </b-col>
-                <div class="table-responsive mt-2">
-                    <table class="table table-nowrap align-middle mb-0">
+                <div class="table-responsive mt-0">
+                    <table class="table table-nowrap table-bordered align-middle mb-0">
                         <thead class="table-light">
                             <tr class="fs-11">
-                                <th style="width: 7%;"></th>
+                                <th style="width: 6%;"></th>
                                 <th style="width: 25%;" class="text-center">Testname</th>
-                                <th style="width: 53%;" class="text-center">Method</th>
+                                <th style="width: 48%;" class="text-center">Method</th>
                                 <th style="width: 15%;" class="text-center">Fee</th>
+                                <th style="width: 6%;"></th>
                             </tr>
                         </thead>
                     </table>
+                    <table class="table table-centered table-bordered table-nowrap  align-middle mb-0">
+                        <tbody v-if="checkedItems.length > 0">
+                            <tr v-for="(list,index) in checkedItems" v-bind:key="index" :class="(isItemChecked(list.id)) ? 'table-success' : (index == matchedRowIndex) ? 'table-warning' : ''" :id="'row-' + index">
+                                <td style="width: 6%;" class="text-center fs-10">{{index+1}}</td>
+                                <td style="width: 25%;" class="text-center fs-10">{{list.testname}}</td>
+                                <td style="width: 48%;" class="text-center fs-10">{{list.method}} <span v-if="list.method_short" class="text-muted">({{list.method_short}})</span></td>
+                                <td style="width: 15%;" class="text-center fs-10">{{list.fee}}</td>
+                                <td style="width: 6%;" class="text-center"> 
+                                    <b-button @click="openDeleteTest(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
+                                        <i class="ri-delete-bin-fill align-bottom"></i>
+                                    </b-button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody v-else>
+                            <tr><td colspan="3" class="text-muted text-center fs-10">No testnames selected</td></tr>
+                        </tbody>
+                    </table>
+                    <b-col lg class="mt-2 mb-2">
+                        <div class="input-group mb-1">
+                            <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
+                            <input type="text" v-model="filter.keyword" placeholder="Search Test Service" class="form-control" style="width: 35%;">
+                            <b-button type="button" @click="testservices = []" variant="primary">Clear</b-button>
+                        </div>
+                    </b-col>
                     <simplebar data-simplebar style="max-height: 200px">
                         <div>
                             <table class="table table-centered table-bordered table-nowrap mb-0">
                                 <tbody>
-                                    <tr v-for="(list,index) in testservices" v-bind:key="index" :class="(list.is_checked) ? 'table-success' : (index == matchedRowIndex) ? 'table-warning' : ''" :id="'row-' + index">
+                                    <tr v-for="(list,index) in sortedTestservices" v-bind:key="list.id" :class="(isItemChecked(list.id)) ? 'table-success' : (index == matchedRowIndex) ? 'table-warning' : ''" :id="'row-' + index">
                                         <td style="width: 7%;" class="text-center"> 
-                                            <input class="form-check-input me-1" type="checkbox" v-model="list.is_checked">
+                                            <input class="form-check-input me-1" type="checkbox" :checked="isItemChecked(list.id)" @change="toggleChecked(list,$event)">
                                         </td>
                                         <td style="width: 25%;" class="text-center fs-11">{{list.testname}}</td>
                                         <td style="width: 53%;" class="text-center fs-11">{{list.method}} <span v-if="list.method_short" class="text-muted">({{list.method_short}})</span></td>
@@ -83,18 +100,17 @@ export default {
                 fee: null,
                 lists: [],
                 samples: [],
-                option: 'save'
+                option: 'analyses'
             }),
             filter: {
                 keyword: null,
                 sampletype: null
             },
-            searchTerm: null,
-            matchedRowIndex: null,
             sampletypes: [],
             sampletype: null,
             testservices: [],
             selected: {},
+            checkedItems: [],
             type: null,
             showModal: false
         }
@@ -107,23 +123,63 @@ export default {
         totalFee(newTotalFee) {
             this.form.fee = newTotalFee;
             this.$refs.testing.emitValue(this.form.fee);
+        },
+        "filter.keyword"(newVal){
+            this.fetchTest();
         }
     },
     computed: {
         totalFee() {
-            const total = this.testservices.reduce((acc, item) => {
-                return item.is_checked ? acc + parseFloat(item.fee_num) : acc;
+            const total = this.checkedItems.reduce((acc, item) => {
+                return acc + parseFloat(item.fee_num);
             }, 0);
             return total.toFixed(2);
         },
-        countTestServices() {
-            return this.testservices.filter(item => item.is_checked).length;
+        sortedTestservices() {
+            return this.testservices.slice().sort((a, b) => {
+            if (a.name < b.name) return -1;
+            if (a.name > b.name) return 1;
+            return 0;
+            });
         },
-        checkedItems() {
-            return this.testservices.filter(item => item.is_checked);
-        }
     },
     methods: { 
+        toggleChecked(item, event) {
+            const isChecked = event.target.checked;
+            const itemId = item.id;
+
+            if (isChecked) {
+                // Add item to checkedItems if not already present
+                if (!this.checkedItems.some(checkedItem => checkedItem.id === itemId)) {
+                    this.checkedItems.push(item);
+                    // Remove item from testservices
+                    const testIndex = this.testservices.findIndex(test => test.id === itemId);
+                    if (testIndex !== -1) {
+                        this.testservices.splice(testIndex, 1);
+                    }
+                }
+            } else {
+                // Remove item from checkedItems if present
+                const checkedIndex = this.checkedItems.findIndex(checkedItem => checkedItem.id === itemId);
+                if (checkedIndex !== -1) {
+                    this.checkedItems.splice(checkedIndex, 1);
+                    // Restore item to testservices if it was unchecked
+                    const itemToRestore = this.checkedItems.find(item => item.id === itemId);
+                    if (itemToRestore) {
+                        this.testservices.push(itemToRestore);
+                    }
+                }
+            }
+        },
+        isItemChecked(item) {
+            return this.checkedItems.some(checkedItem => checkedItem.id === item);
+        },
+        openDeleteTest(data){
+            const index = this.checkedItems.findIndex(test => test.id === data.id);
+            if (index !== -1) {
+                this.checkedItems.splice(index, 1);
+            }
+        },
         show(data,laboratory){
             this.testservices = [];
             this.form.samples = data
@@ -131,9 +187,6 @@ export default {
             this.form.laboratory_type = laboratory;
             this.showModal = true;
         }, 
-        checkSearchSample: _.debounce(function(string) {
-            (string) ? this.fetchSample(string) : '';
-        }, 300),
         submit(){
             this.form.lists = this.checkedItems;
             this.form.post('/analyses',{
@@ -172,7 +225,8 @@ export default {
                     option: 'testservices',
                     laboratory_type: this.form.laboratory_type,
                     sampletype_id: this.sampletype,
-                    keyword: code
+                    ids: this.checkedItems.map(item => item.id),
+                    keyword: this.filter.keyword,
                 }
             })
             .then(response => {
@@ -180,29 +234,12 @@ export default {
             })
             .catch(err => console.log(err));
         },
-        search() {
-            const searchTerm = this.searchTerm.toLowerCase();
-            const matchedIndex = this.testservices.findIndex(
-                (l) => l.testname.toLowerCase().includes(searchTerm) || 
-                l.method.toLowerCase().includes(searchTerm) || l.method_short.toLowerCase().includes(searchTerm)
-            );
-            if (matchedIndex !== -1 && searchTerm !== '') {
-                this.matchedRowIndex = matchedIndex;
-
-                const rowId = 'row-' + matchedIndex;
-                const matchedRow = document.getElementById(rowId);
-
-                if (matchedRow) {
-                matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            } else {
-                this.matchedRowIndex = null;
-            }
-        },
         handleInput(field) {
             this.form.errors[field] = false;
         },
         hide(){
+            this.checkedItems = [];
+            this.testservices = [];
             this.form.fee = null;
             this.$refs.multiselectS.clear();
             this.form.reset();

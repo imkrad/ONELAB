@@ -26,7 +26,7 @@
                     <tbody>
                        <tr v-for="(list,index) in spender.data" v-bind:key="index">
                             <td>{{index + 1}}</td>
-                            <td>{{list.customer_name}}</td>
+                            <td>{{list.customer_name}} {{ (list.name == 'Main') ? '' : ' - '+list.name }}</td>
                             <td class="text-center">{{formatMoney(list.total)}}</td>
                         </tr>
                     </tbody>

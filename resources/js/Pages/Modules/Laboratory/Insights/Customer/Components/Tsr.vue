@@ -27,7 +27,7 @@
                     <tbody>
                        <tr v-for="(list,index) in tsr.data" v-bind:key="index">
                             <td>{{index + 1}}</td>
-                            <td>{{list.customer_name.name}}</td>
+                            <td>{{list.customer_name.name}} {{ (list.name == 'Main') ? '' : ' - '+list.name }}</td>
                             <td class="text-center">{{list.tsrs_count}} </td>
                             <td class="text-center">{{percentage(list.tsrs_count)}}</td>
                         </tr>

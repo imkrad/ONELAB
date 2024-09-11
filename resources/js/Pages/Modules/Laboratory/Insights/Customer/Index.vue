@@ -12,7 +12,7 @@
             <Industry :industry="customer.industry" :total="customer.total"/>
         </BCol>
         <BCol xl="4">
-            <Tsr :tsr="customer.tsr" :total="customer.total_request"/>
+            <Tsr :tsr="customer.tsr" :total="customer.total"/>
         </BCol>
         <BCol xl="4">
             <Spender :spender="customer.spender"/>
