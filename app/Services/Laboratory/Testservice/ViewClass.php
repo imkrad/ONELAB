@@ -99,6 +99,9 @@ class ViewClass
             ->when($request->sampletype_id, function ($query, $sampletype) {
                 $query->where('sampletype_id',$sampletype);
             })
+            ->when($request->ids, function ($query, $ids) {
+                $query->whereNotIn('id', $ids);
+            })
             ->with('sampletype','laboratory.member','laboratory.address.region','type')
             ->with('method.method','method.reference')
             // ->with('testname')

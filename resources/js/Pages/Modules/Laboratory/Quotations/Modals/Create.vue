@@ -1,5 +1,5 @@
 <template>
-    <b-modal v-model="showModal" style="--vz-modal-width: 650px;" header-class="p-3 bg-light" :title="(!editable) ? 'Create Technical Service' : 'Edit Technical Service'" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
+    <b-modal v-model="showModal" style="--vz-modal-width: 650px;" header-class="p-3 bg-light" :title="(!editable) ? 'Create Quotation' : 'Edit Quotation'" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <form class="customform">
             <BRow class="g-3">
                 <BCol lg="12">

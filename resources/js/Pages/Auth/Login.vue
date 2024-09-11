@@ -15,7 +15,7 @@
                                     </div>
                                     <div class="col-10">
                                         <div class="text-primary mt-1">
-                                            <h4 class="fs-16 fw-semibold">DOST - STLIMS</h4>
+                                            <h4 class="fs-16 fw-semibold">DOST - LIMS</h4>
                                             <p class="mt-n2">Laboratory Information Management System</p>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                 </div>
                             </BCardBody>
                         </BCard>
-                        <div class="mt-4 text-center" style="cursor: pointer;"><p class="mb-0">Don't have an account ? <span class="fw-semibold text-primary text-decoration-underline"> Signup </span></p></div>
+                        <div class="mt-4 text-center" @click="openRegister()" style="cursor: pointer;"><p class="mb-0">Don't have an account ? <span class="fw-semibold text-primary text-decoration-underline"> Signup </span></p></div>
 
                     </BCol>
                 </BRow>
