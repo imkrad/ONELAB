@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Http;
 
 class LoginSuccessful
 {
@@ -19,7 +20,15 @@ class LoginSuccessful
     public function handle(Login $event): void
     {
         $user = $event->user;
-        $ip = $this->request->ip();
+        // $ip = $this->request->ip();
+
+        $response = Http::get('https://api.ipify.org?format=json');
+        if ($response->successful()) {
+            $ipAddress = $response->json()['ip'];
+            $ip = $ipAddress;
+        }else{
+            $ip = '127.0.0.1';
+        }
         
         \DB::table('authentication_logs')->insert([
             'user_id' => $user->id,
