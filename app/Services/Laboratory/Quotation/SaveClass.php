@@ -140,7 +140,6 @@ class SaveClass
             'purpose_id' => $request->purpose_id,
             'laboratory_id' => $request->laboratory_id,
             'laboratory_type' => $request->laboratory_type,
-            'mode' => json_encode($request->mode),
             'status_id' => 1,
             'received_by' => \Auth::user()->id
         ]);
@@ -157,14 +156,12 @@ class SaveClass
             $samples = QuotationSample::with('analyses')->where('quotation_id',$id)->get();
 
             foreach($samples as $sample){
-                
                 $s = $data->samples()->create([
                     'name' => $sample['name'],
                     'customer_description' => $sample['customer_description'],
                     'description' => $sample['description'],
                     'tsr_id' => $data->id
                 ]);
-               
                 foreach($sample['analyses'] as $analysis){
                     $s->analyses()->create([
                         'fee' => $analysis['fee'],

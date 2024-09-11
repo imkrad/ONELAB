@@ -213,8 +213,9 @@ class WelcomeController extends Controller
         return redirect()->intended(route('dashboard', absolute: false));
     }
 
-    public function new(){
-        return inertia('Auth/New');
+    public function new(Request $request){
+        dd($request->ip());
+        // return inertia('Auth/New');
         // $url = 'https://api.dost9.ph/sms/messages';
 
         // $recipient = '09171531652';
