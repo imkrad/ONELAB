@@ -94,7 +94,7 @@ class ViewClass
         ->with('conforme:id,name,contact_no','customer.contact:id,email,contact_no,customer_id')
         ->where('id',$id[0])
         ->first();
-
+      
         $samples = $this->analysesList($id[0]);
 
         $descs = QuotationSample::query()

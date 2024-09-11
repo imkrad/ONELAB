@@ -21,6 +21,7 @@ class SaveClass
         $data->status_id = $request->status_id;
         $data->due_at = $request->due_at;
         $data->code = $this->generateCode($data);
+        $data->terms = json_encode($request->terms);
         $data->save();
         return [
             'data' => $data,

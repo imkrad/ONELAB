@@ -12,6 +12,7 @@ class Quotation extends Model
     protected $fillable = [
         'code',
         'total',
+        'terms',
         'subtotal',
         'discount',
         'due_at',

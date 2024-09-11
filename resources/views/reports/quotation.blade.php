@@ -181,10 +181,12 @@ border-top: none !important;
                 <tr>
                     <td>
                         <ul style="margin-left: -20px;">
-                            <li>Payment Method: Cheque payment should be paid to DOST IX;</li>
-                            <li>DOST IX Trust Fund 1952101052 Landbank of the Philippines.</li>
+                            @foreach($quotation['terms'] as $index=>$term)
+                            <li>{{$term}}</li>
+                            @endforeach
+                            <!-- <li>DOST IX Trust Fund 1952101052 Landbank of the Philippines.</li>
                             <li>Cash payment should be made directly to the cashier or deposit to DOST IX account.</li>
-                            <li>This quotation is valid only until <b>{{$quotation['due_at']}}</b></li>
+                            <li>This quotation is valid only until <b>{{$quotation['due_at']}}</b></li> -->
                         </ul>
                     </td>
                 </tr>
