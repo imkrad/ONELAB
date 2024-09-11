@@ -45,6 +45,15 @@ class SampleClass
         ];
     }
 
+    public function update($request){
+        $data = TsrSample::findOrFail($request->id)->update($request->all());
+        return [
+            'data' => $data,
+            'message' => 'Sample update was successful!', 
+            'info' => "You've successfully updated the selected sample."
+        ];
+    }
+
     public function report($request){
         $labs = json_decode($this->configuration->laboratories,true);
         $laboratory_type = $request->laboratory_type;

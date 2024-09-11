@@ -64,8 +64,8 @@
                                     <span v-else><i class="ri-checkbox-circle-fill text-success fs-18" v-b-tooltip.hover :title="list.analyses.filter(item => item.status.name == 'Completed').length+'/'+list.analyses.length"></i></span>
                                 </td>
                                 <td width="7%" class="text-end">
-                                    <b-button @click="openView(list)" variant="soft-primary" class="me-1" v-b-tooltip.hover title="View" size="sm">
-                                        <i class="ri-eye-fill align-bottom"></i>
+                                    <b-button v-if="selected.status.name == 'Pending'" @click="openEdit(list)" variant="soft-primary" class="me-1" v-b-tooltip.hover title="Edit" size="sm">
+                                        <i class="ri-pencil-fill align-bottom"></i>
                                     </b-button>
                                     <b-button v-if="selected.status.name != 'Pending'" @click="openQr(list)" variant="soft-success" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                         <i class="ri-qr-code-fill align-bottom"></i>
@@ -279,6 +279,9 @@ export default {
         openView(list){
             this.view = true;
             this.sample = list;
+        },
+        openEdit(data){
+            this.$refs.sample.edit(this.selected.id,this.selected.laboratory_type,data);
         },
         openAdditional(data,id){
             this.$refs.additional.show(data,id,this.selected.id);

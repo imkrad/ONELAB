@@ -36,6 +36,7 @@ export default {
         return {
             currentUrl: window.location.origin,
             form: useForm({
+                id: null,
                 tsr_id: null,
                 name: null,
                 code: null,
@@ -54,6 +55,16 @@ export default {
             this.form.laboratory_id = laboratory;
             this.showModal = true;
         },
+        edit(id,laboratory,data){
+            this.form.id = data.id;
+            this.form.name = data.name;
+            this.form.description = data.description;
+            this.form.customer_description = data.customer_description;
+            this.form.tsr_id = id;
+            this.form.laboratory_id = laboratory;
+            this.editable = true;
+            this.showModal = true;
+        },
         copy(id,laboratory,sample){
             this.form.tsr_id = id;
             this.form.name = sample.name;
@@ -63,12 +74,21 @@ export default {
             this.showModal = true;
         },
         submit(){
-            this.form.post('/samples',{
-                preserveScroll: true,
-                onSuccess: (response) => {
-                    this.hide();
-                },
-            });
+            if(this.editable){
+                this.form.put('/samples/update',{
+                    preserveScroll: true,
+                    onSuccess: (response) => {
+                        this.hide();
+                    },
+                });
+            }else{
+                this.form.post('/samples',{
+                    preserveScroll: true,
+                    onSuccess: (response) => {
+                        this.hide();
+                    },
+                });
+            }
         },
         hide(){
             this.form.reset();
