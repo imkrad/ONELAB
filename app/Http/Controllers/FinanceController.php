@@ -137,6 +137,9 @@ class FinanceController extends Controller
                 case 'orseries':
                     return $this->update->orseries($request);
                 break;
+                case 'name':
+                    return $this->update->name($request);
+                break;
             }
         });
 

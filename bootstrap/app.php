@@ -26,6 +26,10 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\ActiveMiddleware::class,
         ]);
 
+        $middleware->appendToGroup('finance', [
+            \App\Http\Middleware\FinanceAccess::class,
+        ]);
+
         $middleware->appendToGroup('menu', [
             \App\Http\Middleware\MenuMiddleware::class,
         ]);

@@ -36,7 +36,6 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
     });
 
     Route::resource('/services', App\Http\Controllers\ServiceController::class);
-    Route::resource('/finance', App\Http\Controllers\FinanceController::class);
     Route::resource('/inventory', App\Http\Controllers\InventoryController::class);
     Route::resource('/chatbox', App\Http\Controllers\ChatboxController::class);
     Route::resource('/executive', App\Http\Controllers\ExecutiveController::class);
@@ -46,6 +45,10 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
         Route::resource('/locations', App\Http\Controllers\Lists\LocationController::class);
         Route::resource('/dropdowns', App\Http\Controllers\Lists\DropdownController::class);
     }); 
+
+    Route::middleware(['finance'])->group(function () {
+        Route::resource('/finance', App\Http\Controllers\FinanceController::class);
+    });
 });
 
 require __DIR__.'/auth.php';

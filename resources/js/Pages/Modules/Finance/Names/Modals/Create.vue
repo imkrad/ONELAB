@@ -80,7 +80,7 @@ export default {
         edit(data){
             this.form.id = data.id
             this.form.name = data.name;
-            this.form.type = data.type;
+            this.form.is_individual = (data.is_individual) ? true : false;
             this.editable = true;
             this.showModal = true;
         },
