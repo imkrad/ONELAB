@@ -1,5 +1,5 @@
 <template>
-    welcum
+    welcume
 </template>
 <script>
 export default {
