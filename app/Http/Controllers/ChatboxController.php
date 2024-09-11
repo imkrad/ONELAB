@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Hashids\Hashids;
 use App\Models\User;
 use App\Models\ListDropdown;
+use App\Models\ListLaboratory;
 use App\Models\ChatConversation;
 use App\Models\ChatMessage;
 use Illuminate\Http\Request;
@@ -54,7 +55,7 @@ class ChatboxController extends Controller
         $id = $hashids->decode($request->id);
         $id = $id[0];
         if($request->type === 'laboratory'){
-            $data = ListDropdown::find($id);
+            $data = ListLaboratory::find($id);
         }else{
             $data = ChatConversation::find($id);
         }

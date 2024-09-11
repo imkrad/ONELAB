@@ -5,6 +5,7 @@ namespace App\Services\Chatbox;
 use Hashids\Hashids;
 use App\Models\UserRole;
 use App\Models\ListDropdown;
+use App\Models\ListLaboratory;
 use App\Models\Configuration;
 use App\Models\ChatConversation;
 use App\Http\Resources\ConversationResource;
@@ -19,7 +20,7 @@ class ListClass
 
     public function laboratory_types(){
         $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
-        $query = ListDropdown::query()->where('classification','Laboratory');
+        $query = ListLaboratory::query();
         ($lab_id) ? $query->whereIn('id',$lab_id) : '';
         $data = $query->get()->map(function ($item) {
             $hashids = new Hashids('krad',10);
