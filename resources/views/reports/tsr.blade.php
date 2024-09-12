@@ -133,7 +133,7 @@
             <center style="font-size: 11px; margin-bottom: 0px; font-weight: bold;">REGIONAL STANDARDS AND TESTING LABORATORIES</center>
             <center style="font-size: 11px;">Pettit Baracks, Zamboanga City | (062) 991-1024</center>
             <br/>
-            <center style="margin-top: 8px; font-size: 10px; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;  color:#000; font-weight: bold; padding: 2px;">TECHNICAL SERVICES REQUEST</center>
+            <center style="margin-top: 8px; font-size: 12px;  color:#000; font-weight: bold; padding: 2px;">TECHNICAL SERVICES REQUEST</center>
             <center style="font-size: 10px; background-color: <?php echo $page['color']; ?>; color:#fff; font-weight: bold; padding: 2px;">{{$page['name']}}</center>
         </div>
 
@@ -234,17 +234,22 @@
             </tbody>
         </table>
         <h6 style="font-size: 10px; margin-top: 12px;">4. DISCUSSED WITH CUSTOMER INCLUDING THE TERMS AND CONDITIONS AT THE BACK</h6>
-        <table style="text-align: center; border: 1px solid black; font-size: 10px; margin-top: -22px; page-break-inside: avoid;">
+        <table style="border: 1px solid black; font-size: 10px; margin-top: -22px; page-break-inside: avoid;">
             <tbody>
                 <tr>
-                    <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
-                    <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
-                    <td style="min-height: 50px; padding: 20px; border-bottom-style: hidden;"></td>
+                    <td style="min-height: 50px; border-bottom-style: hidden;"><span style="font-size:9px; color: #606060;">Conforme:</span></td>
+                    <td style="min-height: 50px; border-bottom-style: hidden;"><span style="font-size:9px; color: #606060;">Sample(s) received by:</span></td>
+                    <td style="min-height: 50px; border-bottom-style: hidden;"><span style="font-size:9px; color: #606060;">Sampel(s) reviewed by:</span></td>
                 </tr>
                 <tr>
-                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['customer']['conforme']['name']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative </br> <span style="font-size:9px; color: #606060;">(Conforme)</span></td>
-                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$user}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer Relation Officer </br> <span style="font-size:9px; color: #606060;">(Received by)</span></td>
-                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Technical Manager </br> <span style="font-size:9px; color: #606060;">(Approved by)</span></td>
+                    <td style="min-height: 50px; padding: 15px; border-bottom-style: hidden;"></td>
+                    <td style="min-height: 50px; padding: 15px; border-bottom-style: hidden;"></td>
+                    <td style="min-height: 50px; padding: 15px; border-bottom-style: hidden;"></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$tsr['customer']['conforme']['name']}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer / Authorized Representative</td>
+                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$user}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Customer Relation Officer </td>
+                    <td width="33.3%"><span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$manager}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Technical Manager </td>
                 </tr>
             </tbody>
         </table>
@@ -256,6 +261,10 @@
                         {{$tsr['due_at']}}  /  <span>4:00 PM (<i>or the next working day shall the due date falls on a holiday</i>)</span>
                     </td>
                 </tr>
+            </tbody>
+        </table>
+        <table style="border: 1px solid black; font-size: 10px; margin-top: 10px; page-break-inside: avoid;">
+            <tbody>
                 <tr>
                     <td width="25%">Report number : </td>
                     <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;"></span></td>
@@ -269,7 +278,7 @@
                     <tr>
                         <td style="border-right-style: hidden;" width="20%">Date Paid</td>
                         <td></td>
-                        <td style="border-bottom-style: hidden;"></td>
+                        <td style="border-bottom-style: hidden;"><span style="font-size:9px; color: #606060;">Payment received by:</span></td>
                     </tr>
                     <tr>
                         <td style="border-right-style: hidden;">Amount Paid</td>
@@ -289,7 +298,7 @@
                             <input type="checkbox" id="a" style="margin-top: 22px;"/>&nbsp;&nbsp;<label for="a">Bank Deposit/Transfer</label>
                         </td>
                         <td width="33.3%" style="text-align: center;" rowspan="2">
-                            <span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$cashier}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier </br> <span style="font-size:9px; color: #606060;">(Payment Received by)</span>
+                            <span style="font-weight: bold; font-size: 11px; color: #072388; text-transform: uppercase;">{{$cashier}}</span><hr style="margin-top: 0px; margin-bottom: 1px; border: .1px solid black; width: 80%;">Cashier 
                         </td>
                     </tr>
                     <tr>
