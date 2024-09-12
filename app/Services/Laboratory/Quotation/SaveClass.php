@@ -216,11 +216,10 @@ class SaveClass
         $lab = Laboratory::where('id',$this->laboratory)->first();
         $year = date('Y'); 
         $lab_type = ListDropdown::select('others')->where('id',$laboratory_type)->first();
-        $c = Quotation::where('laboratory_type',$laboratory_type)
-        ->where('laboratory_id',$this->laboratory)
+        $c = Quotation::where('laboratory_id',$this->laboratory)
         ->whereYear('created_at',$year)
-        ->where('code','!=',NULL)->count();
-        $code = 'QUO-'.date('Y').'-'.str_pad((420+$c+1), 4, '0', STR_PAD_LEFT);  
+        ->whereNotNull('code')->count();
+        $code = 'QUO-'.date('Y').'-'.str_pad((419+$c+1), 4, '0', STR_PAD_LEFT);  
         return $code;
     }
 }
