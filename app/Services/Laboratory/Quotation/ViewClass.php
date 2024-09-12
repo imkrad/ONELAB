@@ -112,7 +112,7 @@ class ViewClass
             foreach($row['analyses'] as $index=>$analysis){
                 $testName = $analysis['testservice']['testname']['name'];
                 $testMethod = $analysis['testservice']['method']['method']['name'];
-                $key = $sampleName . "_" . $testName . "_" . $testMethod;
+                $key = $sampleName. "_" . $analysis['sample_id'] . "_" . $testName . "_" . $testMethod;
                 
                 if (!isset($groupedData[$key])) {
                     $groupedData[$key] = [
@@ -127,6 +127,8 @@ class ViewClass
             }
         }
 
+        $samples2 = array_values($groupedData);
+
         $head = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
         ->where('laboratory_id',$quotation->laboratory_id)->whereHas('role',function ($query){
             $query->where('name','Technical Manager');
@@ -138,7 +140,7 @@ class ViewClass
             'configuration' => Configuration::first(),
             'quotation' => new QuotationResource($quotation),
             'samples' => $samples,
-            'group' => $groupedData,
+            'group' => $samples2,
             'descs' => $descs,
             'manager' => $head->user->profile->firstname.' '.$head->user->profile->middlename[0].'. '.$head->user->profile->lastname,
             'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname

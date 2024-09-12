@@ -261,26 +261,7 @@ class SaveClass
                 $groupedData[$key]["count"] += 1;
             }
         }
-        // foreach ($samples as $row) {
-        //     $sampleCode = $row['sample']['code'];
-        //     $sampleName = $row['sample']['name'];
-        //     $testName = $row['testservice']['testname']['name'];
-        //     $testMethod = $row['testservice']['method']['method']['name'];
-            
-        //     $key = $sampleCode . "_" . $testName . "_" . $testMethod;
-            
-        //     if (!isset($groupedData[$key])) {
-        //         $groupedData[$key] = [
-        //             "samplecode" => $sampleCode,
-        //             "samplename" => $sampleName,
-        //             "testname" => $testName,
-        //             "method" => $testMethod,
-        //             "count" => 0,
-        //             "fee" => $row['fee']
-        //         ];
-        //     }
-        //     $groupedData[$key]["count"] += 1;
-        // }
+        
         $samples = array_values($groupedData);
 
         $descs = TsrSample::query()
