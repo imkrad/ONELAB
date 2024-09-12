@@ -244,7 +244,7 @@ class ViewClass
         })->first();
 
         $cashier = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
-        ->where('laboratory_id',$lab->laboratory_id)->whereHas('role',function ($query){
+        ->whereHas('role',function ($query){
             $query->where('name','Cashier');
         })->first();
         
