@@ -190,7 +190,7 @@
                     <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
                 </tr>
             @endforeach
-            @if($tsr['service'])
+            @if(isset($tsr['service']))
                 <tr style="text-align: center; font-size: 9px; color: #072388;">
                     <td style="text-align: left;" colspan="4">{{$tsr['service']['name']}} ({{$tsr['service']['description']}})</td>
                     <td>{{$tsr['service']['quantity']}}</td>
