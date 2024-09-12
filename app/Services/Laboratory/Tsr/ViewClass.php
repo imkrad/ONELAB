@@ -235,9 +235,9 @@ class ViewClass
         $id = $hashids->decode($request->id);
 
         $labcolor = Tsr::where('id',$id)->with('lab_type')->first();
-        $tsr = TsrReport::where('tsr_id',$id)->value('information');
+        $tsr = TsrReport::where('tsr_id',225)->value('information');
         $lab = json_decode($tsr);
-        
+    
         $head = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
         ->where('laboratory_id',$lab->laboratory_id)->where('laboratory_type',$labcolor->lab_type->id)->whereHas('role',function ($query){
             $query->where('name','Technical Manager');

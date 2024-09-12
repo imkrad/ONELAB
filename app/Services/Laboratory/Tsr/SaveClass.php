@@ -24,7 +24,7 @@ class SaveClass
     }
 
     public function updateReport(){
-        $this->report(209);
+        $this->report(225);
     }
 
     public function tsr($request){
@@ -217,6 +217,7 @@ class SaveClass
 
     private function report($id){
         $tsr = Tsr::where('id',$id)
+        ->with('service.service')
         ->with('received:id','received.profile:id,firstname,lastname,user_id')
         ->with('laboratory','laboratory_type:id,name','status:id,name,color,others')
         ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.wallet')
@@ -261,7 +262,17 @@ class SaveClass
                 $groupedData[$key]["count"] += 1;
             }
         }
-        
+        if($tsr->service){
+            $service = [
+                'name' => $tsr->service->service->name,
+                'description' => $tsr->service->service->description,
+                'quantity' => $tsr->service->quantity,
+                'fee' => $tsr->service->fee
+            ];
+        }else{
+            $service = null;
+        }
+
         $samples = array_values($groupedData);
 
         $descs = TsrSample::query()
@@ -270,6 +281,7 @@ class SaveClass
 
         $information = [
             'code' => $tsr->code,
+            'service' => $service,
             'date' => $tsr->created_at,
             'laboratory_id' => $tsr->laboratory_id,
             'due_at' => $tsr->due_at,
@@ -291,12 +303,11 @@ class SaveClass
             'samples' => $samples,
             'descriptions' => $descs    
         ];
-        
+
         $data = TsrReport::create([
             'information' => json_encode($information),
             'tsr_id' => $id
         ]);
-
         return true;
     }
 

@@ -98,7 +98,7 @@ class ViewClass
             ->with('op.items.itemable')
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
             ->with('op.payorable','op.collection','op.payment')
-            ->with('detail')
+            ->with('detail','transaction')
             ->when($this->laboratory, function ($query, $lab) {
                 $query->where('laboratory_id',$lab);
             })
@@ -149,7 +149,7 @@ class ViewClass
     public function print($request){
         $id = $request->id;
         $items = [];
-        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection')->where('id',$id)->first();
+        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection','transaction')->where('id',$id)->first();
         // return Excel::download(new OrExport($id), 'or.xlsx');
         if($data){
             $customer = ($data->op->payorable->customer_name) ? $data->op->payorable->customer_name->name : $data->op->payorable->name; 
