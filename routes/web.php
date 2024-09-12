@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/verification/{code}', [App\Http\Controllers\WelcomeController::class, 'verification']);
+Route::get('/verification/sample/{code}', [App\Http\Controllers\WelcomeController::class, 'sample_verification']);
 Route::get('/csf/survey', [App\Http\Controllers\Laboratory\CsfController::class, 'show']);
 Route::post('register', [App\Http\Controllers\WelcomeController::class, 'register']);
 Route::get('new', [App\Http\Controllers\WelcomeController::class, 'new'])->name('new');

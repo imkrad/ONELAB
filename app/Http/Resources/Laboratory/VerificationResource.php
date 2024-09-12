@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Laboratory;
 
+use Hashids\Hashids;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Hashids\Hashids;
 
 class VerificationResource extends JsonResource
 {
@@ -20,7 +20,7 @@ class VerificationResource extends JsonResource
             'laboratory' => $this->laboratory,
             'laboratory_type' => $this->laboratory_type,
             'status' => $this->status,
-            'customer' => new CustomerViewResource($this->customer),
+            'customer' => new CustomerResource($this->customer),
             'conforme' => $this->conforme->name, 
             'conforme_no' => $this->conforme->contact_no, 
             'received' => $this->received->profile->firstname.' '.$this->received->profile->lastname,
