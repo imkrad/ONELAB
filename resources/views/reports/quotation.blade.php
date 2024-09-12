@@ -132,7 +132,7 @@ border-top: none !important;
                 </tr>
             </thead>
             <tbody>
-            @foreach($samples as $index=>$sample)
+            @foreach($group as $index=>$sample)
                 <tr style="text-align: center;">
                     <td>{{$sample['samplename']}}</td>
                     <td>{{$sample['testname']}}</td>

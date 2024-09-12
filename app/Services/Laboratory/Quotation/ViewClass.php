@@ -101,6 +101,32 @@ class ViewClass
         ->where('quotation_id',$id)
         ->get();
 
+        $samples = QuotationSample::with('analyses.testservice.method.method','analyses.testservice.testname')->whereHas('quotation',function ($query) use ($id) {
+            $query->where('id',$id);
+        })->get();
+
+        $groupedData = [];
+        foreach ($samples as $row) {
+            $sampleName = $row['name'];
+            
+            foreach($row['analyses'] as $index=>$analysis){
+                $testName = $analysis['testservice']['testname']['name'];
+                $testMethod = $analysis['testservice']['method']['method']['name'];
+                $key = $sampleName . "_" . $testName . "_" . $testMethod;
+                
+                if (!isset($groupedData[$key])) {
+                    $groupedData[$key] = [
+                        "samplename" => ($index == 0) ? $sampleName : '-',
+                        "testname" => $testName,
+                        "method" => $testMethod,
+                        "count" => 0,
+                        "fee" => $analysis['fee']
+                    ];
+                }
+                $groupedData[$key]["count"] += 1;
+            }
+        }
+
         $head = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
         ->where('laboratory_id',$quotation->laboratory_id)->whereHas('role',function ($query){
             $query->where('name','Technical Manager');
@@ -112,6 +138,7 @@ class ViewClass
             'configuration' => Configuration::first(),
             'quotation' => new QuotationResource($quotation),
             'samples' => $samples,
+            'group' => $groupedData,
             'descs' => $descs,
             'manager' => $head->user->profile->firstname.' '.$head->user->profile->middlename[0].'. '.$head->user->profile->lastname,
             'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname
