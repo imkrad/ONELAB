@@ -175,7 +175,7 @@
                     <th style="vertical-align: middle;" width="26%">Test/Calibration Method</th>
                     <th style="vertical-align: middle;" width="6%">No. of Samples</th>
                     <th style="vertical-align: middle;" width="10%">Unit Cost</th>
-                    <th style="text-align: center;" width="10%">Total</th>
+                    <th style="text-align: center; vertical-align: middle;" width="10%">Total</th>
                 </tr>
             </thead>
             <tbody>
