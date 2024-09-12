@@ -26,6 +26,11 @@
                 </BCol>
             </BRow>
         </form>
+
+        <div class="alert alert-danger alert-dismissible alert-label-icon rounded-label fade show mt-4" role="alert">
+            <i class="ri-error-warning-line bel-icon">la</i><strong>QR Code</strong> - <span @click="printQr()">Click here to print</span>
+        </div>
+
         <template v-slot:footer>
             <!-- <b-button @click="hide()" variant="light" block>Cancel</b-button> -->
             <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Preview</b-button>
@@ -79,6 +84,9 @@ export default {
                    this.sample.report = response.props.flash.data;
                 },
             });
+        },
+        printQr(id){
+            window.open('/requests?option=testqr&id='+this.sample.id);
         },
         hide(){
             this.showModal = false;

@@ -34,6 +34,9 @@ class TsrController extends Controller
             case 'sampleqr':
                 return $this->view->sampleqr($request);
             break;
+            case 'testqr':
+                return $this->view->testqr($request);
+            break;
             case 'tsrs':
                 return $this->view->tsrs($request);
             break;

@@ -70,7 +70,7 @@
                                     <b-button v-if="selected.status.name == 'Pending'" @click="openEdit(list)" variant="soft-primary" class="me-1" v-b-tooltip.hover title="Edit" size="sm">
                                         <i class="ri-pencil-fill align-bottom"></i>
                                     </b-button>
-                                    <b-button v-if="selected.status.name != 'Pending'" @click="openQr(list)" variant="soft-success" class="me-1" v-b-tooltip.hover title="View" size="sm">
+                                    <b-button v-if="selected.status.name != 'Pending'" @click="openQr(list)" variant="soft-dark" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                         <i class="ri-qr-code-fill align-bottom"></i>
                                     </b-button>
                                     <b-button v-if="selected.status.name == 'Pending'" @click="openDeleteSample(list)" variant="soft-danger" v-b-tooltip.hover title="Delete" size="sm">
@@ -117,7 +117,7 @@
                                                     <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                                                 </td>
                                                 <td>
-                                                    <b-button @click="openAdditional(list.additional,list.id)" v-if="list.additional != null && list.addfee == null" variant="soft-success" class="me-1" v-b-tooltip.hover title="Add" size="sm">
+                                                    <b-button @click="openAdditional(list.additional,list.id)" v-if="list.status.name == 'Pending' && list.additional != null && list.addfee == null" variant="soft-success" class="me-1" v-b-tooltip.hover title="Add" size="sm">
                                                         <i class="ri-add-circle-fill align-bottom"></i>
                                                     </b-button>
                                                     <b-button @click="openViewAnalysis(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">

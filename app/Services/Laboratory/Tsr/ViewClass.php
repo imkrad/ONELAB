@@ -172,6 +172,29 @@ class ViewClass
         return $data;
     }
 
+    public function testqr($request){
+        $id = $request->id;
+        $hashids = new Hashids('krad',10);
+        $code = $hashids->encode($id);
+
+        $url = $_SERVER['HTTP_HOST'].'/verification/sample/'.$code;
+        $qrCode = new QrCode($url);
+        $qrCode->setSize(300);
+        $pngWriter = new PngWriter();
+        $qrCodeImageString = $pngWriter->write($qrCode)->getString();
+        $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
+
+        $array = [
+            'qrCodeImage' => $base64Image
+        ];
+
+        $width = 6.20 * 28.35; 
+        $height = 6.00 * 28.35;
+        $pdf = \PDF::loadView('printings.testqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
+
+        return $pdf->stream('sampleqrcode.pdf');
+    }
+
     public function sampleqr($request){
         $sample = TsrSample::with('analyses:id,sample_id,testservice_id','analyses.testservice:id,testname_id','analyses.testservice.testname:id,name')
         ->with('tsr:id,due_at,created_at')
