@@ -123,12 +123,12 @@ border-top: none !important;
         <table style="border: 1px solid black; font-size: 10px; margin-top: -22px;">
             <thead style="background-color:#c8c8c8; padding: 5px; font-size: 9px;">
                 <tr>    
-                    <th width="20%">SAMPLE</th>
-                    <th width="25%">TESTNAME</th>
-                    <th width="25%">TEST METHOD</th>
-                    <th width="10%">QNTY</th>
-                    <th width="10%">COST</th>
-                    <th width="10%">TOTAL</th>
+                    <th style="vertical-align: middle;" width="20%">Sample</th>
+                    <th style="vertical-align: middle;" width="25%">Test/Calibration Requested</th>
+                    <th style="vertical-align: middle;" width="25%">Test/Calibration Method</th>
+                    <th style="vertical-align: middle;" width="10%">No. of Samples</th>
+                    <th style="vertical-align: middle;" width="10%">Unit Cost</th>
+                    <th style="vertical-align: middle;" width="10%">Total</th>
                 </tr>
             </thead>
             <tbody>
@@ -138,8 +138,8 @@ border-top: none !important;
                     <td>{{$sample['testname']}}</td>
                     <td>{{$sample['method']}}</td>
                     <td>{{$sample['count']}}</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$sample['fee']),'₱ ')}}</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$sample['fee']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
                 </tr>
             @endforeach
             </tbody>
