@@ -28,7 +28,7 @@
         </form>
 
         <div class="alert alert-danger alert-dismissible alert-label-icon rounded-label fade show mt-4" role="alert">
-            <i class="ri-error-warning-line bel-icon">la</i><strong>QR Code</strong> - <span @click="printQr()">Click here to print</span>
+            <i class="ri-error-warning-line label-icon"></i><strong>QR Code</strong> - <span style="cursor: pointer;" @click="printQr()">Click here to print</span>
         </div>
 
         <template v-slot:footer>
