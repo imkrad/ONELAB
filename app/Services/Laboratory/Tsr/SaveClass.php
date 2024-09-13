@@ -316,7 +316,7 @@ class SaveClass
             'samples' => $samples,
             'descriptions' => $descs    
         ];
-        return $information;
+        
         if(TsrReport::where('tsr_id',$id)->count() > 0){
             $data = TsrReport::where('tsr_id',$id)->first();
             $data->information = json_encode($information);
