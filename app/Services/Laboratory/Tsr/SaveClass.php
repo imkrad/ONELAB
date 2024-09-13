@@ -23,8 +23,10 @@ class SaveClass
         $this->configuration = Configuration::with('laboratory.address')->where('laboratory_id',$this->laboratory)->first();
     }
 
-    public function updateReport(){
-        return $this->report(229);
+    public function updateReport($id){
+        $hashids = new Hashids('krad',10);
+        $code = $hashids->decode($data->id);
+        return $this->report($code);
     }
 
     public function tsr($request){
