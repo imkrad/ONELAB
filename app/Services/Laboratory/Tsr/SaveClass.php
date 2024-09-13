@@ -275,7 +275,7 @@ class SaveClass
                 $groupedData[$key]["count"] += 1;
             }
         }
-        if($tsr->service){
+        if(isset($tsr->service)){
             $service = [
                 'name' => $tsr->service->service->name,
                 'description' => $tsr->service->service->description,
