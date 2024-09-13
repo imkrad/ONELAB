@@ -25,7 +25,7 @@ class SaveClass
 
     public function updateReport($id){
         $hashids = new Hashids('krad',10);
-        $code = $hashids->decode($data->id);
+        $code = $hashids->decode($id);
         return $this->report($code);
     }
 
