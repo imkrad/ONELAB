@@ -189,7 +189,7 @@
                     <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($sample['fee'],'₱ ')}}</td>
                     <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
                 </tr>
-                @if($sample['additional'])
+                @if(isset($sample['additional']))
                 <tr style="text-align: center; font-size: 9px; color: #072388;">
                     <td colspan="4" style="text-align: left;">{{$sample['additional']['name']}}</td>
                     <td>{{$sample['additional']['quantity']}}</td>
