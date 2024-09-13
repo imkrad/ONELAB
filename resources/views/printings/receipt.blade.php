@@ -73,41 +73,41 @@
             }
             .bank {
                 position: absolute;
-                top: 380; /* 4 cm from the top */
-                left: 80; /* 7 cm from the left */
+                top: 385; /* 4 cm from the top */
+                left: 85; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
             .number {
                 position: absolute;
-                top: 380; /* 4 cm from the top */
-                left: 130; /* 7 cm from the left */
+                top: 385; /* 4 cm from the top */
+                left: 140; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
             .detaildate {
                 position: absolute;
-                top: 380; /* 4 cm from the top */
-                left: 187; /* 7 cm from the left */
+                top: 385; /* 4 cm from the top */
+                left: 192; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
             }
             .cash {
                 position: absolute;
-                top: 360; /* 4 cm from the top */
-                left: -4; /* 7 cm from the left */
+                top: 367; /* 4 cm from the top */
+                left: 0; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
             }
             .check {
                 position: absolute;
-                top: 380; /* 4 cm from the top */
-                left: -4; /* 7 cm from the left */
+                top: 385; /* 4 cm from the top */
+                left: 0; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
             }
             .moneyorder {
                 position: absolute;
-                top: 395; /* 4 cm from the top */
-                left: -4; /* 7 cm from the left */
+                top: 400; /* 4 cm from the top */
+                left: 0; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
                 font-weight: bold;
@@ -137,9 +137,9 @@
             <div class="word">{{$word}}</div>
         @endif
         @if($detail)
-            <div class="cash"><span style="font-family: DejaVu Sans;">&#187;</span></div>
-            <div class="check"><span style="font-family: DejaVu Sans;">&#187;</span></div>
-            <div class="moneyorder"><span style="font-family: DejaVu Sans;">&#187;</span></div>
+            @if($payment == 'Cash')<div class="cash"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
+            @if($payment == 'Cheque')<div class="check"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
+            @if($payment == 'Money Order')<div class="moneyorder"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
             <div class="bank">{{$detail['bank']}}</div>
             <div class="number">{{$detail['number']}}</div>
             <div class="detaildate">{{$detail['date_at']}}</div>
