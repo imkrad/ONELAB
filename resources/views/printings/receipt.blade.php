@@ -137,9 +137,8 @@
             <div class="word">{{$word}}</div>
         @endif
         @if($detail)
-            @if($payment == 'Cash')<div class="cash"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
-            @if($payment == 'Cheque')<div class="check"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
-            @if($payment == 'Money Order')<div class="moneyorder"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
+            @if(!$detail['is_cheque'])<div class="cash"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
+            @if($detail['is_cheque'])<div class="check"><span style="font-family: DejaVu Sans;">&#187;</span></div>@endif
             <div class="bank">{{$detail['bank']}}</div>
             <div class="number">{{$detail['number']}}</div>
             <div class="detaildate">{{$detail['date_at']}}</div>
