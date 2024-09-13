@@ -90,6 +90,28 @@
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
             }
+            .cash {
+                position: absolute;
+                top: 360; /* 4 cm from the top */
+                left: -5; /* 7 cm from the left */
+                font-size: 9pt; /* Adjust font size as needed */
+                width: 300px;
+            }
+            .check {
+                position: absolute;
+                top: 380; /* 4 cm from the top */
+                left: -5; /* 7 cm from the left */
+                font-size: 9pt; /* Adjust font size as needed */
+                width: 300px;
+            }
+            .moneyorder {
+                position: absolute;
+                top: 395; /* 4 cm from the top */
+                left: -5; /* 7 cm from the left */
+                font-size: 9pt; /* Adjust font size as needed */
+                width: 300px;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body style="color: black;">
@@ -115,6 +137,9 @@
             <div class="word">{{$word}}</div>
         @endif
         @if($detail)
+            <div class="cash"><span style="font-family: DejaVu Sans;">&#187;</span></div>
+            <div class="check"><span style="font-family: DejaVu Sans;">&#187;</span></div>
+            <div class="moneyorder"><span style="font-family: DejaVu Sans;">&#187;</span></div>
             <div class="bank">{{$detail['bank']}}</div>
             <div class="number">{{$detail['number']}}</div>
             <div class="detaildate">{{$detail['date_at']}}</div>

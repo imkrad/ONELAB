@@ -149,7 +149,7 @@ class ViewClass
     public function print($request){
         $id = $request->id;
         $items = [];
-        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection','transaction','detail')->where('id',$id)->first();
+        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection','op.payment','transaction','detail')->where('id',$id)->first();
         // return Excel::download(new OrExport($id), 'or.xlsx');
         if($data){
             $customer = ($data->op->payorable->customer_name) ? $data->op->payorable->customer_name->name : $data->op->payorable->name; 
@@ -198,6 +198,7 @@ class ViewClass
             'detail' => ($data->detail) ? $data->detail : null,
             'total' => $total,
             'items' => $items,
+            'payment' => $data->op->payment->name,
         ];
         $pdf = \PDF::loadView('printings.receipt',$array)->setPaper([0, 0, 300, 641.68], 'portrait');
         return $pdf->stream('officialreceipt.pdf');
