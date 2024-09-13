@@ -93,21 +93,21 @@
             .cash {
                 position: absolute;
                 top: 360; /* 4 cm from the top */
-                left: -5; /* 7 cm from the left */
+                left: -4; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
             }
             .check {
                 position: absolute;
                 top: 380; /* 4 cm from the top */
-                left: -5; /* 7 cm from the left */
+                left: -4; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
             }
             .moneyorder {
                 position: absolute;
                 top: 395; /* 4 cm from the top */
-                left: -5; /* 7 cm from the left */
+                left: -4; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
                 width: 300px;
                 font-weight: bold;
