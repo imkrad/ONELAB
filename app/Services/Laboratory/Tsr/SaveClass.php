@@ -24,7 +24,7 @@ class SaveClass
     }
 
     public function updateReport(){
-        $this->report(225);
+        return $this->report(229);
     }
 
     public function tsr($request){
@@ -226,16 +226,16 @@ class SaveClass
         ->with('payment:tsr_id,id,total,subtotal,discount,or_number,is_paid,is_free,paid_at,status_id,discount_id,collection_id,payment_id','payment.status:id,name,color,others','payment.collection:id,name','payment.type:id,name','payment.discounted:id,name,value')
         ->first();
 
-        $samples = TsrAnalysis::query()->with('testservice.method.method','testservice.testname','sample')
-        ->whereHas('sample',function ($query) use ($id) {
-            $query->whereHas('tsr',function ($query) use ($id) {
-                $query->where('id',$id);
-            });
-        })
-        ->orderBy('created_at','ASC')
-        ->get();
+        // $samples = TsrAnalysis::query()->with('testservice.method.method','testservice.testname','sample')
+        // ->whereHas('sample',function ($query) use ($id) {
+        //     $query->whereHas('tsr',function ($query) use ($id) {
+        //         $query->where('id',$id);
+        //     });
+        // })
+        // ->orderBy('created_at','ASC')
+        // ->get();
 
-        $samples = TsrSample::with('analyses.testservice.method.method','analyses.testservice.testname')->whereHas('tsr',function ($query) use ($id) {
+        $samples = TsrSample::with('analyses.testservice.method.method','analyses.testservice.testname','analyses.addfee.service')->whereHas('tsr',function ($query) use ($id) {
             $query->where('id',$id);
         })->get();
 
@@ -250,13 +250,24 @@ class SaveClass
                 $key = $sampleCode . "_" . $testName . "_" . $testMethod;
                 
                 if (!isset($groupedData[$key])) {
+                    if($analysis['addfee']){
+                        $fee = [
+                            'name' => $analysis['addfee']['service']['name'],
+                            'fee' => $analysis['addfee']['service']['fee'],
+                            'quantity' => $analysis['addfee']['quantity'],
+                            'total' => $analysis['addfee']['total']
+                        ];
+                    }else{
+                        $fee = null;
+                    }
                     $groupedData[$key] = [
                         "samplecode" => ($index == 0) ? $sampleCode : '',
                         "samplename" => ($index == 0) ? $sampleName : '-',
                         "testname" => $testName,
                         "method" => $testMethod,
                         "count" => 0,
-                        "fee" => $analysis['fee']
+                        "fee" => $analysis['fee'],
+                        'additional' => $fee
                     ];
                 }
                 $groupedData[$key]["count"] += 1;
@@ -303,11 +314,17 @@ class SaveClass
             'samples' => $samples,
             'descriptions' => $descs    
         ];
-
-        $data = TsrReport::create([
-            'information' => json_encode($information),
-            'tsr_id' => $id
-        ]);
+        return $information;
+        if(TsrReport::where('tsr_id',$id)->count() > 0){
+            $data = TsrReport::where('tsr_id',$id)->first();
+            $data->information = json_encode($information);
+            $data->save();
+        }else{
+            $data = TsrReport::create([
+                'information' => json_encode($information),
+                'tsr_id' => $id
+            ]);
+        }
         return true;
     }
 

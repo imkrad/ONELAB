@@ -111,7 +111,8 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <h5 class="fs-12 mb-0">{{list.fee}}</h5>
-                                                    <span v-if="list.addfee" class="text-muted fs-11">(+ {{list.addfee.total}} fee)</span>
+                                                    <span v-if="list.addfee" class="text-muted fs-11">({{list.addfee.fee}} x {{list.addfee.quantity}}) = {{list.addfee.total}}</span>
+                                                
                                                 </td>
                                                 <td class="text-center">
                                                     <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
