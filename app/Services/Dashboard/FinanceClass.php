@@ -56,7 +56,8 @@ class FinanceClass
     }
 
     public function orseries(){
-        $data = FinanceOrseries::where('is_active',1)->where('user_id',\Auth::user()->id)->get()->map(function ($item) {
+        // ->where('user_id',\Auth::user()->id)
+        $data = FinanceOrseries::where('is_active',1)->get()->map(function ($item) {
             return [
                 'value' => $item->id,
                 'name' => $item->name,
