@@ -23,6 +23,7 @@ class ViewClass
     public function lists($request){
         $data = QuotationResource::collection(
             Quotation::query()
+            ->with('service.service')
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
             ->with('laboratory:id,name','type:id,name','status:id,name,color,others','discounted:id,name,value')
             ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
@@ -54,7 +55,8 @@ class ViewClass
 
         $data = new QuotationResource(
             Quotation::query()
-            ->with('samples.analyses.testservice.testname','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference')
+            ->with('service.service')
+            ->with('samples.analyses.testservice.testname','samples.analyses.addfee.service','samples.analyses.testservice.method.method','samples.analyses.testservice.method.reference')
             ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
             ->with('laboratory:id,name','type:id,name','status:id,name,color,others','discounted:id,name,value')
             ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
@@ -88,6 +90,7 @@ class ViewClass
         $id = $hashids->decode($request->id);
 
         $quotation = Quotation::query()
+        ->with('service.service')
         ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
         ->with('laboratory:id,name','status:id,name,color,others')
         ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
@@ -101,7 +104,7 @@ class ViewClass
         ->where('quotation_id',$id)
         ->get();
 
-        $samples = QuotationSample::with('analyses.testservice.method.method','analyses.testservice.testname')->whereHas('quotation',function ($query) use ($id) {
+        $samples = QuotationSample::with('analyses.testservice.method.method','analyses.testservice.testname','analyses.addfee.service')->whereHas('quotation',function ($query) use ($id) {
             $query->where('id',$id);
         })->get();
 
@@ -115,16 +118,38 @@ class ViewClass
                 $key = $sampleName. "_" . $analysis['sample_id'] . "_" . $testName . "_" . $testMethod;
                 
                 if (!isset($groupedData[$key])) {
+                    if($analysis['addfee']){
+                        $fee = [
+                            'name' => $analysis['addfee']['service']['name'],
+                            'fee' => $analysis['addfee']['service']['fee'],
+                            'quantity' => $analysis['addfee']['quantity'],
+                            'total' => $analysis['addfee']['total']
+                        ];
+                    }else{
+                        $fee = null;
+                    }
                     $groupedData[$key] = [
                         "samplename" => ($index == 0) ? $sampleName : '-',
                         "testname" => $testName,
                         "method" => $testMethod,
                         "count" => 0,
-                        "fee" => $analysis['fee']
+                        "fee" => $analysis['fee'],
+                        'additional' => $fee
                     ];
                 }
                 $groupedData[$key]["count"] += 1;
             }
+        }
+
+        if(isset($quotation->service)){
+            $service = [
+                'name' => $quotation->service->service->name,
+                'description' => $quotation->service->service->description,
+                'quantity' => $quotation->service->quantity,
+                'fee' => $quotation->service->fee
+            ];
+        }else{
+            $service = null;
         }
 
         $samples2 = array_values($groupedData);
@@ -141,6 +166,7 @@ class ViewClass
             'quotation' => new QuotationResource($quotation),
             'samples' => $samples,
             'group' => $samples2,
+            'service' => $service,
             'descs' => $descs,
             'manager' => $head->user->profile->firstname.' '.$head->user->profile->middlename[0].'. '.$head->user->profile->lastname,
             'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname

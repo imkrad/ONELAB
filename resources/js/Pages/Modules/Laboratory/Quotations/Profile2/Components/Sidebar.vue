@@ -96,6 +96,16 @@
                 </div>
             </td>
         </tr>
+        <tr v-if="selected.service">
+                <td style="border-right: none; border-left: none;"><span class="fw-semibold fs-12 ms-2">Add Ons</span></td>
+            </tr>
+            <tr v-if="selected.service">
+                <td style="border-right: none; border-left: none;">
+                    <div v-if="selected.service" class="alert alert-warning fs-12 mb-0" role="alert">
+                        <span class="fw-semibold">{{selected.service.service.name}}</span> <br /><span class="fs-11 text-muted">({{selected.service.service.description}})</span>
+                    </div>
+                </td>
+            </tr>
         <tr>
             <td style="border-right: none; border-left: none;"><span class="fw-semibold fs-12 ms-2">Payment Details</span></td>
         </tr>

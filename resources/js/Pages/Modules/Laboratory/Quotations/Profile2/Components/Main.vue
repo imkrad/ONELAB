@@ -18,7 +18,7 @@
                     <div class="input-group mb-2">
                         <span class="input-group-text fw-semibold fs-12" style="width: 100px;">{{selected.samples.length}} Samples</span>
                         <input type="text"  placeholder="Search Request" class="form-control" style="width: 55%;">
-                        <span v-if="selected.laboratory_type === 3 && selected.service == null && selected.status.name == 'Pending'" @click="openService()" class="input-group-text" v-b-tooltip.hover title="Add Service" style="cursor: pointer;"> 
+                        <span v-if="selected.type.id === 3 && selected.service == null && selected.status.name == 'Pending'" @click="openService()" class="input-group-text" v-b-tooltip.hover title="Add Service" style="cursor: pointer;"> 
                             <i class="ri-add-circle-fill text-primary search-icon"></i>
                         </span>
                         <span v-if="selected.status.name == 'Pending'" @click="openAnalysis()" class="input-group-text" v-b-tooltip.hover title="Add Analysis" style="cursor: pointer;"> 
@@ -98,9 +98,12 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <h5 class="fs-12 mb-0">{{list.fee}}</h5>
-                                                    <span v-if="list.addfee" class="text-muted fs-11">(+ {{list.addfee.total}} fee)</span>
+                                                    <span v-if="list.addfee" class="text-muted fs-11">(+ {{list.addfee.total}} Additional fee)</span>
                                                 </td>
                                                 <td  class="text-end">
+                                                    <b-button @click="openAdditional(list.additional,list.id)" v-if="selected.status.name == 'Pending' && list.additional != null && list.addfee == null" variant="soft-success" class="me-1" v-b-tooltip.hover title="Add" size="sm">
+                                                        <i class="ri-add-circle-fill align-bottom"></i>
+                                                    </b-button>
                                                     <b-button @click="openViewAnalysis(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                                         <i class="ri-eye-fill align-bottom"></i>
                                                     </b-button>
@@ -134,19 +137,23 @@
     <Sample ref="sample"/>
     <Delete ref="delete"/>
     <Analysis @success="mark = false" ref="analysis"/>
+    <Service :services="services" ref="service"/>
+    <Additional ref="additional"/>
 </template>
 <script>
 import simplebar from "simplebar-vue";
 import Sample from '../Modals/Sample.vue';
 import Delete from '../Modals/Delete.vue';
 import Analysis from '../Modals/Analysis.vue';
+import Service from '../Modals/Service.vue';
+import Additional from '../Modals/Additional.vue';
 export default {
-    components: { simplebar, Sample, Delete, Analysis },
+    components: { simplebar, Sample, Delete, Analysis, Service, Additional },
     props:['selected','services'],
     data(){
         return {
             mark: false,
-            showAnalyses: false,
+            showAnalyses: true,
             samples : [],
         }
     },
@@ -188,6 +195,12 @@ export default {
         },
         openCopy(sample){
             this.$refs.sample.copy(this.selected.id,this.selected.laboratory_type,sample);
+        },
+        openService(){
+            this.$refs.service.show(this.selected.id);
+        },
+        openAdditional(data,id){
+            this.$refs.additional.show(data,id,this.selected.id);
         },
     }
 }

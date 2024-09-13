@@ -211,6 +211,39 @@ class SaveClass
         return $data->total;
     }
 
+    public function service($request){
+        $data = Quotation::findOrFail($request->id);
+        $data->service()->create([
+            'service_id' => $request->service['value'],
+            'fee' => $request->service['fee'],
+            'quantity' => $request->quantity,
+            'total' => $request->total,
+        ]);
+        $total = $this->updateTotal($request->id,$request->total);
+        return [
+            'data' => $total,
+            'message' => 'Service added was successful!', 
+            'info' => "You've successfully added a service."
+        ];
+    }
+
+    public function fee($request){
+        $data = QuotationAnalysis::findOrFail($request->id);
+        $data->addfee()->create([
+            'service_id' => $request->service['id'],
+            'fee' => $request->service['fee'],
+            'total' => $request->total,
+            'quantity' => $request->quantity,
+            'is_additional' => 1
+        ]);
+        $total = $this->updateTotal($request->tsr_id,$request->total);
+        return [
+            'data' => $total,
+            'message' => 'Service added was successful!', 
+            'info' => "You've successfully added a service."
+        ];
+    }
+
     private function generateCode($data){
         $laboratory_type = $data->laboratory_type;
         $lab = Laboratory::where('id',$this->laboratory)->first();

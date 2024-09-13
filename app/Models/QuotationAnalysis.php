@@ -13,6 +13,11 @@ class QuotationAnalysis extends Model
         'sample_id','testservice_id','fee',
     ];
 
+    public function addfee()
+    {
+        return $this->morphOne('App\Models\QuotationService', 'typeable');
+    }   
+
     public function sample()
     {
         return $this->belongsTo('App\Models\QuotationSample', 'sample_id', 'id');

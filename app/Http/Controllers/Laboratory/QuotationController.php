@@ -34,6 +34,7 @@ class QuotationController extends Controller
                     'modes' => $this->dropdown->modes(),
                     'discounts' => $this->dropdown->discounts(),
                     'statuses' => $this->dropdown->statuses('Quotation'),
+                    'services' => $this->dropdown->services()
                 ],
                 'counts' => $this->view->counts($this->dropdown->statuses('Quotation'))
             ]);
@@ -51,6 +52,12 @@ class QuotationController extends Controller
                 break;
                 case 'analyses':
                     return $this->save->analyses($request);
+                break;
+                case 'service':
+                    return $this->save->service($request);
+                break;
+                case 'fee':
+                    return $this->save->fee($request);
                 break;
                 case 'tsr':
                     return $this->save->tsr($request);

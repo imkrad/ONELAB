@@ -25,6 +25,11 @@ class Quotation extends Model
         'created_by'
     ];
 
+    public function service()
+    {
+        return $this->morphOne('App\Models\QuotationService', 'typeable');
+    }
+
     public function samples()
     {
         return $this->hasMany('App\Models\QuotationSample', 'quotation_id');

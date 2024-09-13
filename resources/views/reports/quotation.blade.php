@@ -94,9 +94,9 @@ border-top: none !important;
             <tbody>
                 <tr>
                     <td width="25%">Quotation Code : </td>
-                    <td width="25%"><span style="font-weight: bold;">{{$quotation['code']}}</span></td>
+                    <td width="25%"><span style="font-weight: bold; color: #072388;">{{$quotation['code']}}</span></td>
                     <td width="25%">Date and Time :</td>
-                    <td width="25%"><span>{{$quotation['created_at']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$quotation['created_at']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -105,17 +105,17 @@ border-top: none !important;
             <tbody>
                 <tr>
                     <td width="25%">Customer : </td>
-                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase;">{{$quotation['customer']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="font-weight: bold; text-transform: uppercase; color: #072388;">{{$quotation['customer']['name']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Address : </td>
-                    <td colspan="3" width="75%"><span style="text-transform: uppercase;">{{$quotation['customer']['address']['name']}}</span></td>
+                    <td colspan="3" width="75%"><span style="text-transform: uppercase; color: #072388;">{{$quotation['customer']['address']['name']}}</span></td>
                 </tr>
                 <tr>
                     <td width="25%">Contact Number : </td>
-                    <td width="25%"><span>{{$quotation['customer']['contact_no']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$quotation['customer']['contact_no']}}</span></td>
                     <td width="25%">Email : </td>
-                    <td width="25%"><span>{{$quotation['customer']['email']}}</span></td>
+                    <td width="25%"><span style="color: #072388;">{{$quotation['customer']['email']}}</span></td>
                 </tr>
             </tbody>
         </table>
@@ -133,31 +133,47 @@ border-top: none !important;
             </thead>
             <tbody>
             @foreach($group as $index=>$sample)
-                <tr style="text-align: center;">
-                    <td>{{$sample['samplename']}}</td>
+                <tr style="text-align: center; font-size: 9px; color: #072388;">
+                    <td style="text-align: left;">{{$sample['samplename']}}</td>
                     <td>{{$sample['testname']}}</td>
                     <td>{{$sample['method']}}</td>
                     <td>{{$sample['count']}}</td>
                     <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$sample['fee']),'₱ ')}}</td>
                     <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['fee']),'₱ ')*$sample['count'],2,".",",")}}</td>
                 </tr>
+                @if(isset($sample['additional']))
+                <tr style="text-align: center; font-size: 9px; color: #072388;">
+                    <td colspan="3" style="text-align: left;">{{$sample['additional']['name']}}</td>
+                    <td>{{$sample['additional']['quantity']}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim($sample['additional']['fee'],'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$sample['additional']['fee']),'₱ ')*$sample['additional']['quantity'],2,".",",")}}</td>
+                </tr>
+                @endif
             @endforeach
+            @if(isset($service))
+                <tr style="text-align: center; font-size: 9px; color: #072388;">
+                    <td style="text-align: left;" colspan="3">{{$service['name']}} ({{$service['description']}})</td>
+                    <td>{{$service['quantity']}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$service['fee']),'₱ '),2,".",",")}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$service['fee']),'₱ ')*$service['quantity'],2,".",",")}}</td>
+                </tr>
+            @endif
             </tbody>
             <tfoot style="text-align: center; padding: 3px; font-weight: bold; background-color:#c8c8c8;">
                 <tr>
                     <td colspan="4"></td>
                     <td style="font-size: 8px;">SUBTOTAL</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['subtotal']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['subtotal']),'₱ ')}}</td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
                     <td style="font-size: 8px;">DISCOUNT</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['discount']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['discount']),'₱ ')}}</td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
                     <td style="font-size: 8px;">TOTAL</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['total']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['total']),'₱ ')}}</td>
                 </tr>
             </tfoot>
         </table>
@@ -166,7 +182,7 @@ border-top: none !important;
             <tbody>
                 <tr>
                     <td>
-                        <ul style="margin-left: -30px; list-style: none; color:#636363;">
+                        <ul style="margin-left: -30px; list-style: none;">
                             @foreach($descs as $desc)
                                 <li>&#62; {{$desc['name']}} : {{$desc['customer_description']}}</li>
                             @endforeach
