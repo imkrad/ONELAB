@@ -153,7 +153,7 @@ class SaveClass
                 'is_free' =>  (in_array($request->discount_id, [5, 6, 7])) ? 1 : 0,
                 'paid_at' =>  (in_array($request->discount_id, [5, 6, 7])) ? now() : NULL,
             ]);
-            $samples = QuotationSample::with('analyses')->where('quotation_id',$id)->get();
+            $samples = QuotationSample::with('analyses.addfee.service')->where('quotation_id',$id)->get();
 
             foreach($samples as $sample){
                 $s = $data->samples()->create([

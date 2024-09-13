@@ -144,7 +144,7 @@ class AnalysisClass
                 $query->whereHas('tsr',function ($query) use ($tsr_id){
                     $query->where('id',$tsr_id);
                 });
-            })->where('status_id',10)->count() === 0){
+            })->whereIn('status_id',[10,11])->count() === 0){
                 $tsr = Tsr::where('id',$tsr_id)->update(['status_id' => 4]);
             }else{
                 $tsr = Tsr::where('id',$tsr_id)->update(['status_id' => 3]);
