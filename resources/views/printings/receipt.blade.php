@@ -71,6 +71,25 @@
                 left: -6; /* 7 cm from the left */
                 font-size: 9pt; /* Adjust font size as needed */
             }
+            .bank {
+                position: absolute;
+                top: 380; /* 4 cm from the top */
+                left: 80; /* 7 cm from the left */
+                font-size: 9pt; /* Adjust font size as needed */
+            }
+            .number {
+                position: absolute;
+                top: 380; /* 4 cm from the top */
+                left: 130; /* 7 cm from the left */
+                font-size: 9pt; /* Adjust font size as needed */
+            }
+            .detaildate {
+                position: absolute;
+                top: 380; /* 4 cm from the top */
+                left: 187; /* 7 cm from the left */
+                font-size: 9pt; /* Adjust font size as needed */
+                width: 300px;
+            }
         </style>
     </head>
     <body style="color: black;">
@@ -94,6 +113,11 @@
             <div class="word2" style="text-indent: 110px;">{{$word}}</div>
         @else
             <div class="word">{{$word}}</div>
+        @endif
+        @if($detail)
+            <div class="bank">{{$detail['bank']}}</div>
+            <div class="number">{{$detail['number']}}</div>
+            <div class="detaildate">{{$detail['date_at']}}</div>
         @endif
     </body>
 </html>

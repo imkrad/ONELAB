@@ -149,7 +149,7 @@ class ViewClass
     public function print($request){
         $id = $request->id;
         $items = [];
-        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection','transaction')->where('id',$id)->first();
+        $data = FinanceReceipt::with('op.payorable','op.items.itemable','laboratory','op.collection','transaction','detail')->where('id',$id)->first();
         // return Excel::download(new OrExport($id), 'or.xlsx');
         if($data){
             $customer = ($data->op->payorable->customer_name) ? $data->op->payorable->customer_name->name : $data->op->payorable->name; 
@@ -161,6 +161,16 @@ class ViewClass
                         'amount' => $item->itemable->payment->total
                     ];
                 }
+                if($data->transaction){
+                    $items[] = [
+                        'name' => 'Credited to Customer Wallet',
+                        'amount' => $data->transaction->amount
+                    ];
+                    $total = (float) str_replace(',', '', trim($data->op->total, '₱ ')) + (float) str_replace(',', '', trim($data->transaction->amount, '₱ ')); 
+                    $total = number_format($total,2,'.',',');
+                }else{
+                    $total = $data->op->total;
+                }
                 
             }else{
                 $sub = '';
@@ -170,6 +180,7 @@ class ViewClass
                         'amount' => $item->itemable->amount
                     ];
                 }
+                $total = $data->op->total;
             }
         }
         $val = trim($data->op->total, '₱ ');
@@ -184,7 +195,8 @@ class ViewClass
             'customer' => $customer.$sub,
             'word' => ucwords($number).$excess,
             'date' => $data->created_at,
-            'total' => $data->op->total,
+            'detail' => ($data->detail) ? $data->detail : null,
+            'total' => $total,
             'items' => $items,
         ];
         $pdf = \PDF::loadView('printings.receipt',$array)->setPaper([0, 0, 300, 641.68], 'portrait');

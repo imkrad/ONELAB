@@ -79,6 +79,21 @@
             </div>
         </div>
         <hr v-if="selected.detail" class="text-muted"/>
+        <h6 v-if="selected.transaction" class="mb-n2 mt-4 text-muted fw-semibold">Excess Payment :</h6>
+        <hr v-if="selected.transaction" class="text-muted"/>
+        <div v-if="selected.transaction" class="card-body text-center">
+            <div class="row g-3">
+                <div class="col-lg-6">
+                    <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Transaction Code</p>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.transaction.code}}</span></h5>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-muted mb-2 fs-11 text-uppercase fw-semibold">Amount</p>
+                    <h5 class="fs-12 mb-0"><span id="invoice-no">{{selected.transaction.amount}}</span></h5>
+                </div>
+            </div>
+        </div>
+        <hr v-if="selected.detail" class="text-muted"/>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Close</b-button>
             <b-button v-if="selected.status.name == 'Pending'" @click="openOr" variant="primary" :disabled="form.processing" block>Create Receipt</b-button>

@@ -10,7 +10,7 @@ class TransactionResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'amount' => '₱'.number_format($this->amount,2,'.',','),
+            'amount' => $this->amount,
             'balance' => '₱'.number_format($this->balance,2,'.',','),
             'transacable' => $this->transacable,
             'is_credit' => $this->is_credit,

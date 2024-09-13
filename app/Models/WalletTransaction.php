@@ -32,6 +32,16 @@ class WalletTransaction extends Model
         return $this->belongsTo('App\Models\FinanceReceipt', 'receipt_id', 'id');
     }
 
+    public function setAmountAttribute($value)
+    {
+        $this->attributes['total'] = trim(str_replace(',','',$value),'₱');
+    }
+
+    public function getAmountAttribute($value)
+    {
+        return '₱'.number_format($value,2,'.',',');
+    }
+
     public function getUpdatedAtAttribute($value)
     {
         return date('M d, Y g:i a', strtotime($value));
