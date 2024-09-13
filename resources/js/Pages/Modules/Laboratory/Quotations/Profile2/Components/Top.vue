@@ -29,7 +29,7 @@
                         <b-col md="auto">
                             <div class="hstack gap-1 flex-wrap mt-2">
                                 <b-button v-if="selected.status.name === 'Ongoing'" @click="openSubmit(selected)" variant="primary" v-b-tooltip.hover title="Save">
-                                    <i class="ri-save-fill align-bottom"></i> Submit
+                                    <i class="ri-save-fill align-bottom"></i> Convert to TSR
                                 </b-button>
                                 <b-button v-if="selected.status.name === 'Pending'" :disabled="(analyses.length == 0) ? true : false" @click="openSave(selected.id)" variant="primary" v-b-tooltip.hover title="Save">
                                     <i class="ri-save-fill align-bottom"></i> Save
