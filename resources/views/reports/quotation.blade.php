@@ -163,17 +163,17 @@ border-top: none !important;
                 <tr>
                     <td colspan="4"></td>
                     <td style="font-size: 8px;">SUBTOTAL</td>
-                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['subtotal']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$quotation['subtotal']),'₱ '),2,".",",")}}</td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
                     <td style="font-size: 8px;">DISCOUNT</td>
-                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['discount']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$quotation['discount']),'₱ '),2,".",",")}}</td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
                     <td style="font-size: 8px;">TOTAL</td>
-                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{trim(str_replace(',','',$quotation['total']),'₱ ')}}</td>
+                    <td style="text-align: right;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$quotation['total']),'₱ '),2,".",",")}}</td>
                 </tr>
             </tfoot>
         </table>

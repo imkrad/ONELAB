@@ -2,7 +2,7 @@
     <b-modal v-model="showModal" style="--vz-modal-width: 600px;" hide-footer hide-header title="Cancel Request" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <div class="modal-body">
             <div class="mt-2">
-                <h4 class="mb-1 text-center">Confirm Quotation</h4>
+                <h4 class="mb-1 text-center">Edit Information for the Quotation</h4>
                 <p class="text-primary mb-4 fs-11 text-center">Upon confirming, you cannot add samples, analyses, or edit information for the TS Request.</p>
                 <!-- <p class="text-muted mb-4">Please double-check all data to avoid cancellation or updating of the data.</p> -->
                 <div class="customform">
