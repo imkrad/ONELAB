@@ -70,7 +70,9 @@ class ViewClass
                 $query->where('laboratory_type',$laboratory);
             })
             ->when($request->sort, function ($query, $sort) use ($request) {
-                if($request->sortby == 'Requested At'){
+                if($request->sortby == 'Code'){
+                    $query->orderBy('code',$request->sort);
+                }else if($request->sortby == 'Requested At'){
                     $query->orderBy('created_at',$request->sort);
                 }else{
                     $query->orderBy('due_at',$request->sort);
@@ -196,6 +198,41 @@ class ViewClass
     }
 
     public function sampleqr($request){
+        $sample = TsrSample::with('analyses:id,sample_id,testservice_id','analyses.testservice:id,testname_id','analyses.testservice.testname:id,name')
+        ->with('tsr:id,due_at,created_at')
+        // ->with('analyses.testservice.testname')
+        ->where('id',$request->id)->first();
+        $testnames = [];
+      
+        foreach ($sample->analyses as $analysis) {
+            if (isset($analysis->testservice->testname->name)) {
+                $testnames[] = $analysis->testservice->testname->name;
+            }
+        }
+       
+        $code = $sample->code;
+        $qrCode = new QrCode($code);
+        $qrCode->setSize(300);
+        $pngWriter = new PngWriter();
+        $qrCodeImageString = $pngWriter->write($qrCode)->getString();
+        $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
+
+        $array = [
+            'qrCodeImage' => $base64Image,
+            'sample_code' => $code,
+            'sample_name' => $sample->name,
+            'due_at' => $sample->tsr->due_at,
+            'created_at' => $sample->tsr->created_at,
+            'testnames' => $testnames
+        ];
+        $width = 6.20 * 28.35; 
+        $height = 6.00 * 28.35;
+        $pdf = \PDF::loadView('printings.sampleqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
+
+        return $pdf->stream('sampleqrcode.pdf');
+    }
+
+    public function allsampleqr($request){
         $sample = TsrSample::with('analyses:id,sample_id,testservice_id','analyses.testservice:id,testname_id','analyses.testservice.testname:id,name')
         ->with('tsr:id,due_at,created_at')
         // ->with('analyses.testservice.testname')

@@ -24,11 +24,11 @@
                         <span v-if="selected.status.name == 'Pending'" @click="openAnalysis()" class="input-group-text" v-b-tooltip.hover title="Add Analysis" style="cursor: pointer;"> 
                             <i class="ri-flask-fill text-primary search-icon"></i>
                         </span>
-                        <span v-if="selected.status.name == 'Ongoing'" @click="openAnalysis()" class="input-group-text" v-b-tooltip.hover title="Add Analysis" style="cursor: pointer;"> 
-                            <i class="ri-qr-code-fill text-primary search-icon"></i>
-                        </span>
                         <b-button v-if="selected.status.name == 'Pending'" @click="openSample()" type="button" variant="primary" :disabled="(mark) ? true : false">
                             <i class="ri-add-circle-fill align-bottom me-1"></i>Sample
+                        </b-button>
+                        <b-button v-if="selected.status.name == 'Ongoing'" @click="openAllQr()" type="button" variant="primary">
+                            <i class="ri-qr-code-fill align-bottom"></i> Print QR Code 
                         </b-button>
                     </div>
                 </b-col>
@@ -307,6 +307,9 @@ export default {
         // },
         openQr(data){
             window.open('/requests?option=sampleqr&id='+data.id);
+        },
+        openAllQr(){
+            // window.open('/requests?option=allsampleqr&id='+this.selected.id);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');
