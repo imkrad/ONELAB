@@ -58,6 +58,9 @@
                                     <i>{{list.customer_description}}</i>, {{list.description}}
                                 </td>
                                 <td width="7%" class="text-end">
+                                    <b-button v-if="selected.status.name == 'Pending'" @click="openEdit(list)" variant="soft-primary" class="me-1" v-b-tooltip.hover title="Edit" size="sm">
+                                        <i class="ri-pencil-fill align-bottom"></i>
+                                    </b-button>
                                     <b-button v-if="selected.status.name != 'Pending'" @click="openQr(list)" variant="soft-success" class="me-1" v-b-tooltip.hover title="View" size="sm">
                                         <i class="ri-qr-code-fill align-bottom"></i>
                                     </b-button>
@@ -183,6 +186,9 @@ export default {
     methods: {
         openSample(){
             this.$refs.sample.show(this.selected.id,this.selected.laboratory_type);
+        },
+        openEdit(data){
+            this.$refs.sample.edit(this.selected.id,this.selected.laboratory_type,data);
         },
         openAnalysis(){
             (this.samples.length > 0) ? this.$refs.analysis.show(this.samples,this.selected.type.id) : '';

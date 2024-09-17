@@ -244,6 +244,15 @@ class SaveClass
         ];
     }
 
+    public function quotationSample($request){
+        $data = QuotationSample::findOrFail($request->id)->update($request->all());
+        return [
+            'data' => $data,
+            'message' => 'Quotation update was successful!', 
+            'info' => "You've successfully updated a sample."
+        ];
+    }
+
     private function generateCode($data){
         $laboratory_type = $data->laboratory_type;
         $lab = Laboratory::where('id',$this->laboratory)->first();

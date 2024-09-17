@@ -88,6 +88,9 @@ class QuotationController extends Controller
                 case 'analysis':
                     return $this->save->removeAnalysis($request);
                 break;
+                case 'quotation':
+                    return $this->save->quotationSample($request);
+                break;
             }
         });
         
