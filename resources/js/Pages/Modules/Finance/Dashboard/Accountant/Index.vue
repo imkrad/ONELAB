@@ -32,7 +32,7 @@
                         </b-col>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 mt-0">
                     <div class="card">
                         <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
                             <Lists 
@@ -43,14 +43,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-0">
                     <div class="card">
                         <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
-                            <Unpaid
-                            :collections="dropdowns.collections" 
-                            :payments="dropdowns.payments" 
-                            :statuses="dropdowns.statuses"
-                            />
+                            <Unpaid :tsrs="dropdowns.tsrs"/>
                         </div>
                     </div>
                 </div>

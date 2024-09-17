@@ -31,14 +31,12 @@
                             </b-card>
                         </b-col>
                     </div>
-
+                </div>
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
                             <Lists 
-                            :deposits="dropdowns.deposits" 
-                            :orseries="dropdowns.orseries"
-                            :collections="dropdowns.collections"
-                            :payments="dropdowns.payments"
+                            :tsrs="dropdowns.tsrs" 
                             />
                         </div>
                     </div>

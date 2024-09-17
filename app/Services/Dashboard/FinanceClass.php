@@ -2,15 +2,23 @@
 
 namespace App\Services\Dashboard;
 
+use App\Models\Tsr;
 use App\Models\Wallet;
 use App\Models\FinanceOp;
 use App\Models\TsrPayment;
 use App\Models\FinanceOrseries;
 use App\Models\ListStatus;
 use App\Models\ListDropdown;
+use App\Http\Resources\TsrNoPaymentResource;
 
 class FinanceClass
 {
+    public function __construct()
+    {
+        $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
+    }
+
+
     public function accountant($request){
         return [
             $this->waiting($request),
@@ -97,6 +105,31 @@ class FinanceClass
                 'name' => $item->name
             ];
         });
+        return $data;
+    }
+
+    public function forpayment($request){
+        $data = TsrNoPaymentResource::collection(
+            Tsr::query()
+            ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.wallet')
+            ->with('payment:tsr_id,id,total,subtotal,discount,or_number,is_paid,is_free,paid_at,status_id,discount_id,collection_id,payment_id','payment.status:id,name,color,others')
+            ->when($request->keyword, function ($query, $keyword) {
+                $query->where('code', 'LIKE', "%{$keyword}%")
+                ->orWhereHas('customer',function ($query) use ($keyword) {
+                    $query->whereHas('customer_name',function ($query) use ($keyword) {
+                        $query->where('name', 'LIKE', "%{$keyword}%");
+                    });
+                });
+            })
+            ->when($this->laboratory, function ($query, $lab) {
+                $query->where('laboratory_id',$lab);
+            })
+            ->whereHas('payment',function ($query){
+                $query->where('payment_id',NULL)->where('collection_id',NULL);
+            })
+            ->where('status_id',2)
+            ->get()
+        );
         return $data;
     }
 }

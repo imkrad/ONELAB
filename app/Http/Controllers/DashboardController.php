@@ -67,6 +67,7 @@ class DashboardController extends Controller
                                 'counts' => $this->finance->accountant($request),
                                 'collections' => $this->finance->collections('Laboratory'),
                                 'payments' => $this->finance->payments(),
+                                'tsrs' => $this->finance->forpayment($request),
                             ]
                         ]);
                     break;
