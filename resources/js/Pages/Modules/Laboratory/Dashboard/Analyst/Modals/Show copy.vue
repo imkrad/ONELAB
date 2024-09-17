@@ -1,5 +1,5 @@
 <template>
-    <b-modal v-model="showModal" :title="selected.sample.code"  style="--vz-modal-width: 1000px;" header-class="p-3 bg-light" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>    
+    <b-modal v-model="showModal" :title="selected.tsr.code"  style="--vz-modal-width: 1000px;" header-class="p-3 bg-light" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>    
         <div class="row mb-2">
             <div class="col-sm-4">
                 <div class="p-1 border border-dashed rounded">
@@ -9,8 +9,8 @@
                                     class="ri-qr-code-fill"></i></div>
                         </div>
                         <div class="flex-grow-1">
-                            <p class="text-muted fs-11 mb-0">Sample Code :</p>
-                            <h5 class="fs-12 mb-0">{{selected.sample.code}}</h5>
+                            <p class="text-muted fs-11 mb-0">Ref Code :</p>
+                            <h5 class="fs-12 mb-0">{{selected.tsr.code}}</h5>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Due At:</p>
-                            <h5 class="fs-12 mb-0">{{selected.due}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.tsr.due_at}}</h5>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="flex-grow-1">
-                           <!-- <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span> -->
+                           <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span>
                         </div>
                     </div>
                 </div>
@@ -165,7 +165,9 @@ export default {
     data(){
         return {
             selected: {
-                sample: {}
+                tsr: {
+                    status:{}
+                },
             },
             filterCode: null,
             status: null,
@@ -206,7 +208,7 @@ export default {
         },
         save(status,type){
             this.form = this.$inertia.form({
-                tsr_id: this.selected.tsr_id,
+                tsr_id: this.selected.tsr.id,
                 id: this.tests,
                 status_id: status,
                 start_at: null,

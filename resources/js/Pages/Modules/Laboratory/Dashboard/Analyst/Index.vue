@@ -52,48 +52,27 @@
                 <div class="col-md-12 mb-n4">
                     <div class="card">
                         <div class="card-body">
-                            <!-- <div class="row g-3">
-                                <div class="col-md-3">
-                                    <div class="search-box">
-                                        <input type="text" v-model="searchTerm" @input="search" class="form-control search" placeholder="Search for sample code">
-                                        <i class="ri-search-line search-icon"></i>
-                                    </div>
-                                </div>
-                                <div class="col-md-auto ms-auto">
-                                    <div class="d-flex hastck gap-2 flex-wrap">
-                                        <div class="dropdown">
-                                            <button class="btn btn-light dropdown-toggle" type="button" id="displayModeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Display Mode
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="displayModeDropdown" style="cursor: pointer;">
-                                                <li><a class="dropdown-item" @click="setDisplay('tsr')">Show by TSR</a></li>
-                                                <li><a class="dropdown-item" @click="setDisplay('sample')">Show by Sample</a></li>
-                                                <li><a class="dropdown-item" @click="setDisplay('testname')">Show by Testname</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                             <b-col lg>
-                        <div class="input-group mb-0">
-                            <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                            <input type="text"  placeholder="Search Request" class="form-control" style="width: 65%;">
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option  @click="setDisplay('tsr')" selected>Show by TSR</option>
-                                <option  @click="setDisplay('sample')" selected>Show by Sample</option>
-                            </select>
-                            <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
-                                <i class="bx bx-refresh search-icon"></i>
-                            </span>
-                            <b-button type="button" variant="primary" @click="openCreate">
-                                <i class="ri-add-circle-fill align-bottom me-1"></i> Create
-                            </b-button>
-                        </div>
-                    </b-col>
+                                <div class="input-group mb-0">
+                                    <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
+                                    <input type="text"  placeholder="Search Sample Code" v-model="searchQuery" class="form-control" style="width: 65%;">
+                                    <select class="form-select" id="inputGroupSelect01">
+                                        <option  @click="setDisplay('tsr')" selected>Show by TSR</option>
+                                        <option  @click="setDisplay('sample')" selected>Show by Sample</option>
+                                    </select>
+                                    <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
+                                        <i class="bx bx-refresh search-icon"></i>
+                                    </span>
+                                    <b-button type="button" variant="primary" @click="openCreate">
+                                        <i class="ri-add-circle-fill align-bottom me-1"></i> Create
+                                    </b-button>
+                                </div>
+                            </b-col>
                         </div>
                     </div>
                 </div>
-                <Tsr v-if="mode === 'tsr'" :samples="samples"/>
+                <Tsr v-if="mode === 'tsr'" :tsrs="tsrs"/>
+                <Sample v-else-if="mode === 'sample'" :samples="samples" :search-query="searchQuery"/>
             </div>
         </div>
     </b-row>
@@ -102,13 +81,14 @@
 </template>
 <script>
 import Tsr from './Display/Tsr.vue';
+import Sample from './Display/Sample.vue';
 import simplebar from "simplebar-vue";
 import View from './Modals/View.vue';
 import Show from './Modals/Show.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
-    components: { PageHeader, View, Show, simplebar, Tsr },
-    props: ['samples','reminders','tasks'],
+    components: { PageHeader, View, Show, simplebar, Tsr, Sample },
+    props: ['tsrs','samples','reminders','tasks'],
     data(){
         return {
             currentUrl: window.location.origin,
@@ -119,7 +99,8 @@ export default {
             matches1: [],
             matches2: [],
             matches3: [],
-            mode: 'tsr'
+            searchQuery: '',
+            mode: 'sample'
         }
     },
     methods: {

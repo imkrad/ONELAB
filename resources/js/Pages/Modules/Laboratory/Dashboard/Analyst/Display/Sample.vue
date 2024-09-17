@@ -10,7 +10,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <h4 class="mb-0"><span class="counter-value fs-14">Pending Tests</span></h4>
-                        <p class="fs-12 text-muted mb-1">{{pendings.length}} TSR ready for test.</p>
+                        <p class="fs-12 text-muted mb-1">{{pendings.length}} Sample ready for test.</p>
                     </div>
                 </div>
             </BLink>
@@ -21,7 +21,7 @@
                 <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of pendings" :key="index">
                     <div class="card" style="cursor: pointer;" @click="openShow(item,'Pending')">
                         <div class="card-header">
-                            <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.tsr.code}}</span></h6>
+                            <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
                         </div>
                         <div class="card-body">
                             <div class="d-flex flex-column h-100">
@@ -45,10 +45,10 @@
                         <div class="card-footer py-2">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1 text-muted fs-13">
-                                    {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span> 
+                                   1 
                                 </div>
                                 <div class="flex-shrink-0">
-                                    <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.tsr.due_at}}</div>
+                                    <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
                                 </div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <h4 class="mb-0"><span class="counter-value fs-14">Ongoing Tests</span></h4>
-                        <p class="fs-12 text-muted mb-1">{{ongoings.length}} ongoing analyzation.</p>
+                        <p class="fs-12 text-muted mb-1">1 ongoing analyzation.</p>
                     </div>
                 </div>
             </BLink>
@@ -79,7 +79,7 @@
             <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of ongoings" :key="index">
                 <div class="card" style="cursor: pointer;" @click="openShow(item,'Ongoing')">
                     <div class="card-header">
-                        <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.tsr.code}}</span></h6>
+                        <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column h-100">
@@ -103,10 +103,10 @@
                     <div class="card-footer py-2">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted fs-13">
-                                {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span> 
+                                1<!-- {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span>  -->
                             </div>
                             <div class="flex-shrink-0">
-                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.tsr.due_at}}</div>
+                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.due}}</div>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <h4 class="mb-0"><span class="counter-value fs-14">Completed Tests</span></h4>
-                        <p class="fs-12 text-muted mb-1">{{completeds.length}} samples completed.</p>
+                        <p class="fs-12 text-muted mb-1">2 samples completed.</p>
                     </div>
                 </div>
             </BLink>
@@ -137,7 +137,7 @@
             <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of completeds" :key="index">
                 <div class="card" style="cursor: pointer;" @click="openShow(item,'Completed')">
                     <div class="card-header">
-                        <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.tsr.code}}</span></h6>
+                        <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column h-100">
@@ -161,10 +161,10 @@
                     <div class="card-footer py-2">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted fs-13">
-                                {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span> 
+                                <!-- {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span>  -->
                             </div>
                             <div class="flex-shrink-0">
-                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.tsr.due_at}}</div>
+                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.due}}</div>
                             </div>
                         </div>
                     </div>
@@ -181,19 +181,29 @@ import Show from '../Modals/Show.vue';
 import simplebar from "simplebar-vue";
 export default {
     components: { simplebar, Show },
-    props: ['tsrs'],
+    props: ['samples','searchQuery'],
     computed: {
-        pendings(){
-            return this.tsrs.filter(item => item.pending > 0);
+        pendings() {
+            return this.samples.filter(
+                item => item.pending > 0 && this.matchesSearch(item)
+            );
         },
-        ongoings(){
-            return this.tsrs.filter(item => item.ongoing > 0);
+        ongoings() {
+            return this.samples.filter(
+                item => item.ongoing > 0 && this.matchesSearch(item)
+            );
         },
-        completeds(){
-            return this.tsrs.filter(item => item.completed > 0 );
+        completeds() {
+            return this.samples.filter(
+                item => item.completed > 0 && this.matchesSearch(item)
+            );
         }
     },
     methods: {
+        matchesSearch(item) {
+            if (!this.searchQuery) return true; // Show all if no search term
+            return item.sample.code.toLowerCase().includes(this.searchQuery.toLowerCase());
+        },
         openShow(data,status){
             this.$refs.show.show(data,status);
         },  

@@ -3,7 +3,9 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Tsr;
+use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
+use App\Http\Resources\Laboratory\SampleResource;
 use App\Http\Resources\Laboratory\AnalysisResource;
 
 class AnalystClass
@@ -13,7 +15,7 @@ class AnalystClass
         $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
     }
 
-    public function samples(){
+    public function tsrs(){
         $laboratory = \Auth::user()->userrole->laboratory_type;
         $data = Tsr::with('status')->where('laboratory_type',$laboratory)->whereIn('status_id',[3,4])->where('released_at',null)
         ->with(['samples' => function ($query) {
@@ -54,6 +56,64 @@ class AnalystClass
             ];
         });
         return $data;
+    }
+
+    public function samples($request){
+        // return [];
+        $laboratory = \Auth::user()->userrole->laboratory_type;
+        $data = TsrSample::with('tsr')->whereHas('tsr',function ($query) use ($laboratory) {
+            $query->where('laboratory_type',$laboratory)->whereIn('status_id',[3,4])->where('released_at',null);
+        })
+       ->withCount([
+            'analyses as analyses_count',
+            'analyses as completed_analyses_count' => function ($query) {
+                $query->where('status_id', 12);
+            },
+            'analyses as ongoing_analyses_count' => function ($query) {
+                $query->where('status_id', 11);
+            },
+            'analyses as pending_analyses_count' => function ($query) {
+                $query->where('status_id', 10);
+            }
+        ])
+        ->get()
+        ->map(function ($sample) {
+            $id = $sample->id;
+            return [
+                'id' => $sample->id,
+                'tsr_id' => $sample->tsr->id,
+                'due' => $sample->tsr->due_at,
+                'sample' => $sample,
+                'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','testservice.testname','testservice.method.reference','testservice.method.method')
+                ->whereHas('sample',function ($query) use ($id) {
+                    $query->where('id',$id);
+                })->orderBy('status_id','ASC')->get()),
+                'analyses' => $sample->analyses_count,
+                'pending' => $sample->pending_analyses_count,
+                'ongoing' => $sample->ongoing_analyses_count,
+                'completed' => $sample->completed_analyses_count
+            ];
+        });
+        return $data;
+        // $data = SampleResource::collection(
+        //     TsrSample::query()->with('analyses.status','analyses.testservice.method.method','analyses.testservice.testname','analyses.sample','analyses.analyst.profile')
+        //     ->when($request->keyword, function ($query, $keyword) {
+        //         $query->where('code', 'LIKE', "%{$keyword}%")->orWhere('name', 'LIKE', "%{$keyword}%");
+        //     })
+        //     ->orderBy('created_at','ASC')
+        //     ->get()
+        // );
+        // return $data;
+
+        // $laboratory = \Auth::user()->userrole->laboratory_type;
+        // $data = SampleResource::collection(
+        //     TsrSample::with('analyses.status','analyses.testservice.method.method','analyses.testservice.testname','analyses.sample','analyses.analyst.profile')
+        //     ->whereHas('tsr',function ($query) use ($laboratory) {
+        //         $query->where('laboratory_type',$laboratory)->whereIn('status_id',[3,4])->where('released_at',null);
+        //     })
+        //     ->get()
+        // );
+        // return $data;
     }
 
     public function reminders($request){
