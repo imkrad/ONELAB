@@ -2,7 +2,7 @@
     <b-row class="g-2 mb-2 mt-n2">
         <b-col lg>
             <div class="input-group mb-1">
-                <span class="input-group-text"> Unpaid Transactions</span>
+                <span class="input-group-text">No Order of payment issued</span>
                 <input type="text" v-model="filter.keyword" placeholder="Search Customer" class="form-control" style="width: 55%;">
                 <!-- <span @click="refresh" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
                     <i class="bx bx-refresh search-icon"></i>

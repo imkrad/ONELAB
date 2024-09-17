@@ -210,7 +210,6 @@ class ViewClass
                 $total = $data->op->total;
             }
         }
-        dd($data);
         $val = trim($data->op->total, '₱ ');
         $val = (float) str_replace(',', '', $val);
         $wholeNumber = intval($val);
