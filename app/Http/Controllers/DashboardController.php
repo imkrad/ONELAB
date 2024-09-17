@@ -58,6 +58,7 @@ class DashboardController extends Controller
                                 'orseries' => $this->finance->orseries(),
                                 'collections' => $this->finance->collections('Non-laboratory'),
                                 'payments' => $this->finance->payments(),
+                                'receipts' => $this->finance->receipts(),
                             ]
                         ]);
                     break;

@@ -32,19 +32,26 @@
                         </b-col>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 mt-1">
                     <div class="card">
                         <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
                             <Lists 
-                            :tsrs="dropdowns.tsrs" 
+                            :deposits="dropdowns.deposits" 
+                            :orseries="dropdowns.orseries"
+                            :collections="dropdowns.collections"
+                            :payments="dropdowns.payments"
                             />
                         </div>
                     </div>
                 </div>
 
-                <!-- <div class="col-md-4">
-
-                </div> -->
+                <div class="col-md-4 mt-1">
+                    <div class="card">
+                        <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
+                            <Latest :receipts="dropdowns.receipts"/>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -52,9 +59,10 @@
 </template>
 <script>
 import Lists from './Components/Lists.vue';
+import Latest from './Components/Latest.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
-    components: { PageHeader, Lists },
+    components: { PageHeader, Lists, Latest },
     props: ['dropdowns'],
     data(){
         return {

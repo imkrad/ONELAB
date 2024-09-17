@@ -18,11 +18,10 @@
             <thead class="table-light">
                 <tr class="fs-11">
                     <th></th>
-                    <th style="width: 37%;">Customer</th>
+                    <th style="width: 44%;">Customer</th>
                     <th style="width: 14%;" class="text-center">Collection</th>
                     <th style="width: 14%;" class="text-center">Payment</th>
-                    <th style="width: 10%;" class="text-center">Status</th>
-                    <th style="width: 12%;" class="text-center">Total</th>
+                    <th style="width: 15%;" class="text-center">Total</th>
                     <th style="width: 7%;" ></th>
                 </tr>
             </thead>
@@ -38,9 +37,7 @@
                     </td>
                     <td class="text-center fs-12">{{list.collection}}</td>
                     <td class="text-center fs-12">{{list.payment.name}}</td>
-                    <td class="text-center">
-                        <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
-                    </td>
+                   
                     <td class="text-center">{{list.total}}</td>
                     <td v-if="$page.props.user.data.assigned_role == 'Accountant'" class="text-end">
                         <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">

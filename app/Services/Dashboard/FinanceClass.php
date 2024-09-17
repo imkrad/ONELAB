@@ -6,9 +6,11 @@ use App\Models\Tsr;
 use App\Models\Wallet;
 use App\Models\FinanceOp;
 use App\Models\TsrPayment;
+use App\Models\FinanceReceipt;
 use App\Models\FinanceOrseries;
 use App\Models\ListStatus;
 use App\Models\ListDropdown;
+use App\Http\Resources\Finance\ReceiptResource;
 use App\Http\Resources\TsrNoPaymentResource;
 
 class FinanceClass
@@ -17,7 +19,6 @@ class FinanceClass
     {
         $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
     }
-
 
     public function accountant($request){
         return [
@@ -129,6 +130,22 @@ class FinanceClass
             })
             ->where('status_id',2)
             ->get()
+        );
+        return $data;
+    }
+
+    public function receipts(){
+        $data = ReceiptResource::collection(
+            FinanceReceipt::query()
+            ->with('op.items.itemable')
+            ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
+            ->with('op.payorable','op.collection','op.payment')
+            ->with('detail','transaction')
+            ->when($this->laboratory, function ($query, $lab) {
+                $query->where('laboratory_id',$lab);
+            })
+            ->orderBy('updated_at','DESC')
+            ->limit(5)->get()
         );
         return $data;
     }
