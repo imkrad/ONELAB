@@ -8,7 +8,7 @@
                 <div class="card-body" style="height: calc(100vh - 220px); overflow: auto;" >
                     <p class="text-muted text-uppercase fs-12 fw-medium mb-2">My Tasks</p>
                     <b-list-group>
-                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in tasks" v-bind:key="index" style="cursor: pointer;">
+                        <BListGroupItem v-for="(list,index) in tasks" v-bind:key="index" style="cursor: pointer;">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <div class="avatar-xs">
@@ -27,7 +27,7 @@
                     </b-list-group>
                     <p class="text-muted text-uppercase fs-12 fw-medium mb-2 mt-3">Reminders</p>
                     <b-list-group>
-                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in reminders" v-bind:key="index" style="cursor: pointer;">
+                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in reminders" v-bind:key="index" style="cursor: pointer;" :class="{ 'bg-info-subtle': isActive(list.name) }">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <div class="avatar-xs">
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <Tsr v-if="mode === 'tsr'" :tsrs="tsrs"/>
-                <Sample v-else-if="mode === 'sample'" :samples="samples" :search-query="searchQuery"/>
+                <Sample v-else-if="mode === 'sample'" :samples="samples" :search-query="searchQuery" ref="sample"/>
             </div>
         </div>
     </b-row>
@@ -100,12 +100,21 @@ export default {
             matches2: [],
             matches3: [],
             searchQuery: '',
-            mode: 'sample'
+            mode: 'sample',
+            activeReminder: null,
+            activeList: null
         }
     },
     methods: {
         setDisplay(mode){
             this.mode = mode;
+        },
+        filterReminder(data){
+            (data == this.activeList) ? this.activeList = null : this.activeList = data;
+            this.$refs.sample.toggleDueTodayFilter(data);
+        },
+        isActive(name) {
+            return this.activeList === name;
         },
         search() {
             const searchTerm = this.searchTerm.toLowerCase();

@@ -83,6 +83,7 @@ class AnalystClass
                 'id' => $sample->id,
                 'tsr_id' => $sample->tsr->id,
                 'due' => $sample->tsr->due_at,
+                'due_at' => date('Y-m-d', strtotime($sample->tsr->due_at)),
                 'sample' => $sample,
                 'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','testservice.testname','testservice.method.reference','testservice.method.method')
                 ->whereHas('sample',function ($query) use ($id) {
@@ -129,7 +130,9 @@ class AnalystClass
             [
                 'name' => 'Overdue Request',
                 'description' => 'Keep track of all laboratory tasks',
-                'count' => Tsr::where('status_id',3)->whereDate('due_at','<',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
+                    $query->where('status_id',3)->whereDate('due_at','<',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
+                })->count(),
                 'icon' => 'ri-error-warning-fill',
                 'color' => 'bg-danger-subtle text-danger'
             ],

@@ -69,7 +69,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <h4 class="mb-0"><span class="counter-value fs-14">Ongoing Tests</span></h4>
-                        <p class="fs-12 text-muted mb-1">1 ongoing analyzation.</p>
+                        <p class="fs-12 text-muted mb-1">{{ongoings.length}} ongoing analyzation.</p>
                     </div>
                 </div>
             </BLink>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="flex-grow-1 ms-3">
                         <h4 class="mb-0"><span class="counter-value fs-14">Completed Tests</span></h4>
-                        <p class="fs-12 text-muted mb-1">2 samples completed.</p>
+                        <p class="fs-12 text-muted mb-1">{{completeds.length}} samples completed.</p>
                     </div>
                 </div>
             </BLink>
@@ -182,24 +182,51 @@ import simplebar from "simplebar-vue";
 export default {
     components: { simplebar, Show },
     props: ['samples','searchQuery'],
+    data() {
+        return {
+            showDueToday: false,
+            showOverdue: false 
+        };
+    },
     computed: {
+        currentDate() {
+            return new Date().toISOString().split('T')[0];
+        },
         pendings() {
-            return this.samples.filter(
-                item => item.pending > 0 && this.matchesSearch(item)
-            );
+            return this.samples.filter(item => {
+                const matchesSearch = this.matchesSearch(item);
+                const isDueToday = this.showDueToday ? item.due_at === this.currentDate : true;
+                const isOverdue = this.showOverdue ? item.due_at < this.currentDate : true;
+                return item.pending > 0 && matchesSearch  && isDueToday && isOverdue;
+            });
         },
         ongoings() {
-            return this.samples.filter(
-                item => item.ongoing > 0 && this.matchesSearch(item)
-            );
+            return this.samples.filter(item => {
+                const matchesSearch = this.matchesSearch(item);
+                const isDueToday = this.showDueToday ? item.due_at === this.currentDate : true;
+                const isOverdue = this.showOverdue ? item.due_at < this.currentDate : true;
+                return item.ongoing > 0 && matchesSearch && isDueToday && isOverdue;
+            });
         },
         completeds() {
-            return this.samples.filter(
-                item => item.completed > 0 && this.matchesSearch(item)
-            );
+            return this.samples.filter(item => {
+                const matchesSearch = this.matchesSearch(item);
+                const isDueToday = this.showDueToday ? item.due_at === this.currentDate : true;
+                const isOverdue = this.showOverdue ? item.due_at < this.currentDate : true;
+                return item.completed > 0 && matchesSearch && isDueToday && isOverdue;
+            });
         }
     },
     methods: {
+        toggleDueTodayFilter(data) {
+            if(data === 'Due Today'){
+                this.showOverdue = false;
+                this.showDueToday = !this.showDueToday;
+            }else if(data === 'Overdue Request'){
+                this.showDueToday = false;
+                this.showOverdue = !this.showOverdue;
+            }
+        },
         matchesSearch(item) {
             if (!this.searchQuery) return true; // Show all if no search term
             return item.sample.code.toLowerCase().includes(this.searchQuery.toLowerCase());

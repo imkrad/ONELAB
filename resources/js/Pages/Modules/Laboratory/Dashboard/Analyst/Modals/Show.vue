@@ -19,6 +19,19 @@
                 <div class="p-1 border border-dashed rounded">
                     <div class="d-flex align-items-center">
                         <div class="avatar-sm me-0">
+                            <div class="avatar-title rounded bg-transparent text-primary fs-24"><i class="ri-award-line"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                           <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="p-1 border border-dashed rounded">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar-sm me-0">
                             <div class="avatar-title rounded bg-transparent text-primary fs-24"><i
                                     class="ri-calendar-todo-fill"></i></div>
                         </div>
@@ -29,19 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="p-1 border border-dashed rounded">
-                    <div class="d-flex align-items-center">
-                        <div class="avatar-sm me-0">
-                            <div class="avatar-title rounded bg-transparent text-primary fs-24"><i class="ri-award-line"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1">
-                           <!-- <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
+          
             <div class="col-sm-12"><hr class="text-muted"/></div>
             <b-col lg>
             <div class="input-group mb-2">
@@ -80,8 +81,8 @@
                                         <i v-if="list.status.name === 'Completed'" class="text-success ri-checkbox-circle-fill fs-18"></i> -->
                                     </td>
                                     <td  width="24%">
-                                        <h5 class="fs-11 mb-0">{{list.code}} - {{list.sample}}</h5>
-                                        <p class="text-muted mb-0">{{list.testname}}</p>
+                                        <h5 class="fs-11 mb-0">{{list.testname}}</h5>
+                                        <p class="text-muted mb-0">{{list.sample}}</p>
                                     </td>
                                     <td  width="47%" class="text-center">
                                         <h5 class="fs-11 mb-0">{{list.method}}</h5>
