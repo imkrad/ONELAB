@@ -118,7 +118,7 @@
                                                     <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                                                 </td>
                                                 <td>
-                                                    <b-button @click="openAdditional(list.additional,list.id)" v-if="list.status.name == 'Pending' && list.additional != null && list.addfee == null" variant="soft-success" class="me-1" v-b-tooltip.hover title="Add" size="sm">
+                                                    <b-button @click="openAdditional(list.additional,list.id)" v-if="selected.status.name == 'Pending' && list.additional != null && list.addfee == null" variant="soft-success" class="me-1" v-b-tooltip.hover title="Add" size="sm">
                                                         <i class="ri-add-circle-fill align-bottom"></i>
                                                     </b-button>
                                                     <b-button @click="openViewAnalysis(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
@@ -302,9 +302,6 @@ export default {
         openService(){
             this.$refs.service.show(this.selected.id);
         },
-        // openQr(data){
-        //     this.$refs.qr.show(data,this.selected.created_at,this.selected.due_at);
-        // },
         openQr(data){
             window.open('/requests?option=sampleqr&id='+data.id);
         },
