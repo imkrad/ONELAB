@@ -233,38 +233,45 @@ class ViewClass
     }
 
     public function allsampleqr($request){
-        $sample = TsrSample::with('analyses:id,sample_id,testservice_id','analyses.testservice:id,testname_id','analyses.testservice.testname:id,name')
+        $hashids = new Hashids('krad',10);
+        $id = $hashids->decode($request->id);
+        $samples = TsrSample::with('analyses:id,sample_id,testservice_id','analyses.testservice:id,testname_id','analyses.testservice.testname:id,name')
         ->with('tsr:id,due_at,created_at')
-        // ->with('analyses.testservice.testname')
-        ->where('id',$request->id)->first();
-        $testnames = [];
-      
-        foreach ($sample->analyses as $analysis) {
-            if (isset($analysis->testservice->testname->name)) {
-                $testnames[] = $analysis->testservice->testname->name;
-            }
-        }
-       
-        $code = $sample->code;
-        $qrCode = new QrCode($code);
-        $qrCode->setSize(300);
-        $pngWriter = new PngWriter();
-        $qrCodeImageString = $pngWriter->write($qrCode)->getString();
-        $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
+        ->where('tsr_id',$id)->get();
+        $lists = [];
+        foreach($samples as $sample){
+            $testnames = [];
 
+            foreach ($sample->analyses as $analysis) {
+                if (isset($analysis->testservice->testname->name)) {
+                    $testnames[] = $analysis->testservice->testname->name;
+                }
+            }
+
+            $code = $sample->code;
+            $qrCode = new QrCode($code);
+            $qrCode->setSize(300);
+            $pngWriter = new PngWriter();
+            $qrCodeImageString = $pngWriter->write($qrCode)->getString();
+            $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
+
+            $lists[] = [
+                'qrCodeImage' => $base64Image,
+                'sample_code' => $code,
+                'sample_name' => $sample->name,
+                'due_at' => $sample->tsr->due_at,
+                'created_at' => $sample->tsr->created_at,
+                'testnames' => $testnames
+            ];
+        }
         $array = [
-            'qrCodeImage' => $base64Image,
-            'sample_code' => $code,
-            'sample_name' => $sample->name,
-            'due_at' => $sample->tsr->due_at,
-            'created_at' => $sample->tsr->created_at,
-            'testnames' => $testnames
+            'lists' => $lists
         ];
         $width = 6.20 * 28.35; 
         $height = 6.00 * 28.35;
-        $pdf = \PDF::loadView('printings.sampleqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
+        $pdf = \PDF::loadView('printings.allsampleqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
 
-        return $pdf->stream('sampleqrcode.pdf');
+        return $pdf->stream('allsampleqrcode.pdf');
     }
 
     public function print($request){

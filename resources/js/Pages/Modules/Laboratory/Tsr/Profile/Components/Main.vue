@@ -309,7 +309,7 @@ export default {
             window.open('/requests?option=sampleqr&id='+data.id);
         },
         openAllQr(){
-            // window.open('/requests?option=allsampleqr&id='+this.selected.id);
+            window.open('/requests?option=allsampleqr&id='+this.selected.qr);
         },
         openDeleteSample(data){
             this.$refs.delete.show(data,this.selected.id,'sample');
