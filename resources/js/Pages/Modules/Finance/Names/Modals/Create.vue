@@ -90,6 +90,7 @@ export default {
                     preserveScroll: true,
                     onSuccess: (response) => {
                         this.$emit('update',true);
+                        this.$emit('selected',response.props.flash.data);
                         this.hide();
                     },
                 });

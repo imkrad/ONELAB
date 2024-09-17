@@ -27,7 +27,7 @@
                         <b-button v-if="selected.status.name == 'Pending'" @click="openSample()" type="button" variant="primary" :disabled="(mark) ? true : false">
                             <i class="ri-add-circle-fill align-bottom me-1"></i>Sample
                         </b-button>
-                        <b-button v-if="selected.status.name == 'Ongoing'" @click="openAllQr()" type="button" variant="primary">
+                        <b-button v-if="selected.status.name == 'Ongoing' || selected.status.name == 'For Payment'" @click="openAllQr()" type="button" variant="primary">
                             <i class="ri-qr-code-fill align-bottom"></i> Print QR Code 
                         </b-button>
                     </div>

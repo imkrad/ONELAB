@@ -84,6 +84,7 @@ export default {
                 onSuccess: (response) => {
                     this.$emit('selected',response.props.flash.data.data);
                     this.hide();
+                    window.open('/requests?option=allsampleqr&id='+response.props.flash.data.data.qr);
                 },
             });
         },

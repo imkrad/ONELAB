@@ -330,9 +330,12 @@ class SaveClass
 
     public function name($request){
         $data = FinanceName::create($request->all());
-           
+        $data = [
+            'value' => $data->id,
+            'name' => $data->name
+        ];
         return [
-            'data' => new DefaultResource($data),
+            'data' => $data,
             'message' => 'Name creation was successful!', 
             'info' => "You've successfully created a name."
         ];

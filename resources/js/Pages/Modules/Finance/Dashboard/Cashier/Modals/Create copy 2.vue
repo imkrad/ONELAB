@@ -2,51 +2,7 @@
     <b-modal v-model="showModal" style="--vz-modal-width: 650px;" header-class="p-3 bg-light" title="Create Official Receipt" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <form class="customform">
             <BRow class="g-3">
-                <BCol lg="12" class="mb-n3">
-                    <BRow class="g-3">
-                        <BCol lg="12"><hr class="text-muted mb-0 mt-n1"/></BCol>
-                        <BCol lg="6"  style="margin-top: 13px; margin-bottom: -12px;" class="fs-12">Please choose type of payor?</BCol>
-                        <BCol lg="6"  style="margin-top: 13px; margin-bottom: -12px;">
-                        <div class="row">
-                                <div class="col-md-8">
-                                    <div class="custom-control custom-radio mb-3">
-                                        <input type="radio" id="customRadio1" class="custom-control-input me-2" value="external" v-model="payor_type">
-                                        <label class="custom-control-label fw-normal fs-12" for="customRadio1">RSTL Customers</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-radio mb-3">
-                                        <input type="radio" id="customRadio2" class="custom-control-input me-2" value="internal" v-model="payor_type">
-                                        <label class="custom-control-label fw-normal fs-12" for="customRadio2">Others</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </BCol>
-                        <BCol lg="12"><hr class="text-muted mt-n2"/></BCol>
-                    </BRow>
-                </BCol>
-                <BCol lg="12" v-if="payor_type" class="mt-2">
-                    <div class="d-flex">
-                        <div style="width: 100%;">
-                            <InputLabel for="customer" value="Payor" :message="form.errors.customer_id"/>
-                                <Multiselect 
-                                :options="customers" 
-                                @search-change="fetchCustomer" 
-                                v-model="form.customer" 
-                                object label="name"
-                                :searchable="true" 
-                                @input="handleInput('customer_id')"
-                                placeholder="Select Payor"/>
-                            </div>
-                            <div class="flex-shrink-0" v-if="payor_type == 'internal'">
-                                <b-button @click="openAdd()" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
-                            </div>
-                        </div>
-                </BCol>
-                <BCol lg="12 mt-0 mb-n2" v-if="form.customer">
-                    <hr class="text-muted"/>
-                </BCol>
-                <BCol lg="6" class="mt-1" v-if="form.customer">
+                <BCol lg="6" class="mt-1">
                     <InputLabel for="collection" value="Collection" :message="form.errors.collection_id"/>
                     <Multiselect 
                     :options="collections" 
@@ -54,7 +10,7 @@
                     label="name"
                     placeholder="Select Collection type"/>
                 </BCol>
-                <BCol lg="6 mt-1" v-if="form.customer">
+                <BCol lg="6 mt-1">
                     <InputLabel for="deposit" value="Deposit Type" :message="form.errors.deposit_id"/>
                     <Multiselect 
                     :options="deposits" 
@@ -63,7 +19,7 @@
                     @input="handleInput('deposit_id')"
                     placeholder="Select Deposit type"/>
                 </BCol>
-                <BCol lg="6 mt-0" v-if="form.customer">
+                <BCol lg="6 mt-0">
                     <InputLabel for="orseries" value="O.R Series" :message="form.errors.orseries_id"/>
                     <Multiselect 
                     :options="orseries" 
@@ -73,7 +29,7 @@
                     @input="handleInput('orseries')"
                     placeholder="Select OR"/>
                 </BCol>
-                 <BCol lg="6" class="mt-0" v-if="form.customer">
+                 <BCol lg="6" class="mt-0">
                     <InputLabel for="payment" value="Payment" :message="form.errors.payment_id"/>
                     <Multiselect 
                     :options="payments" 
@@ -88,7 +44,7 @@
                         <b-button variant="success">O.R # : {{or.orseries.next}}</b-button>
                     </div>
                 </BCol>
-                <BCol lg="12 mt-n2 mb-n2" v-if="or.orseries">
+                <BCol lg="12 mt-n2 mb-n3">
                     <hr class="text-muted"/>
                 </BCol>
                 <template v-if="or.payment">
@@ -131,34 +87,34 @@
                             <InputLabel value="Bank Name" :message="form.errors.bank"/>
                             <TextInput v-model="details.bank" type="text" class="form-control" @input="handleInput('bank')" :light="true"/>
                         </BCol>
-                        <BCol lg="12 mt-2 mb-n4">
+                        <BCol lg="12 mt-1 mb-n3">
                             <hr class="text-muted"/>
                         </BCol>
                     </template>
                 </template>
-                <!-- <BCol lg="12" class="mb-n3" v-if="or.collection_id">
+                <BCol lg="12" class="mb-n3" v-if="or.collection_id">
                     <BRow class="g-3">
-                        <BCol lg="6"  style="margin-top: 13px; margin-bottom: -12px;" class="fs-12">Please choose type of payor?</BCol>
-                        <BCol lg="6"  style="margin-top: 13px; margin-bottom: -12px;">
+                        <BCol lg="7"  style="margin-top: 13px; margin-bottom: -12px;" class="fs-12">Please choose type of payor?</BCol>
+                        <BCol lg="5"  style="margin-top: 13px; margin-bottom: -12px;">
                         <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-6">
                                     <div class="custom-control custom-radio mb-3">
                                         <input type="radio" id="customRadio1" class="custom-control-input me-2" value="external" v-model="payor_type">
-                                        <label class="custom-control-label fw-normal fs-12" for="customRadio1">RSTL Customers</label>
+                                        <label class="custom-control-label fw-normal fs-12" for="customRadio1">External </label>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="custom-control custom-radio mb-3">
                                         <input type="radio" id="customRadio2" class="custom-control-input me-2" value="internal" v-model="payor_type">
-                                        <label class="custom-control-label fw-normal fs-12" for="customRadio2">Others</label>
+                                        <label class="custom-control-label fw-normal fs-12" for="customRadio2">Internal</label>
                                     </div>
                                 </div>
                             </div>
                         </BCol>
                         <BCol lg="12"><hr class="text-muted mt-n2"/></BCol>
                     </BRow>
-                </BCol> -->
-                <!-- <BCol lg="12" v-if="payor_type" class="mt-2">
+                </BCol>
+                <BCol lg="12" v-if="payor_type" class="mt-2">
                     <InputLabel for="customer" value="Payor" :message="form.errors.customer_id"/>
                     <Multiselect 
                     :options="customers" 
@@ -168,9 +124,9 @@
                     :searchable="true" 
                     @input="handleInput('customer_id')"
                     placeholder="Select Payor"/>
-                </BCol> -->
-                <!-- <BCol lg="12" v-if="payor_type" class="mt-2"><hr class="text-muted mt-0"/></BCol> -->
-                <BCol lg="12" v-if="or.collection_id != null && or.deposit_id != null && or.payment != null && or.orseries != null" :class="(or.payment.name == 'Cash') ? 'mt-0' : 'mt-3'">
+                </BCol>
+                <BCol lg="12" v-if="payor_type" class="mt-2"><hr class="text-muted mt-0"/></BCol>
+                <BCol lg="12" v-if="payor_type" class="mt-n2">
                     <BCardHeader class="align-items-center d-flex py-0 mb-2">
                         <BCardTitle class="mb-n2 flex-grow-1 fs-13 mt-n3">Items</BCardTitle>
                         <div class="flex-shrink-0">
@@ -200,17 +156,15 @@
             <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Submit</b-button>
         </template>
     </b-modal>
-    <Add ref="add" @selected="set"/>
 </template>
 <script>
 import {VMoney} from 'v-money';
-import Add from '../../../Names/Modals/Create.vue';
 import Amount from '@/Shared/Components/Forms/Amount.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 import Multiselect from "@vueform/multiselect";
 export default {
-    components: { Multiselect, InputLabel, TextInput, Amount, Add},
+    components: { Multiselect, InputLabel, TextInput, Amount },
     props: ['deposits','orseries','collections','payments'],
     directives: {money: VMoney},
     data(){
@@ -328,10 +282,6 @@ export default {
                 },
             });
         }, 
-        set(data){
-            this.customers.push(data);
-            this.form.customer = data;
-        },
         handleInput(field) {
             this.form.errors[field] = false;
         },
@@ -340,9 +290,6 @@ export default {
         },
         removeItem(index) {
             this.form.items.splice(index, 1);
-        },
-        openAdd(){
-            this.$refs.add.show(this.form.customer);
         },
         hide(){
             this.or.id = null;
