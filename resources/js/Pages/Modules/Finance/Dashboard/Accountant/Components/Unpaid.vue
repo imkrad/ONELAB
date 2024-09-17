@@ -2,14 +2,14 @@
     <b-row class="g-2 mb-2 mt-n2">
         <b-col lg>
             <div class="input-group mb-1">
-                <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                <input type="text" v-model="filter.keyword" placeholder="Search Order of Payment" class="form-control" style="width: 55%;">
-                <span @click="refresh" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
+                <span class="input-group-text"> Unpaid Transactions</span>
+                <input type="text" v-model="filter.keyword" placeholder="Search Customer" class="form-control" style="width: 55%;">
+                <!-- <span @click="refresh" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
                     <i class="bx bx-refresh search-icon"></i>
                 </span>
                 <b-button v-if="$page.props.user.data.assigned_role == 'Accountant'" type="button" variant="primary" @click="openCreate">
                     <i class="ri-add-circle-fill align-bottom me-1"></i> Create
-                </b-button>
+                </b-button> -->
             </div>
         </b-col>
     </b-row>
@@ -17,44 +17,17 @@
         <table class="table table-nowrap align-middle mb-0">
             <thead class="table-light">
                 <tr class="fs-11">
-                    <th></th>
-                    <th style="width: 37%;">Customer</th>
-                    <th style="width: 14%;" class="text-center">Collection</th>
-                    <th style="width: 14%;" class="text-center">Payment</th>
-                    <th style="width: 10%;" class="text-center">Status</th>
-                    <th style="width: 12%;" class="text-center">Total</th>
-                    <th style="width: 7%;" ></th>
+                    <th style="width: 80%;">Customer</th>
+                    <th style="width: 20%;" class="text-center">Total</th>
                 </tr>
             </thead>
             <tbody v-if="lists.length > 0">
                 <tr v-for="(list,index) in lists" v-bind:key="index">
-                    <td class="text-center"> 
-                        {{ (meta.current_page - 1) * meta.per_page + index + 1 }}.
-                    </td>
                     <td>
-                        <h5 class="fs-13 mb-0 text-dark" v-if="list.or">OR# : {{list.or.number}}</h5>
-                        <h5 class="fs-13 mb-0 text-dark" v-else>{{list.code}}</h5>
-                        <p class="fs-12 text-muted mb-0">{{list.payorable.name}}</p>
+                        <h5 class="fs-13 mb-0 text-dark">{{list.code}}</h5>
+                        <p class="fs-12 text-muted mb-0">{{list.customer.name}}</p>
                     </td>
-                    <td class="text-center fs-12">{{list.collection}}</td>
-                    <td class="text-center fs-12">{{list.payment.name}}</td>
-                    <td class="text-center">
-                        <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
-                    </td>
-                    <td class="text-center">{{list.total}}</td>
-                    <td v-if="$page.props.user.data.assigned_role == 'Accountant'" class="text-end">
-                        <b-button @click="openView(list)" variant="soft-info" class="me-1" v-b-tooltip.hover title="View" size="sm">
-                            <i class="ri-eye-fill align-bottom"></i>
-                        </b-button>
-                        <b-button @click="openPrint(list.id)" variant="soft-success" class="me-1" v-b-tooltip.hover title="Print" size="sm">
-                            <i class="ri-printer-fill align-bottom"></i>
-                        </b-button>
-                    </td>
-                    <td v-else class="text-end">
-                        <b-button type="button" variant="primary" size="sm" @click="openView(list)">
-                            Mark as paid
-                        </b-button>
-                    </td>
+                    <td class="text-end">{{list.payment.total}}</td>
                 </tr>
             </tbody>
             <tbody v-else>
@@ -108,9 +81,8 @@ export default {
             axios.get(page_url,{
                 params : {
                     keyword: this.filter.keyword,
-                    status: 6,
                     count: ((window.innerHeight-490)/58),
-                    option: 'ops'
+                    option: 'forpayment'
                 }
             })
             .then(response => {
@@ -129,7 +101,7 @@ export default {
             this.$refs.view.show(data);
         },
         openPrint(id){
-            window.open(this.currentUrl + '/finance?option=op&id='+id);
+            window.open(this.currentUrl + '/finance?option=print&id='+id);
         },
     }
 }

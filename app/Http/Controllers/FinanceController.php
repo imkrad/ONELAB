@@ -54,6 +54,9 @@ class FinanceController extends Controller
             case 'ornumbers':
                 return $this->view->ornumbers($request);
             break;
+            case 'forpayment':
+                return $this->view->forpayment($request);
+            break;
             default:
                 return inertia('Modules/Finance/Dashboard/Index'); 
         }   

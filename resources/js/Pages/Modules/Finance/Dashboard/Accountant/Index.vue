@@ -31,10 +31,22 @@
                             </b-card>
                         </b-col>
                     </div>
-
+                </div>
+                <div class="col-md-8">
                     <div class="card">
                         <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
                             <Lists 
+                            :collections="dropdowns.collections" 
+                            :payments="dropdowns.payments" 
+                            :statuses="dropdowns.statuses"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body" style="height: calc(100vh - 320px); overflow: auto;">
+                            <Unpaid
                             :collections="dropdowns.collections" 
                             :payments="dropdowns.payments" 
                             :statuses="dropdowns.statuses"
@@ -53,9 +65,10 @@
 </template>
 <script>
 import Lists from './Components/Lists.vue';
+import Unpaid from './Components/Unpaid.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
-    components: { PageHeader, Lists },
+    components: { PageHeader, Lists, Unpaid },
     props: ['dropdowns'],
     data(){
         return {
