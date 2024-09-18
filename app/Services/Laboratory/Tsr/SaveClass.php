@@ -24,9 +24,13 @@ class SaveClass
     }
 
     public function updateReport($request){
-        $hashids = new Hashids('krad',10);
-        $code = $hashids->decode($request->id);
-        return $this->report($code[0]);
+        // $hashids = new Hashids('krad',10);
+        // $code = $hashids->decode($request->id);
+        // return $this->report($code[0]);
+        $tsrs =Tsr::get();
+        foreach($tsrs as $tsr){
+            $this->report($tsr->id);
+        }
     }
 
     public function tsr($request){
