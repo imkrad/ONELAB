@@ -10,7 +10,7 @@ class AddressResource extends JsonResource
     public function toArray(Request $request): array
     {
         $address = ($this->address) ? $this->address.', ' : '';
-        if($this->municipality->name == 'Zamboanga City'){
+        if($this->municipality->name == 'Zamboanga City' || $this->municipality->name == 'Isabela City'){
             $a = '';
         }else if($this->province->name == 'Sulu'){
             $a = ', '.$this->province->name;
