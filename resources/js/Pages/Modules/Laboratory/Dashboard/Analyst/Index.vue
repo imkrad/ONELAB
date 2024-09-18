@@ -59,11 +59,8 @@
                                     <select class="form-select" id="inputGroupSelect01">
                                         <option  @click="setDisplay('sample')" selected>Show by Sample</option>
                                     </select>
-                                    <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
+                                    <b-button type="button" variant="primary"  @click="refresh()">
                                         <i class="bx bx-refresh search-icon"></i>
-                                    </span>
-                                    <b-button type="button" variant="primary" @click="openCreate">
-                                        <i class="ri-add-circle-fill align-bottom me-1"></i> Create
                                     </b-button>
                                 </div>
                             </b-col>
