@@ -81,6 +81,15 @@ class ListRolesTableSeeder extends Seeder
                 'is_lab' => 1,
                 'is_active' => 1,
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'name' => 'Laboratory Aide',
+                'description' => 'This user role is assigned for the manner of disposal.',
+                'has_lab' => 0,
+                'is_lab' => 1,
+                'is_active' => 1,
+            ),
         ));
 
         

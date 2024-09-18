@@ -2,8 +2,8 @@
     <b-modal v-model="showModal" hide-footer hide-header title="Cancel Request" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>
         <div class="modal-body">
             <div class="mt-2">
-                <h4 class="mb-4 text-center" v-if="form.option == 'start'">Start Analyzation</h4>
-                <h4 class="mb-4 text-center" v-if="form.option == 'end'">End Analyzation</h4>
+                <h4 class="mb-4 text-center" v-if="form.option == 'start'">Start Analysis</h4>
+                <h4 class="mb-4 text-center" v-if="form.option == 'end'">End Analysis</h4>
                 <span class="text-muted text-start fs-12 mb-0">Please enter a start date if it has passed.</span>
                 <input v-if="form.option == 'start'" type="date" class="form-control mb-2" v-model="form.start_at">
                 <input v-if="form.option == 'end'" type="date" class="form-control mb-2" v-model="form.end_at">

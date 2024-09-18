@@ -2,6 +2,7 @@
 
 namespace App\Services\Laboratory\Tsr;
 
+use Carbon\Carbon;
 use Hashids\Hashids;
 use App\Models\Tsr;
 use App\Models\TsrSample;
@@ -80,6 +81,9 @@ class ViewClass
             })
             ->when($request->reminder, function ($query, $reminder) {
                 switch($reminder){
+                    case 'Due Soon':
+                        $query->whereBetween('due_at', [Carbon::now(), Carbon::now()->addDays(5)]);
+                    break;
                     case 'Due Today':
                         $query->whereDate('due_at',now());
                     break;

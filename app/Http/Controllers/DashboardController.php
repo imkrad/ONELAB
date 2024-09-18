@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\Dashboard\TMClass;
 use App\Services\Dashboard\CroClass;
 use App\Services\Dashboard\AnalystClass;
 use App\Services\Dashboard\FinanceClass;
@@ -10,11 +11,12 @@ use App\Services\Laboratory\DropdownClass;
 
 class DashboardController extends Controller
 {
-    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown, AnalystClass $analyst){
+    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown, AnalystClass $analyst, TMClass $tm){
         $this->finance = $finance;
         $this->cro = $cro;
         $this->dropdown = $dropdown;
         $this->analyst = $analyst;
+        $this->tm = $tm;
     }
 
     public function index(Request $request){
@@ -74,10 +76,30 @@ class DashboardController extends Controller
                         ]);
                     break;
                     case 'Technical Manager':
-                        return inertia('Modules/Laboratory/Dashboard/TM/Index');
+                        return inertia('Modules/Laboratory/Dashboard/TM/Index',[
+                            'dropdowns' => [
+                                'laboratories' => $this->tm->laboratories(),
+                                'reminders' => $this->tm->reminders($request),
+                            ]
+                        ]);
+                    break;
+                    case 'Laboratory Aide':
+                        return inertia('Modules/Laboratory/Dashboard/LA/Index');
                     break;
                 }
             }
+        }
+    }
+
+    public function fetch(Request $request){
+        $option = $request->option;
+        switch($option){
+            case 'technicalmanager':
+                return [
+                    'reminders' => $this->tm->reminders($request),
+                    'counts' => $this->tm->counts($request),
+                ];
+            break;
         }
     }
 }

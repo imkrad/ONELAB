@@ -60,8 +60,8 @@
                     <th style="width: 7%;" class="text-center">Progress</th>
                     <th style="width: 10%;" class="text-center">Total</th>
                     <th style="width: 7%;" class="text-center">Payment</th>
-                    <th style="width: 13%;" class="text-center">Due At</th>
-                    <th style="width: 15%;" class="text-center">Request At</th>
+                    <th style="width: 15%;" class="text-center">Date Request</th>
+                    <th style="width: 13%;" class="text-center">Due Date</th>
                     <th style="width: 8%;" class="text-center">Status</th>
                     <th style="width: 7%;" ></th>
                 </tr>
@@ -86,11 +86,11 @@
                         <i v-else-if="list.payment.status.name == 'Contract'" class="ri-information-fill text-warning fs-18" v-b-tooltip.hover title="Contract w/ MOA"></i>
                         <i v-else class="ri-close-circle-fill text-danger fs-18" v-b-tooltip.hover :title="list.payment.status.name"></i>
                     </td>
+                    <td class="text-center fs-12">{{list.created_at}}</td>
                     <td class="text-center fs-12">
                         <span v-if="list.due_at">{{list.due_at}}</span>
                         <span class="text-muted" v-else>Not yet set</span>
                     </td>
-                    <td class="text-center fs-12">{{list.created_at}}</td>
                     <td class="text-center">
                         <span :class="'badge '+list.status.color">{{list.status.name}}</span>
                     </td>

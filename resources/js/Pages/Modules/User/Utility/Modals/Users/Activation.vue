@@ -43,6 +43,7 @@ export default {
                 email: null,
                 is_active: null,
                 email_verified_at: '2024-05-15 08:46:33',
+                is_new: 0,
                 type: null
             }),
             user: {},
