@@ -57,7 +57,6 @@
                                     <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
                                     <input type="text"  placeholder="Search Sample Code" v-model="searchQuery" class="form-control" style="width: 65%;">
                                     <select class="form-select" id="inputGroupSelect01">
-                                        <option  @click="setDisplay('tsr')" selected>Show by TSR</option>
                                         <option  @click="setDisplay('sample')" selected>Show by Sample</option>
                                     </select>
                                     <span @click="refresh()" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
@@ -71,8 +70,7 @@
                         </div>
                     </div>
                 </div>
-                <Tsr v-if="mode === 'tsr'" :tsrs="tsrs"/>
-                <Sample v-else-if="mode === 'sample'" :samples="samples" :search-query="searchQuery" ref="sample"/>
+                <Sample v-if="mode === 'sample'" :samples="samples" :search-query="searchQuery" ref="sample"/>
             </div>
         </div>
     </b-row>
@@ -80,14 +78,13 @@
     <Show ref="show"/>
 </template>
 <script>
-import Tsr from './Display/Tsr.vue';
 import Sample from './Display/Sample.vue';
 import simplebar from "simplebar-vue";
 import View from './Modals/View.vue';
 import Show from './Modals/Show.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
-    components: { PageHeader, View, Show, simplebar, Tsr, Sample },
+    components: { PageHeader, View, Show, simplebar, Sample },
     props: ['tsrs','samples','reminders','tasks'],
     data(){
         return {

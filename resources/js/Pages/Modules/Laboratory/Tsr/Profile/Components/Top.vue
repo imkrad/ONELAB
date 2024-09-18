@@ -17,10 +17,7 @@
                                              <div class="vr"></div> -->
                                             <div>
                                                 <i class="ri-map-pin-2-fill align-bottom me-1"></i>
-                                                {{selected.customer.address.barangay.name}},
-                                                {{selected.customer.address.municipality.name}},
-                                                {{selected.customer.address.province.name}},
-                                                {{selected.customer.address.region.region}}
+                                                {{selected.customer.address.name}}
                                             </div>
                                             <div class="vr"></div>
                                             <div><i class="ri-account-circle-fill align-bottom me-1"></i>{{selected.conforme}}</div>

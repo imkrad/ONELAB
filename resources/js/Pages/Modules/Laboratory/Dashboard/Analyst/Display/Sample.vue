@@ -21,14 +21,21 @@
                 <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of pendings" :key="index">
                     <div class="card" style="cursor: pointer;" @click="openShow(item,'Pending')">
                         <div class="card-header">
-                            <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 text-muted">
+                                    <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                                </div>
+                                <div class="flex-shrink-0">
+                                    <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="d-flex flex-column h-100">
                                 <div class="mt-auto">
                                     <div class="d-flex mb-2">
                                         <div class="flex-grow-1">
-                                            <div>Analysis Test</div>
+                                            <div class="text-muted">{{item.sample.name}}</div>
                                         </div>
                                         <div class="flex-shrink-0">
                                             <div>
@@ -42,16 +49,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer py-2">
+                        <!-- <div class="card-footer py-2">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1 text-muted fs-13">
-                                   1 
+                                    <i class="ri-list-check align-bottom me-1 text-muted"></i>{{(item.ongoing)}}/{{(item.analyses-item.completed)}}
                                 </div>
                                 <div class="flex-shrink-0">
                                     <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </BCol>
             </BRow>
@@ -79,14 +86,21 @@
             <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of ongoings" :key="index">
                 <div class="card" style="cursor: pointer;" @click="openShow(item,'Ongoing')">
                     <div class="card-header">
-                        <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1 text-muted">
+                                <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column h-100">
                             <div class="mt-auto">
                                 <div class="d-flex mb-2">
                                     <div class="flex-grow-1">
-                                        <div>Analysis Test</div>
+                                        <div class="text-muted">{{item.sample.name}}</div>
                                     </div>
                                     <div class="flex-shrink-0">
                                         <div>
@@ -100,16 +114,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer py-2">
+                    <!-- <div class="card-footer py-2">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted fs-13">
-                                1<!-- {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span>  -->
+                               
                             </div>
                             <div class="flex-shrink-0">
                                 <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.due}}</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </BCol>
         </BRow>
@@ -137,14 +151,21 @@
             <BCol lg="12" class="project-card mb-n3" v-for="(item, index) of completeds" :key="index">
                 <div class="card" style="cursor: pointer;" @click="openShow(item,'Completed')">
                     <div class="card-header">
-                        <h6 class="card-title mb-n1 fs-13 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1 text-muted">
+                                <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="d-flex flex-column h-100">
                             <div class="mt-auto">
                                 <div class="d-flex mb-2">
                                     <div class="flex-grow-1">
-                                        <div>Analysis Test</div>
+                                        <div class="text-muted">{{item.sample.name}}</div>
                                     </div>
                                     <div class="flex-shrink-0">
                                         <div>
@@ -153,21 +174,12 @@
                                     </div>
                                 </div>
                                 <div class="progress progress-sm animated-progess">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" :style="`width: ${item.progressBar};`"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" :style="`width: ${(item.completed/item.analyses)*100}%;`"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer py-2">
-                        <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 text-muted fs-13">
-                                <!-- {{item.tsr.samples.length}} <span v-if="item.tsr.samples.length === 1">sample</span> <span v-else>samples</span>  -->
-                            </div>
-                            <div class="flex-shrink-0">
-                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.due}}</div>
-                            </div>
-                        </div>
-                    </div>
+                  
                 </div>
             </BCol>
         </BRow>

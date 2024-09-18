@@ -11,7 +11,7 @@ class AddressResource extends JsonResource
     {
         $address = ($this->address) ? $this->address.', ' : '';
         return [
-            'name' => $address.$this->barangay->name.', '.$this->municipality->name.', '.$this->province->name, //.', '.$this->region->region
+            'name' => $address.$this->barangay->name.', '.$this->municipality->name.', '.$this->province->name.', '.$this->region->region,
             'address' => $this->address,
             'region' => $this->region,
             'province' => $this->province,

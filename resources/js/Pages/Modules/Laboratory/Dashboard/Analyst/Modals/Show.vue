@@ -23,7 +23,8 @@
                             </div>
                         </div>
                         <div class="flex-grow-1">
-                           <!-- <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span> -->
+                            <p class="text-muted fs-11 mb-0">Sample name :</p>
+                            <h5 class="fs-12 mb-0">{{selected.sample.name}}</h5>
                         </div>
                     </div>
                 </div>
@@ -61,12 +62,14 @@
                     <table class="table table-nowrap align-middle mb-0">
                         <thead class="table-light">
                             <tr class="fs-11">
-                                <th class="text-center" width="5%">#</th>
+                                <th class="text-center" width="5%" v-if="status!== 'Completed'">
+                                    <input class="form-check-input fs-16" v-model="mark" type="checkbox" value="option" />
+                                </th>
+                                <th class="text-center" width="5%" v-else>#</th>
                                 <th width="24%">Test Name</th>
                                 <th class="text-center" width="47%">Method Reference</th>
                                 <th class="text-center" width="12%">Fee</th>
                                 <th class="text-center" width="12%"></th>
-                                <!-- <th></th> -->
                             </tr>
                         </thead>
                     </table>
@@ -77,8 +80,6 @@
                                     <td  width="5%" class="text-center fs-14"> 
                                         <input v-if="list.status.name !== 'Completed'" type="checkbox" v-model="list.selected" class="form-check-input" />
                                         <i v-else class="text-success ri-checkbox-circle-fill fs-18"></i>
-                                        <!-- <i v-if="list.status.name === 'Ongoing'" class="text-info ri-record-circle-fill fs-18"></i>
-                                        <i v-if="list.status.name === 'Completed'" class="text-success ri-checkbox-circle-fill fs-18"></i> -->
                                     </td>
                                     <td  width="24%">
                                         <h5 class="fs-11 mb-0">{{list.testname}}</h5>
@@ -92,62 +93,13 @@
                                     <td  width="12%" class="text-center">
                                         <span :class="'badge '+list.status.color+' '+list.status.others">{{list.status.name}}</span>
                                     </td>
-                                    <!-- <td></td> -->
                                 </tr>
                             </tbody>
                         </table>
                     </simplebar>
                 </div>
-                <!-- <b-accordion class=" nesting-accordion custom-accordionwithicon accordion-border-box" id="accordionnesting">
-                    <div class="accordion-item" v-for="(item, index) of selected.tsr.samples" :key="index">
-                        <h2 class="accordion-header" id="accordionnestingExample3">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="'#view'+index" aria-expanded="false" aria-controls="accor_nestingExamplecollapse3">
-                            {{item.code}} <span class="text-muted ms-2">({{item.name}})</span>
-                        </button>
-                        </h2>
-                        <div :id="'view'+index" class="accordion-collapse collapse" aria-labelledby="accordionnestingExample3" data-bs-parent="#accordionnesting">
-                            <div class="accordion-body">
-                                <BListGroup tag="ul" flush>
-                                    <BListGroupItem tag="li"  v-for="(analysis, index) of item.analyses" :key="index">
-                                        <input class="form-check-input me-1" type="checkbox" value=""> {{analysis.testservice.method.method.name}}
-                                        <span class="float-end">{{analysis.testservice.method.fee}}</span>
-                                    </BListGroupItem>
-                                </BListGroup>
-                            </div>
-                        </div>
-                    </div>
-                </b-accordion > -->
             </div>
         </div>
-
-        <!-- {{ selected.tsr.samples }} -->
-        
-        <!-- <form class="row customform mb-n1 mt-n2 g-2">
-            <div class="col-lg-12">
-                <hr class="text-muted mt-2 mb-2"/>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-floating">
-                    <input type="text" class="form-control" :value="selected.testservice.testname.name" readonly=""><label>Testname</label>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="form-floating">
-                    <input type="text" class="form-control" :value="selected.testservice.method.method.name" readonly=""><label>Method</label>
-                </div>
-            </div>
-             <div class="col-lg-12">
-                <div class="form-floating">
-                    <input type="text" class="form-control" :value="selected.testservice.method.reference.name" readonly=""><label>Reference</label>
-                </div>
-            </div>
-             <div class="col-lg-12">
-                <blockquote class="blockquote custom-blockquote blockquote-dark rounded mb-0">
-                    <p class="text-body fs-12 mb-2">{{selected.sample.customer_description}}, {{selected.sample.description}}</p>
-                    <footer class="blockquote-footer fs-10 mt-0"><cite title="Source Title">{{selected.sample.name}}</cite></footer>
-                </blockquote>
-            </div>
-        </form> -->
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
             <b-button v-if="status === 'Pending'" @click="save(11,'start')" variant="primary" :disabled="form.processing" block>Start Analysis</b-button>
@@ -171,7 +123,21 @@ export default {
             filterCode: null,
             status: null,
             form: {},
-            showModal: false
+            showModal: false,
+            mark: false
+        }
+    },
+    watch: {
+        mark(){
+            if(this.mark){
+                this.filteredLists.forEach(item => {
+                    item.selected = true;
+                });
+            }else{
+                this.filteredLists.forEach(item => {
+                    item.selected = false;
+                });
+            }
         }
     },
     computed: {
@@ -203,6 +169,7 @@ export default {
         show(data,status) {
             this.status = status;
             this.selected = data;
+            this.mark = null;
             this.showModal = true;
         },
         save(status,type){
@@ -221,6 +188,7 @@ export default {
             return '₱'+val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         },
         hide(){
+            this.mark = null;
             this.showModal = false;
         },
     }

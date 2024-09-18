@@ -300,7 +300,7 @@ class SaveClass
             'due_at' => $tsr->due_at,
             'customer' => [
                 'name' => ($tsr->customer->is_main) ? $tsr->customer->customer_name->name :  $tsr->customer->customer_name->name.' - '.$tsr->customer->name,
-                'address' => $tsr->customer->address->address.', '.$tsr->customer->address->municipality->name.', '.$tsr->customer->address->province->name.', '.$tsr->customer->address->region->region,
+                'address' => $tsr->customer->address->address.', '.$tsr->customer->address->barangay->name.', '.$tsr->customer->address->municipality->name.', '.$tsr->customer->address->province->name.', '.$tsr->customer->address->region->region,
                 'contact_no' => $tsr->customer->contact->contact_no,
                 'email' => $tsr->customer->contact->email,
                 'conforme' => [
