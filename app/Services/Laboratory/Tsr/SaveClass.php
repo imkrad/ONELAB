@@ -26,7 +26,7 @@ class SaveClass
     public function updateReport($request){
         $hashids = new Hashids('krad',10);
         $code = $hashids->decode($request->id);
-        return $this->report($code);
+        return $this->report($code[0]);
     }
 
     public function tsr($request){
@@ -227,7 +227,6 @@ class SaveClass
         ->with('conforme:id,name,contact_no','customer.contact:id,email,contact_no,customer_id')
         ->with('payment:tsr_id,id,total,subtotal,discount,or_number,is_paid,is_free,paid_at,status_id,discount_id,collection_id,payment_id','payment.status:id,name,color,others','payment.collection:id,name','payment.type:id,name','payment.discounted:id,name,value')
         ->first();
-
         // $samples = TsrAnalysis::query()->with('testservice.method.method','testservice.testname','sample')
         // ->whereHas('sample',function ($query) use ($id) {
         //     $query->whereHas('tsr',function ($query) use ($id) {
@@ -316,14 +315,13 @@ class SaveClass
             'samples' => $samples,
             'descriptions' => $descs    
         ];
-        
         if(TsrReport::where('tsr_id',$id)->count() > 0){
             $data = TsrReport::where('tsr_id',$id)->first();
             $data->information = json_encode($information);
             $data->save();
         }else{
             $data = TsrReport::create([
-                'information' => json_encode($information),
+                'information' => json_encode($information,true),
                 'tsr_id' => $id
             ]);
         }

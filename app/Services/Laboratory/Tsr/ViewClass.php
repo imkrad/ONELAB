@@ -286,6 +286,7 @@ class ViewClass
         $tsr = TsrReport::where('tsr_id',$id)->value('information');
         $lab = json_decode($tsr);
     
+
         $head = UserRole::with('user:id','user.profile:id,user_id,firstname,middlename,lastname')
        ->where('laboratory_type',$labcolor->lab_type->id)->whereHas('role',function ($query){
             $query->where('name','Technical Manager');
