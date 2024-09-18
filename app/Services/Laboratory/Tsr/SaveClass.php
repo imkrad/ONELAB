@@ -77,7 +77,8 @@ class SaveClass
                 $sample = $data->samples()->create([
                     'name' => $request->name,
                     'customer_description' => $request->customer_description,
-                    'description' => $request->description
+                    'description' => $request->description,
+                    'code' => $this->generateSampleCode($data)
                 ]);
                 foreach($request->lists as $list){
                     TsrGroup::where('id',$list['id'])->update(['status_id' => 24]);
@@ -91,6 +92,8 @@ class SaveClass
                     $total = $this->updateTotal($data->id,$list['fee']);
                 }
             }
+
+            $this->report($data->id);
         }
 
         return [
