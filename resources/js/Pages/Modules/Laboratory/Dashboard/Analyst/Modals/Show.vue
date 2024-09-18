@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="flex-grow-1">
-                           <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span>
+                           <!-- <p class="text-muted fs-11 mb-0">Status :</p><span class="badge" :class="selected.tsr.status.color">{{selected.tsr.status.name}}</span> -->
                         </div>
                     </div>
                 </div>
