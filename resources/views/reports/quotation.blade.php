@@ -184,7 +184,7 @@ border-top: none !important;
                     <td>
                         <ul style="margin-left: -30px; list-style: none;">
                             @foreach($descs as $desc)
-                                <li>&#62; {{$desc['name']}} : {{$desc['customer_description']}}</li>
+                                <li>&#62; {{$desc['name']}} : <i>{{$desc['customer_description']}}</i>, {{$desc['description']}}</li>
                             @endforeach
                         </ul>
                     </td>
