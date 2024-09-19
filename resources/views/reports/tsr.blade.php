@@ -232,7 +232,7 @@
                     <td>
                         <ul style="margin-left: -30px; list-style: none; color: #072388; ">
                             @foreach($tsr['descriptions'] as $desc)
-                                <li>{{$desc['code']}} : {{$desc['customer_description']}}, {{$desc['description']}}</li>
+                                <li>{{$desc['code']}} : <i>{{$desc['customer_description']}}</i>, {{$desc['description']}}</li>
                             @endforeach
                         </ul>
                     </td>
