@@ -3,6 +3,7 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Tsr;
+use Carbon\Carbon;
 use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
 use App\Http\Resources\Laboratory\SampleResource;
@@ -119,10 +120,10 @@ class AnalystClass
 
     public function reminders($request){
         $laboratory = \Auth::user()->userrole->laboratory_type;
-        return [
+        return [ 
             [
-                'name' => 'Due Today',
-                'description' => 'See all requests due for today',
+                'name' => 'Due Soon',
+                'description' => '5 days ahead of the due date',
                 'count' => Tsr::whereDate('due_at',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
                 'icon' => 'ri-error-warning-line',
                 'color' => 'bg-warning-subtle text-warning'

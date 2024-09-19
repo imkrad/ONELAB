@@ -24,7 +24,10 @@ class ViewClass
         $this->laboratory = (\Auth::user()->userrole) ? \Auth::user()->userrole->laboratory_id : null;
         $this->configuration = Configuration::with('laboratory.address')->where('laboratory_id',$this->laboratory)->first();
         $data = UserRole::where('user_id',\Auth::user()->id)->pluck('laboratory_type');
-        $this->type = (count($data) > 0) ? $data : null;
+        $filteredData = $data->filter(function ($value) {
+            return !is_null($value);
+        });
+        $this->type = $filteredData->isNotEmpty() ? $filteredData : null;
     }
 
     public function counts($statuses){
@@ -35,6 +38,7 @@ class ViewClass
     }
 
     public function lists($request){
+        // $labtype = ($this->type) ? $this->type : $request->laboratory;
         $data = TsrResource::collection(
             Tsr::query()
             ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.wallet')
@@ -69,12 +73,9 @@ class ViewClass
             ->when($this->laboratory, function ($query, $lab) {
                 $query->where('laboratory_id',$lab);
             })
-            ->when($request->laboratory, function ($query, $laboratory) {
-                $query->where('laboratory_type',$laboratory);
+            ->when($request->laboratory , function ($query, $labtype ) {
+                $query->where('laboratory_type',$labtype );
             }) 
-            ->when($this->type, function ($query, $type) {
-                $query->whereIn('laboratory_type',$type);
-            })
             ->when($request->sort, function ($query, $sort) use ($request) {
                 if($request->sortby == 'Code'){
                     $query->orderBy('code',$request->sort);

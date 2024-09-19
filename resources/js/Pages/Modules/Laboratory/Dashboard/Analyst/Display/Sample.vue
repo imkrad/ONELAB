@@ -196,6 +196,7 @@ export default {
     props: ['samples','searchQuery'],
     data() {
         return {
+            showSoon: false,
             showDueToday: false,
             showOverdue: false 
         };
@@ -204,10 +205,15 @@ export default {
         currentDate() {
             return new Date().toISOString().split('T')[0];
         },
+        futureDate() {
+            const date = new Date();
+            date.setDate(date.getDate() + 5);
+            return date.toISOString().split('T')[0];
+        },
         pendings() {
             return this.samples.filter(item => {
                 const matchesSearch = this.matchesSearch(item);
-                const isDueToday = this.showDueToday ? item.due_at === this.currentDate : true;
+                const isDueToday = this.showDueToday ? item.due_at >= this.currentDate && item.due_at <= this.futureDate : true;
                 const isOverdue = this.showOverdue ? item.due_at < this.currentDate : true;
                 return item.pending > 0 && matchesSearch  && isDueToday && isOverdue;
             });
@@ -215,7 +221,7 @@ export default {
         ongoings() {
             return this.samples.filter(item => {
                 const matchesSearch = this.matchesSearch(item);
-                const isDueToday = this.showDueToday ? item.due_at === this.currentDate : true;
+                const isDueToday = this.showDueToday ? item.due_at >= this.currentDate && item.due_at <= this.futureDate : true;
                 const isOverdue = this.showOverdue ? item.due_at < this.currentDate : true;
                 return item.ongoing > 0 && matchesSearch && isDueToday && isOverdue;
             });
@@ -223,7 +229,7 @@ export default {
         completeds() {
             return this.samples.filter(item => {
                 const matchesSearch = this.matchesSearch(item);
-                const isDueToday = this.showDueToday ? item.due_at === this.currentDate : true;
+                const isDueToday = this.showDueToday ? item.due_at >= this.currentDate && item.due_at <= this.futureDate : true;
                 const isOverdue = this.showOverdue ? item.due_at < this.currentDate : true;
                 return item.completed > 0 && matchesSearch && isDueToday && isOverdue;
             });
@@ -231,7 +237,7 @@ export default {
     },
     methods: {
         toggleDueTodayFilter(data) {
-            if(data === 'Due Today'){
+            if(data === 'Due Soon'){
                 this.showOverdue = false;
                 this.showDueToday = !this.showDueToday;
             }else if(data === 'Overdue Request'){
