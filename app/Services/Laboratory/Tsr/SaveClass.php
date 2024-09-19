@@ -297,6 +297,7 @@ class SaveClass
         $descs = TsrSample::query()
         ->where('tsr_id',$id)
         ->get();
+        $d = ($tsr->customer->address->address != NULL || $tsr->customer->address->address != '') ? $tsr->customer->address->address.', ' : '';
         if($tsr->customer->address->municipality->name == 'Zamboanga City'){
             $a = $tsr->customer->address->municipality->name;
         }else{
@@ -310,7 +311,7 @@ class SaveClass
             'due_at' => $tsr->due_at,
             'customer' => [
                 'name' => ($tsr->customer->is_main) ? $tsr->customer->customer_name->name :  $tsr->customer->customer_name->name.' - '.$tsr->customer->name,
-                'address' => $tsr->customer->address->address.', '.$tsr->customer->address->barangay->name.', '.$a,
+                'address' => $d.$tsr->customer->address->barangay->name.', '.$a,
                 'contact_no' => $tsr->customer->contact->contact_no,
                 'email' => $tsr->customer->contact->email,
                 'conforme' => [
