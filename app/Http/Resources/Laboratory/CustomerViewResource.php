@@ -22,7 +22,7 @@ class CustomerViewResource extends JsonResource
             'address' => new AddressResource($this->address),
             'industry' => ($this->industry) ? $this->industry->name : '',
             'wallet' => $this->wallet,
-            'conformes' => $this->conformes,
+            'conformes' => ConformeResource::collection($this->conformes),
         ];
     }
 }

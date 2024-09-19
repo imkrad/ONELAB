@@ -124,7 +124,12 @@ class AnalystClass
             [
                 'name' => 'Due Soon',
                 'description' => '5 days ahead of the due date',
-                'count' => Tsr::whereDate('due_at',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
+                    $query->whereBetween('due_at', [Carbon::now(), Carbon::now()->addDays(5)])->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
+                })->whereHas('Analyses', function($query) {
+                    $query->where('status_id', '!=', 12);
+                })
+                ->count(),
                 'icon' => 'ri-error-warning-line',
                 'color' => 'bg-warning-subtle text-warning'
             ],

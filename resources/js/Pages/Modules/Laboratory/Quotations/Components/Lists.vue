@@ -54,7 +54,7 @@
                         {{ (meta.current_page - 1) * meta.per_page + index + 1 }}.
                     </td>
                     <td>
-                        <h5 v-if="list.code" class="fs-13 mb-0 text-dark">{{list.code}}</h5>
+                        <h5 v-if="list.code" class="fs-13 mb-0 fw-semibold text-primary">{{list.code}}</h5>
                         <h5 v-else class="fs-13 mb-0 text-muted">Not yet available</h5>
                         <p class="fs-12 text-muted mb-0">{{list.customer.name}}</p>
                     </td>
@@ -122,7 +122,7 @@ export default {
                     keyword: this.filter.keyword,
                     status: this.filter.status,
                     laboratory: this.filter.laboratory,
-                    count: ((window.innerHeight-350)/58),
+                    count: ((window.innerHeight-390)/58),
                     option: 'lists'
                 }
             })

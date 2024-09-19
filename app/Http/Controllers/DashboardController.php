@@ -20,6 +20,7 @@ class DashboardController extends Controller
     }
 
     public function index(Request $request){
+        // return $this->analyst->reminders($request);
         if(!\Auth::check()){
             return inertia('Auth/Login',[
                 'dropdowns' => [

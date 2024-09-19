@@ -43,7 +43,7 @@ class ViewClass
             ->when($request->laboratory, function ($query, $laboratory) {
                 $query->where('laboratory_type',$laboratory)->where('laboratory_id',$this->laboratory);
             })
-            ->orderBy('code','DESC')
+            ->orderBy('created_at','DESC')
             ->paginate($request->count)
         );
         return $data;

@@ -130,9 +130,30 @@
             <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
         </div>
            
+        <form class="customform">
+            <BRow class="g-3">
+                <BCol lg="12" class="mt-3">
+                    <div class="d-flex">
+                        <div style="width: 100%;">
+                            <InputLabel for="conforme" value="Conforme"/>
+                            <Multiselect 
+                            :options="selected.customer.conformes" 
+                            label="name"
+                            v-model="form.conforme"
+                            object
+                            :searchable="true" 
+                            placeholder="Select Conforme"/>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <b-button @click="openAdd()" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
+                        </div>
+                    </div>
+                </BCol>
+            </BRow>
+        </form>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
-            <b-button @click="submit('ok')" variant="primary" :disabled="form.processing" block>Submit</b-button>
+            <b-button @click="submit('ok')" variant="primary" :disabled="(form.conforme === null) ? true : false" block>Submit</b-button>
         </template>
     </b-modal>
 </template>
@@ -140,8 +161,9 @@
 import _ from 'lodash';
 import { useForm } from '@inertiajs/vue3';
 import simplebar from 'simplebar-vue';
+import Multiselect from "@vueform/multiselect";
 export default {
-    components: { simplebar },
+    components: { simplebar, Multiselect },
     data(){
         return {
             currentUrl: window.location.origin,
@@ -157,6 +179,7 @@ export default {
                 due_at: null,
                 subtotal: null,
                 discount: null,
+                conforme: null,
                 option: 'tsr'
             }),
             selected: { 
