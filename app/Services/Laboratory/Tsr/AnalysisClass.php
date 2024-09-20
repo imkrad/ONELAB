@@ -97,7 +97,7 @@ class AnalysisClass
             }else{
                 $subtotal = $subtotal - $fee;
                 $discount = (float) (($payment->discounted->value/100) * $subtotal);
-                $total =  ((float) $total - (float) $discount);
+                $total =  ((float) $subtotal - (float) $discount);
             }
             $payment->subtotal = $subtotal;
             $payment->discount = $discount;
