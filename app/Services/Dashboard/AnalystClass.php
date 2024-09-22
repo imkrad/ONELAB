@@ -86,7 +86,7 @@ class AnalystClass
                 'due' => $sample->tsr->due_at,
                 'due_at' => date('Y-m-d', strtotime($sample->tsr->due_at)),
                 'sample' => $sample,
-                'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','testservice.testname','testservice.method.reference','testservice.method.method')
+                'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','analyst','testservice.testname','testservice.method.reference','testservice.method.method')
                 ->whereHas('sample',function ($query) use ($id) {
                     $query->where('id',$id);
                 })->orderBy('status_id','ASC')->get()),
@@ -125,11 +125,8 @@ class AnalystClass
                 'name' => 'Due Soon',
                 'description' => '5 days ahead of the due date',
                 'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
-                    $query->whereBetween('due_at', [Carbon::now(), Carbon::now()->addDays(5)])->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
-                })->whereHas('Analyses', function($query) {
-                    $query->where('status_id', '!=', 12);
-                })
-                ->count(),
+                    $query->whereBetween('due_at', [Carbon::now()->startOfDay(), Carbon::now()->addDays(5)->endOfDay()])->where('laboratory_id',$this->laboratory)->whereNotIn('status_id',[4,5])->where('laboratory_type',$laboratory);
+                })->count(),
                 'icon' => 'ri-error-warning-line',
                 'color' => 'bg-warning-subtle text-warning'
             ],
@@ -137,25 +134,43 @@ class AnalystClass
                 'name' => 'Overdue Request',
                 'description' => 'Keep track of all laboratory tasks',
                 'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
-                    $query->where('status_id',3)->whereDate('due_at','<',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
+                    $query->whereDate('due_at','<',now())->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->whereNotIn('status_id',[4,5]);
                 })->count(),
                 'icon' => 'ri-error-warning-fill',
                 'color' => 'bg-danger-subtle text-danger'
             ],
-            [
-                'name' => 'For Released',
+              [
+                'name' => 'Samples with no report',
                 'description' => 'Reports that are ready to be released',
-                'count' => Tsr::where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+                'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
+                    $query->where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
+                })
+                ->whereDoesntHave('report')
+                ->whereHas('analyses', function ($query) {
+                    $query->where('status_id', 12);
+                }, '=', function ($query) {
+                    $query->selectRaw('COUNT(*)')
+                          ->from('tsr_analyses') 
+                          ->whereColumn('sample_id', 'tsr_samples.id');
+                })
+                ->count(),
                 'icon' => 'ri-alert-fill',
                 'color' => 'bg-success-subtle text-success'
             ],
-            [
-                'name' => 'Unclaimed Reports',
-                'description' => 'Ensure follow-up on unclaimed reports.',
-                'count' => Tsr::where('status_id',4)->where('due_at','<',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
-                'icon' => 'ri-information-fill',
-                'color' => 'bg-dark-subtle text-dark'
-            ],
+            // [
+            //     'name' => 'For Released',
+            //     'description' => 'Reports that are ready to be released',
+            //     'count' => Tsr::where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+            //     'icon' => 'ri-alert-fill',
+            //     'color' => 'bg-success-subtle text-success'
+            // ],
+            // [
+            //     'name' => 'Unclaimed Reports',
+            //     'description' => 'Ensure follow-up on unclaimed reports.',
+            //     'count' => Tsr::where('status_id',4)->where('due_at','<',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory)->count(),
+            //     'icon' => 'ri-information-fill',
+            //     'color' => 'bg-dark-subtle text-dark'
+            // ],
         ];
     }
 
@@ -173,7 +188,7 @@ class AnalystClass
                 'name' => 'Completed',
                 'description' => 'Task I\'ve successfully completed',
                 'count' => TsrAnalysis::where('status_id',12)->where('analyst_id',\Auth::user()->id)->count(),
-                'icon' => 'ri-alert-fill',
+                'icon' => 'ri-checkbox-circle-fill',
                 'color' => 'bg-success-subtle text-success'
             ]
         ];

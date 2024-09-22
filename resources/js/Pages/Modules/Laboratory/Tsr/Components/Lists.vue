@@ -3,8 +3,13 @@
         <b-col lg>
             <div class="input-group mb-1">
                 <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                <input type="text" v-model="filter.keyword" placeholder="Search Request" class="form-control" style="width: 50%;">
-                <input type="date" v-model="filter.date" placeholder="Search Request" class="form-control" style="width: 100px;">
+                <input type="text" v-model="filter.keyword" placeholder="Search Request" class="form-control" style="width: 40%;">
+                <input v-if="filter.datetype" type="date" v-model="filter.date" placeholder="Search Request" class="form-control" style="width: 100px;">
+                <select v-model="filter.datetype" @change="fetch()" class="form-select" id="inputGroupSelect01" style="width: 100px;">
+                    <option :value="null" selected>Filter by date</option>
+                    <option value="due_at" selected>Due Date</option>
+                    <option value="created_at" selected>Request Date</option>
+                </select>
                 <select v-model="filter.laboratory" @change="fetch()" class="form-select" id="inputGroupSelect01" style="width: 100px;">
                     <option :value="null" selected>Select Laboratory</option>
                     <option :value="list.value" v-for="list in dropdowns.laboratories" v-bind:key="list.id">{{list.name}}</option>
@@ -67,7 +72,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(list,index) in lists" v-bind:key="index">
+                <tr v-for="(list,index) in lists" v-bind:key="index" @click="selectRow(index)" :class="{
+                        'bg-dark-subtle': selectedRow === index && list.status.name !== 'Completed' && !isDueApproaching(list.due_at, list.status.name) && !isOverdue(list.due_at),
+                        'bg-success-subtle': list.status.name === 'Completed',
+                        'bg-warning-subtle': isDueApproaching(list.due_at, list.status.name),
+                        'bg-danger-subtle': isOverdue(list.due_at)
+                }">
                     <td class="text-center"> 
                         {{ (meta.current_page - 1) * meta.per_page + index + 1 }}.
                     </td>
@@ -145,6 +155,7 @@ export default {
                 laboratory: null,
                 sortby: 'Requested At',
                 sort: 'desc',
+                datetype: null,
                 date:null
             },
             chartOptions: {
@@ -173,6 +184,7 @@ export default {
                 },
                 colors: ["#099885"],
             },
+            selectedRow: null,
         }
     },
     watch: {
@@ -199,6 +211,7 @@ export default {
                     sortby: this.filter.sortby,
                     sort: this.filter.sort,
                     date: this.filter.date,
+                    datetype: this.filter.datetype,
                     laboratory: this.filter.laboratory,
                     count: ((window.innerHeight-390)/58),
                     option: 'lists'
@@ -242,7 +255,26 @@ export default {
             this.filter.keyword = null;
             this.filter.status = null;
             this.filter.laboratory = null;
+            this.filter.date = null;
+            this.filter.datetype = null;
             this.fetch();
+        },
+        selectRow(index) {
+            this.selectedRow = index;
+        },
+        isDueApproaching(dueDate, status) {
+            if (!dueDate || status !== 'Ongoing') return false; // Only check if status is 'Ongoing'
+            const today = new Date();
+            const due = new Date(dueDate);
+            const diffTime = due - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays <= 5 && diffDays >= 0; // True if due date is within 5 days
+        },
+        isOverdue(dueDate) {
+            if (!dueDate) return false; // If no due date, return false
+            const today = new Date();
+            const due = new Date(dueDate);
+            return due <= today; // True if the due date is today or earlier (overdue)
         }
     }
 }

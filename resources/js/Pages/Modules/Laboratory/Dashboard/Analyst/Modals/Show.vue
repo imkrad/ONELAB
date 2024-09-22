@@ -77,9 +77,16 @@
                         <table class="table table-nowrap align-middle mb-0">
                             <tbody>
                                 <tr v-for="(list,index) in filteredLists" v-bind:key="index" class="fs-11" :class="(list.selected) ? 'table-info' : ''">
-                                    <td  width="5%" class="text-center fs-14"> 
+                                    <td width="5%" class="text-center fs-14" v-if="status == 'Pending'"> 
                                         <input v-if="list.status.name !== 'Completed'" type="checkbox" v-model="list.selected" class="form-check-input" />
                                         <i v-else class="text-success ri-checkbox-circle-fill fs-18"></i>
+                                    </td>
+                                    <td width="5%" class="text-center fs-14" v-else-if="list.analyst_id === $page.props.user.data.id"> 
+                                        <input v-if="list.status.name !== 'Completed'" type="checkbox" v-model="list.selected" class="form-check-input" />
+                                        <i v-else class="text-success ri-checkbox-circle-fill fs-18"></i>
+                                    </td>
+                                    <td  width="5%" class="text-center fs-14" v-else>
+                                        <span class="text-muted">-</span>
                                     </td>
                                     <td  width="24%">
                                         <h5 class="fs-11 mb-0">{{list.testname}}</h5>
@@ -131,7 +138,13 @@ export default {
         mark(){
             if(this.mark){
                 this.filteredLists.forEach(item => {
-                    item.selected = true;
+                    if(this.status == 'Ongoing'){
+                        if (item.analyst_id === this.$page.props.user.data.id) {
+                            item.selected = true;
+                        }
+                    }else{
+                        item.selected = true;
+                    }
                 });
             }else{
                 this.filteredLists.forEach(item => {

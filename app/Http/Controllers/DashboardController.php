@@ -48,8 +48,7 @@ class DashboardController extends Controller
                     break;
                     case 'Lab Analyst':
                         return inertia('Modules/Laboratory/Dashboard/Analyst/Index',[
-                            'tsrs' => $this->analyst->tsrs(),
-                            'samples' => $this->analyst->samples($request),
+                            // 'samples' => $this->analyst->samples($request),
                             'reminders' => $this->analyst->reminders($request),
                             'tasks' => $this->analyst->tasks($request),
                         ]);

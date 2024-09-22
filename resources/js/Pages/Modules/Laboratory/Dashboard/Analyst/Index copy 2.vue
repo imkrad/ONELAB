@@ -8,7 +8,7 @@
                 <div class="card-body" style="height: calc(100vh - 220px); overflow: auto;" >
                     <p class="text-muted text-uppercase fs-12 fw-medium mb-2">My Tasks</p>
                     <b-list-group>
-                        <BListGroupItem @click="filterReminder(list.name)"v-for="(list,index) in tasks" v-bind:key="index" style="cursor: pointer;" :class="{ 'bg-info-subtle': isActive(list.name) }">
+                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in tasks" v-bind:key="index" style="cursor: pointer;" :class="{ 'bg-info-subtle': isActive(list.name) }">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <div class="avatar-xs">
@@ -82,7 +82,7 @@ import Show from './Modals/Show.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 export default {
     components: { PageHeader, View, Show, simplebar, Sample2 },
-    props: ['reminders','tasks'],
+    props: ['samples','reminders','tasks'],
     data(){
         return {
             currentUrl: window.location.origin,

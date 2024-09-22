@@ -34,6 +34,45 @@ class SampleClass
         return $data;
     }
 
+    public function analyses($request){
+        $laboratory = \Auth::user()->userrole->laboratory_type;
+        $data = TsrSample::with('tsr')->whereHas('tsr',function ($query) use ($laboratory) {
+            $query->where('laboratory_type',$laboratory)->whereIn('status_id',[3,4])->where('released_at',null);
+        })
+       ->withCount([
+            'analyses as analyses_count',
+            'analyses as completed_analyses_count' => function ($query) {
+                $query->where('status_id', 12);
+            },
+            'analyses as ongoing_analyses_count' => function ($query) {
+                $query->where('status_id', 11);
+            },
+            'analyses as pending_analyses_count' => function ($query) {
+                $query->where('status_id', 10);
+            }
+        ])
+        ->get()
+        ->map(function ($sample) {
+            $id = $sample->id;
+            return [
+                'id' => $sample->id,
+                'tsr_id' => $sample->tsr->id,
+                'due' => $sample->tsr->due_at,
+                'due_at' => date('Y-m-d', strtotime($sample->tsr->due_at)),
+                'sample' => $sample,
+                'lists' => AnalysisResource::collection(TsrAnalysis::with('sample','analyst','testservice.testname','testservice.method.reference','testservice.method.method')
+                ->whereHas('sample',function ($query) use ($id) {
+                    $query->where('id',$id);
+                })->orderBy('status_id','ASC')->get()),
+                'analyses' => $sample->analyses_count,
+                'pending' => $sample->pending_analyses_count,
+                'ongoing' => $sample->ongoing_analyses_count,
+                'completed' => $sample->completed_analyses_count
+            ];
+        });
+        return $data;
+    }
+
     public function save($request){
         $data = TsrSample::create($request->all());
         $data = TsrSample::with('analyses.status','analyses.testservice.method.method','analyses.sample','analyses.analyst')->where('id',$data->id)->first();
@@ -101,7 +140,7 @@ class SampleClass
             }else{
                 $subtotal = $subtotal - $fee;
                 $discount = (float) (($payment->discounted->value/100) * $subtotal);
-                $total =  ((float) $total - (float) $discount);
+                $total =  ((float) $subtotal - (float) $discount);
             }
             $payment->subtotal = $subtotal;
             $payment->discount = $discount;

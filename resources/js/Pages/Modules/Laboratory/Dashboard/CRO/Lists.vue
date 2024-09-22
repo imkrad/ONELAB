@@ -153,12 +153,16 @@ export default {
             this.filter.status = status.id;
             this.fetch();
         },
-        filterReminder(reminder){
-            this.name = reminder;
-            this.filter.status = null;
-            this.filter.laboratory = null;
-            this.filter.reminder = reminder;
-            this.fetch();
+        filterReminder(reminder,status){
+            if(status){
+                this.name = reminder;
+                this.filter.status = null;
+                this.filter.laboratory = null;
+                this.filter.reminder = reminder;
+                this.fetch();
+            }else{
+                this.refresh();
+            }
         },
         refresh(){
             this.name = 'Customer';

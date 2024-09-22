@@ -1,7 +1,6 @@
 <template lang="">
     <Head title="Dashboard"/>
     <PageHeader title="Dashboard" pageTitle="Menu" />
-    <!-- style="height: calc(100vh - 200px); overflow: auto;" -->
     <b-row class="g-3">
         <div class="col-12 mb-3 mt-2">
             <div class="d-flex flex-lg-row flex-column">
@@ -59,7 +58,7 @@
                 <div class="card-body" style="height: calc(100vh - 365px); overflow: auto;">
                     <p class="text-muted text-uppercase fs-12 fw-medium mb-2">Reminders</p>
                     <b-list-group>
-                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in dropdowns.reminders" v-bind:key="index" style="cursor: pointer;">
+                        <BListGroupItem @click="filterReminder(list.name)" v-for="(list,index) in dropdowns.reminders" v-bind:key="index" style="cursor: pointer;" :class="{ 'bg-info-subtle': isActive(list.name) }">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <div class="avatar-xs">
@@ -114,7 +113,8 @@ export default {
                 colors: ['#03114B'],
                 fill: { type: 'gradient',gradient: {shadeIntensity: 1,inverseColors: false,opacityFrom: 0.45, opacityTo: 0.05,stops: [25, 100, 100, 100] }, },
                 tooltip: { fixed: { enabled: false }, x: { show: true },marker: { show: false } }
-            }
+            },
+            activeList: null
         }
     },
     methods: {
@@ -125,9 +125,17 @@ export default {
         filterStatus(status){
             this.$refs.lists.filterStatus(status);
         },
-        filterReminder(reminder){
-            this.$refs.lists.filterReminder(reminder);
-        }
+        filterReminder(data){
+            if(data == this.activeList){
+                this.activeList = null;
+            }else{
+                this.activeList = data;
+            }
+            this.$refs.lists.filterReminder(data,this.activeList);
+        },
+        isActive(name) {
+            return this.activeList === name;
+        },
     }
 }
 </script>

@@ -21,6 +21,9 @@ class SampleController extends Controller
             case 'lists':
                 return $this->sample->lists($request);
             break;
+            case 'analyses':
+                return $this->sample->analyses($request);
+            break;
             case 'print':
                 return $this->sample->print($request);
             break;

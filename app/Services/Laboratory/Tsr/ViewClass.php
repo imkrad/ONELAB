@@ -67,8 +67,8 @@ class ViewClass
             ->when($request->status, function ($query, $status) {
                 $query->where('status_id',$status);
             })
-            ->when($request->date, function ($query, $date) {
-                $query->whereDate('created_at',$date);
+            ->when($request->datetype && $request->date, function ($query) use ($request) {
+                $query->whereDate($request->datetype, $request->date);
             })
             ->when($this->laboratory, function ($query, $lab) {
                 $query->where('laboratory_id',$lab);
@@ -88,19 +88,20 @@ class ViewClass
             ->when($request->reminder, function ($query, $reminder) {
                 switch($reminder){
                     case 'Due Soon':
-                        $query->whereBetween('due_at', [Carbon::now(), Carbon::now()->addDays(5)]);
-                    break;
-                    case 'Due Today':
-                        $query->whereDate('due_at',now());
+                        $query->whereBetween('due_at', [Carbon::now()->startOfDay(), Carbon::now()->addDays(5)->endOfDay()])->where('status_id','!=',4);
                     break;
                     case 'Overdue Request':
                         $query->where('status_id',3)->whereDate('due_at','<',now());
                     break;
                     case 'For Released':
-                        $query->where('status_id',4)->where('due_at','>',now())->where('released_at',null);
+                        $query->where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory) ->whereHas('samples', function ($query) {
+                            $query->doesntHave('report');
+                        }, '=', 0);
                     break;
                     case 'Unclaimed Reports':
-                        $query->where('status_id',4)->where('due_at','<',now())->where('released_at',null);
+                        $query->where('status_id',4)->where('due_at','<=', now()->subDays(30))->where('released_at',null)->where('laboratory_id',$this->laboratory)->whereHas('samples', function ($query) {
+                            $query->doesntHave('report');
+                        }, '=', 0);
                     break;
                 }
             })

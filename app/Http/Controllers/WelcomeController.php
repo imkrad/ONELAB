@@ -277,7 +277,7 @@ class WelcomeController extends Controller
     
         // return 'Unable to get public IP';
         // dd($request->ip());
-        return inertia('Auth/New');
+        // return inertia('Auth/New');
         // $url = 'https://api.dost9.ph/sms/messages';
 
         // $recipient = '09171531652';
@@ -287,16 +287,77 @@ class WelcomeController extends Controller
         // $response = Http::post($url, [
         //     'hash' => 's', 
         //     'sender' => 'a', 
-        //     'recipient' => $recipient,
-        //     'title' => $title,
-        //     'message' => $message,
+        //     'recipient' => '09171531652',
+        //     'title' => 'Notification',
+        //     'message' => 'Notification',
         //     'via' => 'v', 
         //     'module' => 'm', 
         //     'action' => 'a'
         // ]);
     
         // return $response->json();
+
+        $message = "You have been tagged to the document with  Routing Slip";
+        $no = '639171531652';
+        $text = "test gege";
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://api.dost9.ph/sms/messages');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $post = array(
+            'recipient' => $no,
+            'message' => $text,
+            'title' => 'DOST-IX EULIMS Notification',
+            'via' => 'DOST-IX EULIMS v2'
+        );
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+
+        $result = curl_exec($ch);
+        if (curl_errno($ch)) {
+            echo 'Error:' . curl_error($ch);
+        }
+        curl_close($ch);
     }
+
+    // public function handle()
+    // {
+
+    //     if($this->id != null){
+    //         $user = User::where('u_id',$this->id)->first();
+    //         if(!empty($user)){
+
+    //             $message = "You have been tagged to the document with  Routing Slip : ".$this->doc." and a subject : ".$this->title.".";
+    //             $no = $user->u_mobile;
+    //             $name = $user->u_fname.' '.$user->u_mname.', '.$user->u_lname;
+    //             $email = $user->u_email;
+    //             $text = "Hi ".$name.", You have been tagged to the document with Routing Slip : ".$this->doc." and a subject : ".$this->title.".";
+    //             $title = $this->title;
+    //             $doc_id = $this->doc_id;
+    //             $ch = curl_init();
+
+    //             curl_setopt($ch, CURLOPT_URL, 'https://api.dost9.ph/sms/messages');
+    //             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    //             curl_setopt($ch, CURLOPT_POST, 1);
+    //             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    //             $post = array(
+    //                 'recipient' => $no,
+    //                 'message' => $text,
+    //                 'title' => 'Trace Notification System'
+    //             );
+    //             curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+
+    //             $result = curl_exec($ch);
+    //             if (curl_errno($ch)) {
+    //                 echo 'Error:' . curl_error($ch);
+    //             }
+    //             curl_close($ch);
+
+    //             Mail::to($email)->send(new EmailUser($name,$message,$title,$doc_id));
+
+    //         }
+    //     }
 
 
 }
