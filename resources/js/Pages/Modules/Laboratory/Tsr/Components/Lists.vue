@@ -246,7 +246,6 @@ export default {
             this.fetch();
         },
         moveTo(data){
-            console.log('/requests/'+data);
             this.$inertia.visit('/requests/'+data);
         },
         refresh(){

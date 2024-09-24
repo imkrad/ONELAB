@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('code')->nullable();
             $table->string('name');
             $table->string('customer_description',500);
-            $table->string('description',500);
+            $table->string('description',500)->nullable();
             $table->boolean('is_disposed')->default(0);
             $table->bigInteger('tsr_id')->unsigned()->index();
             $table->foreign('tsr_id')->references('id')->on('tsrs')->onDelete('cascade');

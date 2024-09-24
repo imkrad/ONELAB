@@ -3,7 +3,7 @@
         <div class="modal-body">
             <div class="mt-2">
                 <h4 class="mb-1 text-center">Edit Information for the Quotation</h4>
-                <p class="text-primary mb-4 fs-11 text-center">Upon confirming, you cannot add samples, analyses, or edit information for the TS Request.</p>
+                <p class="text-primary mb-4 fs-11 text-center">Upon confirming, you cannot add samples, analyses, or edit information for the quotation.</p>
                 <!-- <p class="text-muted mb-4">Please double-check all data to avoid cancellation or updating of the data.</p> -->
                 <div class="customform">
                     <h6 class="fw-semibold" style="font-size: 11px; margin-top: 12px;">1. VALIDITY DATE  </h6>
@@ -64,6 +64,7 @@ export default {
     computed: {
         terms() {
         return [
+            'DOST-IX RSTL implements Payment First Policy.',
             'Payment Method: Cheque payment should be paid to DOST IX;',
             'DOST IX Trust Fund 1952101052 Landbank of the Philippines.',
             'Cash payment should be made directly to the cashier or deposit to DOST IX account.',

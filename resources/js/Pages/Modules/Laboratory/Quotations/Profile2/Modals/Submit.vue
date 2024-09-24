@@ -70,8 +70,8 @@
                             </div>
                         </div>
                         <div class="flex-grow-1">
-                            <p class="text-muted fs-11 mb-0">Purpose:</p>
-                            <h5 class="fs-12 mb-0">-</h5>
+                            <p class="text-muted fs-11 mb-0">Conforme:</p>
+                            <h5 class="fs-12 mb-0">{{ selected.conforme }}</h5>
                         </div>
                     </div>
                 </div>
@@ -130,12 +130,30 @@
             <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
         </div>
            
-        <form class="customform">
+        <form class="customform mt-4">
             <BRow class="g-3">
-                <BCol lg="12" class="mt-3">
+                <BCol lg="12" class="mt-n2 mb-n5"><hr class="text-muted"/></BCol>
+                <BCol lg="12" class="mt-4" style="margin-top: 13px; margin-bottom: -12px;">
+                    <div class="row">
+                        <BCol lg="8" class="fs-12">Would you like to update the 'conforme' details?</BCol>
+                        <div class="col-md-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio1" class="custom-control-input me-2" :value="true" v-model="form.update">
+                                <label class="custom-control-label fw-normal fs-12" for="customRadio1">Yes</label>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="custom-control custom-radio mb-3">
+                                <input type="radio" id="customRadio1" class="custom-control-input me-2" :value="false" v-model="form.update">
+                                <label class="custom-control-label fw-normal fs-12" for="customRadio1">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </BCol>
+                <BCol lg="12" class="mt-n2 mb-n3"><hr class="text-muted"/></BCol>
+                <BCol lg="12" class="mt-3" v-if="form.update">
                     <div class="d-flex">
                         <div style="width: 100%;">
-                            <InputLabel for="conforme" value="Conforme"/>
                             <Multiselect 
                             :options="selected.customer.conformes" 
                             label="name"
@@ -145,7 +163,7 @@
                             placeholder="Select Conforme"/>
                         </div>
                         <div class="flex-shrink-0">
-                            <b-button @click="openAdd()" style="margin-top: 20px;" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
+                            <b-button @click="openAdd()" variant="light" class="waves-effect waves-light ms-1"><i class="ri-add-circle-fill"></i></b-button>
                         </div>
                     </div>
                 </BCol>
@@ -153,23 +171,25 @@
         </form>
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
-            <b-button @click="submit('ok')" variant="primary" :disabled="(form.conforme === null) ? true : false" block>Submit</b-button>
+            <b-button @click="submit('ok')" variant="primary" :disabled="form.update === null || (form.update && form.conforme === null)" block>Submit</b-button>
         </template>
     </b-modal>
+    <Add @selected="set" ref="conforme"/>
 </template>
 <script>
 import _ from 'lodash';
 import { useForm } from '@inertiajs/vue3';
 import simplebar from 'simplebar-vue';
+import Add from '../../Modals/Add.vue';
 import Multiselect from "@vueform/multiselect";
+import InputLabel from '@/Shared/Components/Forms/InputLabel.vue';
 export default {
-    components: { simplebar, Multiselect },
+    components: { simplebar, Multiselect, InputLabel, Add},
     data(){
         return {
             currentUrl: window.location.origin,
             form: useForm({
                 id: null,
-                mode: null,
                 laboratory_id: null,
                 laboratory_type: null,
                 customer_id: null,
@@ -180,6 +200,7 @@ export default {
                 subtotal: null,
                 discount: null,
                 conforme: null,
+                update: null,
                 option: 'tsr'
             }),
             selected: { 
@@ -208,6 +229,7 @@ export default {
             this.form.laboratory_type = data.type.id;
             this.form.customer_id = data.customer.id;
             this.form.conforme_id = data.conforme_id;
+            // this.form.conforme = data.conforme;
             this.form.due_at = data.due_at;
             this.form.discount_id = data.discounted.id;
             this.form.total = data.total;
@@ -220,8 +242,16 @@ export default {
                 preserveScroll: true,
                 onSuccess: (response) => {
                     this.hide();
+                    this.$inertia.visit('/requests/'+this.$page.props.flash.data);
                 },
             });
+        },
+        openAdd(){
+            this.$refs.conforme.show(this.form.customer_id);
+        },
+        set(data){
+            this.selected.customer.conformes.push(data);
+            this.form.conforme = data;
         },
         hide(){
             this.form.reset();

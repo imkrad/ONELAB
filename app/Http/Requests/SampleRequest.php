@@ -16,7 +16,7 @@ class SampleRequest extends FormRequest
         return [
             'name' => 'sometimes|required',
             'customer_description' => 'sometimes|required',
-            'description' => 'sometimes|required',
+            'description' => 'nullable',
             'tsr_id' => 'sometimes|required',
         ];
     }

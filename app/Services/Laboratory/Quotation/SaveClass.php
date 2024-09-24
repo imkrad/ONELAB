@@ -2,6 +2,7 @@
 
 namespace App\Services\Laboratory\Quotation;
 
+use Hashids\Hashids;
 use App\Models\Tsr;
 use App\Models\Laboratory;
 use App\Models\ListDropdown;
@@ -136,7 +137,7 @@ class SaveClass
         $id = $request->id;
         $data = Tsr::create([
             'customer_id' => $request->customer_id,
-            'conforme_id' => $request->conforme_id,
+            'conforme_id' => ($request->conforme) ? $request->conforme['value'] : $request->conforme_id,
             'purpose_id' => $request->purpose_id,
             'laboratory_id' => $request->laboratory_id,
             'laboratory_type' => $request->laboratory_type,
@@ -173,8 +174,11 @@ class SaveClass
             }
             $status = Quotation::where('id',$id)->update(['status_id' => 16]);
         }
+        $hashids = new Hashids('krad',10);
+        $code = $hashids->encode($data->id);
+
         return [
-            'data' => $data,
+            'data' => $code,
             'message' => 'TS Request creation was successful!', 
             'info' => "You've successfully created the new request."
         ];

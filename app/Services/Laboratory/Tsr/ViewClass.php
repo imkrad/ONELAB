@@ -192,20 +192,20 @@ class ViewClass
 
         $url = $_SERVER['HTTP_HOST'].'/verification/sample/'.$code;
         $qrCode = new QrCode($url);
-        $qrCode->setSize(300);
+        $qrCode->setSize(76);
         $pngWriter = new PngWriter();
         $qrCodeImageString = $pngWriter->write($qrCode)->getString();
         $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
 
-        $array = [
-            'qrCodeImage' => $base64Image
-        ];
+        return response($qrCodeImageString)
+        ->header('Content-Type', 'image/png')
+        ->header('Content-Disposition', 'inline; filename="sample_qrcode.png"');
 
-        $width = 6.20 * 28.35; 
-        $height = 6.00 * 28.35;
-        $pdf = \PDF::loadView('printings.testqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
+        // $width = 6.20 * 28.35; 
+        // $height = 6.00 * 28.35;
+        // $pdf = \PDF::loadView('printings.testqrcode',$array)->setPaper([0, 0, $width, $height], 'portrait');
 
-        return $pdf->stream('sampleqrcode.pdf');
+        // return $pdf->stream('sampleqrcode.pdf');
     }
 
     public function sampleqr($request){

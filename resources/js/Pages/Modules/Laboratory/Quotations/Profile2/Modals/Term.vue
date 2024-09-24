@@ -39,8 +39,7 @@ export default {
             this.form.errors[field] = false;
         },
         hide(){
-            this.form.reset();
-            this.form.clearErrors();
+            this.name = null;
             this.showModal = false;
         }
     }

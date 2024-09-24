@@ -185,6 +185,7 @@ export default {
             this.form.samples = data
             this.selected = data;
             this.form.laboratory_type = laboratory;
+            this.fetchSample();
             this.showModal = true;
         }, 
         submit(){
