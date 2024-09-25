@@ -124,9 +124,14 @@ class AnalystClass
             [
                 'name' => 'Due Soon',
                 'description' => '5 days ahead of the due date',
-                'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
-                    $query->whereBetween('due_at', [Carbon::now()->startOfDay(), Carbon::now()->addDays(5)->endOfDay()])->where('laboratory_id',$this->laboratory)->whereNotIn('status_id',[4,5])->where('laboratory_type',$laboratory);
-                })->count(),
+                'count' => 
+                TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
+                    $query->whereBetween('due_at', [Carbon::now()->startOfDay(), Carbon::now()->addDays(5)->endOfDay()])->where('laboratory_id',$this->laboratory)->where('status_id',3)->where('laboratory_type',$laboratory);
+                })
+                ->whereHas('analyses', function ($query){
+                    $query->whereIn('status_id',[10,11]);
+                })
+                ->count(),
                 'icon' => 'ri-error-warning-line',
                 'color' => 'bg-warning-subtle text-warning'
             ],
@@ -140,20 +145,15 @@ class AnalystClass
                 'color' => 'bg-danger-subtle text-danger'
             ],
               [
-                'name' => 'Samples with no report',
+                'name' => 'Completed with no report number',
                 'description' => 'Reports that are ready to be released',
                 'count' => TsrSample::whereHas('tsr',function ($query) use ($laboratory) {
-                    $query->where('status_id',4)->where('due_at','>',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
+                    $query->where('status_id',4)->where('due_at','<',now())->where('released_at',null)->where('laboratory_id',$this->laboratory)->where('laboratory_type',$laboratory);
                 })
                 ->whereDoesntHave('report')
                 ->whereHas('analyses', function ($query) {
                     $query->where('status_id', 12);
-                }, '=', function ($query) {
-                    $query->selectRaw('COUNT(*)')
-                          ->from('tsr_analyses') 
-                          ->whereColumn('sample_id', 'tsr_samples.id');
-                })
-                ->count(),
+                })->count(),
                 'icon' => 'ri-alert-fill',
                 'color' => 'bg-success-subtle text-success'
             ],

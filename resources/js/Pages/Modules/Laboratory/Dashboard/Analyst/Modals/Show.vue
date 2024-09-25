@@ -1,5 +1,5 @@
 <template>
-    <b-modal v-model="showModal" :title="selected.sample.code"  style="--vz-modal-width: 1000px;" header-class="p-3 bg-light" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>    
+    <b-modal v-model="showModal" :title="selected.code"  style="--vz-modal-width: 1000px;" header-class="p-3 bg-light" class="v-modal-custom" modal-class="zoomIn" centered no-close-on-backdrop>    
         <div class="row mb-2">
             <div class="col-sm-4">
                 <div class="p-1 border border-dashed rounded">
@@ -10,7 +10,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Sample Code :</p>
-                            <h5 class="fs-12 mb-0">{{selected.sample.code}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.code}}</h5>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Sample name :</p>
-                            <h5 class="fs-12 mb-0">{{selected.sample.name}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.name}}</h5>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="flex-grow-1">
                             <p class="text-muted fs-11 mb-0">Due At:</p>
-                            <h5 class="fs-12 mb-0">{{selected.due}}</h5>
+                            <h5 class="fs-12 mb-0">{{selected.tsr.due_at}}</h5>
                         </div>
                     </div>
                 </div>
@@ -49,16 +49,13 @@
             <div class="input-group mb-2">
                 <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
                 <input type="text" placeholder="Search Request" class="form-control" style="width: 45%;">
-                <select v-model="filterCode" class="form-select" id="inputGroupSelect01">
-                    <option :value="null" selected>Select All</option>
-                    <option :value="list" v-for="list in uniqueCodes" v-bind:key="list.id">{{list}}</option>
-                </select>
+                
             </div>
         </b-col>
             <div class="col-sm-12">
                 <!-- {{ selected.lists }} -->
                 
-                <div v-if="selected.lists" class="table-responsive mt-0 mb-0">
+                <div v-if="selected.analyses" class="table-responsive mt-0 mb-0">
                     <table class="table table-nowrap align-middle mb-0">
                         <thead class="table-light">
                             <tr class="fs-11">
@@ -76,7 +73,7 @@
                     <simplebar data-simplebar style="max-height: calc(100vh - 500px);">
                         <table class="table table-nowrap align-middle mb-0">
                             <tbody>
-                                <tr v-for="(list,index) in filteredLists" v-bind:key="index" class="fs-11" :class="(list.selected) ? 'table-info' : ''">
+                                <tr v-for="(list,index) in selected.analyses" v-bind:key="index" class="fs-11" :class="(list.selected) ? 'table-info' : ''">
                                     <td width="5%" class="text-center fs-14" v-if="status == 'Pending'"> 
                                         <input v-if="list.status.name !== 'Completed'" type="checkbox" v-model="list.selected" class="form-check-input" />
                                         <i v-else class="text-success ri-checkbox-circle-fill fs-18"></i>
@@ -125,7 +122,8 @@ export default {
     data(){
         return {
             selected: {
-                sample: {}
+                tsr: {},
+                analyses: []
             },
             filterCode: null,
             status: null,
@@ -137,7 +135,7 @@ export default {
     watch: {
         mark(){
             if(this.mark){
-                this.filteredLists.forEach(item => {
+                this.selected.analyses.forEach(item => {
                     if(this.status == 'Ongoing'){
                         if (item.analyst_id === this.$page.props.user.data.id) {
                             item.selected = true;
@@ -147,34 +145,9 @@ export default {
                     }
                 });
             }else{
-                this.filteredLists.forEach(item => {
+                this.selected.analyses.forEach(item => {
                     item.selected = false;
                 });
-            }
-        }
-    },
-    computed: {
-        uniqueCodes() {
-            if(this.selected.lists){
-                const codesSet = new Set(this.selected.lists.data.map(item => item.code));
-                return Array.from(codesSet);
-            }else{
-                return [];
-            }
-        },
-        filteredLists() {
-            if(this.selected.lists){
-                if(this.filterCode) {
-                    return this.selected.lists.data.filter(item => item.code.includes(this.filterCode));
-                }
-                return this.selected.lists.data.filter(item => item.status.name.includes(this.status));
-            }
-        },
-        tests(){
-            if(this.filteredLists){
-                return this.filteredLists.filter(item => item.selected).map(selectedItem => selectedItem.id);
-            }else{ 
-                return [];
             }
         }
     },

@@ -23,10 +23,10 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <div class="flex-grow-1 text-muted">
-                                    <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                                    <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.code}}</span></h6>
                                 </div>
                                 <div class="flex-shrink-0">
-                                    <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
+                                    <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.tsr.due_at}}</div>
                                 </div>
                             </div>
                         </div>
@@ -35,11 +35,12 @@
                                 <div class="mt-auto">
                                     <div class="d-flex mb-2">
                                         <div class="flex-grow-1">
-                                            <div class="text-muted">{{item.sample.name}}</div>
+                                            <div class="text-muted">{{item.name}}</div>
                                         </div>
                                         <div class="flex-shrink-0">
                                             <div>
-                                                <i class="ri-list-check align-bottom me-1 text-muted"></i>{{(item.ongoing)}}/{{(item.analyses-item.completed)}}
+                                                <i class="ri-list-check align-bottom me-1 text-muted"></i>
+                                                {{(item.ongoing)}}/{{(item.count-item.completed)}}
                                             </div>
                                         </div>
                                     </div>
@@ -49,16 +50,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="card-footer py-2">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-grow-1 text-muted fs-13">
-                                    <i class="ri-list-check align-bottom me-1 text-muted"></i>{{(item.ongoing)}}/{{(item.analyses-item.completed)}}
-                                </div>
-                                <div class="flex-shrink-0">
-                                    <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </BCol>
             </BRow>
@@ -88,10 +79,10 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted">
-                                <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                                <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.code}}</span></h6>
                             </div>
                             <div class="flex-shrink-0">
-                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
+                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.tsr.due_at}}</div>
                             </div>
                         </div>
                     </div>
@@ -100,11 +91,11 @@
                             <div class="mt-auto">
                                 <div class="d-flex mb-2">
                                     <div class="flex-grow-1">
-                                        <div class="text-muted">{{item.sample.name}}</div>
+                                        <div class="text-muted">{{item.name}}</div>
                                     </div>
                                     <div class="flex-shrink-0">
                                         <div>
-                                            <i class="ri-list-check align-bottom me-1 text-muted"></i>0/{{item.ongoing}}
+                                            <i class="ri-list-check align-bottom me-1 text-muted"></i>{{item.ongoing}}
                                         </div>
                                     </div>
                                 </div>
@@ -114,16 +105,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="card-footer py-2">
-                        <div class="d-flex align-items-center">
-                            <div class="flex-grow-1 text-muted fs-13">
-                               
-                            </div>
-                            <div class="flex-shrink-0">
-                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i> {{item.due}}</div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </BCol>
         </BRow>
@@ -153,10 +134,10 @@
                     <div class="card-header">
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1 text-muted">
-                                <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.sample.code}}</span></h6>
+                                <h6 class="card-title mb-n1 fs-14 fw-semibold"><span class="text-primary">{{item.code}}</span></h6>
                             </div>
                             <div class="flex-shrink-0">
-                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.due}}</div>
+                                <div class="text-muted"><i class="ri-calendar-event-fill me-1 align-bottom"></i>{{item.tsr.due_at}}</div>
                             </div>
                         </div>
                     </div>
@@ -165,16 +146,16 @@
                             <div class="mt-auto">
                                 <div class="d-flex mb-2">
                                     <div class="flex-grow-1">
-                                        <div class="text-muted">{{item.sample.name}}</div>
+                                        <div class="text-muted">{{item.name}}</div>
                                     </div>
                                     <div class="flex-shrink-0">
                                         <div>
-                                            <i class="ri-list-check align-bottom me-1 text-muted"></i>{{item.completed}}/{{item.analyses}}
+                                            <i class="ri-list-check align-bottom me-1 text-muted"></i>{{item.completed}}/{{item.count}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="progress progress-sm animated-progess">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" :style="`width: ${(item.completed/item.analyses)*100}%;`"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" :style="`width: ${(item.completed/item.count)*100}%;`"></div>
                                 </div>
                             </div>
                         </div>
@@ -201,26 +182,60 @@ export default {
             completeds: [],
             showSoon: false,
             showDueToday: false,
-            showOverdue: false
+            showOverdue: false,
+            filter: {
+                keyword: null,
+                month: null,
+                reminder: null
+            }
         };
     },
+    created(){
+        this.fetch();
+    },
     methods: {
-        toggleDueTodayFilter(data) {
-            if(data === 'Due Soon'){
-                this.showOverdue = false;
-                this.showDueToday = !this.showDueToday;
-            }else if(data === 'Overdue Request'){
-                this.showDueToday = false;
-                this.showOverdue = !this.showOverdue;
+        fetch(page_url){
+            page_url = page_url || '/samples';
+            axios.get(page_url,{
+                params : {
+                    keyword: this.filter.keyword,
+                    month: this.filter.month,
+                    reminder: this.filter.reminder,
+                    option: 'samples'
+                }
+            })
+            .then(response => {
+                if(response){
+                    this.pendings = response.data.pendings;
+                    this.ongoings = response.data.ongoings;
+                    this.completeds = response.data.completeds;          
+                }
+            })
+            .catch(err => console.log(err));
+        },
+        filterReminder(reminder,status){
+            if(status){
+                this.filter.reminder = reminder;
+                this.fetch();
+            }else{
+                this.refresh();
             }
         },
-        matchesSearch(item) {
-            if (!this.searchQuery) return true; // Show all if no search term
-            return item.sample.code.toLowerCase().includes(this.searchQuery.toLowerCase());
+        setMonth(data){
+            this.filter.month = data;
+            this.fetch();
+        },
+        setKeyword(data){
+            this.filter.keyword = data;
+            this.fetch();
         },
         openShow(data,status){
             this.$refs.show.show(data,status);
         },  
+        refresh(){
+            this.filter.reminder = null;
+            this.fetch();
+        }
     }
 }
 </script>

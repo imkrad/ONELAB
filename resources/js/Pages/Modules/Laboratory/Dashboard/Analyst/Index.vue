@@ -55,9 +55,13 @@
                             <b-col lg>
                                 <div class="input-group mb-0">
                                     <span class="input-group-text"> <i class="ri-search-line search-icon"></i></span>
-                                    <input type="text"  placeholder="Search Sample Code" v-model="searchQuery" class="form-control" style="width: 65%;">
+                                    <input type="text"  placeholder="Search Sample Code" v-model="keyword" class="form-control" style="width: 50%;">
+                                    <select v-model="month" class="form-select" id="inputGroupSelect01">
+                                        <option :value="null" selected>Filter by month</option>
+                                        <option v-for="month in months" :key="month.value" :value="month.value"> {{ month.name }}</option>
+                                    </select>
                                     <select class="form-select" id="inputGroupSelect01">
-                                        <option  @click="setDisplay('sample')" selected>Show by Sample</option>
+                                        <option @click="setDisplay('sample')" selected>Show by Sample</option>
                                     </select>
                                     <b-button type="button" variant="primary"  @click="refresh()">
                                         <i class="bx bx-refresh search-icon"></i>
@@ -75,6 +79,7 @@
     <Show ref="show"/>
 </template>
 <script>
+import _ from 'lodash';
 import Sample2 from './Display/Sample2.vue';
 import simplebar from "simplebar-vue";
 import View from './Modals/View.vue';
@@ -93,107 +98,53 @@ export default {
             matches1: [],
             matches2: [],
             matches3: [],
-            searchQuery: '',
+            keyword: '',
             mode: 'sample',
             activeReminder: null,
-            activeList: null
+            activeList: null,
+            month: null,
+            months: [
+                { value: '1', name: 'January' },
+                { value: '2', name: 'February' },
+                { value: '3', name: 'March' },
+                { value: '4', name: 'April' },
+                { value: '5', name: 'May' },
+                { value: '6', name: 'June' },
+                { value: '7', name: 'July' },
+                { value: '8', name: 'August' },
+                { value: '9', name: 'September' },
+                { value: '10', name: 'October' },
+                { value: '11', name: 'November' },
+                { value: '12', name: 'December' }
+            ]
         }
     },
+    watch: {
+        month(newVal){
+            this.$refs.sample.setMonth(newVal);
+        },
+        keyword(newVal){
+            this.checkSearchStr(newVal);
+        },
+    },
     methods: {
+        checkSearchStr: _.debounce(function(string) {
+            this.$refs.sample.setKeyword(this.keyword);
+        }, 300),
         setDisplay(mode){
             this.mode = mode;
         },
         filterReminder(data){
-            (data == this.activeList) ? this.activeList = null : this.activeList = data;
-            this.$refs.sample.toggleDueTodayFilter(data);
+            if(data == this.activeList){
+                this.activeList = null;
+            }else{
+                this.activeList = data;
+            }
+            this.$refs.sample.filterReminder(data,this.activeList);
         },
         isActive(name) {
             return this.activeList === name;
-        },
-        search() {
-            const searchTerm = this.searchTerm.toLowerCase();
-            const matchedIndices1 = this.samples.pending.reduce((indices, sample, index) => {
-                if (sample.sample.code.toLowerCase().includes(searchTerm)) {
-                    indices.push(index);
-                }
-                return indices;
-            }, []);
-            this.matches1 = matchedIndices1;
-            if (matchedIndices1.length > 0 && searchTerm !== '') {
-                const closestIndex = matchedIndices1.reduce((closest, currentIndex) => {
-                    const closestDistance = Math.abs(closest - searchTerm.length);
-                    const currentDistance = Math.abs(currentIndex - searchTerm.length);
-                    return currentDistance > closestDistance ? currentIndex : closest;
-                }, matchedIndices1[0]);
-
-                this.matchedRowIndex1 = closestIndex;
-
-                const rowId = 'row-' + closestIndex;
-                const matchedRow = document.getElementById(rowId);
-
-                if(matchedRow){
-                    matchedRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }else {
-                this.matchedRowIndex1 = null;
-                this.matches1 = [];
-            }
-    //////////
-            const matchedIndices2 = this.samples.ongoing.reduce((indices, sample, index) => {
-                if (sample.sample.code.toLowerCase().includes(searchTerm)) {
-                    indices.push(index);
-                }
-                return indices;
-            }, []);
-            this.matches2 = matchedIndices2;
-            if (matchedIndices2.length > 0 && searchTerm !== '') {
-                const closestIndex = matchedIndices2.reduce((closest, currentIndex) => {
-                    const closestDistance = Math.abs(closest - searchTerm.length);
-                    const currentDistance = Math.abs(currentIndex - searchTerm.length);
-                    return currentDistance > closestDistance ? currentIndex : closest;
-                }, matchedIndices2[0]);
-
-                this.matchedRowIndex2 = closestIndex;
-
-                const rowId2 = 'row2-' + closestIndex;
-                const matchedRow2 = document.getElementById(rowId2);
-
-                if(matchedRow2){
-                    matchedRow2.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }else {
-                this.matchedRowIndex2 = null;
-                this.matches2 = [];
-            }
-
-            //////////
-            const matchedIndices3 = this.samples.completed.reduce((indices, sample, index) => {
-                if (sample.sample.code.toLowerCase().includes(searchTerm)) {
-                    indices.push(index);
-                }
-                return indices;
-            }, []);
-            this.matches3 = matchedIndices3;
-            if (matchedIndices3.length > 0 && searchTerm !== '') {
-                const closestIndex = matchedIndices3.reduce((closest, currentIndex) => {
-                    const closestDistance = Math.abs(closest - searchTerm.length);
-                    const currentDistance = Math.abs(currentIndex - searchTerm.length);
-                    return currentDistance > closestDistance ? currentIndex : closest;
-                }, matchedIndices3[0]);
-
-                this.matchedRowIndex3 = closestIndex;
-
-                const rowId3 = 'row3-' + closestIndex;
-                const matchedRow3 = document.getElementById(rowId3);
-
-                if(matchedRow3){
-                    matchedRow3.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }else {
-                this.matchedRowIndex3 = null;
-                this.matches3 = [];
-            }
-        },
+        }
     }
 }
 </script>

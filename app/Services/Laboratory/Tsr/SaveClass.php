@@ -227,13 +227,14 @@ class SaveClass
     private function report($id){
         $tsr = Tsr::where('id',$id)
         ->with('service.service')
-        ->with('received:id','received.profile:id,firstname,lastname,user_id')
+        ->with('received:id','received.profile:id,firstname,middlename,lastname,user_id')
         ->with('laboratory','laboratory_type:id,name','status:id,name,color,others')
         ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.wallet')
         ->with('customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
         ->with('conforme:id,name,contact_no','customer.contact:id,email,contact_no,customer_id')
         ->with('payment:tsr_id,id,total,subtotal,discount,or_number,is_paid,is_free,paid_at,status_id,discount_id,collection_id,payment_id','payment.status:id,name,color,others','payment.collection:id,name','payment.type:id,name','payment.discounted:id,name,value')
         ->first();
+        // dd($tsr);
         // $samples = TsrAnalysis::query()->with('testservice.method.method','testservice.testname','sample')
         // ->whereHas('sample',function ($query) use ($id) {
         //     $query->whereHas('tsr',function ($query) use ($id) {
@@ -309,6 +310,7 @@ class SaveClass
             'date' => $tsr->created_at,
             'laboratory_id' => $tsr->laboratory_id,
             'due_at' => $tsr->due_at,
+            'receiver' => $tsr->received->profile->firstname.' '.$tsr->received->profile->middlename[0].'. '.$tsr->received->profile->lastname,
             'customer' => [
                 'name' => ($tsr->customer->is_main) ? $tsr->customer->customer_name->name :  $tsr->customer->customer_name->name.' - '.$tsr->customer->name,
                 'address' => $d.$tsr->customer->address->barangay->name.', '.$a,
