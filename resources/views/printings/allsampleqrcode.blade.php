@@ -55,8 +55,28 @@
                 margin-top: -39px; 
                 margin-left: -30px;
             }
+            .desc {
+                position: absolute;
+                width: 175;
+                height: 30;
+                margin-top: 2px; 
+                margin-left: -30px;
+            }
             .page-break {
                 page-break-after: always;
+            }
+            .names2 {
+                position: absolute;
+                top: 18; /* 4 cm from the top */
+                left: -15; /* 7 cm from the left */
+                font-size: 7.5pt; /* Adjust font size as needed */
+            }
+            .breakline2 {
+                position: absolute;
+                width: 210px; /* or any desired width */
+                top: 14; /* 4 cm from the top */
+                left: -21; /* 7 cm from the left */
+                border-top: 1px solid black; /* Thickness and color of the line */
             }
         </style>
     </head>
@@ -68,19 +88,34 @@
         @endphp
         @foreach($lists as $index2=>$list)
         <img class="image" src="<?php echo $list['qrCodeImage']; ?>" alt="QR Code"/>
-        <div class="code">{{$list['sample_code']}} <span style="font-size: 10px;">({{$list['sample_name']}})</span></div>
+        <div class="code">{{$list['sample_code']}}  @if (strlen($list['sample_name']) <= 17)<span style="font-size: 10px;">({{$list['sample_name']}})</span>@endif</div>
         <div class="received">Received: {{$list['created_at']}}</div>
         <div class="due">Due at: {{$list['due_at']}}</div>
-        <div class="breakline"></div>
-        <div class="names">
-            <ul>
-                @foreach($list['testnames'] as $index=>$name)
-                <li>{{$name}}</li>
-                @endforeach
-            </ul>
-        </div>
-        @if($index2 < ($count))
-        <div class="page-break"></div>
+        @if (strlen($list['sample_name']) > 17)
+            <div class="desc"><span style="font-size: 10px;">{{$list['sample_name']}}</span></div>
+            <div class="breakline2"></div>
+            <div class="names2">
+                <ul>
+                    @foreach($list['testnames'] as $index=>$name)
+                    <li>{{$name}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @if($index2 < ($count))
+            <div class="page-break"></div>
+            @endif
+        @else
+            <div class="breakline"></div>
+            <div class="names">
+                <ul>
+                    @foreach($list['testnames'] as $index=>$name)
+                    <li>{{$name}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @if($index2 < ($count))
+            <div class="page-break"></div>
+            @endif
         @endif
         @endforeach
     </body>

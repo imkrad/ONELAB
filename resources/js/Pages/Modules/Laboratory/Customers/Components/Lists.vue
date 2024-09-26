@@ -32,8 +32,6 @@
                 <tr v-for="(list,index) in lists" v-bind:key="index">
                     <td class="text-center"> 
                         {{ (meta.current_page - 1) * meta.per_page + index + 1 }}.
-                        <!-- <i v-if="list.is_synced" class="ri-cloudy-2-fill text-success fs-24"></i>
-                        <i v-else class="ri-upload-cloud-fill text-warning fs-24"></i> -->
                     </td>
                     <td>
                         <h5 class="fs-13 mb-0 text-dark">{{list.customer}}</h5>

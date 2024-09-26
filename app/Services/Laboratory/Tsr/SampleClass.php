@@ -7,6 +7,7 @@ use Hashids\Hashids;
 use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\TsrSampleReport;
+use App\Models\TsrSampleDisposal;
 use App\Models\TsrPayment;
 use App\Models\Configuration;
 use App\Models\ListDropdown;
@@ -311,11 +312,34 @@ class SampleClass
     }
 
     public function update($request){
-        $data = TsrSample::findOrFail($request->id)->update($request->all());
+        $data = TsrSample::findOrFail($request->id);
+        $data->name = $request->name;
+        $data->customer_description = $request->customer_description;
+        $data->description = $request->description;
+        $data->save();
         return [
             'data' => $data,
             'message' => 'Sample update was successful!', 
             'info' => "You've successfully updated the selected sample."
+        ];
+    }
+
+    public function disposal($request){
+        $data = TsrSample::findOrFail($request->sample['value']);
+        $data->is_disposed = 1;
+        if($data->save()){
+            TsrSampleDisposal::create([
+                'sample_id' => $request->sample['value'],
+                'disposed_at' => $request->disposed_at,
+                'disposal_id' => $request->disposal_id,
+                'user_id' => \Auth::user()->id
+            ]);
+        }
+
+        return [
+            'data' => $data,
+            'message' => 'Sample was disposed successful!', 
+            'info' => "You've successfully disposed the sample."
         ];
     }
 

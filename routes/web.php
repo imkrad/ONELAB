@@ -23,8 +23,11 @@ Route::middleware(['2fa','auth','verified','is_active','menu'])->group(function 
     Route::resource('/requests', App\Http\Controllers\Laboratory\TsrController::class);
     Route::resource('/samples', App\Http\Controllers\Laboratory\SampleController::class);
     Route::resource('/analyses', App\Http\Controllers\Laboratory\AnalysisController::class);
+    Route::resource('/sampleregister', App\Http\Controllers\Laboratory\SampleRegisterController::class);
+
     Route::resource('/csf', App\Http\Controllers\Laboratory\CsfController::class);
     Route::resource('/calendar', App\Http\Controllers\Laboratory\CalendarController::class);
+
     Route::resource('/targets', App\Http\Controllers\Laboratory\TargetController::class);
     Route::resource('/reports', App\Http\Controllers\Laboratory\ReportController::class);
 

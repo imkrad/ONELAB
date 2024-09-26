@@ -42,6 +42,9 @@ class SampleController extends Controller
                 case 'report':
                     return $this->sample->report($request);
                 break;
+                case 'disposal':
+                    return $this->sample->disposal($request);
+                break;
                 default:
                 return $this->sample->save($request);
             }

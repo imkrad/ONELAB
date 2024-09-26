@@ -15,6 +15,7 @@ class TsrSample extends Model
         'customer_description',
         'description',
         'is_disposed',
+        'is_completed',
         'tsr_id',
     ];
 
@@ -26,6 +27,11 @@ class TsrSample extends Model
     public function report()
     {
         return $this->hasOne('App\Models\TsrSampleReport', 'sample_id');
+    }
+
+    public function disposal()
+    {
+        return $this->hasOne('App\Models\TsrSampleDisposal', 'sample_id');
     }
 
     public function analyses()

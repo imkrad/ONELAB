@@ -5,18 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\Dashboard\TMClass;
 use App\Services\Dashboard\CroClass;
+use App\Services\Dashboard\AideClass;
 use App\Services\Dashboard\AnalystClass;
 use App\Services\Dashboard\FinanceClass;
 use App\Services\Laboratory\DropdownClass;
 
 class DashboardController extends Controller
 {
-    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown, AnalystClass $analyst, TMClass $tm){
+    public function __construct(FinanceClass $finance, CroClass $cro, DropdownClass $dropdown, AnalystClass $analyst, TMClass $tm, AideClass $aide){
         $this->finance = $finance;
         $this->cro = $cro;
         $this->dropdown = $dropdown;
         $this->analyst = $analyst;
         $this->tm = $tm;
+        $this->aide = $aide;
     }
 
     public function index(Request $request){
@@ -84,7 +86,11 @@ class DashboardController extends Controller
                         ]);
                     break;
                     case 'Laboratory Aide':
-                        return inertia('Modules/Laboratory/Dashboard/LA/Index');
+                        return inertia('Modules/Laboratory/Dashboard/LA/Index',[
+                            'dropdowns' => [
+                                'disposals' => $this->aide->disposals()
+                            ]
+                        ]);
                     break;
                 }
             }
@@ -99,6 +105,15 @@ class DashboardController extends Controller
                     'reminders' => $this->tm->reminders($request),
                     'counts' => $this->tm->counts($request),
                 ];
+            break;
+            case 'laboratoryaide':
+                return $this->aide->lists($request);
+            break;
+            case 'fordisposal':
+                return $this->aide->fordisposal($request);
+            break;
+            case 'samples':
+                return $this->aide->samples($request);
             break;
         }
     }

@@ -52,7 +52,7 @@ class ViewClass
                     });
                 });
             })
-            ->with(['samples' => function ($query) {
+            ->with(['samples' => function ($query){
                 $query->select('id','tsr_id');
                 $query->withCount([
                     'analyses as analyses_count',
