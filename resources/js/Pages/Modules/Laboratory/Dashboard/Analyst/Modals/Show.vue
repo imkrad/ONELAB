@@ -151,6 +151,13 @@ export default {
             }
         }
     },
+    computed: {
+        tests() {
+            return this.selected.analyses
+                .filter(item => item.selected)
+                .map(item => item.id);
+        }
+    },
     methods : {
         show(data,status) {
             this.status = status;
@@ -174,6 +181,7 @@ export default {
             return '₱'+val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         },
         hide(){
+            this.$emit('update',true);
             this.mark = null;
             this.showModal = false;
         },

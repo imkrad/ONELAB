@@ -167,7 +167,7 @@
         <div v-else class="alert alert-light mb-0 text-center" role="alert"><span class="fs-12 text-muted">No test available</span></div>
         </simplebar>
     </div>
-    <Show ref="show"/>
+    <Show @update="fetch()" ref="show"/>
 </template>
 <script>
 import Show from '../Modals/Show.vue';

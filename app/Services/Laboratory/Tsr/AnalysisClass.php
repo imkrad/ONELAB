@@ -165,18 +165,19 @@ class AnalysisClass
             'end_at' => $request->end_at
         ]);
         if($data){
-            if(TsrAnalysis::whereHas('sample',function ($query) use ($tsr_id){
+            $count = TsrAnalysis::whereHas('sample',function ($query) use ($tsr_id){
                 $query->whereHas('tsr',function ($query) use ($tsr_id){
                     $query->where('id',$tsr_id);
                 });
-            })->whereIn('status_id',[10,11])->count() === 0){
-                $tsr = Tsr::where('id',$tsr_id)->update(['status_id' => 4]);
+            })->whereIn('status_id',[10,11])->count();
+            if($count === 0){
+                $tsr = Tsr::where('id',$tsr_id)->update(['status_id' => 4]);   
             }
         }
         return [
             'data' => $data,
-            'message' => 'TSR cancellation was successful!', 
-            'info' => "You've successfully updated the tsr status.",
+            'message' => 'Analysis was completed!', 
+            'info' => "You've successfully completed the analysis.",
         ];
     }
 
