@@ -66,7 +66,7 @@ class ReportClass
 
             $gratis = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)->where('is_free',1)
             ->whereHas('tsr', function ($query) use ($laboratory){
-                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->where('statud_id','!=',5);
+                $query->where('laboratory_type',$laboratory->id)->where('laboratory_id',$this->laboratory)->where('status_id','!=',5);
             })->sum('discount');
 
             $discount = TsrPayment::whereMonth('paid_at',$month)->whereYear('paid_at',$year)->where('is_free',0)
