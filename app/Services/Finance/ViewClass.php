@@ -5,6 +5,7 @@ namespace App\Services\Finance;
 use NumberFormatter;
 use App\Exports\OrExport;
 use App\Models\Tsr;
+use App\Models\Target;
 use App\Models\Customer;
 use App\Models\Configuration;
 use App\Models\ListDropdown;
@@ -323,5 +324,68 @@ class ViewClass
             ];
         });
         return $receipt;
+    }
+
+    public function years(){
+        $data = Target::where('laboratory_id',$this->laboratory)->distinct()->pluck('year')->toArray();
+        return $data;
+    }
+
+    public function printReportOp($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+        // $lists = Tsr::select('id','code')->with('itemable:itemable_id,op_id','itemable.op:id,code,total')
+        // ->whereDoesntHave('parent')
+        // ->withWhereHas('payment', function ($query) {
+        //     $query->select('tsr_id','or_number','total')->where('is_paid', 1);
+        // })
+        // ->whereMonth('created_at',$month)
+        // ->whereYear('created_at',$year)
+        // ->get();
+        // return $lists;
+
+        $lists = FinanceOp::select('id','total','code','payorable_id','payorable_type','created_at','created_by')
+        ->with('createdby:id','createdby.profile:user_id,firstname,lastname,middlename')
+        ->with('payorable:id,name,name_id','payorable.customer_name:id,name')
+        ->with(['items' => function ($query) {
+            $query->with('itemable:id,code')->where('itemable_type', 'App\Models\Tsr');
+        }, 'or:op_id,number'])
+        ->where('payorable_type', 'App\Models\Customer')
+        ->where('status_id',7)
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->get();
+        
+        $array = [
+            'title' => 'List of OP',
+            'lists' => $lists,
+            'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
+        ];
+        $pdf = \PDF::loadView('generated.op',$array)->setPaper([0, 0, 500, 900], 'landscape');
+        return $pdf->stream('orderofpayment.pdf');
+    }
+
+    public function printReportOr($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+        $lists = Tsr::select('id','code','customer_id')
+        ->whereDoesntHave('parent')
+        ->with('customer:id,name,name_id','customer.customer_name:id,name','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+        ->withWhereHas('payment', function ($query) {
+            $query->select('tsr_id','or_number','total','subtotal','discount');
+        })
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->get();
+        // return $lists;
+        $array = [
+            'title' => 'List of OP',
+            'lists' => $lists,
+            'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
+        ];
+        $pdf = \PDF::loadView('generated.or',$array)->setPaper([0, 0, 500, 900], 'landscape');
+        return $pdf->stream('or.pdf');
     }
 }

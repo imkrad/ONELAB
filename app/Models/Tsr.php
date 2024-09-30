@@ -101,9 +101,14 @@ class Tsr extends Model
         return $this->hasMany('App\Models\TsrChild', 'parent_id');
     }
 
+    // public function parent()
+    // {
+    //     return $this->belongsTo('App\Models\Tsr', 'child_id', 'id');
+    // }
+
     public function parent()
     {
-        return $this->belongsTo('App\Models\Tsr', 'child_id', 'id');
+        return $this->hasOne('App\Models\TsrChild', 'child_id');
     }
 
     public function getUpdatedAtAttribute($value)

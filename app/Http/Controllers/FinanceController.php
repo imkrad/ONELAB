@@ -57,6 +57,12 @@ class FinanceController extends Controller
             case 'forpayment':
                 return $this->view->forpayment($request);
             break;
+            case 'report-op':
+                return $this->view->printReportOp($request);
+            break;
+            case 'report-or':
+                return $this->view->printReportOr($request);
+            break;
             default:
                 return inertia('Modules/Finance/Dashboard/Index'); 
         }   
@@ -88,7 +94,13 @@ class FinanceController extends Controller
                 return inertia('Modules/Finance/Collections/Index');
             break;
             case 'reports':
-                return inertia('Modules/Finance/Reports/Index');
+                return inertia('Modules/Finance/Reports/Index',[
+                    'years' => $this->view->years(),
+                    'info' => [
+                        'month' => \DateTime::createFromFormat('!m', date('m'))->format('F'),
+                        'year' => date('Y')
+                    ]
+                ]);
             break;
         }
     }
