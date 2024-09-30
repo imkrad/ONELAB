@@ -19,6 +19,12 @@ class ReportController extends Controller
                     'laboratories' => $this->report->laboratories($request)
                 ];
             break;
+            case 'tops':
+                return [
+                    'samples' => $this->report->samples($request),
+                    'analyses' => $this->report->analyses($request),
+                ];
+            break;
         }
     }
 
@@ -27,6 +33,16 @@ class ReportController extends Controller
             case 'accomplishments':
                 return inertia('Modules/Laboratory/Reports/Accomplishments/Index',[
                     'years' => $this->report->years(),
+                    'info' => [
+                        'month' => \DateTime::createFromFormat('!m', date('m'))->format('F'),
+                        'year' => date('Y')
+                    ]
+                ]);
+            break;
+            case 'tops':
+                return inertia('Modules/Laboratory/Reports/Tops/Index',[
+                    'years' => $this->report->years(),
+                    'types' => $this->report->laboratory_types(),
                     'info' => [
                         'month' => \DateTime::createFromFormat('!m', date('m'))->format('F'),
                         'year' => date('Y')

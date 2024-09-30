@@ -2,6 +2,7 @@
 
 namespace App\Services\Laboratory;
 
+use Carbon\Carbon;
 use App\Models\Target;
 use App\Models\Configuration;
 use App\Models\ListLaboratory;
@@ -10,6 +11,7 @@ use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
 use App\Models\TsrPayment;
 use App\Models\TsrPaymentDeduction;
+use App\Http\Resources\DefaultResource;
 
 class ReportClass
 {
@@ -21,6 +23,18 @@ class ReportClass
 
     public function years(){
         $data = Target::where('laboratory_id',$this->laboratory)->distinct()->pluck('year')->toArray();
+        return $data;
+    }
+
+    public function laboratory_types(){
+        $lab_id = ($this->ids) ? array_column($this->ids, 'value') : null;
+        $data = ListLaboratory::whereIn('id', $lab_id)->get()
+        ->map(function ($item) {
+            return [
+                'value' => $item->id,
+                'name' => $item->name
+            ];
+        });
         return $data;
     }
 
@@ -169,5 +183,40 @@ class ReportClass
             'lists' => $lists,
             'footer' => $footer
         ];
+    }
+
+    public function samples($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+        $data = TsrSample::select('name', \DB::raw('count(*) as count'))
+        ->withWhereHas('tsr',function ($query) use ($request){
+            $query->where('laboratory_id',$this->laboratory);
+            // $query->when($request->type, function ($query, $type) {
+            //     $query->where('laboratory_type',$type);
+            // });
+            $query->when($request->laboratory, function ($query, $laboratory) {
+                $query->where('laboratory_type',$laboratory);
+            });
+        })
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->groupBy('name')
+        ->orderBy('count', 'desc')
+        ->take(10)
+        ->get();
+        return $data;
+    }
+
+    public function analyses(){
+        $data = TsrAnalysis::with('testservice.testname')->select('testservice_id', \DB::raw('count(*) as count'))
+        ->join('testservices', 'tsr_analyses.testservice_id', '=', 'testservices.id')
+        ->whereMonth('tsr_analyses.created_at', Carbon::now()->month)
+        ->whereYear('tsr_analyses.created_at', Carbon::now()->year)
+        ->groupBy('tsr_analyses.testservice_id')
+        ->orderBy('count', 'desc')
+        ->take(10)
+        ->get();
+        return $data;
     }
 }

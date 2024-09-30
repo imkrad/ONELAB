@@ -7,9 +7,10 @@
                 <span @click="refresh" class="input-group-text" v-b-tooltip.hover title="Refresh" style="cursor: pointer;"> 
                     <i class="bx bx-refresh search-icon"></i>
                 </span>
-                <b-button v-if="$page.props.user.data.assigned_role == 'Customer Relation Officer'" type="button" variant="primary" @click="openCreate">
+                <b-button type="button" variant="primary" @click="openCreate">
                     <i class="ri-add-circle-fill align-bottom me-1"></i> Create
                 </b-button>
+                <!-- v-if="$page.props.user.data.assigned_role == 'Customer Relation Officer'" -->
             </div>
         </b-col>
     </b-row>
