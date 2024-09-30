@@ -12,6 +12,7 @@ use App\Models\TsrAnalysis;
 use App\Models\TsrPayment;
 use App\Models\TsrPaymentDeduction;
 use App\Http\Resources\DefaultResource;
+use App\Http\Resources\Laboratory\TsrReportResource;
 
 class ReportClass
 {
@@ -208,15 +209,96 @@ class ReportClass
         return $data;
     }
 
-    public function analyses(){
+    public function analyses($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
         $data = TsrAnalysis::with('testservice.testname')->select('testservice_id', \DB::raw('count(*) as count'))
         ->join('testservices', 'tsr_analyses.testservice_id', '=', 'testservices.id')
-        ->whereMonth('tsr_analyses.created_at', Carbon::now()->month)
-        ->whereYear('tsr_analyses.created_at', Carbon::now()->year)
+        ->withWhereHas('sample',function ($query) use ($request){
+            $query->whereHas('tsr',function ($query) use ($request){
+                $query->where('laboratory_id',$this->laboratory);
+                $query->when($request->laboratory, function ($query, $laboratory) {
+                    $query->where('laboratory_type',$laboratory);
+                });
+            });
+        })
+        ->whereMonth('tsr_analyses.created_at', $month)
+        ->whereYear('tsr_analyses.created_at', $year)
         ->groupBy('tsr_analyses.testservice_id')
         ->orderBy('count', 'desc')
         ->take(10)
         ->get();
         return $data;
+    }
+
+    public function gratis($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+        $request = Tsr::whereHas('payment', function ($query) {
+            $query->where('status_id', 8);
+        })
+        ->where('laboratory_id',$this->laboratory)
+        ->when($request->laboratory, function ($query, $laboratory) {
+            $query->where('laboratory_type',$laboratory);
+        })
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->count();
+        
+        $testservice = TsrAnalysis::withWhereHas('sample',function ($query) use ($request){
+            $query->whereHas('tsr',function ($query) use ($request){
+                $query->where('laboratory_id',$this->laboratory);
+                $query->whereHas('payment', function ($query) {
+                    $query->where('status_id', 8);
+                });
+            });
+        })->count();
+
+        return [
+            'TSR Request' => $request,
+            'Analyses' => $testservice
+        ];
+    }
+
+    public function breakdownTsrs($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+        $data = Tsr::with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches')
+        ->with('customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+        ->whereHas('payment', function ($query) {
+            $query->where('status_id', 8);
+        })
+        ->where('laboratory_id',$this->laboratory)
+        ->when($request->laboratory, function ($query, $laboratory) {
+            $query->where('laboratory_type',$laboratory);
+        })
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->get();
+
+        return TsrReportResource::collection($data);
+    }
+
+    public function breakdownAnalyses($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+        $data = Tsr::with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches')
+        ->with('customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+        ->whereHas('payment', function ($query) {
+            $query->where('status_id', 8);
+        })
+        ->where('laboratory_id',$this->laboratory)
+        ->when($request->laboratory, function ($query, $laboratory) {
+            $query->where('laboratory_type',$laboratory);
+        })
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->get();
+
+        return TsrReportResource::collection($data);
     }
 }

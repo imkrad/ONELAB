@@ -23,7 +23,14 @@ class ReportController extends Controller
                 return [
                     'samples' => $this->report->samples($request),
                     'analyses' => $this->report->analyses($request),
+                    'gratis' => $this->report->gratis($request)
                 ];
+            break;
+            case 'TSR Request':
+                return $this->report->breakdownTsrs($request);
+            break;
+            case 'Analyses':
+                return $this->report->breakdownAnalyses($request);
             break;
         }
     }

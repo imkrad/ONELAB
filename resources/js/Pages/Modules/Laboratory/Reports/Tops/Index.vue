@@ -85,46 +85,44 @@
                 <div class="col-md-12">
                     <div class="card">
                         <BCardHeader class="align-items-center d-flex">
-                            <BCardTitle class="mb-0 flex-grow-1">Customer with gratis</BCardTitle>
+                            <BCardTitle class="mb-0 flex-grow-1">Gratis Services</BCardTitle>
                             <div class="flex-shrink-0">
                                 <!-- <BButton @click="openView()" type="button" variant="soft-primary" size="sm">
                                     View All
                                 </BButton> -->
                             </div>
                         </BCardHeader>
-                        <!-- style="height: calc(100vh - 310px); overflow: auto;" -->
                         <BCardBody>
-
+                            <table class="table align-middle table-centered table-nowrap mb-3">
+                                <thead class="text-muted table-light fs-11">
+                                    <tr>
+                                        <th width="80%;">Name</th>
+                                        <th width="15%;" class="text-center" scope="col">Count</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(count, type) in gratis" :key="type" style="cursor: pointer;" @click="openGratis(type)">
+                                        <td>{{ type }}</td>
+                                        <td class="text-center">{{ count }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </BCardBody>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="card">
-                        <BCardHeader class="align-items-center d-flex">
-                            <BCardTitle class="mb-0 flex-grow-1">Testservice with gratis</BCardTitle>
-                            <div class="flex-shrink-0">
-                                <!-- <BButton @click="openView()" type="button" variant="soft-primary" size="sm">
-                                    View All
-                                </BButton> -->
-                            </div>
-                        </BCardHeader>
-                        <!-- style="height: calc(100vh - 310px); overflow: auto;" -->
-                        <BCardBody>
 
-                        </BCardBody>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-       
+    <Gratis ref="gratis"/>
 </template>
 <script>
+import Gratis from './Modals/Gratis.vue';
 import Multiselect from '@/Shared/Components/Forms/Multiselect.vue';
 import PageHeader from '@/Shared/Components/PageHeader.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
-    components: { PageHeader, Multiselect, TextInput },
+    components: { PageHeader, Multiselect, TextInput, Gratis },
     props: ['info','years','types'],
     data(){
         return {
@@ -133,6 +131,7 @@ export default {
             laboratories: [],
             samples: [],
             analyses: [],
+            gratis: {},
             laboratory: null,
             total: [],
             months: ['January','February','March','April','May','June','July','August','September','October','November','December']
@@ -164,9 +163,13 @@ export default {
             })
             .then(response => {
                 this.samples = response.data.samples; 
-                this.analyses = response.data.analyses;         
+                this.analyses = response.data.analyses;   
+                this.gratis = response.data.gratis;     
             })
             .catch(err => console.log(err));
+        },
+        openGratis(data){
+            this.$refs.gratis.show(data,this.month,this.laboratory,this.year);
         }
     }
 }
