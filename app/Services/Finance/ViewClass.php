@@ -335,16 +335,6 @@ class ViewClass
         $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
         $year = ($request->year) ? $request->year : date('Y');
 
-        // $lists = Tsr::select('id','code')->with('itemable:itemable_id,op_id','itemable.op:id,code,total')
-        // ->whereDoesntHave('parent')
-        // ->withWhereHas('payment', function ($query) {
-        //     $query->select('tsr_id','or_number','total')->where('is_paid', 1);
-        // })
-        // ->whereMonth('created_at',$month)
-        // ->whereYear('created_at',$year)
-        // ->get();
-        // return $lists;
-
         $lists = FinanceOp::select('id','total','code','payorable_id','payorable_type','created_at','created_by')
         ->with('createdby:id','createdby.profile:user_id,firstname,lastname,middlename')
         ->with('payorable:id,name,name_id','payorable.customer_name:id,name')

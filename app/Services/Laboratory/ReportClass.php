@@ -97,7 +97,8 @@ class ReportClass
                 '₱'.number_format($total+$contract+$pending+$wallet),
                 '₱'.number_format($gratis),
                 '₱'.number_format($discount),
-                '₱'.number_format(($total+$contract+$pending+$wallet) + $gratis + $discount)
+                '₱'.number_format(($total+$contract+$pending+$wallet) + $gratis + $discount),
+                $laboratory->id,
             ];
 
             $requests_total += $req;
@@ -300,5 +301,30 @@ class ReportClass
         ->get();
 
         return TsrReportResource::collection($data);
+    }
+
+    public function printReportOr($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+        $lab = $request->laboratory;
+
+        $lists = Tsr::select('id','code','customer_id')
+        ->whereDoesntHave('parent')
+        ->with('customer:id,name,name_id','customer.customer_name:id,name','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+        ->withWhereHas('payment', function ($query) {
+            $query->select('tsr_id','or_number','total','subtotal','discount');
+        })
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->where('laboratory_type',$lab)
+        ->get();
+        // return $lists;
+        $array = [
+            'title' => 'List of OP',
+            'lists' => $lists,
+            'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
+        ];
+        $pdf = \PDF::loadView('generated.or',$array)->setPaper([0, 0, 500, 900], 'landscape');
+        return $pdf->stream('or.pdf');
     }
 }

@@ -47,7 +47,7 @@
                                     <td class="text-center"> {{ list[6] }}</td>
                                     <td class="text-center"> {{ list[7] }}</td>
                                     <td class="text-center">
-                                        <b-button variant="soft-info" v-b-tooltip.hover title="View" size="sm">
+                                        <b-button @click="openView(list[8])" variant="soft-info" v-b-tooltip.hover title="View" size="sm">
                                             <i class="ri-printer-fill align-bottom"></i>
                                         </b-button>
                                     </td>
@@ -115,6 +115,9 @@ export default {
                 this.total = response.data.laboratories.footer;         
             })
             .catch(err => console.log(err));
+        },
+        openView(id){
+            window.open('/reports?option=report-or&month='+this.month+'&year='+this.year+'&laboratory='+id);
         }
     }
 }

@@ -32,6 +32,9 @@ class ReportController extends Controller
             case 'Analyses':
                 return $this->report->breakdownAnalyses($request);
             break;
+            case 'report-or':
+                return $this->report->printReportOr($request);
+            break;
         }
     }
 
