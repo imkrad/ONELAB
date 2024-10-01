@@ -5,15 +5,15 @@
         <thead style="background-color:#c8c8c8; padding: 5px; font-size: 9px;">
             <tr>
                 <td style="width: 150px; text-align: center; font-weight: bold;">TSR Code</td>
+                <td style="width: 130px; text-align: center; font-weight: bold;">Subtotal</td>
+                <td style="width: 130px; text-align: center; font-weight: bold;">Discount</td>
+                <td style="width: 130px; text-align: center; font-weight: bold;">Total</td>
+                <td style="width: 130px; text-align: center; font-weight: bold;">Gratis</td>
                 <td style="width: 350px; text-align: center; font-weight: bold;">Customer</td>
                 <td style="width: 400px; text-align: center; font-weight: bold;">Address</td>
                 <td style="width: 150px; text-align: center; font-weight: bold;">Sample Code</td>
                 <td style="width: 150px; text-align: center; font-weight: bold;">Samplename</td>
                 <td style="width: 250px; text-align: center; font-weight: bold;">Testname</td>
-                <td style="width: 130px; text-align: center; font-weight: bold;">Subtotal</td>
-                <td style="width: 130px; text-align: center; font-weight: bold;">Discount</td>
-                <td style="width: 130px; text-align: center; font-weight: bold;">Total</td>
-                <td style="width: 130px; text-align: center; font-weight: bold;">Gratis</td>
                 <td style="width: 160px; text-align: center; font-weight: bold;">Date Paid</td>
             </tr>
         </thead>
@@ -21,15 +21,15 @@
         @foreach($lists as $list)
             <tr>
                 <td style="{{ $list['code'] == '-' ? 'text-align: center;' : '' }}">{{$list['code']}}</td>
+                <td style="text-align: center;">{{$list['subtotal']}}</td>
+                <td style="text-align: center;">{{($list['discount'] == '₱0.00') ? '-' : $list['discount']}}</td>
+                <td style="text-align: center;">{{$list['total']}}</td>
+                <td style="text-align: center;">{{$list['gratis']}}</td>
                 <td style="{{ $list['code'] == '-' ? 'text-align: center;' : '' }}">{{$list['customer']}}</td>
                 <td style="{{ $list['code'] == '-' ? 'text-align: center;' : '' }}">{{$list['address']}}</td>
                 <td style="text-align: center;">{{$list['samplecode']}}</td>
                 <td style="text-align: center;">{{$list['samplename']}}</td>
                 <td style="text-align: center;">{{$list['testname']}}</td>
-                <td style="text-align: center;">{{$list['subtotal']}}</td>
-                <td style="text-align: center;">{{($list['discount'] == '₱0.00') ? '-' : $list['discount']}}</td>
-                <td style="text-align: center;">{{$list['total']}}</td>
-                <td style="text-align: center;">{{$list['gratis']}}</td>
                 <td style="text-align: center;">{{$list['date']}}</td>
             </tr>
         @endforeach
@@ -55,7 +55,7 @@
                 }
             @endphp
             <tr style="font-weight: bold; text-align: center;">
-                <td colspan="6"></td>
+                <td colspan="1"></td>
                 <td style="text-align: center; font-weight: bold;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalSubtotal, 2, ".", ",") }}</td>
                 <td style="text-align: center; font-weight: bold;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalDiscount, 2, ".", ",") }}</td>
                 <td style="text-align: center; font-weight: bold;"><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalAmount, 2, ".", ",") }}</td>

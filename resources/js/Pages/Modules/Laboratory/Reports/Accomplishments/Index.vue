@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <div class="row g-1">
                         <div class="col-md-7">
-                           
+                            <Multiselect :options="types" v-model="laboratory" :searchable="true" label="name" placeholder="Select Laboratory"/>
                         </div>
                         <div class="col-md-2">
                             <Multiselect :options="months" v-model="month" :searchable="true" label="name" placeholder="Select Month"/>
@@ -85,17 +85,21 @@ import PageHeader from '@/Shared/Components/PageHeader.vue';
 import TextInput from '@/Shared/Components/Forms/TextInput.vue';
 export default {
     components: { PageHeader, Multiselect, TextInput },
-    props: ['years','info'],
+    props: ['years','info','types'],
     data(){
         return {
             month: this.info.month,
             year: this.info.year,
             laboratories: [],
+            laboratory: null,
             total: [],
             months: ['January','February','March','April','May','June','July','August','September','October','November','December']
         }
     },
     watch: {
+        "laboratory"(newVal){
+            this.fetch();
+        },
         "month"(newVal){
             this.fetch();
         },
@@ -125,7 +129,7 @@ export default {
             window.open('/reports?option=report-or&month='+this.month+'&year='+this.year+'&laboratory='+id);
         },
         openPrint(){
-            window.open('/reports?option=download&month='+this.month+'&year='+this.year);
+            window.open('/reports?option=download&month='+this.month+'&year='+this.year+'&laboratory='+this.laboratory);
         }
     }
 }

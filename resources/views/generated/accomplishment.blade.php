@@ -63,12 +63,13 @@
             <thead style="background-color:#c8c8c8; padding: 5px; font-size: 9px;">
                 <tr>    
                     <th style="vertical-align: middle;" width="12%">TSR Code</th>
-                    <th style="vertical-align: middle;" width="28%">Customer</th>
-                    <th style="vertical-align: middle;" width="28%">Address</th>
+                    <th style="vertical-align: middle;" width="24%">Customer</th>
+                    <th style="vertical-align: middle;" width="24%">Address</th>
                     <th style="vertical-align: middle;" width="8%">OR Number</th>
                     <th style="vertical-align: middle;" width="8%">Subtotal</th>
                     <th style="vertical-align: middle;" width="8%">Discount</th>
                     <th style="vertical-align: middle;" width="8%">Total</th>
+                    <th style="vertical-align: middle;" width="8%">Gratis</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,9 +97,34 @@
                         {{ $address.$list['customer']['address']['barangay']['name'].', '.$list['customer']['address']['municipality']['name'].$a}}
                     </td>
                     <td>{{($list['payment']['or_number']) ? $list['payment']['or_number'] : '-'}}</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['subtotal']),'₱ '),2,".",",")}}</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['discount']),'₱ '),2,".",",")}}</td>
-                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['total']),'₱ '),2,".",",")}}</td>
+                    <td>
+                        @if(!$list['payment']['is_free'])
+                        <span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['subtotal']),'₱ '),2,".",",")}}
+                        @else 
+                        -
+                        @endif
+                    </td>
+                    <td>
+                        @if(!$list['payment']['is_free'])
+                            <span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['discount']),'₱ '),2,".",",")}}
+                        @else 
+                        -
+                        @endif
+                    </td>
+                    <td>
+                        @if(!$list['payment']['is_free'])
+                            <span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['total']),'₱ '),2,".",",")}}
+                        @else 
+                        -
+                        @endif
+                    </td>
+                    <td>
+                        @if($list['payment']['is_free'])
+                            <span style="font-family: DejaVu Sans;">&#8369;</span>{{number_format(trim(str_replace(',','',$list['payment']['discount']),'₱ '),2,".",",")}}
+                        @else 
+                        -
+                        @endif
+                    </td>
                 </tr>
             @endforeach
             </tbody>
@@ -107,15 +133,18 @@
                     $totalSubtotal = 0;
                     $totalDiscount = 0;
                     $totalAmount = 0;
+                    $totalGratis = 0;
 
                     foreach ($lists as $list) {
-                        $subtotal = str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['subtotal']);
-                        $discount = str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['discount']);
-                        $total = str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['total']);
+                        $subtotal =  ($list['payment']['is_free']) ? '-' : str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['subtotal']);
+                        $discount = ($list['payment']['is_free']) ? '-' : str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['discount']);
+                        $total =  ($list['payment']['is_free']) ? '-' : str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['total']);
+                        $gratis =  ($list['payment']['is_free']) ? str_replace(['₱ ', '₱', ',', ' '], '', $list['payment']['discount']) : '-';
 
                         $totalSubtotal += floatval($subtotal);
                         $totalDiscount += floatval($discount);
                         $totalAmount += floatval($total);
+                        $totalGratis += floatval($gratis);
                     }
                 @endphp
                 <tr style="font-weight: bold; text-align: center;">
@@ -123,6 +152,7 @@
                     <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalSubtotal, 2, ".", ",") }}</td>
                     <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalDiscount, 2, ".", ",") }}</td>
                     <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalAmount, 2, ".", ",") }}</td>
+                    <td><span style="font-family: DejaVu Sans;">&#8369;</span>{{ number_format($totalGratis, 2, ".", ",") }}</td>
                 </tr>
             </tfoot>
         </table>
