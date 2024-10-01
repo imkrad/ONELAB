@@ -252,12 +252,16 @@ class ReportClass
         
         $testservice = TsrAnalysis::withWhereHas('sample',function ($query) use ($request){
             $query->whereHas('tsr',function ($query) use ($request){
-                $query->where('laboratory_id',$this->laboratory)->where('status_id','!=', 5);
+                $query->where('laboratory_id',$this->laboratory);
                 $query->whereHas('payment', function ($query) {
                     $query->where('status_id', 8);
                 });
             });
-        })->count();
+        })
+        ->where('status_id','!=', 13)
+        ->whereMonth('created_at',$month)
+        ->whereYear('created_at',$year)
+        ->count();
 
         return [
             'TSR Request' => $request,
