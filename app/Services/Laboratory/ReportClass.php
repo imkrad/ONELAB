@@ -214,19 +214,20 @@ class ReportClass
         $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
         $year = ($request->year) ? $request->year : date('Y');
 
-        $data = TsrAnalysis::with('testservice.testname')->select('testservice_id', \DB::raw('count(*) as count'))
-        ->join('testservices', 'tsr_analyses.testservice_id', '=', 'testservices.id')
-        ->withWhereHas('sample',function ($query) use ($request){
-            $query->whereHas('tsr',function ($query) use ($request){
-                $query->where('laboratory_id',$this->laboratory)->where('status_id','!=', 5);
-                $query->when($request->laboratory, function ($query, $laboratory) {
-                    $query->where('laboratory_type',$laboratory);
-                });
+        $data = TsrAnalysis::with('testservice.testname')
+        ->select('testservice_id', \DB::raw('count(*) as count'))
+        ->withWhereHas('sample', function ($query) use ($request) {
+            $query->whereHas('tsr', function ($query) use ($request) {
+                $query->where('laboratory_id', $this->laboratory)
+                    ->when($request->laboratory, function ($query, $laboratory) {
+                        $query->where('laboratory_type', $laboratory);
+                    });
             });
         })
-        ->whereMonth('tsr_analyses.created_at', $month)
-        ->whereYear('tsr_analyses.created_at', $year)
-        ->groupBy('tsr_analyses.testservice_id')
+        ->where('status_id', '!=', 13)
+        ->whereMonth('created_at', $month)
+        ->whereYear('created_at', $year)
+        ->groupBy('testservice_id')
         ->orderBy('count', 'desc')
         ->take(10)
         ->get();
@@ -251,7 +252,7 @@ class ReportClass
         
         $testservice = TsrAnalysis::withWhereHas('sample',function ($query) use ($request){
             $query->whereHas('tsr',function ($query) use ($request){
-                $query->where('laboratory_id',$this->laboratory);
+                $query->where('laboratory_id',$this->laboratory)->where('status_id','!=', 5);
                 $query->whereHas('payment', function ($query) {
                     $query->where('status_id', 8);
                 });
