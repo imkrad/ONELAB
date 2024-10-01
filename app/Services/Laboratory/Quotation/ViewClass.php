@@ -160,7 +160,7 @@ class ViewClass
         })
         ->where('laboratory_type',$quotation->laboratory_type)
         ->first();
-dd($quotation->createdby);
+        
         $array= [
             'configuration' => Configuration::first(),
             'quotation' => new QuotationResource($quotation),
