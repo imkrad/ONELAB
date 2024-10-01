@@ -240,6 +240,7 @@ class ReportClass
         $request = Tsr::whereHas('payment', function ($query) {
             $query->where('status_id', 8);
         })
+        ->where('status_id','!=', 5)
         ->where('laboratory_id',$this->laboratory)
         ->when($request->laboratory, function ($query, $laboratory) {
             $query->where('laboratory_type',$laboratory);
