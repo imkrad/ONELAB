@@ -34,7 +34,7 @@ class WalletTransaction extends Model
 
     public function setAmountAttribute($value)
     {
-        $this->attributes['total'] = trim(str_replace(',','',$value),'₱');
+        $this->attributes['amount'] = trim(str_replace(',','',$value),'₱');
     }
 
     public function getAmountAttribute($value)
