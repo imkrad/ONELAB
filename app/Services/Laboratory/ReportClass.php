@@ -3,9 +3,11 @@
 namespace App\Services\Laboratory;
 
 use Carbon\Carbon;
+use App\Exports\TsrExport;
 use App\Models\Target;
 use App\Models\Configuration;
 use App\Models\ListLaboratory;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Tsr;
 use App\Models\TsrSample;
 use App\Models\TsrAnalysis;
@@ -334,5 +336,71 @@ class ReportClass
         ];
         $pdf = \PDF::loadView('generated.accomplishment',$array)->setPaper([0, 0, 500, 900], 'landscape');
         return $pdf->stream('accomplishment.pdf');
+    }
+
+    public function printTsr($request){
+        $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
+        $year = ($request->year) ? $request->year : date('Y');
+
+//         $lists = Tsr::select('id','code','customer_id')
+//         ->whereDoesntHave('parent')
+//         ->with('customer:id,name,name_id','customer.customer_name:id,name','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+//         ->with('samples:tsr_id,id,code,name','samples.analyses:id,sample_id,testservice_id','samples.analyses.testservice:id,testname_id','samples.analyses.testservice.testname:id,name')
+//         ->withWhereHas('payment', function ($query) {
+//             $query->select('tsr_id','or_number','total','subtotal','discount','is_free','paid_at');
+//         })
+//         ->whereIn('status_id',[3,4])
+//         ->whereMonth('created_at',$month)
+//         ->whereYear('created_at',$year)
+//         ->get();
+// return $lists;
+//         $groupedData = [];
+//         foreach ($lists as $row) {
+//             $code = $row['code'];
+//             $customer = $row['customer']['customer_name']['name'];
+//             $address = $this->address($row);
+
+//             foreach($row['samples'] as $index2=>$sample){
+//                 $sample_code = $sample['code'];
+//                 $sample_name = $sample['name'];
+
+//                 foreach($sample['analyses'] as $index=>$analysis){
+//                     $testName = $analysis['testservice']['testname']['name'];
+//                     $key = $sample_code . "_" . $sample_name . "_" . $testName;
+                    
+//                     if (!isset($groupedData[$key])) {
+        
+//                         $groupedData[$key] = [
+//                             "code" => ($index == 0) ? $code : '',
+//                             "customer" => ($index == 0) ? $customer : '',
+//                             "address" => ($index == 0) ? $address : '',
+//                             "samplecode" => ($index == 0) ? $sample_code : '',
+//                             "samplename" => ($index == 0) ? $sample_name : '',
+//                             "testname" => $testName,
+//                         ];
+//                     }
+//                 }
+//             }
+//         }
+//         $tsrs = array_values($groupedData);
+       
+        return Excel::download(new TsrExport($month,$year), 'tsr.xlsx');
+    }
+
+    public function address($list){
+        $address = ($list['customer']['address']['address'] != '' ||$list['customer']['address']['address'] != NULL) ? $list['customer']['address']['address'].', ' : '';
+        if($list['customer']['address']['municipality']['name'] == 'Zamboanga City' || $list['customer']['address']['municipality']['name'] == 'Isabela City'){
+            $a = '';
+        }else if($list['customer']['address']['province']['name'] == 'Sulu'){
+            $a = ', '.$list['customer']['address']['province']['name'];
+        }else{
+            $a = ', '.$list['customer']['address']['province']['name'];
+        }
+        $barangay = $list['customer']['address']['barangay']['name'];
+        $municipality = $list['customer']['address']['municipality']['name'];
+        $province = $list['customer']['address']['province']['name'];
+
+        $complete_address = $address.$list['customer']['address']['barangay']['name'].', '.$list['customer']['address']['municipality']['name'].$a;
+        return $complete_address;
     }
 }

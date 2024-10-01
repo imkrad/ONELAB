@@ -35,6 +35,9 @@ class ReportController extends Controller
             case 'report-or':
                 return $this->report->printReportOr($request);
             break;
+            case 'download':
+                return $this->report->printTsr($request);
+            break;
         }
     }
 

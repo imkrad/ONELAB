@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row g-1">
-                        <div class="col-md-8">
+                        <div class="col-md-7">
                            
                         </div>
                         <div class="col-md-2">
@@ -13,6 +13,11 @@
                         </div>
                         <div class="col-md-2">
                             <Multiselect :options="years" v-model="year" :searchable="true" label="name" placeholder="Select Year"/>
+                        </div>
+                        <div class="col-md-1">
+                            <b-button type="button" variant="primary" @click="openPrint" style="width: 100%;">
+                                <i class="ri-add-circle-fill align-bottom me-1"></i> Download
+                            </b-button>
                         </div>
                     </div>
                 </div>
@@ -118,6 +123,9 @@ export default {
         },
         openView(id){
             window.open('/reports?option=report-or&month='+this.month+'&year='+this.year+'&laboratory='+id);
+        },
+        openPrint(){
+            window.open('/reports?option=download&month='+this.month+'&year='+this.year);
         }
     }
 }
