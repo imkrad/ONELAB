@@ -91,7 +91,7 @@ class ViewClass
 
         $quotation = Quotation::query()
         ->with('service.service')
-        ->with('createdby:id','createdby.profile:id,firstname,lastname,user_id')
+        ->with('createdby:id','createdby.profile:id,firstname,lastname,middlename,user_id')
         ->with('laboratory:id,name','status:id,name,color,others')
         ->with('customer:id,name_id,name,is_main','customer.customer_name:id,name,has_branches','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
         ->with('conforme:id,name,contact_no','customer.contact:id,email,contact_no,customer_id')
@@ -160,7 +160,7 @@ class ViewClass
         })
         ->where('laboratory_type',$quotation->laboratory_type)
         ->first();
-
+dd($quotation->createdby);
         $array= [
             'configuration' => Configuration::first(),
             'quotation' => new QuotationResource($quotation),
@@ -169,7 +169,7 @@ class ViewClass
             'service' => $service,
             'descs' => $descs,
             'manager' => $head->user->profile->firstname.' '.$head->user->profile->middlename[0].'. '.$head->user->profile->lastname,
-            'user' => \Auth::user()->profile->firstname.' '.\Auth::user()->profile->middlename[0].'. '.\Auth::user()->profile->lastname
+            'user' => $quotation->createdby->profile->firstname.' '.$quotation->createdby->profile->middlename[0].'. '.$quotation->createdby->profile->lastname
         ]; 
         $pdf = \PDF::loadView('reports.quotation',$array)->setPaper('a4', 'portrait');
         return $pdf->stream('Quotation.pdf');

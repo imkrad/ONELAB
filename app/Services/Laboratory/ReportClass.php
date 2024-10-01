@@ -252,7 +252,7 @@ class ReportClass
         
         $testservice = TsrAnalysis::withWhereHas('sample',function ($query) use ($request){
             $query->whereHas('tsr',function ($query) use ($request){
-                $query->where('laboratory_id',$this->laboratory);
+                $query->where('laboratory_id',$this->laboratory)->where('status_id','!=', 5);
                 $query->whereHas('payment', function ($query) {
                     $query->where('status_id', 8);
                 });
@@ -332,7 +332,7 @@ class ReportClass
             'lists' => $lists,
             'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
         ];
-        $pdf = \PDF::loadView('generated.or',$array)->setPaper([0, 0, 500, 900], 'landscape');
-        return $pdf->stream('or.pdf');
+        $pdf = \PDF::loadView('generated.accomplishment',$array)->setPaper([0, 0, 500, 900], 'landscape');
+        return $pdf->stream('accomplishment.pdf');
     }
 }
