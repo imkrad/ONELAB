@@ -218,7 +218,7 @@ class ReportClass
         ->join('testservices', 'tsr_analyses.testservice_id', '=', 'testservices.id')
         ->withWhereHas('sample',function ($query) use ($request){
             $query->whereHas('tsr',function ($query) use ($request){
-                $query->where('laboratory_id',$this->laboratory);
+                $query->where('laboratory_id',$this->laboratory)->where('status_id','!=', 5);
                 $query->when($request->laboratory, function ($query, $laboratory) {
                     $query->where('laboratory_type',$laboratory);
                 });
