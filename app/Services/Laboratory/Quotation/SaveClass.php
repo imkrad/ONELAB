@@ -9,6 +9,7 @@ use App\Models\ListDropdown;
 use App\Models\Quotation;
 use App\Models\QuotationSample;
 use App\Models\QuotationAnalysis;
+use App\Models\QuotationService;
 
 class SaveClass
 {
@@ -134,6 +135,7 @@ class SaveClass
     }
 
     public function tsr($request){
+        // dd('wew');
         $id = $request->id;
         $data = Tsr::create([
             'customer_id' => $request->customer_id,
@@ -171,6 +173,16 @@ class SaveClass
                         'status_id' => 10
                     ]);
                 }
+            }
+            $services = QuotationService::where('typeable_id',$id)->where('typeable_type','App\Models\Quotation')->get();
+            foreach($services as $service){
+                $data->service()->create([
+                    'fee' => $service['fee'],
+                    'total' => $service['total'],
+                    'quantity' => $service['quantity'],
+                    'service_id' => $service['service_id'],
+                    'is_additional' => $service['is_additional'],
+                ]);
             }
             $status = Quotation::where('id',$id)->update(['status_id' => 16]);
         }
