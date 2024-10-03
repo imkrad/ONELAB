@@ -66,7 +66,6 @@
                 </tr>
             </tbody>
         </table> -->
-        {{conformes}}
     
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
