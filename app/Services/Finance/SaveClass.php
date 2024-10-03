@@ -121,14 +121,15 @@ class SaveClass
     public function receipt($request){
         $result = \DB::transaction(function () use ($request){
             \DB::beginTransaction();
-            $data = FinanceReceipt::create(array_merge($request->all(), [
+            $data = FinanceReceipt::create([
                 'number' => $request->orseries['next'],
                 'orseries_id' => $request->orseries['value'],  
                 'op_id' => $request->selected['id'],
                 // 'payor_id' => $request->selected['customer_id'],
+                'deposit_id' => $request->deposit_id,
                 'created_by' => \Auth::user()->id,
                 'laboratory_id' => \Auth::user()->userrole->laboratory_id
-            ]));
+            ]);
             if($data){
                 $items = $request->selected['items'];
                 $op = FinanceOp::where('id',$request->selected['id'])->first();
@@ -155,7 +156,6 @@ class SaveClass
                         $next = $or->next+1;
                         $or->next = $next;
                     }
-
                     if($or->save()){
                         if($request->type === 'Cheque' || $request->type === 'Online Transfer' || $request->type === 'Bank Deposit'){
                             $cheque = new FinanceReceiptDetail;

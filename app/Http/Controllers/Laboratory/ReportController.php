@@ -35,6 +35,9 @@ class ReportController extends Controller
             case 'report-or':
                 return $this->report->printReportOr($request);
             break;
+            case 'download':
+                return $this->report->printTsr($request);
+            break;
         }
     }
 
@@ -43,6 +46,7 @@ class ReportController extends Controller
             case 'accomplishments':
                 return inertia('Modules/Laboratory/Reports/Accomplishments/Index',[
                     'years' => $this->report->years(),
+                    'types' => $this->report->laboratory_types(),
                     'info' => [
                         'month' => \DateTime::createFromFormat('!m', date('m'))->format('F'),
                         'year' => date('Y')

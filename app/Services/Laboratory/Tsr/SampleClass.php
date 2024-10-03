@@ -360,15 +360,22 @@ class SampleClass
         ->whereYear('created_at',date('Y'))->where('code','!=',NULL)->count();
         $code = $this->configuration->code.'-'.date('m').date('d').date('Y').'-'.$lab_type->short.'-'.str_pad(($report_count+$c+1), 4, '0', STR_PAD_LEFT);  
 
-        $data = TsrSampleReport::create([
-            'code' => $code,
-            'sample_id' => $request->sample_id,
-            'user_id' => \Auth::user()->id
-        ]);
+        $check = TsrSampleReport::where('code',$code)->count();
+        if($check == 0){
+            $data = TsrSampleReport::create([
+                'code' => $code,
+                'sample_id' => $request->sample_id,
+                'user_id' => \Auth::user()->id
+            ]);
+            $message = 'Report number was generated!';
+        }else{
+            $data = null;
+            $message = 'Report number already generated!';
+        }
 
         return [
             'data' => $data,
-            'message' => 'Report number was generated!', 
+            'message' => $message, 
             'info' => "You've successfully generated the report number."
         ];
 
