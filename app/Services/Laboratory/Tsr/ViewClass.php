@@ -192,7 +192,9 @@ class ViewClass
 
         $url = $_SERVER['HTTP_HOST'].'/verification/sample/'.$code;
         $qrCode = new QrCode($url);
-        $qrCode->setSize(76);
+        $qrCode->setSize(100);
+        $qrCode->setMargin(-5);
+
         $pngWriter = new PngWriter();
         $qrCodeImageString = $pngWriter->write($qrCode)->getString();
         $base64Image = 'data:image/png;base64,' . base64_encode($qrCodeImageString);
