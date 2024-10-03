@@ -66,6 +66,7 @@
                 </tr>
             </tbody>
         </table> -->
+        {{conformes}}
     
         <template v-slot:footer>
             <b-button @click="hide()" variant="light" block>Cancel</b-button>
@@ -125,7 +126,7 @@ export default {
         conformes() {
             return this.selected.conformes.map(item => {
                 return {
-                    value: item.id,
+                    value: item.value,
                     name: item.name
                 };
             });
@@ -133,6 +134,7 @@ export default {
     },
     methods: { 
         show(data){
+            console.log(data);
             this.form.customer = data.customer;
             this.form.customer_id = data.customer_id;
             this.form.laboratory = data.typeName;
