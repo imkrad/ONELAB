@@ -14,12 +14,14 @@ use App\Models\FinanceName;
 use App\Models\FinanceDeposit;
 use App\Models\FinanceReceipt;
 use App\Models\FinanceOrseries;
-use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Resources\DefaultResource;
 use App\Http\Resources\Finance\OpResource;
 use App\Http\Resources\Finance\FinanceResource;
 use App\Http\Resources\Finance\ReceiptResource;
 use App\Http\Resources\TsrNoPaymentResource;
+use App\Exports\FinanceOrExport;
+use App\Exports\FinanceOpExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ViewClass
 {
@@ -335,47 +337,51 @@ class ViewClass
         $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
         $year = ($request->year) ? $request->year : date('Y');
 
-        $lists = FinanceOp::select('id','total','code','payorable_id','payorable_type','created_at','created_by')
-        ->with('createdby:id','createdby.profile:user_id,firstname,lastname,middlename')
-        ->with('payorable:id,name,name_id','payorable.customer_name:id,name')
-        ->with(['items' => function ($query) {
-            $query->with('itemable:id,code')->where('itemable_type', 'App\Models\Tsr');
-        }, 'or:op_id,number'])
-        ->where('payorable_type', 'App\Models\Customer')
-        ->where('status_id',7)
-        ->whereMonth('created_at',$month)
-        ->whereYear('created_at',$year)
-        ->get();
+        // $lists = FinanceOp::select('id','total','code','payorable_id','payorable_type','created_at','created_by')
+        // ->with('createdby:id','createdby.profile:user_id,firstname,lastname,middlename')
+        // ->with('payorable:id,name,name_id','payorable.customer_name:id,name')
+        // ->with(['items' => function ($query) {
+        //     $query->with('itemable:id,code')->where('itemable_type', 'App\Models\Tsr');
+        // }, 'or:op_id,number'])
+        // ->where('payorable_type', 'App\Models\Customer')
+        // ->where('status_id',7)
+        // ->whereMonth('created_at',$month)
+        // ->whereYear('created_at',$year)
+        // ->get();
         
-        $array = [
-            'title' => 'List of OP',
-            'lists' => $lists,
-            'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
-        ];
-        $pdf = \PDF::loadView('generated.op',$array)->setPaper([0, 0, 500, 900], 'landscape');
-        return $pdf->stream('orderofpayment.pdf');
+        // $array = [
+        //     'title' => 'List of OP',
+        //     'lists' => $lists,
+        //     'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
+        // ];
+        // $pdf = \PDF::loadView('generated.op',$array)->setPaper([0, 0, 500, 900], 'landscape');
+        // return $pdf->stream('orderofpayment.pdf');
+
+        return Excel::download(new FinanceOpExport($month,$year), 'financeop.xlsx');
     }
 
     public function printReportOr($request){
         $month = ($request->month) ? \DateTime::createFromFormat('F', $request->month)->format('m') : date('m');  
         $year = ($request->year) ? $request->year : date('Y');
 
-        $lists = Tsr::select('id','code','customer_id')
-        ->whereDoesntHave('parent')
-        ->with('customer:id,name,name_id','customer.customer_name:id,name','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
-        ->withWhereHas('payment', function ($query) {
-            $query->select('tsr_id','or_number','total','subtotal','discount');
-        })
-        ->whereMonth('created_at',$month)
-        ->whereYear('created_at',$year)
-        ->get();
+        // $lists = Tsr::select('id','code','customer_id')
+        // ->whereDoesntHave('parent')
+        // ->with('customer:id,name,name_id','customer.customer_name:id,name','customer.address:address,addressable_id,region_code,province_code,municipality_code,barangay_code','customer.address.region:code,name,region','customer.address.province:code,name','customer.address.municipality:code,name','customer.address.barangay:code,name')
+        // ->withWhereHas('payment', function ($query) {
+        //     $query->select('tsr_id','or_number','total','subtotal','discount');
+        // })
+        // ->whereMonth('created_at',$month)
+        // ->whereYear('created_at',$year)
+        // ->get();
         // return $lists;
-        $array = [
-            'title' => 'List of OP',
-            'lists' => $lists,
-            'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
-        ];
-        $pdf = \PDF::loadView('generated.or',$array)->setPaper([0, 0, 500, 900], 'landscape');
-        return $pdf->stream('or.pdf');
+        // $array = [
+        //     'title' => 'List of OP',
+        //     'lists' => $lists,
+        //     'year' =>  strtoupper(\DateTime::createFromFormat('m', $month)->format('F')).' '.$year
+        // ];
+        // $pdf = \PDF::loadView('generated.or',$array)->setPaper([0, 0, 500, 900], 'landscape');
+        // return $pdf->stream('or.pdf');
+
+        return Excel::download(new FinanceOrExport($month,$year), 'financeor.xlsx');
     }
 }
