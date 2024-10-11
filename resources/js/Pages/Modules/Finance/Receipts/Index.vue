@@ -43,7 +43,7 @@
                             </td>
                             <td>
                                 <h5 class="fs-13 mb-0 text-dark">OR# : {{list.number}}</h5>
-                                <p class="fs-12 text-muted mb-0">{{list.customer}}</p>
+                                <p class="fs-12 text-muted mb-0">{{list.customer}} </p>
                             </td>
                             <td class="text-center fs-12">{{list.collection}}</td>
                             <td class="text-center fs-12">{{list.payment}}</td>
