@@ -112,8 +112,12 @@
                 width: 300px;
                 font-weight: bold;
             }
+            .page-break {
+                page-break-after: always;
+            }
         </style>
     </head>
+    @php $overflow = false; @endphp
     <body style="color: black;">
         <div class="text">{{$date}}</div>
         <div class="agency">{{$agency}}</div>
@@ -123,6 +127,10 @@
             <table style="border: hidden; font-size: 12px; margin-top: 15px;">
                 <tbody>
                 @foreach($items as $index=>$item)
+                @if($index > 7)
+                    @php $overflow = true; @endphp
+                    @break
+                @endif
                     <tr>
                         <td style="border: hidden; width: 240px;">{{$item['name']}}</td>
                         <td style="border: hidden; text-align: center; width: 80px;">{{trim($item['amount'],'₱ ')}}</td>
@@ -142,6 +150,21 @@
             <div class="bank">{{$detail['bank']}}</div>
             <div class="number">{{$detail['number']}}</div>
             <div class="detaildate">{{$detail['date_at']}}</div>
+        @endif
+        @if($overflow == true)
+            <div class="page-break"></div>
+            <div class="items">
+            <table style="border: hidden; font-size: 12px; margin-top: 15px;">
+                <tbody>
+                @foreach(array_slice($items, 8) as $index => $item)
+                    <tr>
+                        <td style="border: hidden; width: 240px;">{{$item['name']}}</td>
+                        <td style="border: hidden; text-align: center; width: 80px;">{{trim($item['amount'],'₱ ')}}</td>
+                    </tr>
+                @endforeach  
+                </tbody>
+            </table>
+        </div>
         @endif
     </body>
 </html>
